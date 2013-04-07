@@ -1,0 +1,271 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Apr  7 20:29:55 2013
+;; Desktop file format version 206
+;; Emacs version 24.2.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring '("border-" "current" "hover" "4c4c4c" "menu li " "current" "-1" "F386" "corner" "current" "-20" "nav" "menu" "ie-d" "navigation" "nav"))
+(setq register-alist '((0) (113) (134217847) (101 file . "~/emacs/init.el") (98 file . "~/.bashrc") (107 file . "~/.emacs.d/my-config/keys.el") (105 file . "~/.emacs.d/init.el")))
+(setq file-name-history '("~/www/firstdoor/" "/home/michieljoris/www/firstdoor/.emacs.desktop" "/home/michieljoris/www/firstdoor/js/myjs.js" "/home/michieljoris/www/firstdoor/css/utryu" "~/www/firstdoor/css/menu.css" "~/www/firstdoor/css/navigation.css" "/home/michieljoris/www/firstdoor/css/more/navigation.css" "~/www/firstdoor/" "/home/michieljoris/www/firstdoor/css/logo.css" "~/www/firstdoor/css/main.css" "/home/michieljoris/www/firstdoor/css/reset.css" "~/www/firstdoor/css/social.css" "/home/michieljoris/www/firstdoor/css/contact.css" "/home/michieljoris/www/firstdoor/css/social-icons.css" "/home/michieljoris/www/firstdoor/partials/social.html" "/home/michieljoris/www/firstdoor/partials/logo.html" "/home/michieljoris/www/firstdoor/partials/contact.html" "~/www/firstdoor/partials/" "/home/michieljoris/www/firstdoor/partials/body.html" "/home/michieljoris/www/firstdoor/partials/contact.html" "/home/michieljoris/www/firstdoor/partials/logo.html" "/home/michieljoris/www/firstdoor/partials/head.html" "/home/michieljoris/www/firstdoor/partials/contact.html" "/home/michieljoris/www/firstdoor/partials/header.html" "/home/michieljoris/www/firstdoor/partials/contact.html" "/home/michieljoris/www/firstdoor/partials/header.html" "/home/michieljoris/www/firstdoor/partials/head.html" "/home/michieljoris/www/firstdoor/partials/logo.html" "/home/michieljoris/www/firstdoor/partials/fromscratch.html" "/home/michieljoris/www/firstdoor/partials/layout.html"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/menu.css"
+  "menu.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  1595
+  '(1594 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/js/myjs.js"
+  "myjs.js"
+  'js2-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode hs-minor-mode)
+  139
+  '(103 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/node_modules/html-builder/html-builder.js"
+  "html-builder.js"
+  'js2-mode
+  '(undo-tree-mode flymake-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode hs-minor-mode)
+  10436
+  '(11589 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/main.css"
+  "main.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  982
+  '(435 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/more/style.css"
+  "style.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  267
+  '(44013 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/logo.css"
+  "logo.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  42
+  '(43 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/social.css"
+  "social.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  269
+  '(378 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/more/main.css"
+  "main.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  144
+  '(1468 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/contact.css"
+  "contact.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  148
+  '(494 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/reset.css"
+  "reset.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  401
+  '(605 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/font-awesome.css"
+  "font-awesome.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  920
+  '(1457 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/partials/social.html"
+  "social.html"
+  'html-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  318
+  '(319 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/partials/logo.html"
+  "logo.html"
+  'html-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  1
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/partials/contact.html"
+  "contact.html"
+  'html-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  56
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "partials"
+  'dired-mode
+  '(window-number-mode global-auto-revert-mode)
+  740
+  '(737 nil)
+  t
+  '("/home/michieljoris/www/firstdoor/partials/")
+  nil)
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/partials/body.html"
+  "body.html"
+  'html-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/myindex.html"
+  "myindex.html"
+  'html-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  691
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/message-top.css"
+  "message-top.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  159
+  '(38 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/resources/aabu-official/index.html"
+  "index.html"
+  'html-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  1042
+  '(423 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/partials/message.html"
+  "message.html"
+  'html-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  137
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/js/bootstrap.js"
+  "bootstrap.js"
+  'js2-mode
+  '(undo-tree-mode flymake-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode hs-minor-mode)
+  2729
+  '(38477 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/firstdoor/css/bootstrap.css"
+  "bootstrap.css"
+  'css-mode
+  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode)
+  12408
+  '(87967 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "firstdoor"
+  'dired-mode
+  '(window-number-mode global-auto-revert-mode)
+  1637
+  '(1976 nil)
+  t
+  '("/home/michieljoris/www/firstdoor/" "/home/michieljoris/www/firstdoor/old/" "/home/michieljoris/www/firstdoor/old/cssorig/" "/home/michieljoris/www/firstdoor/resources/")
+  nil)
+

@@ -1,0 +1,44 @@
+/* ---------------------------------= */
+/* Footer
+
+----------------------------------- */
+
+#footer{position: relative;}
+#footer, #footer p, #footer a{color: #aaa}
+/*#footer a:hover {color: #fff;}*/
+#footer p{font-size: 12px;}
+.footer-headline {
+    display: block;
+    margin: 15px 0 8px 0;
+    border-bottom: 1px dashed rgb(87, 87, 87);
+}
+.footer-bottom{background: #111;}
+
+.footer-headline h4 {
+    border-bottom: 3px solid #fff;
+    display: inline;
+    padding: 0 10px 1px 0;
+    color: #fff;
+    font-size: 15px;
+}
+
+#footer {
+    background: #333;
+    padding: 20px;
+    max-width: 940px;
+
+    margin: 0 auto;
+}
+
+
+/* Footer Bottom
+------------------*/
+#footer-bottom {
+
+    position: relative;
+    padding: 10px 0 5px 0;
+}
+
+
+#footer-bottom a {color: #fff}
+#footer-bottom a:hover {color: #F38630;}

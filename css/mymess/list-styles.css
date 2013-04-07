@@ -1,0 +1,34 @@
+/* List Styles
+------------------*/
+.check_list,
+.plus_list ,
+.minus_list ,
+.star_list ,
+.arrow_list ,
+.square_list ,
+.circle_list ,
+.cross_list  {
+    margin-left: 0px !important;
+}
+
+.check_list li,
+.plus_list li,
+.minus_list li,
+.star_list li,
+.arrow_list li,
+.square_list li,
+.circle_list li,
+.cross_list li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+.check_list li {background: url(../images/icons/list/list_check.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
+.plus_list  li {background: url(../images/icons/list/list_plus.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
+.minus_list  li {background: url(../images/icons/list/list_minus.png) no-repeat 0% 50%; padding: 0 0 0 18px;}
+.star_list  li {background: url(../images/icons/list/list_star.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.arrow_list  li {background: url(../images/icons/list/list_arrow.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.square_list  li {background: url(../images/icons/list/list_square.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.circle_list  li {background: url(../images/icons/list/list_circle.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+.cross_list  li {background: url(../images/icons/list/list_cross.png) no-repeat 0% 50%; padding: 0 0 0 16px;}
+

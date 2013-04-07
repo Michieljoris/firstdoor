@@ -1,0 +1,29 @@
+.layout-social {
+    float: right;
+    margin: 0;
+}
+
+#contact-top {
+    float: left;
+    /* margin-top: 10px; */
+    display: block;
+}
+
+#contact-top li {
+    display: inline;
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid #e9e9e9;
+    opacity: .5;
+    filter: alpha(opacity = 50);
+}
+
+#contact-top li:first-child {
+    border: none;
+    margin-left: 0;
+    padding:0
+}
+
+#contact-top i {margin-right: 4px;}
+#contact-top a {color: #666;}
+#contact-top a:hover {color: #888;}

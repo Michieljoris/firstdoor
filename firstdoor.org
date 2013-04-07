@@ -1,0 +1,49 @@
+* good to know
+** emacs setup
+Use nodejs-minor mode. Do a C x,v to compile a node file and see the
+output in another window
+** Use filemonitor to execute js, or bash processes on file changes
+Need to install filemonitor module with npm install filemonitor
+
+** responsive images
+Resize images to proper size then include with height=auto and
+max-width=100%
+
+* todo
+** angularjs
+** feedback
+** chat
+   
+
+** clean up css for narrow screen, change menu type   
+** back button!!!
+** slider with text sliding in 
+*** cslider, index3.html
+*** Sequence slider
+** learning style quiz
+** hide links in pd
+** test ie, safari, and opera 
+** rework making of menus with routing auto set
+** checkout http://www.tlctrainingsolutions.com.au/children_service_course 
+
+** incorporate website feature doc
+
+** contact us in green door, and on every site
+
+** hoop up markdown editor with server
+   
+   
+* Email to Andrea:
+Linked in button? Other buttons are going to be linked?  Skype name
+Photo missing for frontpage format: interactive pd
+Bars on either side on every page?
+I put all images used in Dropbox
+
+
+* Contact
+ Wednesday 17th or Thursday 18th are our next free day time dates!
+I am available for skyping or phoning after 3.30pm each day this week
+if you find it easier to talk through any of this. My mobile is 0437
+870 932 or home p: 3491 3573.
+ 
+

@@ -1,0 +1,163 @@
+/* ---------------------------------= */
+/* Flexslider
+----------------------------------- */
+
+/* Browser Resets
+------------------*/
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+
+/* Necessary Styles
+------------------*/
+.flexslider {margin: 0; padding: 0;}
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides > li {position: relative;  zoom: 1; display: none; -webkit-backface-visibility: hidden;}
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flexslider {position: relative;  zoom: 1; z-index: 50;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* Default Styles
+------------------*/
+.flexslider {
+    background: #fff;
+    zoom: 1;
+}
+
+.ie7 .flexslider {margin-bottom: -30px;}
+
+.flex-viewport {max-height: 2000px;}
+.loading .flex-viewport {max-height: 300px;}
+.flexslider .slides {zoom: 1;}
+
+
+/* Direction Nav
+------------------*/
+
+.flex-direction-nav a {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #000;
+    bottom: 45%;
+    right: 1%;
+    float: none;
+    position: absolute;
+    cursor: pointer;
+    text-indent: -9999px;
+    background-color: #222;
+    background: rgba(0, 0, 0, 0.65);
+    *bottom: 50px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    opacity: .3;
+}
+
+.flex-direction-nav .flex-next {
+    background: url(../images/arrows.png) no-repeat -20px 0;
+}
+
+.flex-direction-nav .flex-prev {
+    background: url(../images/arrows.png) no-repeat 0 0;
+    left: 1%;
+}
+
+.flex-direction-nav .flex-prev:hover,
+.flex-direction-nav .flex-next:hover {
+
+    opacity: 1;
+}
+
+.subpage .flex-direction-nav a {bottom: 0px; right: 0px; *bottom: 30px;}
+
+
+/* Control Nav
+------------------*/
+.flex-control-nav {
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    text-align: center;
+}
+
+.flex-control-nav li {
+    margin: 0 3px 0 0;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+.flex-control-paging li a {
+    width: 14px;
+    height: 14px;
+    display: block;
+    background: #c8c8c8;
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.flex-control-paging li a:hover,
+.flex-control-paging li a.flex-active {
+    background: #505050;
+}
+
+.flex-control-paging li a.flex-active {
+    cursor: default;
+}
+
+
+/* Caption
+------------------*/
+.slide-caption {
+
+    padding: 10px;
+    position: absolute;
+    display: block;
+    width: 60%;
+    bottom: 1%;
+    right: 1%;
+    background-color: rgba(0, 0, 0, 0.67);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgb(70, 70, 70);
+}
+
+
+.slide-caption h3 {
+    color: #fff;
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin:0;
+    line-height: 22px;
+}
+
+.slide-caption p {
+    margin:0;
+    line-height: 19px;
+    color: #ccc;
+}

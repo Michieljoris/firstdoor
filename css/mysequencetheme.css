@@ -1,0 +1,36 @@
+#sequence {
+    border: black solid 3px;
+    height: 370px;
+    margin: 10px auto;
+    position: relative; /* required */
+    width: 450px;
+}
+
+#sequence > ul > li {
+    position: absolute; /* required */
+    width: 100%; /* required */
+    height: 100%;
+    z-index: 1; /* required */
+}
+
+.info1,
+.info2,
+.info3 {
+    background: #3f7ad6;
+    color: white;
+    height: 95px;
+    padding: 5px;
+    width: 95px;
+}
+
+
+.info1 {
+    left: -150px;
+    top: 10px;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    -ms-transition-duration: 1s;
+    transition-duration: 1s;
+}
+

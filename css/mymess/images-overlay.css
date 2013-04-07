@@ -1,0 +1,30 @@
+/* Images Overlay
+------------------*/
+.picture {position: relative;}
+.picture img {width: 100%; height: auto;}
+
+.image-overlay-link,
+.image-overlay-zoom {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 40;
+    display: none;
+    background-color: #d9d9d9;
+    background: rgba(277, 277, 277, 0.7);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+
+}
+
+.image-overlay-link {
+    background-image: url(../images/overlay-icon-01.png);
+
+}
+
+.image-overlay-zoom {
+    background-image: url(../images/overlay-icon-02.png);
+}

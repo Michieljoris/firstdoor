@@ -1,0 +1,41 @@
+/* Widgets
+------------------*/
+.widget {margin-bottom: 20px;
+         border: 1px dashed #ccc;
+         padding: 5px;
+         background: #f1f1f1;
+}
+
+/* Twitter */
+#twitter-blog li {
+    line-height: 18px;
+    margin: 2px 0 12px 0;
+    background: url(../images/tweet.png) no-repeat left top;
+    padding-left: 25px;
+    background-position-y: 4px;
+}
+
+#twitter-blog li:last-child {margin-bottom: 0;}
+
+#twitter-blog b a {
+    color: #888;
+    font-weight: normal;
+}
+
+/* Flickr */
+.flickr-widget-blog {margin-left: 15px;}
+.flickr-widget-blog img {display: block; width: 100%;}
+
+.flickr-widget-blog a {
+    float: left;
+    width: 57px;
+    height: 57px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 4px;
+    -webkit-box-shadow:  0px 1px 1px 0px rgba(180, 180, 180, 0.1);
+    box-shadow:  0px 1px 1px 0px rgba(180, 180, 180, 0.1);
+}
+
+.ie7 .flickr-widget-blog a {width: 53px; height: 53px;}

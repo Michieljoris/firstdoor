@@ -1,0 +1,49 @@
+.feature-boxes{
+    -webkit-transition-duration: 0.7s;
+    -moz-transition-duration: 0.7s;
+    -o-transition-duration: 0.7s;
+    -ms-transition-duration: 0.7s;
+    transition-duration: 0.7s;
+    position: relative;
+    top:0;
+    border-bottom: 4px solid #fff;
+
+}
+.feature-boxes:hover{top: -30px; border-bottom: 4px solid #F38630;}
+.feature-boxes .feature-circle{
+    background: #f2f2f2;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    border-radius: 500px;
+    padding: 50px;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+}
+
+/* Services icons */
+.feature-boxes i {
+    color: #F38630;
+    font-size: 71px;
+    line-height: 100px;
+    vertical-align: middle;
+
+}
+
+.feature-boxes .feature-circle:hover {
+    background: #F38630;
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    transition: all 0.8s;}
+.feature-boxes .feature-circle:hover i{
+    color: #fff;    
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    transition: all 0.8s;}

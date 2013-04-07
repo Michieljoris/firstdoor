@@ -1,0 +1,27 @@
+Something to play with. I am going to try to hook it up with the markdown files on the server.
+
+Move the mouse over the black area and two icons appear, click them for previews of the markdown text.
+
+Escape gets you out of full screen mode.
+
+Following is some text from the welcome page. Any edits are not yet saved back to the server.
+
+#Welcome to First Door Training and Development
+
+Choosing a job role to enrich and touch people’s lives is a career choice that has the ability to impact on individuals, communities and our society.
+
+>    “I alone cannot change the world, but I can cast a stone across the waters to create many ripples.” Mother Teresa
+
+And a list:
+
+* item 1
+* item 2
+
+Numbered:
+
+1. item 1
+* item 2
+
+And some examples to make links: [www.google.com]() or [google](www.google.com)
+
+

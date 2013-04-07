@@ -1,0 +1,10 @@
+/*blog entry*/
+
+.entry{float:left; margin-bottom:10px;}
+.entry span.meta{ display:block; padding:0; width:50px; float:left; text-align:center;}
+.entry span.meta strong{ font-size:18px; background:#f6f6f6; color:#555; border:1px solid #ececec; display:block; float:left; width:100%; padding:5px 0;}
+.entry span.meta small{ font-size:11px; background:#444; border:1px solid #333; display:block; float:left; width:100%; padding:0; color:#fff;}
+.entry div{ float:right; width:79%;}
+.entry div h4{ margin-bottom:10px; font-size:14px; margin-top: 0px !important;}
+.entry div h4 a{ color:#181818;}
+.entry div h4 a:hover{ color:gray;}

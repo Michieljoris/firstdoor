@@ -1,0 +1,22 @@
+/* Footer - Twitter Widget
+------------------*/
+#twitter {
+
+    float: left;
+    display: block;
+    list-style: none;
+    margin: 0px;
+}
+
+#twitter b a, #twitter b a:hover {color: #707070}
+#twitter li {line-height: 18px; margin: 2px 0 12px 0;
+             background: url(../images/tweet.png) no-repeat left top;
+             padding-left: 25px;
+             background-position-y: 4px;
+}
+#twitter li:last-child {padding: 0; margin: 0;background: url(../images/tweet.png) no-repeat left top;
+                        padding-left: 25px;
+                        background-position-y: 4px;
+}
+#twitter a {color: #fff;}
+/*#twitter a:hover {color: #F38630;}*/

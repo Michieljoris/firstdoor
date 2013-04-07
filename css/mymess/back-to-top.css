@@ -1,0 +1,27 @@
+/* Back To Top
+------------------*/
+#scroll-to-top {
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    display: none;
+    z-index: 1;
+}
+
+#scroll-to-top a {
+    width: 35px;
+    height: 35px;
+    display: block;
+    background-color: rgb(194,194,194);
+    background-image: url(../images/scroll-top-top.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    margin-left: -10px;
+}
+
+#scroll-to-top a:hover {background-color: #F38630;}

@@ -1,0 +1,41 @@
+/* ---------------------------------= */
+/* Contact
+----------------------------------- */
+
+/* Google Map
+------------------*/
+#google-map {
+    position: relative;
+    padding: 0px;
+    padding-bottom: 110%;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Post Meta */
+.post-meta {
+    color: #888;
+    margin: 2px 0 15px 0;
+    font-size: 14px;
+}
+
+.post-meta a {
+    color: #888;
+    text-decoration: none;
+}
+
+/*.post-meta a:hover {
+    color: #666;
+}*/
+
+.post-meta i {
+    opacity: 0.35;
+    filter: alpha(opacity = 35);
+    margin-right: 5px;
+    zoom: 1;
+}
+
+.post-meta span {
+    margin-right: 10px;
+}
+

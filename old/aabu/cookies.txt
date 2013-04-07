@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.placehold.it	TRUE	/	FALSE	1999999999	__cfduid	d51d64d85410c0b13099fe251674f123c1361923627
+

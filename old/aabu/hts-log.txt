@@ -1,0 +1,22 @@
+HTTrack3.46+libhtsjava.so.2 launched on Wed, 27 Feb 2013 10:03:23 at http://wbpreview.com/previews/WB0DP4521/index.html +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/*
+(webhttrack -q -%i -w http://wbpreview.com/previews/WB0DP4521/index.html -O "/home/michieljoris/websites/aabu" -n -%P -N0 -s2 -p7 -D -a -K0 -c4 -%k -A25000 -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2008], %s -->" +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -%s -%u )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+10:06:23	Error: 	"Forbidden" (403) at link placehold.it/940x413/&text=Banner+with+Caption (from wbpreview.com/previews/WB0DP4521/index2.html)
+10:06:23	Error: 	"Forbidden" (403) at link placehold.it/1030x400/C77966/ffffff/&text=Static Image (from wbpreview.com/previews/WB0DP4521/index4.html)
+10:06:23	Error: 	"Forbidden" (403) at link placehold.it/1030x300/&text=your favourite notfound image (from wbpreview.com/previews/WB0DP4521/error.html)
+10:06:23	Error: 	"Forbidden" (403) at link placehold.it/64x64/72B626/ffffff/&text=User (from wbpreview.com/previews/WB0DP4521/blog-post.html)
+10:07:08	Error: 	"" (403) at link placehold.it/1030x400/C77966/ffffff/&text=Static Image (from wbpreview.com/previews/WB0DP4521/index4.html)
+10:07:18	Error: 	"Not Found" (404) at link wbpreview.com/previews/WB0DP4521/images/banner-blog.jpg (from wbpreview.com/previews/WB0DP4521/blog.html)
+10:07:18	Error: 	"" (403) at link placehold.it/64x64/72B626/ffffff/&text=User (from wbpreview.com/previews/WB0DP4521/blog-post.html)
+10:07:48	Error: 	"Not Found" (404) at link wbpreview.com/previews/WB0DP4521/css/colors/green.css (from wbpreview.com/previews/WB0DP4521/js/switcher.js)
+10:08:07	Error: 	"Not Found" (404) at link wbpreview.com/previews/WB0DP4521/images/blank.html (from wbpreview.com/previews/WB0DP4521/css/fancybox.css)
+10:08:14	Error: 	"No data (connection closed)" (-4) after 2 retries at link wbpreview.com/previews/WB0DP4521/images/staff-2.jpg (from wbpreview.com/previews/WB0DP4521/about.html)
+
+HTTrack Website Copier/3.46 mirror complete in 5 minutes 10 seconds : 193 links scanned, 223 files written (13731601 bytes overall) [7479473 bytes received at 24127 bytes/sec], 1482855 bytes transfered using HTTP compression in 91 files, ratio 24%, 2.0 requests per connection
+(10 errors, 0 warnings, 0 messages)
+10:08:33	Info: 	Top index rebuilt (done)
