@@ -18,7 +18,8 @@ var css = [
     ,'message-top'
     ,'social'
     ,'contact'
-    
+    // ,'feedback'
+    ,'contactable'
     
     ,'main'
     //FancyBox is a tool for displaying images, html content and
@@ -104,6 +105,10 @@ var js = [
     ,'epiceditor.min.js'
     ,'myjs'
     ,'router'
+    
+    ,'jquery.validate.pack'
+    ,'jquery.contactable.min'
+    // ,'feedback'
     
     // A lightweight, easy-to-use jQuery plugin for fluid width video embeds.       
     // ,'jquery.fitvids'
@@ -385,6 +390,7 @@ var exports = {
                    ,footerMiddle: 'html/footerMiddle'
                    ,footerRight: 'html/footerRight'
                    ,'footerBottom': 'html/footerBottom'
+                   ,'feedback': 'html/feedback'
                }
              }
             

@@ -16,6 +16,14 @@ jQuery(document).ready(function(){
         return false;
     });
 
+    $(function(){
+        console.log('contactable');
+        $('#contactable').contactable({
+            subject: 'A Feeback Message'
+        });
+    });
+    
+    
 });
 
 
