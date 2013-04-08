@@ -9,6 +9,9 @@ Need to install filemonitor module with npm install filemonitor
 Resize images to proper size then include with height=auto and
 max-width=100%
 
+** mind the url with hashbang routing urls:
+   href: 'index.html#!/home'
+   it's  #!/route following the main page (index.html in this case)
 * todo
 ** angularjs
 ** feedback
@@ -16,14 +19,11 @@ max-width=100%
    
 
 ** clean up css for narrow screen, change menu type   
-** back button!!!
 ** slider with text sliding in 
 *** cslider, index3.html
 *** Sequence slider
 ** learning style quiz
-** hide links in pd
 ** test ie, safari, and opera 
-** rework making of menus with routing auto set
 ** checkout http://www.tlctrainingsolutions.com.au/children_service_course 
 
 ** incorporate website feature doc
