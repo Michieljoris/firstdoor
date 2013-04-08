@@ -286,13 +286,46 @@ var exports = {
                 }
                ]
         ,template: [
-            { 
+            { id: 'showhide_pd_inspired_info',
+               src: 'html/showhide_pd_inspired_info'
+               // ,out : 'test.html'
+               ,mapping: {
+                   "pd_inspired_info_md": "markdown/pd_inspired_info.md"
+               }} 
+            ,{ id: 'showhide_pd_coop_info',
+               src: 'html/showhide_pd_coop_info'
+               // ,out : 'test.html'
+               ,mapping: {
+                   "pd_coop_info_md": "markdown/pd_coop_info.md"
+               }}, 
+            { id: 'showhide_pd_environment_info',
+               src: 'html/showhide_pd_environment_info'
+               // ,out : 'test.html'
+               ,mapping: {
+                   "pd_environment_info_md": "markdown/pd_environment_info.md"
+               }}, 
+            { id: 'showhide_pd_observing_info',
+               src: 'html/showhide_pd_observing_info'
+               // ,out : 'test.html'
+               ,mapping: {
+                   "pd_observing_info_md": "markdown/pd_observing_info.md"
+               }}
+            ,{ id:"pd_wrapper",
+               src: 'markdown/pd.md'
+               // ,out : 'test.html'
+               ,mapping: {
+                   showhide_pd_inspired_info: "showhide_pd_inspired_info"
+                   ,showhide_pd_observing_info: "showhide_pd_observing_info"
+                   ,showhide_pd_environment_info: "showhide_pd_environment_info"
+                   ,showhide_pd_coop_info: "showhide_pd_coop_info"
+               }}
+            ,{ 
                src: 'views/view_pd_partial.html'
                ,out : 'view-pd.html'
                ,mapping: {
                    sidebar: 'html/sidebar'
                    ,slogan: 'html/slogan'
-                   ,contents: 'markdown/pd.md'
+                   ,contents: 'pd_wrapper'
                }}
             ,{ 
                src: 'views/view_home_partial.html'

@@ -27,10 +27,12 @@ max-width=100%
 ** checkout http://www.tlctrainingsolutions.com.au/children_service_course 
 
 ** incorporate website feature doc
+** bread crumbs
+** photo on every page
 
 ** contact us in green door, and on every site
 
-** hoop up markdown editor with server
+** hook up markdown editor with server
    
    
 * Email to Andrea:
