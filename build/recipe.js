@@ -27,7 +27,7 @@ var css = [
     // of web page, the css part
     // ,"fancybox"
     // ,'misc'
-    
+    ,'cslider'
     //footer
     // ,'photo-stream'
     // ,'footer-twitter-widget'
@@ -73,8 +73,8 @@ var js = [
     // two or more), and what Modernizr does is, very simply, tell
     // you whether the current browser has this feature natively
     // implemented or not.
-    // 'modernizr',
-    
+    ,'modernizr'
+    ,'selectnav'
     // 'twitter',//??
     
     //FancyBox is a tool for displaying images, html content and
@@ -104,12 +104,14 @@ var js = [
     // ,'superfish'
     ,'epiceditor.min.js'
     ,'myjs'
+    ,'controllers'
     ,'router'
     
     ,'jquery.validate.pack'
     ,'jquery.contactable.min'
     // ,'feedback'
     
+    ,'jquery.cslider'
     // A lightweight, easy-to-use jQuery plugin for fluid width video embeds.       
     // ,'jquery.fitvids'
     
@@ -129,60 +131,74 @@ var js = [
     // ,'jquery.cslider.js'
 ];
 
+
+var routes = [
+    ['home', '/built/view-home.html', 'HomeCntl'],
+    // ['aboutus', '/build/markdown/aboutus.md'],
+    ['aboutus', '/built/view-aboutus.html'],
+    ['pd', '/built/view-pd.html'],
+    // ['resources', '/build/markdown/resources.md'],
+    ['resources', '/built/view-resources.html'],
+    ['courses', '/built/view-courses.html'],
+    ['quiz', '/build/markdown/quiz.md'],
+    ['blog', '/built/view-blog.html'],
+    ['epic', '/built/view-epic.html', 'EpicCntl']
+];
+
 var mainMenuTree = [
-    { label: 'Home', icon: '', href: 'index.html#!home', id: 'icurrent'
-      
-    } 
-    ,{ label: 'About us', icon: '', href: 'index.html#!aboutus',
+    { label: 'Home', icon: '', route: 'home' }
+    
+    ,{ label: 'About us', icon: '', route: 'aboutus',
        sub: [
-           { label: 'Our Company Vision', href: 'index.html#!aboutus#leaders'}
-           ,{ label: 'Mission Statement', href: 'index.html#!aboutus#mission'}
-           ,{ label: 'First Door Company Values', href: 'index.html#!aboutus#values'}
-           ,{ label: 'Our Name And Logo', href: 'index.html#!aboutus#namelogo'}
-           // ,{ label: 'Our people', href: 'index.html#!aboutus#people'}
+           { label: 'Our Company Vision', route: 'aboutus#leaders', scroll: true}
+           ,{ label: 'Mission Statement', route: 'aboutus#mission', scroll: true}
+           ,{ label: 'First Door Company Values', route: 'aboutus#values', scroll: true}
+           ,{ label: 'Our Name And Logo', route: 'aboutus#namelogo', scroll: true}
+           // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
            
        ]
      } 
-    ,{ label: 'Accredited training', icon: '', href: 'index.html#!courses'
+    ,{ label: 'Accredited training', icon: '', route: 'courses'
        ,sub: [
-           { label: 'CHC50908 Diploma of Children’s Services (Early Childhood Education and Care)', href: 'index.html#!courses#disabilitycare'}
-           ,{ label: 'Diploma of Management ', href: 'index.html#!courses#childrenservices'}
-           ,{ label: 'Certificate lV in Training and Assessment', href: 'index.html#!courses#managementtraining'}
-           // ,{ label: 'Aged care', href: 'index.html#!courses#agedcare'}
+           { label: 'CHC50908 Diploma of Children’s Services (Early Childhood Education and Care)', route: 'courses#childrenservices',
+             scroll: true}
+           ,{ label: 'Diploma of Management ', route: 'courses#diploma_management', scroll: true}
+           ,{ label: 'Certificate lV in Training and Assessment', route: 'courses#certivtraining', scroll: true}
+           // ,{ label: 'Aged care', route: 'courses#agedcare'}
        ]
      } 
-    ,{ label: 'Professional developement', icon: '', href: 'index.html#!pd'
+    ,{ label: 'Professional developement', icon: '', route: 'pd'
        ,sub: [
-           { label: 'The Inspired Educator, <span>working with a child focused approach</span>', href: 'index.html#!pd#course1'}
-           ,{ label: 'Observation, documentation, planning and evaluating', href: 'index.html#!pd#course2'}
-           ,{ label: 'Environment and experiences', href: 'index.html#!pd#course3'}
-           ,{ label: 'Developing Cooperative Behaviour', href: 'index.html#!pd#course4'}
-           ,{ label: 'Evaluation and reflective practice for improved program and practice', href: 'index.html#!pd#course4'}
-           ,{ label: 'Children at Risk: identify and respond', href: 'index.html#!pd#course4'}
-           ,{ label: 'Identify and Manage Risk to protect against harm', href: 'index.html#!pd#course4'}
+           { label: 'The Inspired Educator, <span>working with a child focused approach</span>', route: 'pd#course1', scroll: true}
+           ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#course2', scroll: true}
+           ,{ label: 'Environment and experiences', route: 'pd#course3', scroll: true}
+           ,{ label: 'Developing Cooperative Behaviour', route: 'pd#course4', scroll: true}
+           ,{ label: 'Evaluation and reflective practice for improved program and practice', route: 'pd#course4', scroll: true}
+           ,{ label: 'Children at Risk: identify and respond', route: 'pd#course4', scroll: true}
+           ,{ label: 'Identify and Manage Risk to protect against harm', route: 'pd#course4', scroll: true}
        ]
      } 
-    ,{ label: 'Resources', icon: '', href: '#'
+    ,{ label: 'Resources', icon: '', route: 'resources'
        ,sub: [
-           { label: 'Quiz', href: 'index.html#!quiz'}
-           ,{ label: 'Creating a learning organisation', href: 'index.html#!resources'
+           { label: 'Creating a learning organisation', route: 'resources', scroll: true
             }
-           ,{ label: 'Early Childhood Education and Care', href: 'index.html#!resources'
+           ,{ label: 'Early Childhood Education and Care', route: 'resources', scroll: true
               ,sub: [
-                  { label: 'Educational leaders', href: 'index.html#!resources'}
+                  { label: 'Educational leaders', route: 'resources'}
               ]
             }
-           ,{ label: 'Inspiration and motivation', href: 'index.html#!resources'}
-           ,{ label: 'Learning', href: 'index.html#!resources'}
-           ,{ label: 'Management', href: 'index.html#!resources'}
+           ,{ label: 'Inspiration and motivation', route: 'resources'}
+           ,{ label: 'Learning', route: 'resources'}
+           ,{ label: 'Management', route: 'resources'}
        ]
        
      } 
-    ,{ label: 'Blog', icon: '', href: '#'
+    ,{ label: 'Blog', icon: '', route: 'blog'
        ,sub: [ 
-           { label: 'Markdown editor', href: 'index.html#!epic'}
-           // ,{ label: 'Submenu item 2', href: 'index.html'}
-           // ,{ label: 'Submenu item 2', href: 'index.html'}
+           { label: 'Markdown editor', route: 'epic'}
+           ,{ label: 'Quiz', route: 'quiz'}
+           // ,{ label: 'Submenu item 2', route: 'index.html'}
+           // ,{ label: 'Submenu item 2', route: 'index.html'}
        ]
        
      } 
@@ -198,37 +214,22 @@ The wording for the four rolling images on the home page are:
 */
 
 var slides =  [
-    { url: "images/frontpage_slideshow/earlychild.jpg",
-      title: 'Early Childhood Education and Care training'
+    { url: "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
+      // ,title: 'Early Childhood Education and Care training'
       // ,subtitle: 'Aged care slogan'
-    },
-    { url: "images/frontpage_slideshow/Innovative_resources.jpg",
-      title: 'Innovative resources to bridge the gap between theory and practice'
+    }
+    ,{ url: "images/slides/home_page_engaging_resources.jpg"
+      // ,title: 'Innovative resources to bridge the gap between theory and practice'
       // ,subtitle: 'Slogan'
     },
-    { url: "images/frontpage_slideshow/mentoring.jpg",
-      title: 'First Door mentoring inspires focused students'
+    { url: "images/slides/home_page_First_Door_mentoring.jpg"
+      //,title: 'First Door mentoring inspires focused students'
       // ,subtitle: 'Slogan'
     }
-    ,{ url: "images/frontpage_slideshow/interactivePD.jpg",
-      title: 'Interactive professional development connecting educators to the National Quality Framework'
+    ,{ url: "images/slides/home_page_interactive_professional_development.jpg"
+      // ,title: 'Interactive professional development connecting educators to the National Quality Framework'
       // ,subtitle: 'Slogan'
     }
-     
- 
-    // ,{ url: "images/fp/PDcoop.jpg",
-    //   title: 'Disability',
-    //   subtitle: 'Slogan'}
-    // ,{ url: "images/fp/PDobserving.jpg",
-    //   title: 'Disability',
-    //   subtitle: 'Slogan'}
-    // ,{ url: "images/fp/PDenv.jpg",
-    //   title: 'Disability',
-    //   subtitle: 'Slogan'}
-    // ,{ url: "images/fp/PDinspired.jpg",
-    //   title: 'Disability',
-    //   subtitle: 'Slogan'}
-    
 ];
 
 var exports = {
@@ -241,8 +242,9 @@ var exports = {
         //relative to this root:
         ,partials: 'build/'  //can be overridden per template
         ,out:'built' 
-        // ,monitor: 'build'
+        ,js: 'js'
     }
+    ,routes: routes
     
     //Every partial generates a string. How the partial is generated
     //depends on its type. Each type can define more than one partial
@@ -254,6 +256,11 @@ var exports = {
     ,partials: {
         ids: {
             title: '<title>Test New Html-builder</title>'
+            ,image_courses: '<img class="span12" src="images/slides/tab_accredited_training.jpg" alt="image"/>'
+            ,image_aboutus: '<img class="span12" src="images/slides/tab_about_us.jpg" alt="image"/>'
+            ,image_pd: '<img class="span12" src="images/slides/tab_professional_development.jpg" alt="image"/>'
+            ,image_resources: '<img class="span12" src="images/slides/tab_resources.jpg" alt="image"/>'
+            ,image_blog: '<img class="span12" src="images/slides/tab_blog.jpg" alt="image"/>'
         }
         ,metaBlock : {
             id: 'meta',
@@ -281,40 +288,36 @@ var exports = {
                        slides: slides
                      }
                     ]
-        ,menu: [{ type: 'superfish',
-                  tree: mainMenuTree,
-                  id: 'superfish'
-                },
+        ,menu: [
+            // { type: 'superfish',
+            //       tree: mainMenuTree,
+            //       id: 'superfish'
+            //     },
                 { type: 'css',
                   tree: mainMenuTree,
                   id: 'cssmenu'
                 }
+                ,{ type: 'css',
+                  tree: mainMenuTree,
+                  id: 'fixedmenu'
+                }
                ]
         ,template: [
-            { id: 'showhide_pd_inspired_info',
-               src: 'html/showhide_pd_inspired_info'
-               // ,out : 'test.html'
+            //Home
+            {  src: 'views/view_home_partial.html'
+               ,out : 'view-home.html'
                ,mapping: {
-                   "pd_inspired_info_md": "markdown/pd_inspired_info.md"
-               }} 
-            ,{ id: 'showhide_pd_coop_info',
-               src: 'html/showhide_pd_coop_info'
-               // ,out : 'test.html'
-               ,mapping: {
-                   "pd_coop_info_md": "markdown/pd_coop_info.md"
-               }}, 
-            { id: 'showhide_pd_environment_info',
-               src: 'html/showhide_pd_environment_info'
-               // ,out : 'test.html'
-               ,mapping: {
-                   "pd_environment_info_md": "markdown/pd_environment_info.md"
-               }}, 
-            { id: 'showhide_pd_observing_info',
-               src: 'html/showhide_pd_observing_info'
-               // ,out : 'test.html'
-               ,mapping: {
-                   "pd_observing_info_md": "markdown/pd_observing_info.md"
+                   sidebar: 'html/sidebar'
+                   // ,slogan: 'html/slogan'
+                   ,slideShow: 'flex',
+                   homeContents: 'markdown/welcome.md'
                }}
+            
+            //ProfDev
+           ,{ id: "showhide_pd_inspired_info", showhide: "markdown/pd_inspired_info.md" },
+            { id: "showhide_pd_coop_info", showhide: "markdown/pd_coop_info.md"}, 
+            { id: "showhide_pd_environment_info", showhide: "markdown/pd_environment_info.md"},
+            { id: "showhide_pd_observing_info", showhide: "markdown/pd_observing_info.md" }
             ,{ id:"pd_wrapper",
                src: 'markdown/pd.md'
                // ,out : 'test.html'
@@ -330,26 +333,59 @@ var exports = {
                ,mapping: {
                    sidebar: 'html/sidebar'
                    ,slogan: 'html/slogan'
+                   ,image: 'image_pd'
                    ,contents: 'pd_wrapper'
                }}
-            ,{ 
-               src: 'views/view_home_partial.html'
-               ,out : 'view-home.html'
-               ,mapping: {
-                   sidebar: 'html/sidebar'
-                   ,slogan: 'html/slogan'
-                   ,slideShow: 'flex',
-                   homeContents: 'markdown/welcome.md'
-               }}
+            
+            //Courses
             ,{ 
                src: 'views/view_courses_partial.html'
                ,out : 'view-courses.html'
                ,mapping: {
                    sidebar: 'html/sidebar'
+                   ,image: 'image_courses'
                    // ,slogan: 'slogan'
                    // ,slideShow: 'flex',
                    ,contents: 'markdown/courses.md'
                }}
+            
+            //About us
+            ,{ 
+               src: 'views/view_aboutus_partial.html'
+               ,out : 'view-aboutus.html'
+               ,mapping: {
+                   sidebar: 'html/sidebar'
+                   ,image: 'image_aboutus'
+                   // ,slogan: 'slogan'
+                   // ,slideShow: 'flex',
+                   ,contents: 'markdown/aboutus.md'
+               }}
+            
+            //Resources
+            ,{ 
+               src: 'views/view_resources_partial.html'
+               ,out : 'view-resources.html'
+               ,mapping: {
+                   sidebar: 'html/sidebar'
+                   ,image: 'image_resources'
+                   // ,slogan: 'slogan'
+                   // ,slideShow: 'flex',
+                   ,contents: 'markdown/resources.md'
+               }}
+            
+            //Blog
+            ,{ 
+               src: 'views/view_blog_partial.html'
+               ,out : 'view-blog.html'
+               ,mapping: {
+                   sidebar: 'html/sidebar'
+                   ,image: 'image_blog'
+                   // ,slogan: 'slogan'
+                   // ,slideShow: 'flex',
+                   // ,contents: 'markdown/resources.md'
+               }}
+            
+            //Misc
             ,{
                src: 'views/view_epic_partial.html'
                ,out : 'view-epic.html'
@@ -360,6 +396,7 @@ var exports = {
                    // homeContents: 'markdown/welcome.md'
                }}
             
+            //Main layout
             ,{ id: 'page' 
               ,src: 'html/basicAngularPage.html'
                //Maps tag ids to partial ids. Tag ids have to be
@@ -385,7 +422,7 @@ var exports = {
                    ,studentLogin: 'html/wisenet-login'
                    ,search: 'html/search'
                    ,menu: 'cssmenu'
-                   // ,viewHome: 'view-home'
+                   ,fixedmenu: 'fixedmenu'
                    ,footerLeft: 'html/footerLeft'
                    ,footerMiddle: 'html/footerMiddle'
                    ,footerRight: 'html/footerRight'

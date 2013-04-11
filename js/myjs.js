@@ -22,7 +22,27 @@ jQuery(document).ready(function(){
             subject: 'A Feeback Message'
         });
     });
-    
+    $(".scroll").click(function(event){
+        
+        console.log('click on scroll');
+        //prevent the default action for the click event
+        event.preventDefault();
+        
+        //get the full url - like mysitecom/index.htm#home
+        var full_url = this.href;
+        
+        //split the url by # and get the anchor target name - home in mysitecom/index.htm#home
+        var parts = full_url.split("#");
+        console.log(parts);
+        var trgt = parts[parts.length-1];
+        
+            //get the top offset of the target anchor
+        var target_offset = $("#"+trgt).offset();
+            var target_top = target_offset.top;
+            
+        //goto that anchor by setting the body scroll top to anchor top
+        $('html, body').animate({scrollTop:target_top - 30}, 1000, 'easeOutQuad');
+    });
     
 });
 
@@ -38,17 +58,22 @@ jQuery(window).scroll(function(){
     }
 }); 
 
-function showHide(shID) {
-	if (document.getElementById(shID)) {
-		if (document.getElementById(shID+'-show').style.display != 'none') {
-			document.getElementById(shID+'-show').style.display = 'none';
-			document.getElementById(shID).style.display = 'block';
-		}
-		else {
-			document.getElementById(shID+'-show').style.display = 'inline';
-			document.getElementById(shID).style.display = 'none';
-		}
-	}
-}
+/* Responsive Menu */
+(function() {
+    selectnav('nav', {
+        label: 'Menu',
+        nested: true,
+        indent: '-'
+    });
+    
+})();
 
-
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 200) {
+        // $('.fixedbar').addClass('fix');
+        $('.fixedbar').fadeIn();
+    } else {
+        $('.fixedbar').fadeOut();
+	// $('.fixedbar').removeClass('fix');
+    }
+});

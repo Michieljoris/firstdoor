@@ -9,37 +9,55 @@ Need to install filemonitor module with npm install filemonitor
 Resize images to proper size then include with height=auto and
 max-width=100%
 
+** mind the url with hashbang routing urls:
+   href: 'index.html#!/home'
+   it's  #!/route following the main page (index.html in this case)
+
+** resizing images:
+Install imagemagick then
+mogrify -resize x450 *.jpg
+to resize all images in dir
+and:
+mogrify -quality 80 *.jpg
+to compress
+
 * todo
 ** angularjs
-** feedback
-** chat
    
-
+** search button!!!
+** chat
+** blog   
+** hook up markdown editor with server
+** contact us in green door, and on every site
+  send message thanks for contacting us etc 
+  contact us page
+   
+** learning style quiz
+** bigger door
 ** clean up css for narrow screen, change menu type   
-** back button!!!
+** bread crumbs
+** SEO
+** bootstrap tooltips for social buttons
 ** slider with text sliding in 
 *** cslider, index3.html
 *** Sequence slider
-** learning style quiz
-** hide links in pd
-** test ie, safari, and opera 
-** rework making of menus with routing auto set
-** checkout http://www.tlctrainingsolutions.com.au/children_service_course 
-
-** incorporate website feature doc
-** bread crumbs
-** photo on every page
-
-** contact us in green door, and on every site
-
-** hook up markdown editor with server
    
+   
+   
+   The wording for the four rolling images on the home page are:
+1. Early Childhood Education and Care training
+ 
+2. First Door mentoring inspires focused students
+ 
+3. Innovative resources to bridge the gap between theory and practice
+4. Interactive professional development connecting educators to the National Quality Framework
    
 * Email to Andrea:
-Linked in button? Other buttons are going to be linked?  Skype name
-Photo missing for frontpage format: interactive pd
 Bars on either side on every page?
 I put all images used in Dropbox
+No spaces in image names? Replace with underscore
+I can make separate page for the pd pages, with the images big on top
+again if you like.
 
 
 * Contact

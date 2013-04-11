@@ -8,8 +8,12 @@
 
 **Professional development designed to meet your Centre’s needs.** When the course of workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.
 
+
+
 <div id="course1"></div>
+			
 ##Workshop One: 
+<img class="span12" src="images/slides/PD_Inspired_educator.jpg" alt="image"/>
 ###The Inspired Educator, working with a child focused approach
 
 Reconnect to the passion and to the value of the professional educator’s role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children. 
@@ -34,6 +38,7 @@ elements:
 
 <div id="course2"></div>
 ##Workshop Two: 
+<img class="span12" src="images/slides/PD_Observing_and_documenting.jpg" alt="image"/>
 ###Observation, documentation, planning and evaluating
 
 Understand the value and purpose of these processes. Become inspired to use strategies that are simplistic and effective. Undertake a practical case study and learn to use Learning Stories to build success, observe, document and plan for each child’s development. This workshop refers to the EYLF  Early Childhood Pedagogy, Learning Outcomes and the EYLF practices Intentional teaching and Assessment for Learning 
@@ -72,6 +77,7 @@ elements:
 <div id="course3"></div>
 
 ##Workshop Three:
+<img class="span12" src="images/slides/PD_Environment_and_experiences.jpg" alt="image"/>
 ###Environment and experiences 
 
 Educators will be inspired to create learning environments and experiences that engage children into learning through play, enable holistic development and guide each child’s learning in the five outcomes. 
@@ -100,6 +106,7 @@ This workshop relates to the following National Quality Standards and
 <a id="course4"></a>
 
 ##Workshop Four: 
+<img class="span12" src="images/slides/PD_cooperative_behaviour.jpg" alt="image"/>
 ###Developing Cooperative Behaviour
 
 This workshop provides educators with strategies to refocus their approach to unacceptable behaviour, and proactively develop cooperative behaviour. It is recommended that this workshop be extended over four hours or over two sessions if educators are working reactively to complex behaviours and/or have limited understanding of these concepts. 
