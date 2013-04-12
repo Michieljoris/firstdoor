@@ -1,3 +1,7 @@
+/*global $:false jQuery:false exports:false*/
+/*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
+/*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
+
 // initialise Superfish
 
 jQuery(document).ready(function(){
@@ -16,12 +20,12 @@ jQuery(document).ready(function(){
         return false;
     });
 
-    $(function(){
-        console.log('contactable');
-        $('#contactable').contactable({
-            subject: 'A Feeback Message'
-        });
-    });
+    // $(function(){
+    //     console.log('contactable');
+    //     $('#contactable').contactable({
+    //         subject: 'A Feeback Message'
+    //     });
+    // });
     $(".scroll").click(function(event){
         
         console.log('click on scroll');
@@ -33,15 +37,18 @@ jQuery(document).ready(function(){
         
         //split the url by # and get the anchor target name - home in mysitecom/index.htm#home
         var parts = full_url.split("#");
-        console.log(parts);
+        // console.log(parts);
         var trgt = parts[parts.length-1];
         
-            //get the top offset of the target anchor
+        if (trgt[0] === '!') return;
+        //get the top offset of the target anchor
         var target_offset = $("#"+trgt).offset();
+        if (target_offset) {
             var target_top = target_offset.top;
             
-        //goto that anchor by setting the body scroll top to anchor top
-        $('html, body').animate({scrollTop:target_top - 30}, 1000, 'easeOutQuad');
+            //goto that anchor by setting the body scroll top to anchor top
+            $('html, body').animate({scrollTop:target_top }, 1000, 'easeOutQuad');
+        }
     });
     
 });
@@ -69,7 +76,7 @@ jQuery(window).scroll(function(){
 })();
 
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 200) {
+    if ($(this).scrollTop() > 220) {
         // $('.fixedbar').addClass('fix');
         $('.fixedbar').fadeIn();
     } else {
@@ -77,3 +84,5 @@ $(window).scroll(function() {
 	// $('.fixedbar').removeClass('fix');
     }
 });
+
+

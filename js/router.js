@@ -15,6 +15,9 @@ angular.module('ngView', [], function($routeProvider, $locationProvider) {
 ,["quiz", "/build/markdown/quiz.md"]
 ,["blog", "/built/view-blog.html"]
 ,["epic", "/built/view-epic.html", EpicCntl]
+,["chat", "/built/view-chat.html", chatCntl]
+,["filebrowser", "/built/view-filebrowser.html", filebrowserCntl]
+,["contactus", "/built/view-contactus.html", contactusCntl]
 
             // ['home', '/built/view-home.html', HomeCntl],
             // ['aboutus', '/build/markdown/aboutus.md'],

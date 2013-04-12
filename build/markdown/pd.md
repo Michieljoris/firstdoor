@@ -103,7 +103,7 @@ This workshop relates to the following National Quality Standards and
  elements:
 <span id="showhide_pd_environment_info--"></span>
 
-<a id="course4"></a>
+<div id="course4"></div>
 
 ##Workshop Four: 
 <img class="span12" src="images/slides/PD_cooperative_behaviour.jpg" alt="image"/>

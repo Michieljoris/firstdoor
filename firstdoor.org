@@ -32,6 +32,10 @@ to compress
   send message thanks for contacting us etc 
   contact us page
    
+  
+** fix up ipad issues
+  menu won't go away, won't scroll to id tag. 
+  
 ** learning style quiz
 ** bigger door
 ** clean up css for narrow screen, change menu type   
@@ -51,6 +55,7 @@ to compress
  
 3. Innovative resources to bridge the gap between theory and practice
 4. Interactive professional development connecting educators to the National Quality Framework
+   
    
 * Email to Andrea:
 Bars on either side on every page?

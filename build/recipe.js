@@ -19,7 +19,7 @@ var css = [
     ,'social'
     ,'contact'
     // ,'feedback'
-    ,'contactable'
+    // ,'contactable'
     
     ,'main'
     //FancyBox is a tool for displaying images, html content and
@@ -28,6 +28,7 @@ var css = [
     // ,"fancybox"
     // ,'misc'
     ,'cslider'
+    ,'chat'
     //footer
     // ,'photo-stream'
     // ,'footer-twitter-widget'
@@ -58,11 +59,11 @@ var js = [
     // Firefox autoreload
     // 'livepage',
     
-    //Version 1.7.2
-    'jquery'
-    // 'jquery-1.9.1.min.js'
-    // 'jquery-1.6.2.js'
     // ,'https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min'
+    //Version 1.7.2
+    // 'jquery'
+    'jquery-1.9.1.min.js'
+    // 'jquery-1.6.2.js'
     ,'angular.min'
     
     // Modernizr is a small JavaScript library that detects the
@@ -75,6 +76,7 @@ var js = [
     // implemented or not.
     ,'modernizr'
     ,'selectnav'
+    // ,'chat'
     // 'twitter',//??
     
     //FancyBox is a tool for displaying images, html content and
@@ -105,13 +107,19 @@ var js = [
     ,'epiceditor.min.js'
     ,'myjs'
     ,'controllers'
+    ,'filebrowserCntl'
     ,'router'
     
-    ,'jquery.validate.pack'
-    ,'jquery.contactable.min'
+    // ,'jquery.validate'
+    // ,'jquery.contactable'
     // ,'feedback'
     
     ,'jquery.cslider'
+    
+    
+    ,'jquery.tabSlideOut.v1.3.js'
+    ,'feedback'
+    
     // A lightweight, easy-to-use jQuery plugin for fluid width video embeds.       
     // ,'jquery.fitvids'
     
@@ -142,11 +150,19 @@ var routes = [
     ['courses', '/built/view-courses.html'],
     ['quiz', '/build/markdown/quiz.md'],
     ['blog', '/built/view-blog.html'],
-    ['epic', '/built/view-epic.html', 'EpicCntl']
+    ['epic', '/built/view-epic.html', 'EpicCntl'],
+    ['chat', '/built/view-chat.html', 'chatCntl'],
+    ['filebrowser', '/built/view-filebrowser.html', 'filebrowserCntl'],
+    ['contactus', '/built/view-contactus.html', 'contactusCntl']
 ];
 
 var mainMenuTree = [
-    { label: 'Home', icon: '', route: 'home' }
+    { label: 'Home', icon: '', route: 'home',
+       sub: [
+           { label: 'Contact us', route: 'contactus', scroll: true}
+           ]
+    }
+    
     
     ,{ label: 'About us', icon: '', route: 'aboutus',
        sub: [
@@ -196,6 +212,8 @@ var mainMenuTree = [
     ,{ label: 'Blog', icon: '', route: 'blog'
        ,sub: [ 
            { label: 'Markdown editor', route: 'epic'}
+           ,{ label: 'Chat', route: 'chat'}
+           ,{ label: 'File browser', route: 'filebrowser'}
            ,{ label: 'Quiz', route: 'quiz'}
            // ,{ label: 'Submenu item 2', route: 'index.html'}
            // ,{ label: 'Submenu item 2', route: 'index.html'}
@@ -255,7 +273,7 @@ var exports = {
     //to generate a string to save to the file defined in 'out'.
     ,partials: {
         ids: {
-            title: '<title>Test New Html-builder</title>'
+            title: '<title>Firstdoor - Leaders in developing capability</title>'
             ,image_courses: '<img class="span12" src="images/slides/tab_accredited_training.jpg" alt="image"/>'
             ,image_aboutus: '<img class="span12" src="images/slides/tab_about_us.jpg" alt="image"/>'
             ,image_pd: '<img class="span12" src="images/slides/tab_professional_development.jpg" alt="image"/>'
@@ -274,19 +292,27 @@ var exports = {
             files: css,
             path: 'css/'
         }
-        ,scriptBlock: {
-            id: 'myJsBlock',
-            files: js,
-            path: 'js/'
-        }
+        ,scriptBlock: [
+            {
+                id: 'headJsBlock',
+                files: [
+                ],
+                path: 'js/'
+            },
+            {
+                id: 'myJsBlock',
+                files: js,
+                path: 'js/'
+            }
+        ]
         ,slideShow: [{ type: 'flex',
                        id: 'flex',
                        slides: slides
                      }
-                     ,{ type: 'camera',
-                       id: 'camera',
-                       slides: slides
-                     }
+                     // ,{ type: 'camera',
+                     //   id: 'camera',
+                     //   slides: slides
+                     // }
                     ]
         ,menu: [
             // { type: 'superfish',
@@ -386,6 +412,17 @@ var exports = {
                }}
             
             //Misc
+            //Contact Us
+            ,{
+               src: 'views/view_contactus_partial.html'
+               ,out : 'view-contactus.html'
+               ,mapping: {
+                   // sidebar: 'html/sidebar'
+                   // ,slogan: 'html/slogan'
+                   // ,slideShow: 'flex',
+                   // homeContents: 'markdown/welcome.md'
+               }}
+            //Epic editor
             ,{
                src: 'views/view_epic_partial.html'
                ,out : 'view-epic.html'
@@ -394,6 +431,22 @@ var exports = {
                    // ,slogan: 'html/slogan'
                    // ,slideShow: 'flex',
                    // homeContents: 'markdown/welcome.md'
+               }}
+            //Chat
+            ,{
+               src: 'views/view_chat_partial.html'
+               ,out : 'view-chat.html'
+               ,mapping: {
+                   left: 'html/chat.html',
+                   right: 'markdown/chat.md'
+               }}
+            //FileBrowser
+            ,{
+               src: 'views/view_filebrowser_partial.html'
+               ,out : 'view-filebrowser.html'
+               ,mapping: {
+                   left: 'html/chat.html',
+                   right: 'markdown/chat.md'
                }}
             
             //Main layout
@@ -406,7 +459,7 @@ var exports = {
                //converted to html. Partials in an array will be
                //concatenated before inserted at the tag id element
               ,mapping: {
-                  head: ['title', 'meta', 'myLinkBlock','_linkBlock'],
+                  head: ['title', 'meta', 'headJsBlock', 'myLinkBlock','_linkBlock'],
                   body: ['html/body.html', 'myJsBlock', '_scriptBlock']
               }
             }

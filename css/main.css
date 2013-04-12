@@ -521,6 +521,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index:20;
     opacity:1;
     height:40px;
+    display: none;
     
     /* -webkit-transition: all 1s ease-in-out;  */
     /* -moz-transition: all 1s ease-in-out;  */
@@ -532,3 +533,15 @@ h1, h2, h3, h4, h5, h6 {
 #image-- {
     padding-left:12;
 }
+
+.slide-out-div {
+          padding: 20px;
+          width: 250px;
+          background: #ccc;
+          border: 1px solid #29216d;
+	  z-index:300;
+      }   
+/*  The blackbar at the top is messing with scrolling to tags, so if a  */
+/*  md file has div with tags in them we scroll a bit further, the md  */
+/* file needs to be in a div with the contents-- tag  */
+#contents-- div{padding-top: 20px; }
