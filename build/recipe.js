@@ -64,7 +64,8 @@ var js = [
     // 'jquery'
     'jquery-1.9.1.min.js'
     // 'jquery-1.6.2.js'
-    ,'angular.min'
+    ,'angular-1.1.4/angular.min'
+    // ,'angular-1.1.4/angular-sanitize.min'
     
     // Modernizr is a small JavaScript library that detects the
     // availability of native implementations for next-generation
@@ -152,7 +153,7 @@ var routes = [
     ['blog', '/built/view-blog.html'],
     ['epic', '/built/view-epic.html', 'EpicCntl'],
     ['chat', '/built/view-chat.html', 'chatCntl'],
-    ['filebrowser', '/built/view-filebrowser.html', 'filebrowserCntl'],
+    ['edit', '/built/view-filebrowser.html', 'filebrowserCntl'],
     ['contactus', '/built/view-contactus.html', 'contactusCntl']
 ];
 
@@ -211,9 +212,9 @@ var mainMenuTree = [
      } 
     ,{ label: 'Blog', icon: '', route: 'blog'
        ,sub: [ 
-           { label: 'Markdown editor', route: 'epic'}
-           ,{ label: 'Chat', route: 'chat'}
-           ,{ label: 'File browser', route: 'filebrowser'}
+           // { label: 'Markdown editor', route: 'epic'}
+           { label: 'Chat', route: 'chat'}
+           ,{ label: 'Edit', route: 'edit'}
            ,{ label: 'Quiz', route: 'quiz'}
            // ,{ label: 'Submenu item 2', route: 'index.html'}
            // ,{ label: 'Submenu item 2', route: 'index.html'}

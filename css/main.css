@@ -37,8 +37,8 @@ body {
 /*     /\* padding-bottom: 50px;  *\/ */
 /*     padding-left: 0px; */
 /*     padding-right: 0px; */
-    padding-left: 30px; 
-    padding-right: 30px; 
+    padding-left: 80px; 
+    padding-right: 80px; 
     padding-bottom: 380px;
 
 }
@@ -54,9 +54,9 @@ body {
 /* ---------------------------------= */
 /* Header
 ----------------------------------- */
-#header {min-height: 120px; padding: 10px;}
+#header {min-height: 120px; padding-bottom: 10px;}
 
-#logo-- {padding: 5px 30px 0px 40px;}
+#logo-- {padding: 5px 30px 0px 10px;}
 
 #top-line  {
     background-color: #3D9444;
@@ -72,6 +72,15 @@ body {
     padding-right: 15px;
     padding-bottom:10px;
     }
+
+#wisenetLogin {
+    background-image: linear-gradient(to bottom,  #f26500, #cc5500);
+    background-color: #f26500;
+   } 
+#wisenetLogin:hover {
+    background-color: #f26500;
+    background-image: linear-gradient(to bottom, #f26500, #f26500);
+   } 
 
 #search {
     padding-right: 14px; 
@@ -314,7 +323,7 @@ body {
     border-radius: 3px 3px 3px 3px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
     height: 600px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 h2 {

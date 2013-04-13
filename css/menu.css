@@ -81,7 +81,7 @@ Purpose of the stylesheet follows.
 }
 .menu>li>a{color:#7D7D7D;
            font-weight:400;
-           font-size:13px;
+           font-size:17px;
            line-height:18px;
            padding:10px 10px 16px 10px;
 }
@@ -111,7 +111,7 @@ Purpose of the stylesheet follows.
     box-shadow:0 1px 1px rgba(0,0,0,.04)}
 .menu ul a{
     color:#fff;
-    font-size:12px;
+    font-size:13px;
     line-height:18px;
     padding:10px 12px;
 }
