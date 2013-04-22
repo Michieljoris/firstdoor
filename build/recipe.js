@@ -153,15 +153,15 @@ var routes = [
     ['blog', '/built/view-blog.html'],
     ['epic', '/built/view-epic.html', 'EpicCntl'],
     ['chat', '/built/view-chat.html', 'chatCntl'],
-    ['edit', '/built/view-filebrowser.html', 'filebrowserCntl'],
+    ['filebrowser', '/built/view-filebrowser.html', 'filebrowserCntl'],
     ['contactus', '/built/view-contactus.html', 'contactusCntl']
 ];
 
 var mainMenuTree = [
-    { label: 'Home', icon: '', route: 'home',
-       sub: [
-           { label: 'Contact us', route: 'contactus', scroll: true}
-           ]
+    { label: 'Home', icon: '', route: 'home'
+       // sub: [
+       //     { label: 'Contact us', route: 'contactus', scroll: true}
+       //     ]
     }
     
     
@@ -184,7 +184,7 @@ var mainMenuTree = [
            // ,{ label: 'Aged care', route: 'courses#agedcare'}
        ]
      } 
-    ,{ label: 'Professional developement', icon: '', route: 'pd'
+    ,{ label: 'Professional development', icon: '', route: 'pd'
        ,sub: [
            { label: 'The Inspired Educator, <span>working with a child focused approach</span>', route: 'pd#course1', scroll: true}
            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#course2', scroll: true}
@@ -214,13 +214,14 @@ var mainMenuTree = [
        ,sub: [ 
            // { label: 'Markdown editor', route: 'epic'}
            { label: 'Chat', route: 'chat'}
-           ,{ label: 'Edit', route: 'edit'}
+           ,{ label: 'Editor', route: 'filebrowser'}
            ,{ label: 'Quiz', route: 'quiz'}
            // ,{ label: 'Submenu item 2', route: 'index.html'}
            // ,{ label: 'Submenu item 2', route: 'index.html'}
        ]
        
      } 
+    ,{ label: 'Contact us', route: 'contactus', scroll: true}
 ];
 /*
 The wording for the four rolling images on the home page are:
