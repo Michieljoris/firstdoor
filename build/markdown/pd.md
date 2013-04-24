@@ -12,13 +12,12 @@
 
 <div id="course1"></div>
 			
-##Workshop One: 
+##Workshop One: The inspired, child focused educator
 <img class="span12" src="images/slides/PD_Inspired_educator.jpg" alt="image"/>
-###The Inspired Educator, working with a child focused approach
-
+<br>
 Reconnect to the passion and to the value of the professional educator’s role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children. 
 
-**Topics include:**
+###Topics include:
 
 - Our impact on children’s physical, personal, social, emotional and spiritual well-being.
 - Culture and the family context
@@ -37,9 +36,8 @@ elements:
 <span id="showhide_pd_inspired_info--"></span>
 
 <div id="course2"></div>
-##Workshop Two: 
+##Workshop Two: Observation, documentation, planning and evaluating
 <img class="span12" src="images/slides/PD_Observing_and_documenting.jpg" alt="image"/>
-###Observation, documentation, planning and evaluating
 
 Understand the value and purpose of these processes. Become inspired to use strategies that are simplistic and effective. Undertake a practical case study and learn to use Learning Stories to build success, observe, document and plan for each child’s development. This workshop refers to the EYLF  Early Childhood Pedagogy, Learning Outcomes and the EYLF practices Intentional teaching and Assessment for Learning 
 
@@ -76,9 +74,8 @@ elements:
 
 <div id="course3"></div>
 
-##Workshop Three:
+##Workshop Three: Environment and experiences 
 <img class="span12" src="images/slides/PD_Environment_and_experiences.jpg" alt="image"/>
-###Environment and experiences 
 
 Educators will be inspired to create learning environments and experiences that engage children into learning through play, enable holistic development and guide each child’s learning in the five outcomes. 
 The EYLF PRACTICES discussed are: Learning through Play, Intentional Teaching and Learning Environments.
@@ -105,9 +102,8 @@ This workshop relates to the following National Quality Standards and
 
 <div id="course4"></div>
 
-##Workshop Four: 
+##Workshop Four: Developing Cooperative Behaviour
 <img class="span12" src="images/slides/PD_cooperative_behaviour.jpg" alt="image"/>
-###Developing Cooperative Behaviour
 
 This workshop provides educators with strategies to refocus their approach to unacceptable behaviour, and proactively develop cooperative behaviour. It is recommended that this workshop be extended over four hours or over two sessions if educators are working reactively to complex behaviours and/or have limited understanding of these concepts. 
 The EYLF PRINCIPLES are discussed, being: Secure, Respectful and Reciprocal Relationships; Partnerships; High Expectations and Equity; Respect for Diversity; and, Ongoing Learning and Reflective Practice.
@@ -137,3 +133,74 @@ The EYLF PRINCIPLES are discussed, being: Secure, Respectful and Reciprocal Rela
 This workshop relates to the following National Quality Standards and
 elements: 
 <span id="showhide_pd_coop_info--"></span>
+
+
+<div id="course5"></div>
+##Workshop Five: Evaluation and reflective practice for improved program and practice 
+<img class="span12" src="images/slides/PD_reflective_practice.jpg" alt="image"/>
+Ongoing learning and reflective practice is a key principle of the Framework. Educators will be assisted in seeking ways to build their professional knowledge and develop learning communities. The intention is to gather information and gain insights that support, inform and enrich professional practice and decision-making about children’s well-being and development.
+
+###Topics include:
+####Evaluation 
+- Evaluation involves using knowledge/philosophies and collaboration.
+- Tool to assess how we provide equity for each child to have opportunities to achieve the learning outcomes.
+- Establishing the purpose of evaluation and what is to be evaluated.  
+- Determining the evaluation methods to be established.
+- Documenting formal and informal evaluation.
+- Using evaluation in future planning to improve practice, the program
+  and environment.
+- Practical case study: relevant to the Centre’s needs to establish
+  evaluation methods.
+  
+####Reflective practice
+- Reflective practice for ongoing learning and improvement that nurtures professional growth.
+- Understanding critical reflection.
+- Process to describe, analyse and integrate educators thinking and ideas.
+- Using the NQF guide and National Quality Standard for critical questions. 
+- Gathering information to gain insights through conversations, discussions and writing in journal.
+- Reflective practice process: deconstruct, confront, theorise, think
+  otherwise. 
+  
+This workshop relates to the following National Quality Standards and elements:
+<span id="showhide_pd_evaluation_info--"></span>
+
+<div id="course6"></div>
+##Workshop Six: Children at Risk: identify and respond 
+<img class="span12" src="images/slides/PD_identifying_at_risk_childen.jpg" alt="image"/>
+This workshop details the knowledge and skills required to address duty of care requirements, working within an ethical framework and applying relevant legislation, policies and procedures in responding to children and young people at risk.
+
+###Topics include:
+- Complying with lawful instructions, regulations and duty of care in all work activities.
+- Identifying children at risk by observation.
+- Responding to disclosure, information or signs and symptoms.
+- Employing communication and information gathering techniques.
+- Reporting possible risk of harm.
+
+This workshop relates to the following National Quality Standards and
+elements: 
+<span id="showhide_pd_children_info--"></span>
+
+<div id="course7"></div>
+##Workshop Seven: Identify and Manage Risk to protect against harm 
+
+<img class="span12" src="images/slides/PD_managing_risk.jpg" alt="image"/>
+This workshop supports the educator in their responsibility to ensure that all children are protected and safe while they are in an approved service. Educators will learn to proactively identify and minimise potential risks in their centre through conducting a risk assessment.  
+
+###Topics include:
+- Identifying potential risks.
+- Planning for and ensuring effective supervision.
+- Managing hazards and potential risks.
+- Encouraging children to identify and minimise risks.
+- Conducting risk assessments.
+- Planning and implementing emergency procedures.
+- Strategies to control the spread of infectious diseases, and to manage injuries and illnesses.
+- Practical case study: Perform a risk assessment in the Centre’s
+  environment
+  
+This workshop relates to the following National Quality Standards and
+elements: 
+<span id="showhide_pd_risk_info--"></span>
+
+<div id="course8"></div>
+##Workshop Eight: Professional Development ECEC
+Customised workshop: for your Centre’s needs

@@ -3,9 +3,9 @@
 First door is currently submitting an application to the Australian Skills Quality Authority (ASQA) for initial Registered Training Organisation (RTO) registration. Accredited training in these units and courses will follow shortly after the registration process: 
 
 <div id="childrenservices"></div>
-###CHC50908 Diploma of Children's Services (Early Childhood Education and Care) 
+##CHC50908 Diploma of Children's Services (Early Childhood Education and Care) 
 
-####CORE UNITS
+###CORE UNITS
 
 	CHCCN511B 		Establish and maintain a safe and healthy environment for children
 	CHCFC502A 		Foster physical development in early childhood
@@ -21,7 +21,7 @@ First door is currently submitting an application to the Australian Skills Quali
 	CHCPR510B 		Design, implement and evaluate programs and care routines for children
 	CHCRF511A 		Work in partnership with families to provide appropriate care for children
 
-####ELECTIVES (Choose five units)
+###ELECTIVES (Choose five units)
 
 	HLTHIR403C		Work effectively with culturally diverse clients and co-workers
 	CHCIC512A		Plan the inclusion of children with additional needs
@@ -32,7 +32,7 @@ First door is currently submitting an application to the Australian Skills Quali
 
 
 <div id="diploma_management"></div>
-###Diploma of Management 
+##Diploma of Management 
 
 	BSBMGT608C 	Manage innovation and continuous improvement
 	BSBRSK501B	Manage risk
@@ -41,7 +41,7 @@ First door is currently submitting an application to the Australian Skills Quali
 The full course of units for Diploma of Management is currently being developed by First Door.
 
 <div id="certivtraining"></div>
-###Certificate lV in Training and Assessment 
+##Certificate lV in Training and Assessment 
 
 Units are recommended for Lead Educators and Educational Leaders
 

@@ -4,7 +4,7 @@
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
 // var myAppModule = angular.module('myApp', ['ngView', 'ngSanitize']);
-var myAppModule = angular.module('myApp', ['ngView'])
+var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
     .directive('compile', function($compile) {
     // directive factory creates a link function
     return function(scope, element, attrs) {
@@ -53,8 +53,39 @@ var myAppModule = angular.module('myApp', ['ngView'])
 //         }
 //       );
 //     };
-//   });
-// });
+//   });// });
+
+// function YtCntl($scope, $route, $routeParams, $location) {
+//     var yt_videos = ['4r7wHMg5Yjg','txqiwrbYGrs','dMH0bHeiRNg','Z3ZAGBL6UBA','60og9gwKh1o','2K-TICdG1R8','CdD8s0jFJYo','Q5im0Ssyyus','4pXfHLUlZf4'];
+
+//     /*Video height and width*/
+//     var yt_height = 419;
+//     var yt_width = 766;
+
+//     /*-----DO NOT EDIT BELOW THIS-----*/
+//     var yt_html = "";
+	
+//     for (var num=0, len=yt_videos.length; num<len; ++num){
+// 	yt_html = yt_html + "<li><a onclick='change_embeded(\"" + yt_videos[num] + "\")'><img src='http://img.youtube.com/vi/"+yt_videos[num]+"/2.jpg' class='myimage' style='max-height:75px;' /></a></li>";
+//     }
+	
+//     jQuery('#yt_container').html('<div id="yt_videosurround"><div id="yt_embededvideo"><object width="'+ yt_width +'" height="'+ yt_height +'"><param name="movie" value="http://www.youtube.com/v/'+ yt_videos[0] +'?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+ yt_videos[0] +'?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="'+ yt_width +'" height="'+ yt_height +'" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed></object></div></div><ul id="mycarousel" class="jcarousel-skin-tango">'+yt_html+'</ul>');
+//     var embeded_cssObj = {
+// 	'width' : yt_width,
+// 	'height' : yt_height
+//     } 
+//     jQuery('#yt_embededvideo').css(embeded_cssObj);
+//     jQuery('#yt_videosurround').css(embeded_cssObj);
+//     jQuery('#mycarousel').jcarousel({
+//     	wrap: 'circular'
+//     });
+    
+//     function change_embeded(video_id){
+// 	jQuery('#yt_embededvideo').html('<object width="'+ yt_width +'" height="'+ yt_height +'"><param name="movie" value="http://www.youtube.com/v/'+ video_id +'?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+ video_id +'?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="'+ yt_width +'" height="'+ yt_height +'" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed></object>');
+//     }
+
+// }
+
 
 
 
@@ -95,11 +126,20 @@ function MainCntl($scope, $route, $routeParams, $location) {
     // });
     
 }
- 
-function DefaultCntl($scope, $routeParams) {
+
+var lastRoute='whatever';
+function DefaultCntl($scope, $routeParams, $location) {
     console.log('default controller..');
     $scope.name = "BookCntl";
     $scope.params = $routeParams;
+    console.log($location.$$url);
+    var url = $location.$$url;
+    if (!url) url = "whatever";
+    console.log(url);
+    $(".menu #" + url.slice(1)).attr("class", "active");
+    
+    $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
+    lastRoute = $location.$$url;
     // console.log('course1 tag', $('#course1'));
     
     // var hash = $scope.$location.$$hash;
@@ -124,17 +164,27 @@ function DefaultCntl($scope, $routeParams) {
     
 }
 
-function contactusCntl($scope, $routeParams) {
-    $('#login').bind('click', function() {
-        var user=$('#user').val(), pwd=$('#pass').val();
-        console.log(user, pwd);
+function contactusCntl($scope, $routeParams, $location) {
+    
+    console.log('contactus');
+    var url = $location.$$url;
+    if (!url) url = "whatever";
+    console.log(url);
+    $(".menu #" + url.slice(1)).attr("class", "active");
+    
+    $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
+    lastRoute = $location.$$url;
+    $('#send').bind('click', function() {
+        var username=$('#username').val(), email=$('#email').val();
+        var textmessage=$('#textmessage').val();
+        console.log("From the form:", username, email, textmessage);
         // console.log(JSON.stringify($("#loginForm").serializeObject()));
 
         $.ajax({
             url: "/contactus_form",
             type: "POST",
             contentType: "application/json",
-            data: JSON.stringify({ user: user, pwd:pwd}),
+            data: JSON.stringify({ username:username, email:email, textmessage:textmessage}),
             // data:'balbalbla',
             success: function (data, textStatus, jqXHR) {
                console.log(arguments);
@@ -228,8 +278,18 @@ And some examples to make links: [http://www.google.com]() or [google](http://ww
     editor.importFile('test',str);
 }
  
-function HomeCntl($scope, $routeParams) {
+function HomeCntl($scope, $routeParams, $location) {
+    
     console.log('Home controller..');
+    
+    var url = $location.$$url;
+    if (!url) url = "whatever";
+    console.log(url);
+    $(".menu #" + url.slice(1)).attr("class", "active");
+    
+    $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
+    lastRoute = $location.$$url;
+    
     $('.flexslider').flexslider({
         // animation: "slide",
         easing: 'easeInOutQuad',
