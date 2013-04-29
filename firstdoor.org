@@ -79,17 +79,24 @@ no dangerous html, and spam protected, so some kind of captcha..
 *** Privacy policy
 
 *** Try slogan underneath slideshow.
-*** Black box around tab of page    
-   finish it by making a separate function that sets the class to
-   active/inactive and leaves the original classes , including anchor tags
-*** Resize black menubar when flowing over, then remove when other menu sets in.    
 *** Cache or preload the pages and images somehow!!!    
 preload views!!!   
    Otherwise scrolling doesn't quite get there the first time!!! 
     
 
+   
+*** Email form:
+Clear after sending. Show Sent! dialog.
     
+*** When clicking on link in menu tab, the tab doesn't highlight
     
+Black box around tab of page    
+   finish it by making a separate function that sets the class to
+   active/inactive and leaves the original classes , including anchor tags
+
+*** Authentication!!!!
+
+*** Setup nodejitsu
 * Contact
 Andrea mobile is 0437 870 932 or home p: 3491 3573.
 
