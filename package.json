@@ -1,0 +1,23 @@
+{
+    "name": "firstdoor",
+    "version": "0.1.0",
+    "author": "Michiel van Oosten",
+    "description": "Website for Greendoor business",
+    "repository": {
+	"type": "git",
+	"url": "git://github.com/michieljoris/firstdoor.git"
+    },
+    "scripts": {
+	"start": "node ./server/server.js"
+    },
+    "dependencies": {
+	"bb-server": "*",
+	"html-builder": "*",
+	"nodemailer": "*"
+    },
+    "bugs": {
+	"url": "https://github.com/michieljoris/firstdoor/issues"
+    },
+    "analyze": false,
+    "preferGlobal": "true"
+}

@@ -18,11 +18,6 @@ First Door students are recognised for their higher level of skills, motivation 
 ####Success
 First Door develops professional capability in our students so they can inspire, educate and support others. This culture of building success in people also benefits our stakeholders and society.
 
-
-
-
-
-
 <div id="mission"></div>
 ##Mission Statement
 ####Our purpose  why we are here

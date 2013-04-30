@@ -279,7 +279,7 @@ var slides =  [
 
 var exports = {
     verbose: true
-    ,monitor: true
+    // ,monitor: true
     ,prettyPrintHtml: false
     // ,tagIdPostfix: '__' //can be overridden per template
     ,paths: {
