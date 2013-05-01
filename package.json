@@ -13,7 +13,9 @@
     "dependencies": {
 	"bb-server": "*",
 	"html-builder": "*",
-	"nodemailer": "*"
+	"nodemailer": "*",
+	"dbox": "*"
+	 
     },
     "bugs": {
 	"url": "https://github.com/michieljoris/firstdoor/issues"

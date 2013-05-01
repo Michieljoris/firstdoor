@@ -5,6 +5,9 @@
 var server = require('bb-server'),
     sendMail = require("./firstDoorSendMail.js")
     ,testSendMail = require("./testSendMail.js")
+    ,sync = require("./sync.js")
+    ,dropbox_authorize = require("./dropbox_authorize.js")
+    ,dropbox_connect = require("./dropbox_connect.js")
     // save = require("./save")
 ;
 
@@ -24,6 +27,11 @@ var options = {
         // "/" : save
         "/contactus_form" : testSendMail
         }
+    ,getHandlers: {
+        "/sync": sync,
+        "/dropbox_authorize": dropbox_authorize,
+        "/dropbox_connect": dropbox_connect
+    }
 };
 
 server.go(options);
