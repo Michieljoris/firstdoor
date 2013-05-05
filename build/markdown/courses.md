@@ -15,7 +15,7 @@ First door is currently submitting an application to the Australian Skills Quali
 	CHCFC506A 		Foster children's language and communication development
 	CHCIC501B 	    Manage children's services workplace practice to address regulations and quality assurance
 	CHCIC510A 		Establish and implement plans for developing cooperative behaviour
-	CHCIC512A 		Plan and implement inclusion of children with additional needs
+	CHCFC507A       Use music to enhance children’s experiences and development.
 	CHCPR502E 		Organise experiences to facilitate and enhance children's development
 	CHCPR509A 		Gather, interpret and use information about children
 	CHCPR510B 		Design, implement and evaluate programs and care routines for children
@@ -32,7 +32,7 @@ First door is currently submitting an application to the Australian Skills Quali
 
 
 <div id="diploma_management"></div>
-##Diploma of Management 
+##BSB51107 Diploma of Management 
 
 	BSBMGT608C 	Manage innovation and continuous improvement
 	BSBRSK501B	Manage risk
@@ -41,7 +41,7 @@ First door is currently submitting an application to the Australian Skills Quali
 The full course of units for Diploma of Management is currently being developed by First Door.
 
 <div id="certivtraining"></div>
-##Certificate lV in Training and Assessment 
+##TAE40110 Certificate lV in Training and Assessment 
 
 Units are recommended for Lead Educators and Educational Leaders
 

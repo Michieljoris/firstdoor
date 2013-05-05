@@ -61,24 +61,11 @@ to compress
    
    
 ***  courses and pd  a door with contact us.
-
-*** Links in door on other pages.
-
-
-*** Door bigger, text to the right
-
     
 *** Resources> door will be menu, with submenus that open, and content on the right.
 
 *** Our people in aboutus, people boxes on left.
-    
-*** make sure email form is safe!!! 
-no dangerous html, and spam protected, so some kind of captcha..
-    
 
-*** Privacy policy
-
-*** Try slogan underneath slideshow.
 *** Cache or preload the pages and images somehow!!!    
 preload views!!!   
    Otherwise scrolling doesn't quite get there the first time!!! 
@@ -87,6 +74,9 @@ preload views!!!
    
 *** Email form:
 Clear after sending. Show Sent! dialog.
+Captcha
+make sure email form is safe!!! 
+no dangerous html, and spam protected, so some kind of captcha..
     
 *** When clicking on link in menu tab, the tab doesn't highlight
     
@@ -97,6 +87,11 @@ Black box around tab of page
 *** Authentication!!!!
 
 *** Setup nodejitsu
+    
+*** Links in door, like a menu
+
+*** make sure menu works...
+ 
 * Contact
 Andrea mobile is 0437 870 932 or home p: 3491 3573.
 

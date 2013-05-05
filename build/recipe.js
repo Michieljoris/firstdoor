@@ -174,13 +174,21 @@ var mainMenuTree = [
     }
     ,{ label: 'About us', icon: '', route: 'aboutus',
        sub: [
-           { label: 'Our Company Vision', route: 'aboutus#leaders', scroll: true}
-           ,{ label: 'Mission Statement', route: 'aboutus#mission', scroll: true}
-           ,{ label: 'First Door Company Values', route: 'aboutus#values', scroll: true}
-           ,{ label: 'Our Name And Logo', route: 'aboutus#namelogo', scroll: true}
-           // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
+           { label: 'Our Company', route: 'aboutus#leaders', scroll: true
+             ,sub: [
+                 // { label: 'Markdown editor', route: 'epic'}
+                 { label: 'Vision', icon: '', route: 'blog'}
+                 ,{ label: 'Mission', route: 'chat'}
+                 ,{ label: 'Our student approach', route: 'filebrowser'}
+                 ,{ label: 'Values', route: 'filebrowser'}
+                 ]
+             }
+             ,{ label: 'Our name and logo', route: 'aboutus#mission', scroll: true}
+             ,{ label: 'Our people', route: 'aboutus#values', scroll: true}
+             ,{ label: 'First Door policies', route: 'aboutus#namelogo', scroll: true}
+             // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
            
-       ]
+           ]
      } 
     ,{ label: 'Professional development', icon: '', route: 'pd'
        ,sub: [
@@ -196,7 +204,7 @@ var mainMenuTree = [
      } 
     ,{ label: 'Accredited training', icon: '', route: 'courses'
        ,sub: [
-           { label: 'CHC50908 Diploma of Children’s Services (Early Childhood Education and Care)', route: 'courses#childrenservices',
+           { label: 'Diploma of Children’s Services (Early Childhood Education and Care)', route: 'courses#childrenservices',
              scroll: true}
            ,{ label: 'Diploma of Management ', route: 'courses#diploma_management', scroll: true}
            ,{ label: 'Certificate lV in Training and Assessment', route: 'courses#certivtraining', scroll: true}
@@ -233,19 +241,19 @@ var mainMenuTree = [
        
      } 
     ,{ label: 'Contact us', route: 'contactus', scroll: true
-       ,sub: [
-           { label: '(Tryouts)', icon: '', route: 'blog'
-             ,sub: [ 
-                 // { label: 'Markdown editor', route: 'epic'}
-                 { label: 'Chat', route: 'chat'}
-                 ,{ label: 'Editor', route: 'filebrowser'}
-                 ,{ label: 'Youtube carousel', route: 'ytcarousel'}
-                 // ,{ label: 'Submenu item 2', route: 'index.html'}
-                 // ,{ label: 'Submenu item 2', route: 'index.html'}
-             ]
+       // ,sub: [
+       //     { label: '(Tryouts)', icon: '', route: 'blog'
+       //       ,sub: [ 
+       //           // { label: 'Markdown editor', route: 'epic'}
+       //           { label: 'Chat', route: 'chat'}
+       //           ,{ label: 'Editor', route: 'filebrowser'}
+       //           ,{ label: 'Youtube carousel', route: 'ytcarousel'}
+       //           // ,{ label: 'Submenu item 2', route: 'index.html'}
+       //           // ,{ label: 'Submenu item 2', route: 'index.html'}
+       //       ]
        
-           } 
-       ]
+       //     } 
+       // ]
      } 
 ];
 /*
@@ -283,11 +291,12 @@ var exports = {
     ,prettyPrintHtml: false
     // ,tagIdPostfix: '__' //can be overridden per template
     ,paths: {
-        root: '/home/michieljoris/www/firstdoor/'
+        // root: '/home/michieljoris/www/firstdoor/'
+        root: process.cwd() 
         //relative to this root:
         ,partials: 'build/'  //can be overridden per template
-        ,out:'built' 
-        ,js: 'js'
+        ,out:'www/built' 
+        ,js: 'www/js'
     }
     ,routes: routes
     
@@ -306,6 +315,7 @@ var exports = {
             ,image_pd: '<img class="flexslider span12" src="images/slides/tab_professional_development.jpg" alt="image"/>'
             ,image_resources: '<img class="flexslider span12" src="images/slides/tab_resources.jpg" alt="image"/>'
             ,image_blog: '<img class="flexslider span12" src="images/slides/tab_blog.jpg" alt="image"/>'
+            ,skewer:'<script src="http://localhost:9090/skewer"></script>'
         }
         ,metaBlock : {
             id: 'meta',
@@ -491,14 +501,15 @@ var exports = {
                //converted to html. Partials in an array will be
                //concatenated before inserted at the tag id element
               ,mapping: {
-                  head: ['title', 'meta', 'headJsBlock', 'myLinkBlock','_linkBlock'],
+                  head: ['title', 'meta',  'html/ieshim','skewer', 'headJsBlock', 'myLinkBlock','_linkBlock'],
+                  
                   body: ['html/body.html', 'myJsBlock', '_scriptBlock']
               }
             }
             ,{ src: 'page' 
                ,tagIdPostfix: '--' //can be overridden per template
                ,pathOut: ''
-               ,out: 'index.html' //optional, relative to root
+               ,out: 'www/index.html' //optional, relative to root
                ,mapping: {
                    message: 'html/message'
                    ,logo: 'html/logo'
@@ -508,9 +519,9 @@ var exports = {
                    ,search: 'html/search'
                    ,menu: 'cssmenu'
                    ,fixedmenu: 'fixedmenu'
-                   ,footerLeft: 'html/footerLeft'
-                   ,footerMiddle: 'html/footerMiddle'
-                   ,footerRight: 'html/footerRight'
+                   // ,footerLeft: 'html/footerLeft'
+                   // ,footerMiddle: 'html/footerMiddle'
+                   // ,footerRight: 'html/footerRight'
                    ,'footerBottom': 'html/footerBottom'
                    // ,'feedback': 'html/feedback'
                }

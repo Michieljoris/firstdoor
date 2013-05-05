@@ -1,3 +1,13 @@
 {
-    "aboutus.md" : "build/markdown/aboutus.md"
+    "/aboutus.md" : "/build/markdown/aboutus.md",
+    "/courses.md" : "/build/markdown/courses.md",
+    "/pd.md"      : "/build/markdown/pd.md",
+    "/pd_children_info.md"      : "/build/markdown/pd_children_info.md",
+    "/pd_coop_info.md"      : "/build/markdown/pd_coop_info.md",
+    "/pd_environment_info.md"      : "/build/markdown/pd_environment_info.md",
+    "/pd_evaluation_info.md"      : "/build/markdown/pd_evaluation_info.md",
+    "/pd_inspired_info.md"      : "/build/markdown/pd_inspired_info.md",
+    "/pd_observing_info.md"      : "/build/markdown/pd_observing_info.md",
+    "/quiz.md"      : "/build/markdown/quiz.md",
+    "/welcome.md"      : "/build/markdown/welcome.md"
 }

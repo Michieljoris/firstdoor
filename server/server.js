@@ -19,19 +19,22 @@ var options = {
     //     { "prefix": "iris",
     //       "target": "https://michieljoris.iriscouch.com"}
 // ]
-    "dir": true
-    ,"index": false
+    root: "./www"
+    ,"dir": false
+    ,"index": true
     ,"silent": false
-    // ,"port": 7090
+    ,"port": 6001 
     ,postHandlers: {
         // "/" : save
-        "/contactus_form" : testSendMail
+        "/contactus_form" : sendMail
+        // ,"/contactus_form" : testSendMail
         }
     ,getHandlers: {
         "/sync": sync,
         "/dropbox_authorize": dropbox_authorize,
         "/dropbox_connect": dropbox_connect
     }
+    
 };
 
 server.go(options);
