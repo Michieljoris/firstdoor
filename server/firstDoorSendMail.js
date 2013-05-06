@@ -3,8 +3,10 @@
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
 var nodemailer = require("nodemailer");
+var http = require('http');
 
 // create reusable transport method (opens pool of SMTP connections)
+
 var smtpTransport = nodemailer.createTransport("SMTP",{
     service: "Gmail",
     auth: {
@@ -14,55 +16,142 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
 });
 
 
-// send mail with defined transport object
-function sendMail(mailOptions) {
-    smtpTransport.sendMail(mailOptions, function(error, response){
-        if(error){
-            console.log(error);
-        }else{
-            console.log("Message sent: " + response.message);
-        }
+// // send mail with defined transport object
+// function sendMail(mailOptions) {
+//     smtpTransport.sendMail(mailOptions, function(error, response){
+//         if(error){
+//             console.log(error);
+//         }else{
+//             console.log("Message sent: " + response.message);
+//         }
 
-        // if you don't want to use this transport object anymore, uncomment following line
-        //smtpTransport.close(); // shut down the connection pool, no more messages
-    });
+//         // if you don't want to use this transport object anymore, uncomment following line
+//         //smtpTransport.close(); // shut down the connection pool, no more messages
+//     });
     
-}
+// }
 
 
 
-var sendEmail = function (data) {
+var sendEmail = function (data, success, error) {
     console.log("Sending email!!!!");
     var text = data.username + " with email address " + "<a href='mailto:" + data.email + "'>" + data.email + "</a>" +
         " sent the following message: <p>" + data.textmessage;
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: "Firstdoor Server", // sender address
-        to: "firstdoortraining@gmail.com", // list of receivers
-        subject: data.username + " has used the Greendoor contact us form!", // Subject line
+        to: "admin@firstdoor.com.au", // list of receivers
+        // to: "michieljoris@gmail.com", // list of receivers
+        subject: data.username + " has used the First Door contact us form!", // Subject line
         // text: data.message // plaintext body
         html: text // html body
     };
-    sendMail(mailOptions);
+    
+    smtpTransport.sendMail(mailOptions, function(err, response){
+        if(err){
+            console.log(err);
+            error(err);
+        }else{
+            console.log("Message sent: " + response.message);
+            success(response.message);
+        }
+
+        // if you don't want to use this transport object anymore, uncomment following line
+        //smtpTransport.close(); // shut down the connection pool, no more messages
+    });
+    // sendMail(mailOptions);
 };
 
+function recaptcha_verify(parameters, success, error) {
+    // console.log(parameters);
+    console.log("Verifying captcha");
+
+    var headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Length': parameters.length
+    };
+    var options = {  
+        host: 'www.google.com',   
+        port: 80,   
+        path: '/recaptcha/api/verify',  
+        data: parameters,
+        method: 'POST',  
+        headers: headers
+    };   
+   // console.log("Defining req");
+    var req = http.request(options, function(res) {       
+        // console.log("Got response: " + res.statusCode);   
+        // console.log('HEADERS: ' + JSON.stringify(res.headers));  
+        res.setEncoding('utf-8');
+
+        var response = '';
+        res.on('data', function(chunk) {  
+            response += chunk;
+        });   
+        res.on('end', function() {
+            var arr = response.split('\n');
+            response = {
+                success: arr[0],
+                error: arr[1]
+            };
+            // console.log('Verifying captcha result:', response);
+            if (response.success === 'true') success();
+            else error(response.error);
+            
+        });
+        req.on('error', function(e) {
+            console.log("Error in captcha verify ", e);
+            error('Couldn\'t verify captcha!!!' + e.toString());
+        });
+    });   
+    // console.log("Writing request to captcha");
+    req.write(parameters);
+    req.end();
+}
+
 exports.handlePost = function(req, res) {
-    console.log('Firstdoor is handling post!!');
+    console.log('Test send mail is handling post!!');
+    console.log(req.headers['x-forwarded-for']);
+    var data = '';
     req.on('data', function(chunk) {
+        data+=chunk;
+    });
+    
+    res.writeHead(200, "OK", {'Content-Type': 'text/html'});
+    
+    req.on('error', function(e) {
+        res.write(JSON.stringify({ success:false, error:e }));
+        res.end();
+    });
+    
+    req.on('end', function() {
         try {
             console.log("Received body data:");
-            var data = JSON.parse(chunk);
-            console.log(data);
-            res.write(JSON.stringify(data));
-            sendEmail(data);
+            data = JSON.parse(data);
+            var parameters = 'privatekey=6LfL6OASAAAAAHklMnnQdS4AmZvXuOp1ihgPY7V9&remoteip=' + req.headers['x-forwarded-for'] +
+                '&challenge=' + data.recaptcha_challenge + '&response=' + data.recaptcha_response;
+
+            recaptcha_verify(parameters,
+                             function() { sendEmail(data,
+                                                    function() {
+                                                        res.write(JSON.stringify({ success:true }));
+                                                        res.end();
+                                                    },
+                                                    function(e) {
+                                                        res.write(JSON.stringify({ success:false, error:e }));
+                                                        res.end();
+                                                    }); },
+                             function(e) { console.log("failed to verify captcha:" + e);
+                                           res.write(JSON.stringify({ success:false, error: e}));
+                                           res.end();
+
+                                         }
+                            );
         } catch(e) {
-            res.write('Failure');
+            console.log("Failure!!!", e);
+            res.write(JSON.stringify({ success:false, error: e}));
+            res.end();
         }
-    });
-    req.on('end', function() {
-        // empty 200 OK response for now
-        res.writeHead(200, "OK", {'Content-Type': 'text/html'});
-        res.end();
     });
             
 }; 

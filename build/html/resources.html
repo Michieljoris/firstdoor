@@ -1,20 +1,23 @@
 <ul id='videolist' >
-  <li ng-repeat="section in sectionsList">
-    <a name="{{section}}"></a>
+  <li id="{{section}}" scroll ng-repeat="section in sectionsList">
     <h2 >{{getSectionTitle(section)}}</h2>
-    <ul ng-init="videos=sections[section]">
-      <li class="well" ng-repeat="video in videos">
-	<div class="container">
-	  <div class="row">
+    <ul ng-init="videos=sections[section]" >
+      <li class="well" ng-repeat="video in videos" >
+	<div class="container" >
+	  <div class="row" >
 	    <div ng-switch on="video.provider" class="span1" >
               <a ng-switch-when="youtube" href="#"
 		 ng-click="open($event, video)">
+		
+		<div class="video-thumbnail embed-container ratio-4-3 ">     
 		<img href="#" ng-src="http://img.youtube.com/vi/{{video.id}}/2.jpg"  
-		     class="myimage" style="max-height:75px;" /> 
+		     class="mymage" style="max-height:75px;" /> 
+		</div>
 	      </a>
               <a ng-switch-when="vimeo" href="#"
 		ng-click="open($event, video)">
-		<div id="{{video.id}}">
+		<div id="{{video.id}}" 
+		     class="video-thumbnail embed-container ratio-4-3">
 		  {{vimeoLoadThumb($index, video.id)}}
 		</div>
 	      </a>
@@ -65,16 +68,4 @@
     </div>
 </div>
 
-
-<!-- <div class="youtube" > -->
-<!--   <iframe width="420" height="315"  -->
-<!-- 	  src="http://www.youtube.com/embed/{{videos[0].id}}"  -->
-<!-- 	  frameborder="0" allowfullscreen></iframe> -->
-<!-- </div>  -->
-<!-- <div class="vimeo"> -->
-<!--   <iframe src="http://player.vimeo.com/video/{{videos[1].id}}"  -->
-<!-- 	  width="400" height="300" frameborder="0"  -->
-<!-- 	  webkitAllowFullScreen mozallowfullscreen allowFullScreen> -->
-<!--   </iframe> -->
-<!-- </div> -->
 

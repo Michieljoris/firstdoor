@@ -13,6 +13,7 @@ max-width=100%
    href: 'index.html#!/home'
    it's  #!/route following the main page (index.html in this case)
 
+   
 ** resizing images:
 Install imagemagick then
 mogrify -resize x450 *.jpg
@@ -21,6 +22,17 @@ and:
 mogrify -quality 80 *.jpg
 to compress
 
+
+** recaptcha 
+Domain Name: 	michieljoris.com
+
+reCAPTCHA will only work on this domain and subdomains. If you have more than one domain (or a staging server), you can create a new set of keys.
+Public Key: 	6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5
+
+Use this in the JavaScript code that is served to your users
+Private Key: 	6LfL6OASAAAAAHklMnnQdS4AmZvXuOp1ihgPY7V9
+
+Use this when communicating between your server and our server. Be sure to keep it a secret.
 * todo
   
 ** later 
@@ -32,22 +44,16 @@ to compress
     
 ** now    
 *** contact us in green door, and on every site
-   send message thanks for contacting us etc 
-   contact us page
-    
    
 *** fix up ipad issues
    menu won't go away, won't scroll to id tag. 
    
 *** learning style quiz
-*** bigger door
 *** clean up css for narrow screen, change menu type   
-*** bread crumbs
 *** SEO
-*** bootstrap tooltips for social buttons
 *** slider with text sliding in 
-*** cslider, index3.html
-*** Sequence slider
+cslider, index3.html
+Sequence slider
    
    
 *** Do the images on front page have image titles? 
@@ -62,27 +68,11 @@ to compress
    
 ***  courses and pd  a door with contact us.
     
-*** Resources> door will be menu, with submenus that open, and content on the right.
-
-*** Our people in aboutus, people boxes on left.
-
-*** Cache or preload the pages and images somehow!!!    
-preload views!!!   
-   Otherwise scrolling doesn't quite get there the first time!!! 
-    
 
    
 *** Email form:
-Clear after sending. Show Sent! dialog.
-Captcha
-make sure email form is safe!!! 
-no dangerous html, and spam protected, so some kind of captcha..
-    
-*** When clicking on link in menu tab, the tab doesn't highlight
-    
-Black box around tab of page    
-   finish it by making a separate function that sets the class to
-   active/inactive and leaves the original classes , including anchor tags
+   Styling 
+   send message thanks for contacting us etc 
 
 *** Authentication!!!!
 
@@ -90,8 +80,20 @@ Black box around tab of page
     
 *** Links in door, like a menu
 
-*** make sure menu works...
- 
+*** bootstrap tooltips for social buttons
+
+*** prefetch images
+   possibly also the html?  image optimization using jpegtran?
+
+*** fixed sidebar/door
+
+*** dropbox file editor using tinymce
+   put youtube descriptions in?  
+    
+    
+    
+    
+    
 * Contact
 Andrea mobile is 0437 870 932 or home p: 3491 3573.
 

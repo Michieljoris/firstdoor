@@ -10,10 +10,12 @@
 
 
 
-<div id="course1"></div>
-			
-##Workshop One: The inspired, child focused educator
-<img class="span12" src="images/slides/PD_Inspired_educator.jpg" alt="image"/>
+<a scroll id="course1"></a>
+##Workshop One: The inspired, child focused educator  
+
+<div class="inline-image embed-container ratio-tabimage ">     
+<img src="images/slides/PD_Inspired_educator.jpg" alt="image"/>
+</div>
 <br>
 Reconnect to the passion and to the value of the professional educator’s role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children. 
 
@@ -35,10 +37,11 @@ This workshop relates to the following National Quality Standards and
 elements: 
 <span id="showhide_pd_inspired_info--"></span>
 
-<div id="course2"></div>
+<a scroll id="course2"></a>
 ##Workshop Two: Observation, documentation, planning and evaluating
+<div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_Observing_and_documenting.jpg" alt="image"/>
-
+</div>
 Understand the value and purpose of these processes. Become inspired to use strategies that are simplistic and effective. Undertake a practical case study and learn to use Learning Stories to build success, observe, document and plan for each child’s development. This workshop refers to the EYLF  Early Childhood Pedagogy, Learning Outcomes and the EYLF practices Intentional teaching and Assessment for Learning 
 
 ###Topics include:
@@ -72,11 +75,12 @@ This workshop relates to the following National Quality Standards and
 elements: 
 <span id="showhide_pd_observing_info--"></span>
 
-<div id="course3"></div>
+<a scroll id="course3"></a>
 
 ##Workshop Three: Environment and experiences 
+<div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_Environment_and_experiences.jpg" alt="image"/>
-
+</div>
 Educators will be inspired to create learning environments and experiences that engage children into learning through play, enable holistic development and guide each child’s learning in the five outcomes. 
 The EYLF PRACTICES discussed are: Learning through Play, Intentional Teaching and Learning Environments.
 
@@ -100,11 +104,12 @@ This workshop relates to the following National Quality Standards and
  elements:
 <span id="showhide_pd_environment_info--"></span>
 
-<div id="course4"></div>
+<a scroll id="course4"></a>
 
 ##Workshop Four: Developing Cooperative Behaviour
+<div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_cooperative_behaviour.jpg" alt="image"/>
-
+</div>
 This workshop provides educators with strategies to refocus their approach to unacceptable behaviour, and proactively develop cooperative behaviour. It is recommended that this workshop be extended over four hours or over two sessions if educators are working reactively to complex behaviours and/or have limited understanding of these concepts. 
 The EYLF PRINCIPLES are discussed, being: Secure, Respectful and Reciprocal Relationships; Partnerships; High Expectations and Equity; Respect for Diversity; and, Ongoing Learning and Reflective Practice.
 
@@ -135,9 +140,11 @@ elements:
 <span id="showhide_pd_coop_info--"></span>
 
 
-<div id="course5"></div>
+<a scroll id="course5"></a>
 ##Workshop Five: Evaluation and reflective practice for improved program and practice 
+<div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_reflective_practice.jpg" alt="image"/>
+</div>
 Ongoing learning and reflective practice is a key principle of the Framework. Educators will be assisted in seeking ways to build their professional knowledge and develop learning communities. The intention is to gather information and gain insights that support, inform and enrich professional practice and decision-making about children’s well-being and development.
 
 ###Topics include:
@@ -164,9 +171,11 @@ Ongoing learning and reflective practice is a key principle of the Framework. Ed
 This workshop relates to the following National Quality Standards and elements:
 <span id="showhide_pd_evaluation_info--"></span>
 
-<div id="course6"></div>
+<a scroll id="course6"></a>
 ##Workshop Six: Children at Risk: identify and respond 
+<div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_identifying_at_risk_childen.jpg" alt="image"/>
+</div>
 This workshop details the knowledge and skills required to address duty of care requirements, working within an ethical framework and applying relevant legislation, policies and procedures in responding to children and young people at risk.
 
 ###Topics include:
@@ -180,10 +189,12 @@ This workshop relates to the following National Quality Standards and
 elements: 
 <span id="showhide_pd_children_info--"></span>
 
-<div id="course7"></div>
+<a scroll id="course7"></a>
 ##Workshop Seven: Identify and Manage Risk to protect against harm 
 
+<div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_managing_risk.jpg" alt="image"/>
+</div>
 This workshop supports the educator in their responsibility to ensure that all children are protected and safe while they are in an approved service. Educators will learn to proactively identify and minimise potential risks in their centre through conducting a risk assessment.  
 
 ###Topics include:
@@ -201,6 +212,6 @@ This workshop relates to the following National Quality Standards and
 elements: 
 <span id="showhide_pd_risk_info--"></span>
 
-<div id="course8"></div>
+<a scroll id="course8"></a>
 ##Workshop Eight: Professional Development ECEC
 Customised workshop: for your Centre’s needs

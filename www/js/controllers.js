@@ -1,9 +1,10 @@
 
-/*global $:false process:false require:false exports:false*/
+/*global Recaptcha:false $:false process:false require:false exports:false*/
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
 // var myAppModule = angular.module('myApp', ['ngView', 'ngSanitize']);
+
 var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
     .directive('compile', function($compile) {
     // directive factory creates a link function
@@ -16,6 +17,7 @@ var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
         function(value) {
           // when the 'compile' expression changes
           // assign it into the current DOM
+            
           element.html(value);
  
           // compile the new DOM and link it to the current
@@ -26,9 +28,126 @@ var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
         }
       );
     };
-  });
+  // });
+  }).value('$anchorScroll', angular.noop);
+
+myAppModule.directive('cart', function($window) {
+  return {
+    restrict: 'E',
+    transclude: true,
+    link: function(scope, el, attrs) {
+      var window = angular.element($window),
+          parent = angular.element(el.parent()),
+          currentOffsetTop = el.offset().top-40;
+          origCss = {
+            position: "static",
+            width: getParentWidth()
+          };
+
+      handleSnapping();
+
+      window.bind('scroll', function() {
+        handleSnapping();
+      });
+
+      window.bind('resize', function() {
+        el.css({
+          width: getParentWidth()
+        });
+      });
+
+      function returnDigit(val) {
+        var re = /\d+/;
+        var digit = val.match(re)[0];
+        return digit;
+      }
+
+      function getParentWidth() {
+        // return returnDigit(parent.css('width')) - returnDigit(parent.css('padding-left')) - returnDigit(parent.css('padding-right'));
+        return returnDigit(parent.css('width'));
+      }
+
+      function handleSnapping() {
+        if (window.scrollTop() > currentOffsetTop) {
+          var headerOffsetTop = 40;
+          el.css({
+            top: headerOffsetTop + "px",
+            position: "fixed",
+            width: getParentWidth()
+            // width: "166px"
+          });
+        } else {
+          el.css(origCss);
+          el.css({width: getParentWidth()});
+        }
+      }
+    }
+  };
+});
+// myAppModule.run(function($rootScope, $location, $anchorScroll, $routeParams) {
+//   //when the route is changed scroll to the proper element.
+//     $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+      
+//         // $location.hash($routeParams.scrollTo);
+//         // $anchorScroll();  
+//         var hash = $location.$$hash;
+//         var target_offset = angular.element("#" + hash);
+            
+//         console.log('offset: ', target_offset, target_offset.offset());
+    
+//         if (target_offset) {
+//             var target_top = target_offset.top;
+//             //goto that anchor by setting the body scroll top to anchor top
+//             console.log("setting scroll top");
+//             setTimeout(function() {
+//                 $('html, body').animate({scrollTop:target_top - 30}, 1000, 'easeOutQuad');
+//                 // $('html, body').scrollTop(target_top - 30);
+//             }, 1);
+//         } 
+      
+//     });
+// });
+
+// myAppModule.directive('myscroll', function($location) {
+    
+//     return function(scope, element, attrs) {
+        
+//         // angular.element("body").ready(function() {
+//         jQuery(document).ready(function(){
+//                 var target_offset = element.offset();
+//             console.log('In myscroll', target_offset);
+//         });
+//         // console.log("in myscroll") ;
+//         // var hash = $location.$$hash;
+//         // console.log(hash);
+//         // setTimeout(function() {
+//         //     var target_offset = element.offset();
+//         //     console.log('offset: ', target_offset);
+//         // }, 1000);
+//     };
+    
+// });
+
+myAppModule.directive('scroll', function($routeParams,$location) {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs){ 
+      // console.log('in scroll', $location.hash());
+        if ($location.hash() === attrs.id) {
+            
+          setTimeout(function() {
+              $('html, body').animate({
+                  scrollTop: element[0].offsetTop-30
+              }, 1000);
+             // window.scrollTo(0, element[0].offsetTop-30);
+          },1);        
+        }
+    }
+  };
+});
 
 // // declare a new module, and inject the $compileProvider
+
 // angular.module('compile', [], function($compileProvider) {
 //   // configure new 'compile' directive by passing a directive
 //   // factory function. The factory function injects the '$compile'
@@ -90,14 +209,16 @@ var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
 
 
 //Controllers
-function MainCntl($scope, $route, $routeParams, $location) {
+function MainCntl($scope, $route, $routeParams, $location, $anchorScroll) {
     console.log('Main controller..');
-    console.log('location', $location);
-    console.log('route', $route);
-    console.log('params', $routeParams);
-    $scope.$route = $route;
-    $scope.$location = $location;
-    $scope.$routeParams = $routeParams;
+    $anchorScroll();
+    $location
+    // console.log('location', $location);
+    // console.log('route', $route);
+    // console.log('params', $routeParams);
+    // $scope.$route = $route;
+    // $scope.$location = $location;
+    // $scope.$routeParams = $routeParams;
     
     // $(".scroll").click(function(event){
     //     console.log($scope);
@@ -128,32 +249,36 @@ function MainCntl($scope, $route, $routeParams, $location) {
 }
 
 var lastRoute='whatever';
-function DefaultCntl($scope, $routeParams, $location) {
+function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     console.log('default controller..');
-    $scope.name = "BookCntl";
-    $scope.params = $routeParams;
-    console.log($location.$$url);
+    // $scope.name = "BookCntl";
+    // $scope.params = $routeParams;
+    // console.log($location);
+    $(".menu li>ul").addClass('hide');
+    setTimeout(function() {
+        $(".menu li>ul").removeClass('hide');
+    },1000);
+    
+    
+    console.log($location);
     var url = $location.$$url;
     if (!url) url = "whatever";
     console.log(url);
-    $(".menu #" + url.slice(1)).attr("class", "active");
+    var newRoute = $location.$$path.slice(1);
+    $(".menu #" + newRoute).attr("class", "active");
+    if (lastRoute !== newRoute)
+        $(".menu #" + lastRoute).attr("class", "inactive");
+    lastRoute = newRoute;
+    console.log('course1 tag', $('#course1'));
+    if (!$location.$$hash)
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1000);
+    // setTimeout(function(){
+    //     $anchorScroll(hash);
+    // },100);
     
-    $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
-    lastRoute = $location.$$url;
-    // console.log('course1 tag', $('#course1'));
     
-    // var hash = $scope.$location.$$hash;
-    // $scope.hash = hash;
-    // console.log(hash);
-    // console.log($scope.$location);
-    // var target_offset = $("#"+hash).offset();
-    // // var target_offset;
-    // console.log(hash, target_offset);
-    // if (target_offset) {
-    //     var target_top = target_offset.top;
-    //     //goto that anchor by setting the body scroll top to anchor top
-    //     $('html, body').animate({scrollTop:target_top - 30}, 1000, 'easeOutQuad');
-    // }
     $(function() {
         $('#da-slider').cslider({
             autoplay	: true
@@ -165,7 +290,15 @@ function DefaultCntl($scope, $routeParams, $location) {
 }
 
 function contactusCntl($scope, $routeParams, $location) {
-    
+    // $scope.result = "now it is working..";
+    Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
+    "captchadiv",
+    {
+      // theme: "clean",
+      theme: "red",
+      callback: Recaptcha.focus_response_field
+    }
+  );
     console.log('contactus');
     var url = $location.$$url;
     if (!url) url = "whatever";
@@ -177,21 +310,36 @@ function contactusCntl($scope, $routeParams, $location) {
     $('#send').bind('click', function() {
         var username=$('#username').val(), email=$('#email').val();
         var textmessage=$('#textmessage').val();
-        console.log("From the form:", username, email, textmessage);
+        // var recaptcha_response_field = $("#recaptcha_response_field").val();
+        // var recaptcha_response_field = Recaptcha.get_response();
+        console.log("From the form:", username, email, textmessage, Recaptcha.get_response());
         // console.log(JSON.stringify($("#loginForm").serializeObject()));
 
         $.ajax({
             url: "/contactus_form",
             type: "POST",
             contentType: "application/json",
-            data: JSON.stringify({ username:username, email:email, textmessage:textmessage}),
+            data: JSON.stringify({ username:username,
+                                   email:email,
+                                   textmessage:textmessage,
+                                   recaptcha_response: Recaptcha.get_response(),
+                                   recaptcha_challenge: Recaptcha.get_challenge()}),
             // data:'balbalbla',
             success: function (data, textStatus, jqXHR) {
-               console.log(arguments);
+                Recaptcha.reload();
+                data = JSON.parse(data);
+                console.log('Form result:', data);
+                // $scope.result = 
+                if (data.success) $scope.result = "Message sent!!!";
+                
+                else $scope.result = "Message not sent: " + data.error;
+                $scope.$apply();
+                
                 // do something with your data here.
             },
             error: function (jqXHR, textStatus, errorThrown) {
-               console.log('error', arguments);
+                Recaptcha.reload();
+                console.log('error', arguments);
                 // likewise do something with your error here.
             }
         });
@@ -285,10 +433,19 @@ function HomeCntl($scope, $routeParams, $location) {
     var url = $location.$$url;
     if (!url) url = "whatever";
     console.log(url);
-    $(".menu #" + url.slice(1)).attr("class", "active");
     
-    $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
-    lastRoute = $location.$$url;
+    var newRoute = $location.$$path.slice(1);
+    if (!newRoute) newRoute = 'home';
+    console.log('Path is:', $location.$$path);
+    $(".menu #" + newRoute).attr("class", "active");
+    if (lastRoute !== newRoute)
+        $(".menu #" + lastRoute).attr("class", "inactive");
+    lastRoute = newRoute;
+    console.log('course1 tag', $('#course1'));
+    if (!$location.$$hash)
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1000);
     
     $('.flexslider').flexslider({
         // animation: "slide",

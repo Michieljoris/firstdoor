@@ -1,7 +1,8 @@
 #About us
 
+<div scroll id="company"></div>
 ##Our Company
-<div id="leaders"></div>
+<div scroll id="vision"></div>
 ###**Our vision: _'Leaders in developing capability'_**  
 **Leaders**  
 To be a leading and highly regarded training organisation within the Community Services and Management sector.
@@ -15,7 +16,7 @@ First Door students are recognised for their higher level of skills, motivation 
 **Shared success**   
 First Door develops professional capability in our students so they can inspire, educate and support others. This culture of building success in people also benefits our stakeholders and society.
 
-<div id="mission"></div>
+<div scroll id="mission"></div>
 ###**Mission Statement**
 **Our purpose and identity; who we are, what we do and why we are
 here**
@@ -32,6 +33,7 @@ First Door bridges the gap between theory and best workplace practice by providi
 We promote the need to create learning organisations for staff to learn, develop skills and capability. First Door provides courses to create leaders in learning within Early Childhood centres and businesses.
 
 
+<div scroll id="approach"></div>
 ###**Our student approach**
 We connect students to:
 
@@ -47,7 +49,7 @@ The student's success and active engagement is achieved through:
 - industry relevant and interactive training through workshops.
 
 
-<div id="values"></div>
+<div scroll id="values"></div>
 ###**First Door Company Values**
 
 Our beliefs, traits and behavioural norms that guide the pursuit of the vision and mission, and those that company personnel are expected to display
@@ -69,7 +71,7 @@ Our beliefs, traits and behavioural norms that guide the pursuit of the vision a
 
 
 
-<div id="namelogo"></div>
+<div scroll id="namelogo"></div>
 ##Our Name and logo
 
 **First Door**  
@@ -87,7 +89,7 @@ Green, white and grey were chosen to symbolise:
 
 First Door Training and Development inspires people to seek new beginnings and growth, using knowledge and capability to open further doors of opportunity.
  
-<div id="people"></div>
+<div scroll id="people"></div>
 ##Our people
 ###**Founders and Directors  c&a**
 Brisbane women, Cindy Donald and Andrea Isitt knew as study partners that they had a great work ethic and capacity together. Backed with a complementary skill set, their passion for inspiring others through high quality education, and extensive experience in business, training and management they became the dynamic duo founding the Company First Door Training and Development Pty Ltd. 
@@ -114,5 +116,6 @@ Andrea's key responsibilities at First Door include:
 - 	Human Resource management
 - 	development  and evaluation of The Early Childhood Education and Care training portfolio
 
+<div scroll id="policies"></div>
 ##First Door policies
 [download pdf]()

@@ -1,4 +1,4 @@
-/*global $:false */
+/*global lastRoute:false $:false */
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
@@ -139,11 +139,21 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     var url = $location.$$url;
     if (!url) url = "whatever";
     console.log(url);
-    $(".menu #" + url.slice(1)).attr("class", "active");
+    // $(".menu #" + url.slice(1)).attr("class", "active");
     
-    $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
-    lastRoute = $location.$$url;
+    // $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
+    // lastRoute = $location.$$url;
     
+    var newRoute = $location.$$path.slice(1);
+    $(".menu #" + newRoute).attr("class", "active");
+    if (lastRoute !== newRoute)
+        $(".menu #" + lastRoute).attr("class", "inactive");
+    window.lastRoute = newRoute;
+    console.log('course1 tag', $('#course1'));
+    if (!$location.$$hash)
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1000);
     
     
     requestedVimeoThumbnails = {};
@@ -180,6 +190,30 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     };
     
     
+    $scope.$on('$viewContentLoaded', function() {
+        
+        // $("#videolist").ready(function() {
+        
+        // jQuery(document).ready(function(){
+        //     console.log("View loaded!!!");
+        //     var hash = $scope.$location.$$hash;
+        //         var target_offset = angular.element("#motivation");
+            
+        //     console.log('offset: ', target_offset, target_offset.offset());
+    
+        //     if (target_offset) {
+        //             var target_top = target_offset.top;
+        //         //goto that anchor by setting the body scroll top to anchor top
+        //         console.log("setting scroll top");
+        //         // $('html, body').animate({scrollTop:target_top - 30}, 1000, 'easeOutQuad');
+        //         $('html, body').scrollTop(target_top - 30);
+        //     }
+            
+            
+        // });
+    });
+    
+    
     // $(".scroll").click(function(event){
         
     //     console.log('click on scroll');
@@ -202,7 +236,7 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
             
     //         //goto that anchor by setting the body scroll top to anchor top
     //         $('html, body').animate({scrollTop:target_top }, 1000, 'easeOutQuad');
-        //     }
+    //     }
     // });
     
 } 

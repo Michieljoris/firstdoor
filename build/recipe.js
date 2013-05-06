@@ -67,6 +67,7 @@ var js = [
     //Version 1.7.2
     // 'jquery'
     'jquery-1.9.1.min.js'
+    ,'noconsole'
     // 'jquery-1.6.2.js'
     ,'angular-1.1.4/angular.min'
     // ,'angular-1.1.4/angular-sanitize.min'
@@ -80,6 +81,8 @@ var js = [
     // you whether the current browser has this feature natively
     // implemented or not.
     ,'modernizr'
+    
+    
     ,'selectnav'
     // ,'chat'
     // 'twitter',//??
@@ -174,18 +177,18 @@ var mainMenuTree = [
     }
     ,{ label: 'About us', icon: '', route: 'aboutus',
        sub: [
-           { label: 'Our Company', route: 'aboutus#leaders', scroll: true
+           { label: 'Our Company', route: 'aboutus#company', scroll: true
              ,sub: [
                  // { label: 'Markdown editor', route: 'epic'}
-                 { label: 'Vision', icon: '', route: 'blog'}
-                 ,{ label: 'Mission', route: 'chat'}
-                 ,{ label: 'Our student approach', route: 'filebrowser'}
-                 ,{ label: 'Values', route: 'filebrowser'}
+                 { label: 'Vision', icon: '', route: 'aboutus#vision'}
+                 ,{ label: 'Mission', route: 'aboutus#mission'}
+                 ,{ label: 'Our student approach', route: 'aboutus#approach'}
+                 ,{ label: 'Values', route: 'aboutus#values'}
                  ]
              }
-             ,{ label: 'Our name and logo', route: 'aboutus#mission', scroll: true}
-             ,{ label: 'Our people', route: 'aboutus#values', scroll: true}
-             ,{ label: 'First Door policies', route: 'aboutus#namelogo', scroll: true}
+             ,{ label: 'Our name and logo', route: 'aboutus#namelogo', scroll: true}
+             ,{ label: 'Our people', route: 'aboutus#people', scroll: true}
+             ,{ label: 'First Door policies', route: 'aboutus#policies', scroll: true}
              // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
            
            ]
@@ -224,7 +227,7 @@ var mainMenuTree = [
             }
            ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
            ,{ label: 'Learning', route: 'resources#learning', scroll:true}
-           ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
+           // ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
            ,{ label: 'Quiz', route: 'quiz'}
            ,{ label: '(tryouts)' ,route: 'resources'
               ,sub: [
@@ -310,19 +313,27 @@ var exports = {
     ,partials: {
         ids: {
             title: '<title>Firstdoor - Leaders in developing capability</title>'
-            ,image_courses: '<img class="flexslider span12" src="images/slides/tab_accredited_training.jpg" alt="image"/>'
-            ,image_aboutus: '<img class="flexslider span12" src="images/slides/tab_about_us.jpg" alt="image"/>'
-            ,image_pd: '<img class="flexslider span12" src="images/slides/tab_professional_development.jpg" alt="image"/>'
-            ,image_resources: '<img class="flexslider span12" src="images/slides/tab_resources.jpg" alt="image"/>'
-            ,image_blog: '<img class="flexslider span12" src="images/slides/tab_blog.jpg" alt="image"/>'
+            ,image_courses: '<img class="" src="images/slides/tab_accredited_training.jpg" />'
+            ,image_aboutus: '<img class="" src="images/slides/tab_about_us.jpg" />'
+            ,image_pd: '<img class="" src="images/slides/tab_professional_development.jpg" />'
+            ,image_resources: '<img class="" src="images/slides/tab_resources.jpg" />'
+            ,image_blog: '<img class="" src="images/slides/tab_blog.jpg" />'
             ,skewer:'<script src="http://localhost:9090/skewer"></script>'
+            ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
+
         }
         ,metaBlock : {
             id: 'meta',
-            tags: [ { charset:'utf-8' },
-                    { name: "viewport"
-                      ,content: "width=device-width, initial-scale=1, maximum-scale=1"
-                    } ]
+            tags: [ { charset:'utf-8' }
+                    ,{ content:"IE=edge,chrome=1",
+                       "http-equiv":"X-UA-Compatible"
+                    }
+                    ,{ content:"First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. ",
+                       name:"description"
+                    }
+                    ,{ name: "viewport"
+                      ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
+                  ]
         }
         ,linkBlock:  {
             id: 'myLinkBlock',
@@ -333,6 +344,7 @@ var exports = {
             {
                 id: 'headJsBlock',
                 files: [
+                    'prefetch_images'
                 ],
                 path: 'js/'
             },
@@ -378,7 +390,7 @@ var exports = {
                }}
             
             //ProfDev
-           ,{ id: "showhide_pd_inspired_info", showhide: "markdown/pd_inspired_info.md" },
+            ,{ id: "showhide_pd_inspired_info", showhide: "markdown/pd_inspired_info.md" },
             { id: "showhide_pd_coop_info", showhide: "markdown/pd_coop_info.md"}, 
             { id: "showhide_pd_environment_info", showhide: "markdown/pd_environment_info.md"},
             { id: "showhide_pd_observing_info", showhide: "markdown/pd_observing_info.md" }
@@ -398,114 +410,116 @@ var exports = {
                    ,showhide_pd_risk_info: "showhide_pd_risk_info"
                }}
             ,{ 
-               src: 'views/view_pd_partial.html'
-               ,out : 'view-pd.html'
-               ,mapping: {
-                   sidebar: 'html/sidebar'
-                   ,slogan: 'html/slogan'
-                   ,image: 'image_pd'
-                   ,contents: 'pd_wrapper'
-               }}
+                src: 'views/view_pd_partial.html'
+                ,out : 'view-pd.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    ,slogan: 'html/slogan'
+                    ,image: 'image_pd'
+                    ,contents: 'pd_wrapper'
+                }}
             
             //Courses
             ,{ 
-               src: 'views/view_courses_partial.html'
-               ,out : 'view-courses.html'
-               ,mapping: {
-                   sidebar: 'html/sidebar'
-                   ,image: 'image_courses'
-                   // ,slogan: 'slogan'
-                   // ,slideShow: 'flex',
-                   ,contents: 'markdown/courses.md'
-               }}
+                src: 'views/view_courses_partial.html'
+                ,out : 'view-courses.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    ,image: 'image_courses'
+                    // ,slogan: 'slogan'
+                    // ,slideShow: 'flex',
+                    ,contents: 'markdown/courses.md'
+                }}
             
             //About us
             ,{ 
-               src: 'views/view_aboutus_partial.html'
-               ,out : 'view-aboutus.html'
-               ,mapping: {
-                   sidebar: 'html/sidebar'
-                   ,image: 'image_aboutus'
-                   // ,slogan: 'slogan'
-                   // ,slideShow: 'flex',
-                   ,contents: 'markdown/aboutus.md'
-               }}
+                src: 'views/view_aboutus_partial.html'
+                ,out : 'view-aboutus.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    ,image: 'image_aboutus'
+                    // ,slogan: 'slogan'
+                    // ,slideShow: 'flex',
+                    ,contents: 'markdown/aboutus.md'
+                }}
             
             //Resources
             ,{ 
-               src: 'views/view_resources_partial.html'
-               // src: 'html/resources.html'
-               ,out : 'view-resources.html'
-               ,mapping: {
-                   sidebar: 'html/sidebar'
-                   ,image: 'image_resources'
-                   ,contents: 'html/resources'
-               }}
+                src: 'views/view_resources_partial.html'
+                // src: 'html/resources.html'
+                ,out : 'view-resources.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    ,image: 'image_resources'
+                    ,contents: 'html/resources'
+                }}
             
             //Blog
             ,{ 
-               src: 'views/view_blog_partial.html'
-               ,out : 'view-blog.html'
-               ,mapping: {
-                   sidebar: 'html/sidebar'
-                   // ,image: 'image_blog'
-                   // ,slogan: 'slogan'
-                   // ,slideShow: 'flex',
-                   // ,contents: 'markdown/resources.md'
-               }}
+                src: 'views/view_blog_partial.html'
+                ,out : 'view-blog.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    // ,image: 'image_blog'
+                    // ,slogan: 'slogan'
+                    // ,slideShow: 'flex',
+                    // ,contents: 'markdown/resources.md'
+                }}
             
             //Misc
             //Contact Us
             ,{
-               src: 'views/view_contactus_partial.html'
-               ,out : 'view-contactus.html'
-               ,mapping: {
-                   // sidebar: 'html/sidebar'
-                   // ,slogan: 'html/slogan'
-                   contents: 'html/contactForm'
-               }}
+                src: 'views/view_contactus_partial.html'
+                ,out : 'view-contactus.html'
+                ,mapping: {
+                    // sidebar: 'html/sidebar'
+                    // ,slogan: 'html/slogan'
+                    contents: 'html/contactForm'
+                }}
             //Epic editor
             ,{
-               src: 'views/view_epic_partial.html'
-               ,out : 'view-epic.html'
-               ,mapping: {
-                   // sidebar: 'html/sidebar'
-                   // ,slogan: 'html/slogan'
-                   // ,slideShow: 'flex',
-                   // homeContents: 'markdown/welcome.md'
-               }}
+                src: 'views/view_epic_partial.html'
+                ,out : 'view-epic.html'
+                ,mapping: {
+                    // sidebar: 'html/sidebar'
+                    // ,slogan: 'html/slogan'
+                    // ,slideShow: 'flex',
+                    // homeContents: 'markdown/welcome.md'
+                }}
             //Chat
             ,{
-               src: 'views/view_chat_partial.html'
-               ,out : 'view-chat.html'
-               ,mapping: {
-                   left: 'html/chat.html',
-                   right: 'markdown/chat.md'
-               }}
+                src: 'views/view_chat_partial.html'
+                ,out : 'view-chat.html'
+                ,mapping: {
+                    left: 'html/chat.html',
+                    right: 'markdown/chat.md'
+                }}
             //FileBrowser
             ,{
-               src: 'views/view_filebrowser_partial.html'
-               ,out : 'view-filebrowser.html'
-               ,mapping: {
-                   left: 'html/chat.html',
-                   right: 'markdown/chat.md'
-               }}
+                src: 'views/view_filebrowser_partial.html'
+                ,out : 'view-filebrowser.html'
+                ,mapping: {
+                    left: 'html/chat.html',
+                    right: 'markdown/chat.md'
+                }}
             
             //Main layout
             ,{ id: 'page' 
-              ,src: 'html/basicAngularPage.html'
+               ,src: 'html/basicAngularPage.html'
+               ,tagIdPostfix: '' //can be overridden per template
+               
                //Maps tag ids to partial ids. Tag ids have to be
                //postfixed with two dashes in the template. Partials
                //with an extension will be loaded from the partials
                //folder for this template. Markdown files will be
                //converted to html. Partials in an array will be
                //concatenated before inserted at the tag id element
-              ,mapping: {
-                  head: ['title', 'meta',  'html/ieshim','skewer', 'headJsBlock', 'myLinkBlock','_linkBlock'],
+               ,mapping: {
+                   head: ['title', 'meta',  'html/ieshim','skewer', 'headJsBlock', 'myLinkBlock','_linkBlock'],
                   
-                  body: ['html/body.html', 'myJsBlock', '_scriptBlock']
-              }
-            }
+                   "ng:app": ['html/body.html', 'myJsBlock', 'recaptcha', '_scriptBlock', 'html/google_analytics.html']
+               }
+             }
             ,{ src: 'page' 
                ,tagIdPostfix: '--' //can be overridden per template
                ,pathOut: ''
