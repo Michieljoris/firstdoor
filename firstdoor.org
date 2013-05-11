@@ -89,7 +89,7 @@ Sequence slider
 
 *** dropbox file editor using tinymce
    put youtube descriptions in?  
-    
+Website developed by michiel    
     
     
     

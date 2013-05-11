@@ -2,7 +2,8 @@
 var css = [
     //google font for mobile ?
     // 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700'
-    
+    'normalize',
+    'h5bp',
     //css framework
     "bootstrap"
     
