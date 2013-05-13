@@ -85,6 +85,11 @@ body {
     background-image: linear-gradient(to bottom,  #f26500, #cc5500);
     background-color: #f26500; /*burnt orange*/
    } 
+
+.burnt-orange {
+    color: #f26500; /*burnt orange*/
+    }
+
 #wisenetLogin:hover {
     background-color: #f26500;
     background-image: linear-gradient(to bottom, #f26500, #f26500);

@@ -1,5 +1,6 @@
 <ul id='videolist' >
-  <li id="{{section}}" scroll ng-repeat="section in sectionsList">
+  <li ng-show="isShow(section)" id="{{section}}" scroll ng-repeat="section in sectionsList">
+    
     <h2 >{{getSectionTitle(section)}}</h2>
     <ul ng-init="videos=sections[section]" >
       <li class="well" ng-repeat="video in videos" >

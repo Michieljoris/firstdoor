@@ -1,21 +1,17 @@
 <div id="image--" class="tab-image  embed-container ratio-tabimage "><img class="" src="images/slides/tab_accredited_training.jpg" /></div>   
 
 <div class="row"> 
-  <div id="sidebar--" class="span3"><cart data-ng-transclude="">
-  <div id="greendoor">
-    <div class="doorlinks">
-      A link...
-    </div>
-  </div>
-</cart>
+  <div id="sidebar--" class="span3"><!-- <cart data-ng-transclude=""> -->
+<!--   <div id="greendoor"> -->
+<!--     <div class="doorlinks"> -->
+<!--       A link... -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </cart> -->
 </div>
-  <div id="contents--" class="span8"><h2>Accredited training</h2>
-
-<p>First door is currently submitting an application to the Australian Skills Quality Authority (ASQA) for initial Registered Training Organisation (RTO) registration. Accredited training in these units and courses will follow shortly after the registration process: </p>
-
-<div scroll id="childrenservices"></div>
-
-<h2>CHC50908 Diploma of Children's Services (Early Childhood Education and Care)</h2>
+  <div id="contents--" class="span8"><div scroll id="childrenservices"></div>
+<div ng-show="isShow('childrenservices')" >
+  <div id="childrenservices--"><h2>CHC50908 Diploma of Children's Services (Early Childhood Education and Care)</h2>
 
 <h3>CORE UNITS</h3>
 
@@ -43,29 +39,34 @@ CHCORG428A      Reflect on and improve own professional practice
 BSBMGT608C      Manage innovation and continuous improvement
 BSBRSK501A      Manage risk (recommended if continuing with Diploma of Management as it is an elective)
 </code></pre>
-
+</div>
+</div>
 <div scroll id="diploma_management"></div>
-
-<h2>BSB51107 Diploma of Management</h2>
+<div ng-show="isShow('diploma_management')" >
+  <div id="diploma_management--"><h2>BSB51107 Diploma of Management</h2>
 
 <pre><code>BSBMGT608C  Manage innovation and continuous improvement
 BSBRSK501B  Manage risk
 BSBLED501A  Develop a workplace learning environment
 </code></pre>
 
-<p>The full course of units for Diploma of Management is currently being developed by First Door.</p>
 
+</div>
+</div>
 <div scroll id="certivtraining"></div>
-
-<h2>TAE40110 Certificate lV in Training and Assessment</h2>
+<div ng-show="isShow('certivtraining')" >
+  <div id="certivtraining--"><h2>TAE40110 Certificate lV in Training and Assessment</h2>
 
 <p>Units are recommended for Lead Educators and Educational Leaders</p>
 
 <pre><code>TAEDEL301A  Provide work skill instruction
-TAEDEL404A  Mentor in the workplace
-BSBLED401A  Develop teams and individuals
+    TAEDEL404A  Mentor in the workplace
+    BSBLED401A  Develop teams and individuals
 </code></pre>
+</div>
+</div>
 
-<p>The full course of units for Certificate lV in Training and Assessment is currently being developed by First Door.</p></div>
+<p>The full course of units for Diploma of Management is currently being developed by First Door.</p>
+</div>
   <!-- <div id="rightBar--" class="span4"></div> -->
 </div> 

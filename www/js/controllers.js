@@ -212,7 +212,6 @@ myAppModule.directive('scroll', function($routeParams,$location) {
 function MainCntl($scope, $route, $routeParams, $location, $anchorScroll) {
     console.log('Main controller..');
     $anchorScroll();
-    $location
     // console.log('location', $location);
     // console.log('route', $route);
     // console.log('params', $routeParams);
@@ -285,6 +284,13 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
             ,interval: 10000
         });
     });
+    
+    
+    $scope.isShow = function(id) {
+        // console.log('id=', id);
+        // console.log('hash=', $location.$$hash);
+        return $location.$$hash === id;
+    };
     
     
 }

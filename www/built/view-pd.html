@@ -1,16 +1,17 @@
 <div id="image--" class="tab-image  embed-container ratio-tabimage "><img class="" src="images/slides/tab_professional_development.jpg" /></div>   
   
   <div class="row"> 
-    <div id="sidebar--" class="span3"><cart data-ng-transclude="">
-  <div id="greendoor">
-    <div class="doorlinks">
-      A link...
-    </div>
-  </div>
-</cart>
+    <div id="sidebar--" class="span3"><!-- <cart data-ng-transclude=""> -->
+<!--   <div id="greendoor"> -->
+<!--     <div class="doorlinks"> -->
+<!--       A link... -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </cart> -->
 </div>
-    <div id="contents--" class="span8"><h2>Professional Development</h2>
-
+    <div id="contents--" class="span8"><div scroll id="intro"></div>
+<div ng-show="isShow('intro')" >
+  <div id="intro--"><h2>Professional Development</h2>
 <p><strong>Invite First Door to your Centre, and develop inspiration, practical skills and knowledge within your team.</strong> Our interactive two hour workshops can be booked individually or collectively. Each workshop builds from content and knowledge gained in the previous workshop. The entire Professional Development course provides an overview of the National Quality Standard and The Early Years Learning Framework. Progression through the course of workshops is recommended fortnightly, monthly or six weekly throughout the year.</p>
 
 <p><strong>We discuss and evaluate the complexity of the needs within the Centre, and the educators existing capability</strong> in the outlined topics with the Centre Director. This insight creates more relevant professional development, and occasionally a workshop is recommended over two sessions. Expanding over two sessions allows for broadening of concepts, strategies and discussions in the areas of need and increased development of practical skills.</p>
@@ -18,10 +19,12 @@
 <p><strong>First Door are leaders in developing capability.</strong> To follow on from these workshops, templates are provided to allow for continued practise within your team. First Door provides social media environments to invite further learning through conversations with other educators. Continued desire to improve practices and stimulating conversations assist with ongoing changes in attitudes and actions that further develop your team’s capability.</p>
 
 <p><strong>Professional development designed to meet your Centre’s needs.</strong> When the course of workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.</p>
+</div>
+</div>
 
-<p><a scroll id="course1"></a></p>
-
-<h2>Workshop One: The inspired, child focused educator</h2>
+<div scroll id="inspired"></div>
+<div ng-show="isShow('inspired')" >
+  <div id="inspired--"><h2>Workshop One: The inspired, child focused educator</h2>
 
 <div class="inline-image embed-container ratio-tabimage ">     
 <img src="images/slides/PD_Inspired_educator.jpg" alt="image"/>
@@ -48,7 +51,8 @@ Reconnect to the passion and to the value of the professional educator’s role.
 
 <p>This workshop relates to the following National Quality Standards and
 elements: 
-<span id="showhide_pd_inspired_info--"><a href="#" id="showhide1-show" class="showLink" 
+</div>
+  <span id="showhide_pd_inspired_info--"><a href="#" id="showhide1-show" class="showLink" 
 onclick="showHide('showhide1');return false;">Show..</a>
 </p>
 <div id="showhide1" class="more">
@@ -80,11 +84,12 @@ Retrieved from:
 </div>
 
 
-</span></p>
+</span>
+</div>
 
-<p><a scroll id="course2"></a></p>
-
-<h2>Workshop Two: Observation, documentation, planning and evaluating</h2>
+<div scroll id="observing"></div>
+<div ng-show="isShow('observing')" >
+  <div id="observing--"><h2>Workshop Two: Observation, documentation, planning and evaluating</h2>
 
 <div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_Observing_and_documenting.jpg" alt="image"/>
@@ -136,7 +141,8 @@ Retrieved from:
 
 <p>This workshop relates to the following National Quality Standards and
 elements: 
-<span id="showhide_pd_observing_info--"><a href="#" id="showhide4-show" class="showLink" 
+</div>
+  <span id="showhide_pd_observing_info--"><a href="#" id="showhide4-show" class="showLink" 
 onclick="showHide('showhide4');return false;">Show..</a>
 </p>
 <div id="showhide4" class="more">
@@ -161,11 +167,12 @@ Retrieved from:
 </div>
 
 
-</span></p>
+</span>
+</div>
 
-<p><a scroll id="course3"></a></p>
-
-<h2>Workshop Three: Environment and experiences</h2>
+<div scroll id="environment"></div>
+<div ng-show="isShow('environment')" >
+  <div id="environment--"><h2>Workshop Three: Environment and experiences</h2>
 
 <div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_Environment_and_experiences.jpg" alt="image"/>
@@ -195,7 +202,8 @@ The EYLF PRACTICES discussed are: Learning through Play, Intentional Teaching an
 
 <p>This workshop relates to the following National Quality Standards and
  elements:
-<span id="showhide_pd_environment_info--"><a href="#" id="showhide3-show" class="showLink" 
+</div>
+  <span id="showhide_pd_environment_info--"><a href="#" id="showhide3-show" class="showLink" 
 onclick="showHide('showhide3');return false;">Show..</a>
 </p>
 <div id="showhide3" class="more">
@@ -226,11 +234,12 @@ Retrieved from:
 </div>
 
 
-</span></p>
+</span>
+</div>
 
-<p><a scroll id="course4"></a></p>
-
-<h2>Workshop Four: Developing Cooperative Behaviour</h2>
+<div scroll id="coop"></div>
+<div ng-show="isShow('coop')" >
+  <div id="coop--"><h2>Workshop Four: Developing Cooperative Behaviour</h2>
 
 <div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_cooperative_behaviour.jpg" alt="image"/>
@@ -274,7 +283,8 @@ The EYLF PRINCIPLES are discussed, being: Secure, Respectful and Reciprocal Rela
 
 <p>This workshop relates to the following National Quality Standards and
 elements: 
-<span id="showhide_pd_coop_info--"><a href="#" id="showhide2-show" class="showLink" 
+</div>
+  <span id="showhide_pd_coop_info--"><a href="#" id="showhide2-show" class="showLink" 
 onclick="showHide('showhide2');return false;">Show..</a>
 </p>
 <div id="showhide2" class="more">
@@ -309,11 +319,12 @@ Retrieved from:
 </div>
 
 
-</span></p>
+</span>
+</div>
 
-<p><a scroll id="course5"></a></p>
-
-<h2>Workshop Five: Evaluation and reflective practice for improved program and practice</h2>
+<div scroll id="evaluation"></div>
+<div ng-show="isShow('evaluation')" >
+  <div id="evaluation--"><h2>Workshop Five: Evaluation and reflective practice for improved program and practice</h2>
 
 <div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_reflective_practice.jpg" alt="image"/>
@@ -350,7 +361,8 @@ otherwise. </li>
 </ul>
 
 <p>This workshop relates to the following National Quality Standards and elements:
-<span id="showhide_pd_evaluation_info--"><a href="#" id="showhide5-show" class="showLink" 
+</div>
+  <span id="showhide_pd_evaluation_info--"><a href="#" id="showhide5-show" class="showLink" 
 onclick="showHide('showhide5');return false;">Show..</a>
 </p>
 <div id="showhide5" class="more">
@@ -372,11 +384,12 @@ Retrieved from:
 </div>
 
 
-</span></p>
+</span>
+</div>
 
-<p><a scroll id="course6"></a></p>
-
-<h2>Workshop Six: Children at Risk: identify and respond</h2>
+<div scroll id="children"></div>
+<div ng-show="isShow('children')" >
+  <div id="children--"><h2>Workshop Six: Children at Risk: identify and respond</h2>
 
 <div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_identifying_at_risk_childen.jpg" alt="image"/>
@@ -395,8 +408,8 @@ Retrieved from:
 </ul>
 
 <p>This workshop relates to the following National Quality Standards and
-elements: 
-<span id="showhide_pd_children_info--"><a href="#" id="showhide6-show" class="showLink" 
+</div>
+  <span id="showhide_pd_children_info--"><a href="#" id="showhide6-show" class="showLink" 
 onclick="showHide('showhide6');return false;">Show..</a>
 </p>
 <div id="showhide6" class="more">
@@ -415,11 +428,12 @@ Retrieved from:
 </div>
 
 
-</span></p>
+</span>
+</div>
 
-<p><a scroll id="course7"></a></p>
-
-<h2>Workshop Seven: Identify and Manage Risk to protect against harm</h2>
+<div scroll id="risk"></div>
+<div ng-show="isShow('risk')" >
+  <div id="risk--"><h2>Workshop Seven: Identify and Manage Risk to protect against harm</h2>
 
 <div class="inline-image embed-container ratio-tabimage ">     
 <img class="span12" src="images/slides/PD_managing_risk.jpg" alt="image"/>
@@ -443,7 +457,8 @@ environment</li>
 
 <p>This workshop relates to the following National Quality Standards and
 elements: 
-<span id="showhide_pd_risk_info--"><a href="#" id="showhide7-show" class="showLink" 
+</div>
+  <span id="showhide_pd_risk_info--"><a href="#" id="showhide7-show" class="showLink" 
 onclick="showHide('showhide7');return false;">Show..</a>
 </p>
 <div id="showhide7" class="more">
@@ -465,12 +480,17 @@ Retrieved from:
 </div>
 
 
-</span></p>
+</span>
+</div>
 
-<p><a scroll id="course8"></a></p>
-
-<h2>Workshop Eight: Professional Development ECEC</h2>
+<div scroll id="customised"></div>
+<div ng-show="isShow('customised')" >
+  <div id="customised--"><h2>Workshop Eight: Professional Development ECEC</h2>
 
 <p>Customised workshop: for your Centre’s needs</p></div>
+</div>
+  <span id="showhide_pd_customised_info--"></span>
+</div>
+</div>
     <!-- <div id="rightBar--" class="span4"></div> -->
   </div> 

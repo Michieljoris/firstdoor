@@ -7,6 +7,7 @@ var fs = require('fs');
 var dbox  = require("dbox");
 var dropboxApp = require("./dropboxApp");
 var utils = require('util');
+var buildVideos = require('./buildVideos');
 
 var client;
 
@@ -228,6 +229,8 @@ function sync(done) {
         copyFilesFromDropbox(dropboxToServer, function() {
             if (dropboxToServer.length > 0) {
                 htmlBuilder.build();
+                buildVideos.go(process.cwd() + '/build/editable/resources',
+                               process.cwd()  + '/www/js/videos.js');
                 debug("Finished rendering site");
             }
             else debug("No changes to dropbox files, so not rerendering site");

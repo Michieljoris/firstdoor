@@ -119,6 +119,7 @@ var js = [
     ,'myjs'
     ,'controllers'
     ,'filebrowserCntl'
+    ,'videos'
     ,'resourcesCntl'
     ,'router'
     
@@ -161,8 +162,8 @@ var routes = [
     // ['resources', '/build/markdown/resources.md'],
     ['resources', '/built/view-resources.html', 'ResourcesCntl'],
     ['courses', '/built/view-courses.html'],
-    ['quiz', '/build/markdown/quiz.md'],
-    ['blog', '/built/view-blog.html'],
+    ['quiz', '/built/view-quiz.html'],
+    ['blog', '/built/view-quiz.html'],
     ['epic', '/built/view-epic.html', 'EpicCntl'],
     ['chat', '/built/view-chat.html', 'chatCntl'],
     ['filebrowser', '/built/view-filebrowser.html', 'filebrowserCntl'],
@@ -178,7 +179,7 @@ var mainMenuTree = [
     }
     ,{ label: 'About us', icon: '', route: 'aboutus',
        sub: [
-           { label: 'Our Company', route: 'aboutus#company', scroll: true
+           { label: 'Our company', route: 'aboutus#company', scroll: true
              ,sub: [
                  // { label: 'Markdown editor', route: 'epic'}
                  { label: 'Vision', icon: '', route: 'aboutus#vision'}
@@ -189,39 +190,37 @@ var mainMenuTree = [
              }
              ,{ label: 'Our name and logo', route: 'aboutus#namelogo', scroll: true}
              ,{ label: 'Our people', route: 'aboutus#people', scroll: true}
-             ,{ label: 'First Door policies', route: 'aboutus#policies', scroll: true}
+             ,{ label: 'First door policies', route: 'aboutus#policies', scroll: true}
              // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
            
            ]
      } 
-    ,{ label: 'Professional development', icon: '', route: 'pd'
+    ,{ label: 'Professional development', icon: '', route: 'pd#intro'
        ,sub: [
-           { label: 'The Inspired Educator, <span>working with a child focused approach</span>', route: 'pd#course1', scroll: true}
-           ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#course2', scroll: true}
-           ,{ label: 'Environment and experiences', route: 'pd#course3', scroll: true}
-           ,{ label: 'Developing Cooperative Behaviour', route: 'pd#course4', scroll: true}
-           ,{ label: 'Evaluation and reflective practice for improved program and practice', route: 'pd#course5', scroll: true}
-           ,{ label: 'Children at Risk: identify and respond', route: 'pd#course6', scroll: true}
-           ,{ label: 'Identify and Manage Risk to protect against harm', route: 'pd#course7', scroll: true}
-           ,{ label: 'Customised workshop: for your Centre\'s needs', route: 'pd#course8', scroll: true}
+           { label: 'The inspired educator', route: 'pd#inspired', scroll: true}
+           ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
+           ,{ label: 'Environment and experiences', route: 'pd#environment', scroll: true}
+           ,{ label: 'Developing cooperative behaviour', route: 'pd#coop', scroll: true}
+           ,{ label: 'Evaluation and reflective practice', route: 'pd#evaluation', scroll: true}
+           ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
+           ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
+           ,{ label: 'Customised workshop: for your centre\'s needs', route: 'pd#customised', scroll: true}
        ]
      } 
     ,{ label: 'Accredited training', icon: '', route: 'courses'
        ,sub: [
-           { label: 'Diploma of Children’s Services (Early Childhood Education and Care)', route: 'courses#childrenservices',
+           { label: 'Diploma of children’s services', route: 'courses#childrenservices',
              scroll: true}
-           ,{ label: 'Diploma of Management ', route: 'courses#diploma_management', scroll: true}
-           ,{ label: 'Certificate lV in Training and Assessment', route: 'courses#certivtraining', scroll: true}
+           ,{ label: 'Diploma of management ', route: 'courses#diploma_management', scroll: true}
+           ,{ label: 'Certificate IV in training and assessment', route: 'courses#certivtraining', scroll: true}
            // ,{ label: 'Aged care', route: 'courses#agedcare'}
        ]
      } 
     ,{ label: 'Resources', icon: '', route: 'resources'
        ,sub: [
-           { label: 'General', route: 'resources#general', scroll: true
-           }
-           ,{ label: 'Motivation', route: 'resources#motivation', scroll: true
+           { label: 'Motivation', route: 'resources#motivation', scroll: true
             }
-           ,{ label: 'Early Childhood Education and Care (ECEC', route: 'resources#earlychildhood', scroll: true
+           ,{ label: 'Early childhood', route: 'resources#earlychildhood', scroll: true
               // ,sub: [
               //     { label: 'Educational leaders', route: 'resources'}
               // ]
@@ -229,11 +228,11 @@ var mainMenuTree = [
            ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
            ,{ label: 'Learning', route: 'resources#learning', scroll:true}
            // ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
-           ,{ label: 'Quiz', route: 'quiz'}
            ,{ label: '(tryouts)' ,route: 'resources'
               ,sub: [
                   // { label: 'Markdown editor', route: 'epic'}
-                  { label: 'Blog', icon: '', route: 'blog'}
+                  { label: 'Quiz', route: 'quiz'}
+                  ,{ label: 'Blog', icon: '', route: 'blog'}
                   ,{ label: 'Chat', route: 'chat'}
                   ,{ label: 'Editor', route: 'filebrowser'}
                   // ,{ label: 'Youtube carousel', route: 'ytcarousel'}
@@ -320,7 +319,7 @@ var exports = {
             ,image_resources: '<img class="" src="images/slides/tab_resources.jpg" />'
             ,image_blog: '<img class="" src="images/slides/tab_blog.jpg" />'
             ,skewer:'<script src="http://localhost:9090/skewer"></script>'
-            ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
+            // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
 
         }
         ,metaBlock : {
@@ -387,22 +386,32 @@ var exports = {
                    sidebar: 'html/sidebar'
                    // ,slogan: 'html/slogan'
                    ,slideShow: 'flex',
-                   homeContents: 'markdown/welcome.md'
+                   homeContents: 'editable/welcome/welcome'
                }}
             
             //ProfDev
-            ,{ id: "showhide_pd_inspired_info", showhide: "markdown/pd_inspired_info.md" },
-            { id: "showhide_pd_coop_info", showhide: "markdown/pd_coop_info.md"}, 
-            { id: "showhide_pd_environment_info", showhide: "markdown/pd_environment_info.md"},
-            { id: "showhide_pd_observing_info", showhide: "markdown/pd_observing_info.md" }
-            ,{ id: "showhide_pd_evaluation_info", showhide: "markdown/pd_evaluation_info.md" }
-            ,{ id: "showhide_pd_children_info", showhide: "markdown/pd_children_info.md" }
-            ,{ id: "showhide_pd_risk_info", showhide: "markdown/pd_risk_info.md" }
+            ,{ id: "showhide_pd_inspired_info", showhide: "editable/pd/references/pd_inspired_info.md" },
+            { id: "showhide_pd_coop_info", showhide: "editable/pd/references/pd_coop_info.md"}, 
+            { id: "showhide_pd_environment_info", showhide: "editable/pd/references/pd_environment_info.md"},
+            { id: "showhide_pd_observing_info", showhide: "editable/pd/references/pd_observing_info.md" }
+            ,{ id: "showhide_pd_evaluation_info", showhide: "editable/pd/references/pd_evaluation_info.md" }
+            ,{ id: "showhide_pd_children_info", showhide: "editable/pd/references/pd_children_info.md" }
+            ,{ id: "showhide_pd_risk_info", showhide: "editable/pd/references/pd_risk_info.md" }
+            
             ,{ id:"pd_wrapper",
-               src: 'markdown/pd.md'
-               // ,out : 'test.html'
+               src: 'html/pd_stitch'
                ,mapping: {
-                   showhide_pd_inspired_info: "showhide_pd_inspired_info"
+                   
+                   intro: "editable/pd/pd"
+                   ,inspired: "editable/pd/inspired_educator"
+                   ,observing: "editable/pd/observing_gathering_info"
+                   ,environment: "editable/pd/environment_experiences"
+                   ,coop: "editable/pd/coop_behaviour"
+                   ,evaluation: "editable/pd/eval_reflective_practice"
+                   ,children: "editable/pd/childrent_at_risk"
+                   ,risk: "editable/pd/id_manage_risk"
+                   ,customised: "editable/pd/customised_workshop"
+                   ,showhide_pd_inspired_info: "showhide_pd_inspired_info"
                    ,showhide_pd_observing_info: "showhide_pd_observing_info"
                    ,showhide_pd_environment_info: "showhide_pd_environment_info"
                    ,showhide_pd_coop_info: "showhide_pd_coop_info"
@@ -421,6 +430,15 @@ var exports = {
                 }}
             
             //Courses
+            ,{ src : 'html/courses_stitch.html' 
+               ,id:'courses_stitch'
+               ,mapping: {
+                   childrenservices:   'editable/courses/CHC50908_childrens_services'
+                   ,diploma_management: 'editable/courses/BSB51107_management'
+                   ,certivtraining: 'editable/courses/certiv'
+                   
+               }
+             } 
             ,{ 
                 src: 'views/view_courses_partial.html'
                 ,out : 'view-courses.html'
@@ -429,19 +447,32 @@ var exports = {
                     ,image: 'image_courses'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
-                    ,contents: 'markdown/courses.md'
-                }}
-            
+                    ,contents: 'courses_stitch'
+                }
+            }
             //About us
+            ,{ src : 'html/aboutus_stitch.html' 
+               ,id:'aboutus_stitch'
+               ,mapping: {
+                   approach:   'editable/aboutus/ourcompany_approach'
+                   ,nameandlogo: 'editable/aboutus/nameandlogo'
+                   ,mission: 'editable/aboutus/ourcompany_mission'
+                   ,values: 'editable/aboutus/ourcompany_values'
+                   ,vision: 'editable/aboutus/ourcompany_vision'
+                   ,people: 'editable/aboutus/people'
+               }
+                
+             }
             ,{ 
                 src: 'views/view_aboutus_partial.html'
                 ,out : 'view-aboutus.html'
+                // ,partials: 'build/editable/aboutus'
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,image: 'image_aboutus'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
-                    ,contents: 'markdown/aboutus.md'
+                    ,contents: 'aboutus_stitch'
                 }}
             
             //Resources
@@ -461,6 +492,17 @@ var exports = {
                 ,out : 'view-blog.html'
                 ,mapping: {
                     sidebar: 'html/sidebar'
+                    // ,image: 'image_blog'
+                    // ,slogan: 'slogan'
+                    // ,slideShow: 'flex',
+                    // ,contents: 'markdown/resources.md'
+                }}
+            //Quiz
+            ,{  src: 'views/view_quiz_partial.html'
+                ,out : 'view-quiz.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    ,contents: 'editable/quiz/quiz'
                     // ,image: 'image_blog'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
@@ -518,7 +560,9 @@ var exports = {
                ,mapping: {
                    head: ['title', 'meta',  'html/ieshim','skewer', 'headJsBlock', 'myLinkBlock','_linkBlock'],
                   
-                   "ng:app": ['html/body.html', 'myJsBlock', 'recaptcha', '_scriptBlock', 'html/google_analytics.html']
+                   "ng:app": ['html/body.html', 'myJsBlock', 'recaptcha', '_scriptBlock'
+                              //,'html/google_analytics.html'
+                             ]
                }
              }
             ,{ src: 'page' 
