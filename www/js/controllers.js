@@ -31,7 +31,7 @@ var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
   // });
   }).value('$anchorScroll', angular.noop);
 
-myAppModule.directive('cart', function($window) {
+myAppModule.directive('fixscroll', function($window) {
   return {
     restrict: 'E',
     transclude: true,
@@ -39,7 +39,9 @@ myAppModule.directive('cart', function($window) {
       var window = angular.element($window),
           parent = angular.element(el.parent()),
           currentOffsetTop = el.offset().top-40;
-          origCss = {
+        // console.log('getting offset', currentOffsetTop);
+        // console.log('getting bottom offset', $('#bottomContainer').offset());
+         var  origCss = {
             position: "static",
             width: getParentWidth()
           };
@@ -51,6 +53,8 @@ myAppModule.directive('cart', function($window) {
       });
 
       window.bind('resize', function() {
+          // console.log('resizing');
+          currentOffsetTop = el.offset().top-40;
         el.css({
           width: getParentWidth()
         });
@@ -68,7 +72,34 @@ myAppModule.directive('cart', function($window) {
       }
 
       function handleSnapping() {
-        if (window.scrollTop() > currentOffsetTop) {
+          // console.log(el.offset().top + 450);
+          var bottom = $('#bottomContainer').offset().top;
+          var door = el.offset().top + 450;
+          // var overlapping = door - bottom;
+          // console.log(overlapping, el.offset().top);
+          // console.log(bottom, window.height()-450 -40, window.scrollTop() + window.height()-bottom);
+          
+          // console.log(-450 -40 - window.scrollTop() +bottom);
+          var overlapping = (-450 -60 - window.scrollTop() +bottom);
+          // console.log(overlapping);
+        // console.log('getting bottom offset', $('#bottomContainer').offset());
+          // console.log(window.scrollTop(), currentOffsetTop);
+         //  if (overlapping >0 || el.offset().top + 450 > 1223) {
+         //      el.css(origCss);
+         //      el.css({width: getParentWidth()});
+         //  }
+         // else 
+          if (overlapping < 0) {
+              el.css({
+                  top: overlapping +40 + "px",
+                  position: "fixed",
+                  width: getParentWidth()
+                  // width: "166px"
+              });
+              
+          }
+        else
+            if (window.scrollTop() > currentOffsetTop ) {
           var headerOffsetTop = 40;
           el.css({
             top: headerOffsetTop + "px",
@@ -136,6 +167,7 @@ myAppModule.directive('scroll', function($routeParams,$location) {
         if ($location.hash() === attrs.id) {
             
           setTimeout(function() {
+              // console.log('in scroll directive', element[0].offsetTop-30);
               $('html, body').animate({
                   scrollTop: element[0].offsetTop-30
               }, 1000);
@@ -211,7 +243,8 @@ myAppModule.directive('scroll', function($routeParams,$location) {
 //Controllers
 function MainCntl($scope, $route, $routeParams, $location, $anchorScroll) {
     console.log('Main controller..');
-    $anchorScroll();
+    // $anchorScroll();
+    
     // console.log('location', $location);
     // console.log('route', $route);
     // console.log('params', $routeParams);
@@ -247,9 +280,77 @@ function MainCntl($scope, $route, $routeParams, $location, $anchorScroll) {
     
 }
 
+
+var greendoor = {
+    '/pd':{
+        heading: 'Workshops:',
+       
+    links:    [
+            { label: 'The inspired educator', route: 'pd#inspired', scroll: true}
+            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
+            ,{ label: 'Environment and experiences', route: 'pd#environment', scroll: true}
+            ,{ label: 'Developing cooperative behaviour', route: 'pd#coop', scroll: true}
+            ,{ label: 'Evaluation and reflective practice', route: 'pd#evaluation', scroll: true}
+            ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
+            ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
+            ,{ label: 'Customised workshop', route: 'pd#customised', scroll: true}
+        ]
+    }
+    ,'/aboutus': {
+        heading: ''
+        ,links: [
+            { label: 'Our company', route: 'aboutus#company', scroll: true
+              ,sub: [
+                  // { label: 'Markdown editor', route: 'epic'}
+                  { label: 'Vision', icon: '', route: 'aboutus#vision'}
+                  ,{ label: 'Mission', route: 'aboutus#mission'}
+                  ,{ label: 'Our student approach', route: 'aboutus#approach'}
+                  ,{ label: 'Values', route: 'aboutus#values'}
+              ]
+            }
+            ,{ label: 'Our name and logo', route: 'aboutus#namelogo', scroll: true}
+            ,{ label: 'Our people', route: 'aboutus#people', scroll: true}
+            ,{ label: 'First door policies', route: 'aboutus#policies', scroll: true}
+            // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
+           
+        ]
+
+
+        
+    }
+    ,'/courses': {
+        heading: ''
+        ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
+        ,links: [
+            { label: 'Diploma of children’s services', route: 'courses#childrenservices',
+              scroll: true}
+            ,{ label: 'Diploma of management ', route: 'courses#diploma_management', scroll: true}
+            ,{ label: 'Certificate IV in training and assessment', route: 'courses#certivtraining', scroll: true}
+            // ,{ label: 'Aged care', route: 'courses#agedcare'}
+        ]
+
+        
+    } 
+    
+};
+
+function setActiveTab($location) {
+    
+    var url = $location.$$url;
+    if (!url) url = "whatever";
+    var newRoute = $location.$$path.slice(1);
+    // console.log('newRoute', newRoute);
+    $(".menu > li > a[id*='" + newRoute+ "']").attr("class", "active");
+    if (lastRoute !== newRoute)
+        $(".menu > li > a[id*='" + lastRoute + "']").attr("class", "inactive");
+    lastRoute = newRoute;
+}
+
 var lastRoute='whatever';
 function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     console.log('default controller..');
+    
+    $scope.page = greendoor[$location.$$path];
     // $scope.name = "BookCntl";
     // $scope.params = $routeParams;
     // console.log($location);
@@ -257,22 +358,27 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     setTimeout(function() {
         $(".menu li>ul").removeClass('hide');
     },1000);
+    // console.log('routeparams', $routeParams);
+    setActiveTab($location);
+    // console.log($location);
+    // var url = $location.$$url;
+    // if (!url) url = "whatever";
+    // console.log(url);
+    // var newRoute = $location.$$path.slice(1);
+    // $(".menu #" + newRoute).attr("class", "active");
+    // if (lastRoute !== newRoute)
+    //     $(".menu #" + lastRoute).attr("class", "inactive");
+    // lastRoute = newRoute;
     
     
-    console.log($location);
-    var url = $location.$$url;
-    if (!url) url = "whatever";
-    console.log(url);
-    var newRoute = $location.$$path.slice(1);
-    $(".menu #" + newRoute).attr("class", "active");
-    if (lastRoute !== newRoute)
-        $(".menu #" + lastRoute).attr("class", "inactive");
-    lastRoute = newRoute;
-    console.log('course1 tag', $('#course1'));
-    if (!$location.$$hash)
+    // console.log('course1 tag', $('#course1'));
+    if (!$location.$$hash) {
+        console.log('scrolling to top');
         $('html, body').animate({
             scrollTop: 0
         }, 1000);
+        
+    }
     // setTimeout(function(){
     //     $anchorScroll(hash);
     // },100);
@@ -289,13 +395,16 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     $scope.isShow = function(id) {
         // console.log('id=', id);
         // console.log('hash=', $location.$$hash);
-        return $location.$$hash === id;
+        if ($routeParams.page && $routeParams.page === id) return true;
+        else return $location.$$hash === id;
     };
     
     
 }
 
 function contactusCntl($scope, $routeParams, $location) {
+    $scope.sent = false;
+    console.log('contactus controller');
     // $scope.result = "now it is working..";
     Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
     "captchadiv",
@@ -305,22 +414,64 @@ function contactusCntl($scope, $routeParams, $location) {
       callback: Recaptcha.focus_response_field
     }
   );
-    console.log('contactus');
-    var url = $location.$$url;
-    if (!url) url = "whatever";
-    console.log(url);
-    $(".menu #" + url.slice(1)).attr("class", "active");
     
-    $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
-    lastRoute = $location.$$url;
-    $('#send').bind('click', function() {
-        var username=$('#username').val(), email=$('#email').val();
+    setActiveTab($location);
+    // console.log($location);
+    // var url = $location.$$url;
+    // if (!url) url = "whatever";
+    // console.log(url);
+    // var newRoute = $location.$$path.slice(1);
+    // $(".menu #" + newRoute).attr("class", "active");
+    // if (lastRoute !== newRoute)
+    //     $(".menu #" + lastRoute).attr("class", "inactive");
+    // lastRoute = newRoute;
+    
+        
+    // var url = $location.$$url;
+    // if (!url) url = "whatever";
+    // console.log(url);
+    
+    // $(".menu #" + url.slice(1)).attr("class", "active");
+    // $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
+    // lastRoute = $location.$$url;
+    // $scope.emailmissing="error";
+    // $scope.namemissing="error";
+    // $scope.msgmissing="error";
+    $scope.clicksend = function($event) {
+        $event.preventDefault();
+        console.log('clicked on send');
+        var username_first=$('#username_first').val()
+            ,username_last=$('#username_last').val()
+            ,email=$('#email').val();
+        var username = username_first + ' ' + username_last;
         var textmessage=$('#textmessage').val();
-        // var recaptcha_response_field = $("#recaptcha_response_field").val();
-        // var recaptcha_response_field = Recaptcha.get_response();
+        
+        if (!username_first || !username_last || username.length === 1) {
+            $scope.namemissing = 'error';
+            $scope.result = "Please add a full name..";
+            return;
+        }
+        else if (!email || email.length === 0) {
+            
+            $scope.namemissing = '';
+            $scope.emailmissing = 'error';
+            $scope.result = "Please add an email address..";
+            return;
+        }
+        else if (!textmessage || textmessage.length === 0) {
+            $scope.namemissing = '';
+            $scope.emailmissing = '';
+            $scope.msgmissing = 'error';
+            $scope.result = "Please add a message..";
+            return;
+        }
+        else {
+            $scope.emailmissing="";
+            $scope.namemissing="";
+            $scope.msgmissing="";
+        }
+        
         console.log("From the form:", username, email, textmessage, Recaptcha.get_response());
-        // console.log(JSON.stringify($("#loginForm").serializeObject()));
-
         $.ajax({
             url: "/contactus_form",
             type: "POST",
@@ -330,15 +481,15 @@ function contactusCntl($scope, $routeParams, $location) {
                                    textmessage:textmessage,
                                    recaptcha_response: Recaptcha.get_response(),
                                    recaptcha_challenge: Recaptcha.get_challenge()}),
-            // data:'balbalbla',
             success: function (data, textStatus, jqXHR) {
                 Recaptcha.reload();
                 data = JSON.parse(data);
                 console.log('Form result:', data);
-                // $scope.result = 
-                if (data.success) $scope.result = "Message sent!!!";
-                
+                $scope.result = '';
+                if (data.success) $scope.sent = true;
+                    // $scope.result = "Message sent!!!";
                 else $scope.result = "Message not sent: " + data.error;
+                
                 $scope.$apply();
                 
                 // do something with your data here.
@@ -349,10 +500,10 @@ function contactusCntl($scope, $routeParams, $location) {
                 // likewise do something with your error here.
             }
         });
-  
-  
-        return false; // Prevent form submit.
-    });
+        
+        
+        // return false; // Prevent form submit.
+    };
     
 }
 
@@ -398,7 +549,7 @@ function EpicCntl($scope, $routeParams) {
     editor.load();
     window.test = editor;
     
-var str = "Something to play with. I am going to try to hook it up with the markdown files on the server.\
+    var str = "Something to play with. I am going to try to hook it up with the markdown files on the server.\
 \n\n\
 This will not be in the final website as such of course,  there will be secure secret website address with login etc\
 \n\n\
@@ -431,7 +582,7 @@ Numbered:\
 And some examples to make links: [http://www.google.com]() or [google](http://www.google.com)";
     editor.importFile('test',str);
 }
- 
+
 function HomeCntl($scope, $routeParams, $location) {
     
     console.log('Home controller..');
@@ -440,25 +591,29 @@ function HomeCntl($scope, $routeParams, $location) {
     if (!url) url = "whatever";
     console.log(url);
     
-    var newRoute = $location.$$path.slice(1);
-    if (!newRoute) newRoute = 'home';
-    console.log('Path is:', $location.$$path);
-    $(".menu #" + newRoute).attr("class", "active");
-    if (lastRoute !== newRoute)
-        $(".menu #" + lastRoute).attr("class", "inactive");
-    lastRoute = newRoute;
-    console.log('course1 tag', $('#course1'));
-    if (!$location.$$hash)
+    setActiveTab($location);
+    // var newRoute = $location.$$path.slice(1);
+    // if (!newRoute) newRoute = 'home';
+    // console.log('Path is:', $location.$$path);
+    // $(".menu #" + newRoute).attr("class", "active");
+    // if (lastRoute !== newRoute)
+    //     $(".menu #" + lastRoute).attr("class", "inactive");
+    // lastRoute = newRoute;
+    // console.log('course1 tag', $('#course1'));
+    if (!$location.$$hash) {
+        console.log('scrolling to top');
         $('html, body').animate({
             scrollTop: 0
         }, 1000);
+        
+    }
     
     $('.flexslider').flexslider({
         // animation: "slide",
         easing: 'easeInOutQuad',
         slideshow:true,
         controlNav: false,
-        directionNav: false,
+        directionNav: true,
         slideshowSpeed: 10000,
         animationSpeed: 5000,
         touch: true
@@ -480,17 +635,17 @@ function chatCntl($scope, $routeParams) {
     
     "use strict";
     console.log('Chat Controller');
- 
+    
     // for better performance - to avoid searching in DOM
     var content = $('#content');
     var input = $('#input');
     var status = $('#status');
- 
+    
     // my color assigned by the server
     var myColor = false;
     // my name sent to the server
     var myName = false;
- 
+    
     // if user is running mozilla then use it's built-in WebSocket
     window.WebSocket = window.WebSocket || window.MozWebSocket;
     // console.log('setting html');
@@ -502,26 +657,26 @@ function chatCntl($scope, $routeParams) {
         input.hide();
         $('span').hide();
         return;
-    }
- 
+        }
+    
     // open connection
-    var host = window.location.host;
+        var host = window.location.host;
     var connection = new WebSocket('ws://' + host); //127.0.0.1:8080');
     // var connection = new WebSocket('ws://127.0.0.1:8080');
     // var connection = new WebSocket('ws://firstdoor.michieljoris.com');
- 
+    
     connection.onopen = function () {
         // first we want users to enter their names
         input.removeAttr('disabled');
         status.text('Choose name:');
     };
- 
+    
     connection.onerror = function (error) {
         // just in there were some problems with conenction...
         content.html($('<p>', { text: 'Sorry, but there\'s some problem with your '
                                 + 'connection or the server is down.' } ));
     };
- 
+    
     var userName;
     // most important part - incoming messages
     connection.onmessage = function (message) {
@@ -535,7 +690,7 @@ function chatCntl($scope, $routeParams) {
             console.log('This doesn\'t look like a valid JSON: ', message.data);
             return;
         }
- 
+        
         // NOTE: if you're not sure about the JSON structure
         // check the server source code above
         if (json.type === 'color') { // first response from the server with user's color
@@ -565,7 +720,7 @@ function chatCntl($scope, $routeParams) {
             console.log('Hmm..., I\'ve never seen JSON like this: ', json);
         }
     };
- 
+    
     /**
      * Send mesage when user presses Enter key
      */
@@ -581,14 +736,14 @@ function chatCntl($scope, $routeParams) {
             // disable the input field to make the user wait until server
             // sends back response
             input.attr('disabled', 'disabled');
- 
+            
             // we know that the first message sent from a user their name
             if (myName === false) {
                 myName = msg;
             }
         }
     });
- 
+    
     /**
      * This method is optional. If the server wasn't able to respond to the
      * in 3 seconds then show some error message to notify the user that
@@ -601,7 +756,7 @@ function chatCntl($scope, $routeParams) {
                                                    + 'with the WebSocket server.');
         }
     }, 3000);
- 
+    
     /**
      * Add message to the chat window
      */

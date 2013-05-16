@@ -69,16 +69,17 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     // $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
     // lastRoute = $location.$$url;
     
-    var newRoute = $location.$$path.slice(1);
-    $(".menu #" + newRoute).attr("class", "active");
-    if (lastRoute !== newRoute)
-        $(".menu #" + lastRoute).attr("class", "inactive");
-    window.lastRoute = newRoute;
-    console.log('course1 tag', $('#course1'));
-    if (!$location.$$hash)
-        $('html, body').animate({
-            scrollTop: 0
-        }, 1000);
+    setActiveTab($location);
+    // var newRoute = $location.$$path.slice(1);
+    // $(".menu #" + newRoute).attr("class", "active");
+    // if (lastRoute !== newRoute)
+    //     $(".menu #" + lastRoute).attr("class", "inactive");
+    // window.lastRoute = newRoute;
+    // console.log('course1 tag', $('#course1'));
+    // if (!$location.$$hash)
+    //     $('html, body').animate({
+    //         scrollTop: 0
+    //     }, 1000);
     
     
     requestedVimeoThumbnails = {};
@@ -164,10 +165,12 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     //     }
     // });
     
+    
     $scope.isShow = function(id) {
         // console.log('id=', id);
         // console.log('hash=', $location.$$hash);
-        return $location.$$hash === id;
+        if ($routeParams.page && $routeParams.page === id) return true;
+        else return $location.$$hash === id;
     };
     
 } 

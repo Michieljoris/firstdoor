@@ -1,9 +1,12 @@
-@font-face {
-  font-family: 'Droid Serif';
-  src: url('../font/DroidSerif-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+/* @font-face { */
+/*   font-family: 'Droid Serif'; */
+/*   src: url('../font/DroidSerif-Regular.ttf') format('truetype'); */
+/*   font-weight: normal; */
+/*   font-style: normal; */
+/* } */
+/* @import url(http://fonts.googleapis.com/css?family=Didact+Gothic); */
+/* @import url(http://fonts.googleapis.com/css?family=Questrial); */
+/* @import url(http://fonts.googleapis.com/css?family=Muli:400,400italic); */
 html { height:100%; }
 body {
     padding:0px;
@@ -14,8 +17,13 @@ body {
     /* font-family: 'Droid Serif', serif !important; */
     /* font-family: 'Carrois Gothic',​sans-serif !important; */
     /* font-family: 'Exo',Trebuchet MS,Helvetica Neue,Arial,Sans-serif; */
-    font-family: 'Open Sans',Trebuchet MS,Helvetica Neue,Arial,Sans-serif;
+    /* font-family: 'Open Sans',Trebuchet MS,Helvetica Neue,Arial,Sans-serif; */
+    font-family: "Century Gothic", "Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif;
+    
     /* color: #666; */
+    /* font-family: 'Questrial', sans-serif; */
+    /* font-family: 'Muli', sans-serif; */
+    /* font-family: 'Didact Gothic', sans-serif; */
     color: black;
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
@@ -40,7 +48,7 @@ body {
 /*     padding-right: 0px; */
     padding-left: 40px;
     padding-right: 30px;
-    padding-bottom: 130px;
+    padding-bottom: 300px;
 
 }
 
@@ -81,10 +89,6 @@ body {
     /* padding-bottom:10px; */
     }
 
-#wisenetLogin {
-    background-image: linear-gradient(to bottom,  #f26500, #cc5500);
-    background-color: #f26500; /*burnt orange*/
-   } 
 
 .burnt-orange {
     color: #f26500; /*burnt orange*/
@@ -171,7 +175,7 @@ body {
 #bottomRow {
    background-color: #333333; 
     color: #AAAAAA;
-    padding-top: 30px;
+    padding-top: 2px;
     padding-bottom: 30px;
     }
 
@@ -198,11 +202,11 @@ body {
 
 .footer-headline h4 {
     font-weight: normal;
-    border-bottom: 3px solid #fff;
+    border-bottom: 1px solid #fff;
     display: inline;
     padding: 0 10px 1px 0;
     color: #fff;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 #contents-- img {
@@ -361,7 +365,8 @@ body {
     /* background: #3d9444;  */
     padding-left: 20px;
     margin-bottom: 20px;
-    height: auto; 
+    /* has to be same height as door for spacing reasons */
+    height: 450px; 
     width 200px; 
 } 
 
@@ -372,6 +377,26 @@ body {
 
 @media only screen and (max-width: 767px){
     #sidebar-- {display:none; visibility: hidden;}
+    .menubar {
+	margin-bottom:10px;
+	margin-left:20px;
+    }
+    
+    .connectblock {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;  
+	margin-bottom:-30px;
+	padding-left:50px;
+    }
+    
+    .social-icons {
+	padding-left:0px;
+    }
+    .addthis_button {
+	margin-left: -50px;
+    }
+
 }
 /* #knob { */
 /*     background:white; */
@@ -412,7 +437,8 @@ h1 {
 
 h2 {
     font-size: 18pt;
-    color: #f26500; /*burnt orange*/
+    /* color: #f26500; /\*burnt orange*\/ */
+    color: #3D9444; /*logo green*/
     /* color: black; /\*burnt orange*\/ */
 }
 
@@ -519,26 +545,31 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 @media only screen and (min-width: 768px) and (max-width: 979px){
+    #sidebar-- {
+	margin-right:45px;
+	
+    }	
     #navigation{
 	/* width:765px; */
 	padding-bottom:20px;
 	
     }
     /*  .entry-title{font-size: 40px;} */
-.selectnav { 
+    .selectnav { 
         display: none; 
     } 
-#selectnav1 { 
+    #selectnav1 { 
         display: none; 
     } 
     /*  #footer{width: 724px;} */
     /*   .view-tenth:hover .mask{padding-top: 0px;} */
 
-#social-- h2 {
-    text-align:right;
+    #social-- h2 {
+	text-align:right;
+    }
+    
 }
-      
-}
+
 @media only screen and (max-width: 767px){
     
 #bottomRow {
@@ -628,6 +659,9 @@ h1, h2, h3, h4, h5, h6 {
     /* #phone h1{font-size: 50px; line-height: 50px;} */
 }
 @media only screen and (min-width: 480px) and (max-width: 767px){
+    #wrapper {
+	padding-bottom:600px;
+    }
     .social-icons { 
 	float: left;
 	}
@@ -829,17 +863,17 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom:5px;
 }
 
-#contactForm input {
-    margin-left:18px;
-}
+/* #contactForm input { */
+/*     margin-left:18px; */
+/* } */
 
-#contactForm textarea {
-    margin-left:5px;
-}
+/* #contactForm textarea { */
+/*     margin-left:5px; */
+/* } */
 
-#contactForm {
-    margin-top:20px;
-}
+/* #contactForm { */
+/*     margin-top:20px; */
+/* } */
 
 
 .embed-container {
@@ -854,7 +888,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ratio-tabimage{
-    padding-bottom:33%; /* 9/16*100 */
+    padding-bottom:36%; /* 9/16*100 */
 }
  
 .ratio-4-3{
@@ -876,12 +910,143 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom:20px;
 } 
 
+/* contactform */
+#captchadiv {
+    display:none;
+}
+
+.form-required {
+    color:red;
+}
+
+.subscript {
+    margin-top:-10px;
+    font-size:11px;
+    color:gray;
+}
+
+.form-label {
+    font-weight:600;
+    /* color:darkgray; */
+}
+
+#username_first {
+    /* max-width:150px; */
+}
+
+#textmessage, #email {
+    /* width:100%; */
+}
+
+#textmessage {
+    /* min-height:180px; */
+}
+
+
+#username_last {
+    /* max-width:100%; */
+}
+
+.contactblock {
+    padding-left:10px;
+    padding-bottom:10px;
+}
+
+.bottomimage {
+    width:100%;
+    /* height:auto; */
+    
+}
+
+a {
+    color:3D9444;
+}
+
+#bottomContainer .social-icons {
+    /* float:left; */
+    padding-top:12px;
+    padding-left:13px;
+    padding-bottom:9px;
+}
+
+.addthis_button {
+    padding-left:15px;
+}
+
+.connect-title {
+    font-size:17px;
+    line-height:normal;
+    
+}
+
+.connect-sub {
+    font-size:12px;
+}
+
+.verticalline {
+    border-left:3px solid; 
+    height:40px;
+    padding-left:9px;
+}
+
+#bottomContainer a {
+    color:gray;
+}
+
+.fixedbar #studentLogin-- {
+    padding-right:10px;
+}
+
+.btn-orange {
+    background-color: #F26500;
+    background-image: linear-gradient(to bottom,  #f26500, #cc5500);
+    background-repeat: repeat-x;
+    border-bottom-color: rgba(0, 0, 0, 0.25);
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: rgba(0, 0, 0, 0.1);
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.1);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+#wisenetLogin {
+    background-image: linear-gradient(to bottom,  #f26500, #cc5500);
+    background-color: #f26500; /*burnt orange*/
+   } 
+
+
+/* greendoor */
+
 #greendoor {
     background-image: url(../images/door.jpg);
     height:450px;
     width:220px;
 }
+.doorlinks a {
+    /* color: #3D9444; /\*logo green*\/ */
+    /* color: #f26500; /\*burnt orange*\/ */
+    color:white;
+    font-size:13px;
+}
+
+.doorlinks a:active {
+    /* color: #3D9444; /\*logo green*\/ */
+    /* color: #f26500; /\*burnt orange*\/ */
+    color:red;
+    font-size:13px;
+}
 
 .doorlinks {
     padding:20px 20px 20px 20px;
 }
+.doorlinks .heading {
+    padding-bottom:10px;
+}
+
+
+

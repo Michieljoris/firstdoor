@@ -1,17 +1,35 @@
 <div id="image--" class="tab-image  embed-container ratio-tabimage "><img class="" src="images/slides/tab_accredited_training.jpg" /></div>   
 
 <div class="row"> 
-  <div id="sidebar--" class="span3"><!-- <cart data-ng-transclude=""> -->
-<!--   <div id="greendoor"> -->
-<!--     <div class="doorlinks"> -->
-<!--       A link... -->
-<!--     </div> -->
-<!--   </div> -->
-<!-- </cart> -->
+  <div id="sidebar--" class="span3"><fixscroll data-ng-transclude=""> 
+  <div id="greendoor"> 
+    <div class="doorlinks"> 
+      <div class="heading" ng-bind-html-unsafe="page.heading"></div>
+      <ul>
+	<li ng-repeat="link in page.links">
+	  <a ng-href="index.html#!/{{link.route}}">{{link.label}}</a>
+	  <ul> 
+	    <li ng-repeat="sublink in link.sub">
+	      
+	      <a ng-href="index.html#!/{{sublink.route}}">{{sublink.label}}</a>
+	    </li>
+	  </ul>	
+	</li>
+      </ul>
+      <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
+    </div> 
+  </div> 
+</fixscroll>
+
 </div>
-  <div id="contents--" class="span8"><div scroll id="childrenservices"></div>
+  <div id="contents--" class="span7"><div scroll id="childrenservices"></div>
 <div ng-show="isShow('childrenservices')" >
-  <div id="childrenservices--"><h2>CHC50908 Diploma of Children's Services (Early Childhood Education and Care)</h2>
+  <div id="childrenservices--"><h2>CHC50908 Diploma of Children's Services (Early Childhood Education
+  and Care)</h2>
+
+<div class="inline-image embed-container ratio-tabimage ">     
+<img class="span12" src="images/slides/courses_Diploma_Childrens_services.jpg" alt="image"/>
+</div>
 
 <h3>CORE UNITS</h3>
 
@@ -45,6 +63,10 @@ BSBRSK501A      Manage risk (recommended if continuing with Diploma of Managemen
 <div ng-show="isShow('diploma_management')" >
   <div id="diploma_management--"><h2>BSB51107 Diploma of Management</h2>
 
+<div class="inline-image embed-container ratio-tabimage ">     
+<img class="span12" src="images/slides/courses_Diploma_Management.jpg" alt="image"/>
+</div>
+
 <pre><code>BSBMGT608C  Manage innovation and continuous improvement
 BSBRSK501B  Manage risk
 BSBLED501A  Develop a workplace learning environment
@@ -56,6 +78,10 @@ BSBLED501A  Develop a workplace learning environment
 <div scroll id="certivtraining"></div>
 <div ng-show="isShow('certivtraining')" >
   <div id="certivtraining--"><h2>TAE40110 Certificate lV in Training and Assessment</h2>
+
+<div class="inline-image embed-container ratio-tabimage ">     
+<img class="span12" src="images/slides/courses_certiv.jpg" alt="image"/>
+</div>
 
 <p>Units are recommended for Lead Educators and Educational Leaders</p>
 

@@ -1,20 +1,96 @@
-<div id="contactForm" class="well well-large">
-<form name="loginForm" action="#" method="POST">
-  Name: <input type="text" id="username" name="username"/><br/>
-  Email: <input type="email" id="email" name="email"/><br/>
-  Message:<textarea id="textmessage" rows="5" cols="60"></textarea></br>
-  <input style="float:right;" type="submit" id="send" value="Send"/>
- <div id="captchadiv"></div> 
-</form> 
- {{result}} 
-<p> 
-<p> 
-<a href="http://www.google.com/recaptcha/mailhide/d?k=01awXrVgWq4VNmcaTot0rv0A==&amp;c=KqEXGt4Rt1PeVxu0CZS6KE5z9Xe-pGmVJigPccmtDHY="
-   onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501awXrVgWq4VNmcaTot0rv0A\75\75\46c\75KqEXGt4Rt1PeVxu0CZS6KE5z9Xe-pGmVJigPccmtDHY\075',
-	    '',
-	    'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300');
-	    return false;" title="Reveal this e-mail address">Click
-   here to reveal the direct email address</a>
+<div class="span1"></div>
+<div id="contactForm" class="span4">
+  <form name="loginForm" action="#" method="POST">
+    <h3>Contact us</h3>
+    <div style="padding-bottom:10px;">
+      Please fill out the contact form provided and a First Door
+      representative will reply to you as quickly as possible with the
+      information you've requested.</div>
+    <div ng-show="!sent">
+      <label class="form-label ">Name<span class="form-required">*</span></label>
+      <div class="controls controls-row control-group {{namemissing}}">
+	
+	<input class="span2" placeholder="First" type="text" id="username_first" name="username_first" required/>
+	<input class=" span2" placeholder="Last" type="text" id="username_last" name="username_last" required/>
+      </div>
+      
+      <label class="form-label">Email<span class="form-required">*</span></label>
+      
+      <div class="control-group {{emailmissing}}">
+	<input class="span4" type="email" id="email" name="email" required/><br/>
+      </div>
+      
+      <label class="form-label">Message<span class="form-required">*</span></label>
+      
+      <div class="control-group {{msgmissing}}">
+	<textarea class="span4" required id="textmessage" rows="10" cols="60"></textarea></br>
+      </div> 
+      <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
+	     value="Send" />
+      <div id="captchadiv"></div> 
+    </div>
+    <div ng-show="sent" class="well">
+      Thanks for contacting First Door. We will be in touch within the next 24 hours.
+    </div>
+  </form> 
+  {{result}} 
+</div> 
+<div class="span1"></div>
+<div class="span3">
+  <hr class="styled-hr" style="width:100%;">
+    <div style="padding-bottom:5px;">
+  <div> 
+    </div>
+    <strong>Contact details</strong>
+    <div class="contactblock">
+      Mobile: 0433 114 153 <em>Cindy</em><br>
+      Mobile: 0437 870 932 <em>Andrea</em><br>
+    </div>    
+    <strong>Email:</strong>
+    <div class="contactblock">
+      <a href="admin@firstdoor.com.au">admin@firstdoor.com.au</a>
+    </div>
+
+    <strong>Web:</strong>
+    <div class="contactblock">
+      <a href="http://www.firstdoor.com.au">www.firstdoor.com.au</a>
+    </div>
+    <strong>Skype or facetime: </strong>
+    <div class="contactblock">details are available to students on request
+    </div>
+
+    <div style="height: 10px; overflow: hidden; width: 100%;">
+    </div>
+  </div>
   
-</div>
+      <iframe width="300" height="220" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?msa=0&amp;msid=214171428284719554645.0004dc9b0ddd1db03a058&amp;ie=UTF8&amp;t=m&amp;ll=-27.327855,152.987366&amp;spn=0.366007,0.411987&amp;z=10&amp;output=embed"></iframe>
+</div> 
+<div class="span3">
+  
+  <hr class="styled-hr" style="width:100%;">
+  
+  <div style="padding-bottom:5px;">
+    <strong>Post:</strong>
+    <div class="contactblock">
+      14 Page Street, North Lakes, Queensland 4509, AUSTRALIA
+    </div>
+    
+    <strong>Physical:</strong>
+    <div class="contactblock">
+      <em>Our administration office is:</em><br>
+      14 Page Street, North Lakes, Queensland 4509<br>
+    <em>Our training venues are in:</em><br>
+      Brisbane and local districts
+    </div>
+  
+      <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+    </div>
+    <!-- <a href="http://www.google.com/recaptcha/mailhide/d?k=01awXrVgWq4VNmcaTot0rv0A==&amp;c=KqEXGt4Rt1PeVxu0CZS6KE5z9Xe-pGmVJigPccmtDHY=" -->
+	    <!--    onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501awXrVgWq4VNmcaTot0rv0A\75\75\46c\75KqEXGt4Rt1PeVxu0CZS6KE5z9Xe-pGmVJigPccmtDHY\075', -->
+	    <!-- 	    '', -->
+	<!-- 	    'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); -->
+	<!-- 	    return false;" title="Reveal this e-mail address">Click -->
+	<!--    here to reveal the direct email address</a> -->
+	
+
 

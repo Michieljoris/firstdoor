@@ -33,6 +33,39 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
 
 
 
+var sendThankyou = function (data, success, error) {
+    console.log("Sending thankyou!!!!");
+    var text = "Dear " + data.username + ",<p>" +
+        "Thank you for contacting First Door.<p>" +
+        "We will be in contact with you soon.<p>" +
+        "Regards,<p>" +
+        "The First Door team";
+
+    // setup e-mail data with unicode symbols
+    var mailOptions = {
+        from: "Firstdoor Server", // sender address
+        to: data.email, // list of receivers
+        // to: "michieljoris@gmail.com", // list of receivers
+        subject: "Thank you for contacting First Door", // Subject line
+        // text: data.message // plaintext body
+        html: text // html body
+    };
+    
+    smtpTransport.sendMail(mailOptions, function(err, response){
+        if(err){
+            console.log(err);
+            error(err);
+        }else{
+            console.log("Message sent: " + response.message);
+            success(response.message);
+        }
+
+        // if you don't want to use this transport object anymore, uncomment following line
+        //smtpTransport.close(); // shut down the connection pool, no more messages
+    });
+    // sendMail(mailOptions);
+};
+
 var sendEmail = function (data, success, error) {
     console.log("Sending email!!!!");
     var text = data.username + " with email address " + "<a href='mailto:" + data.email + "'>" + data.email + "</a>" +
@@ -63,6 +96,10 @@ var sendEmail = function (data, success, error) {
 };
 
 function recaptcha_verify(parameters, success, error) {
+    //comment out the next two lines to enable captcha checking
+    //see firstdoor on how to implement client side (in www/js/controllers.js)
+    success();
+    return;
     // console.log(parameters);
     console.log("Verifying captcha");
 
@@ -132,7 +169,8 @@ exports.handlePost = function(req, res) {
                 '&challenge=' + data.recaptcha_challenge + '&response=' + data.recaptcha_response;
 
             recaptcha_verify(parameters,
-                             function() { sendEmail(data,
+                             function() {
+                                 sendEmail(data,
                                                     function() {
                                                         res.write(JSON.stringify({ success:true }));
                                                         res.end();
@@ -140,7 +178,19 @@ exports.handlePost = function(req, res) {
                                                     function(e) {
                                                         res.write(JSON.stringify({ success:false, error:e }));
                                                         res.end();
-                                                    }); },
+                                                        
+                                                    });
+                                 sendThankyou(data,
+                                                    function() {
+                                                        // res.write(JSON.stringify({ success:true }));
+                                                        // res.end();
+                                                    },
+                                                    function(e) {
+                                                        // res.write(JSON.stringify({ success:false, error:e }));
+                                                        // res.end();
+                                                        
+                                                    });
+                             },
                              function(e) { console.log("failed to verify captcha:" + e);
                                            res.write(JSON.stringify({ success:false, error: e}));
                                            res.end();

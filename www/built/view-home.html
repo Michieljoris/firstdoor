@@ -1,38 +1,36 @@
 <div class="row">     
-  <div id="slideShow--" class="span11"><div class="flexslider"><ul class="slides"><li><img src="images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>   
+  <div id="slideShow--" class="span11"><div class="flexslider"><ul class="slides"><li><img src="images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>   
 </div>   
 
-<div class="row">    
-  <!-- <div id="slogan--" class="span12">     -->
-  </div>  
-</div>  
 
 <div class="row"> 
-  <div id="sidebar--" class="span3"><!-- <cart data-ng-transclude=""> -->
-<!--   <div id="greendoor"> -->
-<!--     <div class="doorlinks"> -->
-<!--       A link... -->
-<!--     </div> -->
-<!--   </div> -->
-<!-- </cart> -->
+  <div id="sidebar--" class="span3"><fixscroll data-ng-transclude=""> 
+  <div id="greendoor"> 
+    <div class="doorlinks"> 
+      <div class="heading" ng-bind-html-unsafe="page.heading"></div>
+      <ul>
+	<li ng-repeat="link in page.links">
+	  <a ng-href="index.html#!/{{link.route}}">{{link.label}}</a>
+	  <ul> 
+	    <li ng-repeat="sublink in link.sub">
+	      
+	      <a ng-href="index.html#!/{{sublink.route}}">{{sublink.label}}</a>
+	    </li>
+	  </ul>	
+	</li>
+      </ul>
+      <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
+    </div> 
+  </div> 
+</fixscroll>
+
 </div>
-  <div id="homeContents--" class="span5"><h2>Welcome to First Door Training and Development</h2>
-
-<p>Choosing a job role to enrich and touch people’s lives is a career
-choice that has the ability to impact on individuals, communities and
-our society.</p>
-
-<p>As trainers of people in the Early Childhood workforce we are
-passionate about inspiring students and developing capability. Our
-courses and professional development workshops encompass the National
-Quality Framework and bridge theory to experiences in workplace
-practice. </p>
-
-<p>First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. </p>
-
+  <div id="homeContents--" class="span6"><h2>Welcome to First Door Training and Development</h2>
+<p>Choosing a job role to enrich and touch people&rsquo;s lives is a career choice that has the ability to impact on individuals, communities and our society.</p>
+<p>As trainers of people in the Early Childhood workforce we are passionate about inspiring students and developing capability. Our courses and professional development workshops encompass the National Quality Framework and bridge theory to experiences in workplace practice.</p>
+<p>First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers.</p>
 <blockquote>
-  <p><em>“I alone cannot change the world, but I can cast a stone across the waters to create many ripples.”</em> Mother Teresa</p>
-</blockquote>
-</div>
-  <div id="rightBar--" class="span4"></div>
+<p><em>&ldquo;I alone cannot change the world, but I can cast a stone across the waters to create many ripples.&rdquo;</em> Mother Teresa</p>
+</blockquote></div>
+  <div id="rightBar--" class="span3"></div>
 </div> 

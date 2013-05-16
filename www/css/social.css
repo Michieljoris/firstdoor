@@ -3,9 +3,15 @@
     margin: 0;
 }
 
+
+
 .social-icons {
     float: right;
     margin: 0;
+}
+
+#bottomRow .social-icons { 
+    float: left;
 }
 .social-icons li {
     background-position: 0 -38px;

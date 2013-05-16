@@ -1,6 +1,6 @@
 {
     "name": "firstdoor",
-    "version": "0.1.0",
+    "version": "0.1.0-1",
     "author": "Michiel van Oosten",
     "description": "Website for Greendoor business",
     "repository": {
@@ -23,6 +23,10 @@
     "analyze": false,
     "preferGlobal": "true",
     "subdomain": "firstdoor",
+    "domains": [
+        "www.firstdoor.com.au",
+        "firstdoor.com.au"
+    ],
     "engines": {
         "node": "0.8.x"
     }

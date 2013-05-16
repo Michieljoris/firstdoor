@@ -13,14 +13,16 @@ function isVimeo(line) {
 
 function getYoutubeId(line) {
    var idPos = line.indexOf('watch?v=');
-    if (idPos !==-1) return line.slice(idPos + 8);
+    if (idPos !==-1) return line.slice(idPos + 8, idPos+8+11);
     else console.log('Error: no youtube video id fount!!');
 }
 
 
 function getVimeoId(line) {
-   var idPos = line.indexOf('com/video/');
-    if (idPos !==-1) return line.slice(idPos + 10);
+   var result = line.match(/vimeo\.com\/video\/([0-9]{1,10})/);
+    if (result[1]) return result[1];
+   // var idPos = line.indexOf('com/video/');
+    // if (idPos !==-1) return line.slice(idPos + 10);
     else console.log('Error: no vimeo video id fount!!');
 }
 
@@ -52,11 +54,11 @@ function getData(video, file) {
             }
     }
     video.provider = isYoutube(link) ? 'youtube' :
-        (isVimeo(link) ? 'vimeo' : null);
-    if (!video.provider) {
-        console.log('Error: no provider found!!!');
-        return null;
-    }
+        (isVimeo(link) ? 'vimeo' : 'text');
+    // if (!video.provider) {
+    //     console.log('Error: no provider found!!!');
+    //     return null;
+    // }
     video.id = isYoutube(link) ? getYoutubeId(link) :
         (isVimeo(link) ? getVimeoId(link) : '' );
     video.title = title;

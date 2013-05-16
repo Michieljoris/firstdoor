@@ -177,7 +177,7 @@ var mainMenuTree = [
        //     { label: 'Contact us', route: 'contactus', scroll: true}
        //     ]
     }
-    ,{ label: 'About us', icon: '', route: 'aboutus',
+    ,{ label: 'About us', icon: '', route: 'aboutus?page=vision',
        sub: [
            { label: 'Our company', route: 'aboutus#company', scroll: true
              ,sub: [
@@ -195,7 +195,7 @@ var mainMenuTree = [
            
            ]
      } 
-    ,{ label: 'Professional development', icon: '', route: 'pd#intro'
+    ,{ label: 'Professional development', icon: '', route: 'pd?page=intro'
        ,sub: [
            { label: 'The inspired educator', route: 'pd#inspired', scroll: true}
            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
@@ -204,10 +204,10 @@ var mainMenuTree = [
            ,{ label: 'Evaluation and reflective practice', route: 'pd#evaluation', scroll: true}
            ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
            ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
-           ,{ label: 'Customised workshop: for your centre\'s needs', route: 'pd#customised', scroll: true}
+           ,{ label: 'Customised workshop', route: 'pd#customised', scroll: true}
        ]
      } 
-    ,{ label: 'Accredited training', icon: '', route: 'courses'
+    ,{ label: 'Accredited training', icon: '', route: 'courses?page=childrenservices'
        ,sub: [
            { label: 'Diploma of children’s services', route: 'courses#childrenservices',
              scroll: true}
@@ -216,7 +216,7 @@ var mainMenuTree = [
            // ,{ label: 'Aged care', route: 'courses#agedcare'}
        ]
      } 
-    ,{ label: 'Resources', icon: '', route: 'resources'
+    ,{ label: 'Resources', icon: '', route: 'resources?page=motivation'
        ,sub: [
            { label: 'Motivation', route: 'resources#motivation', scroll: true
             }
@@ -227,7 +227,7 @@ var mainMenuTree = [
             }
            ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
            ,{ label: 'Learning', route: 'resources#learning', scroll:true}
-           // ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
+           ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
            ,{ label: '(tryouts)' ,route: 'resources'
               ,sub: [
                   // { label: 'Markdown editor', route: 'epic'}
@@ -274,16 +274,17 @@ var slides =  [
       // ,title: 'Early Childhood Education and Care training'
       // ,subtitle: 'Aged care slogan'
     }
-    ,{ url: "images/slides/home_page_engaging_resources.jpg"
-      // ,title: 'Innovative resources to bridge the gap between theory and practice'
+    ,{ url: "images/slides/home_page_interactive_professional_development.jpg"
+      // ,title: 'Interactive professional development connecting educators to the National Quality Framework'
       // ,subtitle: 'Slogan'
-    },
-    { url: "images/slides/home_page_First_Door_mentoring.jpg"
+    }
+    ,{ url: "images/slides/home_page_First_Door_mentoring.jpg"
       //,title: 'First Door mentoring inspires focused students'
       // ,subtitle: 'Slogan'
     }
-    ,{ url: "images/slides/home_page_interactive_professional_development.jpg"
-      // ,title: 'Interactive professional development connecting educators to the National Quality Framework'
+    
+    ,{ url: "images/slides/home_page_engaging_resources.jpg"
+      // ,title: 'Innovative resources to bridge the gap between theory and practice'
       // ,subtitle: 'Slogan'
     }
 ];
@@ -319,7 +320,7 @@ var exports = {
             ,image_resources: '<img class="" src="images/slides/tab_resources.jpg" />'
             ,image_blog: '<img class="" src="images/slides/tab_blog.jpg" />'
             ,skewer:'<script src="http://localhost:9090/skewer"></script>'
-            // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
+            ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
 
         }
         ,metaBlock : {
@@ -344,7 +345,7 @@ var exports = {
             {
                 id: 'headJsBlock',
                 files: [
-                    'prefetch_images'
+                    // 'prefetch_images'
                 ],
                 path: 'js/'
             },
@@ -454,11 +455,13 @@ var exports = {
             ,{ src : 'html/aboutus_stitch.html' 
                ,id:'aboutus_stitch'
                ,mapping: {
-                   approach:   'editable/aboutus/ourcompany_approach'
-                   ,nameandlogo: 'editable/aboutus/nameandlogo'
-                   ,mission: 'editable/aboutus/ourcompany_mission'
-                   ,values: 'editable/aboutus/ourcompany_values'
+                   company: 'editable/aboutus/ourcompany'
                    ,vision: 'editable/aboutus/ourcompany_vision'
+                   ,mission: 'editable/aboutus/ourcompany_mission'
+                   ,approach:   'editable/aboutus/ourcompany_approach'
+                   ,values: 'editable/aboutus/ourcompany_values'
+                   
+                   ,nameandlogo: 'editable/aboutus/nameandlogo'
                    ,people: 'editable/aboutus/people'
                }
                 
@@ -560,7 +563,9 @@ var exports = {
                ,mapping: {
                    head: ['title', 'meta',  'html/ieshim','skewer', 'headJsBlock', 'myLinkBlock','_linkBlock'],
                   
-                   "ng:app": ['html/body.html', 'myJsBlock', 'recaptcha', '_scriptBlock'
+                   "ng:app": ['html/body.html', 'myJsBlock',
+                              'recaptcha',
+                              '_scriptBlock'
                               //,'html/google_analytics.html'
                              ]
                }
@@ -578,10 +583,11 @@ var exports = {
                    ,search: 'html/search'
                    ,menu: 'cssmenu'
                    ,fixedmenu: 'fixedmenu'
-                   // ,footerLeft: 'html/footerLeft'
-                   // ,footerMiddle: 'html/footerMiddle'
-                   // ,footerRight: 'html/footerRight'
-                   ,'footerBottom': 'html/footerBottom'
+                   ,footer1: 'html/footerConnect'
+                   ,footer2: 'html/footerPolicies'
+                   ,footer3: 'html/footerContact'
+                   ,footer4: 'html/footerLegal'
+                   ,footerBottom: 'html/footerBottom'
                    // ,'feedback': 'html/feedback'
                }
              }

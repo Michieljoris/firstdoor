@@ -21,8 +21,6 @@ to resize all images in dir
 and:
 mogrify -quality 80 *.jpg
 to compress
-
-
 ** recaptcha 
 Domain Name: 	michieljoris.com
 
@@ -41,110 +39,55 @@ Use this when communicating between your server and our server. Be sure to keep 
 *** blog   
 *** hook up markdown editor with server
     
-    
-** now    
-*** contact us in green door, and on every site
-   
-*** fix up ipad issues
-   menu won't go away, won't scroll to id tag. 
-   
-*** learning style quiz
-*** clean up css for narrow screen, change menu type   
-*** SEO
-*** slider with text sliding in 
-cslider, index3.html
-Sequence slider
-   
-   
-*** Do the images on front page have image titles? 
-   The wording for the four rolling images on the home page are:
-1. Early Childhood Education and Care training
- 
-2. First Door mentoring inspires focused students
- 
-3. Innovative resources to bridge the gap between theory and practice
-4. Interactive professional development connecting educators to the National Quality Framework
-   
-   
-***  courses and pd  a door with contact us.
-    
-
-   
-*** Email form:
-   Styling 
-   send message thanks for contacting us etc 
-
-*** Authentication!!!!
-
-*** Setup nodejitsu
-    
-*** Links in door, like a menu
-
 *** bootstrap tooltips for social buttons
-
+*** learning style quiz
 *** prefetch images
    possibly also the html?  image optimization using jpegtran?
 
-*** fixed sidebar/door
 
-*** dropbox file editor using tinymce
-   put youtube descriptions in?  
-Website developed by michiel    
+*** letterhead on top or bottom
+   
     
-*** make dropbox-server filemap    
- 
-Accredited Training Can you please use the three titled images for
-each of these courses like the use of images for the professional
-development workshops
- 
-Contact Us menu tab information page
-Was expecting that this also gave full details as shown in the dropbox with the door contact box
-Each page has a space below the green door with links on the left. What it be good to have a “We’re here to help” message with a contact us link to the contact door here?
-Is it necessary to have the are you human check on the contact us page?. I personally feel aggravated by these, so would prefer not to have it on our website.
- 
-The drop box has the following to be updated:
-New images with the image title that were unable to be added
-dynamically 
-An image called ‘bottom letterhead’ that we use for our
-documents. I was wondering if this would be good for on top of the
-grey bottom panel 
-Are we able to use the door format for the contact
+** now    
+   
+*** leftside panel/door
+**** Are we able to use the door format for the contact
 us box where they enter their name, question, and email?  
-Professional
-development workshop introduction with numbered 1,2,3,4 information
-points 
-Resource blurbs and new resources for motivation and leadership
-and management Pdf of First Door policies and procedure manual. Can
-this be viewed only with downloading or copying? Is there a way of
-protecting this document on the website from being copied?  Pdf of our
-privacy policy The full contact us information to be shown from the
-menu tab Contact us
+**** The learning style quiz is tucked away under resources and then under learning,
+ so it would be good to have this in the green door of links separately
+
  
-Grey bottom panel is to have at this stage:
-Privacy policy (link to pdf document)
-Also, to check whether bottom letterhead image looks good on top of this?
+
+
+**** Facebook like right bottom image
+
+**** Pd fees as link to separate page.
+
+**** email bank account detailss 
+**** format resources wells
+resources title on top.
+title links to article.
+**** make sure index.html works
+
+
+*** clean up css for narrow screen,    
+fix up ipad issues
+ menu won't go away, won't scroll to id tag. 
  
-The green door with links
-Thanks for fixing the shade of green. It looks much better!
-At the moment when I’m on the home page this green door floats up over the images when I start scrolling. The rest of the pages do not do this though.
- 
-Generic website text font 
-Now that we have got into writing lots of
-documents we have chosen Century Gothic as our standard text font for
-First Door. I am feeling nervous about asking you this but here
-goes! - How difficult would it be for you to change the entire text of
-the website to Century Gothic? Obviously if this was too time
-consuming it would not be reasonable to do this.
- 
-The learning style quiz is tucked away under resources and then under learning, so it would be good to have this in the green door of links separately
-Quiz to know your preferred learning style
- 
-About Us
-Under ‘Our Student approach’ the first three bullet points should all be the same.
+links on resources page.. 
+*** SEO
+   
+*** breadcrumbs 
+    
     
 * Contact
 Andrea mobile is 0437 870 932 or home p: 3491 3573.
 
+
 * Questions:
-Designed by???
+  Resources can be organized better and displayed better.
+  I'm trying to make it so that you can add resources yourself and edit
+  them.  
+ 
+
 

@@ -22,25 +22,27 @@
 		  {{vimeoLoadThumb($index, video.id)}}
 		</div>
 	      </a>
-              <span ng-switch-default>unknown video provider!!</span>
+              <span ng-switch-default>Article</span>
 	    </div>
-	    <div id="videoBlurb" class="span5">{{video.blurb}}</div>
+	    <div id="videoBlurb" class="span5" ng-bind-html-unsafe="video.blurb"></div>
 	  </div>
 	</div>
-	<a id="videoTitle" href="#" ng-click="open($event, video)">
-	  {{video.title}}
-	</a>
+	<div ng-switch on="video.provider" >
+	  <span ng-switch-when="text" ng-bind-html-unsafe="video.title"></span>
+          <span ng-switch-default>
+	    <a id="videoTitle" href="#" ng-click="open($event, video)" ng-bind-html-unsafe="video.title"> </a>
+	  </span>
+	</div>
 	
       </li>
     </ul>
   </li>
 </ul> 
 
-
 <div >
     <div modal="shouldBeOpen" close="close()" options="opts">
         <div class="modal-header">
-            <h4>{{selectedVideo.title}}</h4>
+            <h4 ng-bind-html-unsafe="selectedVideo.title"></h4>
         </div>
         <div class="modal-body" style="padding-left:10px;
 				       background:black;">

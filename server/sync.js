@@ -11,10 +11,10 @@ var buildVideos = require('./buildVideos');
 
 var client;
 
-var fileMap  = fs.readFileSync("./server/DropboxToServerMap.json", 'utf8');
-fileMap = JSON.parse(fileMap);
+var fileMapJson  = fs.readFileSync("./server/DropboxToServerMap.json", 'utf8');
+fileMapJson = JSON.parse(fileMapJson);
     
-var allMetaData = {};
+// var allMetaData = {};
 var busy = false;
 
 var log = [];
@@ -23,7 +23,7 @@ function debug() {
     log.push(arguments);
 }
 
-function getMetaData( path, callback) {
+function getMetaData(allMetaData, path, callback) {
     var options = {
         file_limit         : 10000,              // optional
         hash               : allMetaData[path] ? allMetaData[path].hash : '',
@@ -57,9 +57,9 @@ function getMetaData( path, callback) {
     });
 }
 
-function buildMetaData(path, done) {
+function buildMetaData(allMetaData, path, done) {
     debug("Inspecting " + path);
-    getMetaData(path, function(metaData) {
+    getMetaData(allMetaData, path, function(metaData) {
         // debug('metadata received', metaData);
         if (metaData && metaData.contents) {
             // debug('this path has contents..');
@@ -68,13 +68,13 @@ function buildMetaData(path, done) {
                 if (c.is_dir) dirCount++;
             });
             // debug('And it has ' + dirCount + ' directories');
-            if (dirCount === 0) done();
+            if (dirCount === 0) done(allMetaData);
             else {
                 metaData.contents.forEach(function(c) {
                     if (c.is_dir) {
-                        buildMetaData(c.path, function() {
+                        buildMetaData(allMetaData, c.path, function() {
                             dirCount--;
-                            if (dirCount === 0) done(); 
+                            if (dirCount === 0) done(allMetaData); 
                         });
                     }
                 });
@@ -82,7 +82,7 @@ function buildMetaData(path, done) {
             
             
         } 
-        else done();
+        else done(allMetaData);
     });
 }
 
@@ -106,10 +106,42 @@ function getPathAndName(filename) {
     return { path: path, name: name };
 }
 
-function processMap() {
-    debug('filemap:\n', fileMap);
+function makeFileMap(baseDir, allMetaData) {
+   // console.log(allMetaData);
+    var fileMap = {};
+    function recurse(metaData) {
+        if (metaData.is_dir) {
+            console.log('inspecting', metaData.path);
+            inpect(metaData.contents);
+        }
+        else {
+            fileMap[metaData.path] = baseDir + metaData.path;
+        }
+        
+    }
+    function inpect(contents) {
+        if (!contents) return;
+        contents.forEach(function(metaData) {
+            recurse(metaData);
+        });
+    }
+    Object.keys(allMetaData).forEach(function(m) {
+        var metaData = allMetaData[m];
+        recurse(metaData);
+        
+    });
+    return fileMap;
+}
+
+function processMap(allMetaData) {
     var dropboxToServer = [];
     var serverToDropbox = [];
+    var fileMap = makeFileMap('/build', allMetaData);
+    //merge filemap from disk
+    Object.keys(fileMapJson).forEach(function(f) {
+        fileMap[f] = fileMapJson[f];
+    });
+    debug('filemap:\n', fileMap);
     Object.keys(fileMap).forEach(function(k) {
         var pair = { dropbox: k,
                      server: fileMap[k] };
@@ -222,15 +254,16 @@ function writePrettyDebug(res) {
 
 
 function sync(done) {
-    buildMetaData('/', function() {
+    var allMetaData = {};
+    buildMetaData(allMetaData, '/', function(allMetaData) {
         debug("Finished inspecting dropbox");
-        var dropboxToServer = processMap();
+        var dropboxToServer = processMap(allMetaData);
         debug('To be copied from dropbox to server: \n', dropboxToServer);
         copyFilesFromDropbox(dropboxToServer, function() {
             if (dropboxToServer.length > 0) {
-                htmlBuilder.build();
                 buildVideos.go(process.cwd() + '/build/editable/resources',
                                process.cwd()  + '/www/js/videos.js');
+                htmlBuilder.build();
                 debug("Finished rendering site");
             }
             else debug("No changes to dropbox files, so not rerendering site");
