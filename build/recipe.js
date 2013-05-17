@@ -156,10 +156,8 @@ var js = [
 
 var routes = [
     ['home', '/built/view-home.html', 'HomeCntl'],
-    // ['aboutus', '/build/markdown/aboutus.md'],
     ['aboutus', '/built/view-aboutus.html'],
     ['pd', '/built/view-pd.html'],
-    // ['resources', '/build/markdown/resources.md'],
     ['resources', '/built/view-resources.html', 'ResourcesCntl'],
     ['courses', '/built/view-courses.html'],
     ['quiz', '/built/view-quiz.html'],
@@ -205,6 +203,7 @@ var mainMenuTree = [
            ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
            ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
            ,{ label: 'Customised workshop', route: 'pd#customised', scroll: true}
+           // ,{ label: 'Fees', route: 'pd#pdfees', scroll: true}
        ]
      } 
     ,{ label: 'Accredited training', icon: '', route: 'courses?page=childrenservices'
@@ -226,20 +225,24 @@ var mainMenuTree = [
               // ]
             }
            ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
-           ,{ label: 'Learning', route: 'resources#learning', scroll:true}
-           ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
-           ,{ label: '(tryouts)' ,route: 'resources'
-              ,sub: [
-                  // { label: 'Markdown editor', route: 'epic'}
-                  { label: 'Quiz', route: 'quiz'}
-                  ,{ label: 'Blog', icon: '', route: 'blog'}
-                  ,{ label: 'Chat', route: 'chat'}
-                  ,{ label: 'Editor', route: 'filebrowser'}
-                  // ,{ label: 'Youtube carousel', route: 'ytcarousel'}
-                  // ,{ label: 'Submenu item 2', route: 'index.html'}
-                  // ,{ label: 'Submenu item 2', route: 'index.html'}
+           ,{ label: 'Learning', route: 'resources#learning', scroll:true,
+              sub: [
+                  { label: 'Quiz', route: 'resources#quiz'}
               ]
-            } 
+            }
+           ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
+           // ,{ label: '(tryouts)' ,route: 'resources'
+           //    ,sub: [
+           //        // { label: 'Markdown editor', route: 'epic'}
+           //        { label: 'Quiz', route: 'quiz'}
+           //        ,{ label: 'Blog', icon: '', route: 'blog'}
+           //        ,{ label: 'Chat', route: 'chat'}
+           //        ,{ label: 'Editor', route: 'filebrowser'}
+           //        // ,{ label: 'Youtube carousel', route: 'ytcarousel'}
+           //        // ,{ label: 'Submenu item 2', route: 'index.html'}
+           //        // ,{ label: 'Submenu item 2', route: 'index.html'}
+           //    ]
+           //  } 
        ]
        
      } 
@@ -412,6 +415,7 @@ var exports = {
                    ,children: "editable/pd/childrent_at_risk"
                    ,risk: "editable/pd/id_manage_risk"
                    ,customised: "editable/pd/customised_workshop"
+                   // ,pdfees: "editable/pd/pdfees"
                    ,showhide_pd_inspired_info: "showhide_pd_inspired_info"
                    ,showhide_pd_observing_info: "showhide_pd_observing_info"
                    ,showhide_pd_environment_info: "showhide_pd_environment_info"
@@ -566,7 +570,7 @@ var exports = {
                    "ng:app": ['html/body.html', 'myJsBlock',
                               'recaptcha',
                               '_scriptBlock'
-                              //,'html/google_analytics.html'
+                              ,'html/google_analytics.html'
                              ]
                }
              }

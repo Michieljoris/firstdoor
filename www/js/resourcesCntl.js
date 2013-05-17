@@ -55,7 +55,9 @@ function vimeoLoadThumb(index, video_id){
 
 
 function ResourcesCntl($scope, $route, $routeParams, $location) {
+    console.log('resource controller');
     
+    $scope.page = greendoor[$location.$$path];
     $(".menu li>ul").addClass('hide');
     setTimeout(function() {
         $(".menu li>ul").removeClass('hide');

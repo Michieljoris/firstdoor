@@ -285,7 +285,7 @@ var greendoor = {
     '/pd':{
         heading: 'Workshops:',
        
-    links:    [
+        links:    [
             { label: 'The inspired educator', route: 'pd#inspired', scroll: true}
             ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
             ,{ label: 'Environment and experiences', route: 'pd#environment', scroll: true}
@@ -312,11 +312,25 @@ var greendoor = {
             ,{ label: 'Our people', route: 'aboutus#people', scroll: true}
             ,{ label: 'First door policies', route: 'aboutus#policies', scroll: true}
             // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
+            
            
         ]
-
-
-        
+       } 
+        ,'/resources':   {
+        heading: ''
+            ,links: [
+                { label: 'Motivation', route: 'resources#motivation', scroll: true
+                }
+                ,{ label: 'Early childhood', route: 'resources#earlychildhood', scroll: true
+                   // ,sub: [
+                   //     { label: 'Educational leaders', route: 'resources'}
+                   // ]
+                 }
+                ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
+                ,{ label: 'Learning', route: 'resources#learning', scroll:true}
+                ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
+                // ,{ label: 'Quiz', route: 'quiz'}
+            ]
     }
     ,'/courses': {
         heading: ''
@@ -379,17 +393,18 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
         }, 1000);
         
     }
+    
     // setTimeout(function(){
     //     $anchorScroll(hash);
     // },100);
     
     
-    $(function() {
-        $('#da-slider').cslider({
-            autoplay	: true
-            ,interval: 10000
-        });
-    });
+    // $(function() {
+    //     $('#da-slider').cslider({
+    //         autoplay	: true
+    //         ,interval: 10000
+    //     });
+    // });
     
     
     $scope.isShow = function(id) {
@@ -398,7 +413,6 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
         if ($routeParams.page && $routeParams.page === id) return true;
         else return $location.$$hash === id;
     };
-    
     
 }
 
@@ -587,9 +601,6 @@ function HomeCntl($scope, $routeParams, $location) {
     
     console.log('Home controller..');
     
-    var url = $location.$$url;
-    if (!url) url = "whatever";
-    console.log(url);
     
     setActiveTab($location);
     // var newRoute = $location.$$path.slice(1);
@@ -601,7 +612,6 @@ function HomeCntl($scope, $routeParams, $location) {
     // lastRoute = newRoute;
     // console.log('course1 tag', $('#course1'));
     if (!$location.$$hash) {
-        console.log('scrolling to top');
         $('html, body').animate({
             scrollTop: 0
         }, 1000);
