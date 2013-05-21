@@ -1,4 +1,5 @@
 <div id="image--" class="tab-image  embed-container ratio-tabimage "><img class="" src="images/slides/tab_professional_development.jpg" /></div>   
+</div>   
   
   <div class="row"> 
     <div id="sidebar--" class="span3"><fixscroll data-ng-transclude=""> 
@@ -7,11 +8,11 @@
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
 	<li ng-repeat="link in page.links">
-	  <a ng-href="index.html#!/{{link.route}}">{{link.label}}</a>
+	  <a ng-href="/{{link.route}}">{{link.label}}</a>
 	  <ul> 
 	    <li ng-repeat="sublink in link.sub">
 	      
-	      <a ng-href="index.html#!/{{sublink.route}}">{{sublink.label}}</a>
+	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
 	    </li>
 	  </ul>	
 	</li>
@@ -39,13 +40,13 @@
 
 <div scroll id="inspired"></div>
 <div ng-show="isShow('inspired')" >
-  <div id="inspired--"><h2>Workshop One: The inspired, child focused educator</h2>
-
+  <div id="inspired--">
 <div class="inline-image embed-container ratio-tabimage ">     
 <img src="images/slides/PD_Inspired_educator.jpg" alt="image"/>
 </div>
 
 <p><br>
+<h2>Workshop One: The inspired, child focused educator</h2>
 Reconnect to the passion and to the value of the professional educator’s role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children. </p>
 
 <h3>Topics include:</h3>
@@ -500,7 +501,7 @@ Retrieved from:
 </div>
 
 <div scroll id="pdfees"></div>
-<div ng-show="isShow('pdfees)" >
+<div ng-show="isShow('pdfees')" >
   <div id="pdfees--"> </div>
 </div>
 </div>

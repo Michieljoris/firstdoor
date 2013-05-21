@@ -286,32 +286,33 @@ var greendoor = {
         heading: 'Workshops:',
        
         links:    [
-            { label: 'The inspired educator', route: 'pd#inspired', scroll: true}
-            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
-            ,{ label: 'Environment and experiences', route: 'pd#environment', scroll: true}
-            ,{ label: 'Developing cooperative behaviour', route: 'pd#coop', scroll: true}
-            ,{ label: 'Evaluation and reflective practice', route: 'pd#evaluation', scroll: true}
-            ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
-            ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
-            ,{ label: 'Customised workshop', route: 'pd#customised', scroll: true}
+            { label: 'The inspired educator', route: 'index.html#!/pd#inspired', scroll: true}
+            ,{ label: 'Observation, documentation, planning and evaluating', route: 'index.html#!/pd#observing', scroll: true}
+            ,{ label: 'Environment and experiences', route: 'index.html#!/pd#environment', scroll: true}
+            ,{ label: 'Developing cooperative behaviour', route: 'index.html#!/pd#coop', scroll: true}
+            ,{ label: 'Evaluation and reflective practice', route: 'index.html#!/pd#evaluation', scroll: true}
+            ,{ label: 'Children at risk', route: 'index.html#!/pd#children', scroll: true}
+            ,{ label: 'Identify and manage risk', route: 'index.html#!/pd#risk', scroll: true}
+            ,{ label: 'Customised workshop', route: 'index.html#!/pd#customised', scroll: true}
+            ,{ label: 'Fees', route: 'documents/Professional_Development_fees.docx', scroll: true}
         ]
     }
     ,'/aboutus': {
         heading: ''
         ,links: [
-            { label: 'Our company', route: 'aboutus#company', scroll: true
+            { label: 'Our company', route: 'index.html#!/aboutus#company', scroll: true
               ,sub: [
-                  // { label: 'Markdown editor', route: 'epic'}
-                  { label: 'Vision', icon: '', route: 'aboutus#vision'}
-                  ,{ label: 'Mission', route: 'aboutus#mission'}
-                  ,{ label: 'Our student approach', route: 'aboutus#approach'}
-                  ,{ label: 'Values', route: 'aboutus#values'}
+                  // { label: 'Markdown editor', route: 'index.html#!/epic'}
+                  { label: 'Vision', icon: '', route: 'index.html#!/aboutus#vision'}
+                  ,{ label: 'Mission', route: 'index.html#!/aboutus#mission'}
+                  ,{ label: 'Our student approach', route: 'index.html#!/aboutus#approach'}
+                  ,{ label: 'Values', route: 'index.html#!/aboutus#values'}
               ]
             }
-            ,{ label: 'Our name and logo', route: 'aboutus#namelogo', scroll: true}
-            ,{ label: 'Our people', route: 'aboutus#people', scroll: true}
-            ,{ label: 'First door policies', route: 'aboutus#policies', scroll: true}
-            // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
+            ,{ label: 'Our name and logo', route: 'index.html#!/aboutus#namelogo', scroll: true}
+            ,{ label: 'Our people', route: 'index.html#!/aboutus#people', scroll: true}
+            ,{ label: 'First door policies', route: 'documents/Policies and Procedures May13.pdf', scroll: true}
+            // ,{ label: 'Our people', route: 'index.html#!/index.html#!/aboutus#people'}
             
            
         ]
@@ -319,28 +320,29 @@ var greendoor = {
         ,'/resources':   {
         heading: ''
             ,links: [
-                { label: 'Motivation', route: 'resources#motivation', scroll: true
+                { label: 'Motivation', route: 'index.html#!/resources#motivation', scroll: true
                 }
-                ,{ label: 'Early childhood', route: 'resources#earlychildhood', scroll: true
+                ,{ label: 'Early childhood', route: 'index.html#!/resources#earlychildhood', scroll: true
                    // ,sub: [
-                   //     { label: 'Educational leaders', route: 'resources'}
+                   //     { label: 'Educational leaders', route: 'index.html#!/resources'}
                    // ]
                  }
-                ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
-                ,{ label: 'Learning', route: 'resources#learning', scroll:true}
-                ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
-                // ,{ label: 'Quiz', route: 'quiz'}
+                ,{ label: 'Learning organisations', route: 'index.html#!/resources#learningorganisations', scroll:true}
+                ,{ label: 'Learning', route: 'index.html#!/resources#learning', scroll:true}
+                ,{ label: 'Leadership and Management', route: 'index.html#!/resources#leadership', scroll:true}
+                // ,{ label: 'Quiz', route: 'index.html#!/quiz'}
             ]
     }
     ,'/courses': {
         heading: ''
         ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Diploma of children’s services', route: 'courses#childrenservices',
+            { label: 'Diploma of children’s services', route: 'index.html#!/courses#childrenservices',
               scroll: true}
-            ,{ label: 'Diploma of management ', route: 'courses#diploma_management', scroll: true}
-            ,{ label: 'Certificate IV in training and assessment', route: 'courses#certivtraining', scroll: true}
-            // ,{ label: 'Aged care', route: 'courses#agedcare'}
+            ,{ label: 'Diploma of management ', route: 'index.html#!/courses#diploma_management', scroll: true}
+            ,{ label: 'Certificate IV in training and assessment', route: 'index.html#!/courses#certivtraining', scroll: true}
+            ,{ label: 'Student fees', route: 'documents/Student fees.pdf', scroll: true}
+            // ,{ label: 'Aged care', route: 'index.html#!/courses#agedcare'}
         ]
 
         

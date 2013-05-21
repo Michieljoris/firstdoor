@@ -8,11 +8,11 @@
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
 	<li ng-repeat="link in page.links">
-	  <a ng-href="index.html#!/{{link.route}}">{{link.label}}</a>
+	  <a ng-href="/{{link.route}}">{{link.label}}</a>
 	  <ul> 
 	    <li ng-repeat="sublink in link.sub">
 	      
-	      <a ng-href="index.html#!/{{sublink.route}}">{{sublink.label}}</a>
+	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
 	    </li>
 	  </ul>	
 	</li>
