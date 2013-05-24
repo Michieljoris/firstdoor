@@ -54,10 +54,10 @@ body {
 
 
 #slideShow-- {
-    padding-left: 50px; 
-    padding-right: 50px; 
-    margin-bottom: 0px;
-    padding-top:15px;
+    /* padding-left: 50px;  */
+    /* padding-right: 50px;  */
+    /* margin-bottom: 0px; */
+    /* padding-top:15px; */
 }
 
 .ng-view #image--  {
@@ -363,7 +363,7 @@ body {
 #sidebar-- { 
     /* max-width:300px;  */
     /* background: #3d9444;  */
-    padding-left: 20px;
+    /* padding-left: 20px; */
     margin-bottom: 20px;
     /* has to be same height as door for spacing reasons */
     height: 450px; 
@@ -888,7 +888,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ratio-tabimage{
-    padding-bottom:36%; /* 9/16*100 */
+    padding-bottom:27%; /* 9/16*100 */
 }
  
 .ratio-4-3{
@@ -1050,11 +1050,20 @@ a {
 
 .doorlinks ul {
     list-style:none;
+    margin-left:0px;
 }
 
 .doorlinks li {
     padding-bottom:9px;
     line-height:15px;
+}
+
+.selected {
+    background:white;
+}
+
+.selected a {
+    color:black;
 }
 
 #contactForm h3 {

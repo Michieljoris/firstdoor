@@ -4,10 +4,10 @@
     <div class="doorlinks"> 
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
-	<li ng-repeat="link in page.links">
+	<li ng-class="isSelected(link.route)" ng-repeat="link in page.links">
 	  <a ng-href="/{{link.route}}">{{link.label}}</a>
 	  <ul> 
-	    <li ng-repeat="sublink in link.sub">
+	    <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
 	      
 	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
 	    </li>
@@ -20,14 +20,14 @@
 </fixscroll>
 
 </div>
-  <div id="contents--" class="span7"><div scroll id="childrenservices"></div>
+  <div class="span9 inline-image embed-container ratio-tabimage ">     
+    <img class="" ng-src="{{getHeaderImage()}}"/>
+  </div>
+  <div class="row">
+    <div id="contents--" class="span7"><div scroll id="childrenservices"></div>
 <div ng-show="isShow('childrenservices')" >
   <div id="childrenservices--"><h2>CHC50908 Diploma of Children's Services (Early Childhood Education
   and Care)</h2>
-
-<div class="inline-image embed-container ratio-tabimage ">     
-<img class="span12" src="images/slides/courses_Diploma_Childrens_services.jpg" alt="image"/>
-</div>
 
 <h3>CORE UNITS</h3>
 
@@ -61,9 +61,6 @@ BSBRSK501A      Manage risk (recommended if continuing with Diploma of Managemen
 <div ng-show="isShow('diploma_management')" >
   <div id="diploma_management--"><h2>BSB51107 Diploma of Management</h2>
 
-<div class="inline-image embed-container ratio-tabimage ">     
-<img class="span12" src="images/slides/courses_Diploma_Management.jpg" alt="image"/>
-</div>
 
 <pre><code>BSBMGT608C  Manage innovation and continuous improvement
 BSBRSK501B  Manage risk
@@ -77,10 +74,6 @@ BSBLED501A  Develop a workplace learning environment
 <div ng-show="isShow('certivtraining')" >
   <div id="certivtraining--"><h2>TAE40110 Certificate lV in Training and Assessment</h2>
 
-<div class="inline-image embed-container ratio-tabimage ">     
-<img class="span12" src="images/slides/courses_certiv.jpg" alt="image"/>
-</div>
-
 <p>Units are recommended for Lead Educators and Educational Leaders</p>
 
 <pre><code>TAEDEL301A  Provide work skill instruction
@@ -92,5 +85,6 @@ BSBLED501A  Develop a workplace learning environment
 
 <p>The full course of units for Diploma of Management is currently being developed by First Door.</p>
 </div>
+  </div>
   <!-- <div id="rightBar--" class="span4"></div> -->
 </div> 

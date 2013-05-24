@@ -95,7 +95,7 @@ function go(path, out) {
     var result = buildVideosData(path);
     var str = JSON.stringify(result, null, 2);
     str = 'var videos = ' + str + ';';
-    console.log(str);
+    // console.log(str);
     fs.writeFile(out, str, function(err) {
         if (err) {
             console.log("Couldn't save videos.js");

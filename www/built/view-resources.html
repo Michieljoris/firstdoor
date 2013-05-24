@@ -4,10 +4,10 @@
     <div class="doorlinks"> 
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
-	<li ng-repeat="link in page.links">
+	<li ng-class="isSelected(link.route)" ng-repeat="link in page.links">
 	  <a ng-href="/{{link.route}}">{{link.label}}</a>
 	  <ul> 
-	    <li ng-repeat="sublink in link.sub">
+	    <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
 	      
 	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
 	    </li>
@@ -26,6 +26,13 @@
     <h2 >{{getSectionTitle(section)}}</h2>
     <ul ng-init="videos=sections[section]" >
       <li class="well" ng-repeat="video in videos" >
+	
+	<div ng-switch on="video.provider" >
+	  <span ng-switch-when="text" ng-bind-html-unsafe="video.title"></span>
+          <span ng-switch-default>
+	    <a id="videoTitle" href="#" ng-click="open($event, video)" ng-bind-html-unsafe="video.title"> </a>
+	  </span>
+	</div>
 	<div class="container" >
 	  <div class="row" >
 	    <div ng-switch on="video.provider" class="span1" >
@@ -48,12 +55,6 @@
 	    </div>
 	    <div id="videoBlurb" class="span5" ng-bind-html-unsafe="video.blurb"></div>
 	  </div>
-	</div>
-	<div ng-switch on="video.provider" >
-	  <span ng-switch-when="text" ng-bind-html-unsafe="video.title"></span>
-          <span ng-switch-default>
-	    <a id="videoTitle" href="#" ng-click="open($event, video)" ng-bind-html-unsafe="video.title"> </a>
-	  </span>
 	</div>
 	
       </li>

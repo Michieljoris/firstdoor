@@ -419,13 +419,51 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     //         ,interval: 10000
     //     });
     // });
+    $scope.getHeaderImage = function() {
+        console.log('get image header for:', $location.$$path, $location.$$hash);
+        var page = headerImages[$location.$$path];
+        if (!page) {
+            console.warn("WARNING: header images for page " +
+                         $location.$$path + " don't exist");
+            return "";
+        }
+        var imageSrc = page[$location.$$hash];
+        if (!imageSrc)
+            console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+        // return "images/slides/tab_professional_development.jpg";
+        return imageSrc;
+    };
     
+    var headerImages = {
+        "/pd": {
+            inspired: "images/slides/PD_Inspired_educator.jpg"
+            ,observing: "images/slides/PD_Observing_and_documenting.jpg"
+            ,environment: "images/slides/PD_Environment_and_experiences.jpg"
+            ,coop: "images/slides/PD_cooperative_behaviour.jpg"
+            ,evaluation: "images/slides/PD_reflective_practice.jpg"
+            ,children: "images/slides/PD_identifying_at_risk_childen.jpg"
+            ,risk: "images/slides/PD_managing_risk.jpg"
+            ,customised: ""
+        }            
+        ,"/courses": {
+            childrenservices: "images/slides/courses_Diploma_Childrens_services.jpg"
+            ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
+            ,certivtraining: "images/slides/courses_certiv.jpg"
+        }
+        
+    };
+    
+    $scope.isSelected = function(fullPath) {
+        console.log('index.html#!' + $location.$$url, fullPath);
+        if ('index.html#!' + $location.$$url === fullPath) return "selected";
+        else return "";
+    };
     
     $scope.isShow = function(id) {
         // console.log('id=', id);
         // console.log('hash=', $location.$$hash);
-        if ($routeParams.page && $routeParams.page === id) return true;
-        else return $location.$$hash === id;
+        if ($routeParams.page && $routeParams.page === id) return "selected";
+        else return $location.$$hash === id ? "selected" : "";
     };
     
 }

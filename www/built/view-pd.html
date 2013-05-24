@@ -4,10 +4,10 @@
     <div class="doorlinks"> 
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
-	<li ng-repeat="link in page.links">
+	<li ng-class="isSelected(link.route)" ng-repeat="link in page.links">
 	  <a ng-href="/{{link.route}}">{{link.label}}</a>
 	  <ul> 
-	    <li ng-repeat="sublink in link.sub">
+	    <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
 	      
 	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
 	    </li>
@@ -20,6 +20,10 @@
 </fixscroll>
 
 </div>
+  <div class="span9 inline-image embed-container ratio-tabimage ">     
+    <img class="" ng-src="{{getHeaderImage()}}"/>
+  </div>
+  <div class="row">
   <div id="contents--" class="span7"><div scroll id="intro"></div>
 <div ng-show="isShow('intro')" >
   <div id="intro--"><h2>Professional Development</h2>
@@ -37,13 +41,9 @@
 
 <div scroll id="inspired"></div>
 <div ng-show="isShow('inspired')" >
-  <div id="inspired--">
-<div class="inline-image embed-container ratio-tabimage ">     
-<img src="images/slides/PD_Inspired_educator.jpg" alt="image"/>
-</div>
+  <div id="inspired--"><h2>Workshop One: The inspired, child focused educator</h2>
 
 <p><br>
-<h2>Workshop One: The inspired, child focused educator</h2>
 Reconnect to the passion and to the value of the professional educator’s role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children. </p>
 
 <h3>Topics include:</h3>
@@ -103,10 +103,6 @@ Retrieved from:
 <div scroll id="observing"></div>
 <div ng-show="isShow('observing')" >
   <div id="observing--"><h2>Workshop Two: Observation, documentation, planning and evaluating</h2>
-
-<div class="inline-image embed-container ratio-tabimage ">     
-<img class="span12" src="images/slides/PD_Observing_and_documenting.jpg" alt="image"/>
-</div>
 
 <p>Understand the value and purpose of these processes. Become inspired to use strategies that are simplistic and effective. Undertake a practical case study and learn to use Learning Stories to build success, observe, document and plan for each child’s development. This workshop refers to the EYLF  Early Childhood Pedagogy, Learning Outcomes and the EYLF practices Intentional teaching and Assessment for Learning </p>
 
@@ -187,9 +183,7 @@ Retrieved from:
 <div ng-show="isShow('environment')" >
   <div id="environment--"><h2>Workshop Three: Environment and experiences</h2>
 
-<div class="inline-image embed-container ratio-tabimage ">     
-<img class="span12" src="images/slides/PD_Environment_and_experiences.jpg" alt="image"/>
-</div>
+images/slides/PD_Environment_and_experiences.jpg
 
 <p>Educators will be inspired to create learning environments and experiences that engage children into learning through play, enable holistic development and guide each child’s learning in the five outcomes. 
 The EYLF PRACTICES discussed are: Learning through Play, Intentional Teaching and Learning Environments.</p>
@@ -254,9 +248,6 @@ Retrieved from:
 <div ng-show="isShow('coop')" >
   <div id="coop--"><h2>Workshop Four: Developing Cooperative Behaviour</h2>
 
-<div class="inline-image embed-container ratio-tabimage ">     
-<img class="span12" src="images/slides/PD_cooperative_behaviour.jpg" alt="image"/>
-</div>
 
 <p>This workshop provides educators with strategies to refocus their approach to unacceptable behaviour, and proactively develop cooperative behaviour. It is recommended that this workshop be extended over four hours or over two sessions if educators are working reactively to complex behaviours and/or have limited understanding of these concepts. 
 The EYLF PRINCIPLES are discussed, being: Secure, Respectful and Reciprocal Relationships; Partnerships; High Expectations and Equity; Respect for Diversity; and, Ongoing Learning and Reflective Practice.</p>
@@ -339,10 +330,6 @@ Retrieved from:
 <div ng-show="isShow('evaluation')" >
   <div id="evaluation--"><h2>Workshop Five: Evaluation and reflective practice for improved program and practice</h2>
 
-<div class="inline-image embed-container ratio-tabimage ">     
-<img class="span12" src="images/slides/PD_reflective_practice.jpg" alt="image"/>
-</div>
-
 <p>Ongoing learning and reflective practice is a key principle of the Framework. Educators will be assisted in seeking ways to build their professional knowledge and develop learning communities. The intention is to gather information and gain insights that support, inform and enrich professional practice and decision-making about children’s well-being and development.</p>
 
 <h3>Topics include:</h3>
@@ -403,7 +390,6 @@ Retrieved from:
 <div scroll id="children"></div>
 <div ng-show="isShow('children')" >
   <div id="children--"><h2>Workshop Six: Children at Risk: identify and respond</h2>
-<div class="inline-image embed-container ratio-tabimage "><img class="span12" src="images/slides/PD_identifying_at_risk_childen.jpg" alt="image" /></div>
 <p>This workshop details the knowledge and skills required to address duty of care requirements, working within an ethical framework and applying relevant legislation, policies and procedures in responding to children and young people at risk.</p>
 <h3>Topics include:</h3>
 <ul>
@@ -413,7 +399,8 @@ Retrieved from:
 <li>Employing communication and information gathering techniques.</li>
 <li>Reporting possible risk of harm.</li>
 </ul>
-<p>This workshop relates to the following National Quality Standards and elements:</p></div>
+<p>This workshop relates to the following National Quality Standards and elements:</p>
+</div>
   <span id="showhide_pd_children_info--"><a href="#" id="showhide6-show" class="showLink" 
 onclick="showHide('showhide6');return false;">Show..</a>
 </p>
@@ -440,9 +427,6 @@ Retrieved from:
 <div ng-show="isShow('risk')" >
   <div id="risk--"><h2>Workshop Seven: Identify and Manage Risk to protect against harm</h2>
 
-<div class="inline-image embed-container ratio-tabimage ">     
-<img class="span12" src="images/slides/PD_managing_risk.jpg" alt="image"/>
-</div>
 
 <p>This workshop supports the educator in their responsibility to ensure that all children are protected and safe while they are in an approved service. Educators will learn to proactively identify and minimise potential risks in their centre through conducting a risk assessment.  </p>
 
@@ -490,8 +474,32 @@ Retrieved from:
 
 <div scroll id="pdfees"></div>
 <div ng-show="isShow('pdfees')" >
-  <div id="pdfees--"><p>&nbsp;Professional Development fees</p>
-<p style="margin-bottom: 0cm; line-height: 100%;"><br />Workshop fees<br />The workshop fees cover the costs of:<br />An assessment of the group&rsquo;s general prior knowledge and working skills prior to the workshop. This assessment relies on the centre Director completing the relevant workshop needs assessment form and submitting the form to First Door at least one week prior to the workshop date.<br />An interactive two hour presentation of the workshop at your centre using our data projector, screen and relevant resources<br />Supplied resources to each attending person<br />Certificate of participation to each attending person<br />Follow on templates to allow for continued practice<br />Access to First Door social networking and communication tools<br />Evaluation of the effectiveness of the workshop in improving your team&rsquo;s knowledge, skills and capability<br /> <br />Group size,s<br />First Door presents interactive professional development workshops and therefore prefers to have no more than twenty people in attendance. If your group size is larger than twenty please discuss this with us so that we can best accommodate your group.<br /> <br />Professional development workshop fee payment<br />Fee payments for professional development workshops are made in advance to First Door Training and Development Pty. Ltd. These are paid in two ways:<br /> <br />Payment of $400 prior to each single professional development workshop<br /> <br />Payment of $2,800 for the series of eight booked workshops. When the workshop series is booked and paid, the Centre will receive the customised professional development workshop, tailored to your centre&rsquo;s needs, at NO CHARGE.<br /> <br />Advance fee payment protection<br />All fees paid in advance are protected. We guarantee the company&rsquo;s sound financial position and safeguard all payments made in advance until the conclusion of the professional development workshops to the value of the advanced payment.<br /> <br />Cancellation refunds<br />If First Door has to cancel the workshop an alternative suitable date will be arranged, or a full refund will be given.<br /> <br />If a Centre provides at least two weeks&rsquo; notice prior to the workshop to cancel and a suitable new booking date for the workshop is not achieved they will receive a full refund. <br />A cancellation made by the Centre during the fortnight before the workshop is subject to a cancellation fee of $100.<br /> <br />Satisfaction guarantee<br />Your feedback on our service is important to us as we strive to continually improve our resources approach and presentation to best meet our client&rsquo;s needs. We guarantee your satisfaction with the delivery of our professional development workshops and offer a money back guarantee to assure you of our integrity to provide worthwhile and meaningful professional development to your team.kk</p></div>
+  <div id="pdfees--"><h2>Fees</h2>
+<h3>Professional Development workshop fees</h3>
+<p>The workshop fees cover the cost of:</p>
+<ul>
+<li>An assessment of the group&rsquo;s general prior knowledge and working skills prior to the workshop. This assessment relies on the centre Director completing the relevant workshop needs assessment form and submitting the form to First Door at least one week prior to the workshop date.</li>
+<li>An interactive two hour presentation of the workshop at your centre using our data projector, screen and relevant resources</li>
+<li>Supplied resources to each attending person</li>
+<li>Certificate of participation to each attending person</li>
+<li>Follow on templates to allow for continued practice</li>
+<li>Access to First Door social networking and communication tools</li>
+<li>Evaluation of the effectiveness of the workshop in improving your team&rsquo;s knowledge, skills and capability</li>
+</ul>
+<h3>Group size</h3>
+<p>First Door presents interactive professional development workshops and therefore prefers to have no more than twenty people in attendance. If your group size is larger than twenty please discuss this with us so that we can best accommodate your group.</p>
+<p>Professional development workshop fee payment</p>
+<p>Fee payments for professional development workshops are made in advance to First Door Training and Development Pty. Ltd. These are paid in two ways:</p>
+<ol>
+<li>Payment of $400 prior to each single professional development workshop</li>
+<li>Payment of $2,800 for the series of eight booked workshops.When the workshop series is booked and paid, the Centre will receive the customised professional development workshop, tailored to your centre&rsquo;s needs, at NO CHARGE.</li>
+</ol>
+<p>Advance fee payment protection All fees paid in advance are protected. We guarantee the company&rsquo;s sound financial position and safeguard all payments made in advance until the conclusion of the professional development workshops to the value of the advanced payment.</p>
+<h3>Cancellation refunds</h3>
+<p>If First Door has to cancel the workshop an alternative suitable date will be arranged, or a full refund will be given.</p>
+<p>If a Centre provides at least two weeks&rsquo; notice prior to the workshop to cancel and a suitable new booking date for the workshop is not achieved they will receive a full refund. A cancellation made by the Centre during the fortnight before the workshop is subject to a cancellation fee of $100.</p>
+<h2>Satisfaction guarantee</h2>
+<p>Your feedback on our service is important to us as we strive to continually improve our resources approach and presentation to best meet our client&rsquo;s needs. <strong>We guarantee your satisfaction with the delivery of our professional development workshops and offer a money back guarantee</strong> to assure you of our integrity to provide worthwhile and meaningful professional development to your team.</p></div>
   <span id="showhide_pd_pdfees_info--"></span>
 </div>
 
@@ -506,5 +514,6 @@ Retrieved from:
 
 
 </div>
+  </div>
   <!-- <div id="rightBar--" class="span4"></div> -->
 </div> 

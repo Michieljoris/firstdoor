@@ -235,10 +235,10 @@ var mainMenuTree = [
               // ]
             }
            ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
-           ,{ label: 'Learning', route: 'resources#learning', scroll:true,
-              sub: [
-                  { label: 'Quiz', route: 'resources#quiz'}
-              ]
+           ,{ label: 'Learning', route: 'resources#learning', scroll:true
+              // ,sub: [
+              //     { label: 'Quiz', route: 'resources#quiz'}
+              // ]
             }
            ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
            // ,{ label: '(tryouts)' ,route: 'resources'
@@ -333,7 +333,8 @@ var exports = {
             ,image_resources: '<img class="" src="images/slides/tab_resources.jpg" />'
             ,image_blog: '<img class="" src="images/slides/tab_blog.jpg" />'
             ,skewer:'<script src="http://localhost:9090/skewer"></script>'
-            ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
+            // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
+            ,recaptcha: '<script type="text/javascript" src="js/recaptcha_ajax.js"></script>'
 
         }
         ,metaBlock : {
@@ -430,7 +431,7 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,slogan: 'html/slogan'
-                    ,image: 'image_pd'
+                    // ,image: 'image_pd'
                     ,contents: 'pd_wrapper'
                 }}
             
@@ -593,7 +594,7 @@ var exports = {
                    "ng:app": ['html/body.html', 'myJsBlock',
                               'recaptcha',
                               '_scriptBlock'
-                              ,'html/google_analytics.html'
+                              // ,'html/google_analytics.html'
                              ]
                }
              }

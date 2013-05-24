@@ -4,6 +4,13 @@
     <h2 >{{getSectionTitle(section)}}</h2>
     <ul ng-init="videos=sections[section]" >
       <li class="well" ng-repeat="video in videos" >
+	
+	<div ng-switch on="video.provider" >
+	  <span ng-switch-when="text" ng-bind-html-unsafe="video.title"></span>
+          <span ng-switch-default>
+	    <a id="videoTitle" href="#" ng-click="open($event, video)" ng-bind-html-unsafe="video.title"> </a>
+	  </span>
+	</div>
 	<div class="container" >
 	  <div class="row" >
 	    <div ng-switch on="video.provider" class="span1" >
@@ -26,12 +33,6 @@
 	    </div>
 	    <div id="videoBlurb" class="span5" ng-bind-html-unsafe="video.blurb"></div>
 	  </div>
-	</div>
-	<div ng-switch on="video.provider" >
-	  <span ng-switch-when="text" ng-bind-html-unsafe="video.title"></span>
-          <span ng-switch-default>
-	    <a id="videoTitle" href="#" ng-click="open($event, video)" ng-bind-html-unsafe="video.title"> </a>
-	  </span>
 	</div>
 	
       </li>

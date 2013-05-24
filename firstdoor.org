@@ -69,6 +69,8 @@ resources title on top.
 title links to article.
      
 
+**** Please add the link to the door on the home page and under resources/learning and connect this to the quiz. The link should say:
+Quiz: Discover your preferred learning style
 
 
 *** clean up css for narrow screen,    
