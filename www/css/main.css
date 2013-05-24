@@ -436,10 +436,9 @@ h1 {
 }
 
 h2 {
-    font-size: 22pt;
+    font-size: 18pt;
     /* color: #f26500; /\*burnt orange*\/ */
-    /* color: #3D9444; /\*logo green*\/ */
-    color:black;
+    color: #3D9444; /*logo green*/
     /* color: black; /\*burnt orange*\/ */
 }
 

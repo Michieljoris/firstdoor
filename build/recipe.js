@@ -171,10 +171,20 @@ var routes = [
 
 var mainMenuTree = [
     { label: 'Home', icon: '', route: 'home'
+      
+        ,sub:    [
+            { label: 'Welcome', route: 'home#welcome', scroll: true}
+            ,{ label: 'Specialists in Early Childhood training and development', route: 'home#specialists', scroll: true}
+            ,{ label: 'Engaging resources and environments', route: 'home#engaging', scroll: true}
+            ,{ label: 'Your personal mentor ', route: 'home#mentor', scroll: true}
+            ,{ label: 'Constructive and timely assessment', route: 'home#constructive', scroll: true}
+            ,{ label: 'Quiz: discover your preferred learning style', route: 'home#quiz', scroll: true}
+        ]
        // sub: [
        //     { label: 'Contact us', route: 'contactus', scroll: true}
        //     ]
     }
+    
     ,{ label: 'About us', icon: '', route: 'aboutus?page=vision',
        sub: [
            { label: 'Our company', route: 'aboutus#company', scroll: true
@@ -208,10 +218,10 @@ var mainMenuTree = [
      } 
     ,{ label: 'Accredited training', icon: '', route: 'courses?page=childrenservices'
        ,sub: [
-           { label: 'Diploma of children’s services', route: 'courses#childrenservices',
+           { label: 'Diploma of Children’s Services', route: 'courses#childrenservices',
              scroll: true}
-           ,{ label: 'Diploma of management ', route: 'courses#diploma_management', scroll: true}
-           ,{ label: 'Certificate IV in training and assessment', route: 'courses#certivtraining', scroll: true}
+           ,{ label: 'Diploma of Management ', route: 'courses#diploma_management', scroll: true}
+           ,{ label: 'Certificate IV in Training and Assessment', route: 'courses#certivtraining', scroll: true}
            // ,{ label: 'Aged care', route: 'courses#agedcare'}
        ]
      } 
@@ -383,18 +393,8 @@ var exports = {
                 }
                ]
         ,template: [
-            //Home
-            {  src: 'views/view_home_partial.html'
-               ,out : 'view-home.html'
-               ,mapping: {
-                   sidebar: 'html/sidebar'
-                   // ,slogan: 'html/slogan'
-                   ,slideShow: 'flex',
-                   homeContents: 'editable/welcome/welcome'
-               }}
-            
             //ProfDev
-            ,{ id: "showhide_pd_inspired_info", showhide: "editable/pd/references/pd_inspired_info.md" },
+            { id: "showhide_pd_inspired_info", showhide: "editable/pd/references/pd_inspired_info.md" },
             { id: "showhide_pd_coop_info", showhide: "editable/pd/references/pd_coop_info.md"}, 
             { id: "showhide_pd_environment_info", showhide: "editable/pd/references/pd_environment_info.md"},
             { id: "showhide_pd_observing_info", showhide: "editable/pd/references/pd_observing_info.md" }
@@ -415,7 +415,7 @@ var exports = {
                    ,children: "editable/pd/childrent_at_risk"
                    ,risk: "editable/pd/id_manage_risk"
                    ,customised: "editable/pd/customised_workshop"
-                   // ,pdfees: "editable/pd/pdfees"
+                   ,pdfees: "editable/pd/pdfees"
                    ,showhide_pd_inspired_info: "showhide_pd_inspired_info"
                    ,showhide_pd_observing_info: "showhide_pd_observing_info"
                    ,showhide_pd_environment_info: "showhide_pd_environment_info"
@@ -455,6 +455,7 @@ var exports = {
                     ,contents: 'courses_stitch'
                 }
             }
+            
             //About us
             ,{ src : 'html/aboutus_stitch.html' 
                ,id:'aboutus_stitch'
@@ -481,6 +482,28 @@ var exports = {
                     // ,slideShow: 'flex',
                     ,contents: 'aboutus_stitch'
                 }}
+            //welcome
+            ,{ src : 'html/welcome_stitch.html' 
+               ,id:'welcome_stitch'
+               ,mapping: {
+                   welcome: 'editable/welcome/welcome'
+                   ,specialists: 'editable/welcome/specialists'
+                   ,engaging: 'editable/welcome/engaging'
+                   ,mentor: 'editable/welcome/mentor'
+                   ,constructive:   'editable/welcome/constructive'
+               }
+                
+             }
+            //Home
+            ,{  src: 'views/view_home_partial.html'
+               ,out : 'view-home.html'
+               ,mapping: {
+                   sidebar: 'html/sidebar'
+                   // ,slogan: 'html/slogan'
+                   ,slideShow: 'flex',
+                   // homeContents: 'editable/welcome/welcome'
+                   homeContents: 'welcome_stitch'
+               }}
             
             //Resources
             ,{ 

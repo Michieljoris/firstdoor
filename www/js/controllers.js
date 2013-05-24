@@ -282,7 +282,18 @@ function MainCntl($scope, $route, $routeParams, $location, $anchorScroll) {
 
 
 var greendoor = {
-    '/pd':{
+    '/home':{
+        heading: 'Home:',
+        links:    [
+            { label: 'Welcome', route: 'index.html#!/home#welcome', scroll: true}
+            ,{ label: 'Specialists in Early Childhood training and development', route: 'index.html#!/home#specialists', scroll: true}
+            ,{ label: 'Engaging resources and environments', route: 'index.html#!/home#engaging', scroll: true}
+            ,{ label: 'Your personal mentor ', route: 'index.html#!/home#mentor', scroll: true}
+            ,{ label: 'Constructive and timely assessment', route: 'index.html#!/home#constructive', scroll: true}
+            ,{ label: 'Quiz: discover your preferred learning style', route: 'index.html#!/home#quiz', scroll: true}
+        ]
+    }
+    ,'/pd':{
         heading: 'Workshops:',
        
         links:    [
@@ -294,7 +305,8 @@ var greendoor = {
             ,{ label: 'Children at risk', route: 'index.html#!/pd#children', scroll: true}
             ,{ label: 'Identify and manage risk', route: 'index.html#!/pd#risk', scroll: true}
             ,{ label: 'Customised workshop', route: 'index.html#!/pd#customised', scroll: true}
-            ,{ label: 'Fees', route: 'documents/Professional_Development_fees.docx', scroll: true}
+            ,{ label: 'Student fees', route: 'index.html#!/pd#pdfees', scroll: true}
+            // ,{ label: 'Fees', route: 'documents/Professional_Development_fees.docx', scroll: true}
         ]
     }
     ,'/aboutus': {
@@ -337,10 +349,10 @@ var greendoor = {
         heading: ''
         ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Diploma of children’s services', route: 'index.html#!/courses#childrenservices',
+            { label: 'Diploma of Children’s Services', route: 'index.html#!/courses#childrenservices',
               scroll: true}
-            ,{ label: 'Diploma of management ', route: 'index.html#!/courses#diploma_management', scroll: true}
-            ,{ label: 'Certificate IV in training and assessment', route: 'index.html#!/courses#certivtraining', scroll: true}
+            ,{ label: 'Diploma of Management ', route: 'index.html#!/courses#diploma_management', scroll: true}
+            ,{ label: 'Certificate IV in Training and Assessment', route: 'index.html#!/courses#certivtraining', scroll: true}
             ,{ label: 'Student fees', route: 'documents/Student fees.pdf', scroll: true}
             // ,{ label: 'Aged care', route: 'index.html#!/courses#agedcare'}
         ]
@@ -602,6 +614,7 @@ And some examples to make links: [http://www.google.com]() or [google](http://ww
 function HomeCntl($scope, $routeParams, $location) {
     
     console.log('Home controller..');
+    $scope.page = greendoor[$location.$$path];
     
     
     setActiveTab($location);
@@ -640,6 +653,13 @@ function HomeCntl($scope, $routeParams, $location) {
     
     $scope.name = "ChapterCntl";
     $scope.params = $routeParams;
+    
+    $scope.isShow = function(id) {
+        // console.log('id=', id);
+        // console.log('hash=', $location.$$hash);
+        if ($routeParams.page && $routeParams.page === id) return true;
+        else return $location.$$hash === id;
+    };
 }
 
 
