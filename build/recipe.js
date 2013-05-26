@@ -170,11 +170,11 @@ var routes = [
 ];
 
 var mainMenuTree = [
-    { label: 'Home', icon: '', route: 'home'
+    { label: 'Home', icon: '', route: 'home#welcome'
       
         ,sub:    [
-            { label: 'Welcome', route: 'home#welcome', scroll: true}
-            ,{ label: 'Specialists in Early Childhood training and development', route: 'home#specialists', scroll: true}
+            // { label: 'Welcome', route: 'home#welcome', scroll: true}
+            { label: 'Specialists in Early Childhood training and development', route: 'home#specialists', scroll: true}
             ,{ label: 'Engaging resources and environments', route: 'home#engaging', scroll: true}
             ,{ label: 'Your personal mentor ', route: 'home#mentor', scroll: true}
             ,{ label: 'Constructive and timely assessment', route: 'home#constructive', scroll: true}
@@ -185,11 +185,10 @@ var mainMenuTree = [
        //     ]
     }
     
-    ,{ label: 'About us', icon: '', route: 'aboutus?page=vision',
+    ,{ label: 'About us', icon: '', route: 'aboutus#vision',
        sub: [
-           { label: 'Our company', route: 'aboutus#company', scroll: true
+           { label: 'Our company', route: 'aboutus#vision', scroll: true
              ,sub: [
-                 // { label: 'Markdown editor', route: 'epic'}
                  { label: 'Vision', icon: '', route: 'aboutus#vision'}
                  ,{ label: 'Mission', route: 'aboutus#mission'}
                  ,{ label: 'Our student approach', route: 'aboutus#approach'}
@@ -203,7 +202,7 @@ var mainMenuTree = [
            
            ]
      } 
-    ,{ label: 'Professional development', icon: '', route: 'pd?page=intro'
+    ,{ label: 'Professional development', icon: '', route: 'pd#intro'
        ,sub: [
            { label: 'The inspired educator', route: 'pd#inspired', scroll: true}
            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
@@ -216,7 +215,7 @@ var mainMenuTree = [
            // ,{ label: 'Fees', route: 'pd#pdfees', scroll: true}
        ]
      } 
-    ,{ label: 'Accredited training', icon: '', route: 'courses?page=childrenservices'
+    ,{ label: 'Accredited training', icon: '', route: 'courses#intro'
        ,sub: [
            { label: 'Diploma of Children’s Services', route: 'courses#childrenservices',
              scroll: true}
@@ -225,7 +224,7 @@ var mainMenuTree = [
            // ,{ label: 'Aged care', route: 'courses#agedcare'}
        ]
      } 
-    ,{ label: 'Resources', icon: '', route: 'resources?page=motivation'
+    ,{ label: 'Resources', icon: '', route: 'resources#motivation'
        ,sub: [
            { label: 'Motivation', route: 'resources#motivation', scroll: true
             }
@@ -333,7 +332,12 @@ var exports = {
             ,image_resources: '<img class="" src="images/slides/tab_resources.jpg" />'
             ,image_blog: '<img class="" src="images/slides/tab_blog.jpg" />'
             ,skewer:'<script src="http://localhost:9090/skewer"></script>'
-            // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
+            ,addthis1: '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>'
+            ,addthis2: '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=michieljoris"></script>'
+            ,sharethis1:'<script type="text/javascript">var switchTo5x=true;</script>'
+            ,sharethis2:'<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>'
+            ,sharethis3: '<script type="text/javascript">stLight.options({publisher: "014e0e6b-5c75-4f02-aa39-abe6833f9f4d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>'
+            // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>''
             ,recaptcha: '<script type="text/javascript" src="js/recaptcha_ajax.js"></script>'
 
         }
@@ -431,6 +435,7 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,slogan: 'html/slogan'
+                   ,rightBar: 'html/rightbar'
                     // ,image: 'image_pd'
                     ,contents: 'pd_wrapper'
                 }}
@@ -439,7 +444,8 @@ var exports = {
             ,{ src : 'html/courses_stitch.html' 
                ,id:'courses_stitch'
                ,mapping: {
-                   childrenservices:   'editable/courses/CHC50908_childrens_services'
+                   intro: 'editable/courses/intro'
+                   ,childrenservices:   'editable/courses/CHC50908_childrens_services'
                    ,diploma_management: 'editable/courses/BSB51107_management'
                    ,certivtraining: 'editable/courses/certiv'
                    
@@ -451,6 +457,7 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,image: 'image_courses'
+                   ,rightBar: 'html/rightbar'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
                     ,contents: 'courses_stitch'
@@ -479,6 +486,7 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,image: 'image_aboutus'
+                   ,rightBar: 'html/rightbar'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
                     ,contents: 'aboutus_stitch'
@@ -492,6 +500,8 @@ var exports = {
                    ,engaging: 'editable/welcome/engaging'
                    ,mentor: 'editable/welcome/mentor'
                    ,constructive:   'editable/welcome/constructive'
+                   ,quiz: 'editable/quiz/quiz'
+                   
                }
                 
              }
@@ -501,9 +511,10 @@ var exports = {
                ,mapping: {
                    sidebar: 'html/sidebar'
                    // ,slogan: 'html/slogan'
-                   ,slideShow: 'flex',
+                   ,slideShow: 'flex'
+                   ,rightBar: 'html/rightbar'
                    // homeContents: 'editable/welcome/welcome'
-                   homeContents: 'welcome_stitch'
+                   ,homeContents: 'welcome_stitch'
                }}
             
             //Resources
@@ -515,6 +526,7 @@ var exports = {
                     sidebar: 'html/sidebar'
                     ,image: 'image_resources'
                     ,contents: 'html/resources'
+                   ,rightBar: 'html/rightbar'
                 }}
             
             //Blog
@@ -523,6 +535,7 @@ var exports = {
                 ,out : 'view-blog.html'
                 ,mapping: {
                     sidebar: 'html/sidebar'
+                   ,rightBar: 'html/rightbar'
                     // ,image: 'image_blog'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
@@ -589,7 +602,7 @@ var exports = {
                //converted to html. Partials in an array will be
                //concatenated before inserted at the tag id element
                ,mapping: {
-                   head: ['title', 'meta',  'html/ieshim','skewer', 'headJsBlock', 'myLinkBlock','_linkBlock'],
+                   head: ['title', 'meta',  'html/ieshim','skewer', 'sharethis1', 'sharethis2', 'sharethis3', 'headJsBlock', 'myLinkBlock','_linkBlock'],
                   
                    "ng:app": ['html/body.html', 'myJsBlock',
                               'recaptcha',

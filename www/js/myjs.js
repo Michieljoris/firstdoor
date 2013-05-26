@@ -53,7 +53,7 @@ jQuery(window).scroll(function(){
 
 //fixedbar
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 220) {
+    if ($(this).scrollTop() > 192) {
         // $('.fixedbar').addClass('fix');
         $('.fixedbar').fadeIn();
     } else {

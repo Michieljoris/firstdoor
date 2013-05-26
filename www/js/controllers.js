@@ -31,6 +31,91 @@ var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
   // });
   }).value('$anchorScroll', angular.noop);
 
+myAppModule.directive('fixscrollright', function($window) {
+  return {
+    restrict: 'E',
+    transclude: true,
+    link: function(scope, el, attrs) {
+      var window = angular.element($window),
+          parent = angular.element(el.parent()),
+          currentOffsetTop = el.offset().top-40;
+        // console.log('getting offset', currentOffsetTop);
+        // console.log('getting bottom offset', $('#bottomContainer').offset());
+         var  origCss = {
+            position: "static",
+            width: getParentWidth()
+          };
+
+      handleSnapping();
+
+      window.bind('scroll', function() {
+        handleSnapping();
+      });
+
+      window.bind('resize', function() {
+          // console.log('resizing');
+          currentOffsetTop = el.offset().top-40;
+        el.css({
+          width: getParentWidth()
+        });
+      });
+
+      function returnDigit(val) {
+        var re = /\d+/;
+        var digit = val.match(re)[0];
+        return digit;
+      }
+
+      function getParentWidth() {
+        // return returnDigit(parent.css('width')) - returnDigit(parent.css('padding-left')) - returnDigit(parent.css('padding-right'));
+        return returnDigit(parent.css('width'));
+      }
+
+      function handleSnapping() {
+          // console.log(el.offset().top + 450);
+          var bottom = $('#bottomContainer').offset().top;
+          var door = el.offset().top + 450;
+          // var overlapping = door - bottom;
+          // console.log(overlapping, el.offset().top);
+          // console.log(bottom, window.height()-450 -40, window.scrollTop() + window.height()-bottom);
+          
+          // console.log(-450 -40 - window.scrollTop() +bottom);
+          var overlapping = (-450 -60 - window.scrollTop() +bottom);
+          // console.log(overlapping);
+        // console.log('getting bottom offset', $('#bottomContainer').offset());
+          // console.log(window.scrollTop(), currentOffsetTop);
+         //  if (overlapping >0 || el.offset().top + 450 > 1223) {
+         //      el.css(origCss);
+         //      el.css({width: getParentWidth()});
+         //  }
+         // else 
+        //   if (overlapping < 0) {
+        //       el.css({
+        //           top: overlapping +40 + "px",
+        //           position: "fixed",
+        //           width: getParentWidth()
+        //           // width: "166px"
+        //       });
+              
+        //   }
+        // ese
+            if (window.scrollTop() > currentOffsetTop ) {
+          var headerOffsetTop = 40;
+          el.css({
+            top: headerOffsetTop + "px",
+            position: "fixed",
+            width: getParentWidth()
+            // width: "166px"
+          });
+        } else {
+          el.css(origCss);
+          el.css({width: getParentWidth()});
+        }
+      }
+    }
+  };
+});
+
 myAppModule.directive('fixscroll', function($window) {
   return {
     restrict: 'E',
@@ -160,22 +245,24 @@ myAppModule.directive('fixscroll', function($window) {
 // });
 
 myAppModule.directive('scroll', function($routeParams,$location) {
-  return {
-    restrict: 'A',
-    link: function(scope, element, attrs){ 
-      // console.log('in scroll', $location.hash());
-        if ($location.hash() === attrs.id) {
-            
-          setTimeout(function() {
-              // console.log('in scroll directive', element[0].offsetTop-30);
-              $('html, body').animate({
-                  scrollTop: element[0].offsetTop-30
-              }, 1000);
-             // window.scrollTo(0, element[0].offsetTop-30);
-          },1);        
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs){ 
+            // console.log('in scroll', $location.hash());
+            if ($location.hash() === attrs.id) {
+                var offsetTop = $('.menubar').offset().top;
+                setTimeout(function() {
+                    // console.log('in scroll directive', element[0].offsetTop-30);
+                    $('html, body').animate({
+                        // scrollTop: element[0].offsetTop-30
+                        // scrollTop:160
+                        scrollTop: offsetTop
+                    }, 1);
+                    // window.scrollTo(0, element[0].offsetTop-30);
+                },1);        
+            }
         }
-    }
-  };
+    };
 });
 
 // // declare a new module, and inject the $compileProvider
@@ -283,7 +370,7 @@ function MainCntl($scope, $route, $routeParams, $location, $anchorScroll) {
 
 var greendoor = {
     '/home':{
-        heading: 'Home:',
+        heading: '',
         links:    [
             { label: 'Welcome', route: 'index.html#!/home#welcome', scroll: true}
             ,{ label: 'Specialists in Early Childhood training and development', route: 'index.html#!/home#specialists', scroll: true}
@@ -294,10 +381,11 @@ var greendoor = {
         ]
     }
     ,'/pd':{
-        heading: 'Workshops:',
+        heading: '',
        
         links:    [
-            { label: 'The inspired educator', route: 'index.html#!/pd#inspired', scroll: true}
+            { label: 'Introduction', route: 'index.html#!/pd#intro', scroll: true}
+            ,{ label: 'The inspired educator', route: 'index.html#!/pd#inspired', scroll: true}
             ,{ label: 'Observation, documentation, planning and evaluating', route: 'index.html#!/pd#observing', scroll: true}
             ,{ label: 'Environment and experiences', route: 'index.html#!/pd#environment', scroll: true}
             ,{ label: 'Developing cooperative behaviour', route: 'index.html#!/pd#coop', scroll: true}
@@ -313,14 +401,15 @@ var greendoor = {
         heading: ''
         ,links: [
             { label: 'Our company', route: 'index.html#!/aboutus#company', scroll: true
-              ,sub: [
+             } 
+              // ,sub: [
                   // { label: 'Markdown editor', route: 'index.html#!/epic'}
-                  { label: 'Vision', icon: '', route: 'index.html#!/aboutus#vision'}
+                  ,{ label: 'Vision', icon: '', route: 'index.html#!/aboutus#vision'}
                   ,{ label: 'Mission', route: 'index.html#!/aboutus#mission'}
                   ,{ label: 'Our student approach', route: 'index.html#!/aboutus#approach'}
                   ,{ label: 'Values', route: 'index.html#!/aboutus#values'}
-              ]
-            }
+              // ]
+            // }
             ,{ label: 'Our name and logo', route: 'index.html#!/aboutus#namelogo', scroll: true}
             ,{ label: 'Our people', route: 'index.html#!/aboutus#people', scroll: true}
             ,{ label: 'First door policies', route: 'documents/Policies and Procedures May13.pdf', scroll: true}
@@ -347,13 +436,15 @@ var greendoor = {
     }
     ,'/courses': {
         heading: ''
-        ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
+        // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Diploma of Children’s Services', route: 'index.html#!/courses#childrenservices',
+            { label: 'Accredited training', route: 'index.html#!/courses#intro',
+              scroll: true}
+            ,{ label: 'Diploma of Children’s Services', route: 'index.html#!/courses#childrenservices',
               scroll: true}
             ,{ label: 'Diploma of Management ', route: 'index.html#!/courses#diploma_management', scroll: true}
             ,{ label: 'Certificate IV in Training and Assessment', route: 'index.html#!/courses#certivtraining', scroll: true}
-            ,{ label: 'Student fees', route: 'documents/Student fees.pdf', scroll: true}
+            ,{ label: 'Student fees (pdf)', route: 'documents/Student fees.pdf', scroll: true}
             // ,{ label: 'Aged care', route: 'index.html#!/courses#agedcare'}
         ]
 
@@ -373,6 +464,37 @@ function setActiveTab($location) {
         $(".menu > li > a[id*='" + lastRoute + "']").attr("class", "inactive");
     lastRoute = newRoute;
 }
+
+
+var headerImages = {
+    
+    "/resources": {
+        "*": "images/slides/tab_resources.jpg"
+        
+    }
+    ,"/aboutus": {
+        "*": 'images/slides/tab_about_us.jpg'
+        
+    }
+    ,"/pd": {
+        "*": "images/slides/tab_professional_development.jpg"
+        ,inspired: "images/slides/PD_Inspired_educator.jpg"
+        ,observing: "images/slides/PD_Observing_and_documenting.jpg"
+        ,environment: "images/slides/PD_Environment_and_experiences.jpg"
+        ,coop: "images/slides/PD_cooperative_behaviour.jpg"
+        ,evaluation: "images/slides/PD_reflective_practice.jpg"
+        ,children: "images/slides/PD_identifying_at_risk_childen.jpg"
+        ,risk: "images/slides/PD_managing_risk.jpg"
+        ,customised: ""
+    }            
+    ,"/courses": {
+        "*": "images/slides/tab_resources.jpg"
+        ,childrenservices: "images/slides/courses_Diploma_Childrens_services.jpg"
+        ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
+        ,certivtraining: "images/slides/courses_certiv.jpg"
+    }
+    
+};
 
 var lastRoute='whatever';
 function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
@@ -420,43 +542,33 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     //     });
     // });
     $scope.getHeaderImage = function() {
-        console.log('get image header for:', $location.$$path, $location.$$hash);
+        // console.log('get image header for:', $location.$$path, $location.$$hash);
         var page = headerImages[$location.$$path];
         if (!page) {
             console.warn("WARNING: header images for page " +
                          $location.$$path + " don't exist");
             return "";
         }
-        var imageSrc = page[$location.$$hash];
+        var imageSrc = page[$location.$$hash] || page["*"];
+        // console.log(imageSrc);
         if (!imageSrc)
             console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
         // return "images/slides/tab_professional_development.jpg";
         return imageSrc;
     };
     
-    var headerImages = {
-        "/pd": {
-            inspired: "images/slides/PD_Inspired_educator.jpg"
-            ,observing: "images/slides/PD_Observing_and_documenting.jpg"
-            ,environment: "images/slides/PD_Environment_and_experiences.jpg"
-            ,coop: "images/slides/PD_cooperative_behaviour.jpg"
-            ,evaluation: "images/slides/PD_reflective_practice.jpg"
-            ,children: "images/slides/PD_identifying_at_risk_childen.jpg"
-            ,risk: "images/slides/PD_managing_risk.jpg"
-            ,customised: ""
-        }            
-        ,"/courses": {
-            childrenservices: "images/slides/courses_Diploma_Childrens_services.jpg"
-            ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
-            ,certivtraining: "images/slides/courses_certiv.jpg"
-        }
-        
-    };
     
     $scope.isSelected = function(fullPath) {
-        console.log('index.html#!' + $location.$$url, fullPath);
+        // console.log('index.html#!' + $location.$$url, fullPath);
         if ('index.html#!' + $location.$$url === fullPath) return "selected";
         else return "";
+    };
+    
+    $scope.getPageClass = function() {
+        var path = $location.$$path;
+        if (path) path = path.slice(1);
+        console.log(path);
+        return 'doorlinks-' + path;
     };
     
     $scope.isShow = function(id) {
@@ -466,44 +578,25 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
         else return $location.$$hash === id ? "selected" : "";
     };
     
-}
-
-function contactusCntl($scope, $routeParams, $location) {
+    
     $scope.sent = false;
     console.log('contactus controller');
     // $scope.result = "now it is working..";
     Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
-    "captchadiv",
-    {
-      // theme: "clean",
-      theme: "red",
-      callback: Recaptcha.focus_response_field
-    }
-  );
-    
-    setActiveTab($location);
-    // console.log($location);
-    // var url = $location.$$url;
-    // if (!url) url = "whatever";
-    // console.log(url);
-    // var newRoute = $location.$$path.slice(1);
-    // $(".menu #" + newRoute).attr("class", "active");
-    // if (lastRoute !== newRoute)
-    //     $(".menu #" + lastRoute).attr("class", "inactive");
-    // lastRoute = newRoute;
-    
-        
-    // var url = $location.$$url;
-    // if (!url) url = "whatever";
-    // console.log(url);
-    
-    // $(".menu #" + url.slice(1)).attr("class", "active");
-    // $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
-    // lastRoute = $location.$$url;
-    // $scope.emailmissing="error";
-    // $scope.namemissing="error";
-    // $scope.msgmissing="error";
+                     "captchadiv",
+                     {
+                         // theme: "clean",
+                         theme: "red",
+                         callback: Recaptcha.focus_response_field
+                     }
+                    );
     $scope.clicksend = function($event) {
+        clickSend($event, $scope);
+    }; 
+    
+}
+
+function clickSend($event, $scope) {
         $event.preventDefault();
         console.log('clicked on send');
         var username_first=$('#username_first').val()
@@ -566,10 +659,51 @@ function contactusCntl($scope, $routeParams, $location) {
                 // likewise do something with your error here.
             }
         });
+    
+}
+
+function contactusCntl($scope, $routeParams, $location) {
+    
+    $('html, body').animate({
+        scrollTop: 0
+    }, 1);
+    $scope.sent = false;
+    console.log('contactus controller');
+    // $scope.result = "now it is working..";
+    Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
+    "captchadiv",
+    {
+      // theme: "clean",
+      theme: "red",
+      callback: Recaptcha.focus_response_field
+    }
+  );
+    
+    setActiveTab($location);
+    // console.log($location);
+    // var url = $location.$$url;
+    // if (!url) url = "whatever";
+    // console.log(url);
+    // var newRoute = $location.$$path.slice(1);
+    // $(".menu #" + newRoute).attr("class", "active");
+    // if (lastRoute !== newRoute)
+    //     $(".menu #" + lastRoute).attr("class", "inactive");
+    // lastRoute = newRoute;
+    
         
-        
-        // return false; // Prevent form submit.
-    };
+    // var url = $location.$$url;
+    // if (!url) url = "whatever";
+    // console.log(url);
+    
+    // $(".menu #" + url.slice(1)).attr("class", "active");
+    // $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
+    // lastRoute = $location.$$url;
+    // $scope.emailmissing="error";
+    // $scope.namemissing="error";
+    // $scope.msgmissing="error";
+    $scope.clicksend = function($event) {
+        clickSend($event, $scope);
+       }; 
     
 }
 
@@ -651,8 +785,15 @@ And some examples to make links: [http://www.google.com]() or [google](http://ww
 
 function HomeCntl($scope, $routeParams, $location) {
     
-    console.log('Home controller..');
-    $scope.page = greendoor[$location.$$path];
+    console.log('Home controller..', $location);
+    if (!$location.$$url) {
+     $location.$$url="/home#welcome";   
+        $location.$$hash = 'welcome';
+        $location.$$path = '/home';
+    }
+    $scope.page = greendoor[$location.$$path ];
+    
+    
     
     
     setActiveTab($location);
@@ -688,9 +829,25 @@ function HomeCntl($scope, $routeParams, $location) {
     //         ,playPause: false
     //     });
     // });
+    $(".menu li>ul").addClass('hide');
+    setTimeout(function() {
+        $(".menu li>ul").removeClass('hide');
+    },1000);
     
-    $scope.name = "ChapterCntl";
-    $scope.params = $routeParams;
+    $scope.getPageClass = function() {
+        var path = $location.$$path;
+        if (path) path = path.slice(1);
+        console.log(path);
+        return 'doorlinks-' + path;
+    };
+    
+    
+    $scope.isSelected = function(fullPath) {
+        // console.log('index.html#!' + $location.$$url, fullPath);
+        if ('index.html#!' + $location.$$url === fullPath) return "selected";
+        else return "";
+    };
+    
     
     $scope.isShow = function(id) {
         // console.log('id=', id);

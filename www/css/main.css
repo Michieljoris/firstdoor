@@ -85,6 +85,7 @@ body {
 /*     } */
 #studentLogin-- {
     padding-top: 5px;
+    margin-left:0px;
     /* padding-right: 15px; */
     /* padding-bottom:10px; */
     }
@@ -377,6 +378,7 @@ body {
 
 @media only screen and (max-width: 767px){
     #sidebar-- {display:none; visibility: hidden;}
+    
     .menubar {
 	margin-bottom:10px;
 	margin-left:20px;
@@ -490,7 +492,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .inline-image {
-    margin: 0 20px 10px 0px; 
+    margin: 0 0px 10px 10px; 
     background: #fff; 
     border: 4px solid #fff;
     position: relative; 
@@ -520,7 +522,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media only screen and (max-width: 900px) {
-    
    .fixedbar #studentLogin-- {
        display:none;
        }
@@ -545,10 +546,27 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 @media only screen and (min-width: 768px) and (max-width: 979px){
+    
+    
+    #rightBar-- {
+	display:none;
+    }
+    
     #sidebar-- {
 	margin-right:45px;
 	
     }	
+    .inline-image {
+	margin-left: 20px;
+	width:480px;
+    }
+    #slideShow-- {
+	margin-left: 20px;
+	width:480px;
+    }
+    .inline-image.ratio-tabimage {
+	padding-bottom:24%
+    }
     #navigation{
 	/* width:765px; */
 	padding-bottom:20px;
@@ -807,7 +825,7 @@ h1, h2, h3, h4, h5, h6 {
       }   
 /*  The blackbar at the top is messing with scrolling to tags, so if a  */
 /*  md file has div with tags in them we scroll a bit further, the md  */
-/* file needs to be in a div with the contents-- tag  */
+* file needs to be in a div with the contents-- tag  */
 /* #contents-- div{padding-top: 20px; } */
 
 #yt {
@@ -1045,7 +1063,7 @@ a {
     padding:20px 20px 20px 20px;
 }
 .doorlinks .heading {
-    padding-bottom:10px;
+    /* padding-bottom:10px; */
 }
 
 .doorlinks ul {
@@ -1053,18 +1071,58 @@ a {
     margin-left:0px;
 }
 
+
 .doorlinks li {
-    padding-bottom:9px;
+    /* background: blue; */
+    border: dotted 1px lightgrey;
+    /* background: #3D9444; /\*logo green*\/ */
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    -o-border-radius: 4px; 
+    border-radius: 4px; 
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-left:10px;
+    padding-right:5px;
     line-height:15px;
 }
+.doorlinks .dottedline {
+    padding:0px;
+    color:lightgray;
+    padding-left:40px;
+    opacity:.5;
+    margin-bottom:0;
+}
 
-.selected {
+.doorlinks .selected {
     background:white;
 }
 
-.selected a {
+.doorlinks .selected a {
     color:black;
 }
+
+.doorlinks-pd li {
+    margin-bottom:7px;
+}
+
+.doorlinks-aboutus li {
+    margin-bottom:25px;
+}
+
+.doorlinks-courses li {
+    margin-bottom:30px;
+}
+
+.doorlinks-resources li {
+    margin-bottom:24px;
+}
+
+.doorlinks-home li {
+    margin-bottom:28px;
+}
+
+
 
 #contactForm h3 {
     color: #3D9444; /*logo green*/

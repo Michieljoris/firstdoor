@@ -37,40 +37,21 @@ Use this when communicating between your server and our server. Be sure to keep 
 *** search button!!!
 *** chat
 *** blog   
-*** hook up markdown editor with server
-    
 *** bootstrap tooltips for social buttons
 *** learning style quiz
 *** prefetch images
    possibly also the html?  image optimization using jpegtran?
 
-
-*** letterhead on top or bottom
-   
     
 ** now    
    
 *** leftside panel/door
-**** Are we able to use the door format for the contact
-us box where they enter their name, question, and email?  
 **** The learning style quiz is tucked away under resources and then under learning,
  so it would be good to have this in the green door of links separately
 
  
 
-
 **** Facebook like right bottom image
-
-**** Pdf fees as link to separate page.
-
-**** email bank account details
-**** format resources wells
-resources title on top.
-title links to article.
-     
-
-**** Please add the link to the door on the home page and under resources/learning and connect this to the quiz. The link should say:
-Quiz: Discover your preferred learning style
 
 
 *** clean up css for narrow screen,    

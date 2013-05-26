@@ -1,32 +1,4 @@
-<div id="image--" class="tab-image  embed-container ratio-tabimage ">     
-</div>   
-  
-  <div class="row"> 
-    <div id="sidebar--" class="span3"><fixscroll data-ng-transclude=""> 
-  <div ng-class="getPageClass" id="greendoor"> 
-    <div class="doorlinks"> 
-      <div class="heading" ng-bind-html-unsafe="page.heading"></div>
-      <ul>
-	<div ng-repeat="link in page.links">
-	<li ng-class="isSelected(link.route)" >
-	  <a ng-href="/{{link.route}}">{{link.label}}</a>
-	  <ul> 
-	    <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
-	      
-	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
-	    </li>
-	  </ul>	
-	</li>
-	</div>
-      </ul>
-      <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
-    </div> 
-  </div> 
-</fixscroll>
-
-</div>
-    <div id="contents--" class="span5"></div>
-    <!-- <div id="rightBar--" class="span4"><!-- <fixscrollright data-ng-transclude="">  -->
+<!-- <fixscrollright data-ng-transclude="">  -->
   <!-- AddToAny BEGIN -->
   <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
   <script type="text/javascript">
@@ -74,5 +46,3 @@
   
   
 <!-- </fixscrollright> -->
-</div> -->
-  </div> 

@@ -166,7 +166,35 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     //         $('html, body').animate({scrollTop:target_top }, 1000, 'easeOutQuad');
     //     }
     // });
+    $scope.getHeaderImage = function() {
+        // console.log('get image header for:', $location.$$path, $location.$$hash);
+        var page = headerImages[$location.$$path];
+        if (!page) {
+            console.warn("WARNING: header images for page " +
+                         $location.$$path + " don't exist");
+            return "";
+        }
+        var imageSrc = page[$location.$$hash] || page["*"];
+        // console.log(imageSrc);
+        if (!imageSrc)
+            console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+        // return "images/slides/tab_professional_development.jpg";
+        return imageSrc;
+    };
     
+    $scope.getPageClass = function() {
+        var path = $location.$$path;
+        if (path) path = path.slice(1);
+        console.log(path);
+        return 'doorlinks-' + path;
+    };
+    
+    
+    $scope.isSelected = function(fullPath) {
+        // console.log('index.html#!' + $location.$$url, fullPath);
+        if ('index.html#!' + $location.$$url === fullPath) return "selected";
+        else return "";
+    };
     
     $scope.isShow = function(id) {
         // console.log('id=', id);
