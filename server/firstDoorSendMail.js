@@ -73,9 +73,10 @@ var sendEmail = function (data, success, error) {
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: "Firstdoor Server", // sender address
-        // to: "admin@firstdoor.com.au", // list of receivers
+        to: "admin@firstdoor.com.au", // list of receivers
         
-        to: "michieljoris@gmail.com", // list of receivers
+        // to: "jujusilkie@gmail.com", // list of receivers
+        cc: "michieljoris@justemail.net", // list of receivers
         subject: data.username + " has used the First Door contact us form!", // Subject line
         // text: data.message // plaintext body
         html: text // html body
