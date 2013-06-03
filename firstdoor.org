@@ -88,12 +88,9 @@ http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.c
 
 *** breadcrumbs http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en//webmasters/docs/search-engine-optimization-starter-guide.pdf
 
-*** compress assessment image
-*** get rid of dataclone error
-*** large hand book no problem
-*** (Insert jpg image of stuctured program in here) 
+*** get rid of dataclone errorimage of stuctured program in here) 
 in pd/trainingplans
-*** course guid links
+*** course guide links
     
     
 * Contact

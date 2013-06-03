@@ -589,9 +589,9 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     };
     
     
-    $scope.sent = false;
     console.log('contactus controller');
     // $scope.result = "now it is working..";
+    $scope.sent = false;
     Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
                      "captchadiv",
                      {
@@ -881,6 +881,19 @@ function HomeCntl($scope, $routeParams, $location) {
         if ($routeParams.page && $routeParams.page === id) return true;
         else return $location.$$hash === id;
     };
+    
+    $scope.sent = false;
+    Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
+                     "captchadiv",
+                     {
+                         // theme: "clean",
+                         theme: "red",
+                         callback: Recaptcha.focus_response_field
+                     }
+                    );
+    $scope.clicksend = function($event) {
+        clickSend($event, $scope);
+    }; 
 }
 
 

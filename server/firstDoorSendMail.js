@@ -73,8 +73,9 @@ var sendEmail = function (data, success, error) {
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: "Firstdoor Server", // sender address
-        to: "admin@firstdoor.com.au", // list of receivers
-        // to: "michieljoris@gmail.com", // list of receivers
+        // to: "admin@firstdoor.com.au", // list of receivers
+        
+        to: "michieljoris@gmail.com", // list of receivers
         subject: data.username + " has used the First Door contact us form!", // Subject line
         // text: data.message // plaintext body
         html: text // html body
@@ -147,7 +148,7 @@ function recaptcha_verify(parameters, success, error) {
 }
 
 exports.handlePost = function(req, res) {
-    console.log('Test send mail is handling post!!');
+    console.log('Firstdoor send mail is handling post!!');
     console.log(req.headers['x-forwarded-for']);
     var data = '';
     req.on('data', function(chunk) {

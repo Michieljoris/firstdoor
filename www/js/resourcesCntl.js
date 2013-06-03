@@ -203,6 +203,19 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
         else return $location.$$hash === id;
     };
     
+    $scope.sent = false;
+    Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
+                     "captchadiv",
+                     {
+                         // theme: "clean",
+                         theme: "red",
+                         callback: Recaptcha.focus_response_field
+                     }
+                    );
+    $scope.clicksend = function($event) {
+        clickSend($event, $scope);
+    }; 
+    
 } 
 
 var ModalDemoCtrl = function ($scope) {
