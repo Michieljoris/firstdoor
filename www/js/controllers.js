@@ -384,7 +384,7 @@ var greendoor = {
         heading: '',
        
         links:    [
-            { label: 'Introduction', route: 'index.html#!/pd#intro', scroll: true}
+            { label: 'Our four step approach', route: 'index.html#!/pd#intro', scroll: true}
             ,{ label: 'The inspired educator', route: 'index.html#!/pd#inspired', scroll: true}
             ,{ label: 'Observation, documentation, planning and evaluating', route: 'index.html#!/pd#observing', scroll: true}
             ,{ label: 'Environment and experiences', route: 'index.html#!/pd#environment', scroll: true}
@@ -393,18 +393,18 @@ var greendoor = {
             ,{ label: 'Children at risk', route: 'index.html#!/pd#children', scroll: true}
             ,{ label: 'Identify and manage risk', route: 'index.html#!/pd#risk', scroll: true}
             ,{ label: 'Customised workshop', route: 'index.html#!/pd#customised', scroll: true}
-            ,{ label: 'Student fees', route: 'index.html#!/pd#pdfees', scroll: true}
+            ,{ label: 'Fees', route: 'index.html#!/pd#pdfees', scroll: true}
             // ,{ label: 'Fees', route: 'documents/Professional_Development_fees.docx', scroll: true}
         ]
     }
     ,'/aboutus': {
         heading: ''
         ,links: [
-            { label: 'Our company', route: 'index.html#!/aboutus#company', scroll: true
-             } 
+            // { label: 'Our company', route: 'index.html#!/aboutus#company', scroll: true
+            //  } 
               // ,sub: [
                   // { label: 'Markdown editor', route: 'index.html#!/epic'}
-                  ,{ label: 'Vision', icon: '', route: 'index.html#!/aboutus#vision'}
+                  { label: 'Vision', icon: '', route: 'index.html#!/aboutus#vision'}
                   ,{ label: 'Mission', route: 'index.html#!/aboutus#mission'}
                   ,{ label: 'Our student approach', route: 'index.html#!/aboutus#approach'}
                   ,{ label: 'Values', route: 'index.html#!/aboutus#values'}
@@ -412,7 +412,7 @@ var greendoor = {
             // }
             ,{ label: 'Our name and logo', route: 'index.html#!/aboutus#namelogo', scroll: true}
             ,{ label: 'Our people', route: 'index.html#!/aboutus#people', scroll: true}
-            ,{ label: 'First door policies', route: 'documents/Policies and Procedures May13.pdf', scroll: true}
+            ,{ label: 'First door policies (pdf)', route: 'documents/Policies and Procedures May13.pdf', scroll: true}
             // ,{ label: 'Our people', route: 'index.html#!/index.html#!/aboutus#people'}
             
            
@@ -444,7 +444,9 @@ var greendoor = {
               scroll: true}
             ,{ label: 'Diploma of Management ', route: 'index.html#!/courses#diploma_management', scroll: true}
             ,{ label: 'Certificate IV in Training and Assessment', route: 'index.html#!/courses#certivtraining', scroll: true}
-            ,{ label: 'Student fees (pdf)', route: 'documents/Student fees.pdf', scroll: true}
+            ,{ label: 'Recognised Prior Learning', route: 'index.html#!/courses#priorlearning', scroll: true}
+            ,{ label: 'Flexi or structured training plans', route: 'index.html#!/courses#trainingplans', scroll: true}
+            ,{ label: 'Student fees', route: 'index.html#!/courses#studentfees', scroll: true}
             // ,{ label: 'Aged care', route: 'index.html#!/courses#agedcare'}
         ]
 
@@ -468,7 +470,15 @@ function setActiveTab($location) {
 
 var headerImages = {
     
-    "/resources": {
+    "/home": {
+        "*": "images/slides/tab_professional_development.jpg"
+        ,specialists: "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
+        ,engaging: "images/slides/tab_resources.jpg"
+        ,quiz: "images/slides/tab_resources.jpg"
+        ,mentor: "images/slides/home_page_First_Door_mentoring.jpg"
+        ,constructive: "images/slides/home_assessment.jpg"
+    } 
+    ,"/resources": {
         "*": "images/slides/tab_resources.jpg"
         
     }
@@ -488,7 +498,7 @@ var headerImages = {
         ,customised: ""
     }            
     ,"/courses": {
-        "*": "images/slides/tab_resources.jpg"
+        "*": "images/slides/tab_accredited_training.jpg"
         ,childrenservices: "images/slides/courses_Diploma_Childrens_services.jpg"
         ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
         ,certivtraining: "images/slides/courses_certiv.jpg"
@@ -846,6 +856,22 @@ function HomeCntl($scope, $routeParams, $location) {
         // console.log('index.html#!' + $location.$$url, fullPath);
         if ('index.html#!' + $location.$$url === fullPath) return "selected";
         else return "";
+    };
+    
+    $scope.getHeaderImage = function() {
+        // console.log('get image header for:', $location.$$path, $location.$$hash);
+        var page = headerImages[$location.$$path];
+        if (!page) {
+            console.warn("WARNING: header images for page " +
+                         $location.$$path + " don't exist");
+            return "";
+        }
+        var imageSrc = page[$location.$$hash] || page["*"];
+        // console.log(imageSrc);
+        if (!imageSrc)
+            console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+        // return "images/slides/tab_professional_development.jpg";
+        return imageSrc;
     };
     
     

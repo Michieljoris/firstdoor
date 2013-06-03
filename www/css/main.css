@@ -1107,11 +1107,11 @@ a {
 }
 
 .doorlinks-aboutus li {
-    margin-bottom:25px;
+    margin-bottom:28px;
 }
 
 .doorlinks-courses li {
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .doorlinks-resources li {
@@ -1129,3 +1129,18 @@ a {
 }
 
 
+#studentfees-- table {
+    border: 1px solid;
+    margin-bottom:20px;
+}
+
+#studentfees-- tr:first-child {
+    background: #3D9444; /*logo green*/
+    color: white;
+}
+
+
+#studentfees-- table td{
+    border: 1px solid;
+    padding-left:7px;
+}

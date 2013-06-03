@@ -448,7 +448,9 @@ var exports = {
                    ,childrenservices:   'editable/courses/CHC50908_childrens_services'
                    ,diploma_management: 'editable/courses/BSB51107_management'
                    ,certivtraining: 'editable/courses/certiv'
-                   
+                   ,priorlearning: 'editable/courses/priorlearning'
+                   ,trainingplans: 'editable/courses/trainingplans'
+                   ,studentfees: 'editable/courses/studentfees'
                }
              } 
             ,{ 

@@ -2,6 +2,10 @@
   <div id="sidebar--" class="span3"></div>
   <div ng-show="isShow('welcome')" id="slideShow--" class="span9"> </div>   
   
+  <div ng-show="!(isShow('welcome'))"
+       class="span9 inline-image embed-container ratio-tabimage ">     
+    <img class="" ng-src="{{getHeaderImage()}}"/>
+  </div>
   
   <div class="row">     
     <div id="homeContents--" class="span7"></div>

@@ -51,9 +51,6 @@ Use this when communicating between your server and our server. Be sure to keep 
 
  
 
-**** Facebook like right bottom image
-
-
 *** clean up css for narrow screen,    
 fix up ipad issues
  menu won't go away, won't scroll to id tag. 
@@ -90,6 +87,13 @@ http://www.marketingpilgrim.com/7-minute-seo-guide
 http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en//webmasters/docs/search-engine-optimization-starter-guide.pdf
 
 *** breadcrumbs http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en//webmasters/docs/search-engine-optimization-starter-guide.pdf
+
+*** compress assessment image
+*** get rid of dataclone error
+*** large hand book no problem
+*** (Insert jpg image of stuctured program in here) 
+in pd/trainingplans
+*** course guid links
     
     
 * Contact
