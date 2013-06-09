@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon May 27 10:08:12 2013
+;; Created Fri Jun  7 17:48:29 2013
 ;; Desktop file format version 206
 ;; Emacs version 24.2.1
 
@@ -11,91 +11,91 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring nil)
-(setq regexp-search-ring '("Diplom" "Diplo" "back" "green" "fjjk" "orange" "green" "orang" "welcome" "isShow" "homecntl" "defaultcntl" "homecnt" "vi" "aboutus_stitch" "about_stitch"))
-(setq register-alist '((117 . " ") (0) (113) (134217847) (101 file . "~/emacs/init.el") (98 file . "~/.bashrc") (107 file-query "/home/michieljoris/www/sites/firstdoor/build/editable/aboutus/ourcompany.html" 22) (105 file . "~/.emacs.d/init.el")))
-(setq file-name-history '("~/www/sites/firstdoor/" "/home/michieljoris/www/sites/firstdoor/www/css/menu.css" "/home/michieljoris/www/sites/firstdoor/build/editable/welcome/welcome.html" "/home/michieljoris/www/sites/firstdoor/build/views/view_home_partial.html" "/home/michieljoris/www/sites/firstdoor/build/html/welcome_stitch.html" "/home/michieljoris/www/sites/firstdoor/build/editable/welcome/specialists.html" "/home/michieljoris/www/sites/firstdoor/10may.txt" "/home/michieljoris/www/sites/firstdoor/build/recipe.js" "/home/michieljoris/www/sites/firstdoor/build/views/view_aboutus_partial.html" "/home/michieljoris/www/sites/firstdoor/build/views/view_resources_partial.html" "/home/michieljoris/www/sites/firstdoor/build/views/view_home_partial.html" "/home/michieljoris/www/sites/firstdoor/build/views/view_pd_partial.html" "/home/michieljoris/www/sites/firstdoor/build/views/view_courses_partial.html" "/home/michieljoris/www/sites/greenglass/www/js/myangular.js" "/home/michieljoris/emacs/packages/my-elisp-files/modes.el" "/home/michieljoris/www/sites/firstdoor/build/html/welcome_stitch.html" "/home/michieljoris/www/sites/firstdoor/build/html/pd_stitch.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/pd/pdfees.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/pd/satisfaction.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/pd/pdfees.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/constructive.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/mentor.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/engaging.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/specialists.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/engaging_learning_env.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/engaging_resources.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/training.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/pdworkshops.html" "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/specialists.html" "/home/michieljoris/www/sites/firstdoor/10may.txt"))
+(setq regexp-search-ring '("h3" "homecn" "reca" "homecntl" "clicksend" "cntl" "homeCntl" "clickSend" "homecntl" "Send" "Test " "Test send" "firstdoor" "inse" "green" "jpg"))
+(setq register-alist '((117 . " ") (0) (113) (134217847) (101 file . "~/emacs/init.el") (98 file . "~/.bashrc") (107 file . "~/.emacs.d/my-config/keys.el") (105 file . "~/.emacs.d/init.el")))
+(setq file-name-history '("~/www/sites/greenglass/" "~/www/sites/firstdoor/" "/home/michieljoris/www/sites/firstdoor/www/js/resourcesCntl.js" "/home/michieljoris/www/sites/firstdoor/www/js/angular-resource.min.js" "/home/michieljoris/www/sites/firstdoor/build/html/rightbar.html" "/home/michieljoris/www/sites/firstdoor/build/html/sidebar.html" "/home/michieljoris/www/sites/firstdoor/server/firstDoorSendMail.js" "/home/michieljoris/www/sites/firstdoor/server/testSendMail.js" "/home/michieljoris/www/sites/firstdoor/server/devserver.js" "/home/michieljoris/www/sites/firstdoor/build/html/footerContact.html" "/home/michieljoris/www/sites/firstdoor/build/html/contactForm.html" "/home/michieljoris/www/sites/firstdoor/www/js/controllers.js" "/home/michieljoris/www/sites/firstdoor/www/css/main.css" "/home/michieljoris/www/sites/firstdoor/build/html/courses_stitch.html" "/home/michieljoris/www/sites/firstdoor/www/js/dsafasdfdasfw" "/home/michieljoris/www/sites/firstdoor/www/js/angular-mobile.min.js" "/home/michieljoris/www/sites/firstdoor/www/js/controllers.js" "/home/michieljoris/www/sites/firstdoor/build/views/view_pd_partial.html" "/home/michieljoris/www/sites/firstdoor/build/views/view_home_partial.html" "/home/michieljoris/www/sites/firstdoor/build/html/welcome_stitch.html" "/home/michieljoris/www/sites/firstdoor/build/recipe.js" "/home/michieljoris/www/sites/firstdoor/build/html/footerBottom.html" "/home/michieljoris/www/sites/firstdoor/firstdoor.org" "/home/michieljoris/www/edge/apps/backend/modules/contact/actions/actions.class.php" "/home/michieljoris/www/edge/apps/backend/modules/contact/templates/indexSuccess.php" "/home/michieljoris/www/myedge/sqlextra.yml" "/home/michieljoris/temp/bla.yml" "/home/michieljoris/www/myedge/apps/backend/templates/settings_layout.php" "/home/michieljoris/www/myedge/lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/template/templates/indexSuccess.php" "/home/michieljoris/www/edge/web/sfDoctrinePlugin/css/default.css"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/recipe.js"
-  "recipe.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  6268
-  '(5050 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/www/js/controllers.js"
-  "controllers.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  15238
-  '(11454 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
 (desktop-create-buffer 206
   "/home/michieljoris/www/sites/firstdoor/www/css/main.css"
   "main.css"
   'css-mode
   '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-css-mode)
-  1923
-  '(1923 nil)
+  10389
+  '(10673 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/www/css/menu.css"
-  "menu.css"
-  'css-mode
-  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-css-mode)
-  2064
-  '(2434 nil)
+  "/home/michieljoris/www/sites/firstdoor/server/firstDoorSendMail.js"
+  "firstDoorSendMail.js"
+  'js2-mode
+  '(undo-tree-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
+  2578
+  '(2785 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/sites/firstdoor/www/js/controllers.js"
+  "controllers.js"
+  'js2-mode
+  '(undo-tree-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
+  31350
+  '(33304 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/sites/firstdoor/www/js/resourcesCntl.js"
+  "resourcesCntl.js"
+  'js2-mode
+  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
+  5806
+  '(7059 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/sites/firstdoor/build/html/rightbar.html"
+  "rightbar.html"
+  'html-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  1718
+  '(1745 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/html/welcome_stitch.html"
-  "welcome_stitch.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  555
-  '(556 nil)
+  "/home/michieljoris/www/sites/firstdoor/build/recipe.js"
+  "recipe.js"
+  'js2-mode
+  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
+  17617
+  '(18482 nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix)))
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/editable/welcome/welcome.html"
-  "welcome.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  823
+  "/home/michieljoris/www/sites/firstdoor/www/js/angular-resource.min.js"
+  "angular-resource.min.js"
+  'js2-mode
+  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
+  1
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . undecided-unix)))
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/views/view_home_partial.html"
-  "view_home_partial.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  284
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/editable/welcome/specialists.html"
-  "specialists.html"
+  "/home/michieljoris/www/sites/firstdoor/build/html/sidebar.html"
+  "sidebar.html"
   'html-mode
   '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
   1
@@ -105,56 +105,23 @@
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/10may.txt"
-  "10may.txt"
-  'text-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1
-  '(1 nil)
+  "/home/michieljoris/www/sites/firstdoor/server/testSendMail.js"
+  "testSendMail.js"
+  'js2-mode
+  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
+  4930
+  '(2792 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix)))
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/firstdoor.org"
-  "firstdoor.org"
-  'org-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  3564
-  '(3643 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/emacs/packages/my-elisp-files/modes.el"
-  "modes.el"
-  'emacs-lisp-mode
-  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode paredit-mode eldoc-mode)
-  35284
-  '(36294 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/views/view_aboutus_partial.html"
-  "view_aboutus_partial.html"
+  "/home/michieljoris/www/sites/firstdoor/build/html/courses_stitch.html"
+  "courses_stitch.html"
   'html-mode
   '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/views/view_resources_partial.html"
-  "view_resources_partial.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  327
-  '(1 nil)
+  851
+  '(858 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -164,173 +131,85 @@
   "view_pd_partial.html"
   'html-mode
   '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  377
-  '(385 nil)
+  253
+  '(255 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/views/view_courses_partial.html"
-  "view_courses_partial.html"
+  "/home/michieljoris/www/sites/firstdoor/build/views/view_home_partial.html"
+  "view_home_partial.html"
   'html-mode
   '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  315
-  '(nil nil)
+  301
+  '(235 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/www/js/myangular.js"
-  "myangular.js"
+  "/home/michieljoris/www/sites/firstdoor/server/devserver.js"
+  "devserver.js"
   'js2-mode
   '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  23341
-  '(23531 nil)
+  966
+  '(nil nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/engaging.html"
-  "engaging.html"
+  "/home/michieljoris/www/sites/firstdoor/build/html/footerContact.html"
+  "footerContact.html"
   'html-mode
   '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1
-  '(506 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/pd/pdfees.html"
-  "pdfees.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1606
-  '(2708 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/html/sidebar.html"
-  "sidebar.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  631
-  '(631 nil)
+  361
+  '(202 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/pd/satisfaction.html"
-  "satisfaction.html"
+  "/home/michieljoris/www/sites/firstdoor/build/html/contactForm.html"
+  "contactForm.html"
   'html-mode
   '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  24
-  '(412 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/constructive.html"
-  "constructive.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  960
-  '(1264 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/mentor.html"
-  "mentor.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1
-  '(579 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/specialists.html"
-  "specialists.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1
-  '(842 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/engaging_learning_env.html"
-  "engaging_learning_env.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  175
-  '(194 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/engaging_resources.html"
-  "engaging_resources.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1
-  '(346 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/training.html"
-  "training.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  56
-  '(295 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/media/michieljoris/EXT4_500GIG/Dropbox/Apps/firstdoor/editable/welcome/pdworkshops.html"
-  "pdworkshops.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1
-  '(217 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/www/css/bootstrap.min.css"
-  "bootstrap.min.css"
-  'css-mode
-  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-css-mode)
-  102
-  '(101 nil)
+  1695
+  '(1 nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/build/html/footerPolicies.html"
-  "footerPolicies.html"
+  "/home/michieljoris/www/sites/firstdoor/firstdoor.org"
+  "firstdoor.org"
+  'org-mode
+  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
+  3439
+  '(3404 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/sites/firstdoor/www/js/angular-mobile.min.js"
+  "angular-mobile.min.js"
+  'js2-mode
+  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
+  1600
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/michieljoris/www/sites/firstdoor/build/html/welcome_stitch.html"
+  "welcome_stitch.html"
   'html-mode
   '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  236
-  '(219 nil)
+  330
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
@@ -340,207 +219,9 @@
   "footerBottom.html"
   'html-mode
   '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  78
-  '(70 nil)
+  70
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/www/js/myjs.js"
-  "myjs.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  1809
-  '(1820 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/www/js/myangular.js"
-  "myangular.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  2076
-  '(2185 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/www/css/main.css"
-  "main.css"
-  'css-mode
-  '(undo-tree-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-css-mode)
-  8029
-  '(8411 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/build/html/basicPage.html"
-  "basicPage.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  779
-  '(579 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/build/html/body.html"
-  "body.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  2
-  '(453 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/www/testprogress.html"
-  "testprogress.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  1362
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/server/server.js"
-  "server.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  1022
-  '(750 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/greenglass.org"
-  "greenglass.org"
-  'org-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  528
-  '(590 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/server/save.js"
-  "save.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  547
-  '(603 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/server/processImages.js"
-  "processImages.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  1458
-  '(384 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/server/sync.js"
-  "sync.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  1305
-  '(808 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/build/recipe.js"
-  "recipe.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  916
-  '(922 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/server/testSendMail.js"
-  "testSendMail.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  5764
-  '(5764 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/firstdoor/server/save.js"
-  "save.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  3
-  '(1 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/www/js/minicart.js"
-  "minicart.js"
-  'js2-mode
-  '(undo-tree-mode flymake-mode moz-minor-mode auto-complete-mode window-number-mode autopair-mode global-auto-revert-mode skewer-mode hs-minor-mode)
-  10092
-  '(554 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/build/html/links.html"
-  "links.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  646
-  '(332 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/build/html/select.html"
-  "select.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  883
-  '(1293 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/michieljoris/www/sites/greenglass/build/html/isotope.html"
-  "isotope.html"
-  'html-mode
-  '(auto-fill-mode undo-tree-mode window-number-mode autopair-mode global-auto-revert-mode)
-  110
-  '(1432 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-emacs-unix)))
 

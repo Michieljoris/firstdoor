@@ -1,4 +1,3 @@
-
 /*global Recaptcha:false $:false process:false require:false exports:false*/
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
@@ -256,7 +255,8 @@ myAppModule.directive('scroll', function($routeParams,$location) {
                     $('html, body').animate({
                         // scrollTop: element[0].offsetTop-30
                         // scrollTop:160
-                        scrollTop: offsetTop
+                        // scrollTop: offsetTop
+                        scrollTop:0
                     }, 1);
                     // window.scrollTo(0, element[0].offsetTop-30);
                 },1);        

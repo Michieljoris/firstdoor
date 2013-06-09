@@ -44,8 +44,10 @@ Use this when communicating between your server and our server. Be sure to keep 
 
     
 ** now    
-   
-*** leftside panel/door
+*** secure email
+  firstdoormail@gmail.con
+dropbox pw +1 
+*** leftsde panel/door
 **** The learning style quiz is tucked away under resources and then under learning,
  so it would be good to have this in the green door of links separately
 
@@ -104,3 +106,6 @@ Andrea mobile is 0437 870 932 or home p: 3491 3573.
  
 
 
+  
+  
+  

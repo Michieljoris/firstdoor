@@ -10,8 +10,9 @@ var http = require('http');
 var smtpTransport = nodemailer.createTransport("SMTP",{
     service: "Gmail",
     auth: {
-        user: "michieljoris@gmail.com",
-        pass: "Thismy1aosp."
+        user: "firstdoormail@gmail.com",
+        pass: "northlakes13"
+        
     }
 });
 
@@ -43,7 +44,7 @@ var sendThankyou = function (data, success, error) {
 
     // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: "Firstdoor Server", // sender address
+        from: "admin@firstdoor.com.au", // sender address
         to: data.email, // list of receivers
         // to: "michieljoris@gmail.com", // list of receivers
         subject: "Thank you for contacting First Door", // Subject line
