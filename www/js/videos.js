@@ -5,7 +5,7 @@ var videos = [
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=815\" target=\"_blank\">Conflict resolution</a></p>",
-    "blurb": "<p>Conflict is often caused by two opposing opinions. Stephen R. Covey introduces a third alternative in which we find a higher and better way to resolve conflict.</p>\n<p><strong>Discussion Point:</strong> Adopting a mutual-gains approach to conflict resolution is becoming the way forward for many managers. Do you believe that using the &acirc;&euro;&oelig;third alternative&acirc;&euro;&Acirc;&Acirc;&Acirc;&Acirc; to resolve conflict is possible?</p>"
+    "blurb": "<p>Conflict is often caused by two opposing opinions. Stephen R. Covey introduces a third alternative in which we find a higher and better way to resolve conflict.</p>\n<p><strong>Discussion Point:</strong> Adopting a mutual-gains approach to conflict resolution is becoming the way forward for many managers. Do you believe that using the third alternative to resolve conflict is possible?</p>"
   },
   {
     "section": "leadership",
@@ -13,7 +13,7 @@ var videos = [
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=792\" target=\"_blank\">Trust in the Workplace</a></p>",
-    "blurb": "<p>Research shows that trust in the workplace has a direct relationship with the company&acirc;&euro;&trade;s bottom line. Trust needs to be embedded in all levels of the business.</p>\n<p><strong>Discussion Point:</strong> Trust has to be earned, so how do you earn trust in your workplace?</p>"
+    "blurb": "<p>Research shows that trust in the workplace has a direct relationship with the company's bottom line. Trust needs to be embedded in all levels of the business.</p>\n<p><strong>Discussion Point:</strong> Trust has to be earned, so how do you earn trust in your workplace?</p>"
   },
   {
     "section": "leadership",

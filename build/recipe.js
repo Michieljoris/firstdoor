@@ -609,7 +609,7 @@ var exports = {
                    "ng:app": ['html/body.html', 'myJsBlock',
                               'recaptcha',
                               '_scriptBlock'
-                              // ,'html/google_analytics.html'
+                              ,'html/google_analytics.html'
                              ]
                }
              }

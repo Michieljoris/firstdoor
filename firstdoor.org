@@ -1,4 +1,6 @@
 * good to know
+** email sending:
+mandrill.com  
 ** emacs setup
 Use nodejs-minor mode. Do a C x,v to compile a node file and see the
 output in another window
@@ -47,11 +49,6 @@ Use this when communicating between your server and our server. Be sure to keep 
 *** secure email
   firstdoormail@gmail.con
 dropbox pw +1 
-*** leftsde panel/door
-**** The learning style quiz is tucked away under resources and then under learning,
- so it would be good to have this in the green door of links separately
-
- 
 
 *** clean up css for narrow screen,    
 fix up ipad issues
@@ -92,7 +89,6 @@ http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.c
 
 *** get rid of dataclone errorimage of stuctured program in here) 
 in pd/trainingplans
-*** course guide links
     
     
 * Contact
