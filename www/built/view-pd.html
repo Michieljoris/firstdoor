@@ -532,7 +532,7 @@ Retrieved from:
   <form name="loginFormRight" action="#" method="POST">
     
 <br>
-    <h4><b>Contact us, we are here to help you.</b></h4>
+    <h4><b ng-bind-html-unsafe="getContactUsText()"></b></h4>
     <div ng-show="!sent">
       <label class="form-label ">Name<span class="form-required">*</span></label>
       <div class="controls controls-row control-group {{namemissing}}">

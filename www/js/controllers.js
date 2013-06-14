@@ -328,8 +328,21 @@ myAppModule.directive('scroll', function($routeParams,$location) {
 
 
 //Controllers
-function MainCntl($scope, $route, $routeParams, $location, $anchorScroll) {
+function MainCntl($scope, $location) {
     console.log('Main controller..');
+    $scope.getContactUsText = function() {
+        // console.log('route' ,$location.path);
+        var strings = {
+            '/home':'Request your First Door <a href="http://localhost:6001/documents/FirstDoor_StudentHandbook.pdf">'+
+                'student handbook</a> now, or phone us. We’re here to help.',
+            '/aboutus':'Contact us, we are here to help you.',
+            '/pd':'Request forms now to evaluate your Centre’s PD needs, or call us for more information',
+            '/courses': 'Request a <a href="http://localhost:6001/documents/children_services_course_guide.pdf">course guide</a>' +
+                ' and sample training plan, or phone us. We’re here to help.',
+            '/resources': 'Fill in your details to receive regular resource updates.'
+        };
+        return strings[$location.$$path];
+    };
     // $anchorScroll();
     
     // console.log('location', $location);
@@ -384,7 +397,7 @@ var greendoor = {
         heading: '',
        
         links:    [
-            { label: 'Our four step approach', route: 'index.html#!/pd#intro', scroll: true}
+            { label: 'Tailored workshops', route: 'index.html#!/pd#intro', scroll: true}
             ,{ label: 'The inspired educator', route: 'index.html#!/pd#inspired', scroll: true}
             ,{ label: 'Observation, documentation, planning and evaluating', route: 'index.html#!/pd#observing', scroll: true}
             ,{ label: 'Environment and experiences', route: 'index.html#!/pd#environment', scroll: true}
