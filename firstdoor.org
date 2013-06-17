@@ -1,6 +1,9 @@
 * good to know
+** cdn: cloudfront  
 ** email sending:
 mandrill.com  
+** loosely coupled:
+http://somajs.github.io/somajs/site/
 ** emacs setup
 Use nodejs-minor mode. Do a C x,v to compile a node file and see the
 output in another window

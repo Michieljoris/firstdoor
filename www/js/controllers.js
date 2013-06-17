@@ -333,11 +333,12 @@ function MainCntl($scope, $location) {
     $scope.getContactUsText = function() {
         // console.log('route' ,$location.path);
         var strings = {
-            '/home':'Request your First Door <a href="http://localhost:6001/documents/FirstDoor_StudentHandbook.pdf">'+
-                'student handbook</a> now, or phone us. We’re here to help.',
+            '/home':'Request your First Door ' +
+                // '<a href="documents/FirstDoor_StudentHandbook.pdf">'+
+                'student handbook now, or phone us. We’re here to help.',
             '/aboutus':'Contact us, we are here to help you.',
             '/pd':'Request forms now to evaluate your Centre’s PD needs, or call us for more information',
-            '/courses': 'Request a <a href="http://localhost:6001/documents/children_services_course_guide.pdf">course guide</a>' +
+            '/courses': 'Request a course guide' +
                 ' and sample training plan, or phone us. We’re here to help.',
             '/resources': 'Fill in your details to receive regular resource updates.'
         };
