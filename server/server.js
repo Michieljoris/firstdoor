@@ -23,7 +23,7 @@ var options = {
     ,"dir": false
     ,"index": true
     ,"silent": false
-    ,"port": 80 
+    ,"port": 6001 
     ,postHandlers: {
         // "/" : save
         "/contactus_form" : sendMail
