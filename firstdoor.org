@@ -1,7 +1,24 @@
 * good to know
+** deploying
+ Username: RVCICT
+Password: Rvcict1
+
+To confirm your account, install the latest jitsu: 
+
+        sudo npm install jitsu -g 
+
+and then run: 
+
+        jitsu users confirm rvcict f7ad5bad-6cb8-4a55-9b14-d463a050f8af 
+
+This will allow you to deploy applications with: 
+
+        jitsu deploy 
 ** cdn: cloudfront  
 ** email sending:
 mandrill.com  
+mailchimp.com
+mailgun.com
 ** loosely coupled:
 http://somajs.github.io/somajs/site/
 ** emacs setup
@@ -35,7 +52,13 @@ Public Key: 	6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5
 Use this in the JavaScript code that is served to your users
 Private Key: 	6LfL6OASAAAAAHklMnnQdS4AmZvXuOp1ihgPY7V9
 
-Use this when communicating between your server and our server. Be sure to keep it a secret.
+Use this when communicating between your server and our server. Be
+sure to keep it a secret.
+** editing (inline)
+redactor, medium.js , zenpen, ckeditor inline, x-editable,
+http://hallojs.org/
+http://jhollingworth.github.io/bootstrap-wysihtml5/
+
 * todo
   
 ** later 
@@ -105,6 +128,40 @@ Andrea mobile is 0437 870 932 or home p: 3491 3573.
  
 
 
+  The accredited training course ‘Diploma for Children’s Services’ set
+by the ASQA has changed completed last month and is now ‘Diploma of
+Early Childhood Education and Care’. This has meant a completely
+different course of units, and has required us to change our course
+guide etc. These changes need to be updated on the website to replace
+the old Diploma name to the new name in the door links under
+accredited training, course guide and course unit structure jpg
+image. 
+
+The link to accredited training course fees will also need
+updating. It’s great that I am able to change the main text, but we
+are reliant on you to update these other areas.  
+
+We now have a phone number that also needs to be updated on the
+website top header. It would be great to have Phone us (in green same
+colour and size as Contact us) and 3103 2336 in same size but in
+charcoal grey underneath. Could this please be positioned and aligned
+to the left of Contact us and the social media icons?  
+
+Once we have achieved accreditation as a Registered Training
+Organisation we will need to insert an accredited training logo in
+between First Door’s logo and the ‘Phone us’ in the top header as
+well.
   
-  
+Hi Andrea,
+
+I updated the course title in the menu and on the door, and have replaced the course guide and course unit structure jpg image.
+
+The training course fees are not as a jpg but as a text. I've forgotten the password for the firstdoor dropbox so I can't edit it myself right now.
+
+I'll put the Phone us tomorrow, you mean to the left of connect with us, not contact us?
+
+I also fixed the spacing of the bottom bar.
+
+Michiel
+
   

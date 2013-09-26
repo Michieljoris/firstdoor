@@ -454,7 +454,7 @@ var greendoor = {
         ,links: [
             { label: 'Accredited training', route: 'index.html#!/courses#intro',
               scroll: true}
-            ,{ label: 'Diploma of Children’s Services', route: 'index.html#!/courses#childrenservices',
+            ,{ label: 'Diploma of Early Childhood Education and Care', route: 'index.html#!/courses#childrenservices',
               scroll: true}
             ,{ label: 'Diploma of Management ', route: 'index.html#!/courses#diploma_management', scroll: true}
             ,{ label: 'Certificate IV in Training and Assessment', route: 'index.html#!/courses#certivtraining', scroll: true}

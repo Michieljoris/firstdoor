@@ -178,7 +178,14 @@ body {
     color: #AAAAAA;
     padding-top: 2px;
     padding-bottom: 30px;
+    margin-left:auto;
+    margin-right:auto;
+    /* width:1200px; */
     }
+
+#bottomBar {
+   background-color: #333333; 
+}
 
 #bottomContainer{background: #111;
 		 padding:0px;
@@ -388,7 +395,8 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	width: 200px;  
-	margin-bottom:-30px;
+	height:80px;
+	/* margin-bottom:-30px; */
 	padding-left:50px;
     }
     
@@ -1079,7 +1087,7 @@ a {
 
 .doorlinks li {
     /* background: blue; */
-    border: dotted 1px lightgrey;
+    border: solid 1px darkgrey;
     /* background: #3D9444; /\*logo green*\/ */
     -webkit-border-radius: 4px; 
     -moz-border-radius: 4px; 

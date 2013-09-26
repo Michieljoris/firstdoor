@@ -1,6 +1,6 @@
 {
     "name": "firstdoor",
-    "version": "0.1.0-15",
+    "version": "0.1.0-17",
     "author": "Michiel van Oosten",
     "description": "Website for Greendoor business",
     "repository": {
@@ -11,16 +11,15 @@
         "start": "node ./server/server.js"
     },
     "dependencies": {
-        "bb-server": "*",
-        "html-builder": "*",
-        "nodemailer": "*",
-        "dbox": "*",
+        "bb-server": "0.3.5",
+        "html-builder": "0.1.4",
+        "nodemailer": "0.5.x",
+        "dbox": "0.6.x",
         "colors": "*"
     },
     "bugs": {
         "url": "https://github.com/michieljoris/firstdoor/issues"
     },
-    "analyze": false,
     "preferGlobal": "true",
     "subdomain": "firstdoor",
     "domains": [
@@ -28,6 +27,6 @@
         "firstdoor.com.au"
     ],
     "engines": {
-        "node": "0.8.x"
+        "node": "0.8.15"
     }
 }
