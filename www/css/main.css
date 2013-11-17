@@ -274,7 +274,6 @@ body {
     padding:2px;
     border:0px;
 }
-}
 /* Photo Stream
 ------------------*/
 
@@ -362,12 +361,11 @@ body {
     margin-left: -10px;
 }
 
-#scroll-to-top a:hover {background-color: #F38630;}
+#scroll-to-top a:hover {
+    background-color: #F38630;
+}
 
-/* #inside { */
-/*     max-height: 400px; */
-/*     width: 250px; */
-/* } */
+
 #sidebar-- { 
     /* max-width:300px;  */
     /* background: #3d9444;  */
@@ -838,7 +836,7 @@ h3 {
       }   
 /*  The blackbar at the top is messing with scrolling to tags, so if a  */
 /*  md file has div with tags in them we scroll a bit further, the md  */
-* file needs to be in a div with the contents-- tag  */
+/* file needs to be in a div with the contents-- tag  */
 /* #contents-- div{padding-top: 20px; } */
 
 #yt {
@@ -1124,7 +1122,7 @@ a {
 }
 
 .doorlinks-courses li {
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 .doorlinks-resources li {
