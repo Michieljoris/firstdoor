@@ -4,7 +4,7 @@
 
 var server = require('bb-server'),
     sendMail = require("./firstDoorSendMail.js")
-    ,testSendMail = require("./testSendMail.js")
+    // ,testSendMail = require("./testSendMail.js")
     ,sync = require("./sync.js")
     ,dropbox_authorize = require("./dropbox_authorize.js")
     ,dropbox_connect = require("./dropbox_connect.js")
@@ -19,9 +19,10 @@ var options = {
     //     { "prefix": "iris",
     //       "target": "https://michieljoris.iriscouch.com"}
 // ]
+    
     root: "./www"
-    ,"dir": false
-    ,"index": true
+    ,"dir": true
+    ,"index": false
     ,"silent": false
     ,"port": 6001 
     ,postHandlers: {
