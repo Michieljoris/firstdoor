@@ -26,7 +26,15 @@
         "www.firstdoor.com.au",
         "firstdoor.com.au"
     ],
-    "engines": {
-        "node": "0.8.x"
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/michieljoris/firstdoor/blob/master/LICENSE.txt"
     }
+  ],
+  "engines": {
+    "node": ">= 0.8.x"
+  },
+  "devDependencies": {},
+  "private": false
 }

@@ -31,7 +31,7 @@ sudo apt-get install inotify-tools
 ** responsive images
 Resize images to proper size then include with height=auto and
 max-width=100%
-
+http://bjorn.wikkeling.com/115/pure-css-responsive-images-yes-javascript.html
 ** mind the url with hashbang routing urls:
    href: 'index.html#!/home'
    it's  #!/route following the main page (index.html in this case)

@@ -67,6 +67,7 @@ var js = [
     // ,'https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min'
     //Version 1.7.2
     // 'jquery'
+    'es5-shim',
     'jquery-1.9.1.min.js'
     ,'noconsole'
     // 'jquery-1.6.2.js'
@@ -356,7 +357,8 @@ var exports = {
             ,sharethis3: '<script type="text/javascript">stLight.options({publisher: "014e0e6b-5c75-4f02-aa39-abe6833f9f4d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>'
             // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>''
             ,recaptcha: '<script type="text/javascript" src="js/recaptcha_ajax.js"></script>'
-
+            ,fragment: '<meta name="fragment" content="!">'
+            // ,firebug: '<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js></script>"'
         }
         ,metaBlock : {
             id: 'meta',
@@ -369,6 +371,8 @@ var exports = {
                     }
                     ,{ name: "viewport"
                       ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
+                    // ,{ name: "fragment"
+                    //   ,content: "!" }
                   ]
         }
         ,linkBlock:  {
@@ -631,7 +635,9 @@ var exports = {
                //converted to html. Partials in an array will be
                //concatenated before inserted at the tag id element
                ,mapping: {
-                   head: ['title', 'meta',  'html/ieshim','skewer', 'sharethis1', 'sharethis2', 'sharethis3', 'headJsBlock', 'myLinkBlock','_linkBlock'],
+                   head: ['title', 'meta',  'html/ieshim','skewer',
+                          // 'firebug',
+                          'sharethis1', 'sharethis2', 'sharethis3', 'headJsBlock', 'myLinkBlock','_linkBlock'],
                   
                    "ng:app": ['html/body.html', 'myJsBlock',
                               'recaptcha',
