@@ -1,48 +1,61 @@
 <!-- <fixscrollright data-ng-transclude="">  -->
-  <!-- AddToAny BEGIN -->
-  <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
-  <script type="text/javascript">
-    var a2a_config = a2a_config || {};
-    a2a_config.linkurl = "http://www.firstdoor.com.au";
-    a2a_config.onclick = 1;
-  </script>
-  <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
-  <!-- AddToAny END -->
+<!-- AddToAny BEGIN -->
+<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
+<script type="text/javascript">
+ var a2a_config = a2a_config || {};
+ a2a_config.linkurl = "http://www.firstdoor.com.au";
+ a2a_config.onclick = 1;
+</script>
+<script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+<div ng-show="show_events()">
+  <h3>Upcoming workshop events</h3>
+  <p>March 3: Relationships with children</p>
+  <p>March 17: Recruitment, selection and induction of staff</p>
+  <p>April 7: Safe and healthy environment</p>
+  <p>April 14: Develop teams and individuals</p>
+  <p>May 5: Partnership with families</p>
+  <p>May 19: Developing cooperative behaviour</p>
+  <p>June 2: Health and safety of children</p>
+  <p>June 16: Foster learning and development</p>
+  <p>July 7: Healthy food and drinks</p>
+  <p>July 21: Develop cultural competence</p>
+  <p>See <a href="index.html#!/courses#intro">more</a>.</p>
 
+</div>
 
+<form name="loginFormRight" action="#" method="POST">
 
-  <form name="loginFormRight" action="#" method="POST">
-    
-<br>
-    <h4><b ng-bind-html-unsafe="getContactUsText()"></b></h4>
-    <div ng-show="!sent">
-      <label class="form-label ">Name<span class="form-required">*</span></label>
-      <div class="controls controls-row control-group {{namemissing}}">
-	
-	<input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
-	<input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
-      </div>
-      
-      <label class="form-label">Email<span class="form-required">*</span></label>
-      
-      <div class="control-group {{emailmissing}}">
-	<input class="span2" type="email" id="email" name="email" required/><br/>
-      </div>
-      
-      <label class="form-label">Message<span class="form-required">*</span></label>
-      
-      <div class="control-group {{msgmissing}}">
-	<textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
-      </div> 
-      <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
-	     value="Send" />
-      <div id="captchadiv"></div> 
+  <br>
+  <h4><b ng-bind-html-unsafe="getContactUsText()"></b></h4>
+  <div ng-show="!sent">
+    <label class="form-label ">Name<span class="form-required">*</span></label>
+    <div class="controls controls-row control-group {{namemissing}}">
+
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
     </div>
-    <div ng-show="sent" class="well">
-      Thanks for contacting First Door. We will be in touch within the next 24 hours.
+
+    <label class="form-label">Email<span class="form-required">*</span></label>
+
+    <div class="control-group {{emailmissing}}">
+      <input class="span2" type="email" id="email" name="email" required/><br/>
     </div>
-  </form> 
-  {{result}} 
-  
-  
+
+    <label class="form-label">Message<span class="form-required">*</span></label>
+
+    <div class="control-group {{msgmissing}}">
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
+    </div>
+    <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
+           value="Send" />
+    <div id="captchadiv"></div>
+  </div>
+  <div ng-show="sent" class="well">
+    Thanks for contacting First Door. We will be in touch within the next 24 hours.
+  </div>
+</form>
+{{result}}
+
+
 <!-- </fixscrollright> -->

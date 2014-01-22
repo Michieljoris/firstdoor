@@ -325,7 +325,12 @@ myAppModule.directive('scroll', function($routeParams,$location) {
 // }
 
 
-
+var nrtlogo_allowed = [
+    "/courses#intro",
+    "/courses#childrenservices",
+    "/courses#diploma_management",
+    "/courses#certivtraining"
+    ];
 
 //Controllers
 function MainCntl($scope, $location) {
@@ -344,6 +349,17 @@ function MainCntl($scope, $location) {
         };
         return strings[$location.$$path];
     };
+    
+    $scope.show_events = function() {
+         return $location.$$url === "/home#welcome";
+        };
+    
+    
+    $scope.hide_nrtlogo = function() {
+        var loc = $location.$$url;
+        console.log(loc);
+        return nrtlogo_allowed.indexOf(loc) === -1;
+        };
     // $anchorScroll();
     
     // console.log('location', $location);
@@ -617,6 +633,9 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     $scope.clicksend = function($event) {
         clickSend($event, $scope);
     }; 
+    
+    
+    
     
 }
 
@@ -908,6 +927,7 @@ function HomeCntl($scope, $routeParams, $location) {
     $scope.clicksend = function($event) {
         clickSend($event, $scope);
     }; 
+    
 }
 
 

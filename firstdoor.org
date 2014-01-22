@@ -26,7 +26,8 @@ Use nodejs-minor mode. Do a C x,v to compile a node file and see the
 output in another window
 ** Use filemonitor to execute js, or bash processes on file changes
 Need to install filemonitor module with npm install filemonitor
-
+Filemonitor needs:
+sudo apt-get install inotify-tools 
 ** responsive images
 Resize images to proper size then include with height=auto and
 max-width=100%
@@ -35,7 +36,7 @@ max-width=100%
    href: 'index.html#!/home'
    it's  #!/route following the main page (index.html in this case)
 
-** resizing images:
+*https://github.com/nonpop/xkblayout-state.githttps://github.com/nonpop/xkblayout-state.git* resizing images:
 Install imagemagick then
 mogrify -resize x450 *.jpg
 mogrify -resize x1000 *.jpg
@@ -98,3 +99,207 @@ Andrea mobile is 0437 870 932 or home p: 3491 3573.
 
 
   
+  
+* requests from email
+** Do you think we could have a main link to the enrolment process 
+and related forms on the ‘header’ of the website? This would mean
+‘ENROL’ would go at the top as a whole separate button, eg. by our
+phone number? I would imagine that it would need the following links
+below the enrol: Diploma of ECEC (– enrolment form and course guide)
+Diploma of Management ( – enrolment form) Certificate lV in Training
+and Assessment (– enrolment form) Unit/s only enrolment form Student
+Handbook
+ 
+For the purpose of the brochure, it would be good to have a website
+file link, eg. wwwfirstdoor.com.au/enrol/DipECEC
+ 
+Otherwise, enrolment would get hidden under Accredited training.
+
+Previously we thought the Nationally Recognised Training logo was
+going up there on the header beside the phone number, however we are
+only allowed to use this logo on pages that refer to the Diploma.
+
+Yes, I can put an enroll button by the phone number. 
+ 
+Do you want the menu to roll down from this button, or a new page with
+these links? Or you can have a new menu tab with a menu underneath
+with the links to these enrollment forms.
+ 
+And the website links will be sanitized soon so you don't have the
+firstdoor.com.au/index.html#!services#bla etc in the link anymore, but
+instead firstdoor.com.au/services/bla. So you'll have
+firstdoor.com.au/enrol/DipECEC as a link to an enrollment form.
+ 
+Perhaps you are the best person to decide how best to function the
+easy access menu link? I remember talk of not having enough room in
+the menu tabs so would prefer this did not get too squishy or
+distorted when people are on iphones etc. I’m happy to leave this to
+your judgement of what will work best from the website and user’s
+point of view.
+
+** The image on the accredited training page is now out of date 
+as it says Nationally accredited training coming soon. I have saved an
+untitled version of this image in the website dropbox and will also
+put in the Nationally Recognised Training logo that needs to go on all
+the pages under the Accredited Training tab.  
+
+Here’s a link to the conditions of use of the NRT logo in relation to
+where it is placed on our website.
+ 
+http://www.asqa.gov.au/verve/_resources/nrt_logo_specifications_new.pdf
+
+** I have put more images into the website dropbox 
+under inbox/UpdatesDec13 that would be great to be actioned.
+ 
+An image of Cindy and another of me to go beside the blurb under each of our names on http://www.firstdoor.com.au/index.html#!/aboutus#people
+
+The updated accredited training image to replace the image with the words “nationally competency based training coming soon” to go on all the pages under the accredited training tab.
+
+The Nationally Recognised Training (NRT) logo. Note: use of the Nationally Recognised Training (NRT) logo has explicit rules and can only go on these pages that relate to NRT. Can the position of this logo go on the left side under the green door on each of these pages?
+ 
+http://www.firstdoor.com.au/index.html#!/courses#intro
+ 
+http://www.firstdoor.com.au/index.html#!/courses#childrenservices
+ 
+http://www.firstdoor.com.au/index.html#!/courses#diploma_management
+ 
+http://www.firstdoor.com.au/index.html#!/courses#certivtraining
+**  There are also a couple of jobs left from the report that 
+we had done by Webwings that still need fixing. It would be great if
+you can please add these to your ‘First Door to do list’ along with
+the image updates:
+ 
+When people click on the ‘connect with us’ social media links these
+link them to external sites, but instead they should open a new
+tab/window so that people remain on our website as well. The aim is to
+leave people on our site for as long as possible, with a new window
+open, instead of them switching out of our website.
+ 
+The quiz does not work online, and it should as it is a bit
+frustrating to complete how it is. People need paper and a pen to do
+it.
+ 
+Can the policy documents be changed to web pages instead of
+downloading pdfs? Or would this completely change the formatting?
+ 
+Can a XML site-map be added to the root directory to help search
+engines to index all pages on our site?
+
+** Can you please update the bottom panel of our website with the following information:
+
+Documents: add enrolment form -  in website dropbox
+ 
+Contact: Phone: 07 3103 2336 (instead of mobile numbers)
+
+Legal: RTO code: 40792
+Sorry, I incorrectly typed 40792 in the previous email but our RTO
+code is 40782.
+** Sorry, I am not sure why, but I can’t seem to upload files to our website dropbox.
+ Here’s the task about the Enrol tab with the details for the website.
+ 
+I have attached our enrolment forms. We have two versions of each form.
+ 
+It would be great to have a new tab ‘ENROL’ with the following information and documents, eg:
+ 
+Enrol with First Door
+
+Congratulations on your decision to study with First Door. There are five easy steps to completing your enrolment:
+
+Download and read our Student Handbook
+
+Read the required course information or course guide
+
+Complete the enrolment form for your course, and return to First Door by email or post
+
+Pay your enrolment and first unit of study fee
+
+Contact us if you require any further information. We are here to help.
+
+First Door will soon contact you to confirm receipt of your enrolment, and to discuss your training plan with you.
+
+
+Student handbook (download pdf)
+ 
+ 
+Diploma of Early Childhood education and Care course guide (download pdf)
+
+
+Enrolment form: CHC50113 Diploma of Early Childhood Education and Care 
+print/paper copy version (download pdf)
+computer document version (download Word doc)
+
+
+Enrolment form: Leadership and Management units
+print/paper copy version (download pdf)
+computer document version (download Word doc)
+** Can this attached course guide please be linked in to our website to replace the previous course guide. 
+It is located as a hyperlink on
+http://www.firstdoor.com.au/index.html#!/courses#childrenservices
+
+Can it also be located in ‘Documents’ in the bottom panel under Course
+guide Diploma of Early Childhood
+ 
+Also, thinking of the location of the Nationally Recognised Training
+logo. Perhaps this would be best alongside and to the right of the
+main heading on each page under the accredited training tab.
+ 
+We are starting our promotion at Early Childhood centres next week so
+it would be wonderful if all the changes can be made by next
+Monday. Thanks :D
+** I’ve been wondering about the size of our standard text font 
+and seeing Mamre’s website has confirmed that I’d like to shrink the
+size of our standard text font on the First Door website. I’m hoping
+it is a quick easy fix for you to take the standard font down a couple
+of sizes. E.g. at the moment it looks about size 12pts so are we able
+to get this to more like 10pts, or whatever size is normal for
+websites? As long as it stays readable on ipad and iphones though!
+ 
+David showed me the right panel with events and latest news etc. I
+really think this is a good idea for First Door’s home page and I
+think we talked about this much earlier on so that there was a place
+for fresh information, blog links etc. Is it possible to do this?
+ 
+For example:
+ 
+Upcoming workshop events
+
+February 17:  Cooperative behaviour
+
+March 3: Relationships with children
+
+March 17: Recruitment, selection and induction of staff
+
+April 7: Safe and healthy environment
+
+April 14: Develop teams and individuals
+
+May 5: Partnership with families
+
+May 19: Promote children's agency
+
+June 2: Health and safety of children
+
+June 16: Foster learning and development
+
+July 7: Healthy food and drinks
+
+July 21: Develop cultural competence
+
+See more (link to http://www.firstdoor.com.au/index.html#!/courses#intro)
+
+Latest updates
+ 
+ 
+I’m also wondering about the usefulness of doubling up the green door
+links on the left side with the tab links along the top. It does make
+sense when they have different linked information but is it worthwhile
+if they are the same? Please let me know your thoughts.
+ 
+Also, we have our student management WiseNet program running now, and
+over the next week will get the details of how this is to be linked on
+to our student login. Is there any information that you need?
+
+Cindy and I will be promoting the website to Early Childhood Directors
+as from next week so it would be great if the list of changes can be
+completed by then. Please let me know if this works for you.
+ 

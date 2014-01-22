@@ -12,7 +12,8 @@ body {
     padding:0px;
     /* background: url(../images/bg/brushed_alu.png); */
     background: #fff;
-    font-size: 11pt;
+    /* font-size: 11pt; */
+    font-size: 14px; 
     height:100%;
     /* font-family: 'Droid Serif', serif !important; */
     /* font-family: 'Carrois Gothic',​sans-serif !important; */

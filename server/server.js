@@ -20,7 +20,7 @@ var options = {
     //       "target": "https://michieljoris.iriscouch.com"}
 // ]
     root: "./www"
-    ,"dir": false
+    ,"dir": true
     ,"index": true
     ,"silent": false
     ,"port": 6001 

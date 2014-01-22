@@ -165,7 +165,8 @@ var routes = [
     ['epic', '/built/view-epic.html', 'EpicCntl'],
     ['chat', '/built/view-chat.html', 'chatCntl'],
     ['filebrowser', '/built/view-filebrowser.html', 'filebrowserCntl'],
-    ['contactus', '/built/view-contactus.html', 'contactusCntl']
+    ['contactus', '/built/view-contactus.html', 'contactusCntl'],
+    ['enrol', '/built/view-enroll.html']
     // ,['ytcarousel', '/build/html/ytcarousel.html']
 ];
 
@@ -254,6 +255,21 @@ var mainMenuTree = [
            //  } 
        ]
        
+     } 
+    ,{ label: 'Enrol', route: 'enrol', scroll: true
+       // ,sub: [
+       //     { label: '(Tryouts)', icon: '', route: 'blog'
+       //       ,sub: [ 
+       //           // { label: 'Markdown editor', route: 'epic'}
+       //           { label: 'Chat', route: 'chat'}
+       //           ,{ label: 'Editor', route: 'filebrowser'}
+       //           ,{ label: 'Youtube carousel', route: 'ytcarousel'}
+       //           // ,{ label: 'Submenu item 2', route: 'index.html'}
+       //           // ,{ label: 'Submenu item 2', route: 'index.html'}
+       //       ]
+       
+       //     } 
+       // ]
      } 
     ,{ label: 'Contact us', route: 'contactus', scroll: true
        // ,sub: [
@@ -557,6 +573,16 @@ var exports = {
                 }}
             
             //Misc
+            //enroll
+            ,{
+                src: 'views/view_enroll_partial.html'
+                ,out : 'view-enroll.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    // ,image: 'image_resources'
+                    ,contents: 'html/enroll.html'
+                   ,rightBar: 'html/rightbar'
+                }}
             //Contact Us
             ,{
                 src: 'views/view_contactus_partial.html'

@@ -1,7 +1,7 @@
 var videos = [
   {
     "section": "earlychildhood",
-    "path": "build/editable/resources/earlychildhood/100languages.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/100languages.html",
     "provider": "youtube",
     "id": "mQtLOu99BfE",
     "title": "<p>The hundred languages of children</p>",
@@ -9,7 +9,7 @@ var videos = [
   },
   {
     "section": "earlychildhood",
-    "path": "build/editable/resources/earlychildhood/NZ_childhood_centre.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/NZ_childhood_centre.html",
     "provider": "youtube",
     "id": "NvAMYppiG-k",
     "title": "<p>New Zealand Early Childhood Centre</p>",
@@ -17,7 +17,7 @@ var videos = [
   },
   {
     "section": "earlychildhood",
-    "path": "build/editable/resources/earlychildhood/articnorway.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/articnorway.html",
     "provider": "youtube",
     "id": "mIi1WkFhGvc",
     "title": "<p>Arctic Norway outdoor kindergarten</p>",
@@ -25,7 +25,7 @@ var videos = [
   },
   {
     "section": "earlychildhood",
-    "path": "build/editable/resources/earlychildhood/forestkindergarten.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/forestkindergarten.html",
     "provider": "vimeo",
     "id": "59405112",
     "title": "<p>Forest Kindergarten</p>",
@@ -33,7 +33,7 @@ var videos = [
   },
   {
     "section": "earlychildhood",
-    "path": "build/editable/resources/earlychildhood/montesorri.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/montesorri.html",
     "provider": "youtube",
     "id": "rZLq5Uttq8M",
     "title": "<p>Montessori</p>",
@@ -41,7 +41,7 @@ var videos = [
   },
   {
     "section": "earlychildhood",
-    "path": "build/editable/resources/earlychildhood/reggio_emilio.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/reggio_emilio.html",
     "provider": "youtube",
     "id": "m0mvbWEd61M",
     "title": "<p>Italy's Reggio Emilio approach</p>",
@@ -49,7 +49,7 @@ var videos = [
   },
   {
     "section": "earlychildhood",
-    "path": "build/editable/resources/earlychildhood/rudolfsteiner.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/rudolfsteiner.html",
     "provider": "vimeo",
     "id": "3211758",
     "title": "<p>Rudolf Steiner</p>",
@@ -57,7 +57,7 @@ var videos = [
   },
   {
     "section": "earlychildhood",
-    "path": "build/editable/resources/earlychildhood/swedish_preschool.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/swedish_preschool.html",
     "provider": "youtube",
     "id": "Z3Vw71RSn1I",
     "title": "<p>Swedish preschool</p>",
@@ -65,7 +65,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_Difficult_conversations.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_Difficult_conversations.html",
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=855\" target=\"_blank\">Difficult conversations</a></p>",
@@ -73,7 +73,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_conflict_resolution.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_conflict_resolution.html",
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=815\" target=\"_blank\">Conflict resolution</a></p>",
@@ -81,7 +81,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_leadership.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_leadership.html",
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=788\" target=\"_blank\">Leadership</a></p>",
@@ -89,7 +89,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_learning_to_lead.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_learning_to_lead.html",
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=859\" target=\"_blank\">Learning to lead</a></p>",
@@ -97,7 +97,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_managing_change.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_managing_change.html",
     "provider": "text",
     "id": "",
     "title": "<p>&nbsp;<a href=\"http://www.aim.com.au/DisplayStory.asp?ID=783\" target=\"_blank\">Managing change</a></p>",
@@ -105,7 +105,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_managing_people.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_managing_people.html",
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=784\" target=\"_blank\">Managing people</a></p>",
@@ -113,7 +113,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_motivation.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_motivation.html",
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=801\" target=\"_blank\">Motivation</a></p>",
@@ -121,7 +121,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_social_media_workplace.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_social_media_workplace.html",
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=807\" target=\"_blank\">Social Media in the Workplace</a></p>",
@@ -129,7 +129,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/article_trust_in_workplace.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/article_trust_in_workplace.html",
     "provider": "text",
     "id": "",
     "title": "<p><a href=\"http://www.aim.com.au/DisplayStory.asp?ID=792\" target=\"_blank\">Trust in the Workplace</a></p>",
@@ -137,7 +137,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/autism.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/autism.html",
     "provider": "youtube",
     "id": "fn_9f5x0f1Q",
     "title": "<p><a href=\"http://www.ted.com/talks/temple_grandin_the_world_needs_all_kinds_of_minds.html\" target=\"_blank\">The world needs all kinds of minds &ndash; talk about autism (19:44 mins)</a></p>",
@@ -145,7 +145,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/human_connectin.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/human_connectin.html",
     "provider": "youtube",
     "id": "iCvmsMzlF7o",
     "title": "<p><a href=\"http://www.ted.com/talks/brene_brown_on_vulnerability.html\" target=\"_blank\">Human Connection (20:20 mins) &ndash; brilliant for child care</a></p>",
@@ -153,7 +153,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/motivation dan pink.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/motivation dan pink.html",
     "provider": "youtube",
     "id": "rrkrvAUbU9Y",
     "title": "<p><a href=\"http://www.ted.com/talks/lang/en/dan_pink_on_motivation.html\" target=\"_blank\">Motivation (18:40 mins)</a></p>",
@@ -161,7 +161,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/secrets of success.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/secrets of success.html",
     "provider": "youtube",
     "id": "ku0xCtgUuUo",
     "title": "<p><a href=\"http://www.ted.com/talks/richard_st_john_s_8_secrets_of_success.html\" target=\"_blank\">Secrets of Success (3:34 mins)</a></p>",
@@ -169,7 +169,7 @@ var videos = [
   },
   {
     "section": "leadership",
-    "path": "build/editable/resources/leadership/success_journey.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/leadership/success_journey.html",
     "provider": "youtube",
     "id": "rqokTY3dNtc",
     "title": "<p><a href=\"http://www.ted.com/talks/richard_st_john_success_is_a_continuous_journey.html\" target=\"_blank\">Success is a continuous journey (3:57 mins)</a></p>",
@@ -177,7 +177,7 @@ var videos = [
   },
   {
     "section": "learning",
-    "path": "build/editable/resources/learning/kenrobinsons.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/learning/kenrobinsons.html",
     "provider": "youtube",
     "id": "r9LelXa3U_I",
     "title": "<p>Sir Ken Robinson: Learning reform based on people's interests and passion</p>",
@@ -185,7 +185,7 @@ var videos = [
   },
   {
     "section": "learning",
-    "path": "build/editable/resources/learning/multiple_intelligences.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/learning/multiple_intelligences.html",
     "provider": "youtube",
     "id": "cf6lqfNTmaM",
     "title": "<p>Multiple Intelligences</p>",
@@ -193,7 +193,7 @@ var videos = [
   },
   {
     "section": "learning",
-    "path": "build/editable/resources/learning/teachingandlearning.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/learning/teachingandlearning.html",
     "provider": "youtube",
     "id": "oNxCporOofo",
     "title": "<p>Teaching and learning to meet learning styles</p>",
@@ -201,7 +201,7 @@ var videos = [
   },
   {
     "section": "learning",
-    "path": "build/editable/resources/learning/whatdefineslearning.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/learning/whatdefineslearning.html",
     "provider": "youtube",
     "id": "0iP9W9RxlOg",
     "title": "<p>What defines your learning and training style?</p>",
@@ -209,7 +209,7 @@ var videos = [
   },
   {
     "section": "learning",
-    "path": "build/editable/resources/learning/whatisactivelearning.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/learning/whatisactivelearning.html",
     "provider": "youtube",
     "id": "UsDI6hDx5uI",
     "title": "<p>What is active learning?</p>",
@@ -217,7 +217,7 @@ var videos = [
   },
   {
     "section": "learningorganisations",
-    "path": "build/editable/resources/learningorganisations/creating.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/learningorganisations/creating.html",
     "provider": "youtube",
     "id": "t6WX11iqmg0",
     "title": "<p><strong>Creating Learning Organisations</strong></p>",
@@ -225,7 +225,7 @@ var videos = [
   },
   {
     "section": "motivation",
-    "path": "build/editable/resources/motivation/suprising_truth.html",
+    "path": "/media/michieljoris/d5099508-7d17-4aea-ac80-ac38100b9447/home/michieljoris/www/sites/firstdoor/build/editable/resources/motivation/suprising_truth.html",
     "provider": "youtube",
     "id": "u6XAPnuFjJc",
     "title": "<p>The surprising truth about what motivates us by Dan Pink Motiivation</p>",

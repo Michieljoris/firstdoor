@@ -18,6 +18,7 @@ angular.module('ngView', [], function($routeProvider, $locationProvider) {
 ,["chat", "/built/view-chat.html", chatCntl]
 ,["filebrowser", "/built/view-filebrowser.html", filebrowserCntl]
 ,["contactus", "/built/view-contactus.html", contactusCntl]
+,["enrol", "/built/view-enroll.html"]
 
             // ['home', '/built/view-home.html', HomeCntl],
             // ['aboutus', '/build/markdown/aboutus.md'],
