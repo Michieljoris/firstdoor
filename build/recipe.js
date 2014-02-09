@@ -155,22 +155,6 @@ var js = [
 ];
 
 
-var routes = [
-    ['home', '/built/view-home.html', 'HomeCntl'],
-    ['aboutus', '/built/view-aboutus.html'],
-    ['pd', '/built/view-pd.html'],
-    ['resources', '/built/view-resources.html', 'ResourcesCntl'],
-    ['courses', '/built/view-courses.html'],
-    ['quiz', '/built/view-quiz.html'],
-    ['blog', '/built/view-quiz.html'],
-    ['epic', '/built/view-epic.html', 'EpicCntl'],
-    ['chat', '/built/view-chat.html', 'chatCntl'],
-    ['filebrowser', '/built/view-filebrowser.html', 'filebrowserCntl'],
-    ['contactus', '/built/view-contactus.html', 'contactusCntl'],
-    ['enrol', '/built/view-enroll.html']
-    // ,['ytcarousel', '/build/html/ytcarousel.html']
-];
-
 var mainMenuTree = [
     { label: 'Home', icon: '', route: 'home#welcome'
       
@@ -180,7 +164,10 @@ var mainMenuTree = [
             ,{ label: 'Engaging resources and environments', route: 'home#engaging', scroll: true}
             ,{ label: 'Your personal mentor ', route: 'home#mentor', scroll: true}
             ,{ label: 'Constructive and timely assessment', route: 'home#constructive', scroll: true}
-            ,{ label: 'Quiz: discover your preferred learning style', route: 'home#quiz', scroll: true}
+            // ,{ label: '', route: 'home#quiz', scroll: true}
+            // ,{ label: 'Quiz: discover your preferred learning style', route: 'home#quiz', scroll: true}
+            
+            ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home#asqa', scroll: true}
         ]
        // sub: [
        //     { label: 'Contact us', route: 'contactus', scroll: true}
@@ -214,7 +201,7 @@ var mainMenuTree = [
            ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
            ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
            ,{ label: 'Customised workshop', route: 'pd#customised', scroll: true}
-           // ,{ label: 'Fees', route: 'pd#pdfees', scroll: true}
+           ,{ label: 'Fees', route: 'pd#pdfees', scroll: true}
        ]
      } 
     ,{ label: 'Accredited training', icon: '', route: 'courses#intro'
@@ -242,6 +229,8 @@ var mainMenuTree = [
               // ]
             }
            ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
+           
+            ,{ label: 'Quiz: discover your preferred learning style', route: 'quiz', scroll: true}
            // ,{ label: '(tryouts)' ,route: 'resources'
            //    ,sub: [
            //        // { label: 'Markdown editor', route: 'epic'}
@@ -332,7 +321,21 @@ var exports = {
         ,out:'www/built' 
         ,js: 'www/js'
     }
-    ,routes: routes
+    ,routes: [
+        ['home', '/built/view-home.html', 'HomeCntl'],
+        ['aboutus', '/built/view-aboutus.html'],
+        ['pd', '/built/view-pd.html'],
+        ['resources', '/built/view-resources.html', 'ResourcesCntl'],
+        ['courses', '/built/view-courses.html'],
+        ['quiz', '/built/view-quiz.html'],
+        // ['blog', '/built/view-quiz.html'],
+        ['epic', '/built/view-epic.html', 'EpicCntl'],
+        ['chat', '/built/view-chat.html', 'chatCntl'],
+        ['filebrowser', '/built/view-filebrowser.html', 'filebrowserCntl'],
+        ['contactus', '/built/view-contactus.html', 'contactusCntl'],
+        ['enrol', '/built/view-enroll.html']
+        // ,['ytcarousel', '/build/html/ytcarousel.html']
+    ]
     
     //Every partial generates a string. How the partial is generated
     //depends on its type. Each type can define more than one partial
@@ -365,12 +368,12 @@ var exports = {
             tags: [ { charset:'utf-8' }
                     ,{ content:"IE=edge,chrome=1",
                        "http-equiv":"X-UA-Compatible"
-                    }
+                     }
                     ,{ content:"First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. ",
                        name:"description"
-                    }
+                     }
                     ,{ name: "viewport"
-                      ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
+                       ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
                     // ,{ name: "fragment"
                     //   ,content: "!" }
                   ]
@@ -408,19 +411,71 @@ var exports = {
             //       tree: mainMenuTree,
             //       id: 'superfish'
             //     },
-                { type: 'css',
-                  tree: mainMenuTree,
-                  id: 'cssmenu'
-                  // ,"ng-class:": "isActive()"
-                }
-                ,{ type: 'css',
-                  tree: mainMenuTree,
-                  id: 'fixedmenu'
-                }
-               ]
+            { type: 'css',
+              tree: mainMenuTree,
+              id: 'cssmenu'
+              // ,"ng-class:": "isActive()"
+            }
+            ,{ type: 'css',
+               tree: mainMenuTree,
+               id: 'fixedmenu'
+             }
+        ]
         ,template: [
+            //Home
+            { src : 'html/welcome_stitch.html' 
+              ,id:'welcome_stitch'
+              ,mapping: {
+                  welcome: 'editable/welcome/welcome'
+                  ,specialists: 'editable/welcome/specialists'
+                  ,engaging: 'editable/welcome/engaging'
+                  ,mentor: 'editable/welcome/mentor'
+                  ,constructive:   'editable/welcome/constructive'
+                  ,asqa: 'html/asqa'
+                  // ,quiz: 'editable/quiz/quiz'
+              }
+            },
+            ,{  src: 'views/view_home_partial.html'
+                ,out : 'view-home.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    // ,slogan: 'html/slogan'
+                    ,slideShow: 'flex'
+                    ,rightBar: 'html/rightbar'
+                    // homeContents: 'editable/welcome/welcome'
+                    ,homeContents: 'welcome_stitch'
+                }},
+            //About us
+            ,{ src : 'html/aboutus_stitch.html' 
+               ,id:'aboutus_stitch'
+               ,mapping: {
+                   company: 'editable/aboutus/ourcompany'
+                   ,vision: 'editable/aboutus/ourcompany_vision'
+                   ,mission: 'editable/aboutus/ourcompany_mission'
+                   ,approach:   'editable/aboutus/ourcompany_approach'
+                   ,values: 'editable/aboutus/ourcompany_values'
+                   
+                   ,nameandlogo: 'editable/aboutus/nameandlogo'
+                   ,people: 'editable/aboutus/people'
+                   ,policies: 'html/policies'
+                   // ,policies: 'markdown/policies.md'
+               }
+                
+             }
+            ,{ 
+                src: 'views/view_aboutus_partial.html'
+                ,out : 'view-aboutus.html'
+                // ,partials: 'build/editable/aboutus'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    ,image: 'image_aboutus'
+                    ,rightBar: 'html/rightbar'
+                    // ,slogan: 'slogan'
+                    // ,slideShow: 'flex',
+                    ,contents: 'aboutus_stitch'
+                }}
             //ProfDev
-            { id: "showhide_pd_inspired_info", showhide: "editable/pd/references/pd_inspired_info.md" },
+            ,{ id: "showhide_pd_inspired_info", showhide: "editable/pd/references/pd_inspired_info.md" },
             { id: "showhide_pd_coop_info", showhide: "editable/pd/references/pd_coop_info.md"}, 
             { id: "showhide_pd_environment_info", showhide: "editable/pd/references/pd_environment_info.md"},
             { id: "showhide_pd_observing_info", showhide: "editable/pd/references/pd_observing_info.md" }
@@ -456,7 +511,7 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,slogan: 'html/slogan'
-                   ,rightBar: 'html/rightbar'
+                    ,rightBar: 'html/rightbar'
                     // ,image: 'image_pd'
                     ,contents: 'pd_wrapper'
                 }}
@@ -480,65 +535,12 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,image: 'image_courses'
-                   ,rightBar: 'html/rightbar'
+                    ,rightBar: 'html/rightbar'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
                     ,contents: 'courses_stitch'
                 }
             }
-            
-            //About us
-            ,{ src : 'html/aboutus_stitch.html' 
-               ,id:'aboutus_stitch'
-               ,mapping: {
-                   company: 'editable/aboutus/ourcompany'
-                   ,vision: 'editable/aboutus/ourcompany_vision'
-                   ,mission: 'editable/aboutus/ourcompany_mission'
-                   ,approach:   'editable/aboutus/ourcompany_approach'
-                   ,values: 'editable/aboutus/ourcompany_values'
-                   
-                   ,nameandlogo: 'editable/aboutus/nameandlogo'
-                   ,people: 'editable/aboutus/people'
-               }
-                
-             }
-            ,{ 
-                src: 'views/view_aboutus_partial.html'
-                ,out : 'view-aboutus.html'
-                // ,partials: 'build/editable/aboutus'
-                ,mapping: {
-                    sidebar: 'html/sidebar'
-                    ,image: 'image_aboutus'
-                   ,rightBar: 'html/rightbar'
-                    // ,slogan: 'slogan'
-                    // ,slideShow: 'flex',
-                    ,contents: 'aboutus_stitch'
-                }}
-            //welcome
-            ,{ src : 'html/welcome_stitch.html' 
-               ,id:'welcome_stitch'
-               ,mapping: {
-                   welcome: 'editable/welcome/welcome'
-                   ,specialists: 'editable/welcome/specialists'
-                   ,engaging: 'editable/welcome/engaging'
-                   ,mentor: 'editable/welcome/mentor'
-                   ,constructive:   'editable/welcome/constructive'
-                   ,quiz: 'editable/quiz/quiz'
-                   
-               }
-                
-             }
-            //Home
-            ,{  src: 'views/view_home_partial.html'
-               ,out : 'view-home.html'
-               ,mapping: {
-                   sidebar: 'html/sidebar'
-                   // ,slogan: 'html/slogan'
-                   ,slideShow: 'flex'
-                   ,rightBar: 'html/rightbar'
-                   // homeContents: 'editable/welcome/welcome'
-                   ,homeContents: 'welcome_stitch'
-               }}
             
             //Resources
             ,{ 
@@ -549,21 +551,29 @@ var exports = {
                     sidebar: 'html/sidebar'
                     ,image: 'image_resources'
                     ,contents: 'html/resources'
-                   ,rightBar: 'html/rightbar'
+                    ,rightBar: 'html/rightbar'
                 }}
-            
-            //Blog
-            ,{ 
-                src: 'views/view_blog_partial.html'
-                ,out : 'view-blog.html'
+            //enroll
+            ,{
+                src: 'views/view_enroll_partial.html'
+                ,out : 'view-enroll.html'
                 ,mapping: {
                     sidebar: 'html/sidebar'
-                   ,rightBar: 'html/rightbar'
-                    // ,image: 'image_blog'
-                    // ,slogan: 'slogan'
-                    // ,slideShow: 'flex',
-                    // ,contents: 'markdown/resources.md'
+                    // ,image: 'image_resources'
+                    ,contents: 'html/enroll.html'
+                    ,rightBar: 'html/rightbar'
                 }}
+            //Contact Us
+            ,{
+                src: 'views/view_contactus_partial.html'
+                ,out : 'view-contactus.html'
+                ,mapping: {
+                    // sidebar: 'html/sidebar'
+                    // ,slogan: 'html/slogan'
+                    contents: 'html/contactForm'
+                }}
+            
+            
             //Quiz
             ,{  src: 'views/view_quiz_partial.html'
                 ,out : 'view-quiz.html'
@@ -576,25 +586,18 @@ var exports = {
                     // ,contents: 'markdown/resources.md'
                 }}
             
-            //Misc
-            //enroll
-            ,{
-                src: 'views/view_enroll_partial.html'
-                ,out : 'view-enroll.html'
+            //Not shown at the moment:
+            //Blog
+            ,{ 
+                src: 'views/view_blog_partial.html'
+                ,out : 'view-blog.html'
                 ,mapping: {
                     sidebar: 'html/sidebar'
-                    // ,image: 'image_resources'
-                    ,contents: 'html/enroll.html'
-                   ,rightBar: 'html/rightbar'
-                }}
-            //Contact Us
-            ,{
-                src: 'views/view_contactus_partial.html'
-                ,out : 'view-contactus.html'
-                ,mapping: {
-                    // sidebar: 'html/sidebar'
-                    // ,slogan: 'html/slogan'
-                    contents: 'html/contactForm'
+                    ,rightBar: 'html/rightbar'
+                    // ,image: 'image_blog'
+                    // ,slogan: 'slogan'
+                    // ,slideShow: 'flex',
+                    // ,contents: 'markdown/resources.md'
                 }}
             //Epic editor
             ,{

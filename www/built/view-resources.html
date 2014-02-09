@@ -1,6 +1,10 @@
+
+<!--views/view_resources_partial.html-->
 <div class="row"> 
   
-  <div id="sidebar--" class="span3"><fixscroll data-ng-transclude=""> 
+  <div id="sidebar--" class="span3">
+<!--html/sidebar.html-->
+<fixscroll data-ng-transclude=""> 
   
   <div ng-class="getPageClass" id="greendoor"> 
     <div class="doorlinks"> 
@@ -28,7 +32,9 @@
     <img class="" ng-src="{{getHeaderImage()}}"/>
   </div>
   <div class="row">
-    <div id="contents--" class="span7"><ul id='videolist' >
+    <div id="contents--" class="span7">
+<!--html/resources.html-->
+<ul id='videolist' >
   <li ng-show="isShow(section)" id="{{section}}" scroll ng-repeat="section in sectionsList">
     
     <h2 >{{getSectionTitle(section)}}</h2>
@@ -104,7 +110,9 @@
 
 
 </div>
-    <div id="rightBar--" class="span2"><!-- <fixscrollright data-ng-transclude="">  -->
+    <div id="rightBar--" class="span2">
+<!--html/rightbar.html-->
+<!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
 <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
 <script type="text/javascript">

@@ -1,3 +1,5 @@
+
+<!--js/router.js-->
 /*global EpicCntl:false HomeCntl:false DefaultCntl:false EpicEditor:false $:false angular:false*/
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:6 maxcomplexity:10 maxlen:190 devel:true*/
@@ -13,7 +15,6 @@ angular.module('ngView', [], function($routeProvider, $locationProvider) {
 ,["resources", "/built/view-resources.html", ResourcesCntl]
 ,["courses", "/built/view-courses.html"]
 ,["quiz", "/built/view-quiz.html"]
-,["blog", "/built/view-quiz.html"]
 ,["epic", "/built/view-epic.html", EpicCntl]
 ,["chat", "/built/view-chat.html", chatCntl]
 ,["filebrowser", "/built/view-filebrowser.html", filebrowserCntl]

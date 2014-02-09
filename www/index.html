@@ -1,3 +1,5 @@
+
+<!--html/basicAngularPage.html-->
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:ng="http://angularjs.org" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" xmlns:ng="http://angularjs.org" lang="en"> <![endif]-->
@@ -6,6 +8,8 @@
 <html class="no-js" xmlns:ng="http://angularjs.org" lang="en">
   <!--<![endif]-->
   <head id="head"><title>Firstdoor - Leaders in developing capability</title><meta charset='utf-8'><meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'><meta content='First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. ' name='description'><meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+
+<!--html/ieshim.html-->
 <!--[if lte IE 8]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script>
@@ -26,7 +30,9 @@
 <link rel="stylesheet" type="text/css" href="css/menu.css">
 <link rel="stylesheet" type="text/css" href="css/showhide.css">
 </head>
-  <body id="ng:app" ng:app="myApp"><!--[if lt IE 7]>
+  <body id="ng:app" ng:app="myApp">
+<!--html/body.html-->
+<!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
@@ -35,10 +41,14 @@
   <div id="wrapper" class="container" ng-controller="MainCntl">
     <div id="header" class="row">
 
-      <div id="logo--" class="span5"><a href="#"><img src="images/logo.jpg" alt="logo" /></a>
+      <div id="logo--" class="span5">
+<!--html/logo.html-->
+<a href="#"><img src="images/logo.jpg" alt="logo" /></a>
 </div>
       <div id="header-right" class="pull-right span6">
-        <div id="social--"><div class="pull-right">
+        <div id="social--">
+<!--html/social.html-->
+<div class="pull-right">
   <image style="padding-left:22px;" ng-hide="hide_nrtlogo()" src="images/nrtlogoclsm.gif"> </image>
 </div>
 <div class="pull-right">
@@ -71,8 +81,10 @@
     </div>
 
     <div class="menubar row">
-      <div id="menu--" class="span10"><div class="ie-dropdown-fix" > <div id="navigation"><ul id="nav" class="menu"><li><a href="index.html#!/home#welcome" id="home#welcome">Home</a><ul><li><a href="index.html#!/home#specialists" class="scroll" id="home#specialists">Specialists in Early Childhood training and development</a></li><li><a href="index.html#!/home#engaging" class="scroll" id="home#engaging">Engaging resources and environments</a></li><li><a href="index.html#!/home#mentor" class="scroll" id="home#mentor">Your personal mentor </a></li><li><a href="index.html#!/home#constructive" class="scroll" id="home#constructive">Constructive and timely assessment</a></li><li><a href="index.html#!/home#quiz" class="scroll" id="home#quiz">Quiz: discover your preferred learning style</a></li></ul></li><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">About us</a><ul><li><a href="index.html#!/aboutus#vision" class="scroll" id="aboutus#vision">Our company</a><ul><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">Vision</a></li><li><a href="index.html#!/aboutus#mission" id="aboutus#mission">Mission</a></li><li><a href="index.html#!/aboutus#approach" id="aboutus#approach">Our student approach</a></li><li><a href="index.html#!/aboutus#values" id="aboutus#values">Values</a></li></ul></li><li><a href="index.html#!/aboutus#namelogo" class="scroll" id="aboutus#namelogo">Our name and logo</a></li><li><a href="index.html#!/aboutus#people" class="scroll" id="aboutus#people">Our people</a></li><li><a href="index.html#!/aboutus#policies" class="scroll" id="aboutus#policies">First door policies</a></li></ul></li><li><a href="index.html#!/pd#intro" id="pd#intro">Professional development</a><ul><li><a href="index.html#!/pd#inspired" class="scroll" id="pd#inspired">The inspired educator</a></li><li><a href="index.html#!/pd#observing" class="scroll" id="pd#observing">Observation, documentation, planning and evaluating</a></li><li><a href="index.html#!/pd#environment" class="scroll" id="pd#environment">Environment and experiences</a></li><li><a href="index.html#!/pd#coop" class="scroll" id="pd#coop">Developing cooperative behaviour</a></li><li><a href="index.html#!/pd#evaluation" class="scroll" id="pd#evaluation">Evaluation and reflective practice</a></li><li><a href="index.html#!/pd#children" class="scroll" id="pd#children">Children at risk</a></li><li><a href="index.html#!/pd#risk" class="scroll" id="pd#risk">Identify and manage risk</a></li><li><a href="index.html#!/pd#customised" class="scroll" id="pd#customised">Customised workshop</a></li></ul></li><li><a href="index.html#!/courses#intro" id="courses#intro">Accredited training</a><ul><li><a href="index.html#!/courses#childrenservices" class="scroll" id="courses#childrenservices">Diploma of Early Childhood Education and Care</a></li><li><a href="index.html#!/courses#diploma_management" class="scroll" id="courses#diploma_management">Diploma of Management </a></li><li><a href="index.html#!/courses#certivtraining" class="scroll" id="courses#certivtraining">Certificate IV in Training and Assessment</a></li></ul></li><li><a href="index.html#!/resources#motivation" id="resources#motivation">Resources</a><ul><li><a href="index.html#!/resources#motivation" class="scroll" id="resources#motivation">Motivation</a></li><li><a href="index.html#!/resources#earlychildhood" class="scroll" id="resources#earlychildhood">Early childhood</a></li><li><a href="index.html#!/resources#learningorganisations" class="scroll" id="resources#learningorganisations">Learning organisations</a></li><li><a href="index.html#!/resources#learning" class="scroll" id="resources#learning">Learning</a></li><li><a href="index.html#!/resources#leadership" class="scroll" id="resources#leadership">Leadership and Management</a></li></ul></li><li><a href="index.html#!/enrol" class="scroll" id="enrol">Enrol</a></li><li><a href="index.html#!/contactus" class="scroll" id="contactus">Contact us</a></li></ul></div></div><div class="clear"></div></div>
-      <div id="studentLogin--" class="pull-right span2">  <a id="wisenetLogin" class="btn btn-warning btn-mini pull-right"  target ="_blank"
+      <div id="menu--" class="span10"><div class="ie-dropdown-fix" > <div id="navigation"><ul id="nav" class="menu"><li><a href="index.html#!/home#welcome" id="home#welcome">Home</a><ul><li><a href="index.html#!/home#specialists" class="scroll" id="home#specialists">Specialists in Early Childhood training and development</a></li><li><a href="index.html#!/home#engaging" class="scroll" id="home#engaging">Engaging resources and environments</a></li><li><a href="index.html#!/home#mentor" class="scroll" id="home#mentor">Your personal mentor </a></li><li><a href="index.html#!/home#constructive" class="scroll" id="home#constructive">Constructive and timely assessment</a></li><li><a href="index.html#!/home#asqa" class="scroll" id="home#asqa">Australian Skills Quality Authority audit summary</a></li></ul></li><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">About us</a><ul><li><a href="index.html#!/aboutus#vision" class="scroll" id="aboutus#vision">Our company</a><ul><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">Vision</a></li><li><a href="index.html#!/aboutus#mission" id="aboutus#mission">Mission</a></li><li><a href="index.html#!/aboutus#approach" id="aboutus#approach">Our student approach</a></li><li><a href="index.html#!/aboutus#values" id="aboutus#values">Values</a></li></ul></li><li><a href="index.html#!/aboutus#namelogo" class="scroll" id="aboutus#namelogo">Our name and logo</a></li><li><a href="index.html#!/aboutus#people" class="scroll" id="aboutus#people">Our people</a></li><li><a href="index.html#!/aboutus#policies" class="scroll" id="aboutus#policies">First door policies</a></li></ul></li><li><a href="index.html#!/pd#intro" id="pd#intro">Professional development</a><ul><li><a href="index.html#!/pd#inspired" class="scroll" id="pd#inspired">The inspired educator</a></li><li><a href="index.html#!/pd#observing" class="scroll" id="pd#observing">Observation, documentation, planning and evaluating</a></li><li><a href="index.html#!/pd#environment" class="scroll" id="pd#environment">Environment and experiences</a></li><li><a href="index.html#!/pd#coop" class="scroll" id="pd#coop">Developing cooperative behaviour</a></li><li><a href="index.html#!/pd#evaluation" class="scroll" id="pd#evaluation">Evaluation and reflective practice</a></li><li><a href="index.html#!/pd#children" class="scroll" id="pd#children">Children at risk</a></li><li><a href="index.html#!/pd#risk" class="scroll" id="pd#risk">Identify and manage risk</a></li><li><a href="index.html#!/pd#customised" class="scroll" id="pd#customised">Customised workshop</a></li><li><a href="index.html#!/pd#pdfees" class="scroll" id="pd#pdfees">Fees</a></li></ul></li><li><a href="index.html#!/courses#intro" id="courses#intro">Accredited training</a><ul><li><a href="index.html#!/courses#childrenservices" class="scroll" id="courses#childrenservices">Diploma of Early Childhood Education and Care</a></li><li><a href="index.html#!/courses#diploma_management" class="scroll" id="courses#diploma_management">Diploma of Management </a></li><li><a href="index.html#!/courses#certivtraining" class="scroll" id="courses#certivtraining">Certificate IV in Training and Assessment</a></li></ul></li><li><a href="index.html#!/resources#motivation" id="resources#motivation">Resources</a><ul><li><a href="index.html#!/resources#motivation" class="scroll" id="resources#motivation">Motivation</a></li><li><a href="index.html#!/resources#earlychildhood" class="scroll" id="resources#earlychildhood">Early childhood</a></li><li><a href="index.html#!/resources#learningorganisations" class="scroll" id="resources#learningorganisations">Learning organisations</a></li><li><a href="index.html#!/resources#learning" class="scroll" id="resources#learning">Learning</a></li><li><a href="index.html#!/resources#leadership" class="scroll" id="resources#leadership">Leadership and Management</a></li><li><a href="index.html#!/quiz" class="scroll" id="quiz">Quiz: discover your preferred learning style</a></li></ul></li><li><a href="index.html#!/enrol" class="scroll" id="enrol">Enrol</a></li><li><a href="index.html#!/contactus" class="scroll" id="contactus">Contact us</a></li></ul></div></div><div class="clear"></div></div>
+      <div id="studentLogin--" class="pull-right span2">
+<!--html/wisenet-login.html-->
+  <a id="wisenetLogin" class="btn btn-warning btn-mini pull-right"  target ="_blank"
 	  href="https://student.mywisenet.com.au/mywisenet/login.aspx?key=%2bbj2%2bdgD4O%2fjU4QgaaAB5A%3d%3d"
 	  >STUDENT LOGIN</a>
 
@@ -80,8 +92,10 @@
     </div>
 
     <div class="fixedbar row">
-      <div  id="fixedmenu--" class=""><div class="ie-dropdown-fix" > <div id="navigation"><ul id="nav" class="menu"><li><a href="index.html#!/home#welcome" id="home#welcome">Home</a><ul><li><a href="index.html#!/home#specialists" class="scroll" id="home#specialists">Specialists in Early Childhood training and development</a></li><li><a href="index.html#!/home#engaging" class="scroll" id="home#engaging">Engaging resources and environments</a></li><li><a href="index.html#!/home#mentor" class="scroll" id="home#mentor">Your personal mentor </a></li><li><a href="index.html#!/home#constructive" class="scroll" id="home#constructive">Constructive and timely assessment</a></li><li><a href="index.html#!/home#quiz" class="scroll" id="home#quiz">Quiz: discover your preferred learning style</a></li></ul></li><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">About us</a><ul><li><a href="index.html#!/aboutus#vision" class="scroll" id="aboutus#vision">Our company</a><ul><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">Vision</a></li><li><a href="index.html#!/aboutus#mission" id="aboutus#mission">Mission</a></li><li><a href="index.html#!/aboutus#approach" id="aboutus#approach">Our student approach</a></li><li><a href="index.html#!/aboutus#values" id="aboutus#values">Values</a></li></ul></li><li><a href="index.html#!/aboutus#namelogo" class="scroll" id="aboutus#namelogo">Our name and logo</a></li><li><a href="index.html#!/aboutus#people" class="scroll" id="aboutus#people">Our people</a></li><li><a href="index.html#!/aboutus#policies" class="scroll" id="aboutus#policies">First door policies</a></li></ul></li><li><a href="index.html#!/pd#intro" id="pd#intro">Professional development</a><ul><li><a href="index.html#!/pd#inspired" class="scroll" id="pd#inspired">The inspired educator</a></li><li><a href="index.html#!/pd#observing" class="scroll" id="pd#observing">Observation, documentation, planning and evaluating</a></li><li><a href="index.html#!/pd#environment" class="scroll" id="pd#environment">Environment and experiences</a></li><li><a href="index.html#!/pd#coop" class="scroll" id="pd#coop">Developing cooperative behaviour</a></li><li><a href="index.html#!/pd#evaluation" class="scroll" id="pd#evaluation">Evaluation and reflective practice</a></li><li><a href="index.html#!/pd#children" class="scroll" id="pd#children">Children at risk</a></li><li><a href="index.html#!/pd#risk" class="scroll" id="pd#risk">Identify and manage risk</a></li><li><a href="index.html#!/pd#customised" class="scroll" id="pd#customised">Customised workshop</a></li></ul></li><li><a href="index.html#!/courses#intro" id="courses#intro">Accredited training</a><ul><li><a href="index.html#!/courses#childrenservices" class="scroll" id="courses#childrenservices">Diploma of Early Childhood Education and Care</a></li><li><a href="index.html#!/courses#diploma_management" class="scroll" id="courses#diploma_management">Diploma of Management </a></li><li><a href="index.html#!/courses#certivtraining" class="scroll" id="courses#certivtraining">Certificate IV in Training and Assessment</a></li></ul></li><li><a href="index.html#!/resources#motivation" id="resources#motivation">Resources</a><ul><li><a href="index.html#!/resources#motivation" class="scroll" id="resources#motivation">Motivation</a></li><li><a href="index.html#!/resources#earlychildhood" class="scroll" id="resources#earlychildhood">Early childhood</a></li><li><a href="index.html#!/resources#learningorganisations" class="scroll" id="resources#learningorganisations">Learning organisations</a></li><li><a href="index.html#!/resources#learning" class="scroll" id="resources#learning">Learning</a></li><li><a href="index.html#!/resources#leadership" class="scroll" id="resources#leadership">Leadership and Management</a></li></ul></li><li><a href="index.html#!/enrol" class="scroll" id="enrol">Enrol</a></li><li><a href="index.html#!/contactus" class="scroll" id="contactus">Contact us</a></li></ul></div></div><div class="clear"></div></div>
-      <div id="studentLogin--" class="pull-right span2">  <a id="wisenetLogin" class="btn btn-warning btn-mini pull-right"  target ="_blank"
+      <div  id="fixedmenu--" class=""><div class="ie-dropdown-fix" > <div id="navigation"><ul id="nav" class="menu"><li><a href="index.html#!/home#welcome" id="home#welcome">Home</a><ul><li><a href="index.html#!/home#specialists" class="scroll" id="home#specialists">Specialists in Early Childhood training and development</a></li><li><a href="index.html#!/home#engaging" class="scroll" id="home#engaging">Engaging resources and environments</a></li><li><a href="index.html#!/home#mentor" class="scroll" id="home#mentor">Your personal mentor </a></li><li><a href="index.html#!/home#constructive" class="scroll" id="home#constructive">Constructive and timely assessment</a></li><li><a href="index.html#!/home#asqa" class="scroll" id="home#asqa">Australian Skills Quality Authority audit summary</a></li></ul></li><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">About us</a><ul><li><a href="index.html#!/aboutus#vision" class="scroll" id="aboutus#vision">Our company</a><ul><li><a href="index.html#!/aboutus#vision" id="aboutus#vision">Vision</a></li><li><a href="index.html#!/aboutus#mission" id="aboutus#mission">Mission</a></li><li><a href="index.html#!/aboutus#approach" id="aboutus#approach">Our student approach</a></li><li><a href="index.html#!/aboutus#values" id="aboutus#values">Values</a></li></ul></li><li><a href="index.html#!/aboutus#namelogo" class="scroll" id="aboutus#namelogo">Our name and logo</a></li><li><a href="index.html#!/aboutus#people" class="scroll" id="aboutus#people">Our people</a></li><li><a href="index.html#!/aboutus#policies" class="scroll" id="aboutus#policies">First door policies</a></li></ul></li><li><a href="index.html#!/pd#intro" id="pd#intro">Professional development</a><ul><li><a href="index.html#!/pd#inspired" class="scroll" id="pd#inspired">The inspired educator</a></li><li><a href="index.html#!/pd#observing" class="scroll" id="pd#observing">Observation, documentation, planning and evaluating</a></li><li><a href="index.html#!/pd#environment" class="scroll" id="pd#environment">Environment and experiences</a></li><li><a href="index.html#!/pd#coop" class="scroll" id="pd#coop">Developing cooperative behaviour</a></li><li><a href="index.html#!/pd#evaluation" class="scroll" id="pd#evaluation">Evaluation and reflective practice</a></li><li><a href="index.html#!/pd#children" class="scroll" id="pd#children">Children at risk</a></li><li><a href="index.html#!/pd#risk" class="scroll" id="pd#risk">Identify and manage risk</a></li><li><a href="index.html#!/pd#customised" class="scroll" id="pd#customised">Customised workshop</a></li><li><a href="index.html#!/pd#pdfees" class="scroll" id="pd#pdfees">Fees</a></li></ul></li><li><a href="index.html#!/courses#intro" id="courses#intro">Accredited training</a><ul><li><a href="index.html#!/courses#childrenservices" class="scroll" id="courses#childrenservices">Diploma of Early Childhood Education and Care</a></li><li><a href="index.html#!/courses#diploma_management" class="scroll" id="courses#diploma_management">Diploma of Management </a></li><li><a href="index.html#!/courses#certivtraining" class="scroll" id="courses#certivtraining">Certificate IV in Training and Assessment</a></li></ul></li><li><a href="index.html#!/resources#motivation" id="resources#motivation">Resources</a><ul><li><a href="index.html#!/resources#motivation" class="scroll" id="resources#motivation">Motivation</a></li><li><a href="index.html#!/resources#earlychildhood" class="scroll" id="resources#earlychildhood">Early childhood</a></li><li><a href="index.html#!/resources#learningorganisations" class="scroll" id="resources#learningorganisations">Learning organisations</a></li><li><a href="index.html#!/resources#learning" class="scroll" id="resources#learning">Learning</a></li><li><a href="index.html#!/resources#leadership" class="scroll" id="resources#leadership">Leadership and Management</a></li><li><a href="index.html#!/quiz" class="scroll" id="quiz">Quiz: discover your preferred learning style</a></li></ul></li><li><a href="index.html#!/enrol" class="scroll" id="enrol">Enrol</a></li><li><a href="index.html#!/contactus" class="scroll" id="contactus">Contact us</a></li></ul></div></div><div class="clear"></div></div>
+      <div id="studentLogin--" class="pull-right span2">
+<!--html/wisenet-login.html-->
+  <a id="wisenetLogin" class="btn btn-warning btn-mini pull-right"  target ="_blank"
 	  href="https://student.mywisenet.com.au/mywisenet/login.aspx?key=%2bbj2%2bdgD4O%2fjU4QgaaAB5A%3d%3d"
 	  >STUDENT LOGIN</a>
 
@@ -98,7 +112,9 @@
     <div id="bottomBar">
       <div id="bottomRow" class="row container">
         <!-- <div class="span"></div>  -->
-        <div id="footer1--" class="span3"><div class="footer-headline"><h4>Connect</h4></div>
+        <div id="footer1--" class="span3">
+<!--html/footerConnect.html-->
+<div class="footer-headline"><h4>Connect</h4></div>
 <div class="connectblock">
   <div class="verticalline">
     <span class="connect-title">First Door</span><br>
@@ -117,7 +133,9 @@
 </div>
 <p></p>
 </div>
-        <div id="footer2--" class="span3"><div class="footer-headline"><h4>Documents</h4></div>
+        <div id="footer2--" class="span3">
+<!--html/footerPolicies.html-->
+<div class="footer-headline"><h4>Documents</h4></div>
 <div class="connect-sub">
   <ul>
     <li> <a href="documents/Policies and Procedures May13.pdf">Policies and Procedures</a>
@@ -126,7 +144,7 @@
      </li> 
     <li> <a href="documents/FirstDoor_StudentHandbook.pdf">Student handbook</a>
      </li> 
-    <li> <a href="documents/children_services_course_guide.pdf">Course guide</a>
+    <li> <a href="documents/Diploma_Early_Childhood_Course_Guide.pdf">Course guide</a>
      </li> 
     <li> <a href="documents/Dip ECEC enrolment print version.pdf">ECEC Enrolment</a>
      </li> 
@@ -137,7 +155,9 @@
 
 
 </div>
-        <div id="footer3--" class="span3"><div class="footer-headline"><h4>Contact First Door</h4></div>
+        <div id="footer3--" class="span3">
+<!--html/footerContact.html-->
+<div class="footer-headline"><h4>Contact First Door</h4></div>
 <div class="connect-sub">
   
   <strong>p:</strong> 07 3103 2336 <br>
@@ -150,7 +170,9 @@
 
 
 </div>
-        <div id="footer4--" class="span2"><div class="footer-headline"><h4>Legal</h4></div>
+        <div id="footer4--" class="span2">
+<!--html/footerLegal.html-->
+<div class="footer-headline"><h4>Legal</h4></div>
 <div class="connect-sub">
   &#169;2013 First Door<br>
   ABN: 4916 1108 596<br>
@@ -162,7 +184,9 @@
       </div>
 
     </div>
-    <div id="footerBottom--" class="row pagination-centered">Website by <a href="mailto:michieljoris@gmail.com">michieljoris</a>
+    <div id="footerBottom--" class="row pagination-centered">
+<!--html/footerBottom.html-->
+Website by <a href="mailto:michieljoris@gmail.com">michieljoris</a>
 
 Graphic design by <a href="http://migraphicfolio.com" target="_blank">MiGraphic</a>
 </div>
@@ -176,6 +200,8 @@ Graphic design by <a href="http://migraphicfolio.com" target="_blank">MiGraphic<
 
 
 <script type="text/javascript" src="js/showhide.js"></script>
+
+<!--html/google_analytics.html-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

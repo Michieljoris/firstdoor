@@ -1,5 +1,9 @@
+
+<!--views/view_pd_partial.html-->
 <div class="row"> 
-  <div id="sidebar--" class="span3"><fixscroll data-ng-transclude=""> 
+  <div id="sidebar--" class="span3">
+<!--html/sidebar.html-->
+<fixscroll data-ng-transclude=""> 
   
   <div ng-class="getPageClass" id="greendoor"> 
     <div class="doorlinks"> 
@@ -28,9 +32,13 @@
     <img class="" ng-src="{{getHeaderImage()}}"/>
   </div>
   <div class="row">
-    <div id="contents--" class="span7"><div scroll id="intro"></div>
+    <div id="contents--" class="span7">
+<!--html/pd_stitch.html-->
+<div scroll id="intro"></div>
 <div ng-show="isShow('intro')" >
-  <div id="intro--"><h2>Interactive workshops tailored for your team&nbsp;</h2>
+  <div id="intro--">
+<!--editable/pd/pd.html-->
+<h2>Interactive workshops tailored for your team&nbsp;</h2>
 <p><strong>Develop capability within your team through First Door's professional development workshops at your centre</strong>&nbsp;<br />First Door delivers seven, two hour workshops that can be booked individually or as a series of workshops. These engaging workshops provide educators strategies to encompass the National Quality Framework into their practice. If booked as a series, each workshop builds from content and knowledge gained in the previous workshop. The speed of progression through the workshops is arranged to suit each individual Early Childhood centre or Outside School Hours Care service.</p>
 <p>When the seven workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.<br /><br /><strong>First Door has a three step approach to ensure that the workshops are meeting the learning needs of your team:</strong></p>
 <ol>
@@ -46,7 +54,9 @@
 
 <div scroll id="inspired"></div>
 <div ng-show="isShow('inspired')" >
-  <div id="inspired--"><h2>Being an inspired, child focused educator</h2>
+  <div id="inspired--">
+<!--editable/pd/inspired_educator.html-->
+<h2>Being an inspired, child focused educator</h2>
 <p><br /> Reconnect to the passion and to the value of the professional educator's role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children.</p>
 <h3>Topics include:</h3>
 <ul>
@@ -63,13 +73,17 @@
 <li>Child led, child initiated and educator supported learning.</li>
 </ul>
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
-  <span id="showhide_pd_inspired_info--"><a href="#" id="showhide1-show" class="showLink" 
+  <span id="showhide_pd_inspired_info--">
+<!--html/showhide.html-->
+<a href="#" id="showhide1-show" class="showLink" 
 onclick="showHide('showhide1');return false;">Show..</a>
 </p>
 <div id="showhide1" class="more">
 	<p><a href="#" id="showhide1-hide" class="hideLink" 
 	onclick="showHide('showhide1');return false;">Hide</a></p>
-	<ol>
+	
+<!--editable/pd/references/pd_inspired_info.md-->
+<ol>
 <li>Educational Program and Practice
 <ul><li>1.2: The program for each child takes into account their strengths, capabilities, culture, interests and experiences.</li></ul></li>
 <li>Children’s Health and Safety
@@ -100,7 +114,9 @@ Retrieved from:
 
 <div scroll id="observing"></div>
 <div ng-show="isShow('observing')" >
-  <div id="observing--"><h2>Observation, documentation, planning and evaluating</h2>
+  <div id="observing--">
+<!--editable/pd/observing_gathering_info.html-->
+<h2>Observation, documentation, planning and evaluating</h2>
 <p>Understand the value and purpose of these processes. Become inspired to use strategies that are simplistic and effective. Undertake a practical case study and learn to use Learning Stories to build success, observe, document and plan for each child&rsquo;s development. This workshop refers to the EYLF Early Childhood Pedagogy, Learning Outcomes and the EYLF practices Intentional teaching and Assessment for Learning</p>
 <h3>Topics include:</h3>
 <h4>Observing and gathering information</h4>
@@ -135,13 +151,17 @@ Retrieved from:
 <li>Strategies to effectively evaluate each child&rsquo;s learning and development.</li>
 </ul>
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
-  <span id="showhide_pd_observing_info--"><a href="#" id="showhide4-show" class="showLink" 
+  <span id="showhide_pd_observing_info--">
+<!--html/showhide.html-->
+<a href="#" id="showhide4-show" class="showLink" 
 onclick="showHide('showhide4');return false;">Show..</a>
 </p>
 <div id="showhide4" class="more">
 	<p><a href="#" id="showhide4-hide" class="hideLink" 
 	onclick="showHide('showhide4');return false;">Hide</a></p>
-	<ol>
+	
+<!--editable/pd/references/pd_observing_info.md-->
+<ol>
 <li>Educational Program and Practice
 <ul><li>NQS 1.1; The Early Years Learning Framework (or other approved learning framework) informs the development of a program for each child that enhances their learning and development.</li>
 <li>NQS 1.1.1: The Early Years Learning Framework (or other approved learning framework) guides curriculum decision making and enables each child’s learning in the five outcomes: Children have a strong sense of identity, Children are connected with and contribute to their world, Children have a strong sense of wellbeing, Children are confident and involved learners, Children are effective communicators.</li>
@@ -165,7 +185,9 @@ Retrieved from:
 
 <div scroll id="environment"></div>
 <div ng-show="isShow('environment')" >
-  <div id="environment--"><h2>Environment and experiences</h2>
+  <div id="environment--">
+<!--editable/pd/environment_experiences.html-->
+<h2>Environment and experiences</h2>
 <p>Educators will be inspired to create learning environments and experiences that engage children into learning through play, enable holistic development and guide each child&rsquo;s learning in the five outcomes. The EYLF PRACTICES discussed are: Learning through Play, Intentional Teaching and Learning Environments.</p>
 <h3>Topics include:</h3>
 <ul>
@@ -185,13 +207,17 @@ Retrieved from:
 <li>Posture awareness. Interact with children modelling enthusiasm, playfulness and enjoyment.</li>
 </ul>
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
-  <span id="showhide_pd_environment_info--"><a href="#" id="showhide3-show" class="showLink" 
+  <span id="showhide_pd_environment_info--">
+<!--html/showhide.html-->
+<a href="#" id="showhide3-show" class="showLink" 
 onclick="showHide('showhide3');return false;">Show..</a>
 </p>
 <div id="showhide3" class="more">
 	<p><a href="#" id="showhide3-hide" class="hideLink" 
 	onclick="showHide('showhide3');return false;">Hide</a></p>
-	<ol>
+	
+<!--editable/pd/references/pd_environment_info.md-->
+<ol>
 <li>Educational Program and Practice
 <ul><li>NQS 1.2: The program for each child takes into account their strengths, capabilities, culture, interests and experiences.</li>
 <li>NQS 1.2.2: Each child is supported to participate in the program.</li>
@@ -221,7 +247,9 @@ Retrieved from:
 
 <div scroll id="coop"></div>
 <div ng-show="isShow('coop')" >
-  <div id="coop--"><h2>Developing cooperative behaviour</h2>
+  <div id="coop--">
+<!--editable/pd/coop_behaviour.html-->
+<h2>Developing cooperative behaviour</h2>
 <p>This workshop provides educators with strategies to refocus their approach to unacceptable behaviour, and proactively develop cooperative behaviour. It is recommended that this workshop be extended over four hours or over two sessions if educators are working reactively to complex behaviours and/or have limited understanding of these concepts. The EYLF PRINCIPLES are discussed, being: Secure, Respectful and Reciprocal Relationships; Partnerships; High Expectations and Equity; Respect for Diversity; and, Ongoing Learning and Reflective Practice.</p>
 <h3>Topics include:</h3>
 <h4>Setting up for success:</h4>
@@ -250,13 +278,17 @@ Retrieved from:
 <li>Use ongoing evaluation and revise the plan as required.</li>
 </ul>
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
-  <span id="showhide_pd_coop_info--"><a href="#" id="showhide2-show" class="showLink" 
+  <span id="showhide_pd_coop_info--">
+<!--html/showhide.html-->
+<a href="#" id="showhide2-show" class="showLink" 
 onclick="showHide('showhide2');return false;">Show..</a>
 </p>
 <div id="showhide2" class="more">
 	<p><a href="#" id="showhide2-hide" class="hideLink" 
 	onclick="showHide('showhide2');return false;">Hide</a></p>
-	<ol>
+	
+<!--editable/pd/references/pd_coop_info.md-->
+<ol>
 <li>Educational Program and Practice
 <ul><li>NQS 1.2.4: Critical reflection and evaluation of children’s learning and development, both as individuals and in groups, is used as a primary source of information for planning the effectiveness of the program and teaching strategies.</li>
 <li>NQS 2.1.2: Each child’s comfort is provided for and there are appropriate opportunities to meet each child’s need for sleep rest and relaxation.</li></ul></li>
@@ -290,7 +322,9 @@ Retrieved from:
 
 <div scroll id="evaluation"></div>
 <div ng-show="isShow('evaluation')" >
-  <div id="evaluation--"><h2>Evaluation and reflective practice for improved program and practice</h2>
+  <div id="evaluation--">
+<!--editable/pd/eval_reflective_practice.html-->
+<h2>Evaluation and reflective practice for improved program and practice</h2>
 <p>Ongoing learning and reflective practice is a key principle of the Framework. Educators will be assisted in seeking ways to build their professional knowledge and develop learning communities. The intention is to gather information and gain insights that support, inform and enrich professional practice and decision-making about children's well-being and development.</p>
 <h3>Topics include:</h3>
 <h4>Evaluation</h4>
@@ -313,13 +347,17 @@ Retrieved from:
 <li>Reflective practice process: deconstruct, confront, theorise, think otherwise.</li>
 </ul>
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
-  <span id="showhide_pd_evaluation_info--"><a href="#" id="showhide5-show" class="showLink" 
+  <span id="showhide_pd_evaluation_info--">
+<!--html/showhide.html-->
+<a href="#" id="showhide5-show" class="showLink" 
 onclick="showHide('showhide5');return false;">Show..</a>
 </p>
 <div id="showhide5" class="more">
 	<p><a href="#" id="showhide5-hide" class="hideLink" 
 	onclick="showHide('showhide5');return false;">Hide</a></p>
-	<ol>
+	
+<!--editable/pd/references/pd_evaluation_info.md-->
+<ol>
 <li>Educational Program and Practice
 <ul><li>NQS 1.2.3: Each child’s learning and development is assessed as part of an ongoing cycle of planning, documenting and evaluating children’s learning.</li>
 <li>NQS 1.2.4: Critical reflection and evaluation of children’s learning and development, both as individuals and in groups, is used as a primary source of information for planning and to improve the effectiveness of the program and teaching strategies.</li></ul></li>
@@ -340,7 +378,9 @@ Retrieved from:
 
 <div scroll id="children"></div>
 <div ng-show="isShow('children')" >
-  <div id="children--"><h2>Children at risk: identify and respond</h2>
+  <div id="children--">
+<!--editable/pd/childrent_at_risk.html-->
+<h2>Children at risk: identify and respond</h2>
 <p>This workshop details the knowledge and skills required to address duty of care requirements, working within an ethical framework and applying relevant legislation, policies and procedures in responding to children and young people at risk.</p>
 <h3>Topics include:</h3>
 <ul>
@@ -351,13 +391,17 @@ Retrieved from:
 <li>Reporting possible risk of harm.</li>
 </ul>
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
-  <span id="showhide_pd_children_info--"><a href="#" id="showhide6-show" class="showLink" 
+  <span id="showhide_pd_children_info--">
+<!--html/showhide.html-->
+<a href="#" id="showhide6-show" class="showLink" 
 onclick="showHide('showhide6');return false;">Show..</a>
 </p>
 <div id="showhide6" class="more">
 	<p><a href="#" id="showhide6-hide" class="hideLink" 
 	onclick="showHide('showhide6');return false;">Hide</a></p>
-	<ol>
+	
+<!--editable/pd/references/pd_children_info.md-->
+<ol>
 <li>Children’s Health and Safety
 <ul><li>NQS 2.3: Each child is protected</li>
 <li>NQS 2.3.4: Action is taken to respond to every child at risk of abuse and/or neglect.</li></ul></li>
@@ -375,7 +419,9 @@ Retrieved from:
 
 <div scroll id="risk"></div>
 <div ng-show="isShow('risk')" >
-  <div id="risk--"><h2>Identify and manage risk to protect against harm</h2>
+  <div id="risk--">
+<!--editable/pd/id_manage_risk.html-->
+<h2>Identify and manage risk to protect against harm</h2>
 <p>This workshop supports the educator in their responsibility to ensure that all children are protected and safe while they are in an approved service. Educators will learn to proactively identify and minimise potential risks in their centre through conducting a risk assessment.</p>
 <h3>Topics include:</h3>
 <ul>
@@ -389,13 +435,17 @@ Retrieved from:
 <li>Practical case study: Perform a risk assessment in the Centre's environment</li>
 </ul>
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
-  <span id="showhide_pd_risk_info--"><a href="#" id="showhide7-show" class="showLink" 
+  <span id="showhide_pd_risk_info--">
+<!--html/showhide.html-->
+<a href="#" id="showhide7-show" class="showLink" 
 onclick="showHide('showhide7');return false;">Show..</a>
 </p>
 <div id="showhide7" class="more">
 	<p><a href="#" id="showhide7-hide" class="hideLink" 
 	onclick="showHide('showhide7');return false;">Hide</a></p>
-	<ol>
+	
+<!--editable/pd/references/pd_risk_info.md-->
+<ol>
 <li>Children’s Health and Safety
 <ul><li>NQS 2.1.4: Steps are taken to control the spread of infectious diseases and to manage injuries and illness, in accordance with recognised guidelines.</li>
 <li>NQS 2.3: Each child is protected</li>
@@ -416,7 +466,9 @@ Retrieved from:
 
 <div scroll id="pdfees"></div>
 <div ng-show="isShow('pdfees')" >
-  <div id="pdfees--"><h2>Fees</h2>
+  <div id="pdfees--">
+<!--editable/pd/pdfees.html-->
+<h2>Fees</h2>
 <p>The workshop fees cover the cost of:</p>
 <ul>
 <li>An assessment of the group&rsquo;s general prior knowledge and working skills prior to the workshop. This assessment relies on the centre Director completing the relevant workshop needs assessment form and submitting the form to First Door at least one week prior to the workshop date.</li>
@@ -446,14 +498,18 @@ Retrieved from:
 
 <div scroll id="customised"></div>
 <div ng-show="isShow('customised')" >
-  <div id="customised--"><h2>Workshop eight: Customised workshop for your Centre</h2>
+  <div id="customised--">
+<!--editable/pd/customised_workshop.html-->
+<h2>Workshop eight: Customised workshop for your Centre</h2>
 <p>Following the series of seven workshops, you are in a good position to identify your Centre's specific area to strengthen with customised professional development. Following feedback from your team and a consultation with the centre Director, First Door designs and delivers a complimentary workshop to meet your Centre's needs.</p></div>
   <span id="showhide_pd_customised_info--"></span>
 </div>
 
 
 </div>
-    <div id="rightBar--" class="span2"><!-- <fixscrollright data-ng-transclude="">  -->
+    <div id="rightBar--" class="span2">
+<!--html/rightbar.html-->
+<!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
 <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
 <script type="text/javascript">

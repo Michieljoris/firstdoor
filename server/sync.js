@@ -53,6 +53,7 @@ function getMetaData(allMetaData, path, callback) {
         }
         // debug('adding ' + reply.path + '  to allMetaData');
         allMetaData[path] = reply;
+        debug(reply);
         callback(reply);
     });
 }

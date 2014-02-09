@@ -1,8 +1,8 @@
 <div class="row"> 
   <div id="sidebar--" class="span3"></div>
-  <div ng-show="isShow('welcome')" id="slideShow--" class="span9"> </div>   
+  <div ng-show="isShow('welcome') || isShow('asqa')" id="slideShow--" class="span9"> </div>   
   
-  <div ng-show="!(isShow('welcome'))"
+  <div ng-show="!(isShow('welcome') || isShow('asqa'))"
        class="span9 inline-image embed-container ratio-tabimage ">     
     <img class="" ng-src="{{getHeaderImage()}}"/>
   </div>

@@ -407,7 +407,8 @@ var greendoor = {
             ,{ label: 'Engaging resources and environments', route: 'index.html#!/home#engaging', scroll: true}
             ,{ label: 'Your personal mentor ', route: 'index.html#!/home#mentor', scroll: true}
             ,{ label: 'Constructive and timely assessment', route: 'index.html#!/home#constructive', scroll: true}
-            ,{ label: 'Quiz: discover your preferred learning style', route: 'index.html#!/home#quiz', scroll: true}
+            ,{ label: 'Australian Skills Quality Authority audit summary', route: 'index.html#!/home#asqa', scroll: true}
+            // ,{ label: 'Quiz: discover your preferred learning style', route: 'index.html#!/home#quiz', scroll: true}
         ]
     }
     ,'/pd':{
@@ -442,8 +443,7 @@ var greendoor = {
             // }
             ,{ label: 'Our name and logo', route: 'index.html#!/aboutus#namelogo', scroll: true}
             ,{ label: 'Our people', route: 'index.html#!/aboutus#people', scroll: true}
-            ,{ label: 'First door policies (pdf)', route: 'documents/Policies and Procedures May13.pdf', scroll: true}
-            // ,{ label: 'Our people', route: 'index.html#!/index.html#!/aboutus#people'}
+            ,{ label: 'Policies', route: 'index.html#!/aboutus#policies'}
             
            
         ]
@@ -482,6 +482,18 @@ var greendoor = {
 
         
     } 
+    ,'/enrol': {
+        heading: ''
+        // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
+        ,links: [
+            { label: 'Student Handbook pdf', route: 'documents/FirstDoor_StudentHandbook.pdf', scroll: true}
+            ,{ label: 'Course guide pdf', route: 'documents/Diploma_Early_Childhood_Course_Guide.pdf', scroll: true}
+            ,{ label: 'Enrolment form: CHC50113 pdf', route: 'documents/Dip%20ECEC%20enrolment%20print%20version.pdf', scroll: true}
+            ,{ label: 'Enrolment form Individual units pdf', route: 'documents/Individual%20Units%20enrolment%20print%20version.pdf', scroll: true}
+        ]
+
+        
+    } 
     
 };
 
@@ -507,6 +519,7 @@ var headerImages = {
         ,quiz: "images/slides/tab_resources.jpg"
         ,mentor: "images/slides/home_page_First_Door_mentoring.jpg"
         ,constructive: "images/slides/home_assessment.jpg"
+        // ,asqa: "images/slides/home_assessment.jpg"
     } 
     ,"/resources": {
         "*": "images/slides/tab_resources.jpg"
