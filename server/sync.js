@@ -53,7 +53,6 @@ function getMetaData(allMetaData, path, callback) {
         }
         // debug('adding ' + reply.path + '  to allMetaData');
         allMetaData[path] = reply;
-        debug(reply);
         callback(reply);
     });
 }
@@ -262,6 +261,7 @@ function sync(done) {
         debug('To be copied from dropbox to server: \n', dropboxToServer);
         copyFilesFromDropbox(dropboxToServer, function() {
             if (dropboxToServer.length > 0) {
+                debug('Building resources list');
                 buildVideos.go(process.cwd() + '/build/editable/resources',
                                process.cwd()  + '/www/js/videos.js');
                 htmlBuilder.build();

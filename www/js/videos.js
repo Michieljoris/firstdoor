@@ -1,14 +1,6 @@
 var videos = [
   {
     "section": "earlychildhood",
-    "path": "/mnt/mint/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/100languages (Michiel van Oosten's conflicted copy 2013-06-19).html",
-    "provider": "youtube",
-    "id": "mQtLOu99BfE",
-    "title": "<p>The hundred languages of children</p>",
-    "blurb": "<p>The Reggio philosophy describes that each child has one hundred languages and can learn in each of these languages. The children plant the seed of interest and then the teacher brings the resources to the child to develop these interests.</p>"
-  },
-  {
-    "section": "earlychildhood",
     "path": "/mnt/mint/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/100languages.html",
     "provider": "youtube",
     "id": "mQtLOu99BfE",
@@ -25,19 +17,11 @@ var videos = [
   },
   {
     "section": "earlychildhood",
-    "path": "/mnt/mint/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/articnorway (Michiel van Oosten's conflicted copy 2013-06-19).html",
-    "provider": "youtube",
-    "id": "mIi1WkFhGvc",
-    "title": "<p>Arctic Norway outdoor kindergarten</p>",
-    "blurb": "<p style=\"margin-bottom: 0cm;\">Nearly one in ten kindergartens in Norway are Outdoor Kindergartens. Despite freezing weather, the trend is to return young children to nature and outdoor air.</p>\n<p style=\"margin-bottom: 0cm;\"><strong>Discussion point:</strong> How does an Outdoor Kindergarten provide for the learning outcomes such as: developing resilience, creativity, curiosity and physical skills? What implications would an Outdoor Kindergarten have on children&rsquo;s behaviour?</p>\n<p style=\"margin-bottom: 0.35cm;\"><br /><br /></p>"
-  },
-  {
-    "section": "earlychildhood",
     "path": "/mnt/mint/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/articnorway.html",
     "provider": "youtube",
     "id": "mIi1WkFhGvc",
-    "title": "<p>Arctic Norway outdoor kindergarten</p>",
-    "blurb": "<p style=\"margin-bottom: 0cm;\">Nearly one in ten kindergartens in Norway are Outdoor Kindergartens. Despite freezing weather, the trend is to return young children to nature and outdoor air.</p>\n<p style=\"margin-bottom: 0cm;\"><strong>Discussion point:</strong> How does an Outdoor Kindergarten provide for the learning outcomes such as: developing resilience, creativity, curiosity and physical skills? What implications would an Outdoor Kindergarten have on children&rsquo;s behaviour?</p>"
+    "title": "<p>Arctic Norway outdoor kindergarten&nbsp;</p>",
+    "blurb": "<p style=\"margin-bottom: 0cm;\">Nearly one in ten kindergartens in Norway are Outdoor Kindergartens. Despite freezing weather, the trend is to return young children to nature and outdoor air.&nbsp;</p>\n<p style=\"margin-bottom: 0cm;\"><strong>Discussion point:</strong> How does an Outdoor Kindergarten provide for the learning outcomes such as: developing resilience, creativity, curiosity and physical skills? What implications would an Outdoor Kindergarten have on children&rsquo;s behaviour?</p>"
   },
   {
     "section": "earlychildhood",
@@ -78,14 +62,6 @@ var videos = [
     "id": "Z3Vw71RSn1I",
     "title": "<p>Swedish preschool</p>",
     "blurb": "<p style=\"margin-bottom: 0cm;\">In Sweden preschools, the quest is for children to have fun, make friends, feel secure and play. Outdoor play, challenge, discovery and adventure are fundamentals with a focus on teaching children independence and cooperation. Learning is through play and exploration with teachers attuned to children&rsquo;s individual needs and interests. Teachers encourage risk taking, and establish bonding, trust and continuity with the same teacher.</p>\n<p style=\"margin-bottom: 0cm;\"><strong>Discussion point:</strong> Many factors here to consider and discuss relating to: environment and experiences, wholesome foods; continuity, trust and security; communication with children; learning through play; documentation and literacy approaches.</p>"
-  },
-  {
-    "section": "earlychildhood",
-    "path": "/mnt/mint/home/michieljoris/www/sites/firstdoor/build/editable/resources/earlychildhood/video1.html",
-    "provider": "youtube",
-    "id": "mIi1WkFhGvc",
-    "title": "<p>Artic Norway outdoor kindergarten</p>",
-    "blurb": "<p>And this is the blurb...</p>"
   },
   {
     "section": "leadership",
@@ -400,19 +376,11 @@ var videos = [
     "blurb": "<p>A learning organisation is designed for continuous adaptation through problem solving, innovation and learning.&nbsp; It will continually change and improve using the lessons of experiences&nbsp; (Schermerhorn, Davidson, Poole, Simon, Woods &amp; Chau, 2011). This video helps us understand why we need to create leaning organisations to bring &nbsp;learning into context. It shows that the managers and team leaders are required to be involved in the learning processes and facilitate informal learning. Their role is to provide people with the right resources to be most effective in the workplace.</p>\n<p><strong>Discussion point:</strong> Who provides mentoring and&nbsp; connects people to resources in your workplace? Do you consider your workplace functions as a learning organisation, or should this be developed?</p>"
   },
   {
-    "section": "learningorganisations",
-    "path": "/mnt/mint/home/michieljoris/www/sites/firstdoor/build/editable/resources/learningorganisations/notitle1.html",
-    "provider": "youtube",
-    "id": "t6WX11iqmg0",
-    "title": "<p><strong>Creating Learning Organisations</strong></p>",
-    "blurb": "<p>A learning organisation is designed for continuous adaptation through problem solving, innovation and learning.&nbsp; It will continually change and improve using the lessons of experiences&nbsp; (Schermerhorn, Davidson, Poole, Simon, Woods &amp; Chau, 2011). This video helps us understand why we need to create leaning organisations to bring &nbsp;learning into context. It shows that the managers and team leaders are required to be involved in the learning processes and facilitate informal learning. Their role is to provide people with the right resources to be most effective in the workplace.</p>\n<p><strong>Discussion point:</strong> Who provides mentoring and&nbsp; connects people to resources in your workplace? Do you consider your workplace functions as a learning organisation, or should this be developed?</p>"
-  },
-  {
     "section": "motivation",
     "path": "/mnt/mint/home/michieljoris/www/sites/firstdoor/build/editable/resources/motivation/suprising_truth.html",
     "provider": "youtube",
     "id": "u6XAPnuFjJc",
     "title": "<p>The surprising truth about what motivates us by Dan Pink Motiivation</p>",
-    "blurb": "<p style=\"margin-bottom: 0.35cm;\">Motivation is not just about the money. Major motivators for people are operating with a sense of autonomy, achieving mastery and having purpose. <br /><strong>Discussion point:</strong> It follows that motivation will be lowered when we are directed by others, feel incapable and lack in purpose. How does your organisation develop a sense of purpose and autonomy in its people? Does it provide opportunities for people to practise and master skills?</p>"
+    "blurb": "<p style=\"margin-bottom: 0.35cm;\">Motivation is not just about the money. Major motivators for people are operating with a sense of autonomy, achieving mastery and having purpose.</p>\n<p style=\"margin-bottom: 0.35cm;\"><br /><strong>Discussion point:</strong> It follows that motivation will be lowered when we are directed by others, feel incapable and lack in purpose. How does your organisation develop a sense of purpose and autonomy in its people? Does it provide opportunities for people to practise and master skills?</p>"
   }
 ];

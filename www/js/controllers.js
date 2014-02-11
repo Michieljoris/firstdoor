@@ -486,10 +486,12 @@ var greendoor = {
         heading: ''
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Student Handbook pdf', route: 'documents/FirstDoor_StudentHandbook.pdf', scroll: true}
-            ,{ label: 'Course guide pdf', route: 'documents/Diploma_Early_Childhood_Course_Guide.pdf', scroll: true}
-            ,{ label: 'Enrolment form: CHC50113 pdf', route: 'documents/Dip%20ECEC%20enrolment%20print%20version.pdf', scroll: true}
-            ,{ label: 'Enrolment form Individual units pdf', route: 'documents/Individual%20Units%20enrolment%20print%20version.pdf', scroll: true}
+            { label: 'Student handbook (pdf)', route: 'documents/FirstDoor_StudentHandbook.pdf', scroll: true}
+            ,{ label: 'Diploma ECEC course guide (pdf)', route: 'documents/Diploma_Early_Childhood_Course_Guide.pdf', scroll: true}
+            ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', route: 'documents/Dip%20ECEC%20enrolment%20print%20version.pdf', scroll: true}
+            ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', route: 'documents/Dip%20ECEC%20enrolment%20electronic%20version.docx', scroll: true}
+            ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', route: 'documents/Individual%20Units%20enrolment%20print%20version.pdf', scroll: true}
+            ,{ label: 'Enrolment form: Individual unit/s - computer version (Word doc)', route: 'documents/Individual%20Units%20enrolment%20electronic%20version.docx', scroll: true}
         ]
 
         

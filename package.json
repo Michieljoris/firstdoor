@@ -1,31 +1,20 @@
 {
-    "name": "firstdoor",
-    "version": "0.1.0-20",
-    "author": "Michiel van Oosten",
-    "description": "Website for Greendoor business",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/michieljoris/firstdoor.git"
-    },
-    "scripts": {
-        "start": "node ./server/server.js"
-    },
-    "dependencies": {
-        "bb-server": "0.3.5",
-        "html-builder": "0.1.4",
-        "nodemailer": "0.5.x",
-        "dbox": "0.6.x",
-        "colors": "*"
-    },
-    "bugs": {
-        "url": "https://github.com/michieljoris/firstdoor/issues"
-    },
-    "preferGlobal": "true",
-    "subdomain": "firstdoor",
-    "domains": [
-        "www.firstdoor.com.au",
-        "firstdoor.com.au"
-    ],
+  "name": "firstdoor",
+  "description": "Website for Firstdoor business",
+  "version": "0.1.0",
+  "homepage": "https://github.com/michieljoris/firstdoor",
+  "keywords": [
+    "website"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michieljoris/firstdoor.git"
+  },
+  "author": {
+    "name": "Michiel van Oosten",
+    "email": "mail@axion5.net",
+    "url": "http://blog.axion5.net/"
+  },
   "licenses": [
     {
       "type": "MIT",
@@ -35,6 +24,21 @@
   "engines": {
     "node": ">= 0.8.x"
   },
+  "dependencies": {
+    "bb-server": "0.3.*",
+    "html-builder": "0.1.6",
+    "nodemailer": "0.5.x",
+    "dbox": "0.6.x",
+    "colors": "*"
+  },
   "devDependencies": {},
-  "private": false
+  "private": false,
+  "scripts": {
+    "start": "node ./server/server.js"
+  },
+  "subdomain": "firstdoor",
+  "domains": [
+    "www.firstdoor.com.au",
+    "firstdoor.com.au"
+  ]
 }

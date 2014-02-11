@@ -422,6 +422,14 @@ var exports = {
              }
         ]
         ,template: [
+            
+            //rightbar
+            ,{
+                src: 'html/rightbar'
+                ,id : 'rightbar'
+                ,mapping: {
+                    events_sidebar: 'editable/events_sidebar.html'
+                }},
             //Home
             { src : 'html/welcome_stitch.html' 
               ,id:'welcome_stitch'
@@ -441,7 +449,7 @@ var exports = {
                     sidebar: 'html/sidebar'
                     // ,slogan: 'html/slogan'
                     ,slideShow: 'flex'
-                    ,rightBar: 'html/rightbar'
+                    ,rightBar: 'rightbar'
                     // homeContents: 'editable/welcome/welcome'
                     ,homeContents: 'welcome_stitch'
                 }},
@@ -469,7 +477,7 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,image: 'image_aboutus'
-                    ,rightBar: 'html/rightbar'
+                    ,rightBar: 'rightbar'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
                     ,contents: 'aboutus_stitch'
@@ -511,7 +519,7 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,slogan: 'html/slogan'
-                    ,rightBar: 'html/rightbar'
+                    ,rightBar: 'rightbar'
                     // ,image: 'image_pd'
                     ,contents: 'pd_wrapper'
                 }}
@@ -535,7 +543,7 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     ,image: 'image_courses'
-                    ,rightBar: 'html/rightbar'
+                    ,rightBar: 'rightbar'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
                     ,contents: 'courses_stitch'
@@ -551,7 +559,7 @@ var exports = {
                     sidebar: 'html/sidebar'
                     ,image: 'image_resources'
                     ,contents: 'html/resources'
-                    ,rightBar: 'html/rightbar'
+                    ,rightBar: 'rightbar'
                 }}
             //enroll
             ,{
@@ -560,8 +568,8 @@ var exports = {
                 ,mapping: {
                     sidebar: 'html/sidebar'
                     // ,image: 'image_resources'
-                    ,contents: 'html/enroll.html'
-                    ,rightBar: 'html/rightbar'
+                    ,contents: 'editable/enroll.html'
+                    ,rightBar: 'rightbar'
                 }}
             //Contact Us
             ,{
@@ -593,7 +601,7 @@ var exports = {
                 ,out : 'view-blog.html'
                 ,mapping: {
                     sidebar: 'html/sidebar'
-                    ,rightBar: 'html/rightbar'
+                    ,rightBar: 'rightbar'
                     // ,image: 'image_blog'
                     // ,slogan: 'slogan'
                     // ,slideShow: 'flex',
