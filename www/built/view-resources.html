@@ -1,9 +1,9 @@
 
-<!--views/view_resources_partial.html-->
+<!--partial:views/view_resources_partial.html-->
 <div class="row"> 
   
   <div id="sidebar--" class="span3">
-<!--html/sidebar.html-->
+<!--partial:html/sidebar.html-->
 <fixscroll data-ng-transclude=""> 
   
   <div ng-class="getPageClass" id="greendoor"> 
@@ -33,7 +33,7 @@
   </div>
   <div class="row">
     <div id="contents--" class="span7">
-<!--html/resources.html-->
+<!--partial:html/resources.html-->
 <ul id='videolist' >
   <li ng-show="isShow(section)" id="{{section}}" scroll ng-repeat="section in sectionsList">
     
@@ -111,7 +111,7 @@
 
 </div>
     <div id="rightBar--" class="span2">
-<!--html/rightbar.html-->
+<!--partial:html/rightbar.html-->
 <!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
 <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
@@ -124,7 +124,7 @@
 <!-- AddToAny END -->
 <div ng-show="show_events()">
   <div id="events_sidebar--">
-<!--editable/events_sidebar.html-->
+<!--partial:editable/events_sidebar.html-->
 <h3>Upcoming workshop events</h3>
 <p>March 3: <a href="documents/Respectful_relationships_workshop_invitation.pdf">Relationships with children</a></p>
 <p>March 17: Recruitment, selection and induction of staff</p>

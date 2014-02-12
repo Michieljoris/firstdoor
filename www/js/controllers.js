@@ -327,7 +327,7 @@ myAppModule.directive('scroll', function($routeParams,$location) {
 
 var nrtlogo_allowed = [
     "/courses#intro",
-    "/courses#childrenservices",
+    "/courses#children_ecec",
     "/courses#diploma_management",
     "/courses#certivtraining"
     ];
@@ -470,7 +470,7 @@ var greendoor = {
         ,links: [
             { label: 'Accredited training', route: '#!/courses#intro',
               scroll: true}
-            ,{ label: 'Diploma of Early Childhood Education and Care', route: '#!/courses#childrenservices',
+            ,{ label: 'Diploma of Early Childhood Education and Care', route: '#!/courses#children_ecec',
               scroll: true}
             ,{ label: 'Diploma of Management ', route: '#!/courses#diploma_management', scroll: true}
             ,{ label: 'Certificate IV in Training and Assessment', route: '#!/courses#certivtraining', scroll: true}
@@ -544,7 +544,7 @@ var headerImages = {
     }            
     ,"/courses": {
         "*": "images/slides/tab_accredited_training.jpg"
-        ,childrenservices: "images/slides/courses_Diploma_Childrens_services.jpg"
+        ,children_ecec: "images/slides/courses_Diploma_Childrens_services.jpg"
         ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
         ,certivtraining: "images/slides/courses_certiv.jpg"
     }

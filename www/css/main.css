@@ -1161,9 +1161,19 @@ a {
     padding-left:7px;
 }
 
-
+#events_sidebar--  {
+    background:#f3f3f3;
+    padding:8px;
+    margin-top:10px;
+    border-radius:12px;
+} 
 #events_sidebar-- p {
     border-top: 1px solid lightgrey;
     padding-top:3px;
     margin-bottom:6px;
 }
+
+
+#events_sidebar-- h3 {
+   margin-top:0px; 
+} 

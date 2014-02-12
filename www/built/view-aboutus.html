@@ -1,9 +1,9 @@
 
-<!--views/view_aboutus_partial.html-->
+<!--partial:views/view_aboutus_partial.html-->
 <div class="row"> 
   
   <div id="sidebar--" class="span3">
-<!--html/sidebar.html-->
+<!--partial:html/sidebar.html-->
 <fixscroll data-ng-transclude=""> 
   
   <div ng-class="getPageClass" id="greendoor"> 
@@ -33,15 +33,15 @@
   </div>
   <div class="row">
     <div id="contents--" class="span7">
-<!--html/aboutus_stitch.html-->
+<!--partial:html/aboutus_stitch.html-->
 <div scroll id="company"></div>
 <div  ng-show="isShow('company')" id="company--">
-<!--editable/aboutus/ourcompany.html-->
+<!--partial:editable/aboutus/ourcompany.html-->
 <h2>Our company</h2></div>
 
 <div scroll id="vision"></div>
 <div  ng-show="isShow('vision')" id="vision--">
-<!--editable/aboutus/ourcompany_vision.html-->
+<!--partial:editable/aboutus/ourcompany_vision.html-->
 <h2>Our vision: <em>'Leaders in developing capability'</em></h2>
 <p><strong>Leaders</strong> <br /> To be a leading and highly regarded training organisation within the Community Services and Management sector.</p>
 <p><strong>Talented team</strong> <br /> Our team is ethical, professional, creative, effective and passionate.&nbsp;</p>
@@ -50,7 +50,7 @@
 
 <div scroll id="mission"></div>
 <div ng-show="isShow('mission')"  id="mission--">
-<!--editable/aboutus/ourcompany_mission.html-->
+<!--partial:editable/aboutus/ourcompany_mission.html-->
 <h2>Mission statement</h2>
 <p><strong>Our purpose and identity; who we are, what we do and why we are here</strong></p>
 <p><strong>Purpose - why we are here</strong> <br /> First Door empowers those seeking to develop their professional capability, knowledge and skills in Management and the Community Services sector. Our purpose is to develop a motivated and highly skilled workforce that is able to make a positive difference to individuals and communities of people.</p>
@@ -60,7 +60,7 @@
 
 <div scroll id="approach"></div>
 <div ng-show="isShow('approach')"  id="approach--">
-<!--editable/aboutus/ourcompany_approach.html-->
+<!--partial:editable/aboutus/ourcompany_approach.html-->
 <h2>Our student approach</h2>
 <p>We connect students to:</p>
 <ul>
@@ -82,7 +82,7 @@
 
 <div scroll id="values"></div>
 <div ng-show="isShow('values')"  id="values--">
-<!--editable/aboutus/ourcompany_values.html-->
+<!--partial:editable/aboutus/ourcompany_values.html-->
 <h2>First Door company values</h2>
 <p>Our beliefs, traits and behavioural norms that guide the pursuit of the vision and mission, and those that company personnel are expected to display</p>
 <ol>
@@ -111,7 +111,7 @@
 
 <div scroll id="namelogo"></div>
 <div ng-show="isShow('namelogo')"id="nameandlogo--">
-<!--editable/aboutus/nameandlogo.html-->
+<!--partial:editable/aboutus/nameandlogo.html-->
 <h2>Our name and logo</h2>
 <p><strong>First Door</strong> <br /> The word first relates to a beginning and success, while a door symbolises opportunity. The Company name First Door was chosen to mean a new, successful beginning to provide opportunity in life.</p>
 <p><strong>Training and development</strong> <br /> Training sustains the workforce by improving the knowledge, skills and competency required to achieve the job role effectively and efficiently. Training and professional development increases capability, and therefore broadens a person's career scope.</p>
@@ -125,7 +125,7 @@
 
 <div scroll id="people"></div>
 <div ng-show="isShow('people')" id="people--">
-<!--editable/aboutus/people.html-->
+<!--partial:editable/aboutus/people.html-->
 <h2>Our people</h2>
 <h3><strong>Founders and Directors</strong></h3>
 <p>Brisbane women, Cindy Donald and Andrea Isitt knew as study partners that they had a great work ethic and capacity together. Backed with a complementary skill set, their passion for inspiring others through high quality education, and extensive experience in business, training and management they became the dynamic duo founding the Company First Door Training and Development Pty Ltd.</p>
@@ -153,12 +153,12 @@
 
 <div scroll id="policies"></div>
 <div ng-show="isShow('policies')" id="policies--">
-<!--html/policies.html-->
+<!--partial:html/policies.html-->
 Download pdf file: <a href='documents/Policies and Procedures May13.pdf'>Firstdoor Policies.pdf</a>
 </div>
 </div>
   <div id="rightBar--" class="span2">
-<!--html/rightbar.html-->
+<!--partial:html/rightbar.html-->
 <!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
 <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
@@ -171,7 +171,7 @@ Download pdf file: <a href='documents/Policies and Procedures May13.pdf'>Firstdo
 <!-- AddToAny END -->
 <div ng-show="show_events()">
   <div id="events_sidebar--">
-<!--editable/events_sidebar.html-->
+<!--partial:editable/events_sidebar.html-->
 <h3>Upcoming workshop events</h3>
 <p>March 3: <a href="documents/Respectful_relationships_workshop_invitation.pdf">Relationships with children</a></p>
 <p>March 17: Recruitment, selection and induction of staff</p>
