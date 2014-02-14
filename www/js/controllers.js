@@ -5,200 +5,207 @@
 // var myAppModule = angular.module('myApp', ['ngView', 'ngSanitize']);
 
 var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
-    .directive('compile', function($compile) {
-    // directive factory creates a link function
-    return function(scope, element, attrs) {
-      scope.$watch(
-        function(scope) {
-           // watch the 'compile' expression for changes
-          return scope.$eval(attrs.compile);
-        },
-        function(value) {
-          // when the 'compile' expression changes
-          // assign it into the current DOM
+    .directive('compile', ['$compile',
+                           function($compile) {
+                               // directive factory creates a link function
+                               return function(scope, element, attrs) {
+                                   scope.$watch(
+                                       function(scope) {
+                                           // watch the 'compile' expression for changes
+                                           return scope.$eval(attrs.compile);
+                                       },
+                                       function(value) {
+                                           // when the 'compile' expression changes
+                                           // assign it into the current DOM
             
-          element.html(value);
+                                           element.html(value);
  
-          // compile the new DOM and link it to the current
-          // scope.
-          // NOTE: we only compile .childNodes so that
-          // we don't get into infinite loop compiling ourselves
-          $compile(element.contents())(scope);
-        }
-      );
-    };
-  // });
-  }).value('$anchorScroll', angular.noop);
+                                           // compile the new DOM and link it to the current
+                                           // scope.
+                                           // NOTE: we only compile .childNodes so that
+                                           // we don't get into infinite loop compiling ourselves
+                                           $compile(element.contents())(scope);
+                                       }
+                                   );
+                               };
+                               // });
+                           }]
 
-myAppModule.directive('fixscrollright', function($window) {
-  return {
-    restrict: 'E',
-    transclude: true,
-    link: function(scope, el, attrs) {
-      var window = angular.element($window),
-          parent = angular.element(el.parent()),
-          currentOffsetTop = el.offset().top-40;
-        // console.log('getting offset', currentOffsetTop);
-        // console.log('getting bottom offset', $('#bottomContainer').offset());
-         var  origCss = {
-            position: "static",
-            width: getParentWidth()
-          };
+              ).value('$anchorScroll', angular.noop);
 
-      handleSnapping();
+myAppModule.directive('fixscrollright',
+                      ['$window',
+                       function($window) {
+                           return {
+                               restrict: 'E',
+                               transclude: true,
+                               link: function(scope, el, attrs) {
+                                   var window = angular.element($window),
+                                   parent = angular.element(el.parent()),
+                                   currentOffsetTop = el.offset().top-40;
+                                   // console.log('getting offset', currentOffsetTop);
+                                   // console.log('getting bottom offset', $('#bottomContainer').offset());
+                                   var  origCss = {
+                                       position: "static",
+                                       width: getParentWidth()
+                                   };
 
-      window.bind('scroll', function() {
-        handleSnapping();
-      });
+                                   handleSnapping();
 
-      window.bind('resize', function() {
-          // console.log('resizing');
-          currentOffsetTop = el.offset().top-40;
-        el.css({
-          width: getParentWidth()
-        });
-      });
+                                   window.bind('scroll', function() {
+                                       handleSnapping();
+                                   });
 
-      function returnDigit(val) {
-        var re = /\d+/;
-        var digit = val.match(re)[0];
-        return digit;
-      }
+                                   window.bind('resize', function() {
+                                       // console.log('resizing');
+                                       currentOffsetTop = el.offset().top-40;
+                                       el.css({
+                                           width: getParentWidth()
+                                       });
+                                   });
 
-      function getParentWidth() {
-        // return returnDigit(parent.css('width')) - returnDigit(parent.css('padding-left')) - returnDigit(parent.css('padding-right'));
-        return returnDigit(parent.css('width'));
-      }
+                                   function returnDigit(val) {
+                                       var re = /\d+/;
+                                       var digit = val.match(re)[0];
+                                       return digit;
+                                   }
 
-      function handleSnapping() {
-          // console.log(el.offset().top + 450);
-          var bottom = $('#bottomContainer').offset().top;
-          var door = el.offset().top + 450;
-          // var overlapping = door - bottom;
-          // console.log(overlapping, el.offset().top);
-          // console.log(bottom, window.height()-450 -40, window.scrollTop() + window.height()-bottom);
+                                   function getParentWidth() {
+                                       // return returnDigit(parent.css('width')) - returnDigit(parent.css('padding-left')) - returnDigit(parent.css('padding-right'));
+                                       return returnDigit(parent.css('width'));
+                                   }
+
+                                   function handleSnapping() {
+                                       // console.log(el.offset().top + 450);
+                                       var bottom = $('#bottomContainer').offset().top;
+                                       var door = el.offset().top + 450;
+                                       // var overlapping = door - bottom;
+                                       // console.log(overlapping, el.offset().top);
+                                       // console.log(bottom, window.height()-450 -40, window.scrollTop() + window.height()-bottom);
           
-          // console.log(-450 -40 - window.scrollTop() +bottom);
-          var overlapping = (-450 -60 - window.scrollTop() +bottom);
-          // console.log(overlapping);
-        // console.log('getting bottom offset', $('#bottomContainer').offset());
-          // console.log(window.scrollTop(), currentOffsetTop);
-         //  if (overlapping >0 || el.offset().top + 450 > 1223) {
-         //      el.css(origCss);
-         //      el.css({width: getParentWidth()});
-         //  }
-         // else 
-        //   if (overlapping < 0) {
-        //       el.css({
-        //           top: overlapping +40 + "px",
-        //           position: "fixed",
-        //           width: getParentWidth()
-        //           // width: "166px"
-        //       });
+                                       // console.log(-450 -40 - window.scrollTop() +bottom);
+                                       var overlapping = (-450 -60 - window.scrollTop() +bottom);
+                                       // console.log(overlapping);
+                                       // console.log('getting bottom offset', $('#bottomContainer').offset());
+                                       // console.log(window.scrollTop(), currentOffsetTop);
+                                       //  if (overlapping >0 || el.offset().top + 450 > 1223) {
+                                       //      el.css(origCss);
+                                       //      el.css({width: getParentWidth()});
+                                       //  }
+                                       // else 
+                                       //   if (overlapping < 0) {
+                                       //       el.css({
+                                       //           top: overlapping +40 + "px",
+                                       //           position: "fixed",
+                                       //           width: getParentWidth()
+                                       //           // width: "166px"
+                                       //       });
               
-        //   }
-        // ese
-            if (window.scrollTop() > currentOffsetTop ) {
-          var headerOffsetTop = 40;
-          el.css({
-            top: headerOffsetTop + "px",
-            position: "fixed",
-            width: getParentWidth()
-            // width: "166px"
-          });
-        } else {
-          el.css(origCss);
-          el.css({width: getParentWidth()});
-        }
-      }
-    }
-  };
-});
+                                       //   }
+                                       // ese
+                                       if (window.scrollTop() > currentOffsetTop ) {
+                                           var headerOffsetTop = 40;
+                                           el.css({
+                                               top: headerOffsetTop + "px",
+                                               position: "fixed",
+                                               width: getParentWidth()
+                                               // width: "166px"
+                                           });
+                                       } else {
+                                           el.css(origCss);
+                                           el.css({width: getParentWidth()});
+                                       }
+                                   }
+                               }
+                           };
+                       }]);
 
-myAppModule.directive('fixscroll', function($window) {
-  return {
-    restrict: 'E',
-    transclude: true,
-    link: function(scope, el, attrs) {
-      var window = angular.element($window),
-          parent = angular.element(el.parent()),
-          currentOffsetTop = el.offset().top-40;
-        // console.log('getting offset', currentOffsetTop);
-        // console.log('getting bottom offset', $('#bottomContainer').offset());
-         var  origCss = {
-            position: "static",
-            width: getParentWidth()
-          };
+myAppModule.directive('fixscroll',
+                      ['$window',
+                       function($window) {
+                           return {
+                               restrict: 'E',
+                               transclude: true,
+                               link: function(scope, el, attrs) {
+                                       var window = angular.element($window),
+                                   parent = angular.element(el.parent()),
+                                       currentOffsetTop = el.offset().top-40;
+                                   // console.log('getting offset', currentOffsetTop);
+                                   // console.log('getting bottom offset', $('#bottomContainer').offset());
+                                   var  origCss = {
+                                       position: "static",
+                                       width: getParentWidth()
+                                   };
 
-      handleSnapping();
+                                   handleSnapping();
 
-      window.bind('scroll', function() {
-        handleSnapping();
-      });
+                                   window.bind('scroll', function() {
+                                       handleSnapping();
+                                   });
 
-      window.bind('resize', function() {
-          // console.log('resizing');
-          currentOffsetTop = el.offset().top-40;
-        el.css({
-          width: getParentWidth()
-        });
-      });
+                                   window.bind('resize', function() {
+                                       // console.log('resizing');
+                                       currentOffsetTop = el.offset().top-40;
+                                       el.css({
+                                           width: getParentWidth()
+                                       });
+                                   });
 
-      function returnDigit(val) {
-        var re = /\d+/;
-        var digit = val.match(re)[0];
-        return digit;
-      }
+                                   function returnDigit(val) {
+                                       var re = /\d+/;
+                                       var digit = val.match(re)[0];
+                                       return digit;
+                                   }
 
-      function getParentWidth() {
-        // return returnDigit(parent.css('width')) - returnDigit(parent.css('padding-left')) - returnDigit(parent.css('padding-right'));
-        return returnDigit(parent.css('width'));
-      }
+                                   function getParentWidth() {
+                                       // return returnDigit(parent.css('width')) - returnDigit(parent.css('padding-left')) - returnDigit(parent.css('padding-right'));
+                                       return returnDigit(parent.css('width'));
+                                   }
 
-      function handleSnapping() {
-          // console.log(el.offset().top + 450);
-          var bottom = $('#bottomContainer').offset().top;
-          var door = el.offset().top + 450;
-          // var overlapping = door - bottom;
-          // console.log(overlapping, el.offset().top);
-          // console.log(bottom, window.height()-450 -40, window.scrollTop() + window.height()-bottom);
+                                   function handleSnapping() {
+                                       // console.log(el.offset().top + 450);
+                                       var bottom = $('#bottomContainer').offset().top;
+                                       var door = el.offset().top + 450;
+                                       // var overlapping = door - bottom;
+                                       // console.log(overlapping, el.offset().top);
+                                       // console.log(bottom, window.height()-450 -40, window.scrollTop() + window.height()-bottom);
           
-          // console.log(-450 -40 - window.scrollTop() +bottom);
-          var overlapping = (-450 -60 - window.scrollTop() +bottom);
-          // console.log(overlapping);
-        // console.log('getting bottom offset', $('#bottomContainer').offset());
-          // console.log(window.scrollTop(), currentOffsetTop);
-         //  if (overlapping >0 || el.offset().top + 450 > 1223) {
-         //      el.css(origCss);
-         //      el.css({width: getParentWidth()});
-         //  }
-         // else 
-          if (overlapping < 0) {
-              el.css({
-                  top: overlapping +40 + "px",
-                  position: "fixed",
-                  width: getParentWidth()
-                  // width: "166px"
-              });
+                                       // console.log(-450 -40 - window.scrollTop() +bottom);
+                                       var overlapping = (-450 -60 - window.scrollTop() +bottom);
+                                       // console.log(overlapping);
+                                       // console.log('getting bottom offset', $('#bottomContainer').offset());
+                                       // console.log(window.scrollTop(), currentOffsetTop);
+                                       //  if (overlapping >0 || el.offset().top + 450 > 1223) {
+                                       //      el.css(origCss);
+                                       //      el.css({width: getParentWidth()});
+                                       //  }
+                                       // else 
+                                       if (overlapping < 0) {
+                                           el.css({
+                                               top: overlapping +40 + "px",
+                                               position: "fixed",
+                                               width: getParentWidth()
+                                               // width: "166px"
+                                           });
               
-          }
-        else
-            if (window.scrollTop() > currentOffsetTop ) {
-          var headerOffsetTop = 40;
-          el.css({
-            top: headerOffsetTop + "px",
-            position: "fixed",
-            width: getParentWidth()
-            // width: "166px"
-          });
-        } else {
-          el.css(origCss);
-          el.css({width: getParentWidth()});
-        }
-      }
-    }
-  };
-});
+                                       }
+                                       else
+                                           if (window.scrollTop() > currentOffsetTop ) {
+                                               var headerOffsetTop = 40;
+                                               el.css({
+                                                   top: headerOffsetTop + "px",
+                                                   position: "fixed",
+                                                   width: getParentWidth()
+                                                   // width: "166px"
+                                               });
+                                           } else {
+                                               el.css(origCss);
+                                               el.css({width: getParentWidth()});
+                                           }
+                                   }
+                               }
+                           };
+                       }]);
 // myAppModule.run(function($rootScope, $location, $anchorScroll, $routeParams) {
 //   //when the route is changed scroll to the proper element.
 //     $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
@@ -243,27 +250,29 @@ myAppModule.directive('fixscroll', function($window) {
     
 // });
 
-myAppModule.directive('scroll', function($routeParams,$location) {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs){ 
-            // console.log('in scroll', $location.hash());
-            if ($location.hash() === attrs.id) {
-                var offsetTop = $('.menubar').offset().top;
-                setTimeout(function() {
-                    // console.log('in scroll directive', element[0].offsetTop-30);
-                    $('html, body').animate({
-                        // scrollTop: element[0].offsetTop-30
-                        // scrollTop:160
-                        // scrollTop: offsetTop
-                        scrollTop:0
-                    }, 1);
-                    // window.scrollTo(0, element[0].offsetTop-30);
-                },1);        
-            }
-        }
-    };
-});
+myAppModule.directive('scroll',
+                      ['$routeParams', '$location',
+                       function($routeParams,$location) {
+                           return {
+                               restrict: 'A',
+                               link: function(scope, element, attrs){ 
+                                   // console.log('in scroll', $location.hash());
+                                   if ($location.hash() === attrs.id) {
+                                       var offsetTop = $('.menubar').offset().top;
+                                       setTimeout(function() {
+                                           // console.log('in scroll directive', element[0].offsetTop-30);
+                                           $('html, body').animate({
+                                               // scrollTop: element[0].offsetTop-30
+                                               // scrollTop:160
+                                               // scrollTop: offsetTop
+                                               scrollTop:0
+                                           }, 1);
+                                           // window.scrollTo(0, element[0].offsetTop-30);
+                                       },1);        
+                                   }
+                               }
+                           };
+                       }]);
 
 // // declare a new module, and inject the $compileProvider
 
@@ -396,6 +405,8 @@ function MainCntl($scope, $location) {
     // });
     
 }
+MainCntl.$inject = ['$scope', '$location'];
+
 
 
 var greendoor = {
@@ -648,11 +659,9 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     $scope.clicksend = function($event) {
         clickSend($event, $scope);
     }; 
-    
-    
-    
-    
 }
+DefaultCntl.$inject = ['$scope', '$routeParams', '$location', '$anchorScroll'];
+
 
 function clickSend($event, $scope) {
         $event.preventDefault();
@@ -765,6 +774,8 @@ function contactusCntl($scope, $routeParams, $location) {
     
 }
 
+contactusCntl.$inject = ['$scope', '$routeParams', '$location'];
+
 function EpicCntl($scope, $routeParams) {
     console.log('default controller..');
     $scope.name = "BookCntl";
@@ -840,6 +851,8 @@ Numbered:\
 And some examples to make links: [http://www.google.com]() or [google](http://www.google.com)";
     editor.importFile('test',str);
 }
+
+EpicCntl.$inject = ['$scope', '$routeParams'];
 
 function HomeCntl($scope, $routeParams, $location) {
     
@@ -944,6 +957,8 @@ function HomeCntl($scope, $routeParams, $location) {
     }; 
     
 }
+
+HomeCntl.$inject = ['$scope', '$routeParams', '$location'];
 
 
 function chatCntl($scope, $routeParams) {
@@ -1112,5 +1127,7 @@ function chatCntl($scope, $routeParams) {
     //     // handle incoming message
     // };
 } 
+
+chatCntl.$inject = ['$scope', '$routeParams'];
 
 

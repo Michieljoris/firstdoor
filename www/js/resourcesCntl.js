@@ -218,6 +218,8 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     
 } 
 
+ResourcesCntl.$inject = ['$scope', '$route', '$routeParams', '$location'];
+
 var ModalDemoCtrl = function ($scope) {
     console.log('In ModalDemoCntl');
   $scope.open = function () {
