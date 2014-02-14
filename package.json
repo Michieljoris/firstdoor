@@ -25,7 +25,7 @@
     "node": ">= 0.8.x"
   },
   "dependencies": {
-    "bb-server": "0.3.*",
+    "bb-server": "0.4.*",
     "html-builder": "0.1.x",
     "nodemailer": "0.5.x",
     "dbox": "0.6.x",

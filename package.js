@@ -88,7 +88,7 @@ module.exports = {
     // **NOTE:** We don't have any dependencies for this module. See the
     // `devDependencies` block for the way to include dependencies.
     "dependencies": {
-        "bb-server": "0.3.*",
+        "bb-server": "0.4.*",
         "html-builder": "0.1.x",
         "nodemailer": "0.5.x",
         "dbox": "0.6.x",
