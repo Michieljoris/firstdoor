@@ -497,12 +497,12 @@ var greendoor = {
         heading: ''
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Student handbook (pdf)', route: 'documents/FirstDoor_StudentHandbook.pdf', scroll: true}
-            ,{ label: 'Diploma ECEC course guide (pdf)', route: 'documents/Diploma_Early_Childhood_Course_Guide.pdf', scroll: true}
-            ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', route: 'documents/Dip%20ECEC%20enrolment%20print%20version.pdf', scroll: true}
-            ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', route: 'documents/Dip%20ECEC%20enrolment%20electronic%20version.docx', scroll: true}
-            ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', route: 'documents/Individual%20Units%20enrolment%20print%20version.pdf', scroll: true}
-            ,{ label: 'Enrolment form: Individual unit/s - computer version (Word doc)', route: 'documents/Individual%20Units%20enrolment%20electronic%20version.docx', scroll: true}
+            { label: 'Student handbook (pdf)', route: cachify('documents/FirstDoor_StudentHandbook.pdf'), scroll: true}
+            ,{ label: 'Diploma ECEC course guide (pdf)', route: cachify('documents/Diploma_Early_Childhood_Course_Guide.pdf'), scroll: true}
+            ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', route: cachify('documents/Dip ECEC enrolment print version.pdf'), scroll: true}
+            ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', route: cachify('documents/Dip ECEC enrolment electronic version.docx'), scroll: true}
+            ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', route: cachify('documents/Individual Units enrolment print version.pdf'), scroll: true}
+            ,{ label: 'Enrolment form: Individual unit/s - computer version (Word doc)', route: cachify('documents/Individual Units enrolment electronic version.docx'), scroll: true}
         ]
 
         
@@ -526,16 +526,16 @@ function setActiveTab($location) {
 var headerImages = {
     
     "/home": {
-        "*": "images/slides/tab_professional_development.jpg"
-        ,specialists: "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
-        ,engaging: "images/slides/tab_resources.jpg"
-        ,quiz: "images/slides/tab_resources.jpg"
-        ,mentor: "images/slides/home_page_First_Door_mentoring.jpg"
-        ,constructive: "images/slides/home_assessment.jpg"
-        // ,asqa: "images/slides/home_assessment.jpg"
+        "*": cachify("images/slides/tab_professional_development.jpg")
+        ,specialists: cachify("images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg")
+        ,engaging: cachify("images/slides/tab_resources.jpg")
+        ,quiz: cachify("images/slides/tab_resources.jpg")
+        ,mentor: cachify("images/slides/home_page_First_Door_mentoring.jpg")
+        ,constructive: cachify("images/slides/home_assessment.jpg")
+        // ,asqa: cachify("images/slides/home_assessment.jpg")
     } 
     ,"/resources": {
-        "*": "images/slides/tab_resources.jpg"
+        "*": cachify("images/slides/tab_resources.jpg")
         
     }
     ,"/aboutus": {
@@ -543,21 +543,21 @@ var headerImages = {
         
     }
     ,"/pd": {
-        "*": "images/slides/tab_professional_development.jpg"
-        ,inspired: "images/slides/PD_Inspired_educator.jpg"
-        ,observing: "images/slides/PD_Observing_and_documenting.jpg"
-        ,environment: "images/slides/PD_Environment_and_experiences.jpg"
-        ,coop: "images/slides/PD_cooperative_behaviour.jpg"
-        ,evaluation: "images/slides/PD_reflective_practice.jpg"
-        ,children: "images/slides/PD_identifying_at_risk_childen.jpg"
-        ,risk: "images/slides/PD_managing_risk.jpg"
+        "*": cachify("images/slides/tab_professional_development.jpg")
+        ,inspired: cachify("images/slides/PD_Inspired_educator.jpg")
+        ,observing: cachify("images/slides/PD_Observing_and_documenting.jpg")
+        ,environment: cachify("images/slides/PD_Environment_and_experiences.jpg")
+        ,coop: cachify("images/slides/PD_cooperative_behaviour.jpg")
+        ,evaluation: cachify("images/slides/PD_reflective_practice.jpg")
+        ,children: cachify("images/slides/PD_identifying_at_risk_childen.jpg")
+        ,risk: cachify("images/slides/PD_managing_risk.jpg")
         ,customised: ""
     }            
     ,"/courses": {
-        "*": "images/slides/tab_accredited_training.jpg"
-        ,children_ecec: "images/slides/courses_Diploma_Childrens_services.jpg"
-        ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
-        ,certivtraining: "images/slides/courses_certiv.jpg"
+        "*": cachify("images/slides/tab_accredited_training.jpg")
+        ,children_ecec: cachify("images/slides/courses_Diploma_Childrens_services.jpg")
+        ,diploma_management: cachify("images/slides/courses_Diploma_Management.jpg")
+        ,certivtraining: cachify("images/slides/courses_certiv.jpg")
     }
     
 };
@@ -648,14 +648,14 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     console.log('contactus controller');
     // $scope.result = "now it is working..";
     $scope.sent = false;
-    Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
-                     "captchadiv",
-                     {
-                         // theme: "clean",
-                         theme: "red",
-                         callback: Recaptcha.focus_response_field
-                     }
-                    );
+    // Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
+    //                  "captchadiv",
+    //                  {
+    //                      // theme: "clean",
+    //                      theme: "red",
+    //                      callback: Recaptcha.focus_response_field
+    //                  }
+    //                 );
     $scope.clicksend = function($event) {
         clickSend($event, $scope);
     }; 
@@ -697,18 +697,19 @@ function clickSend($event, $scope) {
             $scope.msgmissing="";
         }
         
-        console.log("From the form:", username, email, textmessage, Recaptcha.get_response());
+        // console.log("From the form:", username, email, textmessage, Recaptcha.get_response());
         $.ajax({
             url: "/contactus_form",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ username:username,
                                    email:email,
-                                   textmessage:textmessage,
-                                   recaptcha_response: Recaptcha.get_response(),
-                                   recaptcha_challenge: Recaptcha.get_challenge()}),
+                                   textmessage:textmessage
+                                   // ,recaptcha_response: Recaptcha.get_response(),
+                                   // recaptcha_challenge: Recaptcha.get_challenge()
+                                 }),
             success: function (data, textStatus, jqXHR) {
-                Recaptcha.reload();
+                // Recaptcha.reload();
                 data = JSON.parse(data);
                 console.log('Form result:', data);
                 $scope.result = '';
@@ -721,7 +722,7 @@ function clickSend($event, $scope) {
                 // do something with your data here.
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                Recaptcha.reload();
+                // Recaptcha.reload();
                 console.log('error', arguments);
                 // likewise do something with your error here.
             }
@@ -737,14 +738,14 @@ function contactusCntl($scope, $routeParams, $location) {
     $scope.sent = false;
     console.log('contactus controller');
     // $scope.result = "now it is working..";
-    Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
-    "captchadiv",
-    {
-      // theme: "clean",
-      theme: "red",
-      callback: Recaptcha.focus_response_field
-    }
-  );
+    // Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
+    //                  "captchadiv",
+    //                  {
+    //                      // theme: "clean",
+    //                      theme: "red",
+    //                      callback: Recaptcha.focus_response_field
+    //                  }
+                    // );
     
     setActiveTab($location);
     // console.log($location);
@@ -944,14 +945,14 @@ function HomeCntl($scope, $routeParams, $location) {
     };
     
     $scope.sent = false;
-    Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
-                     "captchadiv",
-                     {
-                         // theme: "clean",
-                         theme: "red",
-                         callback: Recaptcha.focus_response_field
-                     }
-                    );
+    // Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
+    //                  "captchadiv",
+    //                  {
+    //                      // theme: "clean",
+    //                      theme: "red",
+    //                      callback: Recaptcha.focus_response_field
+    //                  }
+    //                 );
     $scope.clicksend = function($event) {
         clickSend($event, $scope);
     }; 

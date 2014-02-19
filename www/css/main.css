@@ -202,6 +202,7 @@ body {
     font-size:10px;
 }
 
+
 .footer-headline {
     display: block;
     margin: 15px 0 8px 0;
@@ -1019,8 +1020,9 @@ a {
     padding-left:9px;
 }
 
+
 #bottomContainer a {
-    color:gray;
+    color:rgb(167,167,167);
 }
 
 .fixedbar #studentLogin-- {

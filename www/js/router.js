@@ -11,22 +11,8 @@ angular.module('ngView', [],
                     var baseDir = '/built/';
                     var mapping =
                         [
-                            ["home", "/built/view-home.html", HomeCntl]
-,["aboutus", "/built/view-aboutus.html"]
-,["pd", "/built/view-pd.html"]
-,["resources", "/built/view-resources.html", ResourcesCntl]
-,["courses", "/built/view-courses.html"]
-,["quiz", "/built/view-quiz.html"]
-,["epic", "/built/view-epic.html", EpicCntl]
-,["chat", "/built/view-chat.html", chatCntl]
-,["filebrowser", "/built/view-filebrowser.html", filebrowserCntl]
-,["contactus", "/built/view-contactus.html", contactusCntl]
-,["enrol", "/built/view-enroll.html"]
-
-                            // ['home', '/built/view-home.html', HomeCntl],
-                            // ['aboutus', '/build/markdown/aboutus.md'],
-                            // ['pd', '/built/view-pd.html'],
-                            // ['resources', '/build/markdown/resources.md'],
+                            ["home", cachify("/built/view-home.html"), HomeCntl]
+,["aboutus", cachify("/built/view-aboutus.htmlbuild/markdown/resources.md'],
                             // ['courses', '/built/view-courses.html'],
                             // ['quiz', '/build/markdown/quiz.md'],
                             // ['blog', '/build/markdown/blog.md'],

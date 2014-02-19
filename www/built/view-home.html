@@ -10,10 +10,10 @@
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
 	<div ng-repeat="link in page.links">
-	<li ng-class="isSelected(link.route)" >
+	<li ng-class="isSelected(link.route)">
 	  <a ng-href="/{{link.route}}">{{link.label}}</a>
 	  <ul> 
-	    <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
+	    <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
 	      
 	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
 	    </li>
@@ -27,18 +27,17 @@
 </fixscroll>
 
 </div>
-  <div ng-show="isShow('welcome') || isShow('asqa')" id="slideShow--" class="span9"><div class="flexslider"><ul class="slides"><li><img src="images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>   
+  <div ng-show="isShow(&apos;welcome&apos;) || isShow(&apos;asqa&apos;)" id="slideShow--" class="span9"><div class="flexslider"><ul class="slides"><li><img src="__0c865ae6a9/images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__91bd7d40fd/images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__fa3f39a1b2/images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__8688fb8a3a/images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>   
   
-  <div ng-show="!(isShow('welcome') || isShow('asqa'))"
-       class="span9 inline-image embed-container ratio-tabimage ">     
-    <img class="" ng-src="{{getHeaderImage()}}"/>
+  <div ng-show="!(isShow(&apos;welcome&apos;) || isShow(&apos;asqa&apos;))" class="span9 inline-image embed-container ratio-tabimage ">     
+    <img class="" ng-src="{{getHeaderImage()}}">
   </div>
   
   <div class="row">     
     <div id="homeContents--" class="span7">
 <!--partial:html/welcome_stitch.html-->
-<div scroll id="welcome"></div>
-<div ng-show="isShow('welcome')" >
+<div scroll="" id="welcome"></div>
+<div ng-show="isShow(&apos;welcome&apos;)">
   <div id="welcome--">
 <!--partial:editable/welcome/welcome.html-->
 <h2>Open yourself to a career as an&nbsp;Early Childhood professional</h2>
@@ -51,22 +50,23 @@
 <li>engaging resources and interactive workshops</li>
 <li>meaningful assessment with timely and constructive feedback</li>
 </ul>
-<h4><strong>Contact us now, to develop your professional capability and career opportunities,&nbsp;<br />or phone us on 07 3103 2336</strong></h4></div>
+<h4><strong>Contact us now, to develop your professional capability and career opportunities,&nbsp;<br>or phone us on 07 3103 2336</strong></h4></div>
 </div>
 
-<div scroll id="specialists"></div>
-<div ng-show="isShow('specialists')" >
+<div scroll="" id="specialists"></div>
+<div ng-show="isShow(&apos;specialists&apos;)">
   <div id="specialists--">
 <!--partial:editable/welcome/specialists.html-->
 <h2>Specialists in Early Childhood training and development</h2>
 <p>First Door specialises in delivering meaningful training, inspiration and active learning within the Early Childhood and Outside School Hours Care sector. Our training and professional development is focused on&nbsp;aligning educators to their role based on the National Quality Framework. In addition to offering accredited training in the Diploma of Early Childhood Education and Care, we promote the need to create learning organisations where each centre or service operates with skilled mentors and an effective educational leader. First Door also provides training in units from the Diploma of Management and Certificate lV in Training and Assessment to build capability in mentoring and leadership&nbsp;</p>
-<p><a href="index.html#!/pd?page=intro">Professional development workshops</a>&nbsp;<br />We deliver interactive professional development that encompasses the National Quality Framework combining relevant theory with practical work related experiences.</p>
-<p><a href="index.html#!/courses">Accredited training </a><br />First Door is a Registered Training Organisation (RTO) providing Nationally Recognised Training. The RTO code for First Door Training and Development is 40782, and is issued by the Australian Skills Quality Authority.</p></div>
+<p><a href="#!/pd#intro">Professional development workshops</a>&nbsp;<br>We deliver interactive professional development that encompasses the National Quality Framework combining relevant theory with practical work related experiences.</p>
+<p><a href="#!/courses">Accredited training </a><br>First Door is a Registered Training Organisation (RTO) providing Nationally Recognised Training. The RTO code for First Door Training and Development is 40782, and is issued by the Australian Skills Quality Authority.</p>
+</div>
 </div>
 
 
-<div scroll id="engaging"></div>
-<div ng-show="isShow('engaging')" >
+<div scroll="" id="engaging"></div>
+<div ng-show="isShow(&apos;engaging&apos;)">
   <div id="engaging--">
 <!--partial:editable/welcome/engaging.html-->
 <h2>Engaging resources and environments</h2>
@@ -82,24 +82,24 @@
 </div>
 
 
-<div scroll id="mentor"></div>
-<div ng-show="isShow('mentor')" >
+<div scroll="" id="mentor"></div>
+<div ng-show="isShow(&apos;mentor&apos;)">
   <div id="mentor--">
 <!--partial:editable/welcome/mentor.html-->
 <h2>Your personal mentor</h2>
-<p>First Door connects each student with an industry experienced and qualified trainer as your personal mentor. Your personal mentor is available for study support and to provide workplace mentoring relevant to the current unit of study.<br /><br />We undertake to provide each student with an arranged monthly workplace mentoring meeting. Where this is not possible, due to the location of the student's workplace, then a monthly skype or facetime meeting is arranged between student and mentor. This meeting allows for:</p>
+<p>First Door connects each student with an industry experienced and qualified trainer as your personal mentor. Your personal mentor is available for study support and to provide workplace mentoring relevant to the current unit of study.<br><br>We undertake to provide each student with an arranged monthly workplace mentoring meeting. Where this is not possible, due to the location of the student's workplace, then a monthly skype or facetime meeting is arranged between student and mentor. This meeting allows for:</p>
 <ul>
 <li>review of the student's previous assessment and feedback</li>
 <li>thirty minutes workplace observation and assessment</li>
 <li>fifteen minutes to provide constructive feedback</li>
 <li>assistance with understanding of the current workbook and assessment activities</li>
-<li>guidance, inspiration and support for each student<br /><br /></li>
+<li>guidance, inspiration and support for each student<br><br></li>
 </ul></div>
 </div>
 
 
-<div scroll id="constructive"></div>
-<div ng-show="isShow('constructive')" >
+<div scroll="" id="constructive"></div>
+<div ng-show="isShow(&apos;constructive&apos;)">
   <div id="constructive--">
 <!--partial:editable/welcome/constructive.html-->
 <h2>Constructive and timely assessment</h2>
@@ -121,18 +121,18 @@
 <p>First Door undertakes to return student workbooks and assessment to the student&nbsp;<strong>within fourteen days of receipt.</strong>&nbsp;Assessment feedback is provided to guide a student on their progress and address any areas of difficulty.</p></div>
 </div>
 
-<div scroll id="asqa"></div>
-<div ng-show="isShow('asqa')" >
+<div scroll="" id="asqa"></div>
+<div ng-show="isShow(&apos;asqa&apos;)">
   <div id="asqa--">
 <!--partial:html/asqa.html-->
-Download pdf file: <a href='documents/ASQA_Audit_Report.pdf'>Australian Skills Quality
+Download pdf file: <a href="documents/ASQA_Audit_Report.pdf">Australian Skills Quality
   Authority audit summary</a>
 </div>
 </div>
 
 
-<div scroll id="quiz"></div>
-<div ng-show="isShow('quiz')" >
+<div scroll="" id="quiz"></div>
+<div ng-show="isShow(&apos;quiz&apos;)">
   <div id="quiz--"> </div>
 </div>
 
@@ -141,12 +141,13 @@ Download pdf file: <a href='documents/ASQA_Audit_Report.pdf'>Australian Skills Q
 <!--partial:html/rightbar.html-->
 <!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
-<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
+<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"></a>
 <script type="text/javascript">
  var a2a_config = a2a_config || {};
  a2a_config.linkurl = "http://www.firstdoor.com.au";
  a2a_config.onclick = 1;
 </script>
+
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
 <!-- AddToAny END -->
 <div ng-show="show_events()">
@@ -163,7 +164,8 @@ Download pdf file: <a href='documents/ASQA_Audit_Report.pdf'>Australian Skills Q
 <p>June 16: Foster learning and development</p>
 <p>July 7: Healthy food and drinks</p>
 <p>July 21: Develop cultural competence</p>
-<p>See <a href="index.html#!/courses#intro">more</a>.</p></div>
+<p>See <a href="#!/courses#intro">more</a>.</p>
+</div>
 
 </div>
 
@@ -175,23 +177,22 @@ Download pdf file: <a href='documents/ASQA_Audit_Report.pdf'>Australian Skills Q
     <label class="form-label ">Name<span class="form-required">*</span></label>
     <div class="controls controls-row control-group {{namemissing}}">
 
-      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
-      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required>
     </div>
 
     <label class="form-label">Email<span class="form-required">*</span></label>
 
     <div class="control-group {{emailmissing}}">
-      <input class="span2" type="email" id="email" name="email" required/><br/>
+      <input class="span2" type="email" id="email" name="email" required><br>
     </div>
 
     <label class="form-label">Message<span class="form-required">*</span></label>
 
     <div class="control-group {{msgmissing}}">
-      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
     </div>
-    <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
-           value="Send" />
+    <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
     <div id="captchadiv"></div>
   </div>
   <div ng-show="sent" class="well">

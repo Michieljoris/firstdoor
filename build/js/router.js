@@ -23,7 +23,7 @@ angular.module('ngView', [],
     
                     mapping.forEach(function(m) {
                         $routeProvider.when('/' + m[0], { 
-                            templateUrl: '//' + document.location.host + m[1], controller: m[2] ? m[2] : DefaultCntl });
+                            templateUrl: '//' + document.location.host + '/' + m[1], controller: m[2] ? m[2] : DefaultCntl });
                     });
     
                     $routeProvider.otherwise( { 
