@@ -515,12 +515,14 @@ var exports = {
             //     },
             { type: 'css',
               tree: mainMenuTree,
-              id: 'cssmenu'
+              id: 'cssmenu',
               // ,"ng-class:": "isActive()"
+               hashBang: false
             }
             ,{ type: 'css',
                tree: mainMenuTree,
-               id: 'fixedmenu'
+               id: 'fixedmenu',
+               hashBang: false 
              }
         ]
         ,template: [
