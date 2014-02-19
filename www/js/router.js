@@ -22,6 +22,7 @@ angular.module('ngView', [],
 ,["filebrowser", cachify("built/view-filebrowser.html"), filebrowserCntl]
 ,["contactus", cachify("built/view-contactus.html"), contactusCntl]
 ,["enrol", cachify("built/view-enroll.html")]
+,["sitemap", cachify("sitemap.html")]
 
                             // ['home', '/built/view-home.html', HomeCntl],
                             // ['aboutus', '/build/markdown/aboutus.md'],

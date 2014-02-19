@@ -542,6 +542,10 @@ var headerImages = {
         "*": 'images/slides/tab_about_us.jpg'
         
     }
+    ,"/sitemap": {
+        "*": 'images/slides/tab_about_us.jpg'
+        
+    }
     ,"/pd": {
         "*": cachify("images/slides/tab_professional_development.jpg")
         ,inspired: cachify("images/slides/PD_Inspired_educator.jpg")

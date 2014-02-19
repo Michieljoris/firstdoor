@@ -8,7 +8,6 @@ var dbox  = require("dbox");
 var dropboxApp = require("./dropboxApp");
 var utils = require('util');
 var buildVideos = require('./buildVideos');
-
 var client;
 
 var fileMapJson  = fs.readFileSync("./server/DropboxToServerMap.json", 'utf8');
@@ -277,7 +276,7 @@ function sync(done) {
     
 
 var intervalID;
-exports.handleGet = function(req, res) {
+module.exports = function(req, res) {
     log = [];
     res.writeHead(200, {
         'Content-Type': 'text/html'

@@ -8,11 +8,10 @@ var http = require('http');
 // create reusable transport method (opens pool of SMTP connections)
 
 var smtpTransport = nodemailer.createTransport("SMTP",{
-    service: "Gmail",
+    service: "Mailgun",
     auth: {
         user: "postmaster@axion5.net",
-        pass: "4353so7b-ai1"
-        
+        pass: process.env.MAILGUN_PWD 
     }
 });
 // var smtpTransport = nodemailer.createTransport("SMTP",{
@@ -81,10 +80,11 @@ var sendEmail = function (data, success, error) {
         " sent the following message: <p>" + data.textmessage;
     // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: "Firstdoor Server", // sender address
-        // to: "admin@firstdoor.com.au", // list of receivers
+        from: "mail@axion5.net", // sender address
+        to: "admin@firstdoor.com.au", // list of receivers
+        // to: "michieljoris@gmail.com", // list of receivers
         
-        to: "mail@axion5.net", // list of receivers
+        // to: "mail@axion5.net", // list of receivers
         // to: "jujusilkie@gmail.com", // list of receivers
         cc: "mail@axion5.net", // list of receivers
         subject: data.username + " has used the First Door contact us form!", // Subject line
@@ -158,7 +158,7 @@ function recaptcha_verify(parameters, success, error) {
     req.end();
 }
 
-exports.handlePost = function(req, res) {
+module.exports = function(req, res) {
     console.log('Firstdoor send mail is handling post!!');
     console.log(req.headers['x-forwarded-for']);
     var data = '';

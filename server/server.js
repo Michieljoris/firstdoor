@@ -1,8 +1,13 @@
 /*global __dirname:false require:false*/
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
+var server = require('bb-server'),
 
-var server = require('bb-server')
+    sendMail = require("./firstDoorSendMail.js")
+    // ,testSendMail = require("./testSendMail.js")
+    ,sync = require("./sync.js")
+    ,dropbox_authorize = require("./dropbox_authorize.js")
+    ,dropbox_connect = require("./dropbox_connect.js")
     // testMail = require("./testSendMail"),
     // testGet = require("./testGet")
 ;
@@ -14,10 +19,10 @@ var server = require('bb-server')
 //cache control headings, so we can send big files etc
 var options = { 
     //Serve all files relative to this root. Defaults to './'.
-    root: './www'
+    root: '/home/michieljoris/www/sites/firstdoor/www'
     //if not assigned defaults to 8080. If that port's not available
     //the server will try 8081 and so on.
-    ,port: 9001
+    ,port: 9000
     // Assign true to allow listing of directories when the path in
     // the url matches a path on the server relative to the
     // root. Assign an array of paths to limit listing to the listed
@@ -46,48 +51,66 @@ var options = {
         // 'stream': 'mylog.txt',  //Output stream, defaults to _stdout_
         // 'buffer': '', //Buffer duration, defaults to 1000ms when _true_
         'immediate': ''  //Write log line on request instead of response (false for response times)
-       }
+    }
     //silence (debug) output on the commandline
     ,"quiet": false
-    //control caching of resources in terms of what cache-control
-    //headers are sent out with them and how long resources are kept
-    //in the server cache. If true defaults to:
-    //(m)inutes, (h)ours, (d)ays, (w)weeks, (y)ears
-    //
-    // { stamped: { expiresIn: '1y' },
-    //   prerender: { expiresIn: '1d'},
-    //   other: { expiresIn: '0m'}
-    // }
-    ,cache: true 
-    //set to true to remove timestamps from request paths before
-    //processing them. This also enables cache control for the
-    //response to these requests. See previous options. Defaults to
-    //false.
-    ,bust: false
-    // files can be transformed (recast) before being sent to the
+    
+    //control caching of resources in terms of what cache-control headers are
+    //sent out with them and how long resources are kept in the server cache. If
+    //true defaults to ((m)inutes, (h)ours, (d)ays, (w)weeks, (y)ears):
+    // ,cache: false
+    ,cache: {
+        stamped: { expiresIn: '1y' },
+        prerender: { expiresIn: '1d'},
+        //static resources, should be served from cookieless domain:
+    
+        
+        "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
+        "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
+        //but possibly not when going through cloudflare:
+        // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
+        "pdf doc docx": { expiresIn: "2h" },
+        other: { expiresIn: '0m'}
+        // cacheDir: "./cache"
+    }
+    
+    //if set to true to the server will try to remove a stamp from request paths
+    //before processing them. This also enables cache control for the response
+    //to these requests. See previous options.
+    // Defaults to false.  ,
+    // ,stamp: false
+    ,stamp: {
+        prefix: '__' // or for example: 'stamp-'
+        ,length: 10  //32 for md5 and 40 for sha1, but set to 10 by default
+    // set length to 13 if you use mtime create the stamp for a resource
+    // if 10 is not long enough, in other words, if a resource is not
+    // updated and stays cached, up the length property by 1
+    }
+    
+    //files can be transformed (recast) before being sent to the
     // client. If the cache is turned on this will only happen the
     // first time the file is requested. After that the recast file
     // will be sent from the cache. Only when the mtime of the
     // original file is more recent that the date of the cached
     // version the recasting is done again. 
     // recaster is a separate module and can easily be expanded to
-    // include more transpilers, minifiers and zippers
+    // include more transpilers, minifiers and zippers.
     
-    //toggle the following tree options to true to enable recasting,
-    //all three default to false
+    //toggle the following three options to true to enable recasting,
+    //all three default to false:
+    
     // ,transpile: false 
     // ,minify: true //html, js and css
-
     // ,zip: true //compress when enconding is accepted by client
     //or for more finegrained control define the recast option instead:
     ,recast: {
         transpile: ['jade', 'less', 'stylus', 'sweetjs',
                     // 'typescript', 'coffeescript',
                     'markdown' ], 
-        // transpile: [], 
+        // transpile: [],  //TODO add all current supported file types
         
         // minify: [],
-        minify: ['js', 'css']
+        minify: ['js', 'css' ] //js, css, html
         ,zip: /text|javascript|json/ //regex on the mimetype
         ,verbose: true
     }
@@ -122,6 +145,19 @@ var options = {
     //     { "prefix": "iris",
     //       "target": "https://somedb.iriscouch.com"}
     // ]
+    
+    ,postHandlers: {
+        // "/" : save
+        "/contactus_form" : sendMail
+        // ,"/contactus_form" : testSendMail
+        }
+    ,getHandlers: {
+        "/sync": sync,
+        "/dropbox_authorize": dropbox_authorize,
+        "/dropbox_connect": dropbox_connect
+    }
+    
+    
     //If method and path match the functin will be called with [req, res].
     // ,postHandlers: {
     //     "/testPost" : testPost
@@ -144,6 +180,18 @@ var options = {
     //     // }
     // }
     // }
+    //server api path:
+    ,api: '_api'
+    //use persona to authenticate
+    ,persona: true
+    ,emails: ['mail@axion5.net']
+    //
+    //enable server api:
+    ,sitemap: true
+    ,html_builder: true
+    ,clear_cache: true
+    ,files: true
+    ,stats: true
 };
 
 server.go(options);

@@ -1,4 +1,4 @@
-<ul>
+
   <li><h3>Home</h3>
     <ul>
       <li><a href="/#!/home#welcome">Home</a></li>
@@ -44,8 +44,10 @@
       <li><a href="/#!/courses#intro">Accredited training</a></li>
       <li><a href="/#!/courses#children_ecec">Diploma of Early Childhood Education and Care</a></li>
       <li><a href="/#!/courses#diploma_management">Diploma of Management </a></li>
-      <li><a href="/#!/courses#certivtraining">Certificate
-          IV in Training and Assessment</a></li>
+      <li><a href="/#!/courses#certivtraining">Certificate IV in Training and Assessment</a></li>
+      <li><a href="http://www.firstdoor.com.au/#!/courses#priorlearning">Recognised Prior Learning</a></li>
+      <li><a href="http://www.firstdoor.com.au/#!/courses#trainingplans">Flexi or structured training plans</a></li>
+      <li><a href="http://www.firstdoor.com.au/#!/courses#studentfees">Student fees</a></li>
 
     </ul>
   </li>
@@ -66,12 +68,17 @@
 
   <li><h3>Documents</h3>
     <ul>
-      <li><a href="/documents/Policies%20and%20Procedures%20May13.pdf">Policies and Procedures</a></li>
-      <li><a href="/documents/PRIVACY%20POLICY.pdf">Privacy policy</a></li>
-      <li><a href="/documents/FirstDoor_StudentHandbook.pdf">Student handbook</a></li>
-      <li><a href="/documents/Diploma_Early_Childhood_Course_Guide.pdf">Course guide</a></li>
-      <li><a href="/documents/Dip%20ECEC%20enrolment%20print%20version.pdf">ECEC Enrolment</a></li>
-      <li><a href="/documents/Individual%20Units%20enrolment%20print%20version.pdf">Individual Units Enrolment</a></li>
+      
+  <li><a href="http://www.firstdoor.com.au/documents/Policies%20and%20Procedures%20May13.pdf">Policies and Procedures</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/PRIVACY%20POLICY.pdf">Privacy policy</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/FirstDoor_StudentHandbook.pdf">Student handbook</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/Diploma_Early_Childhood_Course_Guide.pdf">Course guide</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/Dip%20ECEC%20enrolment%20print%20version.pdf">ECEC Enrolment</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/Individual%20Units%20enrolment%20print%20version.pdf">Individual Units Enrolment</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/ASQA_Audit_Report.pdf">Australian Skills Quality Authority audit summary</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/Respectful_relationships_workshop_invitation.pdf">Relationships with children</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/Dip%20ECEC%20enrolment%20electronic%20version.docx">download Word doc</a></li>
+  <li><a href="http://www.firstdoor.com.au/documents/Individual%20Units%20enrolment%20electronic%20version.docx">download Word doc</a></li>
     </ul>
   </li>
 

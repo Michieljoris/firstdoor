@@ -1,3 +1,5 @@
+Don't forget to set the Mailgun pwd as an environment variable: MAILGUN_PWD
+
     http://www.openwebanalytics.com/
 http://clicky.com/
 
