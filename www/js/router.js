@@ -11,8 +11,22 @@ angular.module('ngView', [],
                     var baseDir = '/built/';
                     var mapping =
                         [
-                            ["home", cachify("/built/view-home.html"), HomeCntl]
-,["aboutus", cachify("/built/view-aboutus.htmlbuild/markdown/resources.md'],
+                            ["home", cachify("built/view-home.html"), HomeCntl]
+,["aboutus", cachify("built/view-aboutus.html")]
+,["pd", cachify("built/view-pd.html")]
+,["resources", cachify("built/view-resources.html"), ResourcesCntl]
+,["courses", cachify("built/view-courses.html")]
+,["quiz", cachify("built/view-quiz.html")]
+,["epic", cachify("built/view-epic.html"), EpicCntl]
+,["chat", cachify("built/view-chat.html"), chatCntl]
+,["filebrowser", cachify("built/view-filebrowser.html"), filebrowserCntl]
+,["contactus", cachify("built/view-contactus.html"), contactusCntl]
+,["enrol", cachify("built/view-enroll.html")]
+
+                            // ['home', '/built/view-home.html', HomeCntl],
+                            // ['aboutus', '/build/markdown/aboutus.md'],
+                            // ['pd', '/built/view-pd.html'],
+                            // ['resources', '/build/markdown/resources.md'],
                             // ['courses', '/built/view-courses.html'],
                             // ['quiz', '/build/markdown/quiz.md'],
                             // ['blog', '/build/markdown/blog.md'],
@@ -22,7 +36,7 @@ angular.module('ngView', [],
     
                     mapping.forEach(function(m) {
                         $routeProvider.when('/' + m[0], { 
-                            templateUrl: '//' + document.location.host + m[1], controller: m[2] ? m[2] : DefaultCntl });
+                            templateUrl: '//' + document.location.host + '/' + m[1], controller: m[2] ? m[2] : DefaultCntl });
                     });
     
                     $routeProvider.otherwise( { 

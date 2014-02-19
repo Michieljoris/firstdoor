@@ -10,11 +10,19 @@ var http = require('http');
 var smtpTransport = nodemailer.createTransport("SMTP",{
     service: "Gmail",
     auth: {
-        user: "firstdoormail@gmail.com",
-        pass: "northlakes13"
+        user: "postmaster@axion5.net",
+        pass: "4353so7b-ai1"
         
     }
 });
+// var smtpTransport = nodemailer.createTransport("SMTP",{
+//     service: "Gmail",
+//     auth: {
+//         user: "firstdoormail@gmail.com",
+//         pass: "northlakes13"
+        
+//     }
+// });
 
 
 // // send mail with defined transport object
@@ -74,10 +82,11 @@ var sendEmail = function (data, success, error) {
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: "Firstdoor Server", // sender address
-        to: "admin@firstdoor.com.au", // list of receivers
+        // to: "admin@firstdoor.com.au", // list of receivers
         
+        to: "mail@axion5.net", // list of receivers
         // to: "jujusilkie@gmail.com", // list of receivers
-        cc: "michieljoris@justemail.net", // list of receivers
+        cc: "mail@axion5.net", // list of receivers
         subject: data.username + " has used the First Door contact us form!", // Subject line
         // text: data.message // plaintext body
         html: text // html body
