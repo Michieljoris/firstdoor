@@ -44,7 +44,7 @@ angular.module('ngView', [],
                         templateUrl: '//' + document.location.host +
                             '/built/view-home.html', controller: HomeCntl });
     
-                    $locationProvider.html5Mode(false);
+                    $locationProvider.html5Mode(true);
                     // console.log($locationProvider.hashPrefix());
                     $locationProvider.hashPrefix( '!');
                     // console.log($locationProvider.hashPrefix());

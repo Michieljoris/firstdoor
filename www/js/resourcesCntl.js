@@ -191,8 +191,7 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     
     
     $scope.isSelected = function(fullPath) {
-        // console.log('index.html#!' + $location.$$url, fullPath);
-        if ('index.html#!' + $location.$$url === fullPath) return "selected";
+        if ($location.$$url === '/' + fullPath) return "selected";
         else return "";
     };
     
