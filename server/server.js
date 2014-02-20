@@ -19,10 +19,10 @@ var server = require('bb-server'),
 //cache control headings, so we can send big files etc
 var options = { 
     //Serve all files relative to this root. Defaults to './'.
-    root: '/home/michieljoris/www/sites/firstdoor/www'
+    root: './www'
     //if not assigned defaults to 8080. If that port's not available
     //the server will try 8081 and so on.
-    ,port: 9000
+    ,port: 9001
     
     // Assign true to allow listing of directories when the path in
     // the url matches a path on the server relative to the
@@ -61,20 +61,20 @@ var options = {
     //sent out with them and how long resources are kept in the server cache. If
     //true defaults to ((m)inutes, (h)ours, (d)ays, (w)weeks, (y)ears):
     // ,cache: false
-    // ,cache: {
-    //     stamped: { expiresIn: '1y' },
-    //     prerender: { expiresIn: '1d'},
-    //     //static resources, should be served from cookieless domain:
+    ,cache: {
+        stamped: { expiresIn: '1y' },
+        prerender: { expiresIn: '1d'},
+        //static resources, should be served from cookieless domain:
     
         
-    //     "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
-    //     "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
-    //     //but possibly not when going through cloudflare:
-    //     // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
-    //     "pdf doc docx": { expiresIn: "2h" },
-    //     other: { expiresIn: '0m'}
-    //     // cacheDir: "./cache"
-    // }
+        "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
+        "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
+        //but possibly not when going through cloudflare:
+        // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
+        "pdf doc docx": { expiresIn: "2h" },
+        other: { expiresIn: '0m'}
+        // cacheDir: "./cache"
+    }
     
     //if set to true to the server will try to remove a stamp from request paths
     //before processing them. This also enables cache control for the response

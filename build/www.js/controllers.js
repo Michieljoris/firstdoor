@@ -1,7 +1,7 @@
 /*global Recaptcha:false $:false process:false require:false exports:false*/
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
-
+//test
 // var myAppModule = angular.module('myApp', ['ngView', 'ngSanitize']);
 
 var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
@@ -366,9 +366,14 @@ function MainCntl($scope, $location) {
     
     $scope.hide_nrtlogo = function() {
         var loc = $location.$$url;
-        console.log(loc);
+        // console.log(loc);
         return nrtlogo_allowed.indexOf(loc) === -1;
         };
+
+    $scope.cachify = function(path) {
+        var cs = cachify(path);
+        return cs;
+    };
     // $anchorScroll();
     
     // console.log('location', $location);
@@ -413,7 +418,7 @@ var greendoor = {
     '/home':{
         heading: '',
         links:    [
-            { label: 'Welcome', route: 'home#welcome', scroll: true}
+            { label: 'Welcome', route: '', scroll: true}
             ,{ label: 'Specialists in Early Childhood training and development', route: 'home#specialists', scroll: true}
             ,{ label: 'Engaging resources and environments', route: 'home#engaging', scroll: true}
             ,{ label: 'Your personal mentor ', route: 'home#mentor', scroll: true}
@@ -526,16 +531,16 @@ function setActiveTab($location) {
 var headerImages = {
     
     "/home": {
-        "*": cachify("images/slides/tab_professional_development.jpg")
-        ,specialists: cachify("images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg")
-        ,engaging: cachify("images/slides/tab_resources.jpg")
-        ,quiz: cachify("images/slides/tab_resources.jpg")
-        ,mentor: cachify("images/slides/home_page_First_Door_mentoring.jpg")
-        ,constructive: cachify("images/slides/home_assessment.jpg")
-        // ,asqa: cachify("images/slides/home_assessment.jpg")
+        "*": "images/slides/tab_professional_development.jpg"
+        ,specialists: "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
+        ,engaging: "images/slides/tab_resources.jpg"
+        ,quiz: "images/slides/tab_resources.jpg"
+        ,mentor: "images/slides/home_page_First_Door_mentoring.jpg"
+        ,constructive: "images/slides/home_assessment.jpg"
+        // ,asqa: "images/slides/home_assessment.jpg"
     } 
     ,"/resources": {
-        "*": cachify("images/slides/tab_resources.jpg")
+        "*": "images/slides/tab_resources.jpg"
         
     }
     ,"/aboutus": {
@@ -547,21 +552,21 @@ var headerImages = {
         
     }
     ,"/pd": {
-        "*": cachify("images/slides/tab_professional_development.jpg")
-        ,inspired: cachify("images/slides/PD_Inspired_educator.jpg")
-        ,observing: cachify("images/slides/PD_Observing_and_documenting.jpg")
-        ,environment: cachify("images/slides/PD_Environment_and_experiences.jpg")
-        ,coop: cachify("images/slides/PD_cooperative_behaviour.jpg")
-        ,evaluation: cachify("images/slides/PD_reflective_practice.jpg")
-        ,children: cachify("images/slides/PD_identifying_at_risk_childen.jpg")
-        ,risk: cachify("images/slides/PD_managing_risk.jpg")
+        "*": "images/slides/tab_professional_development.jpg"
+        ,inspired: "images/slides/PD_Inspired_educator.jpg"
+        ,observing: "images/slides/PD_Observing_and_documenting.jpg"
+        ,environment: "images/slides/PD_Environment_and_experiences.jpg"
+        ,coop: "images/slides/PD_cooperative_behaviour.jpg"
+        ,evaluation: "images/slides/PD_reflective_practice.jpg"
+        ,children: "images/slides/PD_identifying_at_risk_childen.jpg"
+        ,risk: "images/slides/PD_managing_risk.jpg"
         ,customised: ""
     }            
     ,"/courses": {
-        "*": cachify("images/slides/tab_accredited_training.jpg")
-        ,children_ecec: cachify("images/slides/courses_Diploma_Childrens_services.jpg")
-        ,diploma_management: cachify("images/slides/courses_Diploma_Management.jpg")
-        ,certivtraining: cachify("images/slides/courses_certiv.jpg")
+        "*": "images/slides/tab_accredited_training.jpg"
+        ,children_ecec: "images/slides/courses_Diploma_Childrens_services.jpg"
+        ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
+        ,certivtraining: "images/slides/courses_certiv.jpg"
     }
     
 };
@@ -569,8 +574,8 @@ var headerImages = {
 var lastRoute='whatever';
 function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     console.log('default controller..');
-    
-    $scope.page = greendoor[$location.$$path];
+    // if ($location.$$path === '/') $location.$$path = '/home';
+    $scope.page = greendoor[$location.$$path] || greendoor['/home'];
     // $scope.name = "BookCntl";
     // $scope.params = $routeParams;
     // console.log($location);
@@ -599,7 +604,6 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
         }, 1000);
         
     }
-    
     // setTimeout(function(){
     //     $anchorScroll(hash);
     // },100);
@@ -612,10 +616,9 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     //     });
     // });
     $scope.getHeaderImage = function() {
-        // console.log('get image header for:', $location.$$path, $location.$$hash);
-        var page = headerImages[$location.$$path];
+        var page = headerImages[$location.$$path] || headerImages['/home'];
         if (!page) {
-            console.warn("WARNING: header images for page " +
+            console.warn("WARNING: DefaultCntl: header images for page " +
                          $location.$$path + " don't exist");
             return "";
         }
@@ -624,9 +627,8 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
         if (!imageSrc)
             console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
         // return "images/slides/tab_professional_development.jpg";
-        return imageSrc;
+        return cachify(imageSrc);
     };
-    
     
     $scope.isSelected = function(fullPath) {
         if ($location.$$url === '/' + fullPath) return "selected";
@@ -859,14 +861,14 @@ And some examples to make links: [http://www.google.com]() or [google](http://ww
 EpicCntl.$inject = ['$scope', '$routeParams'];
 
 function HomeCntl($scope, $routeParams, $location) {
-    
-    console.log('Home controller..', $location);
-    if (!$location.$$url) {
+    // console.log(' Home controller..', $location);
+    console.log(' Home controller..');
+    if (!$location.$$url || $location.$$url === '/') {
      $location.$$url="/home#welcome";   
         $location.$$hash = 'welcome';
         $location.$$path = '/home';
     }
-    $scope.page = greendoor[$location.$$path ];
+    $scope.page = greendoor[$location.$$path ] || greendoor['/home'];
     
     
     
@@ -912,7 +914,7 @@ function HomeCntl($scope, $routeParams, $location) {
     $scope.getPageClass = function() {
         var path = $location.$$path;
         if (path) path = path.slice(1);
-        console.log(path);
+        // console.log(path);
         return 'doorlinks-' + path;
     };
     
@@ -923,10 +925,10 @@ function HomeCntl($scope, $routeParams, $location) {
     };
     
     $scope.getHeaderImage = function() {
-        // console.log('get image header for:', $location.$$path, $location.$$hash);
-        var page = headerImages[$location.$$path];
+        var page = headerImages[$location.$$path] || headerImages['/home'];
+        
         if (!page) {
-            console.warn("WARNING: header images for page " +
+            console.warn("WARNING: homeCnlt: header images for page " +
                          $location.$$path + " don't exist");
             return "";
         }
@@ -935,7 +937,7 @@ function HomeCntl($scope, $routeParams, $location) {
         if (!imageSrc)
             console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
         // return "images/slides/tab_professional_development.jpg";
-        return imageSrc;
+        return cachify(imageSrc);
     };
     
     

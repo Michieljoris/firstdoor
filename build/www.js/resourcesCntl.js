@@ -179,7 +179,7 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
         if (!imageSrc)
             console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
         // return "images/slides/tab_professional_development.jpg";
-        return imageSrc;
+        return cachify(imageSrc);
     };
     
     $scope.getPageClass = function() {

@@ -11,7 +11,8 @@ angular.module('ngView', [],
                     var baseDir = '/built/';
                     var mapping =
                         [
-                            ["home", cachify("built/view-home.html"), HomeCntl]
+                            ["", cachify("built/view-home.html"), HomeCntl]
+,["home", cachify("built/view-home.html"), HomeCntl]
 ,["aboutus", cachify("built/view-aboutus.html")]
 ,["pd", cachify("built/view-pd.html")]
 ,["resources", cachify("built/view-resources.html"), ResourcesCntl]

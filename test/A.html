@@ -1,0 +1,563 @@
+
+<!--partial:views/view_pd_partial.html-->
+<div class="row"> 
+  <div id="sidebar--" class="span3">
+<!--partial:html/sidebar.html-->
+<fixscroll data-ng-transclude=""> 
+  
+  <div ng-class="getPageClass" id="greendoor"> 
+    <div class="doorlinks"> 
+      <div class="heading" ng-bind-html-unsafe="page.heading"></div>
+      <ul>
+	<div ng-repeat="link in page.links">
+	<li ng-class="isSelected(link.route)">
+	  <a ng-href="/{{link.route}}">{{link.label}}</a>
+	  <ul> 
+	    <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
+	      
+	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
+	    </li>
+	  </ul>	
+	</li>
+	</div>
+      </ul>
+      <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
+    </div> 
+  </div> 
+</fixscroll>
+
+</div>
+  <div ng-show="!(isShow(&apos;pdfees&apos;) || isShow(&apos;customised&apos;))" class="span9 inline-image embed-container ratio-tabimage ">     
+    <img class="" ng-src="{{getHeaderImage()}}">
+  </div>
+  <div class="row">
+    <div id="contents--" class="span7">
+<!--partial:html/pd_stitch.html-->
+<div scroll="" id="intro"></div>
+<div ng-show="isShow(&apos;intro&apos;)">
+  <div id="intro--">
+<!--partial:editable/pd/pd.html-->
+<h2>Interactive workshops tailored for your team&nbsp;</h2>
+<p><strong>Develop capability within your team through First Door's professional development workshops at your centre</strong>&nbsp;<br>First Door delivers seven, two hour workshops that can be booked individually or as a series of workshops. These engaging workshops provide educators strategies to encompass the National Quality Framework into their practice. If booked as a series, each workshop builds from content and knowledge gained in the previous workshop. The speed of progression through the workshops is arranged to suit each individual Early Childhood centre or Outside School Hours Care service.</p>
+<p>When the seven workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.<br><br><strong>First Door has a three step approach to ensure that the workshops are meeting the learning needs of your team:</strong></p>
+<ol>
+<li><strong>Needs analysis of your team&rsquo;s prior knowledge, skills and understanding</strong> <br>First Door will consult with you relating to the complexity of the needs within the Centre, and the educators existing capability in the outlined topics. &nbsp;We then tailor each workshop to ensure the best fit to your team's developmental needs. Occasionally, if considered necessary, a workshop is recommended over two sessions. This allows for broadening of concepts, development of practical skills, strategies and discussions in the relevant areas.<br><br></li>
+<li><strong><strong>National Quality Framework related workshop series<br></strong></strong>The workshops focus on a practical approach to bridge understanding of the National Quality Framework into educator's everyday practice.<strong><strong><br><br></strong></strong></li>
+<li><strong>Follow on learning for improved practice</strong><br>Templates to allow for continued practise within your team are provided by First Door to follow on from these workshops. First Door has a Facebook group and social media environments to invite further learning and conversations with other educators. Continued exposure to ideas for improved practice and stimulating conversations assist with ongoing changes in attitudes and actions to further develop your team&rsquo;s capability.<br><br></li>
+</ol>
+<h3><em><strong>Phone First Door now on 3103 2336 to discuss your team's professional development needs.</strong></em></h3>
+<div id="mcePasteBin" style="position: absolute; top: 0px; left: 0; background: red; width: 1px; height: 1px; overflow: hidden;" contenteditable="false">
+<div contenteditable="true">Invite First Door to your Centre, and develop capability within your team through our professional development workshops. These interactive two hour workshops can be booked individually or collectively. Each workshop builds from content and knowledge gained in the previous workshop. The progression through the workshops is recommended fortnightly, monthly or six weekly throughout the year.<br><br>Needs analysis: of your team&rsquo;s prior knowledge, skills and understanding <br>First Door will consult with you relating to the complexity of the needs within the Centre, and the educators existing capability in the outlined topics.&nbsp; Occasionally, a workshop is recommended over two sessions. This allows for broadening of concepts, development of practical skills, strategies and discussions in the areas of need. <br><br>Follow on learning: First Door are leaders in developing capability.<br>Templates to allow for continued practise within your team are provided by First Door to follow on from these workshops. We provide social media environments to invite further learning through conversations with other educators. Continued exposure to ideas for improved practice and stimulating conversations assist with ongoing changes in attitudes and actions to further develop your team&rsquo;s capability.<br><br>Professional development designed to meet your Centre&rsquo;s needs<br>When the seven workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.</div>
+</div></div>
+</div>
+
+<div scroll="" id="inspired"></div>
+<div ng-show="isShow(&apos;inspired&apos;)">
+  <div id="inspired--">
+<!--partial:editable/pd/inspired_educator.html-->
+<h2>Being an inspired, child focused educator</h2>
+<p><br> Reconnect to the passion and to the value of the professional educator's role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children.</p>
+<h3>Topics include:</h3>
+<ul>
+<li>Our impact on children's physical, personal, social, emotional and spiritual well-being.</li>
+<li>Culture and the family context</li>
+<li>Inclusion, and engaging the reluctant and non-participative child</li>
+<li>Supporting parents to maintain child focused approaches to planning and actions</li>
+<li>Sharing decisions with the child and their family</li>
+<li>Developing and maintaining respectful, trusting and equitable relationships with each child.</li>
+<li>Warm, meaningful and open interactions with children.</li>
+<li>Responsiveness to children's strengths, abilities, interests, culture and ideas.</li>
+<li>Stimulating their thinking and guiding learning with open-ended questions and feedback.</li>
+<li>Modelling respect: ongoing projects, transitions and sharing decisions</li>
+<li>Child led, child initiated and educator supported learning.</li>
+</ul>
+<p>This workshop relates to the following National Quality Standards and elements:</p></div>
+  <span id="showhide_pd_inspired_info--">
+<!--partial:html/showhide.html-->
+<a href="#" id="showhide1-show" class="showLink" onclick="showHide(&apos;showhide1&apos;);return false;">Show..</a>
+<p></p>
+<div id="showhide1" class="more">
+	<p><a href="#" id="showhide1-hide" class="hideLink" onclick="showHide(&apos;showhide1&apos;);return false;">Hide</a></p>
+	
+<!--partial:editable/pd/references/pd_inspired_info.md-->
+<ol>
+<li>Educational Program and Practice
+<ul><li>1.2: The program for each child takes into account their strengths, capabilities, culture, interests and experiences.</li></ul></li>
+<li>Children’s Health and Safety
+<ul><li>2.1.2: Each child’s comfort is provided for and there are appropriate opportunities to meet each child’s need for sleep, rest and relaxation.</li></ul></li>
+<li>Staffing Arrangements
+<ul><li>4.2: Educators, coordinators and staff have the skills and knowledge to support children’s learning, health, safety and wellbeing. </li>
+<li>4.3: Educators, coordinators and staff are respectful and ethical.</li></ul></li>
+<li>Relationships with Children
+<ul><li>NQS 5.1: Respectful and equitable relationships are developed and maintained with each child.</li>
+<li>NQS 5.1.1: Interactions with each child are warm, responsive and build trusting relationships.</li>
+<li>NQS 5.1.2: Each child is able to engage with educators in meaningful, open interactions that support the acquisition of skills for life and learning.</li>
+<li>NQS 5.2: Each child is supported to build and maintain sensitive and responsive relationships with other children and adults.</li></ul></li>
+<li>Collaborative Partnerships with Families and Communities
+<ul><li>6.1 Respectful supportive relationships with families are developed and maintained.</li>
+<li>6.2 Families are supported in their parenting role and their value and beliefs about child rearing are respected.</li></ul></li>
+</ol>
+
+<p><strong>Reference</strong></p>
+
+<p>Australian Children’s Education and Care Quality Authority. (2011). Guide to the National Quality Standard.
+Retrieved from:
+<a href="http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf">http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf</a></p>
+</div>
+
+
+</span>
+</div>
+
+<div scroll="" id="observing"></div>
+<div ng-show="isShow(&apos;observing&apos;)">
+  <div id="observing--">
+<!--partial:editable/pd/observing_gathering_info.html-->
+<h2>Observation, documentation, planning and evaluating</h2>
+<p>Understand the value and purpose of these processes. Become inspired to use strategies that are simplistic and effective. Undertake a practical case study and learn to use Learning Stories to build success, observe, document and plan for each child&rsquo;s development. This workshop refers to the EYLF Early Childhood Pedagogy, Learning Outcomes and the EYLF practices Intentional teaching and Assessment for Learning</p>
+<h3>Topics include:</h3>
+<h4>Observing and gathering information</h4>
+<ul>
+<li>Why observe and gather information about each child? How do we observe and gather information most effectively?</li>
+<li>How to identify each child's capabilities, interests and needs to plan experiences for the child</li>
+<li>How to monitor each child&rsquo;s learning in the five outcomes</li>
+<li>Monitoring uncharacteristic or atypical aspects of development.</li>
+<li>Communicating information clearly and sensitively to parents to enable support where required with appropriate services</li>
+</ul>
+<h4>Documentation and writing a Learning Story</h4>
+<ul>
+<li>What is the purpose of documentation? How do we document learning experiences?</li>
+<li>Recording a learning experience through a series of four photographs</li>
+<li>Reflect on the learning experience and photographs asking key questions based on the EYLF and learning outcomes: what actually happened here? What connections did they make? What did this experience mean? What have we learnt about the child/ren and their disposition?</li>
+<li>Practical case study: Noticing/Telling the story</li>
+<li>Practical case study: Connections to learning</li>
+<li>Practical case study: Opportunities and possibilities</li>
+<li>Child and parent perspective</li>
+</ul>
+<h4>Planning</h4>
+<ul>
+<li>How do we plan for each child&rsquo;s success taking into account their strengths, capabilities, culture, interests and experiences?</li>
+<li>Brainstorming ideas collaboratively within the team and the child/ren, internet research, seeking input from parents</li>
+<li>Flow charts with what next?</li>
+<li>Branching into new areas of development or learning outcomes using the interest as a focus.</li>
+<li>Consider resources required to extend learning and if necessary resource substitute possibilities.</li>
+</ul>
+<h4>Evaluating</h4>
+<ul>
+<li>Why evaluate each child&rsquo;s learning and development?</li>
+<li>Strategies to effectively evaluate each child&rsquo;s learning and development.</li>
+</ul>
+<p>This workshop relates to the following National Quality Standards and elements:</p></div>
+  <span id="showhide_pd_observing_info--">
+<!--partial:html/showhide.html-->
+<a href="#" id="showhide4-show" class="showLink" onclick="showHide(&apos;showhide4&apos;);return false;">Show..</a>
+<p></p>
+<div id="showhide4" class="more">
+	<p><a href="#" id="showhide4-hide" class="hideLink" onclick="showHide(&apos;showhide4&apos;);return false;">Hide</a></p>
+	
+<!--partial:editable/pd/references/pd_observing_info.md-->
+<ol>
+<li>Educational Program and Practice
+<ul><li>NQS 1.1; The Early Years Learning Framework (or other approved learning framework) informs the development of a program for each child that enhances their learning and development.</li>
+<li>NQS 1.1.1: The Early Years Learning Framework (or other approved learning framework) guides curriculum decision making and enables each child’s learning in the five outcomes: Children have a strong sense of identity, Children are connected with and contribute to their world, Children have a strong sense of wellbeing, Children are confident and involved learners, Children are effective communicators.</li>
+<li>NQS 1.2: The program for each child takes into account their strengths, capabilities, culture, interests and experiences.</li>
+<li>NQS 1.2.1: Each child’s knowledge, ideas, culture and interests provide the foundation of the program.</li>
+<li>NQS 1.2.2: Each child is supported to participate in the program.</li>
+<li>NQS 1.2.4: Critical reflection and evaluation of children’s learning and development, both as individuals and in groups, is used as a primary source of information for planning and to improve the effectiveness of the program and teaching strategies.</li>
+<li>NQS 1.2.3: Each child’s learning and development is assessed as part of an ongoing cycle of planning, documenting and evaluating children’s learning.</li></ul></li>
+</ol>
+
+<h4>Reference</h4>
+
+<p>Australian Children’s Education and Care Quality Authority. (2011). Guide to the National Quality Standard.
+Retrieved from:
+<a href="http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf">http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf</a></p>
+</div>
+
+
+</span>
+</div>
+
+<div scroll="" id="environment"></div>
+<div ng-show="isShow(&apos;environment&apos;)">
+  <div id="environment--">
+<!--partial:editable/pd/environment_experiences.html-->
+<h2>Environment and experiences</h2>
+<p>Educators will be inspired to create learning environments and experiences that engage children into learning through play, enable holistic development and guide each child&rsquo;s learning in the five outcomes. The EYLF PRACTICES discussed are: Learning through Play, Intentional Teaching and Learning Environments.</p>
+<h3>Topics include:</h3>
+<ul>
+<li>Holistic development and related learning environments</li>
+<li>The balance of security, comfort, freshness and variety within the environment.</li>
+<li>Setting up Inclusive environments that encourage independent exploration and learning through play.</li>
+<li>Discuss approaches to identify each child&rsquo;s interests, strengths, needs and abilities.</li>
+<li>Setting up invitations for play relating to the children&rsquo;s interests, strengths, needs and abilities</li>
+<li>Collaborative learning opportunities</li>
+<li>Observe, reflect on and evaluate the children's responses to play experiences. Modify to ensure each child remains interested and comfortably challenged.</li>
+<li>Scaffolding play experiences and learning.</li>
+<li>Using intentional teaching to invite experiences and achieve learning outcomes for each child.</li>
+<li>Strategies to guide, encourage and promote competence in children</li>
+<li>Respecting children&rsquo;s work and play experience.</li>
+<li>Allowing sufficient time for play to develop, and providing adequate lead in to transitioning.</li>
+<li>Identifying strengths and interests within the team of educators to provide experiences to -children with passion.</li>
+<li>Posture awareness. Interact with children modelling enthusiasm, playfulness and enjoyment.</li>
+</ul>
+<p>This workshop relates to the following National Quality Standards and elements:</p></div>
+  <span id="showhide_pd_environment_info--">
+<!--partial:html/showhide.html-->
+<a href="#" id="showhide3-show" class="showLink" onclick="showHide(&apos;showhide3&apos;);return false;">Show..</a>
+<p></p>
+<div id="showhide3" class="more">
+	<p><a href="#" id="showhide3-hide" class="hideLink" onclick="showHide(&apos;showhide3&apos;);return false;">Hide</a></p>
+	
+<!--partial:editable/pd/references/pd_environment_info.md-->
+<ol>
+<li>Educational Program and Practice
+<ul><li>NQS 1.2: The program for each child takes into account their strengths, capabilities, culture, interests and experiences.</li>
+<li>NQS 1.2.2: Each child is supported to participate in the program.</li>
+<li>NQS 1.2.4: Critical reflection and evaluation of children’s learning and development, both as individuals and in groups, is used as a primary source of information for planning and to improve the effectiveness of the program and teaching strategies.</li></ul></li>
+<li>Physical environment
+<ul><li>NQS 3.1.1: Outdoor and indoor spaces, buildings, furniture, equipment, facilities and resources are suitable for their purpose. </li>
+<li>NQS 3.2: The environment is inclusive, promotes competence, independent exploration and learning through play.</li>
+<li>NQS 3.2.1: Outdoor and indoor spaces are designed and organised to engage every child in quality experiences in both built and natural environments.</li>
+<li>NQS 3.2.1: Resources, materials and equipment are sufficient in number and organised in ways that ensure appropriate and effective implementation of the program.</li></ul></li>
+<li>Staffing Arrangements
+<ul><li>NQS 4.1:  Staffing arrangements enhance children’s learning and development and ensure their safety and wellbeing.</li>
+<li>NQS 4.2.3: Educators and coordinators are focused , active and reflective in planning and delivering the program to each child.</li>
+<li>NQS 4.3.4: Interactions convey mutual respect, equity and recognition of each other’s strengths.</li></ul></li>
+<li>Relationships with Children
+<ul><li>NQS 5.2.1: Every child is supported to work with, learn from and help others through collaborative learning opportunities.</li></ul></li>
+</ol>
+
+<p>Reference
+Australian Children’s Education and Care Quality Authority. (2011). Guide to the National Quality Standard.
+Retrieved from:
+<a href="http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf">http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf</a></p>
+</div>
+
+
+</span>
+</div>
+
+<div scroll="" id="coop"></div>
+<div ng-show="isShow(&apos;coop&apos;)">
+  <div id="coop--">
+<!--partial:editable/pd/coop_behaviour.html-->
+<h2>Developing cooperative behaviour</h2>
+<p>This workshop provides educators with strategies to refocus their approach to unacceptable behaviour, and proactively develop cooperative behaviour. It is recommended that this workshop be extended over four hours or over two sessions if educators are working reactively to complex behaviours and/or have limited understanding of these concepts. The EYLF PRINCIPLES are discussed, being: Secure, Respectful and Reciprocal Relationships; Partnerships; High Expectations and Equity; Respect for Diversity; and, Ongoing Learning and Reflective Practice.</p>
+<h3>Topics include:</h3>
+<h4>Setting up for success:</h4>
+<ul>
+<li>What is the behaviour we are working towards? Establish positively stated guidelines relevant to the ability, culture and background of the children and policies of the centre</li>
+<li>Engaging collaborative decision making of rules/expectations and strategies to gain children's understanding and acceptance of rules/expectations</li>
+<li>Commitment to consistency within the team of educators.</li>
+<li>Boundary testing and strategies to use.</li>
+<li>Modelling respectful and cooperative behaviour through meaningful and respectful relationships with each child, where educators understand each child.</li>
+<li>Using positive language: learning to rephrase instructions and use feedback sandwiches.</li>
+<li>Fix basic physiological needs first. Provide security, acceptance, comfort and a sense of belonging.</li>
+<li>Proactive approaches: positive reinforcement, redirecting to tasks of interest, providing choices and logical consequences.</li>
+</ul>
+<h4>Understanding the child and their behaviour:</h4>
+<ul>
+<li>Understanding from the child's perspective. What does the child want/need/expect to happen?</li>
+<li>Observe and analyse behaviour to identify triggers and patterns.</li>
+<li>Use reflective practice to analyse the child's needs and their reinforcers or consequences which are maintaining the behaviour.</li>
+<li>Review program routines and timetabling for possible influence on behaviour</li>
+</ul>
+<h4>Develop, implement and evaluate a plan for cooperative behaviour</h4>
+<ul>
+<li>Interpret the child's behaviour with other involved educators and relevant others.</li>
+<li>Work in partnership with parents, and develop a plan collaboratively, in accordance with philosophy and policies of the service</li>
+<li>Clearly identify strategies to achieve acceptable alternative behaviours in the plan</li>
+<li>Use ongoing evaluation and revise the plan as required.</li>
+</ul>
+<p>This workshop relates to the following National Quality Standards and elements:</p></div>
+  <span id="showhide_pd_coop_info--">
+<!--partial:html/showhide.html-->
+<a href="#" id="showhide2-show" class="showLink" onclick="showHide(&apos;showhide2&apos;);return false;">Show..</a>
+<p></p>
+<div id="showhide2" class="more">
+	<p><a href="#" id="showhide2-hide" class="hideLink" onclick="showHide(&apos;showhide2&apos;);return false;">Hide</a></p>
+	
+<!--partial:editable/pd/references/pd_coop_info.md-->
+<ol>
+<li>Educational Program and Practice
+<ul><li>NQS 1.2.4: Critical reflection and evaluation of children’s learning and development, both as individuals and in groups, is used as a primary source of information for planning the effectiveness of the program and teaching strategies.</li>
+<li>NQS 2.1.2: Each child’s comfort is provided for and there are appropriate opportunities to meet each child’s need for sleep rest and relaxation.</li></ul></li>
+<li>Staffing Arrangements
+<ul><li>NQS 4.2: Educators, coordinators and staff have the skills and knowledge required to support children’s learning, health, safety and wellbeing.</li>
+<li>NQS 4.2.2: Educators, coordinators and staff demonstrate the awareness, attitudes, knowledge and skills required to provide an environment where diversity and difference are acknowledged, valued and respected.</li>
+<li>NQS 4.3.2: Actions are aligned with the statement of principles under which the service operates.</li>
+<li>NQS 4.3.3: Educators, coordinators and staff work collaboratively and affirm, challenge, support and learn from each other to further develop their skills to improve practice and relationships.</li></ul></li>
+<li>Relationships with Children
+<ul><li>NQS 5.1: Respectful and ethical relationships are developed and maintained with each child.</li>
+<li>NQS 5.1.1: Interactions with each child are warm, responsive and build trusting relationships.</li>
+<li>NQS 5.2.3: Each child is supported to understand how their own actions affect others.</li>
+<li>NQS 5.3: Each child’s behaviour, interactions and relationships are guided effectively.</li>
+<li>NQS 5.3.1: Behaviour guidance strategies preserve the dignity and rights of the child at all times.</li>
+<li>NQS 5.3.2: Each child is supported to manage their own behaviour, respond appropriately to the behaviour of others, and communicate effectively to resolve conflicts. </li></ul></li>
+<li>Collaborative Partnerships with families and Communities
+<ul><li>NQS 6.1: Respectful, supportive relationships with families are developed and maintained.</li>
+<li>NQS 6.2:  Families are supported in their parenting role and their values and beliefs about child rearing are respected.</li>
+<li>NQS 6.2.1: The expertise of families is recognised and they share in decision making about their child’s learning and wellbeing.</li></ul></li>
+</ol>
+
+<p>Reference
+Australian Children’s Education and Care Quality Authority. (2011). Guide to the National Quality Standard.
+Retrieved from:
+<a href="http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf">http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf</a></p>
+</div>
+
+
+</span>
+</div>
+
+<div scroll="" id="evaluation"></div>
+<div ng-show="isShow(&apos;evaluation&apos;)">
+  <div id="evaluation--">
+<!--partial:editable/pd/eval_reflective_practice.html-->
+<h2>Evaluation and reflective practice for improved program and practice</h2>
+<p>Ongoing learning and reflective practice is a key principle of the Framework. Educators will be assisted in seeking ways to build their professional knowledge and develop learning communities. The intention is to gather information and gain insights that support, inform and enrich professional practice and decision-making about children's well-being and development.</p>
+<h3>Topics include:</h3>
+<h4>Evaluation</h4>
+<ul>
+<li>Evaluation involves using knowledge/philosophies and collaboration.</li>
+<li>Tool to assess how we provide equity for each child to have opportunities to achieve the learning outcomes.</li>
+<li>Establishing the purpose of evaluation and what is to be evaluated.</li>
+<li>Determining the evaluation methods to be established.</li>
+<li>Documenting formal and informal evaluation.</li>
+<li>Using evaluation in future planning to improve practice, the program and environment.</li>
+<li>Practical case study: relevant to the Centre's needs to establish evaluation methods.</li>
+</ul>
+<h4>Reflective practice</h4>
+<ul>
+<li>Reflective practice for ongoing learning and improvement that nurtures professional growth.</li>
+<li>Understanding critical reflection.</li>
+<li>Process to describe, analyse and integrate educators thinking and ideas.</li>
+<li>Using the NQF guide and National Quality Standard for critical questions.</li>
+<li>Gathering information to gain insights through conversations, discussions and writing in journal.</li>
+<li>Reflective practice process: deconstruct, confront, theorise, think otherwise.</li>
+</ul>
+<p>This workshop relates to the following National Quality Standards and elements:</p></div>
+  <span id="showhide_pd_evaluation_info--">
+<!--partial:html/showhide.html-->
+<a href="#" id="showhide5-show" class="showLink" onclick="showHide(&apos;showhide5&apos;);return false;">Show..</a>
+<p></p>
+<div id="showhide5" class="more">
+	<p><a href="#" id="showhide5-hide" class="hideLink" onclick="showHide(&apos;showhide5&apos;);return false;">Hide</a></p>
+	
+<!--partial:editable/pd/references/pd_evaluation_info.md-->
+<ol>
+<li>Educational Program and Practice
+<ul><li>NQS 1.2.3: Each child’s learning and development is assessed as part of an ongoing cycle of planning, documenting and evaluating children’s learning.</li>
+<li>NQS 1.2.4: Critical reflection and evaluation of children’s learning and development, both as individuals and in groups, is used as a primary source of information for planning and to improve the effectiveness of the program and teaching strategies.</li></ul></li>
+<li>Leadership and Service Management
+<ul><li>NQS 7.2: There is a commitment to continuous improvement</li>
+<li>NQS 7.2.2: There is an effective planning and evaluation process in place that guides service operations and programs and enables the identification and delivery of ongoing improvement initiatives.</li></ul></li>
+</ol>
+
+<p>Reference
+Australian Children’s Education and Care Quality Authority. (2011). Guide to the National Quality Standard.
+Retrieved from:
+<a href="http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf">http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf</a></p>
+</div>
+
+
+</span>
+</div>
+
+<div scroll="" id="children"></div>
+<div ng-show="isShow(&apos;children&apos;)">
+  <div id="children--">
+<!--partial:editable/pd/childrent_at_risk.html-->
+<h2>Children at risk: identify and respond</h2>
+<p>This workshop details the knowledge and skills required to address duty of care requirements, working within an ethical framework and applying relevant legislation, policies and procedures in responding to children and young people at risk.</p>
+<h3>Topics include:</h3>
+<ul>
+<li>Complying with lawful instructions, regulations and duty of care in all work activities.</li>
+<li>Identifying children at risk by observation.</li>
+<li>Responding to disclosure, information or signs and symptoms.</li>
+<li>Employing communication and information gathering techniques.</li>
+<li>Reporting possible risk of harm.</li>
+</ul>
+<p>This workshop relates to the following National Quality Standards and elements:</p></div>
+  <span id="showhide_pd_children_info--">
+<!--partial:html/showhide.html-->
+<a href="#" id="showhide6-show" class="showLink" onclick="showHide(&apos;showhide6&apos;);return false;">Show..</a>
+<p></p>
+<div id="showhide6" class="more">
+	<p><a href="#" id="showhide6-hide" class="hideLink" onclick="showHide(&apos;showhide6&apos;);return false;">Hide</a></p>
+	
+<!--partial:editable/pd/references/pd_children_info.md-->
+<ol>
+<li>Children’s Health and Safety
+<ul><li>NQS 2.3: Each child is protected</li>
+<li>NQS 2.3.4: Action is taken to respond to every child at risk of abuse and/or neglect.</li></ul></li>
+</ol>
+
+<p>Reference <br>
+Australian Children’s Education and Care Quality Authority. (2011). Guide to the National Quality Standard.
+Retrieved from:
+<a href="http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf">http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf</a></p>
+</div>
+
+
+</span>
+</div>
+
+<div scroll="" id="risk"></div>
+<div ng-show="isShow(&apos;risk&apos;)">
+  <div id="risk--">
+<!--partial:editable/pd/id_manage_risk.html-->
+<h2>Identify and manage risk to protect against harm</h2>
+<p>This workshop supports the educator in their responsibility to ensure that all children are protected and safe while they are in an approved service. Educators will learn to proactively identify and minimise potential risks in their centre through conducting a risk assessment.</p>
+<h3>Topics include:</h3>
+<ul>
+<li>Identifying potential risks.</li>
+<li>Planning for and ensuring effective supervision.</li>
+<li>Managing hazards and potential risks.</li>
+<li>Encouraging children to identify and minimise risks.</li>
+<li>Conducting risk assessments.</li>
+<li>Planning and implementing emergency procedures.</li>
+<li>Strategies to control the spread of infectious diseases, and to manage injuries and illnesses.</li>
+<li>Practical case study: Perform a risk assessment in the Centre's environment</li>
+</ul>
+<p>This workshop relates to the following National Quality Standards and elements:</p></div>
+  <span id="showhide_pd_risk_info--">
+<!--partial:html/showhide.html-->
+<a href="#" id="showhide7-show" class="showLink" onclick="showHide(&apos;showhide7&apos;);return false;">Show..</a>
+<p></p>
+<div id="showhide7" class="more">
+	<p><a href="#" id="showhide7-hide" class="hideLink" onclick="showHide(&apos;showhide7&apos;);return false;">Hide</a></p>
+	
+<!--partial:editable/pd/references/pd_risk_info.md-->
+<ol>
+<li>Children’s Health and Safety
+<ul><li>NQS 2.1.4: Steps are taken to control the spread of infectious diseases and to manage injuries and illness, in accordance with recognised guidelines.</li>
+<li>NQS 2.3: Each child is protected</li>
+<li>NQS 2.3.1: Children are adequately supervised at all times.</li>
+<li>NQS 2.3.2: Reasonable steps are taken to identify and manage risks, and every reasonable precaution is taken to protect children from harm and hazards. </li>
+<li>NQS 2.3.3: Plans to effectively manage incidents and emergencies are developed in consultation with relevant authorities, practised and implemented.</li></ul></li>
+</ol>
+
+<p>Reference
+Australian Children’s Education and Care Quality Authority. (2011). Guide to the National Quality Standard.
+Retrieved from:
+<a href="http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf">http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf</a></p>
+</div>
+
+
+</span>
+</div>
+
+<div scroll="" id="pdfees"></div>
+<div ng-show="isShow(&apos;pdfees&apos;)">
+  <div id="pdfees--">
+<!--partial:editable/pd/pdfees.html-->
+<h2>Fees</h2>
+<p>The workshop fees cover the cost of:</p>
+<ul>
+<li>An assessment of the group&rsquo;s general prior knowledge and working skills prior to the workshop. This assessment relies on the centre Director completing the relevant workshop needs assessment form and submitting the form to First Door at least one week prior to the workshop date.</li>
+<li>An interactive two hour presentation of the workshop at your centre using our data projector, screen and relevant resources</li>
+<li>Supplied resources to each attending person</li>
+<li>Certificate of participation to each attending person</li>
+<li>Follow on templates to allow for continued practice</li>
+<li>Access to First Door social networking and communication tools</li>
+<li>Evaluation of the effectiveness of the workshop in improving your team&rsquo;s knowledge, skills and capability</li>
+</ul>
+<h3>Group size</h3>
+<p>First Door presents interactive professional development workshops and therefore prefers to have no more than twenty people in attendance. If your group size is larger than twenty please discuss this with us so that we can best accommodate your group.</p>
+<h3>Professional development workshop fee payment</h3>
+<p>Fee payments for professional development workshops are made in advance to First Door Training and Development Pty. Ltd. These are paid in two ways:</p>
+<ol>
+<li>Payment of $400 prior to each single professional development workshop</li>
+<li>Payment of $2,800 for the series of eight booked workshops.When the workshop series is booked and paid, the Centre will receive the customised professional development workshop, tailored to your centre&rsquo;s needs, at NO CHARGE.</li>
+</ol>
+<p>Advance fee payment protection All fees paid in advance are protected. We guarantee the company&rsquo;s sound financial position and safeguard all payments made in advance until the conclusion of the professional development workshops to the value of the advanced payment.</p>
+<h3>Cancellation refunds</h3>
+<p>If First Door has to cancel the workshop an alternative suitable date will be arranged, or a full refund will be given.</p>
+<p>If a Centre provides at least two weeks&rsquo; notice prior to the workshop to cancel and a suitable new booking date for the workshop is not achieved they will receive a full refund. A cancellation made by the Centre during the fortnight before the workshop is subject to a cancellation fee of $100.</p>
+<h2>Satisfaction guarantee</h2>
+<p>Your feedback on our service is important to us as we strive to continually improve our resources, approach and presentation to best meet our client&rsquo;s needs. <strong>We guarantee your satisfaction with the delivery of our professional development workshops and offer a money back guarantee</strong> to assure you of our integrity to provide worthwhile and meaningful professional development to your team.</p></div>
+  <span id="showhide_pd_pdfees_info--"></span>
+</div>
+
+<div scroll="" id="customised"></div>
+<div ng-show="isShow(&apos;customised&apos;)">
+  <div id="customised--">
+<!--partial:editable/pd/customised_workshop.html-->
+<h2>Workshop eight: Customised workshop for your Centre</h2>
+<p>Following the series of seven workshops, you are in a good position to identify your Centre's specific area to strengthen with customised professional development. Following feedback from your team and a consultation with the centre Director, First Door designs and delivers a complimentary workshop to meet your Centre's needs.</p></div>
+  <span id="showhide_pd_customised_info--"></span>
+</div>
+
+
+</div>
+    <div id="rightBar--" class="span2">
+<!--partial:html/rightbar.html-->
+<!-- <fixscrollright data-ng-transclude="">  -->
+<!-- AddToAny BEGIN -->
+<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"></a>
+<script type="text/javascript">
+ var a2a_config = a2a_config || {};
+ a2a_config.linkurl = "http://www.firstdoor.com.au";
+ a2a_config.onclick = 1;
+</script>
+
+<script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+<div ng-show="show_events()">
+  <div id="events_sidebar--">
+<!--partial:editable/events_sidebar.html-->
+<h3>Upcoming workshop events</h3>
+<p>March 3: <a href="__44a7e6b1e3/documents/Respectful_relationships_workshop_invitation.pdf">Relationships with children</a></p>
+<p>March 17: Recruitment, selection and induction of staff</p>
+<p>April 7: Safe and healthy environment</p>
+<p>April 14: Develop teams and individuals</p>
+<p>May 5: Partnership with families</p>
+<p>May 19: Developing cooperative behaviour</p>
+<p>June 2: Health and safety of children</p>
+<p>June 16: Foster learning and development</p>
+<p>July 7: Healthy food and drinks</p>
+<p>July 21: Develop cultural competence</p>
+<p>See <a href="#!/courses#intro">more</a>.</p>
+</div>
+
+</div>
+
+<form name="loginFormRight" action="#" method="POST">
+
+  <br>
+  <h4><b ng-bind-html-unsafe="getContactUsText()"></b></h4>
+  <div ng-show="!sent">
+    <label class="form-label ">Name<span class="form-required">*</span></label>
+    <div class="controls controls-row control-group {{namemissing}}">
+
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required>
+    </div>
+
+    <label class="form-label">Email<span class="form-required">*</span></label>
+
+    <div class="control-group {{emailmissing}}">
+      <input class="span2" type="email" id="email" name="email" required><br>
+    </div>
+
+    <label class="form-label">Message<span class="form-required">*</span></label>
+
+    <div class="control-group {{msgmissing}}">
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
+    </div>
+    <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
+    <div id="captchadiv"></div>
+  </div>
+  <div ng-show="sent" class="well">
+    Thanks for contacting First Door. We will be in touch within the next 24 hours.
+  </div>
+</form>
+{{result}}
+
+
+<!-- </fixscrollright> -->
+</div>
+  </div>
+</div> 

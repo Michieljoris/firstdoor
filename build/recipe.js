@@ -122,7 +122,7 @@ var js = [
     ,'filebrowserCntl'
     ,'videos'
     ,'resourcesCntl'
-    ,'router'
+    ,'../router'
     
     // ,'jquery.validate'
     // ,'jquery.contactable'
@@ -156,7 +156,7 @@ var js = [
 
 
 var mainMenuTree = [
-    { label: 'Home', icon: '', route: 'home#welcome'
+    { label: 'Home', icon: '', href: '/'
       
         ,sub:    [
             // { label: 'Welcome', route: 'home#welcome', scroll: true}
@@ -330,6 +330,7 @@ var exports = {
         ,out:'built' 
         ,js: 'js'
     }
+    
     /*
       If cachify if falsy resources will be requested as is, without a
       stamp. Which means bb-server will send them with max-age=0 and
@@ -375,8 +376,8 @@ var exports = {
     // ,cachify: true
     //hash or mtime, query or modified filename
     ,cachify : {
-        exclude: ['doc', 'docx'] //for instance ['pdf', 'doc']
-        ,method: 'sha1' //mtime or any of the hashes returned from crypto.getHashes()
+        // exclude: ['pdf', 'doc', 'docx'], //for instance ['pdf', 'doc']
+        method: 'sha1' //mtime or any of the hashes returned from crypto.getHashes()
         // (var crypto = require('crypto');
         // var hashes = crypto.getHashes(); )
         ,length: 10 //ignored and set to 13 when method === mtime
@@ -384,10 +385,6 @@ var exports = {
         //make sure to add a 'cachify' id in the head, or before any javascript
         //that might want to use the cachify function:
         ,list: [
-            'images/slides/tab_about_us.jpg',
-            'images/slides/tab_accredited_training.jpg',
-            'images/slides/tab_professional_development.jpg',
-            'images/slides/tab_resources.jpg',
             "images/slides/PD_Environment_and_experiences.jpg",
             "images/slides/PD_Inspired_educator.jpg",
             "images/slides/PD_Observing_and_documenting.jpg",
@@ -402,22 +399,30 @@ var exports = {
             "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg",
             "images/slides/tab_accredited_training.jpg",
             "images/slides/tab_professional_development.jpg",
-            "images/slides/tab_resources.jpg",
-            'images/slides/tab_about_us.jpg',
-            'documents/FirstDoor_StudentHandbook.pdf',
-            'documents/Diploma_Early_Childhood_Course_Guide.pdf',
-            'documents/Dip ECEC enrolment print version.pdf',
+            "images/slides/home_page_First_Door_mentoring.jpg",
             'documents/Dip ECEC enrolment electronic version.docx',
+            'documents/Dip ECEC enrolment print version.pdf',
+            'documents/Diploma_Early_Childhood_Course_Guide.pdf',
+            'documents/FirstDoor_StudentHandbook.pdf',
+            'documents/Individual Units enrolment electronic version.docx',
             'documents/Individual Units enrolment print version.pdf',
-            'documents/Individual Units enrolment electronic version.docx'
+            'images/logo.jpg',
+            'images/nrtlogoclsm.gif',
+            'images/slides/tab_about_us.jpg',
+            'images/slides/tab_accredited_training.jpg',
+            'images/slides/tab_professional_development.jpg',
+            'images/slides/tab_resources.jpg',
+            'images/course_structure_children_services.jpg'
         ]
     } 
+    
     //group the script and link blocks and concatenate all files listed in a block
     ,concatenate: !develop_mode 
     //make sure to load the resources for custom components, the files get added
     //to the first script and link blocks.
     ,extras: ['flex-slider', 'cssmenu', 'showhide']
     ,routes: [
+        ['home','built/view-home.html', 'HomeCntl'],
         ['home','built/view-home.html', 'HomeCntl'],
         ['aboutus', 'built/view-aboutus.html'],
         ['pd', 'built/view-pd.html'],
