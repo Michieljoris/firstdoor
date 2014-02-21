@@ -156,7 +156,7 @@ var js = [
 
 
 var mainMenuTree = [
-    { label: 'Home', icon: '', href: '/'
+    { label: 'Home', icon: '', route: 'home#welcome'//href: '/'
       
         ,sub:    [
             // { label: 'Welcome', route: 'home#welcome', scroll: true}
@@ -312,7 +312,6 @@ var images = {
 }
 
 var develop_mode = process.env.DEVELOP; 
-develop_mode = true;
 // develop_mode = false;
 var exports = {
     verbose: true
@@ -417,12 +416,12 @@ var exports = {
     } 
     
     //group the script and link blocks and concatenate all files listed in a block
-    ,concatenate: !develop_mode 
+    // ,concatenate: !develop_mode 
+    ,concatenate: true
     //make sure to load the resources for custom components, the files get added
     //to the first script and link blocks.
     ,extras: ['flex-slider', 'cssmenu', 'showhide']
     ,routes: [
-        ['home','built/view-home.html', 'HomeCntl'],
         ['home','built/view-home.html', 'HomeCntl'],
         ['aboutus', 'built/view-aboutus.html'],
         ['pd', 'built/view-pd.html'],
@@ -451,6 +450,7 @@ var exports = {
     ,partials: {
         ids: {
             title: '<title>Firstdoor - Leaders in developing capability</title>'
+            ,baseHref: '<base href="http://localhost:9001"">'
             // ,image_courses: '<img class="" src="images/slides/tab_accredited_training.jpg" />'
             // ,image_aboutus: '<img class="" src="images/slides/tab_about_us.jpg" />'
             // ,image_pd: '<img class="" src="images/slides/tab_professional_development.jpg" />'
@@ -782,13 +782,15 @@ var exports = {
                //want to retrieve cachified versions. Include the resources
                //under the cachify.list
                ,mapping: {
-                   head: ['title', 'meta',  'html/ieshim','skewer',
-                          // 'firebug',
-                          'sharethis1', 'sharethis2', 'sharethis3',
-                          // 'headJsBlock',
-                          'myLinkBlock'
-                          ,'cachify'
-                         ],
+                   head: [
+                       'baseHref',
+                       'title', 'meta',  'html/ieshim','skewer',
+                       // 'firebug',
+                       'sharethis1', 'sharethis2', 'sharethis3',
+                       // 'headJsBlock',
+                       'myLinkBlock'
+                       ,'cachify'
+                   ],
                   
                    "ng:app": ['body', 'myJsBlock',
                               // '_scriptBlock'

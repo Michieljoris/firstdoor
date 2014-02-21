@@ -6274,7 +6274,7 @@ var greendoor = {
     '/home':{
         heading: '',
         links:    [
-            { label: 'Welcome', route: '', scroll: true}
+            { label: 'Welcome', route: 'home#welcome', scroll: true}
             ,{ label: 'Specialists in Early Childhood training and development', route: 'home#specialists', scroll: true}
             ,{ label: 'Engaging resources and environments', route: 'home#engaging', scroll: true}
             ,{ label: 'Your personal mentor ', route: 'home#mentor', scroll: true}
@@ -6363,7 +6363,7 @@ var greendoor = {
             ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', route: cachify('documents/Dip ECEC enrolment print version.pdf'), scroll: true}
             ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', route: cachify('documents/Dip ECEC enrolment electronic version.docx'), scroll: true}
             ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', route: cachify('documents/Individual Units enrolment print version.pdf'), scroll: true}
-            ,{ label: 'Enrolment form: Individual unit/s - computer version (Word doc)', route: cachify('documents/Individual Units enrolment electronic version.docx'), scroll: true}
+            ,{ label: 'Enrolment fom: Individual unit/s - computer version (Word doc)', route: cachify('documents/Individual Units enrolment electronic version.docx'), scroll: true}
         ]
 
         
@@ -8007,7 +8007,7 @@ angular.module('ngView', [],
     
                     $routeProvider.otherwise( { 
                         templateUrl: '//' + document.location.host +
-                            '/built/view-home.html', controller: HomeCntl });
+                            cachify('/built/view-home.html'), controller: HomeCntl });
     
                     $locationProvider.html5Mode(true);
                     // console.log($locationProvider.hashPrefix());

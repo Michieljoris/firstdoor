@@ -12,7 +12,6 @@ angular.module('ngView', [],
                     var mapping =
                         [
                             ["home", cachify("built/view-home.html"), HomeCntl]
-,["home", cachify("built/view-home.html"), HomeCntl]
 ,["aboutus", cachify("built/view-aboutus.html")]
 ,["pd", cachify("built/view-pd.html")]
 ,["resources", cachify("built/view-resources.html"), ResourcesCntl]
@@ -43,7 +42,7 @@ angular.module('ngView', [],
     
                     $routeProvider.otherwise( { 
                         templateUrl: '//' + document.location.host +
-                            '/built/view-home.html', controller: HomeCntl });
+                            cachify('/built/view-home.html'), controller: HomeCntl });
     
                     $locationProvider.html5Mode(true);
                     // console.log($locationProvider.hashPrefix());

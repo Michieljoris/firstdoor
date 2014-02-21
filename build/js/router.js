@@ -28,7 +28,7 @@ angular.module('ngView', [],
     
                     $routeProvider.otherwise( { 
                         templateUrl: '//' + document.location.host +
-                            '/built/view-home.html', controller: HomeCntl });
+                            cachify('/built/view-home.html'), controller: HomeCntl });
     
                     $locationProvider.html5Mode(true);
                     // console.log($locationProvider.hashPrefix());

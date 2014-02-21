@@ -13,6 +13,7 @@ var server = require('bb-server'),
 ;
 
  
+var develop_mode = process.env.DEVELOP; 
 //TODO: limit sending of files to certain mimetypes and/or extensions
 //TODO: option to not send mimeless files found in allowable directories.
 //TODO: send certain files directly, bypassing cache with certain
@@ -65,10 +66,8 @@ var options = {
         stamped: { expiresIn: '1y' },
         prerender: { expiresIn: '1d'},
         //static resources, should be served from cookieless domain:
-    
-        
-        "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
-        "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
+        // "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
+        // "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
         //but possibly not when going through cloudflare:
         // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
         "pdf doc docx": { expiresIn: "2h" },
@@ -105,17 +104,17 @@ var options = {
     // ,minify: true //html, js and css
     // ,zip: true //compress when enconding is accepted by client
     //or for more finegrained control define the recast option instead:
-    // ,recast: {
-    //     transpile: ['jade', 'less', 'stylus', 'sweetjs',
-    //                 // 'typescript', 'coffeescript',
-    //                 'markdown' ], 
-    //     // transpile: [],  //TODO add all current supported file types
+    ,recast: {
+        // transpile: ['jade', 'less', 'stylus', 'sweetjs',
+        //             // 'typescript', 'coffeescript',
+        //             'markdown' ], 
+        // transpile: [],  //TODO add all current supported file types
         
-    //     // minify: [],
-    //     minify: ['js', 'css' ] //js, css, html
-    //     ,zip: /text|javascript|json/ //regex on the mimetype
-    //     ,verbose: true
-    // }
+        // minify: [],
+        minify: !develop_mode ? ['js', 'css' ] : [] //js, css, html
+        ,zip: !develop_mode ? /text|javascript|json/ : ''//regex on the mimetype
+        ,verbose: develop_mode
+    }
     
     //if spa is true all requests that don't seem to be requests for a file with
     //a mimetype are redirected to a request for just one file. By default this
