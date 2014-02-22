@@ -56,8 +56,20 @@ function vimeoLoadThumb(index, video_id){
 
 function ResourcesCntl($scope, $route, $routeParams, $location) {
     console.log('resource controller');
+    var path = $location.$$path.split('/').filter(function(e) { return e; });
+    var page = path[0] || 'home';
+    console.log('page in resources cntl is ', page, path);
     
-    $scope.page = greendoor[$location.$$path];
+    $scope.page = greendoor[page] || greendoor['home'];
+    
+    var section = $routeParams.section || $scope.page.default;
+    console.log('section:', section);
+    
+    $scope.page = greendoor[page] || greendoor['home'];
+    
+    document.title = getPrettyTitle(page, section);
+    
+    // $scope.page = greendoor[$location.$$path];
     $(".menu li>ul").addClass('hide');
     setTimeout(function() {
         $(".menu li>ul").removeClass('hide');
@@ -71,7 +83,7 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     // $(".menu #" + lastRoute.slice(1)).attr("class", "inactive");
     // lastRoute = $location.$$url;
     
-    setActiveTab($location);
+    setActiveTab(page);
     // var newRoute = $location.$$path.slice(1);
     // $(".menu #" + newRoute).attr("class", "active");
     // if (lastRoute !== newRoute)
@@ -168,30 +180,34 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     // });
     $scope.getHeaderImage = function() {
         // console.log('get image header for:', $location.$$path, $location.$$hash);
-        var page = headerImages[$location.$$path];
-        if (!page) {
+        // var images = headerImages[$location.$$path];
+        
+        var images = headerImages[page] || headerImages['home'];
+        if (!images) {
             console.warn("WARNING: header images for page " +
-                         $location.$$path + " don't exist");
+                         page + " don't exist");
             return "";
         }
-        var imageSrc = page[$location.$$hash] || page["*"];
+        // var imageSrc = page[$location.$$hash] || page["*"];
+        var imageSrc = images[section] || images["*"];
+        // var imageSrc = images[$routeParams.section] || images["*"];
         // console.log(imageSrc);
         if (!imageSrc)
-            console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+            console.warn("WARNING: header image for " + section + " doesn't exist");
         // return "images/slides/tab_professional_development.jpg";
         return cachify(imageSrc);
     };
     
     $scope.getPageClass = function() {
-        var path = $location.$$path;
-        if (path) path = path.slice(1);
-        console.log(path);
+        var path = page;
+        // if (path) path = path.slice(1);
+        // console.log(path);
         return 'doorlinks-' + path;
     };
     
     
     $scope.isSelected = function(fullPath) {
-        if ($location.$$url === '/' + fullPath) return "selected";
+        if ($location.$$url === '/' + fullPath || fullPath === page + '/' + section) return "selected";
         else return "";
     };
     
@@ -199,7 +215,8 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
         // console.log('id=', id);
         // console.log('hash=', $location.$$hash);
         if ($routeParams.page && $routeParams.page === id) return true;
-        else return $location.$$hash === id;
+        else return section === id;
+        // else return $location.$$hash === id;
     };
     
     $scope.sent = false;

@@ -11,7 +11,7 @@
       <ul>
 	<div ng-repeat="link in page.links">
 	<li ng-class="isSelected(link.route)">
-	  <a ng-href="/{{link.route}}">{{link.label}}</a>
+	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; &apos;_self&apos; || &apos;&apos;}}">{{link.label}} </a>
 	  <ul> 
 	    <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
 	      
@@ -132,7 +132,7 @@
 <div ng-show="isShow(&apos;asqa&apos;)">
   <div id="asqa--">
 <!--partial:html/asqa.html-->
-Download pdf file: <a href="__883eed4b2d/documents/ASQA_Audit_Report.pdf">Australian Skills Quality
+Download pdf file: <a href="__883eed4b2d/documents/ASQA_Audit_Report.pdf" target="_self">Australian Skills Quality
   Authority audit summary</a>
 </div>
 </div>
@@ -143,6 +143,9 @@ Download pdf file: <a href="__883eed4b2d/documents/ASQA_Audit_Report.pdf">Austra
   <div id="quiz--"> </div>
 </div>
 
+
+<div scroll="" id="welcome404"></div>
+<div ng-show="is404()">This page does not exist..</div>
 </div>
     <div id="rightBar--" class="span2">
 <!--partial:html/rightbar.html-->
@@ -171,7 +174,7 @@ Download pdf file: <a href="__883eed4b2d/documents/ASQA_Audit_Report.pdf">Austra
 <p>June 16: Foster learning and development</p>
 <p>July 7: Healthy food and drinks</p>
 <p>July 21: Develop cultural competence</p>
-<p>See <a href="#!/courses#intro">more</a>.</p>
+<p>See <a href="courses/intro">more</a>.</p>
 </div>
 
 </div>

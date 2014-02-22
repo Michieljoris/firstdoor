@@ -6,7 +6,7 @@
       <ul>
 	<div ng-repeat="link in page.links">
 	<li ng-class="isSelected(link.route)" >
-	  <a ng-href="/{{link.route}}">{{link.label}}</a>
+	  <a ng-href="/{{link.route}}" target="{{link.file && '_self' || ''}}">{{link.label}} </a>
 	  <ul> 
 	    <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
 	      

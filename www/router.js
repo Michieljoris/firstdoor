@@ -36,9 +36,16 @@ angular.module('ngView', [],
                         ];
     
                     mapping.forEach(function(m) {
-                        $routeProvider.when('/' + m[0], { 
-                            templateUrl: '//' + document.location.host + '/' + m[1], controller: m[2] ? m[2] : DefaultCntl });
+                        var route ='/' + m[0];
+                        $routeProvider.when(route,
+                                            { templateUrl: '//' + document.location.host + '/' + m[1],
+                                              controller: m[2] ? m[2] : DefaultCntl });
+                        route ='/' + m[0] + '/:section';
+                        $routeProvider.when(route,
+                                            { templateUrl: '//' + document.location.host + '/' + m[1],
+                                              controller: m[2] ? m[2] : DefaultCntl });
                     });
+                    
     
                     $routeProvider.otherwise( { 
                         templateUrl: '//' + document.location.host +

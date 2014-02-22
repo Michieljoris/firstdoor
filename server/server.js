@@ -14,6 +14,7 @@ var server = require('bb-server'),
 
  
 var develop_mode = process.env.DEVELOP; 
+develop_mode = false;
 //TODO: limit sending of files to certain mimetypes and/or extensions
 //TODO: option to not send mimeless files found in allowable directories.
 //TODO: send certain files directly, bypassing cache with certain
@@ -62,18 +63,18 @@ var options = {
     //sent out with them and how long resources are kept in the server cache. If
     //true defaults to ((m)inutes, (h)ours, (d)ays, (w)weeks, (y)ears):
     // ,cache: false
-    ,cache: {
-        stamped: { expiresIn: '1y' },
-        prerender: { expiresIn: '1d'},
-        //static resources, should be served from cookieless domain:
-        // "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
-        // "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
-        //but possibly not when going through cloudflare:
-        // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
-        "pdf doc docx": { expiresIn: "2h" },
-        other: { expiresIn: '0m'}
-        // cacheDir: "./cache"
-    }
+    // ,cache: {
+    //     stamped: { expiresIn: '1y' },
+    //     prerender: { expiresIn: '1d'},
+    //     //static resources, should be served from cookieless domain:
+    //     // "css js jpg jpeg gif ico png bmp pict csv doc pdf pls ppt tif tiff eps swf": { expiresIn: "1d" },
+    //     // "midi mid ttf eot woff svg svgz webp docx xlsx xls pptx ps" : { expiresIn: "1d" },
+    //     //but possibly not when going through cloudflare:
+    //     // https://support.cloudflare.com/hc/en-us/articles/200169816-Can-I-serve-a-cookieless-domain-or-subdomain-through-CloudFlare-
+    //     "pdf doc docx": { expiresIn: "2h" },
+    //     other: { expiresIn: '0m'}
+    //     // cacheDir: "./cache"
+    // }
     
     //if set to true to the server will try to remove a stamp from request paths
     //before processing them. This also enables cache control for the response

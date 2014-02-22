@@ -1,3 +1,6 @@
+404 for resources/bla enrol/bla contactus/bla
+links to docs on enrol page on phone and tablet (green door goes away then)
+
 Don't forget to set the Mailgun pwd as an environment variable: MAILGUN_PWD
 
     http://www.openwebanalytics.com/

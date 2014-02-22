@@ -5900,7 +5900,7 @@ myAppModule.directive('fixscrollright',
                                    parent = angular.element(el.parent()),
                                    currentOffsetTop = el.offset().top-40;
                                    // console.log('getting offset', currentOffsetTop);
-                                   // console.log('getting bottom offset', $('#bottomContainer').offset());
+                                   // console.log('getting bottom offset', $('/bottomContainer').offset());
                                    var  origCss = {
                                        position: "static",
                                        width: getParentWidth()
@@ -5933,7 +5933,7 @@ myAppModule.directive('fixscrollright',
 
                                    function handleSnapping() {
                                        // console.log(el.offset().top + 450);
-                                       var bottom = $('#bottomContainer').offset().top;
+                                       var bottom = $('/bottomContainer').offset().top;
                                        var door = el.offset().top + 450;
                                        // var overlapping = door - bottom;
                                        // console.log(overlapping, el.offset().top);
@@ -5942,7 +5942,7 @@ myAppModule.directive('fixscrollright',
                                        // console.log(-450 -40 - window.scrollTop() +bottom);
                                        var overlapping = (-450 -60 - window.scrollTop() +bottom);
                                        // console.log(overlapping);
-                                       // console.log('getting bottom offset', $('#bottomContainer').offset());
+                                       // console.log('getting bottom offset', $('/bottomContainer').offset());
                                        // console.log(window.scrollTop(), currentOffsetTop);
                                        //  if (overlapping >0 || el.offset().top + 450 > 1223) {
                                        //      el.css(origCss);
@@ -5987,7 +5987,7 @@ myAppModule.directive('fixscroll',
                                    parent = angular.element(el.parent()),
                                        currentOffsetTop = el.offset().top-40;
                                    // console.log('getting offset', currentOffsetTop);
-                                   // console.log('getting bottom offset', $('#bottomContainer').offset());
+                                   // console.log('getting bottom offset', $('/bottomContainer').offset());
                                    var  origCss = {
                                        position: "static",
                                        width: getParentWidth()
@@ -6020,7 +6020,7 @@ myAppModule.directive('fixscroll',
 
                                    function handleSnapping() {
                                        // console.log(el.offset().top + 450);
-                                       var bottom = $('#bottomContainer').offset().top;
+                                       var bottom = $('/bottomContainer').offset().top;
                                        var door = el.offset().top + 450;
                                        // var overlapping = door - bottom;
                                        // console.log(overlapping, el.offset().top);
@@ -6029,7 +6029,7 @@ myAppModule.directive('fixscroll',
                                        // console.log(-450 -40 - window.scrollTop() +bottom);
                                        var overlapping = (-450 -60 - window.scrollTop() +bottom);
                                        // console.log(overlapping);
-                                       // console.log('getting bottom offset', $('#bottomContainer').offset());
+                                       // console.log('getting bottom offset', $('/bottomContainer').offset());
                                        // console.log(window.scrollTop(), currentOffsetTop);
                                        //  if (overlapping >0 || el.offset().top + 450 > 1223) {
                                        //      el.css(origCss);
@@ -6069,7 +6069,7 @@ myAppModule.directive('fixscroll',
 //         // $location.hash($routeParams.scrollTo);
 //         // $anchorScroll();  
 //         var hash = $location.$$hash;
-//         var target_offset = angular.element("#" + hash);
+//         var target_offset = angular.element("/" + hash);
             
 //         console.log('offset: ', target_offset, target_offset.offset());
     
@@ -6172,29 +6172,29 @@ myAppModule.directive('scroll',
 // 	yt_html = yt_html + "<li><a onclick='change_embeded(\"" + yt_videos[num] + "\")'><img src='http://img.youtube.com/vi/"+yt_videos[num]+"/2.jpg' class='myimage' style='max-height:75px;' /></a></li>";
 //     }
 	
-//     jQuery('#yt_container').html('<div id="yt_videosurround"><div id="yt_embededvideo"><object width="'+ yt_width +'" height="'+ yt_height +'"><param name="movie" value="http://www.youtube.com/v/'+ yt_videos[0] +'?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+ yt_videos[0] +'?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="'+ yt_width +'" height="'+ yt_height +'" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed></object></div></div><ul id="mycarousel" class="jcarousel-skin-tango">'+yt_html+'</ul>');
+//     jQuery('/yt_container').html('<div id="yt_videosurround"><div id="yt_embededvideo"><object width="'+ yt_width +'" height="'+ yt_height +'"><param name="movie" value="http://www.youtube.com/v/'+ yt_videos[0] +'?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+ yt_videos[0] +'?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="'+ yt_width +'" height="'+ yt_height +'" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed></object></div></div><ul id="mycarousel" class="jcarousel-skin-tango">'+yt_html+'</ul>');
 //     var embeded_cssObj = {
 // 	'width' : yt_width,
 // 	'height' : yt_height
 //     } 
-//     jQuery('#yt_embededvideo').css(embeded_cssObj);
-//     jQuery('#yt_videosurround').css(embeded_cssObj);
-//     jQuery('#mycarousel').jcarousel({
+//     jQuery('/yt_embededvideo').css(embeded_cssObj);
+//     jQuery('/yt_videosurround').css(embeded_cssObj);
+//     jQuery('/mycarousel').jcarousel({
 //     	wrap: 'circular'
 //     });
     
 //     function change_embeded(video_id){
-// 	jQuery('#yt_embededvideo').html('<object width="'+ yt_width +'" height="'+ yt_height +'"><param name="movie" value="http://www.youtube.com/v/'+ video_id +'?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+ video_id +'?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="'+ yt_width +'" height="'+ yt_height +'" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed></object>');
+// 	jQuery('/yt_embededvideo').html('<object width="'+ yt_width +'" height="'+ yt_height +'"><param name="movie" value="http://www.youtube.com/v/'+ video_id +'?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+ video_id +'?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="'+ yt_width +'" height="'+ yt_height +'" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed></object>');
 //     }
 
 // }
 
 
 var nrtlogo_allowed = [
-    "/courses#intro",
-    "/courses#children_ecec",
-    "/courses#diploma_management",
-    "/courses#certivtraining"
+    "/courses/intro",
+    "/courses/children_ecec",
+    "/courses/diploma_management",
+    "/courses/certivtraining"
     ];
 
 //Controllers
@@ -6216,7 +6216,7 @@ function MainCntl($scope, $location) {
     };
     
     $scope.show_events = function() {
-         return $location.$$url === "/home#welcome";
+         return $location.$$url === "/home/welcome";
         };
     
     
@@ -6246,17 +6246,17 @@ function MainCntl($scope, $location) {
     //     //prevent the default action for the click event
     //     event.preventDefault();
         
-    //     //get the full url - like mysitecom/index.htm#home
+    //     //get the full url - like mysitecom/index.htm/home
     //     // var full_url = this.href;
         
-    //     // //split the url by # and get the anchor target name - home in mysitecom/index.htm#home
-    //     // var parts = full_url.split("#");
+    //     // //split the url by / and get the anchor target name - home in mysitecom/index.htm/home
+    //     // var parts = full_url.split("/");
     //     // console.log(parts);
     //     // var trgt = parts[parts.length-1];
         
     //     var hash = $scope.$location.$$hash;
     //     //get the top offset of the target anchor
-    //     var target_offset = $("#"+hash).offset();
+    //     var target_offset = $("/"+hash).offset();
     //     if (target_offset) {
     //         var target_top = target_offset.top;
     //         console.log('scrolling', hash, target_top);
@@ -6274,48 +6274,48 @@ var greendoor = {
     '/home':{
         heading: '',
         links:    [
-            { label: 'Welcome', route: 'home#welcome', scroll: true}
-            ,{ label: 'Specialists in Early Childhood training and development', route: 'home#specialists', scroll: true}
-            ,{ label: 'Engaging resources and environments', route: 'home#engaging', scroll: true}
-            ,{ label: 'Your personal mentor ', route: 'home#mentor', scroll: true}
-            ,{ label: 'Constructive and timely assessment', route: 'home#constructive', scroll: true}
-            ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home#asqa', scroll: true}
-            // ,{ label: 'Quiz: discover your preferred learning style', route: 'home#quiz', scroll: true}
+            { label: 'Welcome', route: 'home/welcome', scroll: true}
+            ,{ label: 'Specialists in Early Childhood training and development', route: 'home/specialists', scroll: true}
+            ,{ label: 'Engaging resources and environments', route: 'home/engaging', scroll: true}
+            ,{ label: 'Your personal mentor ', route: 'home/mentor', scroll: true}
+            ,{ label: 'Constructive and timely assessment', route: 'home/constructive', scroll: true}
+            ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
+            // ,{ label: 'Quiz: discover your preferred learning style', route: 'home/quiz', scroll: true}
         ]
     }
     ,'/pd':{
         heading: '',
        
         links:    [
-            { label: 'Tailored workshops', route: 'pd#intro', scroll: true}
-            ,{ label: 'The inspired educator', route: 'pd#inspired', scroll: true}
-            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
-            ,{ label: 'Environment and experiences', route: 'pd#environment', scroll: true}
-            ,{ label: 'Developing cooperative behaviour', route: 'pd#coop', scroll: true}
-            ,{ label: 'Evaluation and reflective practice', route: 'pd#evaluation', scroll: true}
-            ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
-            ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
-            ,{ label: 'Customised workshop', route: 'pd#customised', scroll: true}
-            ,{ label: 'Fees', route: 'pd#pdfees', scroll: true}
+            { label: 'Tailored workshops', route: 'pd/intro', scroll: true}
+            ,{ label: 'The inspired educator', route: 'pd/inspired', scroll: true}
+            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd/observing', scroll: true}
+            ,{ label: 'Environment and experiences', route: 'pd/environment', scroll: true}
+            ,{ label: 'Developing cooperative behaviour', route: 'pd/coop', scroll: true}
+            ,{ label: 'Evaluation and reflective practice', route: 'pd/evaluation', scroll: true}
+            ,{ label: 'Children at risk', route: 'pd/children', scroll: true}
+            ,{ label: 'Identify and manage risk', route: 'pd/risk', scroll: true}
+            ,{ label: 'Customised workshop', route: 'pd/customised', scroll: true}
+            ,{ label: 'Fees', route: 'pd/pdfees', scroll: true}
             // ,{ label: 'Fees', route: 'documents/Professional_Development_fees.docx', scroll: true}
         ]
     }
     ,'/aboutus': {
         heading: ''
         ,links: [
-            // { label: 'Our company', route: 'aboutus#company', scroll: true
+            // { label: 'Our company', route: 'aboutus/company', scroll: true
             //  } 
               // ,sub: [
                   // { label: 'Markdown editor', route: 'epic'}
-                  { label: 'Vision', icon: '', route: 'aboutus#vision'}
-                  ,{ label: 'Mission', route: 'aboutus#mission'}
-                  ,{ label: 'Our student approach', route: 'aboutus#approach'}
-                  ,{ label: 'Values', route: 'aboutus#values'}
+                  { label: 'Vision', icon: '', route: 'aboutus/vision'}
+                  ,{ label: 'Mission', route: 'aboutus/mission'}
+                  ,{ label: 'Our student approach', route: 'aboutus/approach'}
+                  ,{ label: 'Values', route: 'aboutus/values'}
               // ]
             // }
-            ,{ label: 'Our name and logo', route: 'aboutus#namelogo', scroll: true}
-            ,{ label: 'Our people', route: 'aboutus#people', scroll: true}
-            ,{ label: 'Policies', route: 'aboutus#policies'}
+            ,{ label: 'Our name and logo', route: 'aboutus/namelogo', scroll: true}
+            ,{ label: 'Our people', route: 'aboutus/people', scroll: true}
+            ,{ label: 'Policies', route: 'aboutus/policies'}
             
            
         ]
@@ -6323,16 +6323,16 @@ var greendoor = {
         ,'/resources':   {
         heading: ''
             ,links: [
-                { label: 'Motivation', route: 'resources#motivation', scroll: true
+                { label: 'Motivation', route: 'resources/motivation', scroll: true
                 }
-                ,{ label: 'Early childhood', route: 'resources#earlychildhood', scroll: true
+                ,{ label: 'Early childhood', route: 'resources/earlychildhood', scroll: true
                    // ,sub: [
                    //     { label: 'Educational leaders', route: 'resources'}
                    // ]
                  }
-                ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
-                ,{ label: 'Learning', route: 'resources#learning', scroll:true}
-                ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
+                ,{ label: 'Learning organisations', route: 'resources/learningorganisations', scroll:true}
+                ,{ label: 'Learning', route: 'resources/learning', scroll:true}
+                ,{ label: 'Leadership and Management', route: 'resources/leadership', scroll:true}
                 // ,{ label: 'Quiz', route: 'quiz'}
             ]
     }
@@ -6340,16 +6340,16 @@ var greendoor = {
         heading: ''
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Accredited training', route: 'courses#intro',
+            { label: 'Accredited training', route: 'courses/intro',
               scroll: true}
-            ,{ label: 'Diploma of Early Childhood Education and Care', route: 'courses#children_ecec',
+            ,{ label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
               scroll: true}
-            ,{ label: 'Diploma of Management ', route: 'courses#diploma_management', scroll: true}
-            ,{ label: 'Certificate IV in Training and Assessment', route: 'courses#certivtraining', scroll: true}
-            ,{ label: 'Recognised Prior Learning', route: 'courses#priorlearning', scroll: true}
-            ,{ label: 'Flexi or structured training plans', route: 'courses#trainingplans', scroll: true}
-            ,{ label: 'Student fees', route: 'courses#studentfees', scroll: true}
-            // ,{ label: 'Aged care', route: 'courses#agedcare'}
+            ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
+            ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+            ,{ label: 'Recognised Prior Learning', route: 'courses/priorlearning', scroll: true}
+            ,{ label: 'Flexi or structured training plans', route: 'courses/trainingplans', scroll: true}
+            ,{ label: 'Student fees', route: 'courses/studentfees', scroll: true}
+            // ,{ label: 'Aged care', route: 'courses/agedcare'}
         ]
 
         
@@ -6478,10 +6478,12 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
                          $location.$$path + " don't exist");
             return "";
         }
-        var imageSrc = page[$location.$$hash] || page["*"];
+        // var imageSrc = page[$location.$$hash] || page["*"];
+        var imageSrc = page[$routeParams.section] || page["*"];
         // console.log(imageSrc);
         if (!imageSrc)
-            console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+            // console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+            console.warn("WARNING: header image for " + $routeParams.section + " doesn't exist");
         // return "images/slides/tab_professional_development.jpg";
         return cachify(imageSrc);
     };
@@ -6501,8 +6503,11 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     $scope.isShow = function(id) {
         // console.log('id=', id);
         // console.log('hash=', $location.$$hash);
-        if ($routeParams.page && $routeParams.page === id) return "selected";
-        else return $location.$$hash === id ? "selected" : "";
+        
+        if ($routeParams.page && $routeParams.page === id) return true;
+        else return $routeParams.section === id;
+        // if ($routeParams.page && $routeParams.page === id) return "selected";
+        // else return $location.$$hash === id ? "selected" : "";
     };
     
     
@@ -6719,10 +6724,11 @@ EpicCntl.$inject = ['$scope', '$routeParams'];
 function HomeCntl($scope, $routeParams, $location) {
     // console.log(' Home controller..', $location);
     console.log(' Home controller..');
+    // console.log('routeParams:', $routeParams.section, $location);
     if (!$location.$$url || $location.$$url === '/') {
-     $location.$$url="/home#welcome";   
-        $location.$$hash = 'welcome';
-        $location.$$path = '/home';
+     $location.$$url="/home/welcome";   
+        // $location.$$hash = 'welcome';
+        $location.$$path = '/home/welcome';
     }
     $scope.page = greendoor[$location.$$path ] || greendoor['/home'];
     
@@ -6788,7 +6794,8 @@ function HomeCntl($scope, $routeParams, $location) {
                          $location.$$path + " don't exist");
             return "";
         }
-        var imageSrc = page[$location.$$hash] || page["*"];
+        // var imageSrc = page[$location.$$hash] || page["*"];
+        var imageSrc = page[$routeParams.$$hash] || page["*"];
         // console.log(imageSrc);
         if (!imageSrc)
             console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
@@ -6799,9 +6806,11 @@ function HomeCntl($scope, $routeParams, $location) {
     
     $scope.isShow = function(id) {
         // console.log('id=', id);
+        // console.log('routeParams=', $routeParams.section);
         // console.log('hash=', $location.$$hash);
+        // if ($routeParams.page && $routeParams.page === id) return true;
         if ($routeParams.page && $routeParams.page === id) return true;
-        else return $location.$$hash === id;
+        else return $routeParams.section === id;
     };
     
     $scope.sent = false;
@@ -7780,7 +7789,9 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
                          $location.$$path + " don't exist");
             return "";
         }
-        var imageSrc = page[$location.$$hash] || page["*"];
+        // var imageSrc = page[$location.$$hash] || page["*"];
+        
+        var imageSrc = page[$routeParams.$$hash] || page["*"];
         // console.log(imageSrc);
         if (!imageSrc)
             console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
@@ -8001,9 +8012,13 @@ angular.module('ngView', [],
                         ];
     
                     mapping.forEach(function(m) {
-                        $routeProvider.when('/' + m[0], { 
-                            templateUrl: '//' + document.location.host + '/' + m[1], controller: m[2] ? m[2] : DefaultCntl });
+                        var route ='/' + m[0] + '/:section';
+                        console.log(route);
+                        $routeProvider.when(route,
+                                            { templateUrl: '//' + document.location.host + '/' + m[1],
+                                              controller: m[2] ? m[2] : DefaultCntl });
                     });
+                    
     
                     $routeProvider.otherwise( { 
                         templateUrl: '//' + document.location.host +

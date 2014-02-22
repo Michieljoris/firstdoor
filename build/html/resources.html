@@ -8,21 +8,23 @@
 	<div ng-switch on="video.provider" >
 	  <span ng-switch-when="text" ng-bind-html-unsafe="video.title"></span>
           <span ng-switch-default>
-	    <a id="videoTitle" href="#" ng-click="open($event, video)" ng-bind-html-unsafe="video.title"> </a>
+	    <a id="videoTitle"  ng-click="open($event, video)" ng-bind-html-unsafe="video.title"
+	       style="cursor:pointer"
+	       > </a>
 	  </span>
 	</div>
 	<div class="container" >
 	  <div class="row" >
 	    <div ng-switch on="video.provider" class="span1" >
-              <a ng-switch-when="youtube" href="#"
+              <a ng-switch-when="youtube"  style="cursor:pointer"
 		 ng-click="open($event, video)">
 		
 		<div class="video-thumbnail embed-container ratio-4-3 ">     
-		<img href="#" ng-src="http://img.youtube.com/vi/{{video.id}}/2.jpg"  
+		<img href="" ng-src="http://img.youtube.com/vi/{{video.id}}/2.jpg"  
 		     class="mymage" style="max-height:75px;" /> 
 		</div>
 	      </a>
-              <a ng-switch-when="vimeo" href="#"
+              <a ng-switch-when="vimeo"  style="cursor:pointer"
 		ng-click="open($event, video)">
 		<div id="{{video.id}}" 
 		     class="video-thumbnail embed-container ratio-4-3">

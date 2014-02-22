@@ -335,32 +335,36 @@ myAppModule.directive('scroll',
 
 
 var nrtlogo_allowed = [
-    "/courses#intro",
-    "/courses#children_ecec",
-    "/courses#diploma_management",
-    "/courses#certivtraining"
+    "/courses/intro",
+    "/courses/children_ecec",
+    "/courses/diploma_management",
+    "/courses/certivtraining"
     ];
 
 //Controllers
 function MainCntl($scope, $location) {
     console.log('Main controller..');
     $scope.getContactUsText = function() {
+        
+        var path = $location.$$path.split('/').filter(function(e) { return e; });
+        var page = path[0] || 'home';
         // console.log('route' ,$location.path);
         var strings = {
-            '/home':'Request your First Door ' +
+            'home':'Request your First Door ' +
                 // '<a href="documents/FirstDoor_StudentHandbook.pdf">'+
                 'student handbook now, or phone us. We’re here to help.',
-            '/aboutus':'Contact us, we are here to help you.',
-            '/pd':'Request forms now to evaluate your Centre’s PD needs, or call us for more information',
-            '/courses': 'Request a course guide' +
+            'aboutus':'Contact us, we are here to help you.',
+            'pd':'Request forms now to evaluate your Centre’s PD needs, or call us for more information',
+            'courses': 'Request a course guide' +
                 ' and sample training plan, or phone us. We’re here to help.',
-            '/resources': 'Fill in your details to receive regular resource updates.'
+            'resources': 'Fill in your details to receive regular resource updates.'
         };
-        return strings[$location.$$path];
+        return strings[page];
     };
     
     $scope.show_events = function() {
-         return $location.$$url === "/home#welcome";
+        // console.log('show events', $location.$$url);
+         return $location.$$url === "/home/welcome";
         };
     
     
@@ -412,114 +416,158 @@ function MainCntl($scope, $location) {
 }
 MainCntl.$inject = ['$scope', '$location'];
 
+function getPrettyTitle(page, section) {
+    console.log('in pretty title', page, section);
+    var data = greendoor[page];
+    if (!page || ! data || (page === 'home' && section === 'welcome'))
+        return 'Firstdoor - Leaders in developing capability ';
+    var links = data.links;
+    if (!section || !links ) return 'Firstdoor - ' + (data.title || page);
+    var path = page + '/' + section;
+    var title;
+    Object.keys(links).some(function(l) {
+        if (links[l].route === path)  {
+            title = 'Firstdoor - ' + (data.title || page) + ': ' +  links[l].label;   
+            return true;
+        }
+        else return false;
+    });
+    return title || 'Firstdoor - Leaders in developing capability ';
+}
 
-
+var exists = {
+    home : ['welcome', 'specialists', 'mentor', 'constructive', 'asqa'],
+    aboutus : ['vision', 'mission', 'approach', 'values', 'namelogo', 'people', 'policies'],
+    pd: ['intro', 'inspired', 'observing', 'environment', 'coop', 'evaluation', 'children', 'risk', 'pdfees', 'customised'],
+    courses: ['intro', 'children_ecec', 'diploma_management', 'certivtraining', 'priorlearning', 'trainingplans', 'studentfeeds']
+    
+        
+};
+    
 var greendoor = {
-    '/home':{
+    'home':{ heading: '',
+             title: 'Home', 
+            default: 'welcome',
+             links:    [
+                 { label: 'Welcome', route: '', scroll: true}
+                 ,{ label: 'Specialists in Early Childhood training and development', route: 'home/specialists', scroll: true}
+                 ,{ label: 'Engaging resources and environments', route: 'home/engaging', scroll: true}
+                 ,{ label: 'Your personal mentor ', route: 'home/mentor', scroll: true}
+                 ,{ label: 'Constructive and timely assessment', route: 'home/constructive', scroll: true}
+                 ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
+                 // ,{ label: 'Quiz: discover your preferred learning style', route: 'home/quiz', scroll: true}
+             ]
+           }
+    ,'pd':{
+        title: 'Professional development',
         heading: '',
+        default: 'intro',
         links:    [
-            { label: 'Welcome', route: 'home#welcome', scroll: true}
-            ,{ label: 'Specialists in Early Childhood training and development', route: 'home#specialists', scroll: true}
-            ,{ label: 'Engaging resources and environments', route: 'home#engaging', scroll: true}
-            ,{ label: 'Your personal mentor ', route: 'home#mentor', scroll: true}
-            ,{ label: 'Constructive and timely assessment', route: 'home#constructive', scroll: true}
-            ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home#asqa', scroll: true}
-            // ,{ label: 'Quiz: discover your preferred learning style', route: 'home#quiz', scroll: true}
-        ]
-    }
-    ,'/pd':{
-        heading: '',
-       
-        links:    [
-            { label: 'Tailored workshops', route: 'pd#intro', scroll: true}
-            ,{ label: 'The inspired educator', route: 'pd#inspired', scroll: true}
-            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
-            ,{ label: 'Environment and experiences', route: 'pd#environment', scroll: true}
-            ,{ label: 'Developing cooperative behaviour', route: 'pd#coop', scroll: true}
-            ,{ label: 'Evaluation and reflective practice', route: 'pd#evaluation', scroll: true}
-            ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
-            ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
-            ,{ label: 'Customised workshop', route: 'pd#customised', scroll: true}
-            ,{ label: 'Fees', route: 'pd#pdfees', scroll: true}
+            { label: 'Tailored workshops', route: 'pd/intro', scroll: true}
+            ,{ label: 'The inspired educator', route: 'pd/inspired', scroll: true}
+            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd/observing', scroll: true}
+            ,{ label: 'Environment and experiences', route: 'pd/environment', scroll: true}
+            ,{ label: 'Developing cooperative behaviour', route: 'pd/coop', scroll: true}
+            ,{ label: 'Evaluation and reflective practice', route: 'pd/evaluation', scroll: true}
+            ,{ label: 'Children at risk', route: 'pd/children', scroll: true}
+            ,{ label: 'Identify and manage risk', route: 'pd/risk', scroll: true}
+            ,{ label: 'Customised workshop', route: 'pd/customised', scroll: true}
+            ,{ label: 'Fees', route: 'pd/pdfees', scroll: true}
             // ,{ label: 'Fees', route: 'documents/Professional_Development_fees.docx', scroll: true}
         ]
     }
-    ,'/aboutus': {
-        heading: ''
+    ,'aboutus': {
+        title: 'About us',
+        heading: '',
+        default: 'vision'
         ,links: [
-            // { label: 'Our company', route: 'aboutus#company', scroll: true
+            // { label: 'Our company', route: 'aboutus/company', scroll: true
             //  } 
-              // ,sub: [
-                  // { label: 'Markdown editor', route: 'epic'}
-                  { label: 'Vision', icon: '', route: 'aboutus#vision'}
-                  ,{ label: 'Mission', route: 'aboutus#mission'}
-                  ,{ label: 'Our student approach', route: 'aboutus#approach'}
-                  ,{ label: 'Values', route: 'aboutus#values'}
-              // ]
+            // ,sub: [
+            // { label: 'Markdown editor', route: 'epic'}
+            { label: 'Vision', icon: '', route: 'aboutus/vision'}
+            ,{ label: 'Mission', route: 'aboutus/mission'}
+            ,{ label: 'Our student approach', route: 'aboutus/approach'}
+            ,{ label: 'Values', route: 'aboutus/values'}
+            // ]
             // }
-            ,{ label: 'Our name and logo', route: 'aboutus#namelogo', scroll: true}
-            ,{ label: 'Our people', route: 'aboutus#people', scroll: true}
-            ,{ label: 'Policies', route: 'aboutus#policies'}
+            ,{ label: 'Our name and logo', route: 'aboutus/namelogo', scroll: true}
+            ,{ label: 'Our people', route: 'aboutus/people', scroll: true}
+            ,{ label: 'Policies', route: 'aboutus/policies'}
             
            
         ]
-       } 
-        ,'/resources':   {
-        heading: ''
-            ,links: [
-                { label: 'Motivation', route: 'resources#motivation', scroll: true
-                }
-                ,{ label: 'Early childhood', route: 'resources#earlychildhood', scroll: true
-                   // ,sub: [
-                   //     { label: 'Educational leaders', route: 'resources'}
-                   // ]
-                 }
-                ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
-                ,{ label: 'Learning', route: 'resources#learning', scroll:true}
-                ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
-                // ,{ label: 'Quiz', route: 'quiz'}
-            ]
+    } 
+    ,'resources':   {
+        title: 'Resources',
+        heading: '',
+        default: 'motivation'
+        ,links: [
+            { label: 'Motivation', route: 'resources/motivation', scroll: true
+            }
+            ,{ label: 'Early childhood', route: 'resources/earlychildhood', scroll: true
+               // ,sub: [
+               //     { label: 'Educational leaders', route: 'resources'}
+               // ]
+             }
+            ,{ label: 'Learning organisations', route: 'resources/learningorganisations', scroll:true}
+            ,{ label: 'Learning', route: 'resources/learning', scroll:true}
+            ,{ label: 'Leadership and Management', route: 'resources/leadership', scroll:true}
+            // ,{ label: 'Quiz', route: 'quiz'}
+        ]
     }
-    ,'/courses': {
-        heading: ''
+    ,'courses': {
+        title: 'Accredited training',
+        heading: '',
+        default: 'intro'
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Accredited training', route: 'courses#intro',
+            { label: 'Accredited training', route: 'courses/intro',
               scroll: true}
-            ,{ label: 'Diploma of Early Childhood Education and Care', route: 'courses#children_ecec',
-              scroll: true}
-            ,{ label: 'Diploma of Management ', route: 'courses#diploma_management', scroll: true}
-            ,{ label: 'Certificate IV in Training and Assessment', route: 'courses#certivtraining', scroll: true}
-            ,{ label: 'Recognised Prior Learning', route: 'courses#priorlearning', scroll: true}
-            ,{ label: 'Flexi or structured training plans', route: 'courses#trainingplans', scroll: true}
-            ,{ label: 'Student fees', route: 'courses#studentfees', scroll: true}
-            // ,{ label: 'Aged care', route: 'courses#agedcare'}
+            ,{ label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
+               scroll: true}
+            ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
+            ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+            ,{ label: 'Recognised Prior Learning', route: 'courses/priorlearning', scroll: true}
+            ,{ label: 'Flexi or structured training plans', route: 'courses/trainingplans', scroll: true}
+            ,{ label: 'Student fees', route: 'courses/studentfees', scroll: true}
+            // ,{ label: 'Aged care', route: 'courses/agedcare'}
         ]
 
         
     } 
-    ,'/enrol': {
-        heading: ''
+    ,'enrol': {
+        title: 'Enrol',
+        heading: '',
+        default: ''
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Student handbook (pdf)', route: cachify('documents/FirstDoor_StudentHandbook.pdf'), scroll: true}
-            ,{ label: 'Diploma ECEC course guide (pdf)', route: cachify('documents/Diploma_Early_Childhood_Course_Guide.pdf'), scroll: true}
-            ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', route: cachify('documents/Dip ECEC enrolment print version.pdf'), scroll: true}
-            ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', route: cachify('documents/Dip ECEC enrolment electronic version.docx'), scroll: true}
-            ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', route: cachify('documents/Individual Units enrolment print version.pdf'), scroll: true}
-            ,{ label: 'Enrolment fom: Individual unit/s - computer version (Word doc)', route: cachify('documents/Individual Units enrolment electronic version.docx'), scroll: true}
+            { label: 'Student handbook (pdf)', file: true, route: cachify('documents/FirstDoor_StudentHandbook.pdf'), scroll: true}
+            ,{ label: 'Diploma ECEC course guide (pdf)', file: true, route: cachify('documents/Diploma_Early_Childhood_Course_Guide.pdf'), scroll: true}
+            ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', file: true, route: cachify('documents/Dip ECEC enrolment print version.pdf'), scroll: true}
+            ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', file: true, route: cachify('documents/Dip ECEC enrolment electronic version.docx'), scroll: true}
+            ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', file: true, route: cachify('documents/Individual Units enrolment print version.pdf'), scroll: true}
+            ,{ label: 'Enrolment fom: Individual unit/s - computer version (Word doc)', file: true, route: cachify('documents/Individual Units enrolment electronic version.docx'), scroll: true}
         ]
 
         
-    } 
+    }
+    ,'contactus' : {
+        title: 'Contact us'
+        
+        
+    }
+    ,'404': {
+        title: 'Not found'
+    }
     
 };
 
-function setActiveTab($location) {
-    
-    var url = $location.$$url;
-    if (!url) url = "whatever";
-    var newRoute = $location.$$path.slice(1);
+function setActiveTab(page) {
+    console.log('setting active tab to ' , page);
+    // var url = page.$$url;
+    // if (!url) url = "whatever";
+    var newRoute = page;
     // console.log('newRoute', newRoute);
     $(".menu > li > a[id*='" + newRoute+ "']").attr("class", "active");
     if (lastRoute !== newRoute)
@@ -530,7 +578,7 @@ function setActiveTab($location) {
 
 var headerImages = {
     
-    "/home": {
+    "home": {
         "*": "images/slides/tab_professional_development.jpg"
         ,specialists: "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
         ,engaging: "images/slides/tab_resources.jpg"
@@ -539,19 +587,19 @@ var headerImages = {
         ,constructive: "images/slides/home_assessment.jpg"
         // ,asqa: "images/slides/home_assessment.jpg"
     } 
-    ,"/resources": {
+    ,"resources": {
         "*": "images/slides/tab_resources.jpg"
         
     }
-    ,"/aboutus": {
+    ,"aboutus": {
         "*": 'images/slides/tab_about_us.jpg'
         
     }
-    ,"/sitemap": {
+    ,"sitemap": {
         "*": 'images/slides/tab_about_us.jpg'
         
     }
-    ,"/pd": {
+    ,"pd": {
         "*": "images/slides/tab_professional_development.jpg"
         ,inspired: "images/slides/PD_Inspired_educator.jpg"
         ,observing: "images/slides/PD_Observing_and_documenting.jpg"
@@ -562,7 +610,7 @@ var headerImages = {
         ,risk: "images/slides/PD_managing_risk.jpg"
         ,customised: ""
     }            
-    ,"/courses": {
+    ,"courses": {
         "*": "images/slides/tab_accredited_training.jpg"
         ,children_ecec: "images/slides/courses_Diploma_Childrens_services.jpg"
         ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
@@ -573,9 +621,23 @@ var headerImages = {
 
 var lastRoute='whatever';
 function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
-    console.log('default controller..');
+    console.log('default controller..', $location, $routeParams);
+    var path = $location.$$path.split('/').filter(function(e) { return e; });
+    var page = path[0] || '404';
+    // console.log('page in default cntl is ', page, path);
+    
+   
     // if ($location.$$path === '/') $location.$$path = '/home';
-    $scope.page = greendoor[$location.$$path] || greendoor['/home'];
+    
+    // $scope.page = greendoor[$location.$$path] || greendoor['/home'];
+    $scope.page = greendoor[page] || greendoor['404'];
+    
+    // console.log('$scope.page =', $scope.page);
+    var section = $routeParams.section || $scope.page.default;
+    // console.log('section in defaultcntl:', section);
+    
+    // document.title = 'Firstdoor: ' + page + '/' + section;
+    document.title = getPrettyTitle(page, section);
     // $scope.name = "BookCntl";
     // $scope.params = $routeParams;
     // console.log($location);
@@ -584,7 +646,7 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
         $(".menu li>ul").removeClass('hide');
     },1000);
     // console.log('routeparams', $routeParams);
-    setActiveTab($location);
+    setActiveTab(page);
     // console.log($location);
     // var url = $location.$$url;
     // if (!url) url = "whatever";
@@ -616,41 +678,60 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     //     });
     // });
     $scope.getHeaderImage = function() {
-        var page = headerImages[$location.$$path] || headerImages['/home'];
-        if (!page) {
+        
+        console.log('getheaderimage:', page);
+        var images = headerImages[page] || headerImages['home'];
+        console.log('getheaderimage:', images);
+        if (!images) {
             console.warn("WARNING: DefaultCntl: header images for page " +
-                         $location.$$path + " don't exist");
+                         page + " don't exist");
             return "";
         }
-        var imageSrc = page[$location.$$hash] || page["*"];
+        // var imageSrc = page[$location.$$hash] || page["*"];
+        // console.log('section:', $routeParams.section);
+        var imageSrc = images[section] || images["*"];
+        // var imageSrc = page[$routeParams.section] || page["*"];
         // console.log(imageSrc);
         if (!imageSrc)
-            console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+            // console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+            console.warn("WARNING: header image for " + section + " doesn't exist");
         // return "images/slides/tab_professional_development.jpg";
         return cachify(imageSrc);
     };
     
     $scope.isSelected = function(fullPath) {
-        if ($location.$$url === '/' + fullPath) return "selected";
+        // if ($location.$$url === '/' + fullPath) return "selected";
+        
+        if ($location.$$url === '/' + fullPath || fullPath === page + '/' + section) return "selected";
         else return "";
     };
     
     $scope.getPageClass = function() {
-        var path = $location.$$path;
-        if (path) path = path.slice(1);
+        // var path = $location.$$path;
+        var path = page;
+        // if (path) path = path.slice(1);
         console.log(path);
         return 'doorlinks-' + path;
     };
     
     $scope.isShow = function(id) {
-        // console.log('id=', id);
+        // console.log('defaultcntl: isshow: id=', id);
         // console.log('hash=', $location.$$hash);
-        if ($routeParams.page && $routeParams.page === id) return "selected";
-        else return $location.$$hash === id ? "selected" : "";
+        
+        // if ($routeParams.page && $routeParams.page === id) return true;
+        // else return $routeParams.section === id;
+        return section === id;
+        // if ($routeParams.page && $routeParams.page === id) return "selected";
+        // else return $location.$$hash === id ? "selected" : "";
+    };
+
+    $scope.is404 = function() {
+        
+        return !exists[page] || exists[page].indexOf(section) === -1;
     };
     
     
-    console.log('contactus controller');
+    // console.log('contactus controller');
     // $scope.result = "now it is working..";
     $scope.sent = false;
     // Recaptcha.create("6LfL6OASAAAAAM6YHDJmCJ-51zXY1TwCL7pL7vW5",
@@ -752,7 +833,10 @@ function contactusCntl($scope, $routeParams, $location) {
     //                  }
                     // );
     
-    setActiveTab($location);
+    
+    // document.title = 'Firstdoor: Contact us';
+    document.title = getPrettyTitle('contactus');
+    setActiveTab('contactus');
     // console.log($location);
     // var url = $location.$$url;
     // if (!url) url = "whatever";
@@ -862,18 +946,31 @@ EpicCntl.$inject = ['$scope', '$routeParams'];
 
 function HomeCntl($scope, $routeParams, $location) {
     // console.log(' Home controller..', $location);
-    console.log(' Home controller..');
+    console.log(' Home controller..', $routeParams);
+    // console.log('routeParams:', $routeParams.section, $location);
     if (!$location.$$url || $location.$$url === '/') {
-     $location.$$url="/home#welcome";   
-        $location.$$hash = 'welcome';
-        $location.$$path = '/home';
+     $location.$$url="/home/welcome";   
+        // $location.$$hash = 'welcome';
+        $location.$$path = '/home/welcome';
     }
-    $scope.page = greendoor[$location.$$path ] || greendoor['/home'];
+    
+    var path = $location.$$path.split('/').filter(function(e) { return e; });
+    var page = path[0] || '404';
+    console.log(page);
+    $scope.page = greendoor[page] || greendoor['404'];
+    console.log(page, $scope.page);
+    var section = $routeParams.section || $scope.page.default;
+    console.log('page and section in homecntl:', page, section);
+    // $scope.page = greendoor[$location.$$path ] || greendoor['/home'];
+    
+    // document.title = 'Firstdoor: ' + page + '/' + section;
+    
+    document.title = getPrettyTitle(page, section);
     
     
     
     
-    setActiveTab($location);
+    setActiveTab(page);
     // var newRoute = $location.$$path.slice(1);
     // if (!newRoute) newRoute = 'home';
     // console.log('Path is:', $location.$$path);
@@ -912,8 +1009,9 @@ function HomeCntl($scope, $routeParams, $location) {
     },1000);
     
     $scope.getPageClass = function() {
-        var path = $location.$$path;
-        if (path) path = path.slice(1);
+        // var path = $location.$$path;
+        var path = page;
+        // if (path) path = path.slice(1);
         // console.log(path);
         return 'doorlinks-' + path;
     };
@@ -925,27 +1023,41 @@ function HomeCntl($scope, $routeParams, $location) {
     };
     
     $scope.getHeaderImage = function() {
-        var page = headerImages[$location.$$path] || headerImages['/home'];
+        var images = headerImages[page] || headerImages['home'];
         
-        if (!page) {
+        if (!images) {
             console.warn("WARNING: homeCnlt: header images for page " +
-                         $location.$$path + " don't exist");
+                         page + " don't exist");
             return "";
         }
-        var imageSrc = page[$location.$$hash] || page["*"];
+        
+        // console.log('section:', $routeParams.section);
+        var imageSrc = images[section] || images["*"];
+        // var imageSrc = page[$routeParams.section] || page["*"];
+        // var imageSrc = page[$location.$$hash] || page["*"];
+        // var imageSrc = page[$routeParams.$$hash] || page["*"];
         // console.log(imageSrc);
         if (!imageSrc)
-            console.warn("WARNING: header image for " + $location.$$hash + " doesn't exist");
+            console.warn("WARNING: header image for " + section + " doesn't exist");
         // return "images/slides/tab_professional_development.jpg";
         return cachify(imageSrc);
     };
     
     
+    $scope.is404 = function() {
+        console.log (page,section,  !exists[page] || exists[page].indexOf(section) === -1);
+        return !exists[page] || exists[page].indexOf(section) === -1;
+    };
+    
+    
     $scope.isShow = function(id) {
-        // console.log('id=', id);
+        // console.log('is show: id=', id, section);
+        // console.log('routeParams=', $routeParams.section);
         // console.log('hash=', $location.$$hash);
+        // if ($routeParams.page && $routeParams.page === id) return true;
         if ($routeParams.page && $routeParams.page === id) return true;
-        else return $location.$$hash === id;
+        else return section === id;
+        // else return $routeParams.section === id;
     };
     
     $scope.sent = false;

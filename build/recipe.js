@@ -156,79 +156,79 @@ var js = [
 
 
 var mainMenuTree = [
-    { label: 'Home', icon: '', route: 'home#welcome'//href: '/'
+    { label: 'Home', icon: '', href: '/'
       
         ,sub:    [
-            // { label: 'Welcome', route: 'home#welcome', scroll: true}
-            { label: 'Specialists in Early Childhood training and development', route: 'home#specialists', scroll: true}
-            ,{ label: 'Engaging resources and environments', route: 'home#engaging', scroll: true}
-            ,{ label: 'Your personal mentor ', route: 'home#mentor', scroll: true}
-            ,{ label: 'Constructive and timely assessment', route: 'home#constructive', scroll: true}
-            // ,{ label: '', route: 'home#quiz', scroll: true}
-            // ,{ label: 'Quiz: discover your preferred learning style', route: 'home#quiz', scroll: true}
+            // { label: 'Welcome', route: 'home/welcome', scroll: true}
+            { label: 'Specialists in Early Childhood training and development', route: 'home/specialists', scroll: true}
+            ,{ label: 'Engaging resources and environments', route: 'home/engaging', scroll: true}
+            ,{ label: 'Your personal mentor ', route: 'home/mentor', scroll: true}
+            ,{ label: 'Constructive and timely assessment', route: 'home/constructive', scroll: true}
+            // ,{ label: '', route: 'home/quiz', scroll: true}
+            // ,{ label: 'Quiz: discover your preferred learning style', route: 'home/quiz', scroll: true}
             
-            ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home#asqa', scroll: true}
+            ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
         ]
        // sub: [
        //     { label: 'Contact us', route: 'contactus', scroll: true}
        //     ]
     }
     
-    ,{ label: 'About us', icon: '', route: 'aboutus#vision',
+    ,{ label: 'About us', icon: '', route: 'aboutus/vision',
        sub: [
-           { label: 'Our company', route: 'aboutus#vision', scroll: true
+           { label: 'Our company', route: 'aboutus/vision', scroll: true
              ,sub: [
-                 { label: 'Vision', icon: '', route: 'aboutus#vision'}
-                 ,{ label: 'Mission', route: 'aboutus#mission'}
-                 ,{ label: 'Our student approach', route: 'aboutus#approach'}
-                 ,{ label: 'Values', route: 'aboutus#values'}
+                 { label: 'Vision', icon: '', route: 'aboutus/vision'}
+                 ,{ label: 'Mission', route: 'aboutus/mission'}
+                 ,{ label: 'Our student approach', route: 'aboutus/approach'}
+                 ,{ label: 'Values', route: 'aboutus/values'}
                  ]
              }
-             ,{ label: 'Our name and logo', route: 'aboutus#namelogo', scroll: true}
-             ,{ label: 'Our people', route: 'aboutus#people', scroll: true}
-             ,{ label: 'First door policies', route: 'aboutus#policies', scroll: true}
-             // ,{ label: 'Our people', route: 'index.html#!/aboutus#people'}
+             ,{ label: 'Our name and logo', route: 'aboutus/namelogo', scroll: true}
+             ,{ label: 'Our people', route: 'aboutus/people', scroll: true}
+             ,{ label: 'First door policies', route: 'aboutus/policies', scroll: true}
+             // ,{ label: 'Our people', route: 'index.html/!/aboutus#people'}
            
            ]
      } 
-    ,{ label: 'Professional development', icon: '', route: 'pd#intro'
+    ,{ label: 'Professional development', icon: '', route: 'pd/intro'
        ,sub: [
-           { label: 'The inspired educator', route: 'pd#inspired', scroll: true}
-           ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd#observing', scroll: true}
-           ,{ label: 'Environment and experiences', route: 'pd#environment', scroll: true}
-           ,{ label: 'Developing cooperative behaviour', route: 'pd#coop', scroll: true}
-           ,{ label: 'Evaluation and reflective practice', route: 'pd#evaluation', scroll: true}
-           ,{ label: 'Children at risk', route: 'pd#children', scroll: true}
-           ,{ label: 'Identify and manage risk', route: 'pd#risk', scroll: true}
-           ,{ label: 'Customised workshop', route: 'pd#customised', scroll: true}
-           ,{ label: 'Fees', route: 'pd#pdfees', scroll: true}
+           { label: 'The inspired educator', route: 'pd/inspired', scroll: true}
+           ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd/observing', scroll: true}
+           ,{ label: 'Environment and experiences', route: 'pd/environment', scroll: true}
+           ,{ label: 'Developing cooperative behaviour', route: 'pd/coop', scroll: true}
+           ,{ label: 'Evaluation and reflective practice', route: 'pd/evaluation', scroll: true}
+           ,{ label: 'Children at risk', route: 'pd/children', scroll: true}
+           ,{ label: 'Identify and manage risk', route: 'pd/risk', scroll: true}
+           ,{ label: 'Customised workshop', route: 'pd/customised', scroll: true}
+           ,{ label: 'Fees', route: 'pd/pdfees', scroll: true}
        ]
      } 
-    ,{ label: 'Accredited training', icon: '', route: 'courses#intro'
+    ,{ label: 'Accredited training', icon: '', route: 'courses/intro'
        ,sub: [
-           { label: 'Diploma of Early Childhood Education and Care', route: 'courses#children_ecec',
+           { label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
              scroll: true}
-           ,{ label: 'Diploma of Management ', route: 'courses#diploma_management', scroll: true}
-           ,{ label: 'Certificate IV in Training and Assessment', route: 'courses#certivtraining', scroll: true}
-           // ,{ label: 'Aged care', route: 'courses#agedcare'}
+           ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
+           ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+           // ,{ label: 'Aged care', route: 'courses/agedcare'}
        ]
      } 
-    ,{ label: 'Resources', icon: '', route: 'resources#motivation'
+    ,{ label: 'Resources', icon: '', route: 'resources/motivation'
        ,sub: [
-           { label: 'Motivation', route: 'resources#motivation', scroll: true
+           { label: 'Motivation', route: 'resources/motivation', scroll: true
             }
-           ,{ label: 'Early childhood', route: 'resources#earlychildhood', scroll: true
+           ,{ label: 'Early childhood', route: 'resources/earlychildhood', scroll: true
               // ,sub: [
               //     { label: 'Educational leaders', route: 'resources'}
               // ]
             }
-           ,{ label: 'Learning organisations', route: 'resources#learningorganisations', scroll:true}
-           ,{ label: 'Learning', route: 'resources#learning', scroll:true
+           ,{ label: 'Learning organisations', route: 'resources/learningorganisations', scroll:true}
+           ,{ label: 'Learning', route: 'resources/learning', scroll:true
               // ,sub: [
-              //     { label: 'Quiz', route: 'resources#quiz'}
+              //     { label: 'Quiz', route: 'resources/quiz'}
               // ]
             }
-           ,{ label: 'Leadership and Management', route: 'resources#leadership', scroll:true}
+           ,{ label: 'Leadership and Management', route: 'resources/leadership', scroll:true}
            
             ,{ label: 'Quiz: discover your preferred learning style', route: 'quiz', scroll: true}
            // ,{ label: '(tryouts)' ,route: 'resources'
@@ -416,8 +416,8 @@ var exports = {
     } 
     
     //group the script and link blocks and concatenate all files listed in a block
-    // ,concatenate: !develop_mode 
-    ,concatenate: true
+    ,concatenate: !develop_mode 
+    // ,concatenate: true
     //make sure to load the resources for custom components, the files get added
     //to the first script and link blocks.
     ,extras: ['flex-slider', 'cssmenu', 'showhide']
@@ -451,6 +451,7 @@ var exports = {
         ids: {
             title: '<title>Firstdoor - Leaders in developing capability</title>'
             ,baseHref: '<base href="http://localhost:9001"">'
+            // ,baseHref: '<base href="/"">'
             // ,image_courses: '<img class="" src="images/slides/tab_accredited_training.jpg" />'
             // ,image_aboutus: '<img class="" src="images/slides/tab_about_us.jpg" />'
             // ,image_pd: '<img class="" src="images/slides/tab_professional_development.jpg" />'
