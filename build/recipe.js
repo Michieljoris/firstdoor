@@ -406,7 +406,7 @@ var exports = {
             'documents/Individual Units enrolment electronic version.docx',
             'documents/Individual Units enrolment print version.pdf',
             'images/logo.jpg',
-            'images/nrtlogoclsm.gif',
+            'images/nrtlogoclsm.png',
             'images/slides/tab_about_us.jpg',
             'images/slides/tab_accredited_training.jpg',
             'images/slides/tab_professional_development.jpg',
@@ -450,7 +450,8 @@ var exports = {
     ,partials: {
         ids: {
             title: '<title>Firstdoor - Leaders in developing capability</title>'
-            ,baseHref: '<base href="http://localhost:9001"">'
+            ,baseHref: develop_mode ? '<base href="http://localhost:9001">': '<base href="http://firstdoor.axion5.com">'
+            // ,baseHref: '<base href="http://192.168.1.184:9001">'
             // ,baseHref: '<base href="/"">'
             // ,image_courses: '<img class="" src="images/slides/tab_accredited_training.jpg" />'
             // ,image_aboutus: '<img class="" src="images/slides/tab_about_us.jpg" />'
@@ -465,23 +466,22 @@ var exports = {
             ,sharethis3: '<script type="text/javascript">stLight.options({publisher: "014e0e6b-5c75-4f02-aa39-abe6833f9f4d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>'
             // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>''
             // ,recaptcha: '<script type="text/javascript" src="js/recaptcha_ajax.js"></script>'
-            ,fragment: '<meta name="fragment" content="!">'
+            ,fragment: '<meta name="fragment" content="!"/>'
             // ,firebug: '<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js></script>"'
         }
         ,metaBlock : {
             id: 'meta',
-            tags: [ { charset:'utf-8' }
-                    ,{ content:"IE=edge,chrome=1",
-                       "http-equiv":"X-UA-Compatible"
-                     }
-                    ,{ content:"First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. ",
-                       name:"description"
-                     }
-                    ,{ name: "viewport"
-                       ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
-                    // ,{ name: "fragment"
-                    //   ,content: "!" }
-                  ]
+            tags: [ //{ charset:'utf-8' },
+                { name: "fragment" ,content: "!" },
+                { content:"IE=edge,chrome=1",
+                  "http-equiv":"X-UA-Compatible"
+                }
+                ,{ content:"First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. ",
+                   name:"description"
+                 }
+                ,{ name: "viewport"
+                   ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
+            ]
         }
         ,linkBlock:  {
             id: 'myLinkBlock',
@@ -785,15 +785,20 @@ var exports = {
                ,mapping: {
                    head: [
                        'baseHref',
-                       'title', 'meta',  'html/ieshim','skewer',
+                       'title', 'meta',
+
+                       'myLinkBlock',
+                       'html/ieshim','skewer',
                        // 'firebug',
-                       'sharethis1', 'sharethis2', 'sharethis3',
+                       // 'sharethis1', 'sharethis2', 'sharethis3',
                        // 'headJsBlock',
-                       'myLinkBlock'
                        ,'cachify'
                    ],
                   
-                   "ng:app": ['body', 'myJsBlock',
+                   "ng:app": ['body',
+                              
+                              'sharethis1', 'sharethis2', 'sharethis3',
+                              'myJsBlock',
                               // '_scriptBlock'
                               ,'html/google_analytics.html'
                              ]

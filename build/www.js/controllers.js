@@ -447,7 +447,7 @@ var exists = {
 var greendoor = {
     'home':{ heading: '',
              title: 'Home', 
-            default: 'welcome',
+            default_ie8sucks: 'welcome',  //ie8 gives error when using default as property name...
              links:    [
                  { label: 'Welcome', route: '', scroll: true}
                  ,{ label: 'Specialists in Early Childhood training and development', route: 'home/specialists', scroll: true}
@@ -461,7 +461,7 @@ var greendoor = {
     ,'pd':{
         title: 'Professional development',
         heading: '',
-        default: 'intro',
+        default_ie8sucks: 'intro',
         links:    [
             { label: 'Tailored workshops', route: 'pd/intro', scroll: true}
             ,{ label: 'The inspired educator', route: 'pd/inspired', scroll: true}
@@ -479,7 +479,7 @@ var greendoor = {
     ,'aboutus': {
         title: 'About us',
         heading: '',
-        default: 'vision'
+        default_ie8sucks: 'vision'
         ,links: [
             // { label: 'Our company', route: 'aboutus/company', scroll: true
             //  } 
@@ -501,7 +501,7 @@ var greendoor = {
     ,'resources':   {
         title: 'Resources',
         heading: '',
-        default: 'motivation'
+        default_ie8sucks: 'motivation'
         ,links: [
             { label: 'Motivation', route: 'resources/motivation', scroll: true
             }
@@ -519,7 +519,7 @@ var greendoor = {
     ,'courses': {
         title: 'Accredited training',
         heading: '',
-        default: 'intro'
+        default_ie8sucks: 'intro'
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
             { label: 'Accredited training', route: 'courses/intro',
@@ -539,7 +539,7 @@ var greendoor = {
     ,'enrol': {
         title: 'Enrol',
         heading: '',
-        default: ''
+        default_ie8sucks: ''
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
             { label: 'Student handbook (pdf)', file: true, route: cachify('documents/FirstDoor_StudentHandbook.pdf'), scroll: true}
@@ -633,8 +633,8 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
     $scope.page = greendoor[page] || greendoor['404'];
     
     // console.log('$scope.page =', $scope.page);
-    var section = $routeParams.section || $scope.page.default;
-    // console.log('section in defaultcntl:', section);
+    var section = $routeParams.section || $scope.page.default_ie8sucks; //
+    console.log('section in defaultcntl:', section);
     
     // document.title = 'Firstdoor: ' + page + '/' + section;
     document.title = getPrettyTitle(page, section);
@@ -959,7 +959,7 @@ function HomeCntl($scope, $routeParams, $location) {
     console.log(page);
     $scope.page = greendoor[page] || greendoor['404'];
     console.log(page, $scope.page);
-    var section = $routeParams.section || $scope.page.default;
+    var section = $routeParams.section || $scope.page.default_ie8sucks;
     console.log('page and section in homecntl:', page, section);
     // $scope.page = greendoor[$location.$$path ] || greendoor['/home'];
     

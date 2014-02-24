@@ -11,7 +11,7 @@
       <ul>
 	<div ng-repeat="link in page.links">
 	<li ng-class="isSelected(link.route)">
-	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; &apos;_self&apos; || &apos;&apos;}}">{{link.label}} </a>
+	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
 	  <ul> 
 	    <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
 	      
@@ -27,14 +27,14 @@
 </fixscroll>
 
 </div>
-  <div ng-show="!(isShow(&apos;pdfees&apos;) || isShow(&apos;customised&apos;))" class="span9 inline-image embed-container ratio-tabimage ">     
+  <div ng-show="!(isShow('pdfees') || isShow('customised'))" class="span9 inline-image embed-container ratio-tabimage ">     
     <img class="" ng-src="{{getHeaderImage()}}">
   </div>
   <div class="row">
     <div id="contents--" class="span7">
 <!--partial:html/pd_stitch.html-->
 <div scroll="" id="intro"></div>
-<div ng-show="isShow(&apos;intro&apos;)">
+<div ng-show="isShow('intro')">
   <div id="intro--">
 <!--partial:editable/pd/pd.html-->
 <h2>Interactive workshops tailored for your team&nbsp;</h2>
@@ -52,7 +52,7 @@
 </div>
 
 <div scroll="" id="inspired"></div>
-<div ng-show="isShow(&apos;inspired&apos;)">
+<div ng-show="isShow('inspired')">
   <div id="inspired--">
 <!--partial:editable/pd/inspired_educator.html-->
 <h2>Being an inspired, child focused educator</h2>
@@ -74,10 +74,10 @@
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_inspired_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide1-show" class="showLink" style="cursor:pointer" onclick="showHide(&apos;showhide1&apos;);return false;">Show..</a>
+<a id="showhide1-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide1');return false;">Show..</a>
 <p></p>
 <div id="showhide1" class="more">
-	<p><a id="showhide1-hide" class="hideLink" style="cursor:pointer" onclick="showHide(&apos;showhide1&apos;);return false;">Hide</a></p>
+	<p><a id="showhide1-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide1');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_inspired_info.md-->
 <ol>
@@ -110,7 +110,7 @@ Retrieved from:
 </div>
 
 <div scroll="" id="observing"></div>
-<div ng-show="isShow(&apos;observing&apos;)">
+<div ng-show="isShow('observing')">
   <div id="observing--">
 <!--partial:editable/pd/observing_gathering_info.html-->
 <h2>Observation, documentation, planning and evaluating</h2>
@@ -150,10 +150,10 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_observing_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide4-show" class="showLink" style="cursor:pointer" onclick="showHide(&apos;showhide4&apos;);return false;">Show..</a>
+<a id="showhide4-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide4');return false;">Show..</a>
 <p></p>
 <div id="showhide4" class="more">
-	<p><a id="showhide4-hide" class="hideLink" style="cursor:pointer" onclick="showHide(&apos;showhide4&apos;);return false;">Hide</a></p>
+	<p><a id="showhide4-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide4');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_observing_info.md-->
 <ol>
@@ -179,7 +179,7 @@ Retrieved from:
 </div>
 
 <div scroll="" id="environment"></div>
-<div ng-show="isShow(&apos;environment&apos;)">
+<div ng-show="isShow('environment')">
   <div id="environment--">
 <!--partial:editable/pd/environment_experiences.html-->
 <h2>Environment and experiences</h2>
@@ -204,10 +204,10 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_environment_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide3-show" class="showLink" style="cursor:pointer" onclick="showHide(&apos;showhide3&apos;);return false;">Show..</a>
+<a id="showhide3-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide3');return false;">Show..</a>
 <p></p>
 <div id="showhide3" class="more">
-	<p><a id="showhide3-hide" class="hideLink" style="cursor:pointer" onclick="showHide(&apos;showhide3&apos;);return false;">Hide</a></p>
+	<p><a id="showhide3-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide3');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_environment_info.md-->
 <ol>
@@ -239,7 +239,7 @@ Retrieved from:
 </div>
 
 <div scroll="" id="coop"></div>
-<div ng-show="isShow(&apos;coop&apos;)">
+<div ng-show="isShow('coop')">
   <div id="coop--">
 <!--partial:editable/pd/coop_behaviour.html-->
 <h2>Developing cooperative behaviour</h2>
@@ -273,10 +273,10 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_coop_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide2-show" class="showLink" style="cursor:pointer" onclick="showHide(&apos;showhide2&apos;);return false;">Show..</a>
+<a id="showhide2-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide2');return false;">Show..</a>
 <p></p>
 <div id="showhide2" class="more">
-	<p><a id="showhide2-hide" class="hideLink" style="cursor:pointer" onclick="showHide(&apos;showhide2&apos;);return false;">Hide</a></p>
+	<p><a id="showhide2-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide2');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_coop_info.md-->
 <ol>
@@ -312,7 +312,7 @@ Retrieved from:
 </div>
 
 <div scroll="" id="evaluation"></div>
-<div ng-show="isShow(&apos;evaluation&apos;)">
+<div ng-show="isShow('evaluation')">
   <div id="evaluation--">
 <!--partial:editable/pd/eval_reflective_practice.html-->
 <h2>Evaluation and reflective practice for improved program and practice</h2>
@@ -340,10 +340,10 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_evaluation_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide5-show" class="showLink" style="cursor:pointer" onclick="showHide(&apos;showhide5&apos;);return false;">Show..</a>
+<a id="showhide5-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide5');return false;">Show..</a>
 <p></p>
 <div id="showhide5" class="more">
-	<p><a id="showhide5-hide" class="hideLink" style="cursor:pointer" onclick="showHide(&apos;showhide5&apos;);return false;">Hide</a></p>
+	<p><a id="showhide5-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide5');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_evaluation_info.md-->
 <ol>
@@ -366,7 +366,7 @@ Retrieved from:
 </div>
 
 <div scroll="" id="children"></div>
-<div ng-show="isShow(&apos;children&apos;)">
+<div ng-show="isShow('children')">
   <div id="children--">
 <!--partial:editable/pd/childrent_at_risk.html-->
 <h2>Children at risk: identify and respond</h2>
@@ -382,10 +382,10 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_children_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide6-show" class="showLink" style="cursor:pointer" onclick="showHide(&apos;showhide6&apos;);return false;">Show..</a>
+<a id="showhide6-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide6');return false;">Show..</a>
 <p></p>
 <div id="showhide6" class="more">
-	<p><a id="showhide6-hide" class="hideLink" style="cursor:pointer" onclick="showHide(&apos;showhide6&apos;);return false;">Hide</a></p>
+	<p><a id="showhide6-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide6');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_children_info.md-->
 <ol>
@@ -405,7 +405,7 @@ Retrieved from:
 </div>
 
 <div scroll="" id="risk"></div>
-<div ng-show="isShow(&apos;risk&apos;)">
+<div ng-show="isShow('risk')">
   <div id="risk--">
 <!--partial:editable/pd/id_manage_risk.html-->
 <h2>Identify and manage risk to protect against harm</h2>
@@ -424,10 +424,10 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_risk_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide7-show" class="showLink" style="cursor:pointer" onclick="showHide(&apos;showhide7&apos;);return false;">Show..</a>
+<a id="showhide7-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide7');return false;">Show..</a>
 <p></p>
 <div id="showhide7" class="more">
-	<p><a id="showhide7-hide" class="hideLink" style="cursor:pointer" onclick="showHide(&apos;showhide7&apos;);return false;">Hide</a></p>
+	<p><a id="showhide7-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide7');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_risk_info.md-->
 <ol>
@@ -450,7 +450,7 @@ Retrieved from:
 </div>
 
 <div scroll="" id="pdfees"></div>
-<div ng-show="isShow(&apos;pdfees&apos;)">
+<div ng-show="isShow('pdfees')">
   <div id="pdfees--">
 <!--partial:editable/pd/pdfees.html-->
 <h2>Fees</h2>
@@ -482,7 +482,7 @@ Retrieved from:
 </div>
 
 <div scroll="" id="customised"></div>
-<div ng-show="isShow(&apos;customised&apos;)">
+<div ng-show="isShow('customised')">
   <div id="customised--">
 <!--partial:editable/pd/customised_workshop.html-->
 <h2>Workshop eight: Customised workshop for your Centre</h2>

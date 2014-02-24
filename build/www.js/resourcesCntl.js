@@ -62,7 +62,7 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     
     $scope.page = greendoor[page] || greendoor['home'];
     
-    var section = $routeParams.section || $scope.page.default;
+    var section = $routeParams.section || $scope.page.default_ie8sucks;
     console.log('section:', section);
     
     $scope.page = greendoor[page] || greendoor['home'];

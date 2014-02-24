@@ -12,7 +12,7 @@
       <ul>
 	<div ng-repeat="link in page.links">
 	<li ng-class="isSelected(link.route)">
-	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; &apos;_self&apos; || &apos;&apos;}}">{{link.label}} </a>
+	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
 	  <ul> 
 	    <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
 	      
@@ -35,12 +35,12 @@
     <div id="contents--" class="span7">
 <!--partial:html/aboutus_stitch.html-->
 <div scroll="" id="company"></div>
-<div ng-show="isShow(&apos;company&apos;)" id="company--">
+<div ng-show="isShow('company')" id="company--">
 <!--partial:editable/aboutus/ourcompany.html-->
 <h2>Our company</h2></div>
 
 <div scroll="" id="vision"></div>
-<div ng-show="isShow(&apos;vision&apos;)" id="vision--">
+<div ng-show="isShow('vision')" id="vision--">
 <!--partial:editable/aboutus/ourcompany_vision.html-->
 <h2>Our vision: <em>'Leaders in developing capability'</em></h2>
 <p><strong>Leaders</strong> <br> To be a leading and highly regarded training organisation within the Community Services and Management sector.</p>
@@ -49,7 +49,7 @@
 <p><strong>Shared success<br></strong>First Door develops professional capability in our students so they can inspire, educate and support others. This culture of building success in people also benefits our stakeholders and society.</p></div>
 
 <div scroll="" id="mission"></div>
-<div ng-show="isShow(&apos;mission&apos;)" id="mission--">
+<div ng-show="isShow('mission')" id="mission--">
 <!--partial:editable/aboutus/ourcompany_mission.html-->
 <h2>Mission statement</h2>
 <p><strong>Our purpose and identity; who we are, what we do and why we are here</strong></p>
@@ -59,7 +59,7 @@
 <p>We promote the need to create learning organisations for staff to learn, develop skills and capability. First Door provides courses to create leaders in learning within Early Childhood centres and businesses.</p></div>
 
 <div scroll="" id="approach"></div>
-<div ng-show="isShow(&apos;approach&apos;)" id="approach--">
+<div ng-show="isShow('approach')" id="approach--">
 <!--partial:editable/aboutus/ourcompany_approach.html-->
 <h2>Our student approach</h2>
 <p>We connect students to:</p>
@@ -81,7 +81,7 @@
 </div></div>
 
 <div scroll="" id="values"></div>
-<div ng-show="isShow(&apos;values&apos;)" id="values--">
+<div ng-show="isShow('values')" id="values--">
 <!--partial:editable/aboutus/ourcompany_values.html-->
 <h2>First Door company values</h2>
 <p>Our beliefs, traits and behavioural norms that guide the pursuit of the vision and mission, and those that company personnel are expected to display</p>
@@ -110,7 +110,7 @@
 </ol></div>
 
 <div scroll="" id="namelogo"></div>
-<div ng-show="isShow(&apos;namelogo&apos;)" id="nameandlogo--">
+<div ng-show="isShow('namelogo')" id="nameandlogo--">
 <!--partial:editable/aboutus/nameandlogo.html-->
 <h2>Our name and logo</h2>
 <p><strong>First Door</strong> <br> The word first relates to a beginning and success, while a door symbolises opportunity. The Company name First Door was chosen to mean a new, successful beginning to provide opportunity in life.</p>
@@ -124,7 +124,7 @@
 <p>First Door Training and Development inspires people to seek new beginnings and growth, using knowledge and capability to open further doors of opportunity.</p></div>
 
 <div scroll="" id="people"></div>
-<div ng-show="isShow(&apos;people&apos;)" id="people--">
+<div ng-show="isShow('people')" id="people--">
 <!--partial:editable/aboutus/people.html-->
 <h2>Our people</h2>
 <h3><strong>Founders and Directors</strong></h3>
@@ -152,7 +152,7 @@
 </ul></div>
 
 <div scroll="" id="policies"></div>
-<div ng-show="isShow(&apos;policies&apos;)" id="policies--">
+<div ng-show="isShow('policies')" id="policies--">
 <!--partial:html/policies.html-->
 Download pdf file: <a target="_self" href="__4290a37d2b/documents/Policies and Procedures May13.pdf">Firstdoor Policies.pdf</a>
 </div>

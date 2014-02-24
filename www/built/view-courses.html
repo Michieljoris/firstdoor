@@ -11,7 +11,7 @@
       <ul>
 	<div ng-repeat="link in page.links">
 	<li ng-class="isSelected(link.route)">
-	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; &apos;_self&apos; || &apos;&apos;}}">{{link.label}} </a>
+	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
 	  <ul> 
 	    <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
 	      
@@ -34,7 +34,7 @@
     <div id="contents--" class="span7">
 <!--partial:html/courses_stitch.html-->
 <div scroll="" id="intro"></div>
-<div ng-show="isShow(&apos;intro&apos;)">
+<div ng-show="isShow('intro')">
   <div id="intro--">
 <!--partial:editable/courses/intro.html-->
 <h2>Nationally Recognised Training</h2>
@@ -77,7 +77,7 @@
 </div>
 
 <div scroll="" id="children_ecec"></div>
-<div ng-show="isShow(&apos;children_ecec&apos;)">
+<div ng-show="isShow('children_ecec')">
   <div id="childrenservices--">
 <!--partial:editable/courses/CHC50908_childrens_services.html-->
 <h2>CHC50113 Diploma of Early Childhood Education <br>and Care</h2>
@@ -134,12 +134,12 @@
 </ul>
 <h3>Practical experience: four days in four centres</h3>
 <p>During the close of each part of the course, First Door arranges for each student to experience a day at another Early Childhood centre that is able to showcase operation relevant to the part of the course. By course completion, each student will have experienced four days in four different Early Childhood Centres.</p>
-<p><br><img ng-src="{{cachify(&apos;images/course_structure_children_services.jpg&apos;)}}" alt=""><br><br></p>
+<p><br><img ng-src="{{cachify('images/course_structure_children_services.jpg')}}" alt=""><br><br></p>
 </div>
 </div>
 
 <div scroll="" id="diploma_management"></div>
-<div ng-show="isShow(&apos;diploma_management&apos;)">
+<div ng-show="isShow('diploma_management')">
   <div id="diploma_management--">
 <!--partial:editable/courses/BSB51107_management.html-->
 <h2>BSB51107 Diploma of Management</h2>
@@ -189,7 +189,7 @@
 </div>
 
 <div scroll="" id="certivtraining"></div>
-<div ng-show="isShow(&apos;certivtraining&apos;)">
+<div ng-show="isShow('certivtraining')">
   <div id="certivtraining--">
 <!--partial:editable/courses/certiv.html-->
 <h2>TAE40110 Certificate IV in Training and Assessment</h2>
@@ -243,7 +243,7 @@
 </div>
 
 <div scroll="" id="priorlearning"></div>
-<div ng-show="isShow(&apos;priorlearning&apos;)">
+<div ng-show="isShow('priorlearning')">
   <div id="priorlearning--">
 <!--partial:editable/courses/priorlearning.html-->
 <h2>Recognition of Prior Learning</h2>
@@ -254,7 +254,7 @@
 </div>
 
 <div scroll="" id="trainingplans"></div>
-<div ng-show="isShow(&apos;trainingplans&apos;)">
+<div ng-show="isShow('trainingplans')">
   <div id="trainingplans--">
 <!--partial:editable/courses/trainingplans.html-->
 <h2>Training Plans</h2>
@@ -270,7 +270,7 @@
 </div>
 
 <div scroll="" id="studentfees"></div>
-<div ng-show="isShow(&apos;studentfees&apos;)">
+<div ng-show="isShow('studentfees')">
   <div id="studentfees--">
 <!--partial:editable/courses/studentfees.html-->
 <h2>Student fees</h2>

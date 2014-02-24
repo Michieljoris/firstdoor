@@ -12,3 +12,4 @@ a.hideLink {
 	background: transparent url('../images/up.gif') no-repeat left; }
 a.showLink:hover, a.hideLink:hover {
 	border-bottom: 1px dotted #36f; }
+
