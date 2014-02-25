@@ -411,7 +411,8 @@ var exports = {
             'images/slides/tab_accredited_training.jpg',
             'images/slides/tab_professional_development.jpg',
             'images/slides/tab_resources.jpg',
-            'images/course_structure_children_services.jpg'
+            'images/course_structure_children_services.jpg',
+            'images/homepage_image.jpg'
         ]
     } 
     

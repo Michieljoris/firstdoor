@@ -320,6 +320,7 @@ completed by then. Please let me know if this works for you.
 ** 10/2/14 1.5 hour following up issues
 ** 11/2/14 .5 hour following up issues
 ** 12/2/14 .25 hour following up issues
-** 24/2/14  .5h adding event pdf doc
+** 24/2/14  .15h adding event pdf doc
+** 24/2/14  .5h replacing slideshow with static image
+
    
-,g
