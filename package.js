@@ -89,7 +89,7 @@ module.exports = {
     // `devDependencies` block for the way to include dependencies.
     "dependencies": {
         "bb-server": "0.3.*",
-        "html-builder": "0.1.x",
+        "html-builder": "0.1.6",
         "nodemailer": "0.5.x",
         "dbox": "0.6.x",
         "colors": "*"

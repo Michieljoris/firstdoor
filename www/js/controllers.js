@@ -515,7 +515,7 @@ function setActiveTab($location) {
 var headerImages = {
     
     "/home": {
-        "*": "images/slides/tab_professional_development.jpg"
+        "*": "images/homepage_image.jpg"
         ,specialists: "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
         ,engaging: "images/slides/tab_resources.jpg"
         ,quiz: "images/slides/tab_resources.jpg"
