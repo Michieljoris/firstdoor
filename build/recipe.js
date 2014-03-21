@@ -312,7 +312,7 @@ var images = {
 }
 
 var develop_mode = process.env.DEVELOP; 
-develop_mode = true;
+// develop_mode = true;
 // develop_mode = false;
 var exports = {
     verbose: true

@@ -90,9 +90,6 @@ fix up ipad issues
 menu won't go away, won't scroll to id tag. 
 links on resources page.. 
 *** breadcrumbs http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en//webmasters/docs/search-engine-optimization-starter-guide.pdf
-*** get rid of dataclone errorimage of stuctured program in here) 
-in pd/trainingplans
-    
 *** inline editing of content
     
 * Contact
