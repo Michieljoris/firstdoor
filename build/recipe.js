@@ -2,37 +2,38 @@
 var css = [
     //google font for mobile ?
     // 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700'
-    'normalize',
-    'h5bp',
+    'normalize.css',
+    'h5bp.css',
     //css framework
-    "bootstrap"
+    "bootstrap.css"
     
     //The iconic font designed for use with Twitter Bootstrap
-    ,"font-awesome"
+    ,"font-awesome.css"
 
     //some reset rules
-    ,'reset'
+    ,'reset.css'
     
     // ,'angular-ui'
     
     //
     
     //Message bar on top of page
-    ,'message-top'
-    ,'social'
-    ,'contact'
+    ,'message-top.css'
+    ,'social.css'
+    ,'contact.css'
     // ,'feedback'
     // ,'contactable'
     // ,'youtubecarousel'
     
-    ,'main'
+    ,'main.css'
     //FancyBox is a tool for displaying images, html content and
     // multi-media in a Mac-style "lightbox" that floats overtop
     // of web page, the css part
     // ,"fancybox"
     // ,'misc'
-    ,'cslider'
-    ,'chat'
+    ,'cslider.css'
+    ,'chat.css'
+    ,'persona-buttons.css'
     
     //footer
     // ,'photo-stream'
@@ -67,11 +68,11 @@ var js = [
     // ,'https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min'
     //Version 1.7.2
     // 'jquery'
-    'es5-shim',
+    'es5-shim.js',
     'jquery-1.9.1.min.js'
-    ,'noconsole'
+    ,'noconsole.js'
     // 'jquery-1.6.2.js'
-    ,'angular-1.1.4/angular.min'
+    ,'angular-1.1.4/angular.min.js'
     // ,'angular-1.1.4/angular-sanitize.min'
     
     // Modernizr is a small JavaScript library that detects the
@@ -82,10 +83,10 @@ var js = [
     // two or more), and what Modernizr does is, very simply, tell
     // you whether the current browser has this feature natively
     // implemented or not.
-    ,'modernizr'
+    ,'modernizr.js'
     
     
-    ,'selectnav'
+    ,'selectnav.js'
     // ,'chat'
     // 'twitter',//??
     
@@ -109,30 +110,35 @@ var js = [
     // 'isotope',
     
     //css framework
-    ,'bootstrap'
+    ,'bootstrap.js'
     
     // ,'angular-ui'
-    ,'ui-bootstrap-tpls-0.2.0'
+    ,'ui-bootstrap-tpls-0.2.0.js'
     // menu
     // ,'hoverIntent'
     // ,'superfish'
     ,'epiceditor.min.js'
-    ,'myjs'
-    ,'controllers'
-    ,'filebrowserCntl'
-    ,'videos'
-    ,'resourcesCntl'
-    ,'../router'
+    ,'myjs.js',
+    'module.js',
+    ,'editor.js'
+    ,'controllers.js'
+    ,'filebrowserCntl.js'
+    ,'videos.js'
+    ,'resourcesCntl.js'
+    ,'../router.js'
     
     // ,'jquery.validate'
     // ,'jquery.contactable'
     // ,'feedback'
     
-    ,'jquery.cslider'
+    ,'jquery.cslider.js'
     
     
     ,'jquery.tabSlideOut.v1.3.js'
-    ,'feedback'
+    ,'feedback.js'
+    ,'cookie.js'
+    ,'persona.js'
+    ,"../ckeditor/ckeditor.js"
     // ,'jquery.youtubecarousel'
     
     // A lightweight, easy-to-use jQuery plugin for fluid width video embeds.       
@@ -330,6 +336,14 @@ var exports = {
         ,js: 'js'
     }
     
+    //send msg to url when finished rendering
+    ,reload: {
+        // enable: develop_mode,
+        enable: true,
+        url: "ws://localhost:8080",
+        msg: "reload"
+    }
+    
     /*
       If cachify if falsy resources will be requested as is, without a
       stamp. Which means bb-server will send them with max-age=0 and
@@ -468,6 +482,7 @@ var exports = {
             // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>''
             // ,recaptcha: '<script type="text/javascript" src="js/recaptcha_ajax.js"></script>'
             ,fragment: '<meta name="fragment" content="!"/>'
+            ,persona: '<script src="https://login.persona.org/include.js"></script>'
             // ,firebug: '<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js></script>"'
         }
         ,metaBlock : {
@@ -477,9 +492,11 @@ var exports = {
                 { content:"IE=edge,chrome=1",
                   "http-equiv":"X-UA-Compatible"
                 }
-                ,{ content:"First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. ",
-                   name:"description"
-                 }
+                ,{
+                    // content:"First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. ",
+                    content: "First Door is a Registered Training Organisation dedicated to inspiring and developing capability in Early Childhood educators and leaders. Providing Early Childhood professional development through active learning in workshops, personal mentoring and workplace relevant assessment in Diploma of Early Childhood Education and Care, and units from: Diploma of Management, and Certificate IV in Training and Assessment.",
+                    name:"description"
+                }
                 ,{ name: "viewport"
                    ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
             ]
@@ -487,13 +504,13 @@ var exports = {
         ,linkBlock:  {
             id: 'myLinkBlock',
             files: css,
-            path: 'css/'
+            path: 'css'
         }
         ,scriptBlock: [
             {
                 id: 'myJsBlock',
                 files: js,
-                path: 'js/'
+                path: 'js'
                 
                 ,out: 'bla'
             }
@@ -505,6 +522,7 @@ var exports = {
             //     path: 'js/',
             //     out: 'bla'
             // },
+            
         ]
         ,slideShow: [{ type: 'flex',
                        id: 'flex',
@@ -601,6 +619,7 @@ var exports = {
             ,{ id: "showhide_pd_evaluation_info", showhide: "editable/pd/references/pd_evaluation_info.md" }
             ,{ id: "showhide_pd_children_info", showhide: "editable/pd/references/pd_children_info.md" }
             ,{ id: "showhide_pd_risk_info", showhide: "editable/pd/references/pd_risk_info.md" }
+            
             
             ,{ id:"pd_wrapper",
                src: 'html/pd_stitch'
@@ -799,6 +818,7 @@ var exports = {
                    "ng:app": ['body',
                               
                               'sharethis1', 'sharethis2', 'sharethis3',
+                              ,'persona', 
                               'myJsBlock',
                               // '_scriptBlock'
                               ,'html/google_analytics.html'

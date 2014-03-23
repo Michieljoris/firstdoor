@@ -93,7 +93,8 @@ module.exports = {
         "nodemailer": "0.5.x",
         "dbox": "0.6.x",
         "colors": "*",
-        "fs-extra": "0.8.x"
+        "fs-extra": "0.8.x",
+        "dougs_vow": "*"
     },
     // What dependencies are useful only for developers?
     // Installed when we `npm install` in our working directory, but not 

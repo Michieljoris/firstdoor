@@ -1,6 +1,9 @@
-  <a href="sitemap">Sitemap</a>|
+<a href="sitemap">Sitemap</a>|
 Website by <a href="mailto:michieljoris@gmail.com">michieljoris</a>|
 
 Graphic design by <a href="http://migraphicfolio.com"
-		     target="_blank">MiGraphic</a>
+		     target="_blank">MiGraphic</a>|
+<a href="#" ng-hide="signedIn()" ng-click="login($event)">login</a>   
+<a href="#" ng-show="signedIn()" ng-click="logout($event)">logout |</a>
+<span  ng-show="signedIn()" >{{email()}}</span>   
 

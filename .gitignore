@@ -1,8 +1,9 @@
-node_modules/*
+node_modules
 images/*
 !node_modules/node-static
 npm-debug.log 
 access-token.json
 request-token.json
 cache/*
+bower_components
 

@@ -7,13 +7,17 @@ var http = require('http');
 
 // create reusable transport method (opens pool of SMTP connections)
 
-var smtpTransport = nodemailer.createTransport("SMTP",{
+var smtpOptions = {
     service: "Mailgun",
     auth: {
-        user: "postmaster@axion5.net",
-        pass: process.env.MAILGUN_PWD 
+        // user: "postmaster@axion5.net",
+        user: "postmaster@mailgun.firstdoor.com.au",
+        pass: process.env.MAILGUN_FIRSTDOOR_PWD 
+        // pass: process.env.MAILGUN_PWD 
     }
-});
+};
+
+var smtpTransport = nodemailer.createTransport("SMTP", smtpOptions);
 // var smtpTransport = nodemailer.createTransport("SMTP",{
 //     service: "Gmail",
 //     auth: {
@@ -81,8 +85,8 @@ var sendEmail = function (data, success, error) {
     // setup e-mail data with unicode symbols
     var mailOptions = {
         from: "mail@axion5.net", // sender address
-        to: "admin@firstdoor.com.au", // list of receivers
-        // to: "michieljoris@gmail.com", // list of receivers
+        to: "admin@firstdoor.com.au,mail@axion5.net", // list of receivers
+        // to: "mail@axion5.net", // list of receivers
         
         // to: "mail@axion5.net", // list of receivers
         // to: "jujusilkie@gmail.com", // list of receivers
@@ -91,6 +95,9 @@ var sendEmail = function (data, success, error) {
         // text: data.message // plaintext body
         html: text // html body
     };
+    // console.log(mailOptions);
+    // console.log(smtpOptions);
+    
     
     smtpTransport.sendMail(mailOptions, function(err, response){
         if(err){
@@ -160,7 +167,7 @@ function recaptcha_verify(parameters, success, error) {
 
 module.exports = function(req, res) {
     console.log('Firstdoor send mail is handling post!!');
-    console.log(req.headers['x-forwarded-for']);
+    // console.log(req.headers['x-forwarded-for']);
     var data = '';
     req.on('data', function(chunk) {
         data+=chunk;

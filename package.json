@@ -1,7 +1,7 @@
 {
   "name": "firstdoor",
   "description": "Website for Firstdoor business",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/michieljoris/firstdoor",
   "keywords": [
     "website"
@@ -30,7 +30,8 @@
     "nodemailer": "0.5.x",
     "dbox": "0.6.x",
     "colors": "*",
-    "fs-extra": "0.8.x"
+    "fs-extra": "0.8.x",
+    "dougs_vow": "*"
   },
   "devDependencies": {},
   "private": false,

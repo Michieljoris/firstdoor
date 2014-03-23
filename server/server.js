@@ -8,13 +8,14 @@ var server = require('bb-server'),
     ,sync = require("./sync.js")
     ,dropbox_authorize = require("./dropbox_authorize.js")
     ,dropbox_connect = require("./dropbox_connect.js")
+    ,editor_save = require('./editor_save.js')
     // testMail = require("./testSendMail"),
     // testGet = require("./testGet")
 ;
 
  
 var develop_mode = process.env.DEVELOP; 
-develop_mode = false;
+develop_mode = true;
 //TODO: limit sending of files to certain mimetypes and/or extensions
 //TODO: option to not send mimeless files found in allowable directories.
 //TODO: send certain files directly, bypassing cache with certain
@@ -112,6 +113,7 @@ var options = {
         // transpile: [],  //TODO add all current supported file types
         
         // minify: [],
+        transpile: [],
         minify: !develop_mode ? ['js', 'css' ] : [] //js, css, html
         ,zip: !develop_mode ? /text|javascript|json/ : ''//regex on the mimetype
         ,verbose: develop_mode
@@ -149,7 +151,7 @@ var options = {
     // ]
     
     ,postHandlers: {
-        // "/" : save
+        "/__api/save" : editor_save,
         "/contactus_form" : sendMail
         // ,"/contactus_form" : testSendMail
         }
@@ -159,6 +161,43 @@ var options = {
         "/dropbox_connect": dropbox_connect
     }
     
+    
+    //start a websocket server and register handlers
+    //One built-in handler is reload, include it as a string, otherwise list a home-made module
+    //For an example of a handler see lib/reload.js
+    // ,wsHandlers:  [ 'reload' ]
+    ,verbose: true
+    //Convenience setting. When true inject will be added to the transpilers,
+    //set to inject the reload script into index.html and the reload handler
+    //added to wsHandlers with the result that the server will respond to
+    //"reload" messages and send a message to connected browsers to reload
+    ,reload: true
+    //If method and path match the functin will be called with [req, res].
+    
+    //start a https server
+    // ,https: {
+    //     privatekey: 'certs/yourdomain.com.key',
+    //     certificate: 'certs/yourdomain.com.crt'
+    // }
+    
+    //attaches session data to requests
+    ,sessions: {
+        expires:30 
+        
+        // ,store: 'mysql'
+        ,store: 'memory'
+        // ,storeOpts: {
+        //     //options for mysql, memory doesn't need any
+        // }
+    },
+    //not implemented yet:
+    //server api path:
+    api: '__api'
+    //use persona to authenticate
+    ,persona: {
+        authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
+        ,verbose: true 
+    } 
     
     //If method and path match the functin will be called with [req, res].
     // ,postHandlers: {
@@ -170,23 +209,7 @@ var options = {
     // }
     //start a https server
     ,https: false
-    //start a websocket server
-    ,wsServer: false
-    //attaches session data to requests
-    // ,sessions: {
-    //     expires: 30
-    //     // ,store: 'mysql'
-    //     ,store: 'memory'
-    //     // ,storeOpts: {
-    //     //     //options for mysql, memory doesn't need any
-    //     // }
-    // }
-    // }
-    //server api path:
-    ,api: '_api'
-    //use persona to authenticate
-    ,persona: true
-    ,emails: ['mail@axion5.net']
+    
     //
     //enable server api:
     ,sitemap: true

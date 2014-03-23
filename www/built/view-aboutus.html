@@ -4,29 +4,47 @@
   
   <div id="sidebar--" class="span3">
 <!--partial:html/sidebar.html-->
-<fixscroll data-ng-transclude=""> 
-  
-  <div ng-class="getPageClass" id="greendoor"> 
-    <div class="doorlinks"> 
+<fixscroll data-ng-transclude="">
+
+  <div ng-class="getPageClass" id="greendoor">
+    <div class="doorlinks">
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
-	<div ng-repeat="link in page.links">
-	<li ng-class="isSelected(link.route)">
-	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
-	  <ul> 
-	    <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
-	      
-	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
-	    </li>
-	  </ul>	
-	</li>
-	</div>
+        <div ng-repeat="link in page.links">
+          <li ng-class="isSelected(link.route)">
+            <div ng-switch="" on="link.download">
+              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}" download="">{{link.label}} </a>
+              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
+            </div>
+            <ul>
+              <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
+
+                <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
+              </li>
+            </ul>
+          </li>
+        </div>
       </ul>
       <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
-    </div> 
-  </div> 
-</fixscroll>
+    </div>
+  </div>
+  <div ng-show="signedIn()" class="editor well">
+     <!-- <div ng-show="mode=='edit'"> -->
+       <a ng-hide="signedIn()" href="#" class="persona-button blue" ng-click="login($event)"><span>Sign in</span></a>
+       <a ng-show="signedIn()" href="#" class="persona-button blue" ng-click="logout($event)"><span>Sign out</span></a>
+     <!-- </div> -->
+     <div style="float:left;">{{email()}} </div>
 
+     <p></p>
+
+     <button class="btn btn-primary" type="button" ng-click="saveEditable()">Save</button>
+     <button class="btn btn-primary" type="button" ng-click="undoEditable()">Undo</button>
+     <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
+     <button ng-hide="editable()" class="btn btn-primary" type="button" ng-click="toggleEditable()">Edit</button>
+     <button ng-show="editable()" class="btn btn-primary" type="button" ng-click="toggleEditable()">Done</button>
+     
+  </div>
+</fixscroll>
 </div>
   <div class="span9 inline-image embed-container ratio-tabimage ">     
     <img class="" ng-src="{{getHeaderImage()}}">
@@ -43,7 +61,7 @@
 <div ng-show="isShow('vision')" id="vision--">
 <!--partial:editable/aboutus/ourcompany_vision.html-->
 <h2>Our vision: <em>'Leaders in developing capability'</em></h2>
-<p><strong>Leaders</strong> <br> To be a leading and highly regarded training organisation within the Community Services and Management sector.</p>
+<p><strong>Leaders</strong> <br> To be a leading and highly regarded training organisation within the Early Childhood Education and Care industry.</p>
 <p><strong>Talented team</strong> <br> Our team is ethical, professional, creative, effective and passionate.&nbsp;</p>
 <p><strong>Develops capability</strong> <br> First Door students are recognised for their higher level of skills, motivation and knowledge in the workplace. Therefore, employers and employees seek First Door as their preferred training organisation for capability development.</p>
 <p><strong>Shared success<br></strong>First Door develops professional capability in our students so they can inspire, educate and support others. This culture of building success in people also benefits our stakeholders and society.</p></div>
@@ -53,7 +71,7 @@
 <!--partial:editable/aboutus/ourcompany_mission.html-->
 <h2>Mission statement</h2>
 <p><strong>Our purpose and identity; who we are, what we do and why we are here</strong></p>
-<p><strong>Purpose - why we are here</strong> <br> First Door empowers those seeking to develop their professional capability, knowledge and skills in Management and the Community Services sector. Our purpose is to develop a motivated and highly skilled workforce that is able to make a positive difference to individuals and communities of people.</p>
+<p><strong>Purpose - why we are here</strong> <br> First Door empowers those seeking to develop their professional capability, knowledge and skills in Management and the Early Childhood sector. Our purpose is to develop a motivated and highly skilled workforce that is able to make a positive difference to individuals and communities of people.</p>
 <p><strong>Identity - who we are</strong> <br> First Door's passionate team leads by example and maintains professional integrity. We form connections within the industry to stay abreast with current issues and problems to be addressed in staff training and development.</p>
 <p><strong>What we do</strong> <br> First Door bridges the gap between theory and best workplace practice by providing engaging resources and environments. First Door inspires focused students by providing support and structure in their learning with timely and constructive assessment processes.</p>
 <p>We promote the need to create learning organisations for staff to learn, develop skills and capability. First Door provides courses to create leaders in learning within Early Childhood centres and businesses.</p></div>
@@ -66,14 +84,15 @@
 <ul>
 <li>best workplace practice and experiences to practice theory</li>
 <li>meaningful information to gain knowledge, and to conversations to explore knowledge</li>
+<li>relevant workplace related <a href="http://www.firstdoor.com.au/#!/home#constructive">assessment</a> workbooks</li>
 <li>a personal industry experienced mentor.</li>
 </ul>
 <p>The student's success and active engagement is achieved through:</p>
 <ul>
-<li>mentoring to support and inspire students</li>
+<li><a href="http://www.firstdoor.com.au/#!/home#mentor">mentoring</a> to support and inspire students</li>
 <li>study support access between 9am and 6pm weekdays</li>
-<li>engaging learning resources and environments</li>
-<li>industry relevant and interactive training workshops.</li>
+<li>engaging learning resources and environments<a href="https://www.facebook.com/firstdoortraining"><br></a></li>
+<li>industry relevant and interactive <a href="http://www.firstdoor.com.au/#!/courses#intro">training workshops</a>.</li>
 </ul>
 <div style="background-color: #ffffff; width: 48px; height: 48px; position: fixed; z-index: 2147483647; top: 47.7px; left: 755px;"><input style="top: 0px; left: 0px; width: 30px; height: 14px; display: block; position: absolute; border: 1px solid gray; font: 10px verdana,sans-serif; padding: 0px; margin: 0px;" type="text"><input style="width: 16px; height: 16px; position: absolute; padding: 0px; margin: 0px; border: 0px none; top: 0px; left: 32px;" title="Google Maps" alt="Google Maps" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACj0lEQVQ4jY2STUjTcRjHfxIeevGS2ItQJFGmpVAN31M7zPIlxEhBkhkiUhLhDuIlPIQddjHEugRWmCke6hApSalbtulenDpfpmtqK5dOayVqDXH/T4e/TqWIfvAcP9+X5/kJseVJvl/42prwVqnwlOUwe+sqP148Q/zv87U14VVfwVOWg7swHVduElNZ8XxrfvxvEb53w3wji7dVfC2/xFyxks/5qUxlxeNIi+VDkQJpKP2P2YS9HTDfKLuXXAi4O5VnmEg5hf1yJNjPwVjcdhFzBoKFVlhoBc9DvHcKNqNfVOBIi2VUcRzX3euwZPvrCGbrwfMQ3BpW+8pxF6YH4LH4E9gzj7DWEwr9wWARYN6B1LeTtZ5Q/F2HEHyphdl6cGtgpprlV+oAPJJwjMWXcnRGYmAkGoZjkAbPIlmS1iu41DBTDS41TBbB3AM+luZhi4lg+uZhGI6EoXAYDIOB/ayYI5k3JCIZTuLXxiFw5sN0OTjzYUIJbg3elntYj4bjbQkD6x6wBIEliCFDNuruTxTrfNS1NVDX1oBgPFV2nlDC6GmYqWbF+BTTwb2s9oVs6/68t5ayXlDpIU8LWV0gGIkGR7bc0xYBMzXg1tAfv3sbjDEYvaGUEgMU9sgCGZ0gGAqH8VR5QWNx8nnsiTjfK/hpCgnAUu8u2nWVqPRQ8E52P/+GjSXWyJdYssFkEXpDKbXW6QC8rN/H/a5mrul8FPZArlYioxOSO0DgeSR/JJda3rgliFZjAxUmP+26Stp1lVRp7aj0m9E33ONeb1QYjoGBA2AMBmMwDqOSG31Q1gslBgKxt8LJHesJhBBCGstEsiUgWaOQrFEsm1N4Yn5LhclPhckfENuaIlcrIYQQvwEO3ba3D2AvNQAAAABJRU5ErkJggg==" type="image"><input style="width: 16px; height: 16px; position: absolute; padding: 0px; margin: 0px; border: 0px none; top: 16px; left: 0px;" title="Google" alt="Google" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADRUlEQVQ4jSXT60/VdQDH8c/vd7AlI4EHtjW0WCs1i7U2i8u54GWxYDVtpkabumX5JLs86oLYEgRDQjAIBbsYayTmCjDQMwsrtcgxUBdWkNyyJDkCB9jRw+/8vu8e8OD9D7y2tyTJiUFX/wipWxuJe/pzSo9fwiVGNDzB2ewsei0xa9u4Eq5sIpYYl5AkxRwwwLriU2hTEHtbFwte/I6//p0CEyPyWy/XE+JxJYzlwbVExBIhxTFkCwE4jsMDO9rRtk60vQfl/0jxN5fBgInBUE4OUVnEPCJqWUzKw5glBiVkXCAG3sIO7M0/Y2/vxH7hHJv2dwMOAFfXr2NGcWAJVx6mLfGPRJ/tQeACLkVNl9H6IHEvXcB+/nvyqzpxMXAbfnloGT/dcwctS5JpT02mK2kew7botYT6h29igNFwhGU72tBzp1mwOUiw5xoGqGs5zOI3UtFH6Xhq/ajay/yyJ8h6OY19DyeipVs+43jHFXANE1NRjpwZoG/kJi6GklN1qOgRPPVePIeyUG06qs3EOpCFqrOx9q5GCzceJWntx6x+vZE9DR1zajic6fsV+6370OHHUV06qk/HqvFh1fhQZQZWuR9rbwAtzW9g0YYvuDPvU5KfOsTgaBhjDMOhayypfxbVpGEfzMQ+6EU1GdgferEq/djlflSWge7P3U/Glk/Y+G4rr1X9QE/fOC4Gg8vY1Bg5R1/BqkhDtT5U7Z2r0o/2+dEeP2o8fZGxcRcDzE72Mnq1mYGeWm5N3wBgNuaQ2/gqVsVyVJ2BqrzY5ZnofR8q8SFcmP7vIt3NGQw2x/N3mxj52uZK03LCoT/BxPh9dIi7SrNRVSaeD3zYZX5UEkC7A+i2M0NXYzoT3wpz3sY5G0+kYz43jon+5jyMMZgYPHhgAypbgSq8qNTPvN1rsHYF0FRogD8aUrgVTCIcTGCqLZHJ1kRmTqRw/atHITpNxDEsLslDpZnYJatQqQ/7vZVopx85McPgya2EvkxgsuVuwq0LmTmRQvjYvYyfK8QATRdO4nnzMaxiL56ibLQrgAoC6J01c0c6MyHGzhcy0b6WcMuTTLQ/Q6S7mqgT4dLwAIvezkUFK7ALs1HhSrTThwpWIUn/A1g/hnpCRmiJAAAAAElFTkSuQmCC" type="image"><input style="width: 16px; height: 16px; position: absolute; padding: 0px; margin: 0px; border: 0px none; top: 16px; left: 16px;" title="Wikipedia" alt="Wikipedia" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABS0lEQVQ4jcWTwY3EIAxFR6MUETpwDaPcQwekBVICOUIRLiGUQBqYlAAdhB6I/h5GQZPdaLXSrrQHDljW8/e3fSt7wW/e7f8BYQlQg4LsJcISUPYCP3vIXsJMBjFFlL3ATAZqUIgpIqYIPWqoQb0UOOtARBVQ9gLZSxARYorIW4azDsyMshfkLUOPGsz8AsQUIVoBPWrkLaPsBcwM0Qr42WN9rtCjrvADcPJADQqiFVifKw7oocJZBz/7CghLqP/be1C0As66msjMaO4N1KBO1Z11td3TFGQvIXtZjYspont0kL2sOTFFmMlcj9FZh+beVHkH4N1gZq5mXu4BEUENCnnL8LOHHjW6R1dNc9ZVoy8Bzjp0jw5mMvCzr5KJCMx88ugS4GcPIgIR1VbCEmrsmNK3q/zZzLIX6FGDiH52C2EJXyrFFE+b+mfH9AGWL1wAegygIwAAAABJRU5ErkJggg==" type="image"><input style="width: 16px; height: 16px; position: absolute; padding: 0px; margin: 0px; border: 0px none; top: 16px; left: 32px;" title="Google Finance" alt="Google Finance" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACm0lEQVQ4jZ3TyU8TYRzG8f4rJsZ4UG+9ePKgB/fEQ43GBWSxVIOAwKGAAhYhYIWoxQM6elATNcaTxiipxI24gBasONNpodOWlu4bnS7A10O1ozHx4Js8ed/L83mTX95Xl0wmEQThvwKgEwSBCdc8791epuYVPs8rOH0BnEo535QAXzwK0x4vr77LjH8VeepwYp64gyAIZSC9skYomyOmFghlskRzecJZlbhaIKbmcYbjTAfCzISiTHqXeOZaQP/yiAYomWVezfuZDoRxhqK4ogkWEikCqTS+ZJrFZB45mmIqpCAGc9S/trLhzU4N8GVyfPIvMReO4UukCaazxJZVMoUiSTXPu+Acjz1v6Z+9TcPkIOuebKczOKoBYbXITDCCFImzmMqQVAuoxRUKpRVy+RJ6u4FN43vZbN/Hlon9HHA0YYnc1ICYWkSKxHFH4gRTGbKFIoVSiUKxXNbbDTTLg3R4rtAkD9IiD9HuH/ltiKVV3PEUgVSWRE5ljfL6Va51dVPr6ua0dJE6uQeTu4+R2D0NSBRX8CdzpHOrrJb+LJtESwUwiRZqXOdpkC3Y4g80ILhc4mPQUynp7Qb2vDNiEi3/AB5qgJTIsvXFEdY/38HuSRPbPlSx60sDB7+1USV2/gWY5D6uJx5pgN5uYOP4bprkS1iVuxhlC0ZXH3VSD0e/m6kSu6iWujglWjgudlIjnsMa/u0l1im9lVsapf7K+YR0jmNiB9U/90Z5gGqpC6PrAlfj9zXgjDzASU8v9e5ezi5YafcO0+a+TKu3nHbvMC2eIS76b9Dps9Gl2OiP3dKAw5OtHPrQiuF9M8apblo+D9DyaQCzYxizY5iOmRHapge5MGOjd3aUntlrtM9Zy8DY2Ni6//3OOp1O9wMxQQsR4hHAdAAAAABJRU5ErkJggg==" type="image"><input style="width: 16px; height: 16px; position: absolute; padding: 0px; margin: 0px; border: 0px none; top: 32px; left: 0px;" title="Google Maps" alt="Google Maps" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACj0lEQVQ4jY2STUjTcRjHfxIeevGS2ItQJFGmpVAN31M7zPIlxEhBkhkiUhLhDuIlPIQddjHEugRWmCke6hApSalbtulenDpfpmtqK5dOayVqDXH/T4e/TqWIfvAcP9+X5/kJseVJvl/42prwVqnwlOUwe+sqP148Q/zv87U14VVfwVOWg7swHVduElNZ8XxrfvxvEb53w3wji7dVfC2/xFyxks/5qUxlxeNIi+VDkQJpKP2P2YS9HTDfKLuXXAi4O5VnmEg5hf1yJNjPwVjcdhFzBoKFVlhoBc9DvHcKNqNfVOBIi2VUcRzX3euwZPvrCGbrwfMQ3BpW+8pxF6YH4LH4E9gzj7DWEwr9wWARYN6B1LeTtZ5Q/F2HEHyphdl6cGtgpprlV+oAPJJwjMWXcnRGYmAkGoZjkAbPIlmS1iu41DBTDS41TBbB3AM+luZhi4lg+uZhGI6EoXAYDIOB/ayYI5k3JCIZTuLXxiFw5sN0OTjzYUIJbg3elntYj4bjbQkD6x6wBIEliCFDNuruTxTrfNS1NVDX1oBgPFV2nlDC6GmYqWbF+BTTwb2s9oVs6/68t5ayXlDpIU8LWV0gGIkGR7bc0xYBMzXg1tAfv3sbjDEYvaGUEgMU9sgCGZ0gGAqH8VR5QWNx8nnsiTjfK/hpCgnAUu8u2nWVqPRQ8E52P/+GjSXWyJdYssFkEXpDKbXW6QC8rN/H/a5mrul8FPZArlYioxOSO0DgeSR/JJda3rgliFZjAxUmP+26Stp1lVRp7aj0m9E33ONeb1QYjoGBA2AMBmMwDqOSG31Q1gslBgKxt8LJHesJhBBCGstEsiUgWaOQrFEsm1N4Yn5LhclPhckfENuaIlcrIYQQvwEO3ba3D2AvNQAAAABJRU5ErkJggg==" type="image"><input style="width: 16px; height: 16px; position: absolute; padding: 0px; margin: 0px; border: 0px none; top: 32px; left: 16px;" title="YouTube" alt="YouTube" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABEElEQVQ4jaWSPU7DQBCF3wGo7DZp4qtEQqJJlSu4jLgBNS0dRDR0QARSumyPRJogkIJiWiToYhrSEPJR7Hptx/kDRhrNm93nb3ZXFsD4psPRwR4AzbjHxd0ru4a8kEgvbf1NePfzbQdJfro52UcS8fHQDyjWCuDz7QpJTOYLZk5nH0zmi/8Dzg/DEqgCmL1fW/PXNwADf4V7AMbuis24txrw1xBJAlHgMizoLdkI4CVBREEZWTKGK9bKqa3G3QDO2G7Z2ljqAYyxPmPgI4XHpw2A7ES+d/unZzlwM2BNnwEKb1QFGJNPabdg9GB1v2993W71BNOamNZEWpfXy5nW8/3U9UQBkqTyy677F6rrkvQDptjzJ/PSbekAAAAASUVORK5CYII=" type="image"></div>
 <div style="background-color: #ffffff; width: 48px; height: 48px; position: fixed; z-index: 2147483647; top: 47.7px; left: 755px;">
@@ -154,7 +173,7 @@
 <div scroll="" id="policies"></div>
 <div ng-show="isShow('policies')" id="policies--">
 <!--partial:html/policies.html-->
-Download pdf file: <a target="_self" href="__4290a37d2b/documents/Policies and Procedures May13.pdf">Firstdoor Policies.pdf</a>
+Download pdf file: <a target="_self" href="https://www.dropbox.com/s/p1y2h8v94tf53qc/Policies%20and%20Procedures%20May13.pdf">Firstdoor Policies.pdf</a>
 </div>
 
 <div scroll="" id="aboutus404"></div>
@@ -177,18 +196,18 @@ Download pdf file: <a target="_self" href="__4290a37d2b/documents/Policies and P
   <div id="events_sidebar--">
 <!--partial:editable/events_sidebar.html-->
 <h3>Upcoming workshop events</h3>
-<p>March 3: <a href="__44a7e6b1e3/documents/Respectful_relationships_workshop_invitation.pdf">Relationships with children</a></p>
-<p>March 17: Recruitment, selection and induction of staff</p>
-<p>April 7: Safe and healthy environment</p>
-<p>April 14: Develop teams and individuals</p>
+<p>April 7: <a href="https://www.dropbox.com/s/s7d13nepvk6xptc/safe_and_healthy_environments_CBworkshop_invitation.pdf">Safe and healthy environment</a></p>
+<p>April 28: <strong>Develop teams and individuals</strong></p>
 <p>May 5: Partnership with families</p>
 <p>May 19: Developing cooperative behaviour</p>
 <p>June 2: Health and safety of children</p>
-<p>June 16: Foster learning and development</p>
-<p>July 7: Healthy food and drinks</p>
-<p>July 21: Develop cultural competence</p>
-<p>See <a href="courses/intro">more</a>.</p>
-</div>
+<p>June 16:&nbsp;<strong>Plan and monitor continuous improvement</strong>&nbsp;&nbsp;</p>
+<p>July 7:&nbsp;Promote and provide healthy food and drinks</p>
+<p>July 21:&nbsp;<strong>Develop a workplace learning environment</strong>&nbsp;</p>
+<p>August 4:&nbsp;Provide care for babies and toddlers&nbsp;</p>
+<p>August 18:&nbsp;<strong>Mentor in the workplace</strong>&nbsp;</p>
+<p>September 1: Provide care for children</p>
+<p>See <a href="#!courses/#intro">more</a>.</p></div>
 
 </div>
 

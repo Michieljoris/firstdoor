@@ -3,29 +3,47 @@
 <div class="row"> 
   <div id="sidebar--" class="span3">
 <!--partial:html/sidebar.html-->
-<fixscroll data-ng-transclude=""> 
-  
-  <div ng-class="getPageClass" id="greendoor"> 
-    <div class="doorlinks"> 
+<fixscroll data-ng-transclude="">
+
+  <div ng-class="getPageClass" id="greendoor">
+    <div class="doorlinks">
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
-	<div ng-repeat="link in page.links">
-	<li ng-class="isSelected(link.route)">
-	  <a ng-href="/{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
-	  <ul> 
-	    <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
-	      
-	      <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
-	    </li>
-	  </ul>	
-	</li>
-	</div>
+        <div ng-repeat="link in page.links">
+          <li ng-class="isSelected(link.route)">
+            <div ng-switch="" on="link.download">
+              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}" download="">{{link.label}} </a>
+              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
+            </div>
+            <ul>
+              <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
+
+                <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
+              </li>
+            </ul>
+          </li>
+        </div>
       </ul>
       <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
-    </div> 
-  </div> 
-</fixscroll>
+    </div>
+  </div>
+  <div ng-show="signedIn()" class="editor well">
+     <!-- <div ng-show="mode=='edit'"> -->
+       <a ng-hide="signedIn()" href="#" class="persona-button blue" ng-click="login($event)"><span>Sign in</span></a>
+       <a ng-show="signedIn()" href="#" class="persona-button blue" ng-click="logout($event)"><span>Sign out</span></a>
+     <!-- </div> -->
+     <div style="float:left;">{{email()}} </div>
 
+     <p></p>
+
+     <button class="btn btn-primary" type="button" ng-click="saveEditable()">Save</button>
+     <button class="btn btn-primary" type="button" ng-click="undoEditable()">Undo</button>
+     <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
+     <button ng-hide="editable()" class="btn btn-primary" type="button" ng-click="toggleEditable()">Edit</button>
+     <button ng-show="editable()" class="btn btn-primary" type="button" ng-click="toggleEditable()">Done</button>
+     
+  </div>
+</fixscroll>
 </div>
   <div ng-show="isShow('welcome_') || isShow('asqa_')" id="slideShow--" class="span9"><div class="flexslider"><ul class="slides"><li><img src="__f26441adda/images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__87a0485e4f/images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__6683e3f9db/images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__def42a622a/images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>   
   
@@ -38,36 +56,46 @@
 <!--partial:html/welcome_stitch.html-->
 <div scroll="" id="welcome"></div>
 <div ng-show="isShow('welcome')">
-  <div id="welcome--">
+  <div contenteditable="{{editable()}}" id="welcome--">
 <!--partial:editable/welcome/welcome.html-->
+<!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html-->
 <h2>Open yourself to a career as an&nbsp;Early Childhood professional</h2>
-<p><strong>Welcome to First Door,</strong> and congratulations for seeking opportunity in a rewarding career that influences people's lives.&nbsp;</p>
-<p>First Door specialises in Early Childhood training, aligning educators and leaders to their role based on the National Quality Framework (NQF). The NQF has empowered our industry to rise up to the challenge of being professional educators and educational leaders.&nbsp;This has meant a leap forward in role expectations and the capability required by educators. By choosing a study partnership with First Door, you will gain confidence in your skills and knowledge, and be equipped to enjoy the rewards of your role.</p>
-<h3>What choose First Door?</h3>
-<p>First Door is dedicated to inspiring and developing capability in Early Childhood educators and leaders. We connect, support and engage students through active learning with:</p>
-<ul>
-<li>a personal mentor for study support and a monthly meeting to guide you into achieving best workplace practice</li>
-<li>engaging resources and interactive workshops</li>
-<li>meaningful assessment with timely and constructive feedback</li>
-</ul>
-<h3><strong>2014 Scholarship applications closing soon!</strong></h3>
-<p>First Door is offering ten scholarship places<strong>&nbsp;</strong>for the students undertaking the new <em>CHC50113 Diploma of Early Childhood Education and Care (ECEC).&nbsp;</em>Please note that scholarship applicants are NOT required to be certificate lll qualified, however applicants must demonstrate motivation and commitment to their role according to the NQF and show potential as leaders in Early Childhood.</p>
-<p>Scholarship places are limited, and applications close on <strong>21 February 2014.</strong> Successful applicants will commence their Diploma of ECEC training with First Door beginning 3 March 2014.</p>
-<h4><strong>Request the&nbsp;<strong><em>Scholarship FAQ</em></strong> document for full information and <em>First Door scholarship application</em> form now!</strong></h4>
-<h4><strong>Contact us, to develop your professional capability and career
-    opportunities,&nbsp;<br>or phone us on 07 3103 2336</strong></h4>
 
+<p><strong>Welcome to First Door,</strong> and congratulations for seeking opportunity in a rewarding career that influences people&#39;s lives.&nbsp;</p>
+
+<p>First Door specialises in Early Childhood training, aligning educators and leaders to their role based on the National Quality Framework (NQF). The NQF has empowered our industry to rise up to the challenge of being professional educators and educational leaders.&nbsp;This has meant a leap forward in role expectations and the capability required by educators. By choosing a study partnership with First Door, you will gain confidence in your skills and knowledge, and be equipped to enjoy the rewards of your role.</p>
+
+<h3>What choose First Door?</h3>
+
+<p>First Door is dedicated to inspiring and developing capability in Early Childhood educators and leaders. We connect, support and engage students through active learning with:</p>
+
+<ul>
+	<li>a personal mentor for study support and a monthly meeting to guide you into achieving best workplace practice</li>
+	<li>engaging resources and interactive workshops</li>
+	<li>meaningful assessment with timely and constructive feedback</li>
+</ul>
+
+<h3><strong>Bla balbla2014 Scholarship applications closing soon!</strong></h3>
+
+<p>First Door is offering ten scholarship places<strong>&nbsp;</strong>for the students undertaking the new <em>CHC50113 Diploma of Early Childhood Eduhjcation and Care (ECEC).&nbsp;</em>Please note that scholarship applicants are NOT required to be certificate lll qualified, however applicants must demonstrate motivation and commitment to their role according to the NQF and show potential as leaders in Early Childhood.</p>
+
+<p>Scholarship places are limited, and applications close on <strong>21 February 2014.</strong> Successful applicants will commence their Diploma of ECEC training with First Door beginning 3 March 2014.</p>
+
+<h4><strong>Request the&nbsp;<strong><em>Scholarship FAQ</em></strong> document for full information and <em>First Door scholarship application</em> form now!</strong></h4>
+
+<h4><strong>Contact us, to develop your professional capability and career opportunities,&nbsp;<br>
+or phone us on 07 3103 2336</strong></h4>
 </div>
 </div>
 
 <div scroll="" id="specialists"></div>
 <div ng-show="isShow('specialists')">
-  <div id="specialists--">
+  <div contenteditable="{{editable()}}" id="specialists--">
+<!--partial:editable/welcome/specialists.html-->
 <!--partial:editable/welcome/specialists.html-->
 <h2>Specialists in Early Childhood training and development</h2>
-<p>First Door specialises in delivering meaningful training, inspiration and active learning within the Early Childhood and Outside School Hours Care sector. Our training and professional development is focused on&nbsp;aligning educators to their role based on the National Quality Framework. In addition to offering accredited training in the Diploma of Early Childhood Education and Care, we promote the need to create learning organisations where each centre or service operates with skilled mentors and an effective educational leader. First Door also provides training in units from the Diploma of Management and Certificate lV in Training and Assessment to build capability in mentoring and leadership&nbsp;</p>
-<p><a href="#!/pd#intro">Professional development workshops</a>&nbsp;<br>We deliver interactive professional development that encompasses the National Quality Framework combining relevant theory with practical work related experiences.</p>
-<p><a href="#!/courses">Accredited training </a><br>First Door is a Registered Training Organisation (RTO) providing Nationally Recognised Training. The RTO code for First Door Training and Development is 40782, and is issued by the Australian Skills Quality Authority.</p>
+
+<p>First Door specialises in delivering meaningful training, inspiration and active learning within the Early Childhood and Outside School Hours Care sector. Our training and professional development is focused on&nbsp;aligning educators to their role based on the National Quality Framework. In addition to offering accredited training in the Diploma of Early Childhood Education and Care, we promote the need to create learning organisations where each centre or s<span style="font-size:14px">n (RTO) providing Nationally Recognised Training. The RTO code for First Door Training and Development is 40782, and is issued by the Australian Skills Quality Authority.</span></p>
 </div>
 </div>
 
@@ -132,7 +160,7 @@
 <div ng-show="isShow('asqa')">
   <div id="asqa--">
 <!--partial:html/asqa.html-->
-Download pdf file: <a href="__883eed4b2d/documents/ASQA_Audit_Report.pdf" target="_self">Australian Skills Quality
+Download pdf file: <a href="https://www.dropbox.com/s/nyq4mz5ihayu8bg/ASQA_Audit_Report.pdf" target="_self">Australian Skills Quality
   Authority audit summary</a>
 </div>
 </div>
@@ -164,18 +192,18 @@ Download pdf file: <a href="__883eed4b2d/documents/ASQA_Audit_Report.pdf" target
   <div id="events_sidebar--">
 <!--partial:editable/events_sidebar.html-->
 <h3>Upcoming workshop events</h3>
-<p>March 3: <a href="__44a7e6b1e3/documents/Respectful_relationships_workshop_invitation.pdf">Relationships with children</a></p>
-<p>March 17: Recruitment, selection and induction of staff</p>
-<p>April 7: Safe and healthy environment</p>
-<p>April 14: Develop teams and individuals</p>
+<p>April 7: <a href="https://www.dropbox.com/s/s7d13nepvk6xptc/safe_and_healthy_environments_CBworkshop_invitation.pdf">Safe and healthy environment</a></p>
+<p>April 28: <strong>Develop teams and individuals</strong></p>
 <p>May 5: Partnership with families</p>
 <p>May 19: Developing cooperative behaviour</p>
 <p>June 2: Health and safety of children</p>
-<p>June 16: Foster learning and development</p>
-<p>July 7: Healthy food and drinks</p>
-<p>July 21: Develop cultural competence</p>
-<p>See <a href="courses/intro">more</a>.</p>
-</div>
+<p>June 16:&nbsp;<strong>Plan and monitor continuous improvement</strong>&nbsp;&nbsp;</p>
+<p>July 7:&nbsp;Promote and provide healthy food and drinks</p>
+<p>July 21:&nbsp;<strong>Develop a workplace learning environment</strong>&nbsp;</p>
+<p>August 4:&nbsp;Provide care for babies and toddlers&nbsp;</p>
+<p>August 18:&nbsp;<strong>Mentor in the workplace</strong>&nbsp;</p>
+<p>September 1: Provide care for children</p>
+<p>See <a href="#!courses/#intro">more</a>.</p></div>
 
 </div>
 
