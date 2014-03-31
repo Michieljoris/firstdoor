@@ -1,16 +1,25 @@
-console.log('loading ediotr');
 myAppModule.factory('editor', function() {
     var signedIn;
     var email;
     var editable = false;
     var $scope;
     var $http;
+    var signingIn = false;
     
     var api =  {
         signin: function() {
             signedIn = true;
+            editable = false;
+            api.toggleEditable();
+            
         },
         signout: function() {
+            console.log('Signing out..');
+            Object.keys(CKEDITOR.instances).forEach(function(id) {
+                CKEDITOR.instances[id].setData(partials[id].data);
+            }); 
+            editable = true;
+            api.toggleEditable();
             signedIn = false;
         },
         setEditable: function(value) { editable = value; },
@@ -32,6 +41,12 @@ myAppModule.factory('editor', function() {
                 console.log('Logging out');
                 navigator.id.logout();
             };
+        },
+        signingIn : function(value) {
+            console.log('signing in ', value, typeof value);
+            if (typeof value !== 'undefined')
+                signingIn = value;
+           return signingIn;
         }
     };
     
@@ -65,11 +80,24 @@ myAppModule.factory('editor', function() {
     
     var regexp = /<!--partial:([^>]*)-->/;
     api.toggleEditable = function() {
-            editable = !editable;
-        console.log(editable);
+        editable = !editable;
+        console.log('editable?', editable);
         if (editable) {
             setTimeout(function() {
-                CKEDITOR.inlineAll();
+                var editables = $('div[contenteditable=true]');
+                editables.each(function(e) {
+                    CKEDITOR.inline(editables[e],
+                                    { on:
+                                      { key:
+                                        function() { 
+                                                     setTimeout(function() {
+                                                         $scope.$apply();
+                                                     },100);
+                                                   }
+                                      }
+                                    });
+                    
+                });
                 console.log(CKEDITOR.instances);
                 partials = {};
                 Object.keys(CKEDITOR.instances).forEach(function(id) {
@@ -98,7 +126,19 @@ myAppModule.factory('editor', function() {
         console.log(partials);
     };
     
+    api.isDirty = function() {
+        var dirty = Object.keys(CKEDITOR.instances)
+            .filter(function(id) {
+                return CKEDITOR.instances[id].checkDirty();
+            });
+        console.log('isDirty', dirty.length);
+        return dirty.length > 0;
+        
+    };
+    
     api.saveEditable = function() {
+        var result = confirm('Are your sure?\n\nThis will save your changes to the server.');
+        if (!result) return;
         console.log('saving editable');
         var count = 0; 
         Object.keys(CKEDITOR.instances)
@@ -124,7 +164,14 @@ myAppModule.factory('editor', function() {
         Object.keys(CKEDITOR.instances).forEach(function(id) {
             CKEDITOR.instances[id].setData(partials[id].data);
         }); 
-            CKEDITOR.instances['test--'].setData();
+            // CKEDITOR.instances['test--'].setData();
+    };
+    
+    api.locationChanged = function(path) {
+        console.log('in editor, location is', path);
+        editable = false;
+        if (signedIn)
+            api.toggleEditable();
     };
     return api;
     

@@ -10,13 +10,15 @@
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
         <div ng-repeat="link in page.links">
-          <li ng-class="isSelected(link.route)">
-            <div ng-switch="" on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}" download="">{{link.label}} </a>
-              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
+          <li ng-class="isSelected(link.route)" >
+            <div ng-switch on="link.download">
+              <a ng-switch-when="true" ng-href="{{link.route}}"
+                 target="{{link.file && '_self' || ''}}" download>{{link.label}} </a>
+              <a  ng-switch-default ng-href="{{link.route}}"
+                  target="{{link.file && '_self' || ''}}" >{{link.label}} </a>
             </div>
             <ul>
-              <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
+              <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
 
                 <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
               </li>
@@ -27,54 +29,59 @@
       <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
     </div>
   </div>
+  <div ng-show="signingIn()" class="editor well"> Signing in...</div>
   <div ng-show="signedIn()" class="editor well">
-     <!-- <div ng-show="mode=='edit'"> -->
-       <a ng-hide="signedIn()" href="#" class="persona-button blue" ng-click="login($event)"><span>Sign in</span></a>
-       <a ng-show="signedIn()" href="#" class="persona-button blue" ng-click="logout($event)"><span>Sign out</span></a>
-     <!-- </div> -->
-     <div style="float:left;">{{email()}} </div>
 
-     <p></p>
+    <!-- <div ng-show="mode=='edit'"> -->
+    <!-- <a ng-hide="signedIn()" href="#" class="persona-button blue" ng-click="login($event)"><span>Sign in</span></a> -->
+    <!-- <a ng-show="signedIn()" href="#" class="persona-button blue" ng-click="logout($event)"><span>Sign out</span></a> -->
+    <!-- </div> -->
+    <div style="height:20px;">Logged in:</div>
+    <div style="float:left;">{{email()}} </div>
+    <p></p>
+    <!-- <button ng-hide="editable()" class="btn btn-primary"  type="button" ng-click="toggleEditable()">Edit</button> -->
+    <!-- <button ng-show="editable()" class="btn btn-primary"  type="button"
+		 ng-click="toggleEditable()">Done</button> -->
+    <div ng-show="isDirty()">
+      <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
+      <button class="btn btn-primary"  type="button" ng-click="undoEditable()">Undo</button>
+      <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
 
-     <button class="btn btn-primary" type="button" ng-click="saveEditable()">Save</button>
-     <button class="btn btn-primary" type="button" ng-click="undoEditable()">Undo</button>
-     <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
-     <button ng-hide="editable()" class="btn btn-primary" type="button" ng-click="toggleEditable()">Edit</button>
-     <button ng-show="editable()" class="btn btn-primary" type="button" ng-click="toggleEditable()">Done</button>
-     
+    </div>
   </div>
 </fixscroll>
 </div>
-  <div ng-show="!(isShow('pdfees') || isShow('customised'))" class="span9 inline-image embed-container ratio-tabimage ">     
-    <img class="" ng-src="{{getHeaderImage()}}">
+  <div ng-show="!(isShow('pdfees') || isShow('customised'))"
+       class="span9 inline-image embed-container ratio-tabimage ">     
+    <img class="" ng-src="{{getHeaderImage()}}"/>
   </div>
   <div class="row">
     <div id="contents--" class="span7">
 <!--partial:html/pd_stitch.html-->
-<div scroll="" id="intro"></div>
-<div ng-show="isShow('intro')">
-  <div id="intro--">
+<div scroll id="intro"></div>
+<div ng-show="isShow('intro')" >
+  <div contenteditable="{{editable()}}" id="intro--">
 <!--partial:editable/pd/pd.html-->
 <h2>Interactive workshops tailored for your team&nbsp;</h2>
-<p><strong>Develop capability within your team through First Door's professional development workshops at your centre</strong>&nbsp;<br>First Door delivers seven, two hour workshops that can be booked individually or as a series of workshops. These engaging workshops provide educators strategies to encompass the National Quality Framework into their practice. If booked as a series, each workshop builds from content and knowledge gained in the previous workshop. The speed of progression through the workshops is arranged to suit each individual Early Childhood centre or Outside School Hours Care service.</p>
-<p>When the seven workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.<br><br><strong>First Door has a three step approach to ensure that the workshops are meeting the learning needs of your team:</strong></p>
+<p><strong>Develop capability within your team through First Door's professional development workshops at your centre</strong>&nbsp;<br />First Door delivers seven, two hour workshops that can be booked individually or as a series of workshops. These engaging workshops provide educators strategies to encompass the National Quality Framework into their practice. If booked as a series, each workshop builds from content and knowledge gained in the previous workshop. The speed of progression through the workshops is arranged to suit each individual Early Childhood centre or Outside School Hours Care service.</p>
+<p>When the seven workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.<br /><br /><strong>First Door has a three step approach to ensure that the workshops are meeting the learning needs of your team:</strong></p>
 <ol>
-<li><strong>Needs analysis of your team&rsquo;s prior knowledge, skills and understanding</strong> <br>First Door will consult with you relating to the complexity of the needs within the Centre, and the educators existing capability in the outlined topics. &nbsp;We then tailor each workshop to ensure the best fit to your team's developmental needs. Occasionally, if considered necessary, a workshop is recommended over two sessions. This allows for broadening of concepts, development of practical skills, strategies and discussions in the relevant areas.<br><br></li>
-<li><strong><strong>National Quality Framework related workshop series<br></strong></strong>The workshops focus on a practical approach to bridge understanding of the National Quality Framework into educator's everyday practice.<strong><strong><br><br></strong></strong></li>
-<li><strong>Follow on learning for improved practice</strong><br>Templates to allow for continued practise within your team are provided by First Door to follow on from these workshops. First Door has a Facebook group and social media environments to invite further learning and conversations with other educators. Continued exposure to ideas for improved practice and stimulating conversations assist with ongoing changes in attitudes and actions to further develop your team&rsquo;s capability.<br><br></li>
+<li><strong>Needs analysis of your team&rsquo;s prior knowledge, skills and understanding</strong> <br />First Door will consult with you relating to the complexity of the needs within the Centre, and the educators existing capability in the outlined topics. &nbsp;We then tailor each workshop to ensure the best fit to your team's developmental needs. Occasionally, if considered necessary, a workshop is recommended over two sessions. This allows for broadening of concepts, development of practical skills, strategies and discussions in the relevant areas.<br /><br /></li>
+<li><strong><strong>National Quality Framework related workshop series<br /></strong></strong>The workshops focus on a practical approach to bridge understanding of the National Quality Framework into educator's everyday practice.<strong><strong><br /><br /></strong></strong></li>
+<li><strong>Follow on learning for improved practice</strong><br />Templates to allow for continued practise within your team are provided by First Door to follow on from these workshops. First Door has a Facebook group and social media environments to invite further learning and conversations with other educators. Continued exposure to ideas for improved practice and stimulating conversations assist with ongoing changes in attitudes and actions to further develop your team&rsquo;s capability.<br /><br /></li>
 </ol>
 <h3><em><strong>Phone First Door now on 3103 2336 to discuss your team's professional development needs.</strong></em></h3>
 <div id="mcePasteBin" style="position: absolute; top: 0px; left: 0; background: red; width: 1px; height: 1px; overflow: hidden;" contenteditable="false">
-<div contenteditable="true">Invite First Door to your Centre, and develop capability within your team through our professional development workshops. These interactive two hour workshops can be booked individually or collectively. Each workshop builds from content and knowledge gained in the previous workshop. The progression through the workshops is recommended fortnightly, monthly or six weekly throughout the year.<br><br>Needs analysis: of your team&rsquo;s prior knowledge, skills and understanding <br>First Door will consult with you relating to the complexity of the needs within the Centre, and the educators existing capability in the outlined topics.&nbsp; Occasionally, a workshop is recommended over two sessions. This allows for broadening of concepts, development of practical skills, strategies and discussions in the areas of need. <br><br>Follow on learning: First Door are leaders in developing capability.<br>Templates to allow for continued practise within your team are provided by First Door to follow on from these workshops. We provide social media environments to invite further learning through conversations with other educators. Continued exposure to ideas for improved practice and stimulating conversations assist with ongoing changes in attitudes and actions to further develop your team&rsquo;s capability.<br><br>Professional development designed to meet your Centre&rsquo;s needs<br>When the seven workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.</div>
+<div contenteditable="true">Invite First Door to your Centre, and develop capability within your team through our professional development workshops. These interactive two hour workshops can be booked individually or collectively. Each workshop builds from content and knowledge gained in the previous workshop. The progression through the workshops is recommended fortnightly, monthly or six weekly throughout the year.<br /><br />Needs analysis: of your team&rsquo;s prior knowledge, skills and understanding <br />First Door will consult with you relating to the complexity of the needs within the Centre, and the educators existing capability in the outlined topics.&nbsp; Occasionally, a workshop is recommended over two sessions. This allows for broadening of concepts, development of practical skills, strategies and discussions in the areas of need. <br /><br />Follow on learning: First Door are leaders in developing capability.<br />Templates to allow for continued practise within your team are provided by First Door to follow on from these workshops. We provide social media environments to invite further learning through conversations with other educators. Continued exposure to ideas for improved practice and stimulating conversations assist with ongoing changes in attitudes and actions to further develop your team&rsquo;s capability.<br /><br />Professional development designed to meet your Centre&rsquo;s needs<br />When the seven workshops are booked, First Door offers a complimentary customised workshop for your team that targets the specific needs of your Centre.</div>
 </div></div>
 </div>
 
-<div scroll="" id="inspired"></div>
-<div ng-show="isShow('inspired')">
-  <div id="inspired--">
+<div scroll id="inspired"></div>
+<div ng-show="isShow('inspired')" >
+  <div contenteditable="{{editable()}}" id="inspired--">
 <!--partial:editable/pd/inspired_educator.html-->
 <h2>Being an inspired, child focused educator</h2>
-<p><br> Reconnect to the passion and to the value of the professional educator's role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children.</p>
+<p><br /> Reconnect to the passion and to the value of the professional educator's role. Understand the relevance of Belonging, Being and Becoming and the EYLF practices Holistic Approaches, Cultural Competence and Responsiveness to Children.</p>
 <h3>Topics include:</h3>
 <ul>
 <li>Our impact on children's physical, personal, social, emotional and spiritual well-being.</li>
@@ -92,10 +99,12 @@
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_inspired_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide1-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide1');return false;">Show..</a>
-<p></p>
+<a id="showhide1-show" class="showLink" style="cursor:pointer"
+onclick="showHide('showhide1');return false;">Show..</a>
+</p>
 <div id="showhide1" class="more">
-	<p><a id="showhide1-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide1');return false;">Hide</a></p>
+	<p><a  id="showhide1-hide" class="hideLink" style="cursor:pointer"
+	onclick="showHide('showhide1');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_inspired_info.md-->
 <ol>
@@ -127,9 +136,9 @@ Retrieved from:
 </span>
 </div>
 
-<div scroll="" id="observing"></div>
-<div ng-show="isShow('observing')">
-  <div id="observing--">
+<div scroll id="observing"></div>
+<div ng-show="isShow('observing')" >
+  <div contenteditable="{{editable()}}" id="observing--">
 <!--partial:editable/pd/observing_gathering_info.html-->
 <h2>Observation, documentation, planning and evaluating</h2>
 <p>Understand the value and purpose of these processes. Become inspired to use strategies that are simplistic and effective. Undertake a practical case study and learn to use Learning Stories to build success, observe, document and plan for each child&rsquo;s development. This workshop refers to the EYLF Early Childhood Pedagogy, Learning Outcomes and the EYLF practices Intentional teaching and Assessment for Learning</p>
@@ -168,10 +177,12 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_observing_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide4-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide4');return false;">Show..</a>
-<p></p>
+<a id="showhide4-show" class="showLink" style="cursor:pointer"
+onclick="showHide('showhide4');return false;">Show..</a>
+</p>
 <div id="showhide4" class="more">
-	<p><a id="showhide4-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide4');return false;">Hide</a></p>
+	<p><a  id="showhide4-hide" class="hideLink" style="cursor:pointer"
+	onclick="showHide('showhide4');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_observing_info.md-->
 <ol>
@@ -196,9 +207,9 @@ Retrieved from:
 </span>
 </div>
 
-<div scroll="" id="environment"></div>
-<div ng-show="isShow('environment')">
-  <div id="environment--">
+<div scroll id="environment"></div>
+<div ng-show="isShow('environment')" >
+  <div contenteditable="{{editable()}}" id="environment--">
 <!--partial:editable/pd/environment_experiences.html-->
 <h2>Environment and experiences</h2>
 <p>Educators will be inspired to create learning environments and experiences that engage children into learning through play, enable holistic development and guide each child&rsquo;s learning in the five outcomes. The EYLF PRACTICES discussed are: Learning through Play, Intentional Teaching and Learning Environments.</p>
@@ -222,10 +233,12 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_environment_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide3-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide3');return false;">Show..</a>
-<p></p>
+<a id="showhide3-show" class="showLink" style="cursor:pointer"
+onclick="showHide('showhide3');return false;">Show..</a>
+</p>
 <div id="showhide3" class="more">
-	<p><a id="showhide3-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide3');return false;">Hide</a></p>
+	<p><a  id="showhide3-hide" class="hideLink" style="cursor:pointer"
+	onclick="showHide('showhide3');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_environment_info.md-->
 <ol>
@@ -256,9 +269,9 @@ Retrieved from:
 </span>
 </div>
 
-<div scroll="" id="coop"></div>
-<div ng-show="isShow('coop')">
-  <div id="coop--">
+<div scroll id="coop"></div>
+<div ng-show="isShow('coop')" >
+  <div contenteditable="{{editable()}}" id="coop--">
 <!--partial:editable/pd/coop_behaviour.html-->
 <h2>Developing cooperative behaviour</h2>
 <p>This workshop provides educators with strategies to refocus their approach to unacceptable behaviour, and proactively develop cooperative behaviour. It is recommended that this workshop be extended over four hours or over two sessions if educators are working reactively to complex behaviours and/or have limited understanding of these concepts. The EYLF PRINCIPLES are discussed, being: Secure, Respectful and Reciprocal Relationships; Partnerships; High Expectations and Equity; Respect for Diversity; and, Ongoing Learning and Reflective Practice.</p>
@@ -291,10 +304,12 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_coop_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide2-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide2');return false;">Show..</a>
-<p></p>
+<a id="showhide2-show" class="showLink" style="cursor:pointer"
+onclick="showHide('showhide2');return false;">Show..</a>
+</p>
 <div id="showhide2" class="more">
-	<p><a id="showhide2-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide2');return false;">Hide</a></p>
+	<p><a  id="showhide2-hide" class="hideLink" style="cursor:pointer"
+	onclick="showHide('showhide2');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_coop_info.md-->
 <ol>
@@ -329,9 +344,9 @@ Retrieved from:
 </span>
 </div>
 
-<div scroll="" id="evaluation"></div>
-<div ng-show="isShow('evaluation')">
-  <div id="evaluation--">
+<div scroll id="evaluation"></div>
+<div ng-show="isShow('evaluation')" >
+  <div contenteditable="{{editable()}}" id="evaluation--">
 <!--partial:editable/pd/eval_reflective_practice.html-->
 <h2>Evaluation and reflective practice for improved program and practice</h2>
 <p>Ongoing learning and reflective practice is a key principle of the Framework. Educators will be assisted in seeking ways to build their professional knowledge and develop learning communities. The intention is to gather information and gain insights that support, inform and enrich professional practice and decision-making about children's well-being and development.</p>
@@ -358,10 +373,12 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_evaluation_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide5-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide5');return false;">Show..</a>
-<p></p>
+<a id="showhide5-show" class="showLink" style="cursor:pointer"
+onclick="showHide('showhide5');return false;">Show..</a>
+</p>
 <div id="showhide5" class="more">
-	<p><a id="showhide5-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide5');return false;">Hide</a></p>
+	<p><a  id="showhide5-hide" class="hideLink" style="cursor:pointer"
+	onclick="showHide('showhide5');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_evaluation_info.md-->
 <ol>
@@ -383,9 +400,9 @@ Retrieved from:
 </span>
 </div>
 
-<div scroll="" id="children"></div>
-<div ng-show="isShow('children')">
-  <div id="children--">
+<div scroll id="children"></div>
+<div ng-show="isShow('children')" >
+  <div contenteditable="{{editable()}}" id="children--">
 <!--partial:editable/pd/childrent_at_risk.html-->
 <h2>Children at risk: identify and respond</h2>
 <p>This workshop details the knowledge and skills required to address duty of care requirements, working within an ethical framework and applying relevant legislation, policies and procedures in responding to children and young people at risk.</p>
@@ -400,10 +417,12 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_children_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide6-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide6');return false;">Show..</a>
-<p></p>
+<a id="showhide6-show" class="showLink" style="cursor:pointer"
+onclick="showHide('showhide6');return false;">Show..</a>
+</p>
 <div id="showhide6" class="more">
-	<p><a id="showhide6-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide6');return false;">Hide</a></p>
+	<p><a  id="showhide6-hide" class="hideLink" style="cursor:pointer"
+	onclick="showHide('showhide6');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_children_info.md-->
 <ol>
@@ -412,7 +431,7 @@ Retrieved from:
 <li>NQS 2.3.4: Action is taken to respond to every child at risk of abuse and/or neglect.</li></ul></li>
 </ol>
 
-<p>Reference <br>
+<p>Reference <br />
 Australian Children’s Education and Care Quality Authority. (2011). Guide to the National Quality Standard.
 Retrieved from:
 <a href="http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf">http://acecqa.gov.au/storage/2-DE_03_National%20Quality%20Standard_v8_Secn1.pdf</a></p>
@@ -422,9 +441,9 @@ Retrieved from:
 </span>
 </div>
 
-<div scroll="" id="risk"></div>
-<div ng-show="isShow('risk')">
-  <div id="risk--">
+<div scroll id="risk"></div>
+<div ng-show="isShow('risk')" >
+  <div contenteditable="{{editable()}}" id="risk--">
 <!--partial:editable/pd/id_manage_risk.html-->
 <h2>Identify and manage risk to protect against harm</h2>
 <p>This workshop supports the educator in their responsibility to ensure that all children are protected and safe while they are in an approved service. Educators will learn to proactively identify and minimise potential risks in their centre through conducting a risk assessment.</p>
@@ -442,10 +461,12 @@ Retrieved from:
 <p>This workshop relates to the following National Quality Standards and elements:</p></div>
   <span id="showhide_pd_risk_info--">
 <!--partial:html/showhide.html-->
-<a id="showhide7-show" class="showLink" style="cursor:pointer" onclick="showHide('showhide7');return false;">Show..</a>
-<p></p>
+<a id="showhide7-show" class="showLink" style="cursor:pointer"
+onclick="showHide('showhide7');return false;">Show..</a>
+</p>
 <div id="showhide7" class="more">
-	<p><a id="showhide7-hide" class="hideLink" style="cursor:pointer" onclick="showHide('showhide7');return false;">Hide</a></p>
+	<p><a  id="showhide7-hide" class="hideLink" style="cursor:pointer"
+	onclick="showHide('showhide7');return false;">Hide</a></p>
 	
 <!--partial:editable/pd/references/pd_risk_info.md-->
 <ol>
@@ -467,9 +488,9 @@ Retrieved from:
 </span>
 </div>
 
-<div scroll="" id="pdfees"></div>
-<div ng-show="isShow('pdfees')">
-  <div id="pdfees--">
+<div scroll id="pdfees"></div>
+<div ng-show="isShow('pdfees')" >
+  <div contenteditable="{{editable()}}" id="pdfees--">
 <!--partial:editable/pd/pdfees.html-->
 <h2>Fees</h2>
 <p>The workshop fees cover the cost of:</p>
@@ -499,9 +520,9 @@ Retrieved from:
   <span id="showhide_pd_pdfees_info--"></span>
 </div>
 
-<div scroll="" id="customised"></div>
-<div ng-show="isShow('customised')">
-  <div id="customised--">
+<div scroll id="customised"></div>
+<div ng-show="isShow('customised')" >
+  <div contenteditable="{{editable()}}" id="customised--">
 <!--partial:editable/pd/customised_workshop.html-->
 <h2>Workshop eight: Customised workshop for your Centre</h2>
 <p>Following the series of seven workshops, you are in a good position to identify your Centre's specific area to strengthen with customised professional development. Following feedback from your team and a consultation with the centre Director, First Door designs and delivers a complimentary workshop to meet your Centre's needs.</p></div>
@@ -509,14 +530,14 @@ Retrieved from:
 </div>
 
 
-<div scroll="" id="pd"></div>
-<div ng-show="is404()">This page does not exist..</div>
+<div scroll id="pd"></div>
+<div ng-show="is404()" >This page does not exist..</div>
 </div>
     <div id="rightBar--" class="span2">
 <!--partial:html/rightbar.html-->
 <!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
-<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"></a>
+<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
 <script type="text/javascript">
  var a2a_config = a2a_config || {};
  a2a_config.linkurl = "http://www.firstdoor.com.au";
@@ -526,10 +547,10 @@ Retrieved from:
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
 <!-- AddToAny END -->
 <div ng-show="show_events()">
-  <div id="events_sidebar--">
+  <div contenteditable="{{editable()}}" id="events_sidebar--">
 <!--partial:editable/events_sidebar.html-->
 <h3>Upcoming workshop events</h3>
-<p>April 7: <a href="https://www.dropbox.com/s/s7d13nepvk6xptc/safe_and_healthy_environments_CBworkshop_invitation.pdf">Safe and healthy environment</a></p>
+<p>April 7: <a href="https://dl.dropboxusercontent.com/u/121993962/safe_and_healthy_environments_CBworkshop_invitation.pdf" target="_blank">Safe and healthy environment</a></p>
 <p>April 28: <strong>Develop teams and individuals</strong></p>
 <p>May 5: Partnership with families</p>
 <p>May 19: Developing cooperative behaviour</p>
@@ -552,22 +573,23 @@ Retrieved from:
     <label class="form-label ">Name<span class="form-required">*</span></label>
     <div class="controls controls-row control-group {{namemissing}}">
 
-      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required>
-      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required>
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
     </div>
 
     <label class="form-label">Email<span class="form-required">*</span></label>
 
     <div class="control-group {{emailmissing}}">
-      <input class="span2" type="email" id="email" name="email" required><br>
+      <input class="span2" type="email" id="email" name="email" required/><br/>
     </div>
 
     <label class="form-label">Message<span class="form-required">*</span></label>
 
     <div class="control-group {{msgmissing}}">
-      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
     </div>
-    <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
+    <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
+           value="Send" />
     <div id="captchadiv"></div>
   </div>
   <div ng-show="sent" class="well">

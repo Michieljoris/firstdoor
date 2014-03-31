@@ -2,7 +2,6 @@
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
-    console.log('loading initPersona');
 function initPersona($scope, $http, editor) {
     // var currentUser = cookie.get('persona');
     // if (currentUser) $scope.signedIn = true;
@@ -11,7 +10,9 @@ function initPersona($scope, $http, editor) {
     navigator.id.watch({
         // loggedInUser: currentUser,
         onlogin: function(assertion) {
-            
+            console.log('logging in..');
+            // $("#sidebar--").spin({left:"140px",top:"730px"});
+            editor.signingIn(true);
             // A user has logged in! Here you need to:
             // 1. Send the assertion to your backend for verification and to create a session.
             // 2. Update your UI.
@@ -26,11 +27,16 @@ function initPersona($scope, $http, editor) {
                     // $scope.email = data.email;
                     editor.setEmail(data.email);
                     console.log('signin post success', data);
+                    
+                    // $("#sidebar--").spin(false);
+                    editor.signingIn(false);
                 })
                 .error(function(data, status, headers, config) {
                     cookie.remove('persona');
                     navigator.id.logout();
+                    // $("#sidebar--").spin(false);
                     alert("Sign in failure: " + status);
+                    editor.signingIn(false);
                 });
             $scope.$apply();
         },

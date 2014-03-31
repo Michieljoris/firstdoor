@@ -118,6 +118,8 @@ var js = [
     // ,'hoverIntent'
     // ,'superfish'
     ,'epiceditor.min.js'
+    ,'spin.js'
+    ,'jquery.spin.js'
     ,'myjs.js',
     'module.js',
     ,'editor.js'
@@ -139,6 +141,7 @@ var js = [
     ,'cookie.js'
     ,'persona.js'
     ,"../ckeditor/ckeditor.js"
+    
     // ,'jquery.youtubecarousel'
     
     // A lightweight, easy-to-use jQuery plugin for fluid width video embeds.       
@@ -388,7 +391,7 @@ var exports = {
     // ,cachify: !develop_mode 
     // ,cachify: true
     //hash or mtime, query or modified filename
-    ,cachify : {
+    ,cachify : develop_mode ? false : {
         // exclude: ['pdf', 'doc', 'docx'], //for instance ['pdf', 'doc']
         method: 'sha1' //mtime or any of the hashes returned from crypto.getHashes()
         // (var crypto = require('crypto');

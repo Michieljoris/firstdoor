@@ -10,13 +10,15 @@
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
         <div ng-repeat="link in page.links">
-          <li ng-class="isSelected(link.route)">
-            <div ng-switch="" on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}" download="">{{link.label}} </a>
-              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
+          <li ng-class="isSelected(link.route)" >
+            <div ng-switch on="link.download">
+              <a ng-switch-when="true" ng-href="{{link.route}}"
+                 target="{{link.file && '_self' || ''}}" download>{{link.label}} </a>
+              <a  ng-switch-default ng-href="{{link.route}}"
+                  target="{{link.file && '_self' || ''}}" >{{link.label}} </a>
             </div>
             <ul>
-              <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
+              <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
 
                 <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
               </li>
@@ -27,27 +29,32 @@
       <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
     </div>
   </div>
+  <div ng-show="signingIn()" class="editor well"> Signing in...</div>
   <div ng-show="signedIn()" class="editor well">
-     <!-- <div ng-show="mode=='edit'"> -->
-       <a ng-hide="signedIn()" href="#" class="persona-button blue" ng-click="login($event)"><span>Sign in</span></a>
-       <a ng-show="signedIn()" href="#" class="persona-button blue" ng-click="logout($event)"><span>Sign out</span></a>
-     <!-- </div> -->
-     <div style="float:left;">{{email()}} </div>
 
-     <p></p>
+    <!-- <div ng-show="mode=='edit'"> -->
+    <!-- <a ng-hide="signedIn()" href="#" class="persona-button blue" ng-click="login($event)"><span>Sign in</span></a> -->
+    <!-- <a ng-show="signedIn()" href="#" class="persona-button blue" ng-click="logout($event)"><span>Sign out</span></a> -->
+    <!-- </div> -->
+    <div style="height:20px;">Logged in:</div>
+    <div style="float:left;">{{email()}} </div>
+    <p></p>
+    <!-- <button ng-hide="editable()" class="btn btn-primary"  type="button" ng-click="toggleEditable()">Edit</button> -->
+    <!-- <button ng-show="editable()" class="btn btn-primary"  type="button"
+		 ng-click="toggleEditable()">Done</button> -->
+    <div ng-show="isDirty()">
+      <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
+      <button class="btn btn-primary"  type="button" ng-click="undoEditable()">Undo</button>
+      <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
 
-     <button class="btn btn-primary" type="button" ng-click="saveEditable()">Save</button>
-     <button class="btn btn-primary" type="button" ng-click="undoEditable()">Undo</button>
-     <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
-     <button ng-hide="editable()" class="btn btn-primary" type="button" ng-click="toggleEditable()">Edit</button>
-     <button ng-show="editable()" class="btn btn-primary" type="button" ng-click="toggleEditable()">Done</button>
-     
+    </div>
   </div>
 </fixscroll>
 </div>
   <div class="row">
-    <div id="contents--" class="span7">
+    <div contenteditable="{{editable()}}" id="contents--" class="span7">
 <!--partial:editable/enroll.html-->
+<div >
 <h2>Enrol with First Door</h2>
 <p><strong><em>Congratulations on your decision to study with First Door. There are five easy steps to completing your enrolment:</em></strong></p>
 <ol>
@@ -58,12 +65,14 @@
 <li>Contact us if you require any further information. We are here to help</li>
 </ol>
 <p><strong><em>First Door will soon contact you to confirm receipt of your enrolment, and to discuss your training plan with you.</em></strong></p>
-<p><strong>&nbsp;</strong></p></div>
+<p><strong>&nbsp;</strong></p>
+</div>
+</div>
     <div id="rightBar--" class="span2">
 <!--partial:html/rightbar.html-->
 <!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
-<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"></a>
+<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
 <script type="text/javascript">
  var a2a_config = a2a_config || {};
  a2a_config.linkurl = "http://www.firstdoor.com.au";
@@ -73,10 +82,10 @@
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
 <!-- AddToAny END -->
 <div ng-show="show_events()">
-  <div id="events_sidebar--">
+  <div contenteditable="{{editable()}}" id="events_sidebar--">
 <!--partial:editable/events_sidebar.html-->
 <h3>Upcoming workshop events</h3>
-<p>April 7: <a href="https://www.dropbox.com/s/s7d13nepvk6xptc/safe_and_healthy_environments_CBworkshop_invitation.pdf">Safe and healthy environment</a></p>
+<p>April 7: <a href="https://dl.dropboxusercontent.com/u/121993962/safe_and_healthy_environments_CBworkshop_invitation.pdf" target="_blank">Safe and healthy environment</a></p>
 <p>April 28: <strong>Develop teams and individuals</strong></p>
 <p>May 5: Partnership with families</p>
 <p>May 19: Developing cooperative behaviour</p>
@@ -99,22 +108,23 @@
     <label class="form-label ">Name<span class="form-required">*</span></label>
     <div class="controls controls-row control-group {{namemissing}}">
 
-      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required>
-      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required>
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
     </div>
 
     <label class="form-label">Email<span class="form-required">*</span></label>
 
     <div class="control-group {{emailmissing}}">
-      <input class="span2" type="email" id="email" name="email" required><br>
+      <input class="span2" type="email" id="email" name="email" required/><br/>
     </div>
 
     <label class="form-label">Message<span class="form-required">*</span></label>
 
     <div class="control-group {{msgmissing}}">
-      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
     </div>
-    <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
+    <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
+           value="Send" />
     <div id="captchadiv"></div>
   </div>
   <div ng-show="sent" class="well">

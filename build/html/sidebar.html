@@ -24,20 +24,24 @@
       <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
     </div>
   </div>
+  <div ng-show="signingIn()" class="editor well"> Signing in...</div>
   <div ng-show="signedIn()" class="editor well">
-     <!-- <div ng-show="mode=='edit'"> -->
-       <a ng-hide="signedIn()" href="#" class="persona-button blue" ng-click="login($event)"><span>Sign in</span></a>
-       <a ng-show="signedIn()" href="#" class="persona-button blue" ng-click="logout($event)"><span>Sign out</span></a>
-     <!-- </div> -->
-     <div style="float:left;">{{email()}} </div>
 
-     <p></p>
+    <!-- <div ng-show="mode=='edit'"> -->
+    <!-- <a ng-hide="signedIn()" href="#" class="persona-button blue" ng-click="login($event)"><span>Sign in</span></a> -->
+    <!-- <a ng-show="signedIn()" href="#" class="persona-button blue" ng-click="logout($event)"><span>Sign out</span></a> -->
+    <!-- </div> -->
+    <div style="height:20px;">Logged in:</div>
+    <div style="float:left;">{{email()}} </div>
+    <p></p>
+    <!-- <button ng-hide="editable()" class="btn btn-primary"  type="button" ng-click="toggleEditable()">Edit</button> -->
+    <!-- <button ng-show="editable()" class="btn btn-primary"  type="button"
+		 ng-click="toggleEditable()">Done</button> -->
+    <div ng-show="isDirty()">
+      <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
+      <button class="btn btn-primary"  type="button" ng-click="undoEditable()">Undo</button>
+      <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
 
-     <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
-     <button class="btn btn-primary"  type="button" ng-click="undoEditable()">Undo</button>
-     <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
-     <button ng-hide="editable()" class="btn btn-primary"  type="button" ng-click="toggleEditable()">Edit</button>
-     <button ng-show="editable()" class="btn btn-primary"  type="button" ng-click="toggleEditable()">Done</button>
-     
+    </div>
   </div>
 </fixscroll>

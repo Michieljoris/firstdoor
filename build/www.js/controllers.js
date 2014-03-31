@@ -42,6 +42,8 @@ function MainCntl($scope, $location, $http, editor) {
     $scope.toggleEditable = editor.toggleEditable;
     $scope.editable = editor.editable;
     editor.set($scope, $http);
+    $scope.signingIn = editor.signingIn;
+    $scope.isDirty = editor.isDirty;
     
     $scope.getContactUsText = function() {
         
@@ -318,8 +320,10 @@ var headerImages = {
 };
 
 var lastRoute='whatever';
-function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
+function DefaultCntl($scope, $routeParams, $location, $anchorScroll, editor) {
     console.log('default controller..', $location, $routeParams);
+    
+    editor.locationChanged($location.$$path);
     var path = $location.$$path.split('/').filter(function(e) { return e; });
     var page = path[0] || '404';
     // console.log('page in default cntl is ', page, path);
@@ -450,7 +454,7 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll) {
         clickSend($event, $scope);
     }; 
 }
-DefaultCntl.$inject = ['$scope', '$routeParams', '$location', '$anchorScroll'];
+DefaultCntl.$inject = ['$scope', '$routeParams', '$location', '$anchorScroll', 'editor'];
 
 
 function clickSend($event, $scope) {
@@ -648,9 +652,10 @@ And some examples to make links: [http://www.google.com]() or [google](http://ww
 
 EpicCntl.$inject = ['$scope', '$routeParams'];
 
-function HomeCntl($scope, $routeParams, $location) {
+function HomeCntl($scope, $routeParams, $location, editor) {
     // console.log(' Home controller..', $location);
     console.log(' Home controller..', $routeParams);
+    editor.locationChanged($location.$$path);
     // console.log('routeParams:', $routeParams.section, $location);
     if (!$location.$$url || $location.$$url === '/') {
      $location.$$url="/home/welcome";   
@@ -784,7 +789,7 @@ function HomeCntl($scope, $routeParams, $location) {
     
 }
 
-HomeCntl.$inject = ['$scope', '$routeParams', '$location'];
+HomeCntl.$inject = ['$scope', '$routeParams', '$location', 'editor'];
 
 
 function chatCntl($scope, $routeParams) {

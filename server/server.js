@@ -109,6 +109,8 @@ var options = {
     ,recast: {
         // transpile: ['jade', 'less', 'stylus', 'sweetjs',
         //             // 'typescript', 'coffeescript',
+        //              'inject',
+        //              'denodify',
         //             'markdown' ], 
         // transpile: [],  //TODO add all current supported file types
         
@@ -116,7 +118,11 @@ var options = {
         transpile: [],
         minify: !develop_mode ? ['js', 'css' ] : [] //js, css, html
         ,zip: !develop_mode ? /text|javascript|json/ : ''//regex on the mimetype
-        ,verbose: develop_mode
+        ,verbose: true //develop_mode
+        
+        ,inject: {
+            'index.html': ['test']
+        }
     }
     
     //if spa is true all requests that don't seem to be requests for a file with
@@ -150,6 +156,7 @@ var options = {
     //       "target": "https://somedb.iriscouch.com"}
     // ]
     
+    //If method and path match the functin will be called with [req, res].
     ,postHandlers: {
         "/__api/save" : editor_save,
         "/contactus_form" : sendMail
@@ -166,13 +173,15 @@ var options = {
     //One built-in handler is reload, include it as a string, otherwise list a home-made module
     //For an example of a handler see lib/reload.js
     // ,wsHandlers:  [ 'reload' ]
+    
     ,verbose: true
     //Convenience setting. When true inject will be added to the transpilers,
     //set to inject the reload script into index.html and the reload handler
     //added to wsHandlers with the result that the server will respond to
     //"reload" messages and send a message to connected browsers to reload
     ,reload: true
-    //If method and path match the functin will be called with [req, res].
+    //host for the websocket to connect to from the client
+    // ,host: 'localhost'
     
     //start a https server
     // ,https: {
@@ -189,29 +198,16 @@ var options = {
         // ,storeOpts: {
         //     //options for mysql, memory doesn't need any
         // }
-    },
-    //not implemented yet:
-    //server api path:
-    api: '__api'
+    }
     //use persona to authenticate
     ,persona: {
         authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
         ,verbose: true 
     } 
     
-    //If method and path match the functin will be called with [req, res].
-    // ,postHandlers: {
-    //     "/testPost" : testPost
-    // }
-    //If method and path match the function will be called with [req, res].
-    // ,getHandlers: {
-    //     "/testget" : testGet,
-    // }
-    //start a https server
-    ,https: false
-    
-    //
-    //enable server api:
+    //server api path:
+    ,api: '__api'
+    //enable server api, not implemented yet
     ,sitemap: true
     ,html_builder: true
     ,clear_cache: true
