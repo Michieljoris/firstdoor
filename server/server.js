@@ -119,9 +119,9 @@ var options = {
         ,zip: !develop_mode ? /text|javascript|json/ : ''//regex on the mimetype
         ,verbose: develop_mode
         
-        ,inject: {
-            'index.html': ['test']
-        }
+        // ,inject: {
+        //     'index.html': ['test']
+        // }
     }
     
     //if spa is true all requests that don't seem to be requests for a file with

@@ -140,7 +140,8 @@ var js = [
     ,'feedback.js'
     ,'cookie.js'
     ,'persona.js'
-    ,"../ckeditor/ckeditor.js"
+    ,'CKEDITOR_BASEPATH.js'
+    ,"../ckeditor/ckeditor.min.js"
     
     // ,'jquery.youtubecarousel'
     
@@ -434,7 +435,7 @@ var exports = {
     } 
     
     //group the script and link blocks and concatenate all files listed in a block
-    ,concatenate: true //!develop_mode 
+    ,concatenate: !develop_mode 
     // ,concatenate: true
     //make sure to load the resources for custom components, the files get added
     //to the first script and link blocks.
