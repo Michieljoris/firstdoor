@@ -1,4 +1,4 @@
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/normalize.css*//
+//*normalize.css*//
 /*! normalize.css v1.1.1 | MIT License | git.io/normalize */
 
 /* ==========================================================================
@@ -534,7 +534,7 @@ table {
 }
 
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/h5bp.css*//
+//*h5bp.css*//
 /*
  * HTML5 Boilerplate
  *
@@ -837,7 +837,7 @@ textarea {
 }
 
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/bootstrap.css*//
+//*bootstrap.css*//
 /*!
  * Bootstrap v2.3.0
  *
@@ -6691,7 +6691,7 @@ button.close {
 }
 
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/font-awesome.css*//
+//*font-awesome.css*//
 /*!
  *  Font Awesome 3.0.1
  *  the iconic font designed for use with Twitter Bootstrap
@@ -7234,7 +7234,7 @@ ul.icons li [class*=" icon-"] {
 .icon-folder-open-alt:before      { content: "\f115"; }
 
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/reset.css*//
+//*reset.css*//
 /*Reset Rules
 
 
@@ -7269,7 +7269,7 @@ ul.icons li [class*=" icon-"] {
 
 /*Reset Rules End*/
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/message-top.css*//
+//*message-top.css*//
 .message-top {
     /* background-color: #3D9444; */
     color: #f3f3f3;
@@ -7278,7 +7278,7 @@ ul.icons li [class*=" icon-"] {
     padding: 3px 20px 3px 14px;
 }
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/social.css*//
+//*social.css*//
 .layout-social {
     float: right;
     margin: 0;
@@ -7346,7 +7346,7 @@ ul.icons li [class*=" icon-"] {
 .youtube {background: url(../images/icons/social/youtube.png) no-repeat;}
 
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/contact.css*//
+//*contact.css*//
 .layout-social {
     float: right;
     margin: 0;
@@ -7378,7 +7378,7 @@ ul.icons li [class*=" icon-"] {
 #contact-top a:hover {color: #888;}
 
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/main.css*//
+//*main.css*//
 /* @font-face { */
 /*   font-family: 'Droid Serif'; */
 /*   src: url('../font/DroidSerif-Regular.ttf') format('truetype'); */
@@ -8561,8 +8561,18 @@ a {
    margin-top:0px; 
 } 
 
+.editor {
+   width:140px; 
+    margin-top:15px;
+}
+
+.editor .btn {
+    margin-top:15px;
+    width: 120px;
+}
+
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/cslider.css*//
+//*cslider.css*//
 .da-slider{
 	width: 100%;
 	min-width: 520px;
@@ -8969,7 +8979,7 @@ a {
 	/* 100%{ left: -50%; opacity: 0; }   */
 }
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/chat.css*//
+//*chat.css*//
 .contentBox { padding:5px; 
 	      border-radius:5px; 
 	      overflow-x: scroll;
@@ -8983,7 +8993,238 @@ a {
 #content{ max-height:400px;}
 
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/menu.css*//
+//*persona-buttons.css*//
+/* Link body */
+.persona-button{
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.1;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0,0,0,0.5), 0 0 2px rgba(0,0,0,0.2);
+
+  background: #297dc3;
+  background: -moz-linear-gradient(top, #43a6e2, #287cc2);
+  background: -ms-linear-gradient(top, #43a6e2, #287cc2);
+  background: -o-linear-gradient(top, #43a6e2, #287cc2);
+  background: -webkit-linear-gradient(top, #43a6e2, #287cc2);
+  background: linear-gradient(top, #43a6e2, #287cc2);
+
+  -moz-border-radius:   3px;
+  -ms-border-radius:     3px;
+  -o-border-radius:     3px;
+  -webkit-border-radius:   3px;
+  border-radius:       3px;
+
+  -moz-box-shadow:   0 1px 0 rgba(0,0,0,0.2);
+  -ms-box-shadow:   0 1px 0 rgba(0,0,0,0.2);
+  -o-box-shadow:     0 1px 0 rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  box-shadow:     0 1px 0 rgba(0,0,0,0.2);
+}
+
+.persona-button:hover{
+  background: #21669f;
+  background: -moz-linear-gradient(top, #3788b9, #21669f);
+  background: -ms-linear-gradient(top, #3788b9, #21669f);
+  background: -o-linear-gradient(top, #3788b9, #21669f);
+  background: -webkit-linear-gradient(top, #3788b9, #21669f);
+  background: linear-gradient(top, #3788b9, #21669f);
+}
+
+.persona-button:active, .persona-button:focus{
+  top: 1px;
+  -moz-box-shadow:   none;
+  -ms-box-shadow:   none;
+  -o-box-shadow:     none;
+  -webkit-box-shadow: none;
+  box-shadow:     none;
+}
+
+.persona-button span{
+  display: inline-block;
+  padding: 5px 10px 8px 40px;
+}
+
+/* Icon */
+.persona-button span:after{
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAPCAYAAAA/I0V3AAAA4klEQVR42o2RWaqEMBRE3YaCiDjPwQGcd9CrysLv4wTyoLFD90dxqbp1EgdPRB7Kskznea6Zn/aPoKoqUUrJOI5m4l2QBfSyLHKep1zXZSae3An1fS/7vst931bGkzuhaZrsLVbGkzuheZ7lOI6HyJ2QUkqv6yrbtv0LT+6E7G0UrfBfP3lZlpoXH4ZBmHgn5Pv+KwxDfqp0XQdgJp6c/RsUBIGOokiSJDE/s21bACbe5Ozp0TdAHMdSFIXUdS1N01C2wpObPT36HifwCJzI0iX29Oh7XP0E3CB9L01TzM+i/wePv4ZE5RtAngAAAABJRU5ErkJggg==) 10px center no-repeat;
+  content: '';
+  display: block;
+  width: 31px;
+
+  position: absolute;
+  bottom: 0;
+  left: -3px;
+  top: 0;
+  z-index: 10;
+}
+
+/*  Icon background */
+.persona-button span:before{
+  content: '';
+  display: block;
+  height: 100%;
+  width: 20px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  background: #42a9dd;
+  background: -moz-linear-gradient(top, #50b8e8, #3095ce);
+  background: -ms-linear-gradient(top, #50b8e8, #3095ce);
+  background: -o-linear-gradient(top, #50b8e8, #3095ce);
+  background: -webkit-linear-gradient(top, #50b8e8, #3095ce);
+  background: linear-gradient(top, #50b8e8, #3095ce);
+
+  -moz-border-radius:   3px 0 0 3px;
+  -ms-border-radius:     3px 0 0 3px;
+  -o-border-radius:     3px 0 0 3px;
+  -webkit-border-radius:   3px 0 0 3px;
+  border-radius:       3px 0 0 3px;
+}
+
+/* Triangle */
+.persona-button:before{
+  background: #42a9dd;
+  content: '';
+  display: block;
+  height: 26px;
+  width: 26px;
+
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  margin-top: -13px;
+  z-index: 0;
+
+  background: -moz-linear-gradient(-45deg, #50b8e8, #3095ce);
+  background: -ms-linear-gradient(-45deg, #50b8e8, #3095ce);
+  background: -o-linear-gradient(-45deg, #50b8e8, #3095ce);
+  background: -webkit-linear-gradient(-45deg, #50b8e8, #3095ce);
+  background: linear-gradient(-45deg, #3095ce, #50b8e8); /* flipped for updated spec */
+
+  -moz-box-shadow:   1px -1px 1px rgba(0,0,0,0.1);
+  -ms-box-shadow:   1px -1px 1px rgba(0,0,0,0.1);
+  -o-box-shadow:     1px -1px 1px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 1px -1px 1px rgba(0,0,0,0.1);
+  box-shadow:     1px -1px 1px rgba(0,0,0,0.1);
+
+  -moz-transform:   rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:     rotate(45deg);
+  -webkit-transform:   rotate(45deg);
+  transform:       rotate(45deg);
+}
+
+/* Inset shadow (required here because the icon background clips it when on the `a` element) */
+.persona-button:after{
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+
+  -moz-border-radius:   3px;
+  -ms-border-radius:     3px;
+  -o-border-radius:     3px;
+  -webkit-border-radius:   3px;
+  border-radius:       3px;
+
+  -moz-box-shadow:   inset 0 -1px 0 rgba(0,0,0,0.3);
+  -ms-box-shadow:   inset 0 -1px 0 rgba(0,0,0,0.3);
+  -o-box-shadow:     inset 0 -1px 0 rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.3);
+  box-shadow:     inset 0 -1px 0 rgba(0,0,0,0.3);
+}
+
+/* ========================================================
+ *    Dark button 
+ * ===================================================== */
+.persona-button.dark{
+  background: #3c3c3c;
+  background: -moz-linear-gradient(top, #606060, #3c3c3c);
+  background: -ms-linear-gradient(top, #606060, #3c3c3c);
+  background: -o-linear-gradient(top, #606060, #3c3c3c);
+  background: -webkit-linear-gradient(top, #606060, #3c3c3c);
+  background: linear-gradient(top, #606060, #3c3c3c);
+}
+.persona-button.dark:hover{
+  background: #2d2d2d;
+  background: -moz-linear-gradient(top, #484848, #2d2d2d);
+  background: -ms-linear-gradient(top, #484848, #2d2d2d);
+  background: -o-linear-gradient(top, #484848, #2d2d2d);
+  background: -webkit-linear-gradient(top, #484848, #2d2d2d);
+  background: linear-gradient(top, #484848, #2d2d2d);
+}
+.persona-button.dark span:before{ /* Icon BG */
+  background: #d34f2d;
+  background: -moz-linear-gradient(top, #ebac45, #d34f2d);
+  background: -ms-linear-gradient(top, #ebac45, #d34f2d);
+  background: -o-linear-gradient(top, #ebac45, #d34f2d);
+  background: -webkit-linear-gradient(top, #ebac45, #d34f2d);
+  background: linear-gradient(top, #ebac45, #d34f2d);
+}
+.persona-button.dark:before{ /* Triangle */
+  background: #d34f2d;
+  background: -moz-linear-gradient(-45deg, #ebac45, #d34f2d);
+  background: -ms-linear-gradient(-45deg, #ebac45, #d34f2d);
+  background: -o-linear-gradient(-45deg, #ebac45, #d34f2d);
+  background: -webkit-linear-gradient(-45deg, #ebac45, #d34f2d);
+  background: linear-gradient(-45deg, #d34f2d, #ebac45); /* flipped for updated spec */
+}
+
+/* ========================================================
+ *    Orange button 
+ * ===================================================== */
+.persona-button.orange{
+  background: #ee731a;
+  background: -moz-linear-gradient(top, #ee731a, #d03116);
+  background: -ms-linear-gradient(top, #ee731a, #d03116);
+  background: -o-linear-gradient(top, #ee731a, #d03116);
+  background: -webkit-linear-gradient(top, #ee731a, #d03116);
+  background: linear-gradient(top, #ee731a, #d03116);
+}
+.persona-button.orange:hover{
+  background: #cb6216;
+  background: -moz-linear-gradient(top, #cb6216, #b12a13);
+  background: -ms-linear-gradient(top, #cb6216, #b12a13);
+  background: -o-linear-gradient(top, #cb6216, #b12a13);
+  background: -webkit-linear-gradient(top, #cb6216, #b12a13);
+  background: linear-gradient(top, #cb6216, #b12a13);
+}
+.persona-button.orange span:before{ /* Icon BG */
+  background: #e84a21;
+  background: -moz-linear-gradient(top, #f7ad27, #e84a21);
+  background: -ms-linear-gradient(top, #f7ad27, #e84a21);
+  background: -o-linear-gradient(top, #f7ad27, #e84a21);
+  background: -webkit-linear-gradient(top, #f7ad27, #e84a21);
+  background: linear-gradient(top, #f7ad27, #e84a21);
+}
+.persona-button.orange:before{ /* Triangle */
+  background: #e84a21;
+  background: -moz-linear-gradient(-45deg, #f7ad27, #e84a21);
+  background: -ms-linear-gradient(-45deg, #f7ad27, #e84a21);
+  background: -o-linear-gradient(-45deg, #f7ad27, #e84a21);
+  background: -webkit-linear-gradient(-45deg, #f7ad27, #e84a21);
+  background: linear-gradient(-45deg, #e84a21, #f7ad27); /* flipped for updated spec */
+}
+
+;
+//*menu.css*//
 /* 
 Document   : navigation css
 Created on : Jan 4, 2013, 4:07:03 PM
@@ -9136,7 +9377,7 @@ Purpose of the stylesheet follows.
 
 
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/flexslider.css*//
+//*flexslider.css*//
 /*
  * jQuery FlexSlider v2.0
  * http://www.woothemes.com/flexslider/
@@ -9225,7 +9466,7 @@ html[xmlns] .slides {display: block;}
   .flex-direction-nav .flex-next {opacity: 1; right: 0;}
 }
 ;
-//*/mnt/mint/home/michieljoris/www/sites/firstdoor/www/css/showhide.css*//
+//*showhide.css*//
 /* showhide */
 .more {
 	display: none;
@@ -9240,3 +9481,6 @@ a.hideLink {
 	background: transparent url('../images/up.gif') no-repeat left; }
 a.showLink:hover, a.hideLink:hover {
 	border-bottom: 1px dotted #36f; }
+
+
+;

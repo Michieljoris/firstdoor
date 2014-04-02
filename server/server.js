@@ -15,7 +15,6 @@ var server = require('bb-server'),
 
  
 var develop_mode = process.env.DEVELOP; 
-develop_mode = true;
 //TODO: limit sending of files to certain mimetypes and/or extensions
 //TODO: option to not send mimeless files found in allowable directories.
 //TODO: send certain files directly, bypassing cache with certain
@@ -118,7 +117,7 @@ var options = {
         transpile: [],
         minify: !develop_mode ? ['js', 'css' ] : [] //js, css, html
         ,zip: !develop_mode ? /text|javascript|json/ : ''//regex on the mimetype
-        ,verbose: true //develop_mode
+        ,verbose: develop_mode
         
         ,inject: {
             'index.html': ['test']
@@ -179,7 +178,7 @@ var options = {
     //set to inject the reload script into index.html and the reload handler
     //added to wsHandlers with the result that the server will respond to
     //"reload" messages and send a message to connected browsers to reload
-    ,reload: true
+    ,reload: develop_mode
     //host for the websocket to connect to from the client
     // ,host: 'localhost'
     
@@ -201,8 +200,9 @@ var options = {
     }
     //use persona to authenticate
     ,persona: {
-        authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
-        ,verbose: true 
+        authorized: ['mail@axion5.net', 'michieljoris@gmail.com', 'andrea@firstdoor.com.au']
+        ,verbose: true
+        ,audience: develop_mode ? "localhost" : "firstdoor.axion5.com"
     } 
     
     //server api path:

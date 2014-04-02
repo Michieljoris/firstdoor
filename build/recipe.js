@@ -120,8 +120,8 @@ var js = [
     ,'epiceditor.min.js'
     ,'spin.js'
     ,'jquery.spin.js'
-    ,'myjs.js',
-    'module.js',
+    ,'myjs.js'
+    ,'module.js'
     ,'editor.js'
     ,'controllers.js'
     ,'filebrowserCntl.js'
@@ -342,7 +342,7 @@ var exports = {
     //send msg to url when finished rendering
     ,reload: {
         // enable: develop_mode,
-        enable: true,
+        enable: develop_mode,
         url: "ws://localhost:8080",
         msg: "reload"
     }
@@ -434,7 +434,7 @@ var exports = {
     } 
     
     //group the script and link blocks and concatenate all files listed in a block
-    ,concatenate: !develop_mode 
+    ,concatenate: true //!develop_mode 
     // ,concatenate: true
     //make sure to load the resources for custom components, the files get added
     //to the first script and link blocks.
@@ -514,8 +514,6 @@ var exports = {
                 id: 'myJsBlock',
                 files: js,
                 path: 'js'
-                
-                ,out: 'bla'
             }
             // {
             //     id: 'headJsBlock',

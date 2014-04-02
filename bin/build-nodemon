@@ -1,2 +1,7 @@
 URL=`cat bin/URL`
-nodemon node_modules/html-builder/bin/buildMonitor.js -s ws://$URL
+if [ ! -z $URL ]
+then
+    nodemon node_modules/html-builder/bin/buildMonitor.js -s ws://$URL
+else 
+    nodemon node_modules/html-builder/bin/buildMonitor.js 
+fi 

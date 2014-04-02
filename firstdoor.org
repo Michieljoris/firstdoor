@@ -1,3 +1,29 @@
+* Backup
+** Git repo of entire site, 
+daily cron job, sync entire site dir, .git and all, with dropbox.
+** Rsync editable dir with hardlinks, as source of restorable backups 
+
+* Blog
+Bunch of files on server.
+__api/blog?action=getjson retrieve json of metadata
+__api/blog?action=buildjson json can be built with metadata, using title and mtime and atime of file,
+possibly extracting data from file, plus path
+__api/blog?action=create&?name="some name" Create a new file with a specific name, json gets rebuilt.
+__api/blog?action=rm&?name="some name" Remove a blog entry, rebuild json
+__api/blog?action=mv&?name="some name"&to="new name", rename file, rebuild json
+
+On client:
+Use json to search/display list/make tagcloud/display recent/extract filenames
+to retrieve and show.
+Can we enable CKEDITOR for xhr requested content? Easily?
+
+
+
+
+
+
+ ••••••••••••••••••••
+* mind!!
 404 for resources/bla enrol/bla contactus/bla
 links to docs on enrol page on phone and tablet (green door goes away then)
 
