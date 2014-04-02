@@ -1,24 +1,18 @@
-
-<!--partial:views/view_home_partial.html-->
 <div class="row"> 
-  <div id="sidebar--" class="span3">
-<!--partial:html/sidebar.html-->
-<fixscroll data-ng-transclude="">
+  <div id="sidebar--" class="span3"><fixscroll data-ng-transclude="">
 
   <div ng-class="getPageClass" id="greendoor">
     <div class="doorlinks">
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
         <div ng-repeat="link in page.links">
-          <li ng-class="isSelected(link.route)" >
-            <div ng-switch on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}"
-                 target="{{link.file && '_self' || ''}}" download>{{link.label}} </a>
-              <a  ng-switch-default ng-href="{{link.route}}"
-                  target="{{link.file && '_self' || ''}}" >{{link.label}} </a>
+          <li ng-class="isSelected(link.route)">
+            <div ng-switch="" on="link.download">
+              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}" download="">{{link.label}} </a>
+              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
             </div>
             <ul>
-              <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
+              <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
 
                 <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
               </li>
@@ -43,38 +37,33 @@
     <!-- <button ng-show="editable()" class="btn btn-primary"  type="button"
 		 ng-click="toggleEditable()">Done</button> -->
     <div ng-show="isDirty()">
-      <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
-      <button class="btn btn-primary"  type="button" ng-click="undoEditable()">Undo</button>
+      <button class="btn btn-primary" type="button" ng-click="saveEditable()">Save</button>
+      <button class="btn btn-primary" type="button" ng-click="undoEditable()">Undo</button>
       <!-- <button class="btn btn-primary"  type="button" ng-click="printEditable()">Print editable</button> -- -->
 
     </div>
   </div>
 </fixscroll>
 </div>
-  <div ng-show="isShow('welcome_') || isShow('asqa_')" id="slideShow--" class="span9"><div class="flexslider"><ul class="slides"><li><img src="images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>   
+  <div ng-show="isShow('welcome_') || isShow('asqa_')" id="slideShow--" class="span9"><div class="flexslider"><ul class="slides"><li><img src="__f26441adda/images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__87a0485e4f/images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__6683e3f9db/images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="__def42a622a/images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>   
   
-  <div ng-show="!(isShow('welcome_') || isShow('asqa_'))"
-       class="span9 inline-image embed-container ratio-tabimage ">     
-    <img class="" ng-src="{{getHeaderImage()}}"/>
+  <div ng-show="!(isShow('welcome_') || isShow('asqa_'))" class="span9 inline-image embed-container ratio-tabimage ">     
+    <img class="" ng-src="{{getHeaderImage()}}">
   </div>
   
   <div class="row">     
-    <div id="homeContents--" class="span7">
-<!--partial:html/welcome_stitch.html-->
-<div scroll id="welcome"></div>
-<div ng-show="isShow('welcome')" >
-  <div contenteditable="{{editable()}}" id="welcome--">
-<!--partial:editable/welcome/welcome.html-->
-<!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html-->
-<h2>Open yourself to a career as an&nbsp;Early Childhood professional!!!</h2>
+    <div id="homeContents--" class="span7"><div scroll="" id="welcome"></div>
+<div ng-show="isShow('welcome')">
+  <div contenteditable="{{editable()}}" id="welcome--"><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html-->
+<h2>Open yourself to a career as an&nbsp;Early Childhood professional!!!edit</h2>
 
 <p><strong>Welcome to First Door,</strong> and congratulations for seeking opportunity in a rewarding career that influences people&#39;s lives.</p>
 
 <p>First Door specialises in Early Childhood training, aligning educators and leaders to their role based on the National Quality Framework (NQF). The NQF has empowered our industry to rise up to the challenge of being professional educators and educational leaders.&nbsp;This has meant a leap forward in role expectations and the capability required by educators. By choosing a study partnership with First Door, you will gain confidence in your skills and knowledge, and be equipped to enjoy the rewards of your role.</p>
 
-<h3>What choose First Door?blabla</h3>
+<h3>What choose First Door?blablasome editing!!!!!!!</h3>
 
-<p>First Door is dedicated to inspiring and developing capability in Early Childhood educators and leaders. We connect, support and engage students through active learning with:</p>
+<p>First Door is dedicated to inspiringggghghhhhf and developing capability in Early Childhood educators and leaders. We connect, support and engage students through active learning with:</p>
 
 <ul>
 	<li>a personal mentor for study support and a monthly meeting to guide you into achieving best workplace practice</li>
@@ -90,28 +79,24 @@
 
 <h4><strong>Request the&nbsp;<strong><em>Scholarship FAQ</em></strong> document for full information and <em>First Door scholarship application</em> form now!</strong></h4>
 
-<h4><strong>Contact us, to develop your professional capability and career opportunities,&nbsp;<br />
+<h4><strong>Contact us, to develop your professional capability and career opportunities,&nbsp;<br>
 or phone us on 07 3103 2336</strong></h4>
 </div>
 </div>
 
-<div scroll id="specialists"></div>
-<div ng-show="isShow('specialists')" >
-  <div contenteditable="{{editable()}}"  id="specialists--">
-<!--partial:editable/welcome/specialists.html-->
-<!--partial:editable/welcome/specialists.html-->
-<h2>Specialists in Early Childhood training and development</h2>
+<div scroll="" id="specialists"></div>
+<div ng-show="isShow('specialists')">
+  <div contenteditable="{{editable()}}" id="specialists--"><!--partial:editable/welcome/specialists.html-->
+<h2>Specialists in Early Childhood training and developmentedit</h2>
 
 <p>First Door specialises in delivering meaningful training, inspiration and active learning within the Early Childhood and Outside School Hours Care sector. Our training and professional development is focused on&nbsp;aligning educators to their role based on the National Quality Framework. In addition to offering accredited training in the Diploma of Early Childhood Education and Care, we promote the need to create learning organisations where each centre or s<span style="font-size:14px">n (RTO) providing Nationally Recognised Training. The RTO code for First Door Training and Development is 40782, and is issued by the Australian Skills Quality Authority.</span></p>
 </div>
 </div>
 
 
-<div scroll id="engaging"></div>
-<div ng-show="isShow('engaging')" >
-  <div contenteditable="{{editable()}}" id="engaging--">
-<!--partial:editable/welcome/engaging.html-->
-<h2>Engaging resources and environments</h2>
+<div scroll="" id="engaging"></div>
+<div ng-show="isShow('engaging')">
+  <div contenteditable="{{editable()}}" id="engaging--"><h2>Engaging resources and environments</h2>
 <h3>Engaging resources</h3>
 <p>We are committed to ensuring our resources are relevant and meaningful combining learning with real work experiences. First Door prepares the student workbook for each unit to ensure practical work-based activities and assessment tasks that allow students to practice and understand theory.</p>
 <h3>Engaging learning environments</h3>
@@ -124,27 +109,23 @@ or phone us on 07 3103 2336</strong></h4>
 </div>
 
 
-<div scroll id="mentor"></div>
-<div ng-show="isShow('mentor')" >
-  <div contenteditable="{{editable()}}" id="mentor--">
-<!--partial:editable/welcome/mentor.html-->
-<h2>Your personal mentor</h2>
-<p>First Door connects each student with an industry experienced and qualified trainer as your personal mentor. Your personal mentor is available for study support and to provide workplace mentoring relevant to the current unit of study.<br /><br />We undertake to provide each student with an arranged monthly workplace mentoring meeting. Where this is not possible, due to the location of the student's workplace, then a monthly skype or facetime meeting is arranged between student and mentor. This meeting allows for:</p>
+<div scroll="" id="mentor"></div>
+<div ng-show="isShow('mentor')">
+  <div contenteditable="{{editable()}}" id="mentor--"><h2>Your personal mentor</h2>
+<p>First Door connects each student with an industry experienced and qualified trainer as your personal mentor. Your personal mentor is available for study support and to provide workplace mentoring relevant to the current unit of study.<br><br>We undertake to provide each student with an arranged monthly workplace mentoring meeting. Where this is not possible, due to the location of the student's workplace, then a monthly skype or facetime meeting is arranged between student and mentor. This meeting allows for:</p>
 <ul>
 <li>review of the student's previous assessment and feedback</li>
 <li>thirty minutes workplace observation and assessment</li>
 <li>fifteen minutes to provide constructive feedback</li>
 <li>assistance with understanding of the current workbook and assessment activities</li>
-<li>guidance, inspiration and support for each student<br /><br /></li>
+<li>guidance, inspiration and support for each student<br><br></li>
 </ul></div>
 </div>
 
 
-<div scroll id="constructive"></div>
-<div ng-show="isShow('constructive')" >
-  <div contenteditable="{{editable()}}" id="constructive--">
-<!--partial:editable/welcome/constructive.html-->
-<h2>Constructive and timely assessment</h2>
+<div scroll="" id="constructive"></div>
+<div ng-show="isShow('constructive')">
+  <div contenteditable="{{editable()}}" id="constructive--"><h2>Constructive and timely assessment</h2>
 <p>Assessment is the process of gathering evidence to determine the competency of each student based on the National accredited training requirements.&nbsp;First Door produces each unit's assessment workbook to ensure assessment questions/activities are relevant to the student&rsquo;s workplace experiences. We strive to provide each student with authentic learning and meaningful assessment.</p>
 <p>Student assessment is completed in the individual unit's&nbsp;<strong><em>Workplace Activities and Assessment Workbook</em></strong></p>
 <p>First Door assessment comprises of two parts:</p>
@@ -163,30 +144,26 @@ or phone us on 07 3103 2336</strong></h4>
 <p>First Door undertakes to return student workbooks and assessment to the student&nbsp;<strong>within fourteen days of receipt.</strong>&nbsp;Assessment feedback is provided to guide a student on their progress and address any areas of difficulty.</p></div>
 </div>
 
-<div scroll id="asqa"></div>
-<div ng-show="isShow('asqa')" >
-  <div contenteditable="{{editable()}}" id="asqa--">
-<!--partial:html/asqa.html-->
-<!--partial:html/asqa.html-->
+<div scroll="" id="asqa"></div>
+<div ng-show="isShow('asqa')">
+  <div contenteditable="{{editable()}}" id="asqa--"><!--partial:html/asqa.html-->
 <p>asdfaDownlodsfsdfad pdf file: <a href="https://www.dropbox.com/s/nyq4mz5ihayu8bg/ASQA_Audit_Report.pdf" target="_self">Australian Skills Quality Authority audit summary</a></p>
 </div>
 </div>
 
 
-<div scroll id="quiz"></div>
-<div ng-show="isShow('quiz')" >
+<div scroll="" id="quiz"></div>
+<div ng-show="isShow('quiz')">
   <div contenteditable="{{editable()}}" id="quiz--"> </div>
 </div>
 
 
-<div scroll id="welcome404"></div>
-<div ng-show="is404()" >This page does not exist..</div>
+<div scroll="" id="welcome404"></div>
+<div ng-show="is404()">This page does not exist..</div>
 </div>
-    <div id="rightBar--" class="span2">
-<!--partial:html/rightbar.html-->
-<!-- <fixscrollright data-ng-transclude="">  -->
+    <div id="rightBar--" class="span2"><!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
-<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
+<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"></a>
 <script type="text/javascript">
  var a2a_config = a2a_config || {};
  a2a_config.linkurl = "http://www.firstdoor.com.au";
@@ -196,9 +173,7 @@ or phone us on 07 3103 2336</strong></h4>
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
 <!-- AddToAny END -->
 <div ng-show="show_events()">
-  <div contenteditable="{{editable()}}" id="events_sidebar--">
-<!--partial:editable/events_sidebar.html-->
-<h3>Upcoming workshop events</h3>
+  <div contenteditable="{{editable()}}" id="events_sidebar--"><h3>Upcoming workshop events</h3>
 <p>April 7: <a href="https://dl.dropboxusercontent.com/u/121993962/safe_and_healthy_environments_CBworkshop_invitation.pdf" target="_blank">Safe and healthy environment</a></p>
 <p>April 28: <strong>Develop teams and individuals</strong></p>
 <p>May 5: Partnership with families</p>
@@ -222,23 +197,22 @@ or phone us on 07 3103 2336</strong></h4>
     <label class="form-label ">Name<span class="form-required">*</span></label>
     <div class="controls controls-row control-group {{namemissing}}">
 
-      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
-      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required>
     </div>
 
     <label class="form-label">Email<span class="form-required">*</span></label>
 
     <div class="control-group {{emailmissing}}">
-      <input class="span2" type="email" id="email" name="email" required/><br/>
+      <input class="span2" type="email" id="email" name="email" required><br>
     </div>
 
     <label class="form-label">Message<span class="form-required">*</span></label>
 
     <div class="control-group {{msgmissing}}">
-      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
     </div>
-    <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
-           value="Send" />
+    <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
     <div id="captchadiv"></div>
   </div>
   <div ng-show="sent" class="well">

@@ -140,7 +140,9 @@ var js = [
     ,'feedback.js'
     ,'cookie.js'
     ,'persona.js'
-    ,"../ckeditor/ckeditor.js"
+    
+    ,"CKEDITOR_BASEPATH.js"
+    ,"../ckeditor/ckeditor.min.js"
     
     // ,'jquery.youtubecarousel'
     
@@ -388,10 +390,9 @@ var exports = {
       two char if you have variable length and let bb-server recognize the stamp
       by a prefix. Only risk is to loose the manifest.
     */ 
-    // ,cachify: !develop_mode 
-    // ,cachify: true
     //hash or mtime, query or modified filename
-    ,cachify : develop_mode ? false : {
+    // ,cachify : develop_mode ? false : {
+    ,cachify :  {
         // exclude: ['pdf', 'doc', 'docx'], //for instance ['pdf', 'doc']
         method: 'sha1' //mtime or any of the hashes returned from crypto.getHashes()
         // (var crypto = require('crypto');
@@ -435,7 +436,6 @@ var exports = {
     
     //group the script and link blocks and concatenate all files listed in a block
     ,concatenate: !develop_mode 
-    // ,concatenate: true
     //make sure to load the resources for custom components, the files get added
     //to the first script and link blocks.
     ,extras: ['flex-slider', 'cssmenu', 'showhide']
@@ -468,7 +468,8 @@ var exports = {
     ,partials: {
         ids: {
             title: '<title>Firstdoor - Leaders in developing capability</title>'
-            ,baseHref: develop_mode ? '<base href="http://localhost:9001">': '<base href="http://firstdoor.axion5.com">'
+            ,baseHref9001: develop_mode ? '<base href="http://localhost:9001">': '<base href="http://firstdoor.axion5.com">'
+            ,baseHref11001: develop_mode ? '<base href="http://localhost:11001">': '<base href="http://firstdoor.axion5.com">'
             // ,baseHref: '<base href="http://192.168.1.184:9001">'
             // ,baseHref: '<base href="/"">'
             // ,image_courses: '<img class="" src="images/slides/tab_accredited_training.jpg" />'
@@ -510,6 +511,17 @@ var exports = {
             path: 'css'
         }
         ,scriptBlock: [
+            // {
+            //     id: 'ckeditorBlock',
+            //     files: [
+            //         "CKEDITOR_BASEPATH.js"
+            //         ,"../ckeditor/ckeditor.min.js"
+            //     ],
+            //     path: 'js'
+                
+            //     ,out: 'bla'
+            // },
+            
             {
                 id: 'myJsBlock',
                 files: js,
@@ -807,7 +819,7 @@ var exports = {
                //under the cachify.list
                ,mapping: {
                    head: [
-                       'baseHref',
+                       'baseHref9001',
                        'title', 'meta',
 
                        'myLinkBlock',
@@ -823,11 +835,52 @@ var exports = {
                               'sharethis1', 'sharethis2', 'sharethis3',
                               ,'persona', 
                               'myJsBlock',
-                              // '_scriptBlock'
+                              // 'ckeditorBlock'
                               ,'html/google_analytics.html'
                              ]
                }
              }
+            // ,{  
+            //    src: 'html/basicAngularPage.html'
+            //    ,tagIdPostfix: '' //can be overridden per template
+            //    ,pathOut: ''
+            //    ,out: 'www/edit.html' //optional, relative to root
+               
+            //    //Maps tag ids to partial ids. Tag ids have to be
+            //    //postfixed with two dashes in the template. Partials
+            //    //with an extension will be loaded from the partials
+            //    //folder for this template. Markdown files will be
+            //    //converted to html. Partials in an array will be
+            //    //concatenated before inserted at the tag id element
+               
+            //    //Make sure to have the cachify partial included in the head if
+            //    //you want to dynamically load resources from javascript, but
+            //    //want to retrieve cachified versions. Include the resources
+            //    //under the cachify.list
+            //    ,mapping: {
+            //        head: [
+            //            'baseHref11001',
+            //            'title', 'meta',
+
+            //            'myLinkBlock',
+            //            'html/ieshim','skewer',
+            //            // 'firebug',
+            //            // 'sharethis1', 'sharethis2', 'sharethis3',
+            //            // 'headJsBlock',
+            //            ,'cachify'
+            //        ],
+                  
+            //        "ng:app": ['body',
+                              
+            //                   'sharethis1', 'sharethis2', 'sharethis3',
+            //                   ,'persona', 
+            //                   'myJsBlock',
+            //                   'ckeditorBlock'
+            //                   // '_scriptBlock'
+            //                   // ,'html/google_analytics.html'
+            //                  ]
+            //    }
+            //  }
             
         ] 
         

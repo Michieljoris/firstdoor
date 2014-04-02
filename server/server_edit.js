@@ -25,7 +25,7 @@ var options = {
     root: './www'
     //if not assigned defaults to 8080. If that port's not available
     //the server will try 8081 and so on.
-    ,port: 9001
+    ,port: 11001
     
     // Assign true to allow listing of directories when the path in
     // the url matches a path on the server relative to the
@@ -37,7 +37,7 @@ var options = {
     // over instead of the directory listing. Assign a string to look
     // for and send a different default file. Defaults to false and to
     // 'index.html' if assigned true.
-    ,index: "index.html"
+    ,index: "edit.html"
     
     //if a request for /favicon comes in send the favicon found in the
     //path specified (relative to where this script is executed from), 
@@ -128,7 +128,7 @@ var options = {
     //is index.html, but a different filename can get assigned to spa. Use a
     //fragment meta tag in your spa file, or use hashbang in your urls to have
     //google crawl _escaped_fragment_ urls.
-    ,spa: true
+    ,spa: 'edit.html'
     
     //the server can prerender requests for _escaped_fragment_ urls. For any
     // prerendering to occur the following option needs to be true. Defaults to
@@ -202,7 +202,7 @@ var options = {
         authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
         ,verbose: true 
         // ,audience: develop_mode ? "localhost:9001" : "firstdoor.axion5.com" 
-        ,audience: true ? "localhost:9001" : "firstdoor.axion5.com" 
+        ,audience: true ? "localhost:11001" : "firstdoor.axion5.com" 
     } 
     
     //server api path:

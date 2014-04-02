@@ -43,7 +43,7 @@ myAppModule.factory('editor', function() {
             };
         },
         signingIn : function(value) {
-            console.log('signing in ', value, typeof value);
+            // console.log('signing in ', value, typeof value);
             if (typeof value !== 'undefined')
                 signingIn = value;
            return signingIn;
@@ -81,7 +81,7 @@ myAppModule.factory('editor', function() {
     var regexp = /<!--partial:([^>]*)-->/;
     api.toggleEditable = function() {
         editable = !editable;
-        console.log('editable?', editable);
+        // console.log('editable?', editable);
         if (editable) {
             setTimeout(function() {
                 var editables = $('div[contenteditable=true]');
@@ -131,7 +131,7 @@ myAppModule.factory('editor', function() {
             .filter(function(id) {
                 return CKEDITOR.instances[id].checkDirty();
             });
-        console.log('isDirty', dirty.length);
+        // console.log('isDirty', dirty.length);
         return dirty.length > 0;
         
     };

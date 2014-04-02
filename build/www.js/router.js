@@ -1,9 +1,4 @@
 
-<!--partial:js/router.js-->
-/*global EpicCntl:false HomeCntl:false DefaultCntl:false EpicEditor:false $:false angular:false*/
-/*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
-/*jshint maxparams:6 maxcomplexity:10 maxlen:190 devel:true*/
-
 angular.module('ngView', [],
                ['$routeProvider', '$locationProvider',
                 function($routeProvider, $locationProvider) {
