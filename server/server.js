@@ -177,7 +177,7 @@ var options = {
     //set to inject the reload script into index.html and the reload handler
     //added to wsHandlers with the result that the server will respond to
     //"reload" messages and send a message to connected browsers to reload
-    ,reload: true
+    ,reload: develop_mode
     //host for the websocket to connect to from the client
     // ,host: 'localhost'
     
@@ -201,8 +201,7 @@ var options = {
     ,persona: {
         authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
         ,verbose: true 
-        // ,audience: develop_mode ? "localhost:9001" : "firstdoor.axion5.com" 
-        ,audience: true ? "localhost:9001" : "firstdoor.axion5.com" 
+        ,audience: develop_mode ? "localhost:9001" : "firstdoor.axion5.com" 
     } 
     
     //server api path:

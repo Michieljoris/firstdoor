@@ -4,7 +4,7 @@ rsync --verbose  --progress --stats --compress --rsh=/usr/bin/ssh --recursive --
 --exclude ".git" \
 --exclude "node_modules" \
 --exclude "build/editable" \
-~/www/sites/firstdoor/ michieljoris@linode:~/www/firstdoor/
+~/www/sites/firstdoor/ michieljoris@linode:~/www/test_firstdoor/
 
 
 

@@ -344,7 +344,7 @@ var exports = {
     //send msg to url when finished rendering
     ,reload: {
         // enable: develop_mode,
-        enable: true,
+        enable: develop_mode,
         url: "ws://localhost:8080",
         msg: "reload"
     }
