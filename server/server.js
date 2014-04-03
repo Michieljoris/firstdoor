@@ -5,9 +5,9 @@ var server = require('bb-server'),
 
     sendMail = require("./firstDoorSendMail.js")
     // ,testSendMail = require("./testSendMail.js")
-    ,sync = require("./sync.js")
-    ,dropbox_authorize = require("./dropbox_authorize.js")
-    ,dropbox_connect = require("./dropbox_connect.js")
+    // ,sync = require("./sync.js")
+    // ,dropbox_authorize = require("./dropbox_authorize.js")
+    // ,dropbox_connect = require("./dropbox_connect.js")
     ,editor_save = require('./editor_save.js')
     // testMail = require("./testSendMail"),
     // testGet = require("./testGet")
@@ -161,9 +161,9 @@ var options = {
         // ,"/contactus_form" : testSendMail
         }
     ,getHandlers: {
-        "/sync": sync,
-        "/dropbox_authorize": dropbox_authorize,
-        "/dropbox_connect": dropbox_connect
+        // "/sync": sync,
+        // "/dropbox_authorize": dropbox_authorize,
+        // "/dropbox_connect": dropbox_connect
     }
     
     
@@ -177,7 +177,7 @@ var options = {
     //set to inject the reload script into index.html and the reload handler
     //added to wsHandlers with the result that the server will respond to
     //"reload" messages and send a message to connected browsers to reload
-    ,reload: develop_mode
+    ,reload: develop_mode ? true : false
     //host for the websocket to connect to from the client
     // ,host: 'localhost'
     
@@ -199,7 +199,7 @@ var options = {
     }
     //use persona to authenticate
     ,persona: {
-        authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
+        authorized: ['mail@axion5.net', 'andrea@firstdoor.com.au']
         ,verbose: true 
         ,audience: develop_mode ? "localhost:9001" : "firstdoor.axion5.com" 
     } 
