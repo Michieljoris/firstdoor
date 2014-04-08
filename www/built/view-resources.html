@@ -13,8 +13,8 @@
         <div ng-repeat="link in page.links">
           <li ng-class="isSelected(link.route)">
             <div ng-switch="" on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}" download="">{{link.label}} </a>
-              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
+              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}" download="">{{link.label}} </a>
+              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}">{{link.label}} </a>
             </div>
             <ul>
               <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
@@ -28,6 +28,16 @@
       <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
     </div>
   </div>
+
+  <div class="">
+    <image height="87" width="100" style="display:block;margin-left:35px;margin-right:auto;padding:16px 0 0 20px;" ng-hide="hide_nrtlogo()" ng-src="{{cachify(&quot;images/nrtlogoclsm.png&quot;)}}"> </image>
+  </div>
+
+  <div class="">
+    <a href="courses/apprenticeship">
+      <image width="160px" style="padding:15px 0 20px 20px" ng-src="{{cachify(&quot;images/Apprenticeship_button_website.jpg&quot;)}}"> </image>
+    </a>
+  </div>
   <div ng-show="signingIn()" class="editor well"> Signing in...</div>
   <div ng-show="signedIn()" class="editor well">
 
@@ -40,7 +50,7 @@
     <p></p>
     <!-- <button ng-hide="editable()" class="btn btn-primary"  type="button" ng-click="toggleEditable()">Edit</button> -->
     <!-- <button ng-show="editable()" class="btn btn-primary"  type="button"
-		 ng-click="toggleEditable()">Done</button> -->
+         ng-click="toggleEditable()">Done</button> -->
     <div ng-show="isDirty()">
       <button class="btn btn-primary" type="button" ng-click="saveEditable()">Save</button>
       <button class="btn btn-primary" type="button" ng-click="undoEditable()">Undo</button>
@@ -136,15 +146,22 @@
 </script>
 
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+
+<!-- <div class=""> -->
+<!--   <a href="apprenticeship"> -->
+<!--   <image width="160px"  style="padding-top:15px;" -->
+<!--   ng-src={{cachify("images/Apprenticeship_button_website.jpg")}}> </image> -->
+<!--   </a> -->
+<!-- </div> -->
+
 <!-- AddToAny END -->
 <div ng-show="show_events()">
   <div contenteditable="{{editable()}}" id="events_sidebar--">
 <!--partial:editable/events_sidebar.html-->
 <h3>Upcoming workshop events</h3>
-<p>April 7: <a href="https://dl.dropboxusercontent.com/u/121993962/safe_and_healthy_environments_CBworkshop_invitation.pdf" target="_blank">Safe and healthy environment</a></p>
-<p>April 28: <strong>Develop teams and individuals</strong></p>
-<p>May 5: Partnership with families</p>
-<p>May 19: Developing cooperative behaviour</p>
+<p>April 28: <a href="https://db.tt/UeW0TSaU"><strong>Develop teams and individuals</strong></a></p>
+<p>May 5: <a href="https://www.dropbox.com/s/lo9levu7acj6u89/Partnership%20with%20families%20CBW%20invite.pdf">Partnership with families</a></p>
+<p>May 19: <a href="https://db.tt/Eu7PgZKL">Developing cooperative behaviour</a></p>
 <p>June 2: Health and safety of children</p>
 <p>June 16:&nbsp;<strong>Plan and monitor continuous improvement</strong>&nbsp;&nbsp;</p>
 <p>July 7:&nbsp;Promote and provide healthy food and drinks</p>

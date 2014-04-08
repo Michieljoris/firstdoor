@@ -221,6 +221,7 @@ var mainMenuTree = [
              scroll: true}
            ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
            ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+           ,{ label: 'Government funded Apprenticeship training', route: 'courses/apprenticeship', scroll: true}
            // ,{ label: 'Aged care', route: 'courses/agedcare'}
        ]
      } 
@@ -430,7 +431,8 @@ var exports = {
             'images/slides/tab_professional_development.jpg',
             'images/slides/tab_resources.jpg',
             'images/course_structure_children_services.jpg',
-            'images/homepage_image.jpg'
+            'images/homepage_image.jpg',
+            "images/Apprenticeship_button_website.jpg"
         ]
     } 
     
@@ -452,6 +454,7 @@ var exports = {
         ['filebrowser', 'built/view-filebrowser.html', 'filebrowserCntl'],
         ['contactus', 'built/view-contactus.html', 'contactusCntl'],
         ['enrol', 'built/view-enroll.html'],
+        ['apprenticeship', 'built/view-apprenticeship.html'],
         ['sitemap', 'sitemap.html']
         
         // ,['ytcarousel', '/build/html/ytcarousel.html']
@@ -680,6 +683,7 @@ var exports = {
                    ,priorlearning: 'editable/courses/priorlearning'
                    ,trainingplans: 'editable/courses/trainingplans'
                    ,studentfees: 'editable/courses/studentfees'
+                   ,apprenticeship: 'editable/apprenticeship'
                }
              } 
             ,{ 
@@ -714,6 +718,15 @@ var exports = {
                     sidebar: 'html/sidebar'
                     // ,image: 'image_resources'
                     ,contents: 'editable/enroll.html'
+                    ,rightBar: 'rightbar'
+                }}
+            ,{
+                src: 'views/view_apprenticeship_partial.html'
+                ,out : 'view-apprenticeship.html'
+                ,mapping: {
+                    sidebar: 'html/sidebar'
+                    // ,image: 'image_resources'
+                    ,contents: 'editable/apprenticeship.html'
                     ,rightBar: 'rightbar'
                 }}
             //Contact Us

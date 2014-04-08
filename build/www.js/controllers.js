@@ -136,10 +136,10 @@ function getPrettyTitle(page, section) {
 }
 
 var exists = {
-    home : ['welcome', 'specialists', 'mentor', 'constructive', 'asqa'],
+    home : ['welcome', 'specialists', 'mentor', 'constructive', 'asqa','engaging'],
     aboutus : ['vision', 'mission', 'approach', 'values', 'namelogo', 'people', 'policies'],
     pd: ['intro', 'inspired', 'observing', 'environment', 'coop', 'evaluation', 'children', 'risk', 'pdfees', 'customised'],
-    courses: ['intro', 'children_ecec', 'diploma_management', 'certivtraining', 'priorlearning', 'trainingplans', 'studentfeeds']
+    courses: ['intro', 'children_ecec', 'diploma_management', 'certivtraining', 'priorlearning', 'trainingplans', 'studentfees', 'apprenticeship']
     
         
 };
@@ -242,12 +242,12 @@ var greendoor = {
         default_ie8sucks: ''
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Student handbook (pdf)', file: true, route: "https://www.dropbox.com/s/51qgb81o0xhhnvm/FirstDoor_StudentHandbook.pdf", scroll: true}
-            ,{ label: 'Diploma ECEC course guide (pdf)', file: true, route: "https://www.dropbox.com/s/5x4nirdvatimh8w/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
-            ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', file: true, route: "https://www.dropbox.com/s/dyjghx4sy34rz07/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', download: "true", file: true, route: "https://www.dropbox.com/s/1l8gybsext57fwt/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
-            ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', file: true, route: "https://www.dropbox.com/s/oy6odg5iq4cpw8k/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'Enrolment fom: Individual unit/s - computer version (Word doc)', download: "true", file: true, route:"https://www.dropbox.com/s/4916ccveiwuqq4m/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
+            { label: 'Student handbook (pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/FirstDoor_StudentHandbook.pdf", scroll: true}
+            ,{ label: 'Diploma ECEC course guide (pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
+            ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
+            ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
+            ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
+            ,{ label: 'Enrolment fom: Individual unit/s - computer version (Word doc)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
         ]
 
         

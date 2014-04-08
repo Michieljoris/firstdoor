@@ -12,8 +12,8 @@
         <div ng-repeat="link in page.links">
           <li ng-class="isSelected(link.route)">
             <div ng-switch="" on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}" download="">{{link.label}} </a>
-              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_self' || ''}}">{{link.label}} </a>
+              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}" download="">{{link.label}} </a>
+              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}">{{link.label}} </a>
             </div>
             <ul>
               <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
@@ -27,6 +27,16 @@
       <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
     </div>
   </div>
+
+  <div class="">
+    <image height="87" width="100" style="display:block;margin-left:35px;margin-right:auto;padding:16px 0 0 20px;" ng-hide="hide_nrtlogo()" ng-src="{{cachify(&quot;images/nrtlogoclsm.png&quot;)}}"> </image>
+  </div>
+
+  <div class="">
+    <a href="courses/apprenticeship">
+      <image width="160px" style="padding:15px 0 20px 20px" ng-src="{{cachify(&quot;images/Apprenticeship_button_website.jpg&quot;)}}"> </image>
+    </a>
+  </div>
   <div ng-show="signingIn()" class="editor well"> Signing in...</div>
   <div ng-show="signedIn()" class="editor well">
 
@@ -39,7 +49,7 @@
     <p></p>
     <!-- <button ng-hide="editable()" class="btn btn-primary"  type="button" ng-click="toggleEditable()">Edit</button> -->
     <!-- <button ng-show="editable()" class="btn btn-primary"  type="button"
-		 ng-click="toggleEditable()">Done</button> -->
+         ng-click="toggleEditable()">Done</button> -->
     <div ng-show="isDirty()">
       <button class="btn btn-primary" type="button" ng-click="saveEditable()">Save</button>
       <button class="btn btn-primary" type="button" ng-click="undoEditable()">Undo</button>
@@ -62,33 +72,31 @@
 <div ng-show="isShow('welcome')">
   <div contenteditable="{{editable()}}" id="welcome--">
 <!--partial:editable/welcome/welcome.html-->
-<!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html--><!--partial:editable/welcome/welcome.html-->
-<h2>Open yourself to a career as an&nbsp;Early Childhood professional!!!edit</h2>
-
-<p><strong>Welcome to First Door,</strong> and congratulations for seeking opportunity in a rewarding career that influences people&#39;s lives.</p>
-
-<p>First Door specialises in Early Childhood training, aligning educators and leaders to their role based on the National Quality Framework (NQF). The NQF has empowered our industry to rise up to the challenge of being professional educators and educational leaders.&nbsp;This has meant a leap forward in role expectations and the capability required by educators. By choosing a study partnership with First Door, you will gain confidence in your skills and knowledge, and be equipped to enjoy the rewards of your role.</p>
-
-<h3>What choose First Door?blablasome editing!!!!!!!</h3>
-
-<p>First Door is dedicated to inspiringggghghhhhf and developing capability in Early Childhood educators and leaders. We connect, support and engage students through active learning with:</p>
-
+<h2>Open your opportunities, by learning with First Door</h2>
+<h3>The benefits for Early Childhood educators, leaders or directors</h3>
 <ul>
-	<li>a personal mentor for study support and a monthly meeting to guide you into achieving best workplace practice</li>
-	<li>engaging resources and interactive workshops</li>
-	<li>meaningful assessment with timely and constructive feedback</li>
+<li>You will be inspired to grow in confidence and capability.</li>
+<li>Your learning is practical and relevant, relating to the National Quality Framework and your work role.</li>
+<li>You will be working towards the latest <a href="courses/intro">nationally recognised qualifications</a>, and developing professionally in your skills and knowledge.</li>
+<li>New career opportunities will be available to you, and you will be able to inspire others.</li>
 </ul>
-
-<h3><strong>2014 Scholarship applications closing soon!</strong></h3>
-
-<p>First Door is offering ten scholarship places<strong>&nbsp;</strong>for the students undertaking the new <em>CHC50113 Diploma of Early Childhood Eduhjcation and Care (ECEC).&nbsp;</em>Please note that scholarship applicants are NOT required to be certificate lll qualified, however applicants must demonstrate motivation and commitment to their role according to the NQF and show potential as leaders in Early Childhood.</p>
-
-<p>Scholarship places are limited, and applications close on <strong>21 February 2014.</strong> Successful applicants will commence their Diploma of ECEC training with First Door beginning 3 March 2014.</p>
-
-<h4><strong>Request the&nbsp;<strong><em>Scholarship FAQ</em></strong> document for full information and <em>First Door scholarship application</em> form now!</strong></h4>
-
-<h4><strong>Contact us, to develop your professional capability and career opportunities,&nbsp;<br>
-or phone us on 07 3103 2336</strong></h4>
+<h3>But the best part?&nbsp;</h3>
+<p>You will become well equipped to nurture young children, and their love of learning.&nbsp;By feeling capable, you will fully enjoy the rewards of your role, and be able to make a positive and real difference in people's lives.</p>
+<p>That is <strong>why&nbsp;</strong>First Door has been founded with passion. It is our vision to develop capability in Early Childhood to make a positive and real difference for children, for families, for Early Childhood education and for you.</p>
+<p style="font-size: 11px; font-weight: normal;">&nbsp;</p>
+<h2>Why choose First Door? Our big differences</h2>
+<h3>First Door will connect, engage and support you in active learning with:</h3>
+<ul>
+<li>a <a href="home/mentor"><strong>personal mentor</strong></a> for study support and a monthly workplace meeting to guide you into achieving best workplace practice<br><br></li>
+<li><a href="home/engaging"><strong>engaging resources</strong></a> and social media environments for inspiration&nbsp;<br><br></li>
+<li>a competency based&nbsp;<a href="courses/intro"><strong>interactive&nbsp;</strong></a><strong><a href="courses/intro">workshop</a>&nbsp;</strong>for each unit of study<br><br></li>
+<li>meaningful <a href="home/constructive"><strong>workplace related assessment</strong></a>, with timely and constructive feedback on your work<br><br><br></li>
+</ul>
+<h2>2014 Scholarship opportunity</h2>
+<p>We are happy to have awarded our first two scholarship placements in February.</p>
+<p>First Door is offering up to ten scholarship places during 2014<strong>&nbsp;</strong>for students undertaking the new <em>CHC50113 <a href="courses/children_ecec">Diploma of Early Childhood Education and Care</a>.&nbsp;</em>Please note that scholarship applicants are NOT required to be certificate lll qualified, however applicants must be employed in a licensed Early Childhood centre, demonstrate motivation and commitment to their role according to the NQF and show potential as leaders in Early Childhood.</p>
+<h4><strong>Request the&nbsp;<strong><em>Scholarship FAQ</em></strong> document for full information and the <em>First Door scholarship application</em> form.&nbsp;</strong></h4>
+<h3><strong><a href="contactus">Contact us</a>&nbsp;</strong>to develop your professional capability and career opportunities,&nbsp;or phone us on<strong> 07 3103 2336</strong></h3>
 </div>
 </div>
 
@@ -96,10 +104,10 @@ or phone us on 07 3103 2336</strong></h4>
 <div ng-show="isShow('specialists')">
   <div contenteditable="{{editable()}}" id="specialists--">
 <!--partial:editable/welcome/specialists.html-->
-<!--partial:editable/welcome/specialists.html-->
-<h2>Specialists in Early Childhood training and developmentedit</h2>
-
-<p>First Door specialises in delivering meaningful training, inspiration and active learning within the Early Childhood and Outside School Hours Care sector. Our training and professional development is focused on&nbsp;aligning educators to their role based on the National Quality Framework. In addition to offering accredited training in the Diploma of Early Childhood Education and Care, we promote the need to create learning organisations where each centre or s<span style="font-size:14px">n (RTO) providing Nationally Recognised Training. The RTO code for First Door Training and Development is 40782, and is issued by the Australian Skills Quality Authority.</span></p>
+<h2>Specialists in Early Childhood training and development</h2>
+<p>First Door specialises in delivering meaningful training, inspiration and active learning within the Early Childhood and Outside School Hours Care sector. Our training and professional development is focused on&nbsp;aligning educators to their role based on the National Quality Framework. In addition to offering accredited training in the <a href="courses/children_ecec">Diploma of Early Childhood Education and Care</a>, we promote the need to create learning organisations where each centre or service operates with skilled mentors and an effective educational leader. First Door also provides training in units from the <a href="courses/diploma_management">Diploma of Management</a> and <a href="courses/certivtraining">Certificate lV in Training and Assessment</a> to build capability in mentoring and leadership&nbsp;<br><br></p>
+<p><strong><a href="pd/intro">Professional development workshops</a>&nbsp;</strong><br>We deliver interactive professional development that encompasses the National Quality Framework combining relevant theory with practical work related experiences.<br><br></p>
+<p><a href="courses/intro"><strong>Accredited training</strong> </a><br>First Door is a Registered Training Organisation (RTO) providing Nationally Recognised Training. The RTO code for First Door Training and Development is 40782, and is issued by the Australian Skills Quality Authority.</p>
 </div>
 </div>
 
@@ -110,14 +118,15 @@ or phone us on 07 3103 2336</strong></h4>
 <!--partial:editable/welcome/engaging.html-->
 <h2>Engaging resources and environments</h2>
 <h3>Engaging resources</h3>
-<p>We are committed to ensuring our resources are relevant and meaningful combining learning with real work experiences. First Door prepares the student workbook for each unit to ensure practical work-based activities and assessment tasks that allow students to practice and understand theory.</p>
+<p>We are committed to ensuring our resources are relevant and meaningful combining learning with real work experiences. First Door prepares the student <a href="home/constructive">assessment workbook</a> for each unit to ensure practical work-based activities and assessment tasks that allow students to practice and understand theory.</p>
 <h3>Engaging learning environments</h3>
 <p>First Door creates learning environments that connect learning and people through:</p>
 <ul>
-<li>face to face workshops</li>
-<li>First Door social media communities</li>
-<li>workplace mentoring</li>
-</ul></div>
+<li>face to face <a href="courses/intro">competency based workshops</a></li>
+<li>First Door social media communities to inspire educators. LIKE us on <a href="https://www.facebook.com/firstdoortraining">facebook</a>&nbsp;and follow us on <a href="http://www.pinterest.com/firstdoor/">Pinterest</a>.</li>
+<li><a href="home/mentor">workplace mentoring</a></li>
+</ul>
+</div>
 </div>
 
 
@@ -126,14 +135,16 @@ or phone us on 07 3103 2336</strong></h4>
   <div contenteditable="{{editable()}}" id="mentor--">
 <!--partial:editable/welcome/mentor.html-->
 <h2>Your personal mentor</h2>
-<p>First Door connects each student with an industry experienced and qualified trainer as your personal mentor. Your personal mentor is available for study support and to provide workplace mentoring relevant to the current unit of study.<br><br>We undertake to provide each student with an arranged monthly workplace mentoring meeting. Where this is not possible, due to the location of the student's workplace, then a monthly skype or facetime meeting is arranged between student and mentor. This meeting allows for:</p>
+<p>First Door connects you with an industry experienced and qualified trainer as your personal mentor. Your personal mentor is available for study support and to provide workplace mentoring relevant to the current unit of study.<br><br>We undertake to provide each student with an arranged monthly workplace mentoring meeting. Where this is not possible, due to the location of the student's workplace, then a monthly skype or facetime meeting is arranged between student and mentor. <br>This meeting allows for:</p>
 <ul>
 <li>review of the student's previous assessment and feedback</li>
 <li>thirty minutes workplace observation and assessment</li>
 <li>fifteen minutes to provide constructive feedback</li>
 <li>assistance with understanding of the current workbook and assessment activities</li>
 <li>guidance, inspiration and support for each student<br><br></li>
-</ul></div>
+</ul>
+<h2>Study support</h2>
+<p>You have access to study support if you need assistance in understanding the information in the theory book or assessment workbook. Study support is available by phoning or emailing your mentor. Emails will be returned within 24 hours excluding on weekends and public holidays. Phone calls can be made between 9am and 6pm on weekdays. If your personal mentor is unavailable by phone they will return your call that same day.</p></div>
 </div>
 
 
@@ -141,23 +152,24 @@ or phone us on 07 3103 2336</strong></h4>
 <div ng-show="isShow('constructive')">
   <div contenteditable="{{editable()}}" id="constructive--">
 <!--partial:editable/welcome/constructive.html-->
-<h2>Constructive and timely assessment</h2>
-<p>Assessment is the process of gathering evidence to determine the competency of each student based on the National accredited training requirements.&nbsp;First Door produces each unit's assessment workbook to ensure assessment questions/activities are relevant to the student&rsquo;s workplace experiences. We strive to provide each student with authentic learning and meaningful assessment.</p>
+<h2>Workplace related, meaningful assessment</h2>
+<p>Assessment is the process of gathering evidence to determine your competency based on the National accredited training requirements.&nbsp;First Door produces each unit's assessment workbook to ensure assessment questions/activities are relevant to the student&rsquo;s workplace experiences. We strive to provide each student with authentic learning and meaningful assessment.</p>
 <p>Student assessment is completed in the individual unit's&nbsp;<strong><em>Workplace Activities and Assessment Workbook</em></strong></p>
-<p>First Door assessment comprises of two parts:</p>
+<p>These workbooks are emailed to you at the completion of the previous unit. The structured training plan encourages students to submit their assessment by the end of each month, and students receive a new assessment workbook at the begining of each month. <br><br>Where possible, all assessment workbooks are completed as a computer document and emailed back to your mentor. If you would prefer to complete a handwritten paper workbook then please advise your mentor.</p>
+<p>Each assessment workbook consists of:</p>
 <ol>
 <li><strong>Practical workplace activities:</strong>
 <ul>
-<li>evidence through the student&rsquo;s<em>&nbsp;account of workplace experiences</em>&nbsp;that demonstrates the student&rsquo;s required knowledge and ability to use the theory of the unit.</li>
-<li>evidence of a student&rsquo;s&nbsp;<em>practical skills</em>&nbsp;relating to the theory of the unit. A workplace supervisor and/or First Door mentor assesses practical skills to ensure student competency in workplace practice.</li>
-<li>attachment of student's evidence through their&nbsp;<em>workplace documentation</em>&nbsp;such as learning stories and in their reflective writing.</li>
+<li>evidence through your&nbsp;<em>workplace experiences</em>&nbsp;that demonstrates your required knowledge and ability to use the theory of the unit.</li>
+<li>evidence of your&nbsp;<em>practical skills</em>&nbsp;relating to the theory of the unit. A workplace supervisor and/or First Door mentor assesses practical skills to ensure your competency in workplace practice.</li>
+<li>attachment of your&nbsp;<em>portfolio evidence</em> through your&nbsp;<em>workplace documentation,</em>&nbsp;such as learning stories and reflective journals.</li>
 </ul>
 </li>
 </ol><ol start="2">
-<li><strong>Assessment tasks:</strong></li>
+<li><strong>Assessment tasks:<br></strong>These include a <em>report</em> or <em>journal</em> based from your workplace, and a <em>case study</em> that is discussed as a group at the workshop.<br><br></li>
 </ol>
-<p>Wherever possible, assessment tasks contained in the workbook are completed by students as a computer document and submitted to First Door by email.&nbsp;</p>
-<p>First Door undertakes to return student workbooks and assessment to the student&nbsp;<strong>within fourteen days of receipt.</strong>&nbsp;Assessment feedback is provided to guide a student on their progress and address any areas of difficulty.</p></div>
+<h3>Timely and constructive assessment of your work</h3>
+<p>First Door undertakes to return your assessment workbook to you&nbsp;<strong>within fourteen days of receipt</strong> by First Door.&nbsp;Assessment feedback is provided to guide a student on their progress and address any areas of difficulty.</p></div>
 </div>
 
 <div scroll="" id="asqa"></div>
@@ -165,7 +177,7 @@ or phone us on 07 3103 2336</strong></h4>
   <div contenteditable="{{editable()}}" id="asqa--">
 <!--partial:html/asqa.html-->
 <!--partial:html/asqa.html-->
-<p>asdfaDownlodsfsdfad pdf file: <a href="https://www.dropbox.com/s/nyq4mz5ihayu8bg/ASQA_Audit_Report.pdf" target="_self">Australian Skills Quality Authority audit summary</a></p>
+<p>Download pdf file: <a href="https://dl.dropboxusercontent.com/u/121993962/ASQA_Audit_Report.pdf" target="_blank">Australian Skills Quality Authority audit summary</a></p>
 </div>
 </div>
 
@@ -191,15 +203,22 @@ or phone us on 07 3103 2336</strong></h4>
 </script>
 
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+
+<!-- <div class=""> -->
+<!--   <a href="apprenticeship"> -->
+<!--   <image width="160px"  style="padding-top:15px;" -->
+<!--   ng-src={{cachify("images/Apprenticeship_button_website.jpg")}}> </image> -->
+<!--   </a> -->
+<!-- </div> -->
+
 <!-- AddToAny END -->
 <div ng-show="show_events()">
   <div contenteditable="{{editable()}}" id="events_sidebar--">
 <!--partial:editable/events_sidebar.html-->
 <h3>Upcoming workshop events</h3>
-<p>April 7: <a href="https://dl.dropboxusercontent.com/u/121993962/safe_and_healthy_environments_CBworkshop_invitation.pdf" target="_blank">Safe and healthy environment</a></p>
-<p>April 28: <strong>Develop teams and individuals</strong></p>
-<p>May 5: Partnership with families</p>
-<p>May 19: Developing cooperative behaviour</p>
+<p>April 28: <a href="https://db.tt/UeW0TSaU"><strong>Develop teams and individuals</strong></a></p>
+<p>May 5: <a href="https://www.dropbox.com/s/lo9levu7acj6u89/Partnership%20with%20families%20CBW%20invite.pdf">Partnership with families</a></p>
+<p>May 19: <a href="https://db.tt/Eu7PgZKL">Developing cooperative behaviour</a></p>
 <p>June 2: Health and safety of children</p>
 <p>June 16:&nbsp;<strong>Plan and monitor continuous improvement</strong>&nbsp;&nbsp;</p>
 <p>July 7:&nbsp;Promote and provide healthy food and drinks</p>

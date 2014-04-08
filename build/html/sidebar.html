@@ -8,9 +8,9 @@
           <li ng-class="isSelected(link.route)" >
             <div ng-switch on="link.download">
               <a ng-switch-when="true" ng-href="{{link.route}}"
-                 target="{{link.file && '_self' || ''}}" download>{{link.label}} </a>
+                 target="{{link.file && '_blank' || ''}}" download>{{link.label}} </a>
               <a  ng-switch-default ng-href="{{link.route}}"
-                  target="{{link.file && '_self' || ''}}" >{{link.label}} </a>
+                  target="{{link.file && '_blank' || ''}}" >{{link.label}} </a>
             </div>
             <ul>
               <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
@@ -24,6 +24,17 @@
       <div class="subtext" ng-bind-html-unsafe="page.subtext"></div>
     </div>
   </div>
+
+  <div class="">
+    <image height="87" width="100" style="display:block;margin-left:35px;margin-right:auto;padding:16px 0 0 20px;" ng-hide="hide_nrtlogo()" ng-src={{cachify("images/nrtlogoclsm.png")}}> </image>
+  </div>
+
+  <div class="">
+    <a href="courses/apprenticeship">
+      <image width="160px"  style="padding:15px 0 20px 20px"
+	     ng-src={{cachify("images/Apprenticeship_button_website.jpg")}}> </image>
+    </a>
+  </div>
   <div ng-show="signingIn()" class="editor well"> Signing in...</div>
   <div ng-show="signedIn()" class="editor well">
 
@@ -36,7 +47,7 @@
     <p></p>
     <!-- <button ng-hide="editable()" class="btn btn-primary"  type="button" ng-click="toggleEditable()">Edit</button> -->
     <!-- <button ng-show="editable()" class="btn btn-primary"  type="button"
-		 ng-click="toggleEditable()">Done</button> -->
+         ng-click="toggleEditable()">Done</button> -->
     <div ng-show="isDirty()">
       <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
       <button class="btn btn-primary"  type="button" ng-click="undoEditable()">Undo</button>
