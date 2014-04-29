@@ -7,7 +7,7 @@
     </a>
   </div>
 
-  <div ng-class="getPageClass" id="greendoor">
+  <div ng-show="!signedIn() && !signingIn()" ng-class="getPageClass" id="greendoor">
     <div class="doorlinks">
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
