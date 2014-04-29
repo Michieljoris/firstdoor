@@ -1,4 +1,4 @@
-/*global alert:false cookie:false */
+// global alert:false cookie:false
 /*jshint strict:false unused:true smarttabs:true eqeqeq:true immed: true undef:true*/
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
@@ -35,7 +35,7 @@ function initPersona($scope, $http, editor) {
                     cookie.remove('persona');
                     navigator.id.logout();
                     // $("#sidebar--").spin(false);
-                    alert("Sign in failure: " + status);
+                    console.log("Sign in failure: " + status);
                     editor.signingIn(false);
                 });
             $scope.$apply();
@@ -60,7 +60,7 @@ function initPersona($scope, $http, editor) {
                     navigator.id.logout();
                     // $scope.signedIn = false;
                     editor.signout();
-                    alert("Sign out failure: " + status);
+                    console.log("Sign out failure: " + status);
                 });
             $scope.$apply();
 

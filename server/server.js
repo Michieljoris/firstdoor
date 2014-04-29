@@ -15,6 +15,7 @@ var server = require('bb-server'),
 
  
 var develop_mode = process.env.DEVELOP; 
+console.log('develop mode', develop_mode);
 // develop_mode = false;
 //TODO: limit sending of files to certain mimetypes and/or extensions
 //TODO: option to not send mimeless files found in allowable directories.
@@ -201,7 +202,7 @@ var options = {
     ,persona: {
         authorized: ['mail@axion5.net', 'andrea@firstdoor.com.au']
         ,verbose: true 
-        ,audience: develop_mode ? "localhost:9001" : "firstdoor.axion5.com" 
+        ,audience: develop_mode ? "localhost:9001" : "www.firstdoor.com.au" 
     } 
     
     //server api path:

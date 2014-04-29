@@ -1,7 +1,3 @@
-//*js/CKEDITOR_BASEPATH.js*//
-var CKEDITOR_BASEPATH = '/ckeditor/';
-
-;
 //*ckeditor/ckeditor.min.js*//
 ﻿/*
 Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.

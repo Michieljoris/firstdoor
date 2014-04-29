@@ -4,6 +4,12 @@
   <div id="sidebar--" class="span3">
 <!--partial:html/sidebar.html-->
 <fixscroll data-ng-transclude="">
+  
+  <div class="">
+    <a href="courses/apprenticeship">
+      <image width="200px" style="padding:5px 0 12px 9px" ng-src="{{cachify(&quot;images/Apprenticeship_button_website.jpg&quot;)}}"> </image>
+    </a>
+  </div>
 
   <div ng-class="getPageClass" id="greendoor">
     <div class="doorlinks">
@@ -28,15 +34,10 @@
     </div>
   </div>
 
-  <div class="">
-    <image height="87" width="100" style="display:block;margin-left:35px;margin-right:auto;padding:16px 0 0 20px;" ng-hide="hide_nrtlogo()" ng-src="{{cachify(&quot;images/nrtlogoclsm.png&quot;)}}"> </image>
-  </div>
+  <!-- <div class="">
+  <image height="87" width="100" style="display:block;margin-left:35px;margin-right:auto;padding:16px 0 0 20px;" ng-hide="hide_nrtlogo()" ng-src={{cachify("images/nrtlogoclsm.png")}}> </image>
+  </div> -->
 
-  <div class="">
-    <a href="courses/apprenticeship">
-      <image width="160px" style="padding:15px 0 20px 20px" ng-src="{{cachify(&quot;images/Apprenticeship_button_website.jpg&quot;)}}"> </image>
-    </a>
-  </div>
   <div ng-show="signingIn()" class="editor well"> Signing in...</div>
   <div ng-show="signedIn()" class="editor well">
 

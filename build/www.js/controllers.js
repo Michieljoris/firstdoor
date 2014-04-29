@@ -26,7 +26,8 @@ var nrtlogo_allowed = [
     "/courses/intro",
     "/courses/children_ecec",
     "/courses/diploma_management",
-    "/courses/certivtraining"
+    "/courses/certivtraining",
+    "/courses/apprenticeship"
     ];
 
 //Controllers

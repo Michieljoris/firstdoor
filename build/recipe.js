@@ -142,7 +142,7 @@ var js = [
     ,'persona.js'
     
     ,"CKEDITOR_BASEPATH.js"
-    ,"../ckeditor/ckeditor.min.js"
+    // ,"../ckeditor/ckeditor.min.js"
     
     // ,'jquery.youtubecarousel'
     
@@ -432,7 +432,9 @@ var exports = {
             'images/slides/tab_resources.jpg',
             'images/course_structure_children_services.jpg',
             'images/homepage_image.jpg',
-            "images/Apprenticeship_button_website.jpg"
+            "images/Apprenticeship_button_website.jpg",
+            "ckeditor/ckeditor.min.js"
+            
         ]
     } 
     
@@ -471,7 +473,8 @@ var exports = {
     ,partials: {
         ids: {
             title: '<title>Firstdoor - Leaders in developing capability</title>'
-            ,baseHref9001: develop_mode ? '<base href="http://localhost:9001">': '<base href="http://firstdoor.axion5.com">'
+            ,baseHref9001: develop_mode ? '<base href="http://localhost:9001">': '<base href="http://www.firstdoor.com.au">'
+            // ,baseHref9001: true ? '<base href="http://localhost:9001">': '<base href="http://firstdoor.axion5.com">'
             ,baseHref11001: develop_mode ? '<base href="http://localhost:11001">': '<base href="http://firstdoor.axion5.com">'
             // ,baseHref: '<base href="http://192.168.1.184:9001">'
             // ,baseHref: '<base href="/"">'
@@ -490,6 +493,7 @@ var exports = {
             // ,recaptcha: '<script type="text/javascript" src="js/recaptcha_ajax.js"></script>'
             ,fragment: '<meta name="fragment" content="!"/>'
             ,persona: '<script src="https://login.persona.org/include.js"></script>'
+            ,ckeditor: '<script src="ckeditor/ckeditor.min.js"></script>'
             // ,firebug: '<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js></script>"'
         }
         ,metaBlock : {
@@ -501,7 +505,8 @@ var exports = {
                 }
                 ,{
                     // content:"First Door recognises the need and value of workplace learning and provides courses to create learning organisations with skilled mentors, leaders and managers. ",
-                    content: "First Door is a Registered Training Organisation dedicated to inspiring and developing capability in Early Childhood educators and leaders. Providing Early Childhood professional development through active learning in workshops, personal mentoring and workplace relevant assessment in Diploma of Early Childhood Education and Care, and units from: Diploma of Management, and Certificate IV in Training and Assessment.",
+                    // content: "First Door is a Registered Training Organisation dedicated to inspiring and developing capability in Early Childhood educators and leaders. Providing Early Childhood professional development through active learning in workshops, personal mentoring and workplace relevant assessment in Diploma of Early Childhood Education and Care, and units from: Diploma of Management, and Certificate IV in Training and Assessment.",
+                    content: "First Door inspires and develops capability in Early Childhood educators and leaders. Experience active learning in the Diploma of Early Childhood Education and Care.",
                     name:"description"
                 }
                 ,{ name: "viewport"
@@ -514,16 +519,16 @@ var exports = {
             path: 'css'
         }
         ,scriptBlock: [
-            // {
-            //     id: 'ckeditorBlock',
-            //     files: [
-            //         "CKEDITOR_BASEPATH.js"
-            //         ,"../ckeditor/ckeditor.min.js"
-            //     ],
-            //     path: 'js'
+            {
+                id: 'ckeditorBlock',
+                files: [
+                    // "CKEDITOR_BASEPATH.js",
+                    "../ckeditor/ckeditor.min.js"
+                ],
+                path: 'js'
                 
-            //     ,out: 'bla'
-            // },
+                ,out: 'bla'
+            },
             
             {
                 id: 'myJsBlock',
@@ -848,6 +853,7 @@ var exports = {
                               'sharethis1', 'sharethis2', 'sharethis3',
                               ,'persona', 
                               'myJsBlock',
+                              'ckeditor',
                               // 'ckeditorBlock'
                               ,'html/google_analytics.html'
                              ]

@@ -202,7 +202,7 @@ var options = {
         authorized: ['mail@axion5.net', 'michieljoris@gmail.com']
         ,verbose: true 
         // ,audience: develop_mode ? "localhost:9001" : "firstdoor.axion5.com" 
-        ,audience: true ? "localhost:11001" : "firstdoor.axion5.com" 
+        ,audience: true ? "localhost:11001" : "www.firstdoor.com.au" 
     } 
     
     //server api path:

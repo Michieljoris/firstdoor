@@ -132,7 +132,8 @@ myAppModule.factory('editor', function() {
                 return CKEDITOR.instances[id].checkDirty();
             });
         // console.log('isDirty', dirty.length);
-        return dirty.length > 0;
+        // return dirty.length > 0;
+       return true;
         
     };
     
