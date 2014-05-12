@@ -23,3 +23,13 @@
 <div class="pull-right">
   <image height="87" width="100" style="padding-left:22px;" ng-hide="hide_nrtlogo()" ng-src={{cachify("images/nrtlogoclsm.png")}}> </image>
 </div>
+
+
+<div ng-show="signingIn()" class="editor well"> Signing in...</div>
+<div ng-show="signedIn()" class="editor well">
+  <div ng-show="isDirty()">
+    <button style="margin-bottom:10px;padding:0px" class="btn btn-small btn-warning" type="button" ng-click="undoEditable()">Undo</button> 
+    <div style="float:left;">{{email()}} </div>
+    <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
+  </div>
+</div>

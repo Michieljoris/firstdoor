@@ -178,7 +178,7 @@ var mainMenuTree = [
             // ,{ label: '', route: 'home/quiz', scroll: true}
             // ,{ label: 'Quiz: discover your preferred learning style', route: 'home/quiz', scroll: true}
             
-            ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
+            // ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
         ]
        // sub: [
        //     { label: 'Contact us', route: 'contactus', scroll: true}
@@ -205,14 +205,14 @@ var mainMenuTree = [
     ,{ label: 'Professional development', icon: '', route: 'pd/intro'
        ,sub: [
            { label: 'The inspired educator', route: 'pd/inspired', scroll: true}
-           ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd/observing', scroll: true}
+           ,{ label: 'Documentation', route: 'pd/observing', scroll: true}
            ,{ label: 'Environment and experiences', route: 'pd/environment', scroll: true}
-           ,{ label: 'Developing cooperative behaviour', route: 'pd/coop', scroll: true}
+           ,{ label: 'Cooperative behaviour', route: 'pd/coop', scroll: true}
            ,{ label: 'Evaluation and reflective practice', route: 'pd/evaluation', scroll: true}
            ,{ label: 'Children at risk', route: 'pd/children', scroll: true}
            ,{ label: 'Identify and manage risk', route: 'pd/risk', scroll: true}
-           ,{ label: 'Customised workshop', route: 'pd/customised', scroll: true}
-           ,{ label: 'Fees', route: 'pd/pdfees', scroll: true}
+           // ,{ label: 'Customised workshop', route: 'pd/customised', scroll: true}
+           // ,{ label: 'Fees', route: 'pd/pdfees', scroll: true}
        ]
      } 
     ,{ label: 'Accredited training', icon: '', route: 'courses/intro'

@@ -105,3 +105,7 @@ function go(path, out) {
 
 exports.go = go;
 
+console.log(process.cwd());
+go(process.cwd() + '/../build/editable/resources',
+   process.cwd()  + '/../www/js/videos.js');
+
