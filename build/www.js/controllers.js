@@ -227,8 +227,9 @@ var greendoor = {
               scroll: true}
             ,{ label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
                scroll: true}
-            ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
-            ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+            // ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
+            ,{ label: 'Leadership Units', route: 'courses/diploma_management', scroll: true}
+            // ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
             ,{ label: 'Recognised Prior Learning', route: 'courses/priorlearning', scroll: true}
             ,{ label: 'Flexi or structured training plans', route: 'courses/trainingplans', scroll: true}
             ,{ label: 'Student fees', route: 'courses/studentfees', scroll: true}
@@ -263,6 +264,20 @@ var greendoor = {
     }
     
 };
+
+
+function capitalizeDoor(door) {
+    Object.keys(door).forEach(function(k) {
+        var menu = door[k];
+        if (!menu.links) return;
+        // console.log(menu);
+        menu.links.forEach(function(l) {
+            l.label = l.label.toUpperCase();
+        });
+    });
+}
+    
+capitalizeDoor(greendoor);
 
 function setActiveTab(page) {
     // console.log('setting active tab to ' , page);
@@ -314,7 +329,7 @@ var headerImages = {
     ,"courses": {
         "*": "images/slides/tab_accredited_training.jpg"
         ,children_ecec: "images/slides/courses_Diploma_Childrens_services.jpg"
-        ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
+        // ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
         ,certivtraining: "images/slides/courses_certiv.jpg"
     }
     
@@ -420,7 +435,8 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll, editor) {
         var path = page;
         // if (path) path = path.slice(1);
         console.log(path);
-        return 'doorlinks-' + path;
+        // return 'doorlinks-' + path;
+        return 'doorSpacing';
     };
     
     $scope.isShow = function(id) {
@@ -525,7 +541,7 @@ function clickSend($event, $scope) {
     
 }
 
-function contactusCntl($scope, $routeParams, $location) {
+function contactusCntl($scope, $routeParams, $location, editor) {
     
     $('html, body').animate({
         scrollTop: 0
@@ -573,7 +589,7 @@ function contactusCntl($scope, $routeParams, $location) {
     
 }
 
-contactusCntl.$inject = ['$scope', '$routeParams', '$location'];
+contactusCntl.$inject = ['$scope', '$routeParams', '$location', 'editor'];
 
 function EpicCntl($scope, $routeParams) {
     console.log('default controller..');
@@ -723,7 +739,9 @@ function HomeCntl($scope, $routeParams, $location, editor) {
         var path = page;
         // if (path) path = path.slice(1);
         // console.log(path);
-        return 'doorlinks-' + path;
+        // return 'doorlinks-' + path;
+        
+        return 'doorSpacing';
     };
     
     

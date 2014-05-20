@@ -141,8 +141,10 @@ Purpose of the stylesheet follows.
 }
 
 .menu .active {
-    background:lightgray;;
-    color:black;
+    /* background:lightgray;; */
+    
+    background: linear-gradient(to bottom,#c3ff93,#69a03c);
+    color:white;
 }
 
 

@@ -87,6 +87,7 @@ body {
 #studentLogin-- {
     padding-top: 5px;
     margin-left:0px;
+    font-size:14px;
     /* padding-right: 15px; */
     /* padding-bottom:10px; */
     }
@@ -726,6 +727,7 @@ h3 {
    
     #wisenetLogin {
 	display:none;
+	font-size:14px;
 	}
     
     #social-- h2 {
@@ -1065,6 +1067,7 @@ a {
 #wisenetLogin {
     background-image: linear-gradient(to bottom,  #f26500, #cc5500);
     background-color: #f26500; /*burnt orange*/
+    font-size:14px;
    } 
 
 
@@ -1099,7 +1102,7 @@ a {
 .doorlinks>ul {
     list-style:none;
     margin-left:0px;
-    border: solid 1px darkgrey;
+    /* border: solid 1px darkgrey; */
     /* background: #3D9444; /\*logo green*\/  */
     -webkit-border-radius: 15px;  
     -moz-border-radius: 15px;  
@@ -1231,6 +1234,5 @@ a {
 }
 
 .buttonlink {
-    margin-top:250px;
-    margin-left:50px;
-}
+   margin-top:250p;
+   margin-left:50px;

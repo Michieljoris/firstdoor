@@ -8,7 +8,8 @@
 
   <div class="">
     <a href="courses/apprenticeship">
-      <image width="200px" style="padding:5px 0 12px 9px" ng-src="{{cachify(&quot;images/Apprenticeship_button_website.jpg&quot;)}}"> </image>
+      <image width="200px"  style="padding:5px 0 12px 9px"
+             ng-src={{cachify("images/Apprenticeship_button_website.jpg")}}> </image>
     </a>
   </div>
 
@@ -18,13 +19,15 @@
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
         <div ng-repeat="link in page.links">
-          <li ng-class="isSelected(link.route)">
-            <div ng-switch="" on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}" download="">{{link.label}} </a>
-              <a ng-switch-default="" ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}">{{link.label}} </a>
+          <li ng-class="isSelected(link.route)" >
+            <div ng-switch on="link.download">
+              <a ng-switch-when="true" ng-href="{{link.route}}"
+                 target="{{link.file && '_blank' || ''}}" download>{{link.label}} </a>
+              <a  ng-switch-default ng-href="{{link.route}}"
+                  target="{{link.file && '_blank' || ''}}" >{{link.label}} </a>
             </div>
             <ul>
-              <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
+              <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
 
                 <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
               </li>
@@ -39,39 +42,45 @@
 </fixscroll>
 </div>
   <div class="span9 inline-image embed-container ratio-tabimage ">     
-    <img class="" ng-src="{{getHeaderImage()}}">
+    <img class="" ng-src="{{getHeaderImage()}}"/>
   </div>
   <div class="row">
     <div id="contents--" class="span7">
 <!--partial:html/resources.html-->
-<ul id="videolist">
-  <li ng-show="isShow(section)" id="{{section}}" scroll="" ng-repeat="section in sectionsList">
+<ul id='videolist' >
+  <li ng-show="isShow(section)" id="{{section}}" scroll ng-repeat="section in sectionsList">
     
-    <h2>{{getSectionTitle(section)}}</h2>
-    <ul ng-init="videos=sections[section]">
-      <li class="well" ng-repeat="video in videos">
+    <h2 >{{getSectionTitle(section)}}</h2>
+    <ul ng-init="videos=sections[section]" >
+      <li class="well" ng-repeat="video in videos" >
 	
-	<div ng-switch="" on="video.provider">
+	<div ng-switch on="video.provider" >
 	  <span ng-switch-when="text" ng-bind-html-unsafe="video.title"></span>
-          <span ng-switch-default="">
-	    <a id="videoTitle" ng-click="open($event, video)" ng-bind-html-unsafe="video.title" style="cursor:pointer"> </a>
+          <span ng-switch-default>
+	    <a id="videoTitle"  ng-click="open($event, video)" ng-bind-html-unsafe="video.title"
+	       style="cursor:pointer"
+	       > </a>
 	  </span>
 	</div>
-	<div class="container">
-	  <div class="row">
-	    <div ng-switch="" on="video.provider" class="span1">
-              <a ng-switch-when="youtube" style="cursor:pointer" ng-click="open($event, video)">
+	<div class="container" >
+	  <div class="row" >
+	    <div ng-switch on="video.provider" class="span1" >
+              <a ng-switch-when="youtube"  style="cursor:pointer"
+		 ng-click="open($event, video)">
 		
 		<div class="video-thumbnail embed-container ratio-4-3 ">     
-		<img href="" ng-src="http://img.youtube.com/vi/{{video.id}}/2.jpg" class="mymage" style="max-height:75px;"> 
+		<img href="" ng-src="http://img.youtube.com/vi/{{video.id}}/2.jpg"  
+		     class="mymage" style="max-height:75px;" /> 
 		</div>
 	      </a>
-              <a ng-switch-when="vimeo" style="cursor:pointer" ng-click="open($event, video)">
-		<div id="{{video.id}}" class="video-thumbnail embed-container ratio-4-3">
+              <a ng-switch-when="vimeo"  style="cursor:pointer"
+		ng-click="open($event, video)">
+		<div id="{{video.id}}" 
+		     class="video-thumbnail embed-container ratio-4-3">
 		  {{vimeoLoadThumb($index, video.id)}}
 		</div>
 	      </a>
-              <span ng-switch-default="">Article</span>
+              <span ng-switch-default>Article</span>
 	    </div>
 	    <div id="videoBlurb" class="span5" ng-bind-html-unsafe="video.blurb"></div>
 	  </div>
@@ -82,7 +91,7 @@
   </li>
 </ul> 
 
-<div>
+<div >
     <div modal="shouldBeOpen" close="close()" options="opts">
         <div class="modal-header">
             <h4 ng-bind-html-unsafe="selectedVideo.title"></h4>
@@ -90,15 +99,19 @@
         <div class="modal-body" style="padding-left:10px;
 				       background:black;">
 	  
-	    <div ng-switch="" on="selectedVideo.provider" class="span1">
+	    <div ng-switch on="selectedVideo.provider" class="span1" >
               <div ng-switch-when="youtube">
-		<iframe width="480" height="315" src="http://www.youtube.com/embed/{{selectedVideo.id}}" frameborder="0" allowfullscreen=""></iframe> 
+		<iframe width="480" height="315"  
+			src="http://www.youtube.com/embed/{{selectedVideo.id}}"  
+			frameborder="0" allowfullscreen></iframe> 
 	      </div>
               <div ng-switch-when="vimeo">
-		<iframe src="http://player.vimeo.com/video/{{selectedVideo.id}}" width="420" height="315" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""> 
+		<iframe src="http://player.vimeo.com/video/{{selectedVideo.id}}"  
+			width="420" height="315" frameborder="0"  
+			webkitAllowFullScreen mozallowfullscreen allowFullScreen> 
 		</iframe> 
 	      </div>
-              <span ng-switch-default="">unknown video provider!!</span>
+              <span ng-switch-default>unknown video provider!!</span>
 	    </div>
 	  
 	  
@@ -116,14 +129,15 @@
 <!--partial:html/rightbar.html-->
 <!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
-<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"></a>
+<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
 <script type="text/javascript">
  var a2a_config = a2a_config || {};
  a2a_config.linkurl = "http://www.firstdoor.com.au";
  a2a_config.onclick = 1;
 </script>
 
-<script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<script type="text/javascript"
+	src="http://static.addtoany.com/menu/page.js"></script>
 
 <!-- <div class=""> -->
 <!--   <a href="apprenticeship"> -->
@@ -159,22 +173,23 @@
     <label class="form-label ">Name<span class="form-required">*</span></label>
     <div class="controls controls-row control-group {{namemissing}}">
 
-      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required>
-      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required>
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
     </div>
 
     <label class="form-label">Email<span class="form-required">*</span></label>
 
     <div class="control-group {{emailmissing}}">
-      <input class="span2" type="email" id="email" name="email" required><br>
+      <input class="span2" type="email" id="email" name="email" required/><br/>
     </div>
 
     <label class="form-label">Message<span class="form-required">*</span></label>
 
     <div class="control-group {{msgmissing}}">
-      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
     </div>
-    <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
+    <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
+           value="Send" />
     <div id="captchadiv"></div>
   </div>
   <div ng-show="sent" class="well">

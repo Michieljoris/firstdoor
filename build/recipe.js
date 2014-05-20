@@ -219,8 +219,9 @@ var mainMenuTree = [
        ,sub: [
            { label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
              scroll: true}
-           ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
-           ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+           // ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
+           ,{ label: 'Leadership units', route: 'courses/diploma_management', scroll: true}
+           // ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
            ,{ label: 'Government funded Apprenticeship training', route: 'courses/apprenticeship', scroll: true}
            // ,{ label: 'Aged care', route: 'courses/agedcare'}
        ]
@@ -324,6 +325,7 @@ var images = {
 }
 
 var develop_mode = process.env.DEVELOP; 
+console.log('develop_mode: ', develop_mode);
 // develop_mode = false;
 var exports = {
     verbose: true
@@ -392,8 +394,8 @@ var exports = {
       by a prefix. Only risk is to loose the manifest.
     */ 
     //hash or mtime, query or modified filename
-    // ,cachify : develop_mode ? false : {
-    ,cachify :  {
+    ,cachify : develop_mode ? false : {
+    // ,cachify :  {
         // exclude: ['pdf', 'doc', 'docx'], //for instance ['pdf', 'doc']
         method: 'sha1' //mtime or any of the hashes returned from crypto.getHashes()
         // (var crypto = require('crypto');
@@ -734,6 +736,17 @@ var exports = {
                     ,contents: 'editable/apprenticeship.html'
                     ,rightBar: 'rightbar'
                 }}
+            //Contact us stitch
+            ,{
+                src: 'html/contactForm.html',
+                id: 'contactForm',
+                mapping: {
+                    header: "editable/contactUsHeader.html",
+                    leftColumn: "editable/contactUsLeftColumn",
+                    rightColumn: "editable/contactUsRightColumn"
+                }
+                
+            }
             //Contact Us
             ,{
                 src: 'views/view_contactus_partial.html'
@@ -741,7 +754,7 @@ var exports = {
                 ,mapping: {
                     // sidebar: 'html/sidebar'
                     // ,slogan: 'html/slogan'
-                    contents: 'html/contactForm'
+                    contents: 'contactForm'
                 }}
             
             
