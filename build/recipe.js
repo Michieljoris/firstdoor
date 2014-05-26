@@ -348,8 +348,8 @@ var exports = {
     ,reload: {
         // enable: develop_mode,
         enable: develop_mode,
-        url: "ws://localhost:8080",
         msg: "reload"
+        //url is in the file bin/URL
     }
     
     /*
