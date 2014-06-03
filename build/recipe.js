@@ -219,9 +219,9 @@ var mainMenuTree = [
        ,sub: [
            { label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
              scroll: true}
-           // ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
-           ,{ label: 'Leadership units', route: 'courses/diploma_management', scroll: true}
-           // ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+           ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
+           // ,{ label: 'Leadership units', route: 'courses/diploma_management', scroll: true}
+           ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
            ,{ label: 'Government funded Apprenticeship training', route: 'courses/apprenticeship', scroll: true}
            // ,{ label: 'Aged care', route: 'courses/agedcare'}
        ]

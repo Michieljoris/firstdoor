@@ -1076,7 +1076,7 @@ a {
 #greendoor {
     /* background-image: url(../images/door.jpg); */
     height:450px;
-    width:220px;
+    width:260px;
 }
 .doorlinks a {
     /* color: #3D9444; /\*logo green*\/ */
@@ -1093,7 +1093,7 @@ a {
 }
 
 .doorlinks {
-    padding:20px 20px 20px 20px;
+    padding:20px 10px 20px 12px;
 }
 .doorlinks .heading {
     /* padding-bottom:10px; */
@@ -1109,6 +1109,7 @@ a {
     -o-border-radius: 15px;  
     border-radius: 15px;  
     padding-top:10px;
+    padding-right: 14px;
     /* -webkit-border-bottom-left-radius: 15px;   */
     /* -moz-border-bottom-left-radius: 15px;   */
     /* -o-border-bottom-left-radius: 15px;   */
@@ -1128,10 +1129,10 @@ a {
     /* -moz-border-radius: 4px;  */
     /* -o-border-radius: 4px;  */
     /* border-radius: 4px;  */
-    padding-bottom:5px;
+    padding-bottom:10px;
     padding-top:5px;
     padding-left:10px;
-    padding-right:5px;
+    padding-right:10px;
     line-height:15px;
 }
 .doorlinks .dottedline {

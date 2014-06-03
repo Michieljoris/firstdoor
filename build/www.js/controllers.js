@@ -151,11 +151,13 @@ var greendoor = {
             default_ie8sucks: 'welcome',  //ie8 gives error when using default as property name...
              links:    [
                  { label: 'Welcome', route: '/', scroll: true}
-                 ,{ label: 'Specialists in Early Childhood training and development', route: 'home/specialists', scroll: true}
+                 // ,{ label: 'Specialists in Early Childhood training and development', route: 'home/specialists', scroll: true}
+                 ,{ label: 'Early Childhood Specialists', route: 'home/specialists', scroll: true}
                  ,{ label: 'Engaging resources and environments', route: 'home/engaging', scroll: true}
                  ,{ label: 'Your personal mentor ', route: 'home/mentor', scroll: true}
                  ,{ label: 'Constructive and timely assessment', route: 'home/constructive', scroll: true}
-                 ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
+                 // ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
+                 ,{ label: 'ASQA Audit Summary', route: 'home/asqa', scroll: true}
                  // ,{ label: 'Quiz: discover your preferred learning style', route: 'home/quiz', scroll: true}
              ]
            }
@@ -166,7 +168,8 @@ var greendoor = {
         links:    [
             { label: 'Tailored workshops', route: 'pd/intro', scroll: true}
             ,{ label: 'The inspired educator', route: 'pd/inspired', scroll: true}
-            ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd/observing', scroll: true}
+            // ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd/observing', scroll: true}
+            ,{ label: 'Documentation', route: 'pd/observing', scroll: true}
             ,{ label: 'Environment and experiences', route: 'pd/environment', scroll: true}
             ,{ label: 'Developing cooperative behaviour', route: 'pd/coop', scroll: true}
             ,{ label: 'Evaluation and reflective practice', route: 'pd/evaluation', scroll: true}
@@ -227,9 +230,9 @@ var greendoor = {
               scroll: true}
             ,{ label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
                scroll: true}
-            // ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
-            ,{ label: 'Leadership Units', route: 'courses/diploma_management', scroll: true}
-            // ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+            ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
+            // ,{ label: 'Leadership Units', route: 'courses/diploma_management', scroll: true}
+            ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
             ,{ label: 'Recognised Prior Learning', route: 'courses/priorlearning', scroll: true}
             ,{ label: 'Flexi or structured training plans', route: 'courses/trainingplans', scroll: true}
             ,{ label: 'Student fees', route: 'courses/studentfees', scroll: true}
@@ -244,12 +247,12 @@ var greendoor = {
         default_ie8sucks: ''
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Student handbook (pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/FirstDoor_StudentHandbook.pdf", scroll: true}
-            ,{ label: 'Diploma ECEC course guide (pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
-            ,{ label: 'Enrolment form: Diploma ECEC - print/paper version (pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'Enrolment form: Diploma ECEC - computer version (Word doc)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
-            ,{ label: 'Enrolment form: Individual unit/s - print/paper version (pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'Enrolment fom: Individual unit/s - computer version (Word doc)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
+            { label: 'STUDENT HANDBOOK', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/FirstDoor_StudentHandbook.pdf", scroll: true}
+            ,{ label: 'DIPLOMA ECEC COURGUIDE', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: DIPLOMA ECEC (paper version)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: DIPLOMA ECEC (computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
+            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S (paper version)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S (computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
         ]
 
         
@@ -267,8 +270,10 @@ var greendoor = {
 
 
 function capitalizeDoor(door) {
+    // return;
     Object.keys(door).forEach(function(k) {
         var menu = door[k];
+        if (menu.title === 'Enrol') return;
         if (!menu.links) return;
         // console.log(menu);
         menu.links.forEach(function(l) {
@@ -329,7 +334,7 @@ var headerImages = {
     ,"courses": {
         "*": "images/slides/tab_accredited_training.jpg"
         ,children_ecec: "images/slides/courses_Diploma_Childrens_services.jpg"
-        // ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
+        ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
         ,certivtraining: "images/slides/courses_certiv.jpg"
     }
     

@@ -25,8 +25,8 @@
 </div>
 
 
-<div ng-show="signingIn()" class="editor well"> Signing in...</div>
-<div ng-show="signedIn()" class="editor well">
+<div style="display:none" ng-show="signingIn()" class="editor well"> Signing in...</div>
+<div style="display:none" ng-show="signedIn()" class="editor well">
   <div ng-show="isDirty()">
     <button style="margin-bottom:10px;padding:0px" class="btn btn-small btn-warning" type="button" ng-click="undoEditable()">Undo</button> 
     <div style="float:left;">{{email()}} </div>

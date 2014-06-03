@@ -324,3 +324,4 @@ completed by then. Please let me know if this works for you.
 ** 24/2/14  .5h replacing slideshow with static image
 
    
+   http://www.jqueryscript.net/social-media/jQuery-Plugin-For-Custom-Facebook-Like-Button-Fancylike.html
