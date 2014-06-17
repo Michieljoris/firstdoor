@@ -84,9 +84,11 @@ Purpose of the stylesheet follows.
 .menu a{
     text-decoration:none;
 }
-.menu>li>a{color:#7D7D7D;
-           font-weight:400;
-           font-size:17px;
+.menu>li>a{
+    /* color:#7D7D7D; */
+    color:#535353;
+           font-weight:bold;
+           font-size:13px;
            line-height:12px;
            padding:10px 10px 10px 8px;
 }
@@ -117,7 +119,7 @@ Purpose of the stylesheet follows.
 .menu ul a{
     color:#fff;
     margin-right:7px;
-    font-size:13px;
+    font-size:11px;
     line-height:18px;
     padding:10px 12px;
 }

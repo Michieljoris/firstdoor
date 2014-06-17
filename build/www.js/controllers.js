@@ -232,7 +232,8 @@ var greendoor = {
                scroll: true}
             ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
             // ,{ label: 'Leadership Units', route: 'courses/diploma_management', scroll: true}
-            ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+            // ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
+            ,{ label: 'Leadership Units', route: 'courses/certivtraining', scroll: true}
             ,{ label: 'Recognised Prior Learning', route: 'courses/priorlearning', scroll: true}
             ,{ label: 'Flexi or structured training plans', route: 'courses/trainingplans', scroll: true}
             ,{ label: 'Student fees', route: 'courses/studentfees', scroll: true}

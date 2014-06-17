@@ -1076,13 +1076,15 @@ a {
 #greendoor {
     /* background-image: url(../images/door.jpg); */
     height:450px;
-    width:260px;
+    width:250px;
 }
 .doorlinks a {
     /* color: #3D9444; /\*logo green*\/ */
     /* color: #f26500; /\*burnt orange*\/ */
-    color:black;
-    font-size:13px;
+    /* color:black; */
+    color:#2c2c2c;
+    font-size:12px;
+    font-weight:bold;
 }
 
 .doorlinks a:active {
@@ -1129,8 +1131,8 @@ a {
     /* -moz-border-radius: 4px;  */
     /* -o-border-radius: 4px;  */
     /* border-radius: 4px;  */
-    padding-bottom:10px;
-    padding-top:5px;
+    padding-bottom:15px;
+    padding-top:15px;
     padding-left:10px;
     padding-right:10px;
     line-height:15px;
