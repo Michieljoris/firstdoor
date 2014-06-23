@@ -1,16 +1,43 @@
 
 <!--partial:views/view_home_partial.html-->
 <div class="row">
+  <div ng-show="isShow('welcome_') || isShow('asqa_')" id="slideShow--" class="span9"><div class="flexslider"><ul class="slides"><li><img src="/images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="/images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="/images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="/images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>
+
+  <div ng-show="!(isShow('welcome_') || isShow('asqa_'))" class="span9 inline-image embed-container ratio-tabimage "
+       style="background-image: url({{getHeaderImage()}}); background-size: 100%;"
+       >
+    <div ng-show="isShow('welcome')">
+      <a href="home/specialists"><button class="buttonlink btn btn-warning" >Early Childhood </button></a>
+      <a href="courses/diploma_management"><button class="buttonlink btn btn-danger">Management</button></a>
+    </div>
+    <img width="1207" height="450" class="" ng-src=""/>
+  </div>
+  
+  <div id="image-sidebar--" class="span3">
+<!--partial:html/image-sidebar.html-->
+
+<div>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/"
+       data-layout="standard" data-action="like" data-show-faces="true"
+       data-share="true"></div>
+
+</div>
+</div>
+</div>
+<div class="row">
   <div id="sidebar--" class="span3">
 <!--partial:html/sidebar.html-->
 <fixscroll data-ng-transclude="">
 
-  <div class="">
-    <a href="courses/apprenticeship">
-      <image width="200px"  style="padding:5px 0 12px 9px"
-             ng-src={{cachify("images/Apprenticeship_button_website.jpg")}}> </image>
-    </a>
-  </div>
 
   <!-- <div ng-show="!signedIn() && !signingIn()" ng-class="getPageClass" id="greendoor"> -->
   <div ng-show="true" ng-class="getPageClass" id="greendoor">
@@ -40,20 +67,7 @@
 
 </fixscroll>
 </div>
-  <div ng-show="isShow('welcome_') || isShow('asqa_')" id="slideShow--" class="span9"><div class="flexslider"><ul class="slides"><li><img src="images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_interactive_professional_development.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_First_Door_mentoring.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li><li><img src="images/slides/home_page_engaging_resources.jpg"><div class="slide-caption"><h3>undefined</h3> </div> </li></ul> </div></div>
-
-  <div ng-show="!(isShow('welcome_') || isShow('asqa_'))" class="span9 inline-image embed-container ratio-tabimage "
-       style="background-image: url({{getHeaderImage()}}); background-size: 875px;"
-       >
-    <div ng-show="isShow('welcome')">
-      <a href="home/specialists"><button class="buttonlink btn btn-warning" >Early Childhood </button></a>
-      <a href="courses/diploma_management"><button class="buttonlink btn btn-danger">Management</button></a>
-    </div>
-    <img width="1207" height="450" class="" ng-src=""/>
-  </div>
-
-  <div class="row">
-    <div id="homeContents--" class="span7">
+  <div id="homeContents--" class="span7">
 <!--partial:html/welcome_stitch.html-->
 <div scroll id="welcome"></div>
 <div ng-show="isShow('welcome')" >
@@ -198,19 +212,19 @@
 <div scroll id="welcome404"></div>
 <div ng-show="is404()" >This page does not exist..</div>
 </div>
-    <div id="rightBar--" class="span2">
+  <div id="rightBar--" class="span2">
 <!--partial:html/rightbar.html-->
 <!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
-<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
-<script type="text/javascript">
- var a2a_config = a2a_config || {};
- a2a_config.linkurl = "http://www.firstdoor.com.au";
- a2a_config.onclick = 1;
-</script>
+<!-- <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a> -->
+<!-- <script type="text/javascript"> -->
+<!--  var a2a_config = a2a_config || {}; -->
+<!--  a2a_config.linkurl = "http://www.firstdoor.com.au"; -->
+<!--  a2a_config.onclick = 1; -->
+<!-- </script> -->
 
-<script type="text/javascript"
-	src="http://static.addtoany.com/menu/page.js"></script>
+<!-- <script type="text/javascript" -->
+<!-- 	src="http://static.addtoany.com/menu/page.js"></script> -->
 <!-- AddToAny END -->
 
 <!-- <div class=""> -->
@@ -274,5 +288,4 @@
 
 <!-- </fixscrollright> -->
 </div>
-  </div>
 </div>

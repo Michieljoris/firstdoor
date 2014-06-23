@@ -1,16 +1,35 @@
 
 <!--partial:views/view_pd_partial.html-->
-<div class="row"> 
+<div class="row">
+  <div ng-show="!(isShow('pdfees') || isShow('customised'))"
+       class="span9 inline-image embed-container ratio-tabimage ">
+    <img class="" ng-src="{{getHeaderImage()}}"/>
+  </div>
+  <div id="image-sidebar--" class="span3">
+<!--partial:html/image-sidebar.html-->
+
+<div>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/"
+       data-layout="standard" data-action="like" data-show-faces="true"
+       data-share="true"></div>
+
+</div>
+</div>
+</div>
+<div class="row">
   <div id="sidebar--" class="span3">
 <!--partial:html/sidebar.html-->
 <fixscroll data-ng-transclude="">
 
-  <div class="">
-    <a href="courses/apprenticeship">
-      <image width="200px"  style="padding:5px 0 12px 9px"
-             ng-src={{cachify("images/Apprenticeship_button_website.jpg")}}> </image>
-    </a>
-  </div>
 
   <!-- <div ng-show="!signedIn() && !signingIn()" ng-class="getPageClass" id="greendoor"> -->
   <div ng-show="true" ng-class="getPageClass" id="greendoor">
@@ -40,12 +59,7 @@
 
 </fixscroll>
 </div>
-  <div ng-show="!(isShow('pdfees') || isShow('customised'))"
-       class="span9 inline-image embed-container ratio-tabimage ">     
-    <img class="" ng-src="{{getHeaderImage()}}"/>
-  </div>
-  <div class="row">
-    <div id="contents--" class="span7">
+  <div id="contents--" class="span7">
 <!--partial:html/pd_stitch.html-->
 <div scroll id="intro"></div>
 <div ng-show="isShow('intro')" >
@@ -529,19 +543,19 @@ Retrieved from:
 <div scroll id="pd"></div>
 <div ng-show="is404()" >This page does not exist..</div>
 </div>
-    <div id="rightBar--" class="span2">
+  <div id="rightBar--" class="span2">
 <!--partial:html/rightbar.html-->
 <!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
-<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
-<script type="text/javascript">
- var a2a_config = a2a_config || {};
- a2a_config.linkurl = "http://www.firstdoor.com.au";
- a2a_config.onclick = 1;
-</script>
+<!-- <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a> -->
+<!-- <script type="text/javascript"> -->
+<!--  var a2a_config = a2a_config || {}; -->
+<!--  a2a_config.linkurl = "http://www.firstdoor.com.au"; -->
+<!--  a2a_config.onclick = 1; -->
+<!-- </script> -->
 
-<script type="text/javascript"
-	src="http://static.addtoany.com/menu/page.js"></script>
+<!-- <script type="text/javascript" -->
+<!-- 	src="http://static.addtoany.com/menu/page.js"></script> -->
 <!-- AddToAny END -->
 
 <!-- <div class=""> -->
@@ -605,5 +619,4 @@ Retrieved from:
 
 <!-- </fixscrollright> -->
 </div>
-  </div>
-</div> 
+</div>

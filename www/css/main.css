@@ -79,11 +79,10 @@ body {
     background-color: #3D9444;
 }
 
-/* #wisenetLogin { */
-/*     padding-top: 0px;  */
-/*     margin-top: 4px;  */
-/*     margin-right: 4px; */
-/*     } */
+#wisenetLogin { 
+    padding:4px 20px;
+    } 
+
 #studentLogin-- {
     padding-top: 5px;
     margin-left:0px;
@@ -385,11 +384,24 @@ body {
 
 
 @media only screen and (max-width: 767px){
+    
+    .inline-image.ratio-tabimage {
+	padding-bottom:37%
+    }
+    
     #sidebar-- {display:none; visibility: hidden;}
+    
+    .inline-image {
+	margin-left:0px;
+    }
+    
+    .connect-sub li {
+	list-style: none;
+    }
     
     .menubar {
 	margin-bottom:25px;
-	margin-left:20px;
+	/* margin-left:20px; */
     }
     
     .connectblock {
@@ -506,7 +518,7 @@ h3 {
 
 
 .inline-image {
-    margin: 0 0px 10px 10px; 
+    margin: 0 0px 10px 38px; 
     background: #fff; 
     border: 4px solid #fff;
     position: relative; 
@@ -521,12 +533,29 @@ h3 {
     
 }
 
+@media only screen and (max-width: 1200px){
+    .doorlinks {
+	width:236px!important;
+    }
 
+    .inline-image {
+	margin-left: 29px;
+    }
+    .menu>li>a{
+	padding-right:8px!important;
+    }
+    
+    .buttonlink {
+	margin-top:200px!important;
+	margin-left:33px!important;
+    } 
+}
 
 @media only screen and (min-width: 1200px){
     
 .menubar {
-    padding-bottom:10px;
+    padding-bottom:1px;
+    padding-top:10px;
 } 
 
     
@@ -550,7 +579,8 @@ h3 {
 
     
 .menubar {
-    padding-bottom:35px;
+    /* padding-bottom:35px; */
+    height:38px;
 } 
 
 #selectnav1 { 
@@ -587,7 +617,7 @@ h3 {
 	
     }	
     .inline-image {
-	margin-left: 20px;
+	margin-left: 26px;
 	width:480px;
     }
     #slideShow-- {
@@ -619,6 +649,9 @@ h3 {
 }
 
 @media only screen and (max-width: 767px){
+   .inline-image {
+       margin-left:0px;
+   } 
     
 #bottomRow {
     padding-bottom: 0;
@@ -757,6 +790,19 @@ h3 {
 }
 
 @media only screen and (max-width: 480px){
+    
+    
+    .social-icons li:first-child {
+	display:none;
+    }
+    .social-icons li {
+	margin-left: 8px;
+    }
+    
+    #wrapper {
+	padding-bottom:600px;
+    }
+    
     .social-icons { 
 	float: left;
 	}
@@ -1076,7 +1122,7 @@ a {
 #greendoor {
     /* background-image: url(../images/door.jpg); */
     height:450px;
-    width:250px;
+    width:305px!important;
 }
 .doorlinks a {
     /* color: #3D9444; /\*logo green*\/ */
@@ -1084,7 +1130,7 @@ a {
     /* color:black; */
     color:#2c2c2c;
     font-size:12px;
-    font-weight:bold;
+    /* font-weight:bold; */
 }
 
 .doorlinks a:active {
@@ -1095,7 +1141,8 @@ a {
 }
 
 .doorlinks {
-    padding:20px 10px 20px 12px;
+    width:305px;
+    padding:20px 10px 20px 3px;
 }
 .doorlinks .heading {
     /* padding-bottom:10px; */
@@ -1240,3 +1287,8 @@ a {
    margin-top:250px;
    margin-left:50px;
   } 
+
+#image-sidebar-- {
+    margin-left:0px;
+    padding-left:12px;
+}

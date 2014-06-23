@@ -8,7 +8,7 @@ var css = [
     "bootstrap.css"
     
     //The iconic font designed for use with Twitter Bootstrap
-    ,"font-awesome.css"
+    // ,"font-awesome.css"
 
     //some reset rules
     ,'reset.css'
@@ -170,120 +170,120 @@ var mainMenuTree = [
     { label: 'Home', icon: '', href: '/'
       
         ,sub:    [
-            // { label: 'Welcome', route: 'home/welcome', scroll: true}
-            { label: 'Specialists in Early Childhood training and development', route: 'home/specialists', scroll: true}
-            ,{ label: 'Engaging resources and environments', route: 'home/engaging', scroll: true}
-            ,{ label: 'Your personal mentor ', route: 'home/mentor', scroll: true}
-            ,{ label: 'Constructive and timely assessment', route: 'home/constructive', scroll: true}
-            // ,{ label: '', route: 'home/quiz', scroll: true}
-            // ,{ label: 'Quiz: discover your preferred learning style', route: 'home/quiz', scroll: true}
+            // { label: 'Welcome', route: '/home/welcome', scroll: true}
+            { label: 'Specialists in Early Childhood training and development', route: '/home/specialists', scroll: true}
+            ,{ label: 'Engaging resources and environments', route: '/home/engaging', scroll: true}
+            ,{ label: 'Your personal mentor ', route: '/home/mentor', scroll: true}
+            ,{ label: 'Constructive and timely assessment', route: '/home/constructive', scroll: true}
+            // ,{ label: '', route: '/home/quiz', scroll: true}
+            // ,{ label: 'Quiz: discover your preferred learning style', route: '/home/quiz', scroll: true}
             
-            // ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
+            // ,{ label: 'Australian Skills Quality Authority audit summary', route: '/home/asqa', scroll: true}
         ]
        // sub: [
-       //     { label: 'Contact us', route: 'contactus', scroll: true}
+       //     { label: 'Contact us', route: '/contactus', scroll: true}
        //     ]
     }
     
-    ,{ label: 'About us', icon: '', route: 'aboutus/vision',
+    ,{ label: 'About us', icon: '', route: '/aboutus/vision',
        sub: [
-           { label: 'Our company', route: 'aboutus/vision', scroll: true
+           { label: 'Our company', route: '/aboutus/vision', scroll: true
              ,sub: [
-                 { label: 'Vision', icon: '', route: 'aboutus/vision'}
-                 ,{ label: 'Mission', route: 'aboutus/mission'}
-                 ,{ label: 'Our student approach', route: 'aboutus/approach'}
-                 ,{ label: 'Values', route: 'aboutus/values'}
+                 { label: 'Vision', icon: '', route: '/aboutus/vision'}
+                 ,{ label: 'Mission', route: '/aboutus/mission'}
+                 ,{ label: 'Our student approach', route: '/aboutus/approach'}
+                 ,{ label: 'Values', route: '/aboutus/values'}
                  ]
              }
-             ,{ label: 'Our name and logo', route: 'aboutus/namelogo', scroll: true}
-             ,{ label: 'Our people', route: 'aboutus/people', scroll: true}
-             ,{ label: 'First door policies', route: 'aboutus/policies', scroll: true}
-             // ,{ label: 'Our people', route: 'index.html/!/aboutus#people'}
+             ,{ label: 'Our name and logo', route: '/aboutus/namelogo', scroll: true}
+             ,{ label: 'Our people', route: '/aboutus/people', scroll: true}
+             ,{ label: 'First door policies', route: '/aboutus/policies', scroll: true}
+             // ,{ label: 'Our people', route: '/index.html/!/aboutus#people'}
            
            ]
      } 
-    ,{ label: 'Professional development', icon: '', route: 'pd/intro'
+    ,{ label: 'Professional development', icon: '', route: '/pd/intro'
        ,sub: [
-           { label: 'The inspired educator', route: 'pd/inspired', scroll: true}
-           ,{ label: 'Documentation', route: 'pd/observing', scroll: true}
-           ,{ label: 'Environment and experiences', route: 'pd/environment', scroll: true}
-           ,{ label: 'Cooperative behaviour', route: 'pd/coop', scroll: true}
-           ,{ label: 'Evaluation and reflective practice', route: 'pd/evaluation', scroll: true}
-           ,{ label: 'Children at risk', route: 'pd/children', scroll: true}
-           ,{ label: 'Identify and manage risk', route: 'pd/risk', scroll: true}
-           // ,{ label: 'Customised workshop', route: 'pd/customised', scroll: true}
-           // ,{ label: 'Fees', route: 'pd/pdfees', scroll: true}
+           { label: 'The inspired educator', route: '/pd/inspired', scroll: true}
+           ,{ label: 'Documentation', route: '/pd/observing', scroll: true}
+           ,{ label: 'Environment and experiences', route: '/pd/environment', scroll: true}
+           ,{ label: 'Cooperative behaviour', route: '/pd/coop', scroll: true}
+           ,{ label: 'Evaluation and reflective practice', route: '/pd/evaluation', scroll: true}
+           ,{ label: 'Children at risk', route: '/pd/children', scroll: true}
+           ,{ label: 'Identify and manage risk', route: '/pd/risk', scroll: true}
+           // ,{ label: 'Customised workshop', route: '/pd/customised', scroll: true}
+           // ,{ label: 'Fees', route: '/pd/pdfees', scroll: true}
        ]
      } 
-    ,{ label: 'Accredited training', icon: '', route: 'courses/intro'
+    ,{ label: 'Accredited training', icon: '', route: '/courses/intro'
        ,sub: [
-           { label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
+           { label: 'Diploma of Early Childhood Education and Care', route: '/courses/children_ecec',
              scroll: true}
-           ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
-           // ,{ label: 'Leadership Units', route: 'courses/diploma_management', scroll: true}
-           // ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
-           ,{ label: 'Leadership Units', route: 'courses/certivtraining', scroll: true}
-           ,{ label: 'Government funded Apprenticeship training', route: 'courses/apprenticeship', scroll: true}
-           // ,{ label: 'Aged care', route: 'courses/agedcare'}
+           ,{ label: 'Diploma of Management ', route: '/courses/diploma_management', scroll: true}
+           // ,{ label: 'Leadership Units', route: '/courses/diploma_management', scroll: true}
+           // ,{ label: 'Certificate IV in Training and Assessment', route: '/courses/certivtraining', scroll: true}
+           ,{ label: 'Leadership Units', route: '/courses/certivtraining', scroll: true}
+           ,{ label: 'Government funded Apprenticeship training', route: '/courses/apprenticeship', scroll: true}
+           // ,{ label: 'Aged care', route: '/courses/agedcare'}
        ]
      } 
-    ,{ label: 'Resources', icon: '', route: 'resources/motivation'
+    ,{ label: 'Resources', icon: '', route: '/resources/motivation'
        ,sub: [
-           { label: 'Motivation', route: 'resources/motivation', scroll: true
+           { label: 'Motivation', route: '/resources/motivation', scroll: true
             }
-           ,{ label: 'Early childhood', route: 'resources/earlychildhood', scroll: true
+           ,{ label: 'Early childhood', route: '/resources/earlychildhood', scroll: true
               // ,sub: [
-              //     { label: 'Educational leaders', route: 'resources'}
+              //     { label: 'Educational leaders', route: '/resources'}
               // ]
             }
-           ,{ label: 'Learning organisations', route: 'resources/learningorganisations', scroll:true}
-           ,{ label: 'Learning', route: 'resources/learning', scroll:true
+           ,{ label: 'Learning organisations', route: '/resources/learningorganisations', scroll:true}
+           ,{ label: 'Learning', route: '/resources/learning', scroll:true
               // ,sub: [
-              //     { label: 'Quiz', route: 'resources/quiz'}
+              //     { label: 'Quiz', route: '/resources/quiz'}
               // ]
             }
-           ,{ label: 'Leadership and Management', route: 'resources/leadership', scroll:true}
+           ,{ label: 'Leadership and Management', route: '/resources/leadership', scroll:true}
            
-            ,{ label: 'Quiz: discover your preferred learning style', route: 'quiz', scroll: true}
-           // ,{ label: '(tryouts)' ,route: 'resources'
+            ,{ label: 'Quiz: discover your preferred learning style', route: '/quiz', scroll: true}
+           // ,{ label: '(tryouts)' ,route: '/resources'
            //    ,sub: [
-           //        // { label: 'Markdown editor', route: 'epic'}
-           //        { label: 'Quiz', route: 'quiz'}
-           //        ,{ label: 'Blog', icon: '', route: 'blog'}
-           //        ,{ label: 'Chat', route: 'chat'}
-           //        ,{ label: 'Editor', route: 'filebrowser'}
-           //        // ,{ label: 'Youtube carousel', route: 'ytcarousel'}
-           //        // ,{ label: 'Submenu item 2', route: 'index.html'}
-           //        // ,{ label: 'Submenu item 2', route: 'index.html'}
+           //        // { label: 'Markdown editor', route: '/epic'}
+           //        { label: 'Quiz', route: '/quiz'}
+           //        ,{ label: 'Blog', icon: '', route: '/blog'}
+           //        ,{ label: 'Chat', route: '/chat'}
+           //        ,{ label: 'Editor', route: '/filebrowser'}
+           //        // ,{ label: 'Youtube carousel', route: '/ytcarousel'}
+           //        // ,{ label: 'Submenu item 2', route: '/index.html'}
+           //        // ,{ label: 'Submenu item 2', route: '/index.html'}
            //    ]
            //  } 
        ]
        
      } 
-    ,{ label: 'Enrol', route: 'enrol', scroll: true
+    ,{ label: 'Enrol', route: '/enrol', scroll: true
        // ,sub: [
-       //     { label: '(Tryouts)', icon: '', route: 'blog'
+       //     { label: '(Tryouts)', icon: '', route: '/blog'
        //       ,sub: [ 
-       //           // { label: 'Markdown editor', route: 'epic'}
-       //           { label: 'Chat', route: 'chat'}
-       //           ,{ label: 'Editor', route: 'filebrowser'}
-       //           ,{ label: 'Youtube carousel', route: 'ytcarousel'}
-       //           // ,{ label: 'Submenu item 2', route: 'index.html'}
-       //           // ,{ label: 'Submenu item 2', route: 'index.html'}
+       //           // { label: 'Markdown editor', route: '/epic'}
+       //           { label: 'Chat', route: '/chat'}
+       //           ,{ label: 'Editor', route: '/filebrowser'}
+       //           ,{ label: 'Youtube carousel', route: '/ytcarousel'}
+       //           // ,{ label: 'Submenu item 2', route: '/index.html'}
+       //           // ,{ label: 'Submenu item 2', route: '/index.html'}
        //       ]
        
        //     } 
        // ]
      } 
-    ,{ label: 'Contact us', route: 'contactus', scroll: true
+    ,{ label: 'Contact us', route: '/contactus', scroll: true
        // ,sub: [
-       //     { label: '(Tryouts)', icon: '', route: 'blog'
+       //     { label: '(Tryouts)', icon: '', route: '/blog'
        //       ,sub: [ 
-       //           // { label: 'Markdown editor', route: 'epic'}
-       //           { label: 'Chat', route: 'chat'}
-       //           ,{ label: 'Editor', route: 'filebrowser'}
-       //           ,{ label: 'Youtube carousel', route: 'ytcarousel'}
-       //           // ,{ label: 'Submenu item 2', route: 'index.html'}
+       //           // { label: 'Markdown editor', route: '/epic'}
+       //           { label: 'Chat', route: '/chat'}
+       //           ,{ label: 'Editor', route: '/filebrowser'}
+       //           ,{ label: 'Youtube carousel', route: '/ytcarousel'}
+       //           // ,{ label: 'Submenu item 2', route: '/index.html'}
        //           // ,{ label: 'Submenu item 2', route: 'index.html'}
        //       ]
        
@@ -317,20 +317,20 @@ The wording for the four rolling images on the home page are:
 */
 
 var slides =  [
-    { url: "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
+    { url: "/images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
       // ,title: 'Early Childhood Education and Care training'
       // ,subtitle: 'Aged care slogan'
     }
-    ,{ url: "images/slides/home_page_interactive_professional_development.jpg"
+    ,{ url: "/images/slides/home_page_interactive_professional_development.jpg"
       // ,title: 'Interactive professional development connecting educators to the National Quality Framework'
       // ,subtitle: 'Slogan'
     }
-    ,{ url: "images/slides/home_page_First_Door_mentoring.jpg"
+    ,{ url: "/images/slides/home_page_First_Door_mentoring.jpg"
       //,title: 'First Door mentoring inspires focused students'
       // ,subtitle: 'Slogan'
     }
     
-    ,{ url: "images/slides/home_page_engaging_resources.jpg"
+    ,{ url: "/images/slides/home_page_engaging_resources.jpg"
       // ,title: 'Innovative resources to bridge the gap between theory and practice'
       // ,subtitle: 'Slogan'
     }
@@ -421,37 +421,37 @@ var exports = {
         //make sure to add a 'cachify' id in the head, or before any javascript
         //that might want to use the cachify function:
         ,list: [
-            "images/slides/PD_Environment_and_experiences.jpg",
-            "images/slides/PD_Inspired_educator.jpg",
-            "images/slides/PD_Observing_and_documenting.jpg",
-            "images/slides/PD_cooperative_behaviour.jpg",
-            "images/slides/PD_identifying_at_risk_childen.jpg",
-            "images/slides/PD_managing_risk.jpg",
-            "images/slides/PD_reflective_practice.jpg",
-            "images/slides/courses_Diploma_Childrens_services.jpg",
-            "images/slides/courses_Diploma_Management.jpg",
-            "images/slides/courses_certiv.jpg",
-            "images/slides/home_assessment.jpg",
-            "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg",
-            "images/slides/tab_accredited_training.jpg",
-            "images/slides/tab_professional_development.jpg",
-            "images/slides/home_page_First_Door_mentoring.jpg",
-            'documents/Dip ECEC enrolment electronic version.docx',
-            'documents/Dip ECEC enrolment print version.pdf',
-            'documents/Diploma_Early_Childhood_Course_Guide.pdf',
-            'documents/FirstDoor_StudentHandbook.pdf',
-            'documents/Individual Units enrolment electronic version.docx',
-            'documents/Individual Units enrolment print version.pdf',
-            'images/logo.jpg',
-            'images/nrtlogoclsm.png',
-            'images/slides/tab_about_us.jpg',
-            'images/slides/tab_accredited_training.jpg',
-            'images/slides/tab_professional_development.jpg',
-            'images/slides/tab_resources.jpg',
-            'images/course_structure_children_services.jpg',
-            'images/homepage_image.jpg',
-            "images/Apprenticeship_button_website.jpg",
-            "ckeditor/ckeditor.min.js"
+            "/images/slides/PD_Environment_and_experiences.jpg",
+            "/images/slides/PD_Inspired_educator.jpg",
+            "/images/slides/PD_Observing_and_documenting.jpg",
+            "/images/slides/PD_cooperative_behaviour.jpg",
+            "/images/slides/PD_identifying_at_risk_childen.jpg",
+            "/images/slides/PD_managing_risk.jpg",
+            "/images/slides/PD_reflective_practice.jpg",
+            "/images/slides/courses_Diploma_Childrens_services.jpg",
+            "/images/slides/courses_Diploma_Management.jpg",
+            "/images/slides/courses_certiv.jpg",
+            "/images/slides/home_assessment.jpg",
+            "/images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg",
+            "/images/slides/tab_accredited_training.jpg",
+            "/images/slides/tab_professional_development.jpg",
+            "/images/slides/home_page_First_Door_mentoring.jpg",
+            '/documents/Dip ECEC enrolment electronic version.docx',
+            '/documents/Dip ECEC enrolment print version.pdf',
+            '/documents/Diploma_Early_Childhood_Course_Guide.pdf',
+            '/documents/FirstDoor_StudentHandbook.pdf',
+            '/documents/Individual Units enrolment electronic version.docx',
+            '/documents/Individual Units enrolment print version.pdf',
+            '/images/logo.jpg',
+            '/images/nrtlogoclsm.png',
+            '/images/slides/tab_about_us.jpg',
+            '/images/slides/tab_accredited_training.jpg',
+            '/images/slides/tab_professional_development.jpg',
+            '/images/slides/tab_resources.jpg',
+            '/images/course_structure_children_services.jpg',
+            '/images/homepage_image.jpg',
+            "/images/Apprenticeship_button_website.jpg",
+            "/ckeditor/ckeditor.min.js"
             
         ]
     } 
@@ -502,16 +502,17 @@ var exports = {
             // ,image_resources: '<img class="" src="images/slides/tab_resources.jpg" />'
             // ,image_blog: '<img class="" src="images/slides/tab_blog.jpg" />'
             ,skewer:develop_mode ? '<script src="http://localhost:9090/skewer"></script>' : ' '
-            ,addthis1: '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>'
-            ,addthis2: '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=michieljoris"></script>'
-            ,sharethis1:'<script type="text/javascript">var switchTo5x=true;</script>'
-            ,sharethis2:'<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>'
-            ,sharethis3: '<script type="text/javascript">stLight.options({publisher: "014e0e6b-5c75-4f02-aa39-abe6833f9f4d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>'
+            // ,addthis1: '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>'
+            // ,addthis2: '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=michieljoris"></script>'
+            // ,sharethis1:'<script type="text/javascript">var switchTo5x=true;</script>'
+            // ,sharethis2:'<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>'
+            // ,sharethis3: '<script type="text/javascript">stLight.options({publisher: "014e0e6b-5c75-4f02-aa39-abe6833f9f4d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>'
             // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>''
             // ,recaptcha: '<script type="text/javascript" src="js/recaptcha_ajax.js"></script>'
             ,fragment: '<meta name="fragment" content="!"/>'
             ,persona: '<script src="https://login.persona.org/include.js"></script>'
-            ,ckeditor: '<script src="ckeditor/ckeditor.min.js"></script>'
+            ,ckeditor: '<script src="/ckeditor/ckeditor.min.js"></script>'
+            ,'fontawesome': '<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">'
             // ,firebug: '<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js></script>"'
         }
         ,metaBlock : {
@@ -534,16 +535,16 @@ var exports = {
         ,linkBlock:  {
             id: 'myLinkBlock',
             files: css,
-            path: 'css'
+            path: '/css'
         }
         ,scriptBlock: [
             {
                 id: 'ckeditorBlock',
                 files: [
                     // "CKEDITOR_BASEPATH.js",
-                    "../ckeditor/ckeditor.min.js"
+                    "ckeditor/ckeditor.min.js"
                 ],
-                path: 'js'
+                path: '/js'
                 
                 ,out: 'bla'
             },
@@ -551,7 +552,7 @@ var exports = {
             {
                 id: 'myJsBlock',
                 files: js,
-                path: 'js'
+                path: '/js'
                 
                 ,out: 'bla'
             }
@@ -616,6 +617,7 @@ var exports = {
             ,{  src: 'views/view_home_partial.html'
                 ,out : 'view-home.html'
                 ,mapping: {
+                    "image-sidebar": 'html/image-sidebar',
                     sidebar: 'html/sidebar'
                     // ,slogan: 'html/slogan'
                     ,slideShow: 'flex'
@@ -645,6 +647,7 @@ var exports = {
                 ,out : 'view-aboutus.html'
                 // ,partials: 'build/editable/aboutus'
                 ,mapping: {
+                    "image-sidebar": 'html/image-sidebar',
                     sidebar: 'html/sidebar'
                     // ,image: 'image_aboutus'
                     ,rightBar: 'rightbar'
@@ -688,6 +691,7 @@ var exports = {
                 src: 'views/view_pd_partial.html'
                 ,out : 'view-pd.html'
                 ,mapping: {
+                    "image-sidebar": 'html/image-sidebar',
                     sidebar: 'html/sidebar'
                     ,slogan: 'html/slogan'
                     ,rightBar: 'rightbar'
@@ -713,6 +717,7 @@ var exports = {
                 src: 'views/view_courses_partial.html'
                 ,out : 'view-courses.html'
                 ,mapping: {
+                    "image-sidebar": 'html/image-sidebar',
                     sidebar: 'html/sidebar'
                     // ,image: 'image_courses'
                     ,rightBar: 'rightbar'
@@ -728,6 +733,7 @@ var exports = {
                 // src: 'html/resources.html'
                 ,out : 'view-resources.html'
                 ,mapping: {
+                    "image-sidebar": 'html/image-sidebar',
                     sidebar: 'html/sidebar'
                     // ,image: 'image_resources'
                     ,contents: 'html/resources'
@@ -866,10 +872,10 @@ var exports = {
                //under the cachify.list
                ,mapping: {
                    head: [
-                       'baseHref9001',
+                       // 'baseHref9001',
                        'title', 'meta',
-
                        'myLinkBlock',
+                       'fontawesome',
                        'html/ieshim','skewer',
                        // 'firebug',
                        // 'sharethis1', 'sharethis2', 'sharethis3',
@@ -879,7 +885,7 @@ var exports = {
                   
                    "ng:app": ['body',
                               
-                              'sharethis1', 'sharethis2', 'sharethis3',
+                              // 'sharethis1', 'sharethis2', 'sharethis3',
                               ,'persona', 
                               'myJsBlock',
                               'ckeditor',

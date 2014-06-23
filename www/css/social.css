@@ -3,7 +3,10 @@
     margin: 0;
 }
 
-
+.topright-block>li {
+float: left;
+list-style: none;
+}
 
 .social-icons {
     float: right;
@@ -63,3 +66,5 @@
 .xing {background: url(../images/icons/social/xing.png) no-repeat;}
 .yahoo {background: url(../images/icons/social/yahoo.png) no-repeat;}
 .youtube {background: url(../images/icons/social/youtube.png) no-repeat;}
+
+

@@ -151,14 +151,14 @@ var greendoor = {
             default_ie8sucks: 'welcome',  //ie8 gives error when using default as property name...
              links:    [
                  { label: 'Welcome', route: '/', scroll: true}
-                 // ,{ label: 'Specialists in Early Childhood training and development', route: 'home/specialists', scroll: true}
-                 ,{ label: 'Early Childhood Specialists', route: 'home/specialists', scroll: true}
-                 ,{ label: 'Engaging resources and environments', route: 'home/engaging', scroll: true}
-                 ,{ label: 'Your personal mentor ', route: 'home/mentor', scroll: true}
-                 ,{ label: 'Constructive and timely assessment', route: 'home/constructive', scroll: true}
-                 // ,{ label: 'Australian Skills Quality Authority audit summary', route: 'home/asqa', scroll: true}
-                 ,{ label: 'ASQA Audit Summary', route: 'home/asqa', scroll: true}
-                 // ,{ label: 'Quiz: discover your preferred learning style', route: 'home/quiz', scroll: true}
+                 // ,{ label: 'Specialists in Early Childhood training and development', route: '/home/specialists', scroll: true}
+                 ,{ label: 'Early Childhood Specialists', route: '/home/specialists', scroll: true}
+                 ,{ label: 'Engaging resources and environments', route: '/home/engaging', scroll: true}
+                 ,{ label: 'Your personal mentor ', route: '/home/mentor', scroll: true}
+                 ,{ label: 'Constructive and timely assessment', route: '/home/constructive', scroll: true}
+                 // ,{ label: 'Australian Skills Quality Authority audit summary', route: '/home/asqa', scroll: true}
+                 ,{ label: 'ASQA Audit Summary', route: '/home/asqa', scroll: true}
+                 // ,{ label: 'Quiz: discover your preferred learning style', route: '/home/quiz', scroll: true}
              ]
            }
     ,'pd':{
@@ -166,18 +166,18 @@ var greendoor = {
         heading: '',
         default_ie8sucks: 'intro',
         links:    [
-            { label: 'Tailored workshops', route: 'pd/intro', scroll: true}
-            ,{ label: 'The inspired educator', route: 'pd/inspired', scroll: true}
-            // ,{ label: 'Observation, documentation, planning and evaluating', route: 'pd/observing', scroll: true}
-            ,{ label: 'Documentation', route: 'pd/observing', scroll: true}
-            ,{ label: 'Environment and experiences', route: 'pd/environment', scroll: true}
-            ,{ label: 'Developing cooperative behaviour', route: 'pd/coop', scroll: true}
-            ,{ label: 'Evaluation and reflective practice', route: 'pd/evaluation', scroll: true}
-            ,{ label: 'Children at risk', route: 'pd/children', scroll: true}
-            ,{ label: 'Identify and manage risk', route: 'pd/risk', scroll: true}
-            ,{ label: 'Customised workshop', route: 'pd/customised', scroll: true}
-            ,{ label: 'Fees', route: 'pd/pdfees', scroll: true}
-            // ,{ label: 'Fees', route: 'documents/Professional_Development_fees.docx', scroll: true}
+            { label: 'Tailored workshops', route: '/pd/intro', scroll: true}
+            ,{ label: 'The inspired educator', route: '/pd/inspired', scroll: true}
+            // ,{ label: 'Observation, documentation, planning and evaluating', route: '/pd/observing', scroll: true}
+            ,{ label: 'Documentation', route: '/pd/observing', scroll: true}
+            ,{ label: 'Environment and experiences', route: '/pd/environment', scroll: true}
+            ,{ label: 'Developing cooperative behaviour', route: '/pd/coop', scroll: true}
+            ,{ label: 'Evaluation and reflective practice', route: '/pd/evaluation', scroll: true}
+            ,{ label: 'Children at risk', route: '/pd/children', scroll: true}
+            ,{ label: 'Identify and manage risk', route: '/pd/risk', scroll: true}
+            ,{ label: 'Customised workshop', route: '/pd/customised', scroll: true}
+            ,{ label: 'Fees', route: '/pd/pdfees', scroll: true}
+            // ,{ label: 'Fees', route: '/documents/Professional_Development_fees.docx', scroll: true}
         ]
     }
     ,'aboutus': {
@@ -185,19 +185,19 @@ var greendoor = {
         heading: '',
         default_ie8sucks: 'vision'
         ,links: [
-            // { label: 'Our company', route: 'aboutus/company', scroll: true
+            // { label: 'Our company', route: '/aboutus/company', scroll: true
             //  } 
             // ,sub: [
-            // { label: 'Markdown editor', route: 'epic'}
-            { label: 'Vision', icon: '', route: 'aboutus/vision'}
-            ,{ label: 'Mission', route: 'aboutus/mission'}
-            ,{ label: 'Our student approach', route: 'aboutus/approach'}
-            ,{ label: 'Values', route: 'aboutus/values'}
+            // { label: 'Markdown editor', route: '/epic'}
+            { label: 'Vision', icon: '', route: '/aboutus/vision'}
+            ,{ label: 'Mission', route: '/aboutus/mission'}
+            ,{ label: 'Our student approach', route: '/aboutus/approach'}
+            ,{ label: 'Values', route: '/aboutus/values'}
             // ]
             // }
-            ,{ label: 'Our name and logo', route: 'aboutus/namelogo', scroll: true}
-            ,{ label: 'Our people', route: 'aboutus/people', scroll: true}
-            ,{ label: 'Policies', route: 'aboutus/policies'}
+            ,{ label: 'Our name and logo', route: '/aboutus/namelogo', scroll: true}
+            ,{ label: 'Our people', route: '/aboutus/people', scroll: true}
+            ,{ label: 'Policies', route: '/aboutus/policies'}
             
            
         ]
@@ -207,17 +207,17 @@ var greendoor = {
         heading: '',
         default_ie8sucks: 'motivation'
         ,links: [
-            { label: 'Motivation', route: 'resources/motivation', scroll: true
+            { label: 'Motivation', route: '/resources/motivation', scroll: true
             }
-            ,{ label: 'Early childhood', route: 'resources/earlychildhood', scroll: true
+            ,{ label: 'Early childhood', route: '/resources/earlychildhood', scroll: true
                // ,sub: [
-               //     { label: 'Educational leaders', route: 'resources'}
+               //     { label: 'Educational leaders', route: '/resources'}
                // ]
              }
-            ,{ label: 'Learning organisations', route: 'resources/learningorganisations', scroll:true}
-            ,{ label: 'Learning', route: 'resources/learning', scroll:true}
-            ,{ label: 'Leadership and Management', route: 'resources/leadership', scroll:true}
-            // ,{ label: 'Quiz', route: 'quiz'}
+            ,{ label: 'Learning organisations', route: '/resources/learningorganisations', scroll:true}
+            ,{ label: 'Learning', route: '/resources/learning', scroll:true}
+            ,{ label: 'Leadership and Management', route: '/resources/leadership', scroll:true}
+            // ,{ label: 'Quiz', route: '/quiz'}
         ]
     }
     ,'courses': {
@@ -226,18 +226,18 @@ var greendoor = {
         default_ie8sucks: 'intro'
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'Accredited training', route: 'courses/intro',
+            { label: 'Accredited training', route: '/courses/intro',
               scroll: true}
-            ,{ label: 'Diploma of Early Childhood Education and Care', route: 'courses/children_ecec',
+            ,{ label: 'Diploma of Early Childhood Education and Care', route: '/courses/children_ecec',
                scroll: true}
-            ,{ label: 'Diploma of Management ', route: 'courses/diploma_management', scroll: true}
-            // ,{ label: 'Leadership Units', route: 'courses/diploma_management', scroll: true}
-            // ,{ label: 'Certificate IV in Training and Assessment', route: 'courses/certivtraining', scroll: true}
-            ,{ label: 'Leadership Units', route: 'courses/certivtraining', scroll: true}
-            ,{ label: 'Recognised Prior Learning', route: 'courses/priorlearning', scroll: true}
-            ,{ label: 'Flexi or structured training plans', route: 'courses/trainingplans', scroll: true}
-            ,{ label: 'Student fees', route: 'courses/studentfees', scroll: true}
-            // ,{ label: 'Aged care', route: 'courses/agedcare'}
+            ,{ label: 'Diploma of Management ', route: '/courses/diploma_management', scroll: true}
+            // ,{ label: 'Leadership Units', route: '/courses/diploma_management', scroll: true}
+            // ,{ label: 'Certificate IV in Training and Assessment', route: '/courses/certivtraining', scroll: true}
+            ,{ label: 'Leadership Units', route: '/courses/certivtraining', scroll: true}
+            ,{ label: 'Recognised Prior Learning', route: '/courses/priorlearning', scroll: true}
+            ,{ label: 'Flexi or structured training plans', route: '/courses/trainingplans', scroll: true}
+            ,{ label: 'Student fees', route: '/courses/studentfees', scroll: true}
+            // ,{ label: 'Aged care', route: '/courses/agedcare'}
         ]
 
         
@@ -301,42 +301,43 @@ function setActiveTab(page) {
 var headerImages = {
     
     "home": {
-        "*": "images/homepage_image.jpg"
-        ,specialists: "images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
-        ,engaging: "images/slides/tab_resources.jpg"
-        ,quiz: "images/slides/tab_resources.jpg"
-        ,mentor: "images/slides/home_page_First_Door_mentoring.jpg"
-        ,constructive: "images/slides/home_assessment.jpg"
-        // ,asqa: "images/slides/home_assessment.jpg"
+        "*": "/images/homepage_image.jpg"
+        ,specialists: "/images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg"
+        ,engaging: "/images/slides/tab_resources.jpg"
+        ,quiz: "/images/slides/tab_resources.jpg"
+        ,mentor: "/images/slides/home_page_First_Door_mentoring.jpg"
+        ,constructive: "/images/slides/home_assessment.jpg"
+        // ,asqa: "/images/slides/home_assessment.jpg"
     } 
     ,"resources": {
-        "*": "images/slides/tab_resources.jpg"
+        "*": "/images/slides/tab_resources.jpg"
         
     }
     ,"aboutus": {
-        "*": 'images/slides/tab_about_us.jpg'
+        "*": '/images/slides/tab_about_us.jpg'
         
     }
     ,"sitemap": {
-        "*": 'images/slides/tab_about_us.jpg'
+        "*": '/images/slides/tab_about_us.jpg'
         
     }
     ,"pd": {
-        "*": "images/slides/tab_professional_development.jpg"
-        ,inspired: "images/slides/PD_Inspired_educator.jpg"
-        ,observing: "images/slides/PD_Observing_and_documenting.jpg"
-        ,environment: "images/slides/PD_Environment_and_experiences.jpg"
-        ,coop: "images/slides/PD_cooperative_behaviour.jpg"
-        ,evaluation: "images/slides/PD_reflective_practice.jpg"
-        ,children: "images/slides/PD_identifying_at_risk_childen.jpg"
-        ,risk: "images/slides/PD_managing_risk.jpg"
+        "*": "/images/slides/tab_professional_development.jpg"
+        ,inspired: "/images/slides/PD_Inspired_educator.jpg"
+        ,observing: "/images/slides/PD_Observing_and_documenting.jpg"
+        ,environment: "/images/slides/PD_Environment_and_experiences.jpg"
+        ,coop: "/images/slides/PD_cooperative_behaviour.jpg"
+        ,evaluation: "/images/slides/PD_reflective_practice.jpg"
+        ,children: "/images/slides/PD_identifying_at_risk_childen.jpg"
+        ,risk: "/images/slides/PD_managing_risk.jpg"
         ,customised: ""
     }            
     ,"courses": {
-        "*": "images/slides/tab_accredited_training.jpg"
-        ,children_ecec: "images/slides/courses_Diploma_Childrens_services.jpg"
-        ,diploma_management: "images/slides/courses_Diploma_Management.jpg"
-        ,certivtraining: "images/slides/courses_certiv.jpg"
+        "*": "/images/slides/tab_accredited_training.jpg"
+        ,children_ecec: "/images/slides/courses_Diploma_Childrens_services.jpg"
+        ,diploma_management: "/images/slides/courses_Diploma_Management.jpg"
+        ,certivtraining: "/images/slides/tab_professional_development.jpg"
+        // ,certivtraining: "/images/slides/courses_certiv.jpg"
     }
     
 };

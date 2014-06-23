@@ -87,10 +87,10 @@ Purpose of the stylesheet follows.
 .menu>li>a{
     /* color:#7D7D7D; */
     color:#535353;
-           font-weight:bold;
+           /* font-weight:bold; */
            font-size:13px;
            line-height:12px;
-           padding:10px 10px 10px 8px;
+           padding:10px 29px 10px 10px;
 }
 .menu>li:hover>a{
     background-color:#58595A;
