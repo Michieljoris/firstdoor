@@ -23,6 +23,7 @@ angular.module('ngView', [],
     
                     mapping.forEach(function(m) {
                         var route ='/' + m[0];
+                        if (m[1].indexOf('/') === 0) m[1] = m[1].slice(1);
                         $routeProvider.when(route,
                                             { templateUrl: '//' + document.location.host + '/' + m[1],
                                               controller: m[2] ? m[2] : DefaultCntl });

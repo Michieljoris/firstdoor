@@ -458,24 +458,25 @@ var exports = {
     
     //group the script and link blocks and concatenate all files listed in a block
     ,concatenate: !develop_mode 
+    // ,concatenate: true
     //make sure to load the resources for custom components, the files get added
     //to the first script and link blocks.
     ,extras: ['flex-slider', 'cssmenu', 'showhide']
     ,routes: [
-        ['home','built/view-home.html', 'HomeCntl'],
-        ['aboutus', 'built/view-aboutus.html'],
-        ['pd', 'built/view-pd.html'],
-        ['resources', 'built/view-resources.html', 'ResourcesCntl'],
-        ['courses', 'built/view-courses.html'],
-        ['quiz', 'built/view-quiz.html'],
+        ['home','/built/view-home.html', 'HomeCntl'],
+        ['aboutus', '/built/view-aboutus.html'],
+        ['pd', '/built/view-pd.html'],
+        ['resources', '/built/view-resources.html', 'ResourcesCntl'],
+        ['courses', '/built/view-courses.html'],
+        ['quiz', '/built/view-quiz.html'],
         // ['blog', '/built/view-quiz.html'],
-        ['epic', 'built/view-epic.html', 'EpicCntl'],
-        ['chat', 'built/view-chat.html', 'chatCntl'],
-        ['filebrowser', 'built/view-filebrowser.html', 'filebrowserCntl'],
-        ['contactus', 'built/view-contactus.html', 'contactusCntl'],
-        ['enrol', 'built/view-enroll.html'],
-        ['apprenticeship', 'built/view-apprenticeship.html'],
-        ['sitemap', 'sitemap.html']
+        ['epic', '/built/view-epic.html', 'EpicCntl'],
+        ['chat', '/built/view-chat.html', 'chatCntl'],
+        ['filebrowser', '/built/view-filebrowser.html', 'filebrowserCntl'],
+        ['contactus', '/built/view-contactus.html', 'contactusCntl'],
+        ['enrol', '/built/view-enroll.html'],
+        ['apprenticeship', '/built/view-apprenticeship.html'],
+        ['sitemap', '/sitemap.html']
         
         // ,['ytcarousel', '/build/html/ytcarousel.html']
     ]
@@ -544,7 +545,7 @@ var exports = {
                     // "CKEDITOR_BASEPATH.js",
                     "ckeditor/ckeditor.min.js"
                 ],
-                path: '/js'
+                path: '/'
                 
                 ,out: 'bla'
             },
