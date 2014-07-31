@@ -20,6 +20,15 @@ angular.module('ngView', [],
                             // ['epic', '/built/view-epic.html', EpicCntl]
 
                         ];
+                        $routeProvider.when('/blog/:key',
+                                            // { templateUrl: '//' + document.location.host + '/' + 'blog',
+                                            { templateUrl: function() {
+                                                console.log('----------------------', arguments);
+                                                
+                                             return '//' + document.location.host + '/' +
+                                                    cachify("/built/view-blog.html");
+                                            },
+                                              controller: DefaultCntl });
     
                     mapping.forEach(function(m) {
                         var route ='/' + m[0];

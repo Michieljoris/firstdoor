@@ -458,7 +458,7 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll, editor) {
     };
 
     $scope.is404 = function() {
-        
+        console.log('4040404', page);
         return !exists[page] || exists[page].indexOf(section) === -1;
     };
     
@@ -786,6 +786,8 @@ function HomeCntl($scope, $routeParams, $location, editor) {
     
     $scope.is404 = function() {
         // console.log (page,section,  !exists[page] || exists[page].indexOf(section) === -1);
+        
+        console.log('4040404', page);
         return !exists[page] || exists[page].indexOf(section) === -1;
     };
     
