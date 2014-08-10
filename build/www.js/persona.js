@@ -3,12 +3,12 @@
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
 function initPersona($scope, $http, editor) {
-    // var currentUser = cookie.get('persona');
-    // if (currentUser) $scope.signedIn = true;
-    console.log('running initPersona');
+    var currentUser = cookie.get('persona');
+    if (currentUser) $scope.signedIn = true;
+    console.log('running initPersona: ', currentUser);
  
     navigator.id.watch({
-        // loggedInUser: currentUser,
+        loggedInUser: currentUser,
         onlogin: function(assertion) {
             console.log('logging in..');
             // $("#sidebar--").spin({left:"140px",top:"730px"});

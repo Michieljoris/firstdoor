@@ -15,7 +15,6 @@ angular.module('ngView', [],
 ,["resources", cachify("/built/view-resources.html"), ResourcesCntl]
 ,["courses", cachify("/built/view-courses.html")]
 ,["quiz", cachify("/built/view-quiz.html")]
-,["blog", cachify("/built/view-blog.html")]
 ,["epic", cachify("/built/view-epic.html"), EpicCntl]
 ,["chat", cachify("/built/view-chat.html"), chatCntl]
 ,["filebrowser", cachify("/built/view-filebrowser.html"), filebrowserCntl]
@@ -23,7 +22,6 @@ angular.module('ngView', [],
 ,["enrol", cachify("/built/view-enroll.html")]
 ,["apprenticeship", cachify("/built/view-apprenticeship.html")]
 ,["sitemap", cachify("/sitemap.html")]
-,["blog", cachify("/built/view-blog.html")]
 
                             // ['home', '/built/view-home.html', HomeCntl],
                             // ['aboutus', '/build/markdown/aboutus.md'],

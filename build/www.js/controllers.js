@@ -6,6 +6,9 @@ function BottomCntl($scope, $location, $http, editor) {
     $scope.signedIn = editor.signedIn;
     $scope.email = editor.email;
     
+    var currentUser = cookie.get('persona');
+    if (currentUser) editor.signin();
+    
     $scope.login = function($event) {
         $event.preventDefault();
         console.log('Logging in');

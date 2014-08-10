@@ -56,7 +56,7 @@ myAppModule.factory('editor', function() {
             console.log('no filename, so not saving', data);
         }
         console.log('Saving file ' + fileName);
-        $http.post('__api/save?path=' + fileName, data).
+        $http.post('/__api/save?path=' + fileName, data).
             success(function(data, status, headers, config) {
 	        console.log(data, status, config);
 	        if (!data.success) {
