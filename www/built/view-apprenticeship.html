@@ -1,9 +1,5 @@
-
-<!--partial:views/view_apprenticeship_partial.html-->
-<div class="row"> 
-  <div id="sidebar--" class="span3">
-<!--partial:html/sidebar.html-->
-<fixscroll data-ng-transclude="">
+<!--partial:views/view_apprenticeship_partial.html--><div class="row"> 
+  <div id="sidebar--" class="span3"><!--partial:html/sidebar.html--><fixscroll data-ng-transclude="">
 
 
   <!-- <div ng-show="!signedIn() && !signingIn()" ng-class="getPageClass" id="greendoor"> -->
@@ -14,10 +10,23 @@
         <div ng-repeat="link in page.links">
           <li ng-class="isSelected(link.route)" >
             <div ng-switch on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}"
-                 target="{{link.file && '_blank' || ''}}" download>{{link.label}} </a>
-              <a  ng-switch-default ng-href="{{link.route}}"
-                  target="{{link.file && '_blank' || ''}}" >{{link.label}} </a>
+              <div ng-switch-when="true">
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    download>{{link.label}} </a>
+		<br>
+		<span>{{link.line2}}</span>
+              </div>
+              <div ng-switch-default >
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.label}} </a>
+		<br>
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.line2}} </a>
+		<br>
+              </div>
             </div>
             <ul>
               <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
@@ -35,9 +44,7 @@
 </fixscroll>
 </div>
   <div class="row">
-    <div contenteditable="{{editable()}}" id="contents--" class="span7">
-<!--partial:editable/apprenticeship.html-->
-<h2>Apprenticeship Training</h2>
+    <div contenteditable="{{editable()}}" id="contents--" class="span7"><!--partial:editable/apprenticeship.html--><h2>Apprenticeship Training</h2>
 <p>The Australian Government recognises Early Childhood as a critical priority to align the workforce with the skills required by the industry. The User Choice program <strong>funds the cost of Apprenticeship training</strong> for the Diploma of <a href="courses/children_ecec">Early Childhood Education and Care (ECEC)</a>.&nbsp;</p>
 <h3>Employment criteria</h3>
 <p>The ECEC apprenticeship is a contract to obtain a Government funded, nationally recognised Diploma qualification while<strong> you are employed and working in a licensed Early Childhood service. </strong></p>
@@ -73,9 +80,7 @@
 <p><strong>Workplace supervisor </strong></p>
 <p>Your workplace supervisor will assist First Door in assessing your practical skills at work. A workplace supervisor must be industry qualified to Diploma level, and be able to observe your related skills as competent before they are able to sign off your practical skills.</p>
 </div>
-    <div id="rightBar--" class="span2">
-<!--partial:html/rightbar.html-->
-<!-- <fixscrollright data-ng-transclude="">  -->
+    <div id="rightBar--" class="span2"><!--partial:html/rightbar.html--><!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
 <!-- <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a> -->
 <!-- <script type="text/javascript"> -->
@@ -96,9 +101,7 @@
 <!-- </div> -->
 
 <div ng-show="show_events()">
-  <div contenteditable="{{editable()}}" id="events_sidebar--">
-<!--partial:editable/events_sidebar.html-->
-<h3>Upcoming workshop events</h3>
+  <div contenteditable="{{editable()}}" id="events_sidebar--"><!--partial:editable/events_sidebar.html--><h3>Upcoming workshop events</h3>
 <p>April 28: <a href="https://db.tt/UeW0TSaU"><strong>Develop teams and individuals</strong></a></p>
 <p>May 5: <a href="https://www.dropbox.com/s/lo9levu7acj6u89/Partnership%20with%20families%20CBW%20invite.pdf">Partnership with families</a></p>
 <p>May 19: <a href="https://db.tt/Eu7PgZKL">Developing cooperative behaviour</a></p>

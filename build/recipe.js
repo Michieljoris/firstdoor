@@ -275,6 +275,8 @@ var mainMenuTree = [
        //     } 
        // ]
      } 
+    ,{ label: 'Blog', route: '/blog', scroll: true
+     } 
     ,{ label: 'Contact us', route: '/contactus', scroll: true
        // ,sub: [
        //     { label: '(Tryouts)', icon: '', route: '/blog'
@@ -476,6 +478,7 @@ var exports = {
         ['contactus', '/built/view-contactus.html', 'contactusCntl'],
         ['enrol', '/built/view-enroll.html'],
         ['apprenticeship', '/built/view-apprenticeship.html'],
+        ['blog', '/built/view-blog.html'],
         ['sitemap', '/sitemap.html']
         
         // ,['ytcarousel', '/build/html/ytcarousel.html']
@@ -510,6 +513,10 @@ var exports = {
             // ,sharethis3: '<script type="text/javascript">stLight.options({publisher: "014e0e6b-5c75-4f02-aa39-abe6833f9f4d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>'
             // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>''
             // ,recaptcha: '<script type="text/javascript" src="js/recaptcha_ajax.js"></script>'
+            ,facebook: '<script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=320246108156039&version=v2.0"></script>'
+            
+            
+            
             ,fragment: '<meta name="fragment" content="!"/>'
             ,persona: '<script src="https://login.persona.org/include.js"></script>'
             ,ckeditor: '<script src="/ckeditor/ckeditor.min.js"></script>'
@@ -618,8 +625,9 @@ var exports = {
             ,{  src: 'views/view_home_partial.html'
                 ,out : 'view-home.html'
                 ,mapping: {
-                    "image-sidebar": 'html/image-sidebar',
-                    sidebar: 'html/sidebar'
+                    "image-sidebar": 'html/image-sidebar'
+                    // ,'editbar': 'html/editbar.html'
+                    ,sidebar: 'html/sidebar'
                     // ,slogan: 'html/slogan'
                     ,slideShow: 'flex'
                     ,rightBar: 'rightbar'
@@ -648,8 +656,9 @@ var exports = {
                 ,out : 'view-aboutus.html'
                 // ,partials: 'build/editable/aboutus'
                 ,mapping: {
-                    "image-sidebar": 'html/image-sidebar',
-                    sidebar: 'html/sidebar'
+                    "image-sidebar": 'html/image-sidebar'
+                    // ,'editbar': 'html/editbar.html'
+                    ,sidebar: 'html/sidebar'
                     // ,image: 'image_aboutus'
                     ,rightBar: 'rightbar'
                     // ,slogan: 'slogan'
@@ -692,8 +701,9 @@ var exports = {
                 src: 'views/view_pd_partial.html'
                 ,out : 'view-pd.html'
                 ,mapping: {
-                    "image-sidebar": 'html/image-sidebar',
-                    sidebar: 'html/sidebar'
+                    "image-sidebar": 'html/image-sidebar'
+                    // ,'editbar': 'html/editbar.html'
+                    ,sidebar: 'html/sidebar'
                     ,slogan: 'html/slogan'
                     ,rightBar: 'rightbar'
                     // ,image: 'image_pd'
@@ -718,8 +728,9 @@ var exports = {
                 src: 'views/view_courses_partial.html'
                 ,out : 'view-courses.html'
                 ,mapping: {
-                    "image-sidebar": 'html/image-sidebar',
-                    sidebar: 'html/sidebar'
+                    "image-sidebar": 'html/image-sidebar'
+                    // ,'editbar': 'html/editbar.html'
+                    ,sidebar: 'html/sidebar'
                     // ,image: 'image_courses'
                     ,rightBar: 'rightbar'
                     // ,slogan: 'slogan'
@@ -750,11 +761,27 @@ var exports = {
                     ,contents: 'editable/enroll.html'
                     ,rightBar: 'rightbar'
                 }}
+            //blog
+            ,{
+                src: 'views/view_blog_partial.html'
+                ,out : 'view-blog.html'
+                ,mapping: {
+                    "image-sidebar": 'html/image-sidebar'
+                    // ,'editbar': 'html/editbar.html'
+                    ,sidebar: 'blog-leftbar'
+                    // ,image: 'image_courses'
+                    ,rightBar: 'blog-rightbar'
+                    // ,slogan: 'slogan'
+                    // ,slideShow: 'flex',
+                    ,contents: 'blogpost'
+                    
+                }}
             ,{
                 src: 'views/view_apprenticeship_partial.html'
                 ,out : 'view-apprenticeship.html'
                 ,mapping: {
                     sidebar: 'html/sidebar'
+                    // ,'editbar': 'html/editbar.html'
                     // ,image: 'image_resources'
                     ,contents: 'editable/apprenticeship.html'
                     ,rightBar: 'rightbar'
@@ -839,6 +866,8 @@ var exports = {
                ,tagIdPostfix: '--' //can be overridden per template
                ,mapping: {
                    message: 'html/message'
+                   
+                   ,'editbar': 'html/editbar.html'
                    ,logo: 'html/logo'
                    ,social: 'html/social'
                    ,contact: 'html/contact'
@@ -884,15 +913,17 @@ var exports = {
                        ,'cachify'
                    ],
                   
-                   "ng:app": ['body',
+                   "ng:app": [
+                       'facebook', 
+                       'body',
                               
-                              // 'sharethis1', 'sharethis2', 'sharethis3',
-                              ,'persona', 
-                              'myJsBlock',
-                              'ckeditor',
-                              // 'ckeditorBlock'
-                              ,'html/google_analytics.html'
-                             ]
+                       // 'sharethis1', 'sharethis2', 'sharethis3',
+                       ,'persona', 
+                       'myJsBlock',
+                       'ckeditor',
+                       // 'ckeditorBlock'
+                       ,'html/google_analytics.html'
+                   ]
                }
              }
             // ,{  

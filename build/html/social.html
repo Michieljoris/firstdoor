@@ -1,13 +1,13 @@
 <div class="pull-right">
   <ul class="topright-block">
     <li class="">
-      <image height="87" width="100" style="padding-right:75px;" ng-hide="hide_nrtlogo()" ng-src={{cachify("/images/nrtlogoclsm.png")}}> </image>
+      <image height="87" width="100" style="padding-right:77px;" ng-hide="hide_nrtlogo()" ng-src={{cachify("/images/nrtlogoclsm.png")}}> </image>
     </li>
     <li>
       <ul class="pull-right" style="margin-left:6px; list-style-type:none;">
 
-	<li>
-	  <ul class="social-icons">
+        <li>
+          <ul class="social-icons">
 
             <li style=""><h2 style="margin-bottom:10px;
                                     padding-right:11px;
@@ -19,23 +19,15 @@
             <!-- <li class="googleplus"><a href="#" target="_blank">Google+</a></li> -->
             <li class="linkedin"><a href="http://www.linkedin.com/company/first-door-training-&amp;-development-pty-ltd?report%2Esuccess=se2U8YjzSfSLqmrvJWfkzmUYKl6uKkphatxlAbbto9OkvCyhhsMCP1nNWIEQv6pq2D50iVxJ" target="_blank">Linkedin</a></li>
             <li class="pintrest"><a href="http://pinterest.com/firstdoor" target="_blank">Pintrest</a></li>
-	  </ul>
-	</li>
-	<li>
-	  <h2 style="color:gray;float:right;"><i class="fa fa-phone"></i>  <b>07 3103
+          </ul>
+        </li>
+        <li>
+          <h2 style="color:gray;float:right;"><i style="padding-right:8px;" class="fa fa-phone"></i>  <b>07 3103
               2336</b> </h2>
-	</li>
+        </li>
       </ul>
     </li>
   </ul>
 </div>
 
 
-<div style="display:none" ng-show="signingIn()" class="editor well"> Signing in...</div>
-<div style="display:none" ng-show="signedIn()" class="editor well">
-  <div ng-show="isDirty()">
-    <button style="margin-bottom:10px;padding:0px" class="btn btn-small btn-warning" type="button" ng-click="undoEditable()">Undo</button>
-    <div style="float:left;">{{email()}} </div>
-    <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
-  </div>
-</div>

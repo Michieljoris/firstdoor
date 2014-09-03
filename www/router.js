@@ -21,6 +21,7 @@ angular.module('ngView', [],
 ,["contactus", cachify("/built/view-contactus.html"), contactusCntl]
 ,["enrol", cachify("/built/view-enroll.html")]
 ,["apprenticeship", cachify("/built/view-apprenticeship.html")]
+,["blog", cachify("/built/view-blog.html")]
 ,["sitemap", cachify("/sitemap.html")]
 
                             // ['home', '/built/view-home.html', HomeCntl],

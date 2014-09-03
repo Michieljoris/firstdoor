@@ -1,34 +1,20 @@
-
-<!--partial:views/view_aboutus_partial.html-->
-<div class="row">
+<!--partial:views/view_aboutus_partial.html--><div class="row">
   <div class="span9 inline-image embed-container ratio-tabimage ">
     <img class="" ng-src="{{getHeaderImage()}}"/>
   </div>
   
-  <div id="image-sidebar--" class="span3">
-<!--partial:html/image-sidebar.html-->
-
-<!-- <div> -->
-<!--   <div id="fb-root"></div> -->
-<!--   <script>(function(d, s, id) { -->
-<!--     var js, fjs = d.getElementsByTagName(s)[0]; -->
-<!--     if (d.getElementById(id)) return; -->
-<!--     js = d.createElement(s); js.id = id; -->
-<!--     js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0"; -->
-<!--     fjs.parentNode.insertBefore(js, fjs); -->
-<!--     }(document, 'script', 'facebook-jssdk'));</script> -->
-
-<!--   <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" -->
-<!--        data-layout="standard" data-action="like" data-show-faces="true" -->
-<!--        data-share="true"></div> -->
-
-<!-- </div> -->
+  <div id="image-sidebar--" class="span3"><!--partial:html/image-sidebar.html--><div style="padding-left:10px">
+  <div fb-like="http://www.facebook.com/firstdoortraining" fb-width="300"
+       fb-height="330" fb-header="true" fb-stream="true" fb-faces="false">
+    Loading facebook feed..
 </div>
+</div>
+</div>
+</div>
+<div id="editbar--", class="row">
 </div>
 <div class="row">
-  <div id="sidebar--" class="span3">
-<!--partial:html/sidebar.html-->
-<fixscroll data-ng-transclude="">
+  <div id="sidebar--" class="span3"><!--partial:html/sidebar.html--><fixscroll data-ng-transclude="">
 
 
   <!-- <div ng-show="!signedIn() && !signingIn()" ng-class="getPageClass" id="greendoor"> -->
@@ -39,10 +25,23 @@
         <div ng-repeat="link in page.links">
           <li ng-class="isSelected(link.route)" >
             <div ng-switch on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}"
-                 target="{{link.file && '_blank' || ''}}" download>{{link.label}} </a>
-              <a  ng-switch-default ng-href="{{link.route}}"
-                  target="{{link.file && '_blank' || ''}}" >{{link.label}} </a>
+              <div ng-switch-when="true">
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    download>{{link.label}} </a>
+		<br>
+		<span>{{link.line2}}</span>
+              </div>
+              <div ng-switch-default >
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.label}} </a>
+		<br>
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.line2}} </a>
+		<br>
+              </div>
             </div>
             <ul>
               <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
@@ -59,26 +58,18 @@
 
 </fixscroll>
 </div>
-  <div id="contents--" class="span7">
-<!--partial:html/aboutus_stitch.html-->
-<div scroll id="company"></div>
-<div  contenteditable="{{editable()}}" ng-show="isShow('company')" id="company--">
-<!--partial:editable/aboutus/ourcompany.html-->
-<h2>Our company</h2></div>
+  <div id="contents--" class="span7"><!--partial:html/aboutus_stitch.html--><div scroll id="company"></div>
+<div  contenteditable="{{editable()}}" ng-show="isShow('company')" id="company--"><!--partial:editable/aboutus/ourcompany.html--><h2>Our company</h2></div>
 
 <div scroll id="vision"></div>
-<div  contenteditable="{{editable()}}" ng-show="isShow('vision')" id="vision--">
-<!--partial:editable/aboutus/ourcompany_vision.html-->
-<h2>Our vision: <em>'Leaders in developing capability'</em></h2>
+<div  contenteditable="{{editable()}}" ng-show="isShow('vision')" id="vision--"><!--partial:editable/aboutus/ourcompany_vision.html--><h2>Our vision: <em>'Leaders in developing capability'</em></h2>
 <p><strong>Leaders</strong> <br /> To be a leading and highly regarded training organisation within the Early Childhood Education and Care industry.</p>
 <p><strong>Talented team</strong> <br /> Our team is ethical, professional, creative, effective and passionate.&nbsp;</p>
 <p><strong>Develops capability</strong> <br /> First Door students are recognised for their higher level of skills, motivation and knowledge in the workplace. Therefore, employers and employees seek First Door as their preferred training organisation for capability development.</p>
 <p><strong>Shared success<br /></strong>First Door develops professional capability in our students so they can inspire, educate and support others. This culture of building success in people also benefits our stakeholders and society.</p></div>
 
 <div scroll id="mission"></div>
-<div contenteditable="{{editable()}}" ng-show="isShow('mission')"  id="mission--">
-<!--partial:editable/aboutus/ourcompany_mission.html-->
-<h2>Mission statement</h2>
+<div contenteditable="{{editable()}}" ng-show="isShow('mission')"  id="mission--"><!--partial:editable/aboutus/ourcompany_mission.html--><h2>Mission statement</h2>
 <p><strong>Our purpose and identity; who we are, what we do and why we are here</strong></p>
 <p><strong>Purpose - why we are here</strong> <br /> First Door empowers those seeking to develop their professional capability, knowledge and skills in Management and the Early Childhood sector. Our purpose is to develop a motivated and highly skilled workforce that is able to make a positive difference to individuals and communities of people.</p>
 <p><strong>Identity - who we are</strong> <br /> First Door's passionate team leads by example and maintains professional integrity. We form connections within the industry to stay abreast with current issues and problems to be addressed in staff training and development.</p>
@@ -86,9 +77,7 @@
 <p>We promote the need to create learning organisations for staff to learn, develop skills and capability. First Door provides courses to create leaders in learning within Early Childhood centres and businesses.</p></div>
 
 <div scroll id="approach"></div>
-<div contenteditable="{{editable()}}" ng-show="isShow('approach')"  id="approach--">
-<!--partial:editable/aboutus/ourcompany_approach.html-->
-<h2>Our student approach</h2>
+<div contenteditable="{{editable()}}" ng-show="isShow('approach')"  id="approach--"><!--partial:editable/aboutus/ourcompany_approach.html--><h2>Our student approach</h2>
 <p>We connect students to:</p>
 <ul>
   <li>best workplace practice and experiences to practice theory</li>
@@ -106,9 +95,7 @@
 </div>
 
 <div scroll id="values"></div>
-<div contenteditable="{{editable()}}" ng-show="isShow('values')"  id="values--">
-<!--partial:editable/aboutus/ourcompany_values.html-->
-<h2>First Door company values</h2>
+<div contenteditable="{{editable()}}" ng-show="isShow('values')"  id="values--"><!--partial:editable/aboutus/ourcompany_values.html--><h2>First Door company values</h2>
 <p>Our beliefs, traits and behavioural norms that guide the pursuit of the vision and mission, and those that company personnel are expected to display</p>
 <ol>
 <li>
@@ -135,9 +122,7 @@
 </ol></div>
 
 <div scroll id="namelogo"></div>
-<div contenteditable="{{editable()}}" ng-show="isShow('namelogo')"id="nameandlogo--">
-<!--partial:editable/aboutus/nameandlogo.html-->
-<h2>Our name and logo</h2>
+<div contenteditable="{{editable()}}" ng-show="isShow('namelogo')"id="nameandlogo--"><!--partial:editable/aboutus/nameandlogo.html--><h2>Our name and logo</h2>
 <p><strong>First Door</strong> <br /> The word first relates to a beginning and success, while a door symbolises opportunity. The Company name First Door was chosen to mean a new, successful beginning to provide opportunity in life.</p>
 <p><strong>Training and development</strong> <br /> Training sustains the workforce by improving the knowledge, skills and competency required to achieve the job role effectively and efficiently. Training and professional development increases capability, and therefore broadens a person's career scope.</p>
 <p><strong>Our logo colours</strong> <br /> Green, white and grey were chosen to symbolise:</p>
@@ -149,46 +134,54 @@
 <p>First Door Training and Development inspires people to seek new beginnings and growth, using knowledge and capability to open further doors of opportunity.</p></div>
 
 <div scroll id="people"></div>
-<div contenteditable="{{editable()}}" ng-show="isShow('people')" id="people--">
-<!--partial:editable/aboutus/people.html-->
+<div contenteditable="{{editable()}}" ng-show="isShow('people')" id="people--"><!--partial:editable/aboutus/people.html--><!--partial:editable/aboutus/people.html-->
 <h2>Our people</h2>
+
 <h3><strong>Founders and Directors</strong></h3>
+
 <p>Brisbane women, Cindy Donald and Andrea Isitt knew as study partners that they had a great work ethic and capacity together. Backed with a complementary skill set, their passion for inspiring others through high quality education, and extensive experience in business, training and management they became the dynamic duo founding the Company First Door Training and Development Pty Ltd.</p>
+
 <p><strong>Cindy Donald</strong></p>
-<p><img style="float: right; margin-left: 20px;" src="images/Cindy_web.jpg" alt="Cindy Donald" width="150" height="200" />Cindy has over twenty years of extensive experience in business management and has achieved Diplomas in Business Management and Hospitality (Operations). Cindy is also well experienced as a trainer and assessor. Throughout her career, Cindy's passion has been training and developing people to bring about the best possible results. She is also qualified with a Bachelor of Training and Development, and Certificate lV in Training and Assessment.</p>
+
+<p><img alt="Cindy Donald" src="/images/Cindy_web.jpg" style="float:right; height:200px; margin-left:20px; width:150px" />Cindy has over twenty years of extensive experience in business management and has achieved Diplomas in Business Management and Hospitality (Operations). Cindy is also well experienced as a trainer and assessor. Throughout her career, Cindy&#39;s passion has been training and developing people to bring about the best possible results. She is also qualified with a Bachelor of Training and Development, and Certificate lV in Training and Assessment.</p>
+
 <p>At First Door, Cindy has responsibility for:</p>
+
 <ul>
-<li>administration including financial and student management</li>
-<li>compliance of our operations as a Registered Training Organisation as required by the Australian Skills Quality Authority</li>
-<li>the continuous improvement of our operating policies and procedures</li>
-<li>development and evaluation of the Management training portfolio.<br /><br /></li>
+	<li>administration including financial and student management</li>
+	<li>compliance of our operations as a Registered Training Organisation as required by the Australian Skills Quality Authority</li>
+	<li>the continuous improvement of our operating policies and procedures</li>
+	<li>development and evaluation of the Management training portfolio.<br />
+	&nbsp;</li>
 </ul>
+
 <p>&nbsp;</p>
+
 <p>&nbsp;</p>
+
 <p><strong>Andrea Isitt</strong></p>
-<p><img style="float: right; margin-left: 20px;" src="images/Andrea_web.jpg" alt="Andrea Isitt" width="150" height="200" />Andrea&rsquo;s career has focused on promoting learning and business development. She was the founder and Director of the franchised Company &lsquo;The Learning Years Ltd&rsquo; that promoted parents as first teachers. Andrea has a Diploma in Children&rsquo;s Services and several years of leadership experience in the Early Childhood Education and Care sector. Andrea is qualified with a Certificate lV in Training and Assessment, and a Bachelor of Training and Development. She has over twenty years of experience in training and developing staff, teams and businesses.</p>
-<p>Andrea's key responsibilities at First Door include:</p>
+
+<p><img alt="Andrea Isitt" src="/images/Andrea_web.jpg" style="float:right; height:200px; margin-left:20px; width:150px" />Andrea&rsquo;s career has focused on promoting learning and business development. She was the founder and Director of the franchised Company &lsquo;The Learning Years Ltd&rsquo; that promoted parents as first teachers. Andrea has a Diploma in Children&rsquo;s Services and several years of leadership experience in the Early Childhood Education and Care sector. Andrea is qualified with a Certificate lV in Training and Assessment, and a Bachelor of Training and Development. She has over twenty years of experience in training and developing staff, teams and businesses.</p>
+
+<p>Andrea&#39;s key responsibilities at First Door include:</p>
+
 <ul>
-<li>business development including marketing and public relations</li>
-<li>design and development of training resources</li>
-<li>evaluation processes and continuous improvement of our training practices</li>
-<li>Human Resource management</li>
-<li>development and evaluation of the Early Childhood Education and Care training portfolio</li>
+	<li>business development including marketing and public relations</li>
+	<li>design and development of training resources</li>
+	<li>evaluation processes and continuous improvement of our training practices</li>
+	<li>Human Resource management</li>
+	<li>development and evaluation of the Early Childhood Education and Care training portfolio</li>
 </ul>
 </div>
 
 <div scroll id="policies"></div>
-<div contenteditable="{{editable()}}" ng-show="isShow('policies')" id="policies--">
-<!--partial:html/policies.html-->
-Download pdf file: <a target="_blank" href="https://dl.dropboxusercontent.com/u/121993962/Policies%20and%20Procedures%20May13.pdf">Firstdoor Policies.pdf</a>
+<div contenteditable="{{editable()}}" ng-show="isShow('policies')" id="policies--"><!--partial:html/policies.html-->Download pdf file: <a target="_blank" href="https://dl.dropboxusercontent.com/u/121993962/Policies%20and%20Procedures%20May13.pdf">Firstdoor Policies.pdf</a>
 </div>
 
 <div scroll id="aboutus404"></div>
 <div ng-show="is404()" >This page does not exist..</div>
 </div>
-  <div id="rightBar--" class="span2">
-<!--partial:html/rightbar.html-->
-<!-- <fixscrollright data-ng-transclude="">  -->
+  <div id="rightBar--" class="span2"><!--partial:html/rightbar.html--><!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
 <!-- <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a> -->
 <!-- <script type="text/javascript"> -->
@@ -209,9 +202,7 @@ Download pdf file: <a target="_blank" href="https://dl.dropboxusercontent.com/u/
 <!-- </div> -->
 
 <div ng-show="show_events()">
-  <div contenteditable="{{editable()}}" id="events_sidebar--">
-<!--partial:editable/events_sidebar.html-->
-<h3>Upcoming workshop events</h3>
+  <div contenteditable="{{editable()}}" id="events_sidebar--"><!--partial:editable/events_sidebar.html--><h3>Upcoming workshop events</h3>
 <p>April 28: <a href="https://db.tt/UeW0TSaU"><strong>Develop teams and individuals</strong></a></p>
 <p>May 5: <a href="https://www.dropbox.com/s/lo9levu7acj6u89/Partnership%20with%20families%20CBW%20invite.pdf">Partnership with families</a></p>
 <p>May 19: <a href="https://db.tt/Eu7PgZKL">Developing cooperative behaviour</a></p>

@@ -1,0 +1,25 @@
+<div style="display:none" ng-show="signingIn()" class="editor well"> Signing
+  in...</div>
+
+<div style="display:none" ng-show="signedIn()" class="well well-small editor navbar
+  navbar-default  col-xs-12" style="padding-top:35px;">
+  <!-- <div ng-show="isDirty()"> -->
+    <button style="width:40px;margin-bottom:20px;padding:0px" class="btn btn-small btn-warning" type="button" ng-click="undoEditable()">Undo</button>
+    <!-- <div style="float:left;">{{email()}} </div> -->
+    <button class="btn btn-success"  type="button"
+    ng-click="saveEditable()">Save</button>
+    <div ng-show="isBlog()">
+    <button class="btn btn-primary"  type="button" ng-click="newPost()">New</button>
+    <button class="btn btn-danger"  type="button" ng-click="deletePost()">Delete</button>
+    <button class="btn btn-info"  type="button" ng-click="renderBlog()">Render</button>
+    </div>
+  <!-- </div> -->
+</div>
+
+<!-- <div class="navbar navbar-default navbar-fixed-top col-xs-12" style="padding-top:35px;"> -->
+<!--   <button id="new-button" class="btn btn-info">New</button> -->
+<!--   <button id="save-button" class="btn btn-info">Save</button> -->
+<!--   <button id="delete-button" class="btn btn-info">Delete</button> -->
+<!--   <button id="test-button" class="btn btn-info">Done</button> -->
+<!--   <button id="render-button" class="btn btn-info">Render</button> -->
+<!-- </div> -->

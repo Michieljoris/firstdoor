@@ -21,9 +21,7 @@
 <link rel="stylesheet" type="text/css" href="/css/menu.css">
 <link rel="stylesheet" type="text/css" href="/css/flexslider.css">
 <link rel="stylesheet" type="text/css" href="/css/showhide.css">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<!--partial:html/ieshim.html-->
-<!--[if lte IE 8]>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"><!--partial:html/ieshim.html--><!--[if lte IE 8]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script>
       // The ieshiv takes care of our ui.directives, bootstrap module directives and 
@@ -38,34 +36,56 @@
 
 <script src="http://localhost:9090/skewer"></script>
 <script type='text/javascript'>function cachify(path) { return path; }</script></head>
-  <body  id="ng:app" ng:app="myApp">
-<!--partial:html/body.html-->
-<!--[if lt IE 7]>
+  <body  id="ng:app" ng:app="myApp"><script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=320246108156039&version=v2.0"></script><!--partial:html/body.html--><!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
+<div id="fb-root"></div>
 
 <div id="container">
 
   <div id="wrapper" class="container" ng-controller="MainCntl">
+
+    <div id="editbar--"><!--partial:html/editbar.html--><div style="display:none" ng-show="signingIn()" class="editor well"> Signing
+  in...</div>
+
+<div style="display:none" ng-show="signedIn()" class="well well-small editor navbar
+  navbar-default  col-xs-12" style="padding-top:35px;">
+  <!-- <div ng-show="isDirty()"> -->
+    <button style="width:40px;margin-bottom:20px;padding:0px" class="btn btn-small btn-warning" type="button" ng-click="undoEditable()">Undo</button>
+    <!-- <div style="float:left;">{{email()}} </div> -->
+    <button class="btn btn-success"  type="button"
+    ng-click="saveEditable()">Save</button>
+    <div ng-show="isBlog()">
+    <button class="btn btn-primary"  type="button" ng-click="newPost()">New</button>
+    <button class="btn btn-danger"  type="button" ng-click="deletePost()">Delete</button>
+    <button class="btn btn-info"  type="button" ng-click="renderBlog()">Render</button>
+    </div>
+  <!-- </div> -->
+</div>
+
+<!-- <div class="navbar navbar-default navbar-fixed-top col-xs-12" style="padding-top:35px;"> -->
+<!--   <button id="new-button" class="btn btn-info">New</button> -->
+<!--   <button id="save-button" class="btn btn-info">Save</button> -->
+<!--   <button id="delete-button" class="btn btn-info">Delete</button> -->
+<!--   <button id="test-button" class="btn btn-info">Done</button> -->
+<!--   <button id="render-button" class="btn btn-info">Render</button> -->
+<!-- </div> -->
+</div>
     <div id="header" class="row">
 
-      <div id="logo--" class="span5">
-<!--partial:html/logo.html-->
-<a href=""><img  ng-src='{{cachify("/images/logo.jpg")}}' /></a>
+      <div id="logo--" class="span5"><!--partial:html/logo.html--><a href=""><img  ng-src='{{cachify("/images/logo.jpg")}}' /></a>
 </div>
       <div id="header-right" class="pull-right span6">
-        <div id="social--">
-<!--partial:html/social.html-->
-<div class="pull-right">
+        <div id="social--"><!--partial:html/social.html--><div class="pull-right">
   <ul class="topright-block">
     <li class="">
-      <image height="87" width="100" style="padding-right:75px;" ng-hide="hide_nrtlogo()" ng-src={{cachify("/images/nrtlogoclsm.png")}}> </image>
+      <image height="87" width="100" style="padding-right:77px;" ng-hide="hide_nrtlogo()" ng-src={{cachify("/images/nrtlogoclsm.png")}}> </image>
     </li>
     <li>
       <ul class="pull-right" style="margin-left:6px; list-style-type:none;">
 
-	<li>
-	  <ul class="social-icons">
+        <li>
+          <ul class="social-icons">
 
             <li style=""><h2 style="margin-bottom:10px;
                                     padding-right:11px;
@@ -77,35 +97,25 @@
             <!-- <li class="googleplus"><a href="#" target="_blank">Google+</a></li> -->
             <li class="linkedin"><a href="http://www.linkedin.com/company/first-door-training-&amp;-development-pty-ltd?report%2Esuccess=se2U8YjzSfSLqmrvJWfkzmUYKl6uKkphatxlAbbto9OkvCyhhsMCP1nNWIEQv6pq2D50iVxJ" target="_blank">Linkedin</a></li>
             <li class="pintrest"><a href="http://pinterest.com/firstdoor" target="_blank">Pintrest</a></li>
-	  </ul>
-	</li>
-	<li>
-	  <h2 style="color:gray;float:right;"><i class="fa fa-phone"></i>  <b>07 3103
+          </ul>
+        </li>
+        <li>
+          <h2 style="color:gray;float:right;"><i style="padding-right:8px;" class="fa fa-phone"></i>  <b>07 3103
               2336</b> </h2>
-	</li>
+        </li>
       </ul>
     </li>
   </ul>
 </div>
 
 
-<div style="display:none" ng-show="signingIn()" class="editor well"> Signing in...</div>
-<div style="display:none" ng-show="signedIn()" class="editor well">
-  <div ng-show="isDirty()">
-    <button style="margin-bottom:10px;padding:0px" class="btn btn-small btn-warning" type="button" ng-click="undoEditable()">Undo</button>
-    <div style="float:left;">{{email()}} </div>
-    <button class="btn btn-primary"  type="button" ng-click="saveEditable()">Save</button>
-  </div>
-</div>
 </div>
       </div>
     </div>
 
     <div class="menubar row">
-      <div id="menu--" class="span10"><div class="ie-dropdown-fix" > <div id="navigation"><ul id="nav" class="menu"><li><a href="/" id="undefined">HOME</a><ul><li><a href="/home/specialists" class="scroll" id="/home/specialists">SPECIALISTS IN EARLY CHILDHOOD TRAINING AND DEVELOPMENT</a></li><li><a href="/home/engaging" class="scroll" id="/home/engaging">ENGAGING RESOURCES AND ENVIRONMENTS</a></li><li><a href="/home/mentor" class="scroll" id="/home/mentor">YOUR PERSONAL MENTOR </a></li><li><a href="/home/constructive" class="scroll" id="/home/constructive">CONSTRUCTIVE AND TIMELY ASSESSMENT</a></li></ul></li><li><a href="/aboutus/vision" id="/aboutus/vision">ABOUT US</a><ul><li><a href="/aboutus/vision" class="scroll" id="/aboutus/vision">OUR COMPANY</a><ul><li><a href="/aboutus/vision" id="/aboutus/vision">Vision</a></li><li><a href="/aboutus/mission" id="/aboutus/mission">Mission</a></li><li><a href="/aboutus/approach" id="/aboutus/approach">Our student approach</a></li><li><a href="/aboutus/values" id="/aboutus/values">Values</a></li></ul></li><li><a href="/aboutus/namelogo" class="scroll" id="/aboutus/namelogo">OUR NAME AND LOGO</a></li><li><a href="/aboutus/people" class="scroll" id="/aboutus/people">OUR PEOPLE</a></li><li><a href="/aboutus/policies" class="scroll" id="/aboutus/policies">FIRST DOOR POLICIES</a></li></ul></li><li><a href="/pd/intro" id="/pd/intro">PROFESSIONAL DEVELOPMENT</a><ul><li><a href="/pd/inspired" class="scroll" id="/pd/inspired">THE INSPIRED EDUCATOR</a></li><li><a href="/pd/observing" class="scroll" id="/pd/observing">DOCUMENTATION</a></li><li><a href="/pd/environment" class="scroll" id="/pd/environment">ENVIRONMENT AND EXPERIENCES</a></li><li><a href="/pd/coop" class="scroll" id="/pd/coop">COOPERATIVE BEHAVIOUR</a></li><li><a href="/pd/evaluation" class="scroll" id="/pd/evaluation">EVALUATION AND REFLECTIVE PRACTICE</a></li><li><a href="/pd/children" class="scroll" id="/pd/children">CHILDREN AT RISK</a></li><li><a href="/pd/risk" class="scroll" id="/pd/risk">IDENTIFY AND MANAGE RISK</a></li></ul></li><li><a href="/courses/intro" id="/courses/intro">ACCREDITED TRAINING</a><ul><li><a href="/courses/children_ecec" class="scroll" id="/courses/children_ecec">DIPLOMA OF EARLY CHILDHOOD EDUCATION AND CARE</a></li><li><a href="/courses/diploma_management" class="scroll" id="/courses/diploma_management">DIPLOMA OF MANAGEMENT </a></li><li><a href="/courses/certivtraining" class="scroll" id="/courses/certivtraining">LEADERSHIP UNITS</a></li><li><a href="/courses/apprenticeship" class="scroll" id="/courses/apprenticeship">GOVERNMENT FUNDED APPRENTICESHIP TRAINING</a></li></ul></li><li><a href="/resources/motivation" id="/resources/motivation">RESOURCES</a><ul><li><a href="/resources/motivation" class="scroll" id="/resources/motivation">MOTIVATION</a></li><li><a href="/resources/earlychildhood" class="scroll" id="/resources/earlychildhood">EARLY CHILDHOOD</a></li><li><a href="/resources/learningorganisations" class="scroll" id="/resources/learningorganisations">LEARNING ORGANISATIONS</a></li><li><a href="/resources/learning" class="scroll" id="/resources/learning">LEARNING</a></li><li><a href="/resources/leadership" class="scroll" id="/resources/leadership">LEADERSHIP AND MANAGEMENT</a></li><li><a href="/quiz" class="scroll" id="/quiz">QUIZ: DISCOVER YOUR PREFERRED LEARNING STYLE</a></li></ul></li><li><a href="/enrol" class="scroll" id="/enrol">ENROL</a></li><li><a href="/contactus" class="scroll" id="/contactus">CONTACT US</a></li></ul></div></div><div class="clear"></div></div>
-      <div id="studentLogin--" class="pull-right span2">
-<!--partial:html/wisenet-login.html-->
-  <a id="wisenetLogin" class="btn btn-warning  pull-right"  target ="_blank"
+      <div id="menu--" class="span10"><div class="ie-dropdown-fix" > <div id="navigation"><ul id="nav" class="menu"><li><a href="/" id="undefined">HOME</a><ul><li><a href="/home/specialists" class="scroll" id="/home/specialists">SPECIALISTS IN EARLY CHILDHOOD TRAINING AND DEVELOPMENT</a></li><li><a href="/home/engaging" class="scroll" id="/home/engaging">ENGAGING RESOURCES AND ENVIRONMENTS</a></li><li><a href="/home/mentor" class="scroll" id="/home/mentor">YOUR PERSONAL MENTOR </a></li><li><a href="/home/constructive" class="scroll" id="/home/constructive">CONSTRUCTIVE AND TIMELY ASSESSMENT</a></li></ul></li><li><a href="/aboutus/vision" id="/aboutus/vision">ABOUT US</a><ul><li><a href="/aboutus/vision" class="scroll" id="/aboutus/vision">OUR COMPANY</a><ul><li><a href="/aboutus/vision" id="/aboutus/vision">Vision</a></li><li><a href="/aboutus/mission" id="/aboutus/mission">Mission</a></li><li><a href="/aboutus/approach" id="/aboutus/approach">Our student approach</a></li><li><a href="/aboutus/values" id="/aboutus/values">Values</a></li></ul></li><li><a href="/aboutus/namelogo" class="scroll" id="/aboutus/namelogo">OUR NAME AND LOGO</a></li><li><a href="/aboutus/people" class="scroll" id="/aboutus/people">OUR PEOPLE</a></li><li><a href="/aboutus/policies" class="scroll" id="/aboutus/policies">FIRST DOOR POLICIES</a></li></ul></li><li><a href="/pd/intro" id="/pd/intro">PROFESSIONAL DEVELOPMENT</a><ul><li><a href="/pd/inspired" class="scroll" id="/pd/inspired">THE INSPIRED EDUCATOR</a></li><li><a href="/pd/observing" class="scroll" id="/pd/observing">DOCUMENTATION</a></li><li><a href="/pd/environment" class="scroll" id="/pd/environment">ENVIRONMENT AND EXPERIENCES</a></li><li><a href="/pd/coop" class="scroll" id="/pd/coop">COOPERATIVE BEHAVIOUR</a></li><li><a href="/pd/evaluation" class="scroll" id="/pd/evaluation">EVALUATION AND REFLECTIVE PRACTICE</a></li><li><a href="/pd/children" class="scroll" id="/pd/children">CHILDREN AT RISK</a></li><li><a href="/pd/risk" class="scroll" id="/pd/risk">IDENTIFY AND MANAGE RISK</a></li></ul></li><li><a href="/courses/intro" id="/courses/intro">ACCREDITED TRAINING</a><ul><li><a href="/courses/children_ecec" class="scroll" id="/courses/children_ecec">DIPLOMA OF EARLY CHILDHOOD EDUCATION AND CARE</a></li><li><a href="/courses/diploma_management" class="scroll" id="/courses/diploma_management">DIPLOMA OF MANAGEMENT </a></li><li><a href="/courses/certivtraining" class="scroll" id="/courses/certivtraining">LEADERSHIP UNITS</a></li><li><a href="/courses/apprenticeship" class="scroll" id="/courses/apprenticeship">GOVERNMENT FUNDED APPRENTICESHIP TRAINING</a></li></ul></li><li><a href="/resources/motivation" id="/resources/motivation">RESOURCES</a><ul><li><a href="/resources/motivation" class="scroll" id="/resources/motivation">MOTIVATION</a></li><li><a href="/resources/earlychildhood" class="scroll" id="/resources/earlychildhood">EARLY CHILDHOOD</a></li><li><a href="/resources/learningorganisations" class="scroll" id="/resources/learningorganisations">LEARNING ORGANISATIONS</a></li><li><a href="/resources/learning" class="scroll" id="/resources/learning">LEARNING</a></li><li><a href="/resources/leadership" class="scroll" id="/resources/leadership">LEADERSHIP AND MANAGEMENT</a></li><li><a href="/quiz" class="scroll" id="/quiz">QUIZ: DISCOVER YOUR PREFERRED LEARNING STYLE</a></li></ul></li><li><a href="/enrol" class="scroll" id="/enrol">ENROL</a></li><li><a href="/blog" class="scroll" id="/blog">BLOG</a></li><li><a href="/contactus" class="scroll" id="/contactus">CONTACT US</a></li></ul></div></div><div class="clear"></div></div>
+      <div id="studentLogin--" class="pull-right span2"><!--partial:html/wisenet-login.html-->  <a id="wisenetLogin" class="btn btn-warning  pull-right"  target ="_blank"
 	  href="https://student.mywisenet.com.au/mywisenet/login.aspx?key=%2bbj2%2bdgD4O%2fjU4QgaaAB5A%3d%3d"
 	  >STUDENT LOGIN</a>
 
@@ -113,10 +123,8 @@
     </div>
 
     <div class="fixedbar row">
-      <div  id="fixedmenu--" class=""><div class="ie-dropdown-fix" > <div id="navigation"><ul id="nav" class="menu"><li><a href="/" id="undefined">HOME</a><ul><li><a href="/home/specialists" class="scroll" id="/home/specialists">SPECIALISTS IN EARLY CHILDHOOD TRAINING AND DEVELOPMENT</a></li><li><a href="/home/engaging" class="scroll" id="/home/engaging">ENGAGING RESOURCES AND ENVIRONMENTS</a></li><li><a href="/home/mentor" class="scroll" id="/home/mentor">YOUR PERSONAL MENTOR </a></li><li><a href="/home/constructive" class="scroll" id="/home/constructive">CONSTRUCTIVE AND TIMELY ASSESSMENT</a></li></ul></li><li><a href="/aboutus/vision" id="/aboutus/vision">ABOUT US</a><ul><li><a href="/aboutus/vision" class="scroll" id="/aboutus/vision">OUR COMPANY</a><ul><li><a href="/aboutus/vision" id="/aboutus/vision">Vision</a></li><li><a href="/aboutus/mission" id="/aboutus/mission">Mission</a></li><li><a href="/aboutus/approach" id="/aboutus/approach">Our student approach</a></li><li><a href="/aboutus/values" id="/aboutus/values">Values</a></li></ul></li><li><a href="/aboutus/namelogo" class="scroll" id="/aboutus/namelogo">OUR NAME AND LOGO</a></li><li><a href="/aboutus/people" class="scroll" id="/aboutus/people">OUR PEOPLE</a></li><li><a href="/aboutus/policies" class="scroll" id="/aboutus/policies">FIRST DOOR POLICIES</a></li></ul></li><li><a href="/pd/intro" id="/pd/intro">PROFESSIONAL DEVELOPMENT</a><ul><li><a href="/pd/inspired" class="scroll" id="/pd/inspired">THE INSPIRED EDUCATOR</a></li><li><a href="/pd/observing" class="scroll" id="/pd/observing">DOCUMENTATION</a></li><li><a href="/pd/environment" class="scroll" id="/pd/environment">ENVIRONMENT AND EXPERIENCES</a></li><li><a href="/pd/coop" class="scroll" id="/pd/coop">COOPERATIVE BEHAVIOUR</a></li><li><a href="/pd/evaluation" class="scroll" id="/pd/evaluation">EVALUATION AND REFLECTIVE PRACTICE</a></li><li><a href="/pd/children" class="scroll" id="/pd/children">CHILDREN AT RISK</a></li><li><a href="/pd/risk" class="scroll" id="/pd/risk">IDENTIFY AND MANAGE RISK</a></li></ul></li><li><a href="/courses/intro" id="/courses/intro">ACCREDITED TRAINING</a><ul><li><a href="/courses/children_ecec" class="scroll" id="/courses/children_ecec">DIPLOMA OF EARLY CHILDHOOD EDUCATION AND CARE</a></li><li><a href="/courses/diploma_management" class="scroll" id="/courses/diploma_management">DIPLOMA OF MANAGEMENT </a></li><li><a href="/courses/certivtraining" class="scroll" id="/courses/certivtraining">LEADERSHIP UNITS</a></li><li><a href="/courses/apprenticeship" class="scroll" id="/courses/apprenticeship">GOVERNMENT FUNDED APPRENTICESHIP TRAINING</a></li></ul></li><li><a href="/resources/motivation" id="/resources/motivation">RESOURCES</a><ul><li><a href="/resources/motivation" class="scroll" id="/resources/motivation">MOTIVATION</a></li><li><a href="/resources/earlychildhood" class="scroll" id="/resources/earlychildhood">EARLY CHILDHOOD</a></li><li><a href="/resources/learningorganisations" class="scroll" id="/resources/learningorganisations">LEARNING ORGANISATIONS</a></li><li><a href="/resources/learning" class="scroll" id="/resources/learning">LEARNING</a></li><li><a href="/resources/leadership" class="scroll" id="/resources/leadership">LEADERSHIP AND MANAGEMENT</a></li><li><a href="/quiz" class="scroll" id="/quiz">QUIZ: DISCOVER YOUR PREFERRED LEARNING STYLE</a></li></ul></li><li><a href="/enrol" class="scroll" id="/enrol">ENROL</a></li><li><a href="/contactus" class="scroll" id="/contactus">CONTACT US</a></li></ul></div></div><div class="clear"></div></div>
-      <div id="studentLogin--" class="pull-right span2">
-<!--partial:html/wisenet-login.html-->
-  <a id="wisenetLogin" class="btn btn-warning  pull-right"  target ="_blank"
+      <div  id="fixedmenu--" class=""><div class="ie-dropdown-fix" > <div id="navigation"><ul id="nav" class="menu"><li><a href="/" id="undefined">HOME</a><ul><li><a href="/home/specialists" class="scroll" id="/home/specialists">SPECIALISTS IN EARLY CHILDHOOD TRAINING AND DEVELOPMENT</a></li><li><a href="/home/engaging" class="scroll" id="/home/engaging">ENGAGING RESOURCES AND ENVIRONMENTS</a></li><li><a href="/home/mentor" class="scroll" id="/home/mentor">YOUR PERSONAL MENTOR </a></li><li><a href="/home/constructive" class="scroll" id="/home/constructive">CONSTRUCTIVE AND TIMELY ASSESSMENT</a></li></ul></li><li><a href="/aboutus/vision" id="/aboutus/vision">ABOUT US</a><ul><li><a href="/aboutus/vision" class="scroll" id="/aboutus/vision">OUR COMPANY</a><ul><li><a href="/aboutus/vision" id="/aboutus/vision">Vision</a></li><li><a href="/aboutus/mission" id="/aboutus/mission">Mission</a></li><li><a href="/aboutus/approach" id="/aboutus/approach">Our student approach</a></li><li><a href="/aboutus/values" id="/aboutus/values">Values</a></li></ul></li><li><a href="/aboutus/namelogo" class="scroll" id="/aboutus/namelogo">OUR NAME AND LOGO</a></li><li><a href="/aboutus/people" class="scroll" id="/aboutus/people">OUR PEOPLE</a></li><li><a href="/aboutus/policies" class="scroll" id="/aboutus/policies">FIRST DOOR POLICIES</a></li></ul></li><li><a href="/pd/intro" id="/pd/intro">PROFESSIONAL DEVELOPMENT</a><ul><li><a href="/pd/inspired" class="scroll" id="/pd/inspired">THE INSPIRED EDUCATOR</a></li><li><a href="/pd/observing" class="scroll" id="/pd/observing">DOCUMENTATION</a></li><li><a href="/pd/environment" class="scroll" id="/pd/environment">ENVIRONMENT AND EXPERIENCES</a></li><li><a href="/pd/coop" class="scroll" id="/pd/coop">COOPERATIVE BEHAVIOUR</a></li><li><a href="/pd/evaluation" class="scroll" id="/pd/evaluation">EVALUATION AND REFLECTIVE PRACTICE</a></li><li><a href="/pd/children" class="scroll" id="/pd/children">CHILDREN AT RISK</a></li><li><a href="/pd/risk" class="scroll" id="/pd/risk">IDENTIFY AND MANAGE RISK</a></li></ul></li><li><a href="/courses/intro" id="/courses/intro">ACCREDITED TRAINING</a><ul><li><a href="/courses/children_ecec" class="scroll" id="/courses/children_ecec">DIPLOMA OF EARLY CHILDHOOD EDUCATION AND CARE</a></li><li><a href="/courses/diploma_management" class="scroll" id="/courses/diploma_management">DIPLOMA OF MANAGEMENT </a></li><li><a href="/courses/certivtraining" class="scroll" id="/courses/certivtraining">LEADERSHIP UNITS</a></li><li><a href="/courses/apprenticeship" class="scroll" id="/courses/apprenticeship">GOVERNMENT FUNDED APPRENTICESHIP TRAINING</a></li></ul></li><li><a href="/resources/motivation" id="/resources/motivation">RESOURCES</a><ul><li><a href="/resources/motivation" class="scroll" id="/resources/motivation">MOTIVATION</a></li><li><a href="/resources/earlychildhood" class="scroll" id="/resources/earlychildhood">EARLY CHILDHOOD</a></li><li><a href="/resources/learningorganisations" class="scroll" id="/resources/learningorganisations">LEARNING ORGANISATIONS</a></li><li><a href="/resources/learning" class="scroll" id="/resources/learning">LEARNING</a></li><li><a href="/resources/leadership" class="scroll" id="/resources/leadership">LEADERSHIP AND MANAGEMENT</a></li><li><a href="/quiz" class="scroll" id="/quiz">QUIZ: DISCOVER YOUR PREFERRED LEARNING STYLE</a></li></ul></li><li><a href="/enrol" class="scroll" id="/enrol">ENROL</a></li><li><a href="/blog" class="scroll" id="/blog">BLOG</a></li><li><a href="/contactus" class="scroll" id="/contactus">CONTACT US</a></li></ul></div></div><div class="clear"></div></div>
+      <div id="studentLogin--" class="pull-right span2"><!--partial:html/wisenet-login.html-->  <a id="wisenetLogin" class="btn btn-warning  pull-right"  target ="_blank"
 	  href="https://student.mywisenet.com.au/mywisenet/login.aspx?key=%2bbj2%2bdgD4O%2fjU4QgaaAB5A%3d%3d"
 	  >STUDENT LOGIN</a>
 
@@ -133,9 +141,7 @@
     <div id="bottomBar">
       <div id="bottomRow" class="row container">
         <!-- <div class="span"></div>  -->
-        <div id="footer1--" class="span3">
-<!--partial:html/footerConnect.html-->
-<div class="footer-headline"><h4>Connect</h4></div>
+        <div id="footer1--" class="span3"><!--partial:html/footerConnect.html--><div class="footer-headline"><h4>Connect</h4></div>
 <div class="connectblock">
   <div class="verticalline">
     <span class="connect-title">First Door</span><br>
@@ -154,9 +160,7 @@
 </div>
 <p></p>
 </div>
-        <div id="footer2--" class="span3">
-<!--partial:html/footerPolicies.html-->
-<div class="footer-headline"><h4>Documents</h4></div>
+        <div id="footer2--" class="span3"><!--partial:html/footerPolicies.html--><div class="footer-headline"><h4>Documents</h4></div>
 <div class="connect-sub">
   <ul>
     <li> <a href="https://dl.dropboxusercontent.com/u/121993962/Policies%20and%20Procedures%20May13.pdf" target="_blank">Policies and Procedures</a>
@@ -179,9 +183,7 @@
 
 
 </div>
-        <div id="footer3--" class="span3">
-<!--partial:html/footerContact.html-->
-<div class="footer-headline"><h4>Contact First Door</h4></div>
+        <div id="footer3--" class="span3"><!--partial:html/footerContact.html--><div class="footer-headline"><h4>Contact First Door</h4></div>
 <div class="connect-sub">
   
   <strong>p:</strong> 07 3103 2336 <br>
@@ -194,9 +196,7 @@
 
 
 </div>
-        <div id="footer4--" class="span2">
-<!--partial:html/footerLegal.html-->
-<div class="footer-headline"><h4>Legal</h4></div>
+        <div id="footer4--" class="span2"><!--partial:html/footerLegal.html--><div class="footer-headline"><h4>Legal</h4></div>
 <div class="connect-sub">
   &#169;2013 First Door<br>
   ABN: 4916 1108 596<br>
@@ -209,9 +209,7 @@
       </div>
 
     </div>
-    <div id="footerBottom--" class="row pagination-centered">
-<!--partial:html/footerBottom.html-->
-<a href="sitemap">Sitemap</a>|
+    <div id="footerBottom--" class="row pagination-centered"><!--partial:html/footerBottom.html--><a href="sitemap">Sitemap</a>|
 Website by <a href="mailto:michieljoris@gmail.com">michieljoris</a>|
 
 Graphic design by <a href="http://migraphicfolio.com"
@@ -255,9 +253,7 @@ Graphic design by <a href="http://migraphicfolio.com"
 <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="/js/showhide.js"></script>
-<script src="/ckeditor/ckeditor.min.js"></script>
-<!--partial:html/google_analytics.html-->
-<script>
+<script src="/ckeditor/ckeditor.min.js"></script><!--partial:html/google_analytics.html--><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

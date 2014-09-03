@@ -207,7 +207,7 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     
     
     $scope.isSelected = function(fullPath) {
-        if ($location.$$url === '/' + fullPath || fullPath === page + '/' + section) return "selected";
+        if ($location.$$url === fullPath || fullPath === page + '/' + section) return "selected";
         else return "";
     };
     

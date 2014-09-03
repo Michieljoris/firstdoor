@@ -9,10 +9,23 @@
         <div ng-repeat="link in page.links">
           <li ng-class="isSelected(link.route)" >
             <div ng-switch on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}"
-                 target="{{link.file && '_blank' || ''}}" download>{{link.label}} </a>
-              <a  ng-switch-default ng-href="{{link.route}}"
-                  target="{{link.file && '_blank' || ''}}" >{{link.label}} </a>
+              <div ng-switch-when="true">
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    download>{{link.label}} </a>
+		<br>
+		<span>{{link.line2}}</span>
+              </div>
+              <div ng-switch-default >
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.label}} </a>
+		<br>
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.line2}} </a>
+		<br>
+              </div>
             </div>
             <ul>
               <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">

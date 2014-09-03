@@ -1,33 +1,17 @@
-
-<!--partial:views/view_resources_partial.html-->
-<div class="row">
+<!--partial:views/view_resources_partial.html--><div class="row">
   <div class="span9 inline-image embed-container ratio-tabimage ">
     <img class="" ng-src="{{getHeaderImage()}}"/>
   </div>
-  <div id="image-sidebar--" class="span3">
-<!--partial:html/image-sidebar.html-->
-
-<!-- <div> -->
-<!--   <div id="fb-root"></div> -->
-<!--   <script>(function(d, s, id) { -->
-<!--     var js, fjs = d.getElementsByTagName(s)[0]; -->
-<!--     if (d.getElementById(id)) return; -->
-<!--     js = d.createElement(s); js.id = id; -->
-<!--     js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0"; -->
-<!--     fjs.parentNode.insertBefore(js, fjs); -->
-<!--     }(document, 'script', 'facebook-jssdk'));</script> -->
-
-<!--   <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" -->
-<!--        data-layout="standard" data-action="like" data-show-faces="true" -->
-<!--        data-share="true"></div> -->
-
-<!-- </div> -->
+  <div id="image-sidebar--" class="span3"><!--partial:html/image-sidebar.html--><div style="padding-left:10px">
+  <div fb-like="http://www.facebook.com/firstdoortraining" fb-width="300"
+       fb-height="330" fb-header="true" fb-stream="true" fb-faces="false">
+    Loading facebook feed..
+</div>
+</div>
 </div>
 </div>
 <div class="row">
-  <div id="sidebar--" class="span3">
-<!--partial:html/sidebar.html-->
-<fixscroll data-ng-transclude="">
+  <div id="sidebar--" class="span3"><!--partial:html/sidebar.html--><fixscroll data-ng-transclude="">
 
 
   <!-- <div ng-show="!signedIn() && !signingIn()" ng-class="getPageClass" id="greendoor"> -->
@@ -38,10 +22,23 @@
         <div ng-repeat="link in page.links">
           <li ng-class="isSelected(link.route)" >
             <div ng-switch on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}"
-                 target="{{link.file && '_blank' || ''}}" download>{{link.label}} </a>
-              <a  ng-switch-default ng-href="{{link.route}}"
-                  target="{{link.file && '_blank' || ''}}" >{{link.label}} </a>
+              <div ng-switch-when="true">
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    download>{{link.label}} </a>
+		<br>
+		<span>{{link.line2}}</span>
+              </div>
+              <div ng-switch-default >
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.label}} </a>
+		<br>
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.line2}} </a>
+		<br>
+              </div>
             </div>
             <ul>
               <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
@@ -58,9 +55,7 @@
 
 </fixscroll>
 </div>
-  <div id="contents--" class="span7">
-<!--partial:html/resources.html-->
-<ul id='videolist' >
+  <div id="contents--" class="span7"><!--partial:html/resources.html--><ul id='videolist' >
   <li ng-show="isShow(section)" id="{{section}}" scroll ng-repeat="section in sectionsList">
     
     <h2 >{{getSectionTitle(section)}}</h2>
@@ -138,9 +133,7 @@
 
 
 </div>
-  <div id="rightBar--" class="span2">
-<!--partial:html/rightbar.html-->
-<!-- <fixscrollright data-ng-transclude="">  -->
+  <div id="rightBar--" class="span2"><!--partial:html/rightbar.html--><!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
 <!-- <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a> -->
 <!-- <script type="text/javascript"> -->
@@ -161,9 +154,7 @@
 <!-- </div> -->
 
 <div ng-show="show_events()">
-  <div contenteditable="{{editable()}}" id="events_sidebar--">
-<!--partial:editable/events_sidebar.html-->
-<h3>Upcoming workshop events</h3>
+  <div contenteditable="{{editable()}}" id="events_sidebar--"><!--partial:editable/events_sidebar.html--><h3>Upcoming workshop events</h3>
 <p>April 28: <a href="https://db.tt/UeW0TSaU"><strong>Develop teams and individuals</strong></a></p>
 <p>May 5: <a href="https://www.dropbox.com/s/lo9levu7acj6u89/Partnership%20with%20families%20CBW%20invite.pdf">Partnership with families</a></p>
 <p>May 19: <a href="https://db.tt/Eu7PgZKL">Developing cooperative behaviour</a></p>

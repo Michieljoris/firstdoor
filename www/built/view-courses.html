@@ -1,34 +1,20 @@
-
-<!--partial:views/view_courses_partial.html-->
-<div class="row">
+<!--partial:views/view_courses_partial.html--><div class="row">
   <div class="span9 inline-image embed-container ratio-tabimage ">
     <img class="" ng-src="{{getHeaderImage()}}"/>
   </div>
 
-  <div id="image-sidebar--" class="span3">
-<!--partial:html/image-sidebar.html-->
-
-<!-- <div> -->
-<!--   <div id="fb-root"></div> -->
-<!--   <script>(function(d, s, id) { -->
-<!--     var js, fjs = d.getElementsByTagName(s)[0]; -->
-<!--     if (d.getElementById(id)) return; -->
-<!--     js = d.createElement(s); js.id = id; -->
-<!--     js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0"; -->
-<!--     fjs.parentNode.insertBefore(js, fjs); -->
-<!--     }(document, 'script', 'facebook-jssdk'));</script> -->
-
-<!--   <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" -->
-<!--        data-layout="standard" data-action="like" data-show-faces="true" -->
-<!--        data-share="true"></div> -->
-
-<!-- </div> -->
+  <div id="image-sidebar--" class="span3"><!--partial:html/image-sidebar.html--><div style="padding-left:10px">
+  <div fb-like="http://www.facebook.com/firstdoortraining" fb-width="300"
+       fb-height="330" fb-header="true" fb-stream="true" fb-faces="false">
+    Loading facebook feed..
 </div>
+</div>
+</div>
+</div>
+<div id="editbar--", class="row">
 </div>
 <div class="row">
-  <div id="sidebar--" class="span3">
-<!--partial:html/sidebar.html-->
-<fixscroll data-ng-transclude="">
+  <div id="sidebar--" class="span3"><!--partial:html/sidebar.html--><fixscroll data-ng-transclude="">
 
 
   <!-- <div ng-show="!signedIn() && !signingIn()" ng-class="getPageClass" id="greendoor"> -->
@@ -39,10 +25,23 @@
         <div ng-repeat="link in page.links">
           <li ng-class="isSelected(link.route)" >
             <div ng-switch on="link.download">
-              <a ng-switch-when="true" ng-href="{{link.route}}"
-                 target="{{link.file && '_blank' || ''}}" download>{{link.label}} </a>
-              <a  ng-switch-default ng-href="{{link.route}}"
-                  target="{{link.file && '_blank' || ''}}" >{{link.label}} </a>
+              <div ng-switch-when="true">
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    download>{{link.label}} </a>
+		<br>
+		<span>{{link.line2}}</span>
+              </div>
+              <div ng-switch-default >
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.label}} </a>
+		<br>
+		<a  ng-href="{{link.route}}"
+                    target="{{link.file && '_blank' || ''}}"
+                    >{{link.line2}} </a>
+		<br>
+              </div>
             </div>
             <ul>
               <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
@@ -59,13 +58,9 @@
 
 </fixscroll>
 </div>
-  <div id="contents--" class="span7">
-<!--partial:html/courses_stitch.html-->
-<div scroll id="intro"></div>
+  <div id="contents--" class="span7"><!--partial:html/courses_stitch.html--><div scroll id="intro"></div>
 <div ng-show="isShow('intro')" >
-  <div contenteditable="{{editable()}}" id="intro--">
-<!--partial:editable/courses/intro.html-->
-<h2>Nationally Recognised Training</h2>
+  <div contenteditable="{{editable()}}" id="intro--"><!--partial:editable/courses/intro.html--><h2>Nationally Recognised Training</h2>
 <p>First Door is registered with the <a href="http://www.asqa.gov.au/">Australian Skills Quality Authority</a> as a Registered Training Organisation (RTO) to provide competency based and Nationally Recognised Training.&nbsp;<br /><br />We are currently enrolling students to commence training in the new <strong><em>CHC50113 <a href="courses/children_ecec">Diploma of Early Childhood Education and Care</a>. </em></strong>&nbsp;During the enrolment process each student will commence either a Structured or Flexi learning plan to best support their success. <br /><br />The Diploma of Early Childhood Education and Care superseded the Diploma of Children's Services in July 2013 to ensure relevance to the <a href="http://acecqa.gov.au/national-quality-framework">National Quality Framework</a> that was introduced throughout Australian Early Childhood licensed centres in 2012. Full information relating to this new Diploma is able to be viewed at <a href="http://www.myskills.gov.au/QualificationSearch/QualificationSearchResults/QualificationDetail/UnitsofCompetency.aspx?type=course&amp;keys=CHC50113">My Skills</a> website.</p>
 <p>&nbsp;</p>
 <h4><strong>Have you already completed an Early Childhood qualification? </strong><br /><strong>Continue developing your professional skills and update your knowledge with First Door&nbsp;</strong></h4>
@@ -109,9 +104,7 @@
 
 <div scroll id="children_ecec"></div>
 <div ng-show="isShow('children_ecec')" >
-  <div contenteditable="{{editable()}}" id="childrenservices--">
-<!--partial:editable/courses/CHC50908_childrens_services.html-->
-<h2>CHC50113 Diploma of Early Childhood Education <br />and Care</h2>
+  <div contenteditable="{{editable()}}" id="childrenservices--"><!--partial:editable/courses/CHC50908_childrens_services.html--><h2>CHC50113 Diploma of Early Childhood Education <br />and Care</h2>
 <p>The Diploma of Early Childhood Education and Care is Australia&rsquo;s fully revised, nationally recognised and accredited qualification for educators and leaders working in Early Childhood and Outside School Hours Education and Care services. The Diploma of Early Childhood Education and Care, CHC50113 was released in July 2013 and has superseded the Diploma of Children&rsquo;s Services.&nbsp;</p>
 <p>The content of new course units and performance criteria reflects the skills and knowledge required within the Early Childhood sector to meet National regulations and the National Quality Framework, implemented in 2012. Certificate lll in Children's Services is no longer a requirement to enrol in the new Diploma of Early Childhood Education and Care course.</p>
 <p>For full course information download a pdf copy of our <a href="https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf" target="_blank">Course Guide</a>.<br /><br /></p>
@@ -171,9 +164,7 @@
 
 <div scroll id="diploma_management"></div>
 <div ng-show="isShow('diploma_management')" >
-  <div contenteditable="{{editable()}}" id="diploma_management--">
-<!--partial:editable/courses/BSB51107_management.html-->
-<h2>BSB51107 Diploma of Management</h2>
+  <div contenteditable="{{editable()}}" id="diploma_management--"><!--partial:editable/courses/BSB51107_management.html--><h2>BSB51107 Diploma of Management</h2>
 <p>The Diploma of Management qualification will benefit the role of individuals who aspire to lead and develop people, review processes and add value to their organisation. Completing the units offered from the Diploma of Management will develop knowledge, skills and capability in those that work in senior or management roles in the Early Childhood sector. These units of study are also suitable for those that are experienced in their job role and are preparing their career for management roles.</p>
 <p>&nbsp;</p>
 <h3>What will you learn?</h3>
@@ -231,9 +222,7 @@
 
 <div scroll id="certivtraining"></div>
 <div ng-show="isShow('certivtraining')" >
-  <div contenteditable="{{editable()}}" id="certivtraining--">
-<!--partial:editable/courses/certiv.html-->
-<h2>TAE40110 Certificate IV in Training and Assessment</h2>
+  <div contenteditable="{{editable()}}" id="certivtraining--"><!--partial:editable/courses/certiv.html--><h2>TAE40110 Certificate IV in Training and Assessment</h2>
 <p>The Certificate IV in Training and Assessment qualification reflects the skill set suitable for creating a learning organisation. Completing the First Door elected units from a Certificate IV in Training and Assessment will assist those working in the Early Childhood sector who are Directors, Coordinators, Lead Educators or Educational Leaders.</p>
 <p>Typically, those undertaking these units with First Door are working in Early Childhood and want to increase their skills in management and educational leadership. However, the skills and knowledge related to these selected units are relevant for all leaders.<br /><br /></p>
 <h3>What will you learn?</h3>
@@ -285,9 +274,7 @@
 
 <div scroll id="priorlearning"></div>
 <div ng-show="isShow('priorlearning')" >
-  <div contenteditable="{{editable()}}" id="priorlearning--">
-<!--partial:editable/courses/priorlearning.html-->
-<h2>Recognition of Prior Learning</h2>
+  <div contenteditable="{{editable()}}" id="priorlearning--"><!--partial:editable/courses/priorlearning.html--><h2>Recognition of Prior Learning</h2>
 <p>Recognition of Prior Learning (RPL) is a process where a student may be granted credit towards a qualification in recognition of skills and knowledge gained through formal or informal training, work and/or life experience. RPL is offered to any student who can provide evidence of competency for the units offered within the Diploma of Early Childhood Education and Care qualification.</p>
 <p>During the enrolment process a potential Learner may complete a checklist and discuss any prior evidence before commencing training to determine if they are eligible for RPL. To receive a RPL for a unit requires thorough assessment processes. To display RPL competency, students may need to: collect and provide evidence, complete a workbook and/or be observed in the workplace.</p>
 <p>For additional information relating to RPL for this course, please contact:</p>
@@ -296,9 +283,7 @@
 
 <div scroll id="trainingplans"></div>
 <div ng-show="isShow('trainingplans')" >
-  <div contenteditable="{{editable()}}" id="trainingplans--">
-<!--partial:editable/courses/trainingplans.html-->
-<h2>Training Plans</h2>
+  <div contenteditable="{{editable()}}" id="trainingplans--"><!--partial:editable/courses/trainingplans.html--><h2>Training Plans</h2>
 <p>You will have three years to complete your Diploma of Early Childhood Education and Care course from your enrolment date.&nbsp; We have a continual intake of students on this basis throughout the year. For more information on choosing your best suited training plans please refer to your First Door course guide.</p>
 <p>Please note: <em>Unit HLTAID004 Provide an emergency first aid response in an education and care setting</em> is to be completed through an accredited first aid training provider. You will need to provide your First Door assessor with your certificate of attainment for this unit to complete the Diploma course. First Door therefore provides training and assessment for 27 of the 28 units required for the Diploma of Early Childhood Education and Care.</p>
 <h3>Flexi training plan</h3>
@@ -312,9 +297,7 @@
 
 <div scroll id="studentfees"></div>
 <div ng-show="isShow('studentfees')" >
-  <div contenteditable="{{editable()}}" id="studentfees--">
-<!--partial:editable/courses/studentfees.html-->
-<h2>Student fees</h2>
+  <div contenteditable="{{editable()}}" id="studentfees--"><!--partial:editable/courses/studentfees.html--><h2>Student fees</h2>
 <p><strong>Fee payment<br /></strong>Students studying with the flexi plan are more likely to pay by nominated regular instalments and students studying with the structured plan usually pay per unit on the 28th of the month. Fee payments to First Door Training and Development Pty. Ltd. can be made in two ways.<strong><br /></strong></p>
 <ol>
 <li>Regular instalments of a nominated amount in advance across the scheduled course time. OR&nbsp;</li>
@@ -359,9 +342,7 @@
 
 <div scroll id="apprenticeship"></div>
 <div ng-show="isShow('apprenticeship')" >
-  <div contenteditable="{{editable()}}" id="apprenticeship--">
-<!--partial:editable/apprenticeship.html-->
-<h2>Apprenticeship Training</h2>
+  <div contenteditable="{{editable()}}" id="apprenticeship--"><!--partial:editable/apprenticeship.html--><h2>Apprenticeship Training</h2>
 <p>The Australian Government recognises Early Childhood as a critical priority to align the workforce with the skills required by the industry. The User Choice program <strong>funds the cost of Apprenticeship training</strong> for the Diploma of <a href="courses/children_ecec">Early Childhood Education and Care (ECEC)</a>.&nbsp;</p>
 <h3>Employment criteria</h3>
 <p>The ECEC apprenticeship is a contract to obtain a Government funded, nationally recognised Diploma qualification while<strong> you are employed and working in a licensed Early Childhood service. </strong></p>
@@ -402,9 +383,7 @@
 <div scroll ></div>
 <div ng-show="is404()" >This page does not exist..</div>
 </div>
-  <div id="rightBar--" class="span2">
-<!--partial:html/rightbar.html-->
-<!-- <fixscrollright data-ng-transclude="">  -->
+  <div id="rightBar--" class="span2"><!--partial:html/rightbar.html--><!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
 <!-- <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=http%3A%2F%2Fwww.firstdoor.com.au&amp;linkname="><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a> -->
 <!-- <script type="text/javascript"> -->
@@ -425,9 +404,7 @@
 <!-- </div> -->
 
 <div ng-show="show_events()">
-  <div contenteditable="{{editable()}}" id="events_sidebar--">
-<!--partial:editable/events_sidebar.html-->
-<h3>Upcoming workshop events</h3>
+  <div contenteditable="{{editable()}}" id="events_sidebar--"><!--partial:editable/events_sidebar.html--><h3>Upcoming workshop events</h3>
 <p>April 28: <a href="https://db.tt/UeW0TSaU"><strong>Develop teams and individuals</strong></a></p>
 <p>May 5: <a href="https://www.dropbox.com/s/lo9levu7acj6u89/Partnership%20with%20families%20CBW%20invite.pdf">Partnership with families</a></p>
 <p>May 19: <a href="https://db.tt/Eu7PgZKL">Developing cooperative behaviour</a></p>

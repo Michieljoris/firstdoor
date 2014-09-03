@@ -49,6 +49,10 @@ function MainCntl($scope, $location, $http, editor) {
     $scope.signingIn = editor.signingIn;
     $scope.isDirty = editor.isDirty;
     
+    $scope.isBlog = function() {
+        return $location.$$url.indexOf('/blog') === 0; 
+    };
+    
     $scope.getContactUsText = function() {
         
         var path = $location.$$path.split('/').filter(function(e) { return e; });
@@ -231,7 +235,7 @@ var greendoor = {
         ,links: [
             { label: 'Accredited training', route: '/courses/intro',
               scroll: true}
-            ,{ label: 'Diploma of Early Childhood Education and Care', route: '/courses/children_ecec',
+            ,{ label: 'Diploma of Early Childhood', line2:'EDUCATION AND CARE', route: '/courses/children_ecec',
                scroll: true}
             ,{ label: 'Diploma of Management ', route: '/courses/diploma_management', scroll: true}
             // ,{ label: 'Leadership Units', route: '/courses/diploma_management', scroll: true}
@@ -252,11 +256,11 @@ var greendoor = {
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
             { label: 'STUDENT HANDBOOK', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/FirstDoor_StudentHandbook.pdf", scroll: true}
-            ,{ label: 'DIPLOMA ECEC COURGUIDE', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: DIPLOMA ECEC (paper version)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: DIPLOMA ECEC (computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
-            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S (paper version)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S (computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
+            ,{ label: 'DIPLOMA ECEC COURSE GUIDE', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2: "(paper version)", download:true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2:  '(computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
+            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(paper version)', download: true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
         ]
 
         
@@ -341,6 +345,9 @@ var headerImages = {
         ,diploma_management: "/images/slides/courses_Diploma_Management.jpg"
         ,certivtraining: "/images/slides/tab_professional_development.jpg"
         // ,certivtraining: "/images/slides/courses_certiv.jpg"
+    }
+    ,"blog": {
+        "*": "/images/slides/c&ablog.jpg"
     }
     
 };
@@ -436,7 +443,9 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll, editor) {
         if (home && fullPath === '/' || fullPath === '/home/welcome') return "selected";
         
         if (fullPath === '/' || fullPath === '/home/welcome') fullPath = '';
-        if ($location.$$url === '/' + fullPath ) return "selected";
+        
+        // console.log('isSelected1', fullPath,loc);
+        if ($location.$$url ===  fullPath ) return "selected";
         else return "";
     };
     
@@ -757,11 +766,13 @@ function HomeCntl($scope, $routeParams, $location, editor) {
     
     $scope.isSelected = function(fullPath) {
         var loc = $location.$$url;
+        
+        // console.log('isSelected1', fullPath,loc);
         var home;
         if (loc === '/' || loc === '/home/welcome')
             home = true;
         if (home && fullPath === '/' || fullPath === '/home/welcome') return "selected";
-        if ($location.$$url === '/' + fullPath) return "selected";
+        if ($location.$$url === fullPath) return "selected";
         else return "";
     };
     
