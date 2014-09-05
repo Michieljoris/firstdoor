@@ -21,7 +21,7 @@ angular.module('ngView', [],
 ,["contactus", cachify("/built/view-contactus.html"), contactusCntl]
 ,["enrol", cachify("/built/view-enroll.html")]
 ,["apprenticeship", cachify("/built/view-apprenticeship.html")]
-,["blog", cachify("/built/view-blog.html")]
+,["blog", cachify("/blog/landing/index.html")]
 ,["sitemap", cachify("/sitemap.html")]
 
                             // ['home', '/built/view-home.html', HomeCntl],
@@ -34,15 +34,70 @@ angular.module('ngView', [],
                             // ['epic', '/built/view-epic.html', EpicCntl]
 
                         ];
-                        $routeProvider.when('/blog/:key',
-                                            // { templateUrl: '//' + document.location.host + '/' + 'blog',
-                                            { templateUrl: function() {
-                                                console.log('----------------------', arguments);
-                                                
-                                             return '//' + document.location.host + '/' +
-                                                    cachify("/built/view-blog.html");
-                                            },
-                                              controller: DefaultCntl });
+                    $routeProvider.when('/blog/post/:post', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/post/" + route.post  + '.html');
+                        },
+                        controller: DefaultCntl });
+                    
+                    $routeProvider.when('/blog/landing/:page', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/landing/" + route.page + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    
+                    $routeProvider.when('/blog/tag/:tag', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/tag/" + route.tag + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog/tag/:tag/:page', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/tag/" + route.tag + 
+                                        '/' + route.page + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    
+                    $routeProvider.when('/blog/archive/:year', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("blog/archive/" + route.year + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog/archive/:year/:page', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("blog/archive/" + route.year +
+                                        '/' + route.page + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog/archive/:year/:month', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("blog/archive/" + route.year + '/' +
+                                        route.month + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog/archive/:year/:month/:page', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("blog/archive/" + route.year + '/' +
+                                        route.month + 
+                                        '/' + route.page + '/index.html');
+                        },
+                        controller: DefaultCntl });
     
                     mapping.forEach(function(m) {
                         var route ='/' + m[0];

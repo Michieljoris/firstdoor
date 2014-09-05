@@ -42,6 +42,10 @@ function MainCntl($scope, $location, $http, editor) {
     $scope.email = editor.email;
     $scope.saveEditable = editor.saveEditable;
     $scope.undoEditable = editor.undoEditable;
+    $scope.newPost = editor.newPost;
+    $scope.deletePost = editor.deletePost;
+    $scope.renderBlog = editor.renderBlog;
+    
     $scope.printEditable = editor.printEditable;
     $scope.toggleEditable = editor.toggleEditable;
     $scope.editable = editor.editable;

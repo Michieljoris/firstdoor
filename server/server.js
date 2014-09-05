@@ -16,7 +16,7 @@ var server = require('bb-server'),
 var blog = require('bb-blog');
 
 blog.init({
-    paths: { base: 'build' },
+    paths: { base: 'build', www: 'www' },
     writable: ['editable', 'post'],
     pagination: 3,
     auth: false
@@ -27,11 +27,11 @@ blog.init({
     ,pages: {
         // *** an list page, just a list in tree form, by year/month
         // archive: { recipe: 'some archive recipe' }
-        archive: { path: 'archive' }
+        archive: { path: 'blog/archive' }
         // *** a tag page, paginated, teasers
         // links to other pages when more than one page
         // previous, next, page number, last, first page
-        ,tag: { path: 'tag' }
+        ,tag: { path: 'blog/tag' }
         // *** a month page, paginated, teasers
         // next/previous month/year
         // links to other pages when more than one page
@@ -44,7 +44,8 @@ blog.init({
         // ,year: 'some year recipe.js'
         // ,year: true
         // *** a landing page with all posts (paginated)
-        ,landing: true
+        // ,landing: true
+        ,landing: { path: 'blog/landing' }
         // ,landing: {
         //     from: [ 'fromTemplate', 'mapping', 'main'],
         //     to: [ 'toTemplate', 'out' ]
@@ -56,7 +57,8 @@ blog.init({
         ,post: {
             recipe: { editable: 'blog-post-recipe.js', nojs: 'default-recipe.js' },
             // recipe: 'editable-post-recipe.js',
-            path: 'post'
+            path: 'blog/post',
+            ext: ''
             // from: [ 'fromTemplate', 'mapping', 'main'],
             // to: [ 'toTemplate', 'out' ]
         }
@@ -64,7 +66,8 @@ blog.init({
     ,recipe: 'blog-recipe.js'
     // ,recipe: { editable: 'recipe.js', nojs: 'recipe.js' }
     ,from: [ 'fromTemplate', 'mapping', 'main']
-    ,to: [ 'toTemplate', 'out' ]
+    ,to: [ 'fromTemplate', 'out']
+    // ,to: [ 'toTemplate', 'out' ]
     ,renderMode: 'editable'
 });
  
@@ -211,8 +214,9 @@ var options = {
     
     //If method and path match the functin will be called with [req, res].
     ,postHandlers: {
-        "/__api/save" : editor_save,
-        "/__api/blog-save" : blog.save
+        // "/__api/save" : editor_save,
+        "/__api/save" : blog.save
+        // "/__api/blog-save" : blog.save
         ,"/__api/new" : blog['new']
         ,"/contactus_form" : sendMail
         // ,"/contactus_form" : testSendMail
@@ -224,7 +228,6 @@ var options = {
         // "/dropbox_authorize": dropbox_authorize,
         // "/dropbox_connect": dropbox_connect
     }
-    
     
     //start a websocket server and register handlers
     //One built-in handler is reload, include it as a string, otherwise list a home-made module

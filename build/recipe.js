@@ -478,7 +478,7 @@ var exports = {
         ['contactus', '/built/view-contactus.html', 'contactusCntl'],
         ['enrol', '/built/view-enroll.html'],
         ['apprenticeship', '/built/view-apprenticeship.html'],
-        ['blog', '/built/view-blog.html'],
+        ['blog', '/blog/landing/index.html'],
         ['sitemap', '/sitemap.html']
         
         // ,['ytcarousel', '/build/html/ytcarousel.html']
@@ -761,21 +761,21 @@ var exports = {
                     ,contents: 'editable/enroll.html'
                     ,rightBar: 'rightbar'
                 }}
-            //blog
-            ,{
-                src: 'views/view_blog_partial.html'
-                ,out : 'view-blog.html'
-                ,mapping: {
-                    "image-sidebar": 'html/image-sidebar'
-                    // ,'editbar': 'html/editbar.html'
-                    ,sidebar: 'blog-leftbar'
-                    // ,image: 'image_courses'
-                    ,rightBar: 'blog-rightbar'
-                    // ,slogan: 'slogan'
-                    // ,slideShow: 'flex',
-                    ,contents: 'blogpost'
+            // //blog
+            // ,{
+            //     src: 'views/view_blog_partial.html'
+            //     ,out : 'view-blog.html'
+            //     ,mapping: {
+            //         "image-sidebar": 'html/image-sidebar'
+            //         // ,'editbar': 'html/editbar.html'
+            //         ,sidebar: 'blog-leftbar'
+            //         // ,image: 'image_courses'
+            //         ,rightBar: 'blog-rightbar'
+            //         // ,slogan: 'slogan'
+            //         // ,slideShow: 'flex',
+            //         ,contents: 'blogpost'
                     
-                }}
+            //     }}
             ,{
                 src: 'views/view_apprenticeship_partial.html'
                 ,out : 'view-apprenticeship.html'

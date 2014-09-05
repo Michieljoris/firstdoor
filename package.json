@@ -31,7 +31,8 @@
     "dbox": "0.6.x",
     "colors": "*",
     "fs-extra": "0.8.x",
-    "dougs_vow": "*"
+    "dougs_vow": "*",
+    "bb-blog": "0.1.x"
   },
   "devDependencies": {},
   "private": false,

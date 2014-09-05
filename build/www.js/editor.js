@@ -174,6 +174,83 @@ myAppModule.factory('editor', function() {
         if (signedIn)
             api.toggleEditable();
     };
+    
+    
+    api.newPost = function() {
+        console.log('new post')  ;
+        var postTitle = prompt('New post title ?');
+        postTitle = 'post/' + postTitle + '.html';
+        var post = "<pre>published: no\n" +
+            "title:" + postTitle + "\n" +
+            "comments: no</pre>\nWrite post here..";
+        $http.post('/__api/new?path=' + postTitle, post).
+            success(function(data, status, headers, config) {
+	        console.log(data, status, config);
+	        if (!data.success) {
+                    console.log('Failed to save on the server ', data.error);
+                    alert('Warning: this file did not save to the server!!');
+                    if (data.error === 'Not authorized.')
+                        $scope.signedIn = false;
+	        }
+	        console.log("Success. Data saved to:", postTitle);
+                
+            }).
+            error(function(data, status, headers, config) {
+	        console.log('Failed to post data!!', data, status, headers, config);
+	        alert('Warning: this file did not save to the server!!\n' +
+                      'Reason:' + data.error || status );
+	    });
+       
+    };
+    
+    api.deletePost = function() {
+        console.log('delete post')  ;
+        var deletePost = confirm('Delete post ?');
+        if (!deletePost) return;
+        console.log('deleting post')  ;
+        var postTitle = "some title";
+        //TODO, get current post path, maybe from location?
+        $http.get('/__api/remove?path=' + postTitle).
+            success(function(data, status, headers, config) {
+	        console.log(data, status, config);
+	        if (!data.success) {
+                    console.log('Failed to remove post from the server ', data.error);
+                    alert('Warning: this post did not get removed from the server!!');
+                    if (data.error === 'Not authorized.')
+                        $scope.signedIn = false;
+	        }
+	        console.log("Success. Data saved to:", postTitle);
+                
+            }).
+            error(function(data, status, headers, config) {
+	        console.log('Failed to post data!!', data, status, headers, config);
+	        alert('Warning: this file did not get removed from the server!!\n' +
+                      'Reason:' + data.error || status );
+	    });
+        
+    };
+    
+    api.renderBlog = function() {
+      console.log('render blog')  ;
+        
+        $http.get('/__api/render').
+            success(function(data, status, headers, config) {
+	        console.log(data, status, config);
+	        if (!data.success) {
+                    console.log('Failed to render blog on the server ', data.error);
+                    alert('Warning: rendering failed');
+                    if (data.error === 'Not authorized.')
+                        $scope.signedIn = false;
+	        }
+	        console.log("Success, blog rendered");
+                
+            }).
+            error(function(data, status, headers, config) {
+	        console.log('Failed to render blog!!', data, status, headers, config);
+	        alert('Warning: this file did not save to the server!!\n' +
+                      'Reason:' + data.error || status );
+	    });
+    };
     return api;
     
 });

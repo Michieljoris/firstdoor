@@ -1,64 +1,67 @@
 var develop_mode = process.env.DEVELOP; 
 // module.exports = {
 
-var fromTemplate = { id: 'body'
-                     ,src: 'html/body.html' 
-                     // ,tagIdPostfix: '--' //can be overridden per template
-                     ,mapping: {
-                         // editbar: 'html/editbar.html'
-                         header: 'html/header.html'
-                         ,leftbar: 'recentWidgetWrapper'
-                         
-                         ,rightbar: ['recentWidgetWrapper', 'tagWidgetWrapper',
-                                     'archiveWidgetWrapper']
-                         // ,leftbar: 'html/leftbar.html'
-                         // ,rightbar: 'html/rightbar.html'
-                         ,bottom: 'html/bottom.html'
-                         // ,main: 'post/sample-post.html'
-                         ,pageTitle: "pageTitle"
-                         ,main: 'html/post.html'
-                         ,editbar: 'html/editbar.html'
-                         ,"disqus-embed": "html/disqus-embed.html"
-                         ,"disqus-count": "html/disqus-count.html"
-                     }
-                   };
-
-var toTemplate = {  
-    src: 'html/basicPage.html'
-    ,tagIdPostfix: '' //can be overridden per template
-    ,pathOut: '/'
-    ,out: 'www/post.html' //optional, relative to root
+var fromTemplate = { //id: 'body'
+    src: 'views/view_blog_post_partial.html'
     
-    //Maps tag ids to partial ids. Tag ids have to be
-    //postfixed with two dashes in the template. Partials
-    //with an extension will be loaded from the partials
-    //folder for this template. Markdown files will be
-    //converted to html. Partials in an array will be
-    //concatenated before inserted at the tag id element
-    
-    //Make sure to have the cachify partial included in the head if
-    //you want to dynamically load resources from javascript, but
-    //want to retrieve cachified versions. Include the resources
-    //under cachify.list
+    // ,tagIdPostfix: '--' //can be overridden per template
     ,mapping: {
-        head: ['meta-page-title',
-               'meta',  'html/ieshim',//'skewer',
-               // 'firebug',
-               'headJsBlock',
-               'linkBlock'
-               ,'cachify'
-              ],
+        // editbar: 'html/editbar.html'
+        // header: 'html/header.html'
+        leftbar: 'recentWidgetWrapper'
+                         
+        ,rightbar: ['tagWidgetWrapper',
+                    'archiveWidgetWrapper']
+        // ,leftbar: 'html/leftbar.html'
+        // ,rightbar: 'html/rightbar.html'
+        // ,bottom: 'html/bottom.html'
+        // ,main: 'post/sample-post.html'
+        ,pageTitle: "pageTitle"
+        ,main: 'main'
+        // ,editbar: 'html/editbar.html'
+        ,"disqus-embed": "html/disqus-embed.html"
+        ,"disqus-count": "html/disqus-count.html"
         
-        "body": ['body', 'jsBlock'
-                 
-                 // ,'html/google_analytics.html'
-                ]
+        ,"image-sidebar": 'html/image-sidebar'
     }
 };
 
+// var toTemplate = {  
+//     src: 'html/basicPage.html'
+//     ,tagIdPostfix: '' //can be overridden per template
+//     ,pathOut: '/'
+//     ,out: 'www/post.html' //optional, relative to root
+    
+//     //Maps tag ids to partial ids. Tag ids have to be
+//     //postfixed with two dashes in the template. Partials
+//     //with an extension will be loaded from the partials
+//     //folder for this template. Markdown files will be
+//     //converted to html. Partials in an array will be
+//     //concatenated before inserted at the tag id element
+    
+//     //Make sure to have the cachify partial included in the head if
+//     //you want to dynamically load resources from javascript, but
+//     //want to retrieve cachified versions. Include the resources
+//     //under cachify.list
+//     ,mapping: {
+//         head: ['meta-page-title',
+//                'meta',  'html/ieshim',//'skewer',
+//                // 'firebug',
+//                'headJsBlock',
+//                'linkBlock'
+//                ,'cachify'
+//               ],
+        
+//         "body": ['body', 'jsBlock'
+                 
+//                  // ,'html/google_analytics.html'
+//                 ]
+//     }
+// };
+
 var exports = {
-    fromTemplate: fromTemplate,
-    toTemplate: toTemplate
+    fromTemplate: fromTemplate
+    // toTemplate: toTemplate
     ,verbose: true
     ,printMap: false
     ,prettyPrintHtml: false
@@ -67,8 +70,8 @@ var exports = {
         root: process.cwd()
         //relative to this root:
         ,partials: 'build/'  //can be overridden per template
-        ,www: 'www'
-        ,out:'built' 
+        ,www: ''
+        ,out:'' 
         ,js: 'scripts'
     }
     // ,reload: {
@@ -162,7 +165,7 @@ var exports = {
             ,recentWidget: 'recent widget here'
             ,archiveWidget: '<br>archive widget here'
             ,pageTitle: 'insert title here'
-            ,"meta-page-title": '<title>meta-page-title</title>'
+            // ,"meta-page-title": '<title>meta-page-title</title>'
             // title: '<title>Blog</title>',
             // skewer: develop_mode ? '<script src="http://localhost:9090/skewer"></script>' : ' '
             // ,recaptcha: '<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>'
@@ -170,131 +173,131 @@ var exports = {
             
             // hello_world: '<h2>Hello world. Build on this scaffold!!!</h2>'
         }
-        ,metaBlock : {
-            id: 'meta',
-            tags: [ { charset:'utf-8' }
-                    ,{ content:"IE=edge,chrome=1",
-                       "http-equiv":"X-UA-Compatible"
-                     }
-                    ,{ content:"",
-                       name:"description"
-                     }
-                    ,{ name: "viewport"
-                       ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
-                  ]
-        }
-        ,linkBlock:  {
-            id: 'linkBlock',
-            files:  [
-                'bower/normalize.css/normalize.css'
-                ,'bower/bootstrap/dist/css/bootstrap.css'
-                ,'medium-editor.css'
-                ,'medium-default-theme.css'
-                // ,'bower/foundation/css/foundation.css'
-                // ,'bower/jquery-ui/jquery-ui.custom.css'
-                // ,'bower/angular-ui/build/angular-ui.css'
+        // ,metaBlock : {
+        //     id: 'meta',
+        //     tags: [ { charset:'utf-8' }
+        //             ,{ content:"IE=edge,chrome=1",
+        //                "http-equiv":"X-UA-Compatible"
+        //              }
+        //             ,{ content:"",
+        //                name:"description"
+        //              }
+        //             ,{ name: "viewport"
+        //                ,content: "width=device-width, initial-scale=1, maximum-scale=1"}
+        //           ]
+        // }
+        // ,linkBlock:  {
+        //     id: 'linkBlock',
+        //     files:  [
+        //         'bower/normalize.css/normalize.css'
+        //         ,'bower/bootstrap/dist/css/bootstrap.css'
+        //         ,'medium-editor.css'
+        //         ,'medium-default-theme.css'
+        //         // ,'bower/foundation/css/foundation.css'
+        //         // ,'bower/jquery-ui/jquery-ui.custom.css'
+        //         // ,'bower/angular-ui/build/angular-ui.css'
                 
-                // ,'vendor/h5bp.css'
-                // ,'vendor/checkboxes.css'
+        //         // ,'vendor/h5bp.css'
+        //         // ,'vendor/checkboxes.css'
                 
-                ,'main.css'
-                ,'main-edit.css'
-            ]
-            ,path: 'css'
-        }
+        //         ,'main.css'
+        //         ,'main-edit.css'
+        //     ]
+        //     ,path: 'css'
+        // }
         
-        //order these scriptBlocks in the order that they would be loaded by the
-        //browser, because any duplicate entries (as added by modules for
-        //instance) will be removed apart from the first. Usually you would have
-        //only one block, possibly two if you need to load modules in the head
-        //of the html document, but you can have as many as you like.  Some
-        //components (like slideshow or the router for angular) need to load
-        //their own css and js files, these would be added to the last block, or
-        //te first block that has the extra:true attribute
-        ,scriptBlock: [
-            {
-                id: 'headJsBlock',
-                files: [
-                ],
-                path: ''
-            },
-            {
-                id: 'jsBlock',
-                files: [
-                    // 'bower/jquery/dist/jquery.js' //v2.1.0
-                    //,'bower/bootstrap/dist/js/bootstrap.js'
-                    // ,'bower/foundation/js/foundation.js'
-                    // ,'bower/angular/angular.js'
-                    // ,'bower/angular-ui/build/angular-ui.js'
-                    // ,'bower/logthis/logthis.js'
-                    // ,'bower/modernizr/modernizr.js'
-                    // ,'bower/jquery/dist/jquery.min.js'
-                    // ,'bower/arbor/lib/arbor.js'
-                    // ,'graphics.js',
-                    // ,'renderer.js'
-                    // ,'main.js'
+        // //order these scriptBlocks in the order that they would be loaded by the
+        // //browser, because any duplicate entries (as added by modules for
+        // //instance) will be removed apart from the first. Usually you would have
+        // //only one block, possibly two if you need to load modules in the head
+        // //of the html document, but you can have as many as you like.  Some
+        // //components (like slideshow or the router for angular) need to load
+        // //their own css and js files, these would be added to the last block, or
+        // //te first block that has the extra:true attribute
+        // ,scriptBlock: [
+        //     {
+        //         id: 'headJsBlock',
+        //         files: [
+        //         ],
+        //         path: ''
+        //     },
+        //     {
+        //         id: 'jsBlock',
+        //         files: [
+        //             // 'bower/jquery/dist/jquery.js' //v2.1.0
+        //             //,'bower/bootstrap/dist/js/bootstrap.js'
+        //             // ,'bower/foundation/js/foundation.js'
+        //             // ,'bower/angular/angular.js'
+        //             // ,'bower/angular-ui/build/angular-ui.js'
+        //             // ,'bower/logthis/logthis.js'
+        //             // ,'bower/modernizr/modernizr.js'
+        //             // ,'bower/jquery/dist/jquery.min.js'
+        //             // ,'bower/arbor/lib/arbor.js'
+        //             // ,'graphics.js',
+        //             // ,'renderer.js'
+        //             // ,'main.js'
                     
-                    // ,'vendor/noconsole.js'
-                    //,'vendor/jquery-1.6.2.min.js'
-                    //,'vendor/jquery-1.8.3.min.js'
-                    //,'vendor/jquery-1.9.1.min.js'
-                    //,'vendor/jquery-1.9.1.min.js'
+        //             // ,'vendor/noconsole.js'
+        //             //,'vendor/jquery-1.6.2.min.js'
+        //             //,'vendor/jquery-1.8.3.min.js'
+        //             //,'vendor/jquery-1.9.1.min.js'
+        //             //,'vendor/jquery-1.9.1.min.js'
                     
-                    // ,'router'
-                    // ,'angular.js'
-                    // ,'test.coffee'
-                    "bower/jquery/dist/jquery.js"
-                    // ,"bower/page/index.js"
-                    // "vendor/jquery-1.6.2.js"
-                    ,'bower/bootstrap/dist/js/bootstrap.js'
-                    ,"bower/modernizr/modernizr.js"
-                    ,"bower/bacon/dist/Bacon.min.js"
-                    // ,"bower/mori/mori.js"
-                    ,"bower/logthis/logthis.js"
-                    // ,"bower/ractive/ractive.js"
-                    // ,"bower/vue/dist/vue.js"
-                    ,"medium-editor.js"
-                    // ,"epiceditor.js"
-                    //The following will be substitud with the list of required
-                    //modules, in the proper order, also the module enabler
-                    //script will be added before the first module in every
-                    //block. When this block is concatenated all module files
-                    //will be denodify.wrapped. If there are scripts in a
-                    //language other than javascript in the block, the files
-                    //will still be concatenated, but not
-                    //denodify.wrapped. Instead the resulting concatenated file
-                    //will have an extension of .bundle and a first line of what
-                    //is contained within the bundle. Bb-server can then extract
-                    //this line, split up the bundle, recast the parts to js,
-                    //denodify.wrap the module scripts, bundle it up again,
-                    //cache and send it (as a proper js file).
+        //             // ,'router'
+        //             // ,'angular.js'
+        //             // ,'test.coffee'
+        //             "bower/jquery/dist/jquery.js"
+        //             // ,"bower/page/index.js"
+        //             // "vendor/jquery-1.6.2.js"
+        //             ,'bower/bootstrap/dist/js/bootstrap.js'
+        //             ,"bower/modernizr/modernizr.js"
+        //             ,"bower/bacon/dist/Bacon.min.js"
+        //             // ,"bower/mori/mori.js"
+        //             ,"bower/logthis/logthis.js"
+        //             // ,"bower/ractive/ractive.js"
+        //             // ,"bower/vue/dist/vue.js"
+        //             ,"medium-editor.js"
+        //             // ,"epiceditor.js"
+        //             //The following will be substitud with the list of required
+        //             //modules, in the proper order, also the module enabler
+        //             //script will be added before the first module in every
+        //             //block. When this block is concatenated all module files
+        //             //will be denodify.wrapped. If there are scripts in a
+        //             //language other than javascript in the block, the files
+        //             //will still be concatenated, but not
+        //             //denodify.wrapped. Instead the resulting concatenated file
+        //             //will have an extension of .bundle and a first line of what
+        //             //is contained within the bundle. Bb-server can then extract
+        //             //this line, split up the bundle, recast the parts to js,
+        //             //denodify.wrap the module scripts, bundle it up again,
+        //             //cache and send it (as a proper js file).
 
-                    // The giveaway is the path 'modules/[dir1/dir2/]', all
-                    //required and main modules need to be in this
-                    //directory. The main script needs to be in here so
-                    //html-builder knows to add the required script tags here,
-                    //and bb-server needs to know a requested script is a module
-                    //because it needs to denodify.wrap it.
-                    // ,'modules/mymodule.nm.js'
+        //             // The giveaway is the path 'modules/[dir1/dir2/]', all
+        //             //required and main modules need to be in this
+        //             //directory. The main script needs to be in here so
+        //             //html-builder knows to add the required script tags here,
+        //             //and bb-server needs to know a requested script is a module
+        //             //because it needs to denodify.wrap it.
+        //             // ,'modules/mymodule.nm.js'
                     
-                    ,['main.js']
-                    ,"start.js"
+        //             ,['main.js']
+        //             ,"start.js"
                     
-                ],
-                path: 'scripts'
-            }
-        ]
+        //         ],
+        //         path: 'scripts'
+        //     }
+        // ]
         // ,slideShow: [{ type: 'flex',
         //                id: 'flex',
         //                slides: slides
         //              }
         // ]
-        ,menu: [
-            // { type: 'superfish',
-            //       tree: mainMenuTree,
-            //       id: 'superfish'
-            //     },
-        ]
+        // ,menu: [
+        //     // { type: 'superfish',
+        //     //       tree: mainMenuTree,
+        //     //       id: 'superfish'
+        //     //     },
+        // ]
         ,template: [
             // { src: 'views/guide.html' 
             //   ,tagIdPostfix: '--' //can be overridden per template
@@ -334,8 +337,8 @@ var exports = {
                   widget: 'recentWidget'
               }
             },
-            fromTemplate,
-            toTemplate
+            fromTemplate
+            // toTemplate
             //Main layout
             
         ] 

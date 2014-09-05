@@ -327,3 +327,15 @@ completed by then. Please let me know if this works for you.
    http://www.jqueryscript.net/social-media/jQuery-Plugin-For-Custom-Facebook-Like-Button-Fancylike.html
    
    
+   
+   
+   
+* doing 
+ Sync to local copy, then run live version
+Sync to linode test live, test firstdoor.axion5.net 
+Sync all but blog to live on linode
+Add unpublished widget
+Hide meta on firstdoor on logged out status
+Create dialog asking for:
+publishedat, createdat, tags, title, comments, published
+
