@@ -34,8 +34,57 @@
     <script src="js/angular-ui-ieshiv.js"></script>
     <![endif]-->						    
 
-<script src="http://localhost:9090/skewer"></script>
-<script type='text/javascript'>function cachify(path) { return path; }</script></head>
+<script src="http://localhost:9090/skewer"></script><script type='text/javascript'>
+  function cachify(path) {
+    var map = {
+      "/images/slides/PD_Environment_and_experiences.jpg": "",
+      "/images/slides/PD_Inspired_educator.jpg": "",
+      "/images/slides/PD_Observing_and_documenting.jpg": "",
+      "/images/slides/PD_cooperative_behaviour.jpg": "",
+      "/images/slides/PD_identifying_at_risk_childen.jpg": "",
+      "/images/slides/PD_managing_risk.jpg": "",
+      "/images/slides/PD_reflective_practice.jpg": "",
+      "/images/slides/courses_Diploma_Childrens_services.jpg": "",
+      "/images/slides/courses_Diploma_Management.jpg": "",
+      "/images/slides/courses_certiv.jpg": "",
+      "/images/slides/home_assessment.jpg": "",
+      "/images/slides/home_page_Early_Childhood_Education_and_Care_training.jpg": "",
+      "/images/slides/tab_accredited_training.jpg": "",
+      "/images/slides/tab_professional_development.jpg": "",
+      "/images/slides/home_page_First_Door_mentoring.jpg": "",
+      "/documents/Dip ECEC enrolment electronic version.docx": "",
+      "/documents/Dip ECEC enrolment print version.pdf": "",
+      "/documents/Diploma_Early_Childhood_Course_Guide.pdf": "",
+      "/documents/FirstDoor_StudentHandbook.pdf": "",
+      "/documents/Individual Units enrolment electronic version.docx": "",
+      "/documents/Individual Units enrolment print version.pdf": "",
+      "/images/logo.jpg": "",
+      "/images/nrtlogoclsm.png": "",
+      "/images/slides/tab_about_us.jpg": "",
+      "/images/slides/tab_accredited_training.jpg": "",
+      "/images/slides/tab_professional_development.jpg": "",
+      "/images/slides/tab_resources.jpg": "",
+      "/images/course_structure_children_services.jpg": "",
+      "/images/homepage_image.jpg": "",
+      "/images/Apprenticeship_button_website.jpg": "",
+      "/ckeditor/ckeditor.min.js": "",
+      "/built/view-home.html": "",
+      "/built/view-aboutus.html": "",
+      "/built/view-pd.html": "",
+      "/built/view-resources.html": "",
+      "/built/view-courses.html": "",
+      "/built/view-quiz.html": "",
+      "/built/view-epic.html": "",
+      "/built/view-chat.html": "",
+      "/built/view-filebrowser.html": "",
+      "/built/view-contactus.html": "",
+      "/built/view-enroll.html": "",
+      "/built/view-apprenticeship.html": "",
+      "/blog/landing/index.html": "",
+      "/sitemap.html": ""
+    };/*console.log(path,map[path]);*/
+   return map[path] ? map[path] + path : path; }
+</script></head>
   <body  id="ng:app" ng:app="myApp"><script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=320246108156039&version=v2.0"></script><!--partial:html/body.html--><!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->

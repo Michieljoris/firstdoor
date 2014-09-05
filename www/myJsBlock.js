@@ -6314,6 +6314,8 @@ $(window).scroll(function() {
 //test
 // var myAppModule = angular.module('myApp', ['ngView', 'ngSanitize']);
 
+
+
 var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
     .directive('compile', ['$compile',
                            function($compile) {
@@ -6341,7 +6343,66 @@ var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
                                // });
                            }]
 
-              ).value('$anchorScroll', angular.noop);
+              )
+    .directive('fbLike', function($timeout) {
+        return {
+            restrict: 'A',
+            scope: {},
+            template: "<div class=\"fb-like-box\" data-href=\"{{page}}\" data-width=\"{{width}}\" data-show-faces=\"{{faces}}\" data-height=\"{{height}}\" data-stream=\"{{stream}}\" data-header=\"{{header}}\"></div>",
+            link: function($scope, $element, $attrs) {
+                var working, _ref, _ref1;
+
+                $scope.page = $attrs.fbLike;
+                $scope.height = (_ref = $attrs.fbHeight) != null ? _ref : '550';
+                $scope.faces = $attrs.fbFaces != null ? $attrs.fbFaces : 'false';
+                $scope.stream = $attrs.fbStream != null ? $attrs.fbStream : 'true';
+                $scope.header = $attrs.fbHeader != null ? $attrs.fbHeader : 'false';
+                $scope.width = (_ref1 = $attrs.fbWidth) != null ? _ref1 : $element.parent().width();
+                working = false;
+                
+                if (window.innerWidth < 1200) {
+                    if (window.innerWidth < 980) {
+                        $scope.stream = "false";
+                        $scope.height = "170";
+                    }
+                    else $scope.height = "270";
+                }
+                else $scope.height = "335";
+                // FB.XFBML.parse($element[0]);
+                $timeout(function() {
+                    $scope.width = $element.parent().width();
+                    $timeout(function() {
+                        return FB.XFBML.parse($element[0]);
+                    }, 50, false);
+                    working = false;
+                }, 10);
+        
+                $(window).on('resize', function() {
+                    if (!working) {
+                        working = true;
+                        $timeout(function() {
+                            $scope.width = $element.parent().width();
+                            
+                            $scope.stream = "true";
+                            if (window.innerWidth < 1200) {
+                                if (window.innerWidth < 980) {
+                                    $scope.stream = "false";
+                                    $scope.height = "170";
+                                }
+                                else $scope.height = "270";
+                            }
+                            else $scope.height = "335";
+                            $timeout(function() {
+                                return FB.XFBML.parse($element[0]);
+                            }, 50, false);
+                            working = false;
+                        }, 10);
+                    }
+                });
+            }
+        };
+    })
+    .value('$anchorScroll', angular.noop);
 
 myAppModule.directive('fixscrollright',
                       ['$window',
@@ -6705,7 +6766,7 @@ myAppModule.factory('editor', function() {
             console.log('no filename, so not saving', data);
         }
         console.log('Saving file ' + fileName);
-        $http.post('__api/save?path=' + fileName, data).
+        $http.post('/__api/save?path=' + fileName, data).
             success(function(data, status, headers, config) {
 	        console.log(data, status, config);
 	        if (!data.success) {
@@ -6823,6 +6884,83 @@ myAppModule.factory('editor', function() {
         if (signedIn)
             api.toggleEditable();
     };
+    
+    
+    api.newPost = function() {
+        console.log('new post')  ;
+        var postTitle = prompt('New post title ?');
+        postTitle = 'post/' + postTitle + '.html';
+        var post = "<pre>published: no\n" +
+            "title:" + postTitle + "\n" +
+            "comments: no</pre>\nWrite post here..";
+        $http.post('/__api/new?path=' + postTitle, post).
+            success(function(data, status, headers, config) {
+	        console.log(data, status, config);
+	        if (!data.success) {
+                    console.log('Failed to save on the server ', data.error);
+                    alert('Warning: this file did not save to the server!!');
+                    if (data.error === 'Not authorized.')
+                        $scope.signedIn = false;
+	        }
+	        console.log("Success. Data saved to:", postTitle);
+                
+            }).
+            error(function(data, status, headers, config) {
+	        console.log('Failed to post data!!', data, status, headers, config);
+	        alert('Warning: this file did not save to the server!!\n' +
+                      'Reason:' + data.error || status );
+	    });
+       
+    };
+    
+    api.deletePost = function() {
+        console.log('delete post')  ;
+        var deletePost = confirm('Delete post ?');
+        if (!deletePost) return;
+        console.log('deleting post')  ;
+        var postTitle = "some title";
+        //TODO, get current post path, maybe from location?
+        $http.get('/__api/remove?path=' + postTitle).
+            success(function(data, status, headers, config) {
+	        console.log(data, status, config);
+	        if (!data.success) {
+                    console.log('Failed to remove post from the server ', data.error);
+                    alert('Warning: this post did not get removed from the server!!');
+                    if (data.error === 'Not authorized.')
+                        $scope.signedIn = false;
+	        }
+	        console.log("Success. Data saved to:", postTitle);
+                
+            }).
+            error(function(data, status, headers, config) {
+	        console.log('Failed to post data!!', data, status, headers, config);
+	        alert('Warning: this file did not get removed from the server!!\n' +
+                      'Reason:' + data.error || status );
+	    });
+        
+    };
+    
+    api.renderBlog = function() {
+      console.log('render blog')  ;
+        
+        $http.get('/__api/render').
+            success(function(data, status, headers, config) {
+	        console.log(data, status, config);
+	        if (!data.success) {
+                    console.log('Failed to render blog on the server ', data.error);
+                    alert('Warning: rendering failed');
+                    if (data.error === 'Not authorized.')
+                        $scope.signedIn = false;
+	        }
+	        console.log("Success, blog rendered");
+                
+            }).
+            error(function(data, status, headers, config) {
+	        console.log('Failed to render blog!!', data, status, headers, config);
+	        alert('Warning: this file did not save to the server!!\n' +
+                      'Reason:' + data.error || status );
+	    });
+    };
     return api;
     
 });
@@ -6836,6 +6974,9 @@ function BottomCntl($scope, $location, $http, editor) {
     console.log(editor);
     $scope.signedIn = editor.signedIn;
     $scope.email = editor.email;
+    
+    var currentUser = cookie.get('persona');
+    if (currentUser) editor.signin();
     
     $scope.login = function($event) {
         $event.preventDefault();
@@ -6870,12 +7011,20 @@ function MainCntl($scope, $location, $http, editor) {
     $scope.email = editor.email;
     $scope.saveEditable = editor.saveEditable;
     $scope.undoEditable = editor.undoEditable;
+    $scope.newPost = editor.newPost;
+    $scope.deletePost = editor.deletePost;
+    $scope.renderBlog = editor.renderBlog;
+    
     $scope.printEditable = editor.printEditable;
     $scope.toggleEditable = editor.toggleEditable;
     $scope.editable = editor.editable;
     editor.set($scope, $http);
     $scope.signingIn = editor.signingIn;
     $scope.isDirty = editor.isDirty;
+    
+    $scope.isBlog = function() {
+        return $location.$$url.indexOf('/blog') === 0; 
+    };
     
     $scope.getContactUsText = function() {
         
@@ -7059,7 +7208,7 @@ var greendoor = {
         ,links: [
             { label: 'Accredited training', route: '/courses/intro',
               scroll: true}
-            ,{ label: 'Diploma of Early Childhood Education and Care', route: '/courses/children_ecec',
+            ,{ label: 'Diploma of Early Childhood', line2:'EDUCATION AND CARE', route: '/courses/children_ecec',
                scroll: true}
             ,{ label: 'Diploma of Management ', route: '/courses/diploma_management', scroll: true}
             // ,{ label: 'Leadership Units', route: '/courses/diploma_management', scroll: true}
@@ -7080,11 +7229,11 @@ var greendoor = {
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
             { label: 'STUDENT HANDBOOK', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/FirstDoor_StudentHandbook.pdf", scroll: true}
-            ,{ label: 'DIPLOMA ECEC COURGUIDE', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: DIPLOMA ECEC (paper version)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: DIPLOMA ECEC (computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
-            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S (paper version)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S (computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
+            ,{ label: 'DIPLOMA ECEC COURSE GUIDE', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2: "(paper version)", download:true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2:  '(computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
+            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(paper version)', download: true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
+            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
         ]
 
         
@@ -7169,6 +7318,9 @@ var headerImages = {
         ,diploma_management: "/images/slides/courses_Diploma_Management.jpg"
         ,certivtraining: "/images/slides/tab_professional_development.jpg"
         // ,certivtraining: "/images/slides/courses_certiv.jpg"
+    }
+    ,"blog": {
+        "*": "/images/slides/c&ablog.jpg"
     }
     
 };
@@ -7264,7 +7416,9 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll, editor) {
         if (home && fullPath === '/' || fullPath === '/home/welcome') return "selected";
         
         if (fullPath === '/' || fullPath === '/home/welcome') fullPath = '';
-        if ($location.$$url === '/' + fullPath ) return "selected";
+        
+        // console.log('isSelected1', fullPath,loc);
+        if ($location.$$url ===  fullPath ) return "selected";
         else return "";
     };
     
@@ -7289,7 +7443,7 @@ function DefaultCntl($scope, $routeParams, $location, $anchorScroll, editor) {
     };
 
     $scope.is404 = function() {
-        
+        console.log('4040404', page);
         return !exists[page] || exists[page].indexOf(section) === -1;
     };
     
@@ -7585,11 +7739,13 @@ function HomeCntl($scope, $routeParams, $location, editor) {
     
     $scope.isSelected = function(fullPath) {
         var loc = $location.$$url;
+        
+        // console.log('isSelected1', fullPath,loc);
         var home;
         if (loc === '/' || loc === '/home/welcome')
             home = true;
         if (home && fullPath === '/' || fullPath === '/home/welcome') return "selected";
-        if ($location.$$url === '/' + fullPath) return "selected";
+        if ($location.$$url === fullPath) return "selected";
         else return "";
     };
     
@@ -7617,6 +7773,8 @@ function HomeCntl($scope, $routeParams, $location, editor) {
     
     $scope.is404 = function() {
         // console.log (page,section,  !exists[page] || exists[page].indexOf(section) === -1);
+        
+        console.log('4040404', page);
         return !exists[page] || exists[page].indexOf(section) === -1;
     };
     
@@ -8488,7 +8646,7 @@ function ResourcesCntl($scope, $route, $routeParams, $location) {
     
     
     $scope.isSelected = function(fullPath) {
-        if ($location.$$url === '/' + fullPath || fullPath === page + '/' + section) return "selected";
+        if ($location.$$url === fullPath || fullPath === page + '/' + section) return "selected";
         else return "";
     };
     
@@ -8666,19 +8824,20 @@ angular.module('ngView', [],
                     var baseDir = '/built/';
                     var mapping =
                         [
-                            ["home", cachify("built/view-home.html"), HomeCntl]
-,["aboutus", cachify("built/view-aboutus.html")]
-,["pd", cachify("built/view-pd.html")]
-,["resources", cachify("built/view-resources.html"), ResourcesCntl]
-,["courses", cachify("built/view-courses.html")]
-,["quiz", cachify("built/view-quiz.html")]
-,["epic", cachify("built/view-epic.html"), EpicCntl]
-,["chat", cachify("built/view-chat.html"), chatCntl]
-,["filebrowser", cachify("built/view-filebrowser.html"), filebrowserCntl]
-,["contactus", cachify("built/view-contactus.html"), contactusCntl]
-,["enrol", cachify("built/view-enroll.html")]
-,["apprenticeship", cachify("built/view-apprenticeship.html")]
-,["sitemap", cachify("sitemap.html")]
+                            ["home", cachify("/built/view-home.html"), HomeCntl]
+,["aboutus", cachify("/built/view-aboutus.html")]
+,["pd", cachify("/built/view-pd.html")]
+,["resources", cachify("/built/view-resources.html"), ResourcesCntl]
+,["courses", cachify("/built/view-courses.html")]
+,["quiz", cachify("/built/view-quiz.html")]
+,["epic", cachify("/built/view-epic.html"), EpicCntl]
+,["chat", cachify("/built/view-chat.html"), chatCntl]
+,["filebrowser", cachify("/built/view-filebrowser.html"), filebrowserCntl]
+,["contactus", cachify("/built/view-contactus.html"), contactusCntl]
+,["enrol", cachify("/built/view-enroll.html")]
+,["apprenticeship", cachify("/built/view-apprenticeship.html")]
+,["blog", cachify("/blog/landing/index.html")]
+,["sitemap", cachify("/sitemap.html")]
 
                             // ['home', '/built/view-home.html', HomeCntl],
                             // ['aboutus', '/build/markdown/aboutus.md'],
@@ -8690,6 +8849,70 @@ angular.module('ngView', [],
                             // ['epic', '/built/view-epic.html', EpicCntl]
 
                         ];
+                    $routeProvider.when('/blog/post/:post', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/post/" + route.post  + '.html');
+                        },
+                        controller: DefaultCntl });
+                    
+                    $routeProvider.when('/blog/landing/:page', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/landing/" + route.page + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    
+                    $routeProvider.when('/blog/tag/:tag', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/tag/" + route.tag + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog/tag/:tag/:page', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/tag/" + route.tag + 
+                                        '/' + route.page + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    
+                    $routeProvider.when('/blog/archive/:year', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("blog/archive/" + route.year + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog/archive/:year/:page', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("blog/archive/" + route.year +
+                                        '/' + route.page + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog/archive/:year/:month', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("blog/archive/" + route.year + '/' +
+                                        route.month + '/index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog/archive/:year/:month/:page', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("blog/archive/" + route.year + '/' +
+                                        route.month + 
+                                        '/' + route.page + '/index.html');
+                        },
+                        controller: DefaultCntl });
     
                     mapping.forEach(function(m) {
                         var route ='/' + m[0];
@@ -9380,12 +9603,12 @@ window.cookie = {
 /*jshint maxparams:7 maxcomplexity:7 maxlen:150 devel:true newcap:false*/ 
 
 function initPersona($scope, $http, editor) {
-    // var currentUser = cookie.get('persona');
-    // if (currentUser) $scope.signedIn = true;
-    console.log('running initPersona');
+    var currentUser = cookie.get('persona');
+    if (currentUser) $scope.signedIn = true;
+    console.log('running initPersona: ', currentUser);
  
     navigator.id.watch({
-        // loggedInUser: currentUser,
+        loggedInUser: currentUser,
         onlogin: function(assertion) {
             console.log('logging in..');
             // $("#sidebar--").spin({left:"140px",top:"730px"});

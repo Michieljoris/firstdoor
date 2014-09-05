@@ -80,7 +80,42 @@ myAppModule.factory('editor', function() {
     
     var regexp = /<!--partial:([^>]*)-->/;
     api.toggleEditable = function() {
+        
         editable = !editable;
+        console.log('(***************************************ok then', editable);
+        
+        var metas = document.querySelectorAll('[contenteditable] pre:first-of-type');
+        metas = Array.prototype.slice.apply(metas);
+        var teaserBreaks = document.querySelectorAll('[contenteditable] pre');
+        teaserBreaks = Array.prototype.slice.apply(teaserBreaks);
+        teaserBreaks = teaserBreaks.filter(function(teaserBreak) {
+            return teaserBreak.innerHTML.indexOf('-----') !== -1;
+        });
+        metas = metas.concat(teaserBreaks);
+        metas.forEach(function(meta) {
+            if (!editable) {
+                meta.setAttribute('style', 'display:none;');   
+            }
+            else {
+                console.log('setting display:block for editable pre');
+                meta.setAttribute('style', 'display:block;');   
+                // meta.removeAttribute('style');   
+            }
+        });
+        
+        var unpublishedWidgets = document.querySelectorAll('.widget.unpublished');
+        unpublishedWidgets = Array.prototype.slice.apply(unpublishedWidgets);
+        unpublishedWidgets.forEach(function(widget) {
+            if (!editable) {
+                widget.setAttribute('style', 'display:none;');   
+            }
+            else {
+                widget.setAttribute('style', 'display:block;');   
+                // widget.removeAttribute('style');   
+            }
+        });
+        
+        
         // console.log('editable?', editable);
         if (editable) {
             setTimeout(function() {
@@ -90,10 +125,10 @@ myAppModule.factory('editor', function() {
                                     { on:
                                       { key:
                                         function() { 
-                                                     setTimeout(function() {
-                                                         $scope.$apply();
-                                                     },100);
-                                                   }
+                                            setTimeout(function() {
+                                                $scope.$apply();
+                                            },100);
+                                        }
                                       }
                                     });
                     
@@ -116,6 +151,7 @@ myAppModule.factory('editor', function() {
                 CKEDITOR.instances[id].destroy();
             });
         }
+        
     };
     
     api.printEditable = function() {

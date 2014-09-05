@@ -2,11 +2,13 @@ rsync --verbose  --progress --stats --compress --rsh=/usr/bin/ssh --recursive --
 --exclude "*bak" \
 --exclude "*~" \
 --exclude ".git" \
+--exclude "node_modules" \
 --exclude "develop-mode" \
 --exclude "PORT" \
---exclude "node_modules" \
+~/www/sites/firstdoor/ michieljoris@linode:~/www/firstdoor.axion5.net/
 
-ever/www/sites/firstdoor/ ~/www/firstdoor-live/
+
+# --exclude "build/editable" \
 
 
 

@@ -324,18 +324,23 @@ completed by then. Please let me know if this works for you.
 ** 24/2/14  .5h replacing slideshow with static image
 
    
-   http://www.jqueryscript.net/social-media/jQuery-Plugin-For-Custom-Facebook-Like-Button-Fancylike.html
+   http://www.jqueryscript.net/social-media/jQuery-Plure gin-For-Custom-Facebook-Like-Button-Fancylike.html
    
    
    
    
    
 * doing 
- Sync to local copy, then run live version
-Sync to linode test live, test firstdoor.axion5.net 
-Sync all but blog to live on linode
-Add unpublished widget
-Hide meta on firstdoor on logged out status
-Create dialog asking for:
+- Create dialog asking for:
 publishedat, createdat, tags, title, comments, published
+- Sync all but blog to live on linode
+- Hide meta and unpublished widget in firstdoor on logged out status
+  
+- delete post  
+
+-bb-server should be set not to serve certain dir unless session is verified,
+like blog/unpublished
+-clear post and unpublished dirs!!
+
+
 

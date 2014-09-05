@@ -307,7 +307,7 @@ function capitalizeMenu(m) {
     });
 }
 capitalizeMenu(mainMenuTree);
-console.log(mainMenuTree);
+// console.log(mainMenuTree);
 /*
 The wording for the four rolling images on the home page are:
 1. Early Childhood Education and Care training
@@ -342,7 +342,12 @@ var images = {
     
 }
 
-var develop_mode = process.env.DEVELOP; 
+// var develop_mode = process.env.DEVELOP; 
+var fs = require('fs-extra');
+try {
+    var develop_mode = fs.readFileSync('develop-mode').toString();
+} catch (e) {}
+    
 console.log('develop_mode: ', develop_mode);
 // develop_mode = false;
 var exports = {

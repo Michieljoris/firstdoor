@@ -8,7 +8,8 @@ var fromTemplate = { //id: 'body'
     ,mapping: {
         // editbar: 'html/editbar.html'
         // header: 'html/header.html'
-        leftbar: 'recentWidgetWrapper'
+        // leftbar: 'recentWidgetWrapper'
+        leftbar: ['unpublishedWidgetWrapper', 'recentWidgetWrapper']
                          
         ,rightbar: ['tagWidgetWrapper',
                     'archiveWidgetWrapper']
@@ -316,6 +317,12 @@ var exports = {
             //   }
             // },
             // { id: 'title', src: 'html/title.html' },
+            { id: "unpublishedWidgetWrapper",
+              src: "html/unpublishedWidgetWrapper.html",
+              mapping: {
+                  widget: 'unpublishedWidget'
+              }
+            },
             
             { id: "archiveWidgetWrapper",
               src: "html/archiveWidgetWrapper",

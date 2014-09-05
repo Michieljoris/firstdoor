@@ -34,7 +34,7 @@ var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
                            }]
 
               )
-    .directive('fbLike', function($timeout) {
+    .directive('fbLike', ['$timeout', function($timeout) {
         return {
             restrict: 'A',
             scope: {},
@@ -91,7 +91,7 @@ var myAppModule = angular.module('myApp', ['ngView', 'ui.bootstrap'])
                 });
             }
         };
-    })
+    }])
     .value('$anchorScroll', angular.noop);
 
 myAppModule.directive('fixscrollright',

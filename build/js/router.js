@@ -27,6 +27,13 @@ angular.module('ngView', [],
                                 cachify("/blog/post/" + route.post  + '.html');
                         },
                         controller: DefaultCntl });
+                    $routeProvider.when('/blog/unpublished/:post', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/unpublished/" + route.post  + '.html');
+                        },
+                        controller: DefaultCntl });
                     
                     $routeProvider.when('/blog/landing/:page', {
                         templateUrl: function(route) {

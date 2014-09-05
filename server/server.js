@@ -13,6 +13,19 @@ var server = require('bb-server'),
     // testGet = require("./testGet")
 ;
 
+var fs = require('fs-extra');
+try {
+    var develop_mode = fs.readFileSync('develop-mode').toString();
+} catch (e) {}
+
+try {
+    var port = fs.readFileSync('PORT').toString();
+} catch (e) {}
+    
+// console.log('develop_mode: ', develop_mode);
+// var develop_mode = process.env.DEVELOP; 
+console.log('develop mode', develop_mode);
+
 var blog = require('bb-blog');
 
 blog.init({
@@ -62,6 +75,9 @@ blog.init({
             // from: [ 'fromTemplate', 'mapping', 'main'],
             // to: [ 'toTemplate', 'out' ]
         }
+        ,unpublished: {
+            path: 'blog/unpublished'
+        }
     }
     ,recipe: 'blog-recipe.js'
     // ,recipe: { editable: 'recipe.js', nojs: 'recipe.js' }
@@ -71,8 +87,6 @@ blog.init({
     ,renderMode: 'editable'
 });
  
-var develop_mode = process.env.DEVELOP; 
-console.log('develop mode', develop_mode);
 // develop_mode = false;
 //TODO: limit sending of files to certain mimetypes and/or extensions
 //TODO: option to not send mimeless files found in allowable directories.
@@ -83,7 +97,7 @@ var options = {
     root: './www'
     //if not assigned defaults to 8080. If that port's not available
     //the server will try 8081 and so on.
-    ,port: 9001
+    ,port: port || 9001
     
     // Assign true to allow listing of directories when the path in
     // the url matches a path on the server relative to the

@@ -8,7 +8,7 @@ var fromTemplate = { //id: 'body'
     ,mapping: {
         // editbar: 'html/editbar.html'
         // header: 'html/header.html'
-        leftbar: 'recentWidgetWrapper'
+        leftbar: ['unpublishedWidgetWrapper', 'recentWidgetWrapper']
                          
         ,rightbar: ['tagWidgetWrapper',
                     'archiveWidgetWrapper']
@@ -312,6 +312,12 @@ var exports = {
             //       // doc: 'markdown/doc.md'
             //   }
             // },
+            { id: "unpublishedWidgetWrapper",
+              src: "html/unpublishedWidgetWrapper",
+              mapping: {
+                  widget: 'unpublishedWidget'
+              }
+            },
             { id: "archiveWidgetWrapper",
               src: "html/archiveWidgetWrapper",
               mapping: {
