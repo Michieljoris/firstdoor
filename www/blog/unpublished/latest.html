@@ -7,36 +7,18 @@
 <!-- </div>  -->
 
 <div class="row">
-  <div id="leftbar--" class="span2"><!--partial:html/unpublishedWidgetWrapper.html--><div style="display:none" class="widget unpublished">
+  <div id="leftbar--" class="span2"><!--partial:html/unpublishedWidgetWrapper.html--><div class="widget" id="unpublishedWidget">
   <b>Unpublished</b>
-  <div  id="widget--"><ul class="css-treeview" id="archive-partial">
- <li><a  href="/blog/archive/2000" >2000</a>
-  <ul>
-   <li><a  href="/blog/archive/2000/January" >January</a>
-    <ul>
-     <li><a  href="/blog/unpublished/foobarold" >foobarold</a></li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li><a  href="/blog/archive/2014" >2014</a>
-  <ul>
-   <li><a  href="/blog/archive/2014/September" >September</a>
-    <ul>
-     <li><a  href="/blog/unpublished/latest" >latest</a></li>
-     <li><a  href="/blog/unpublished/foobarold2changedagain" >foobarold2changedagain</a></li>
-     <li><a  href="/blog/unpublished/foobarold4" >foobarold4</a></li>
-     <li><a  href="/blog/unpublished/foobarold5" >foobarold5</a></li>
-     <li><a  href="/blog/unpublished/foobarold512334" >foobarold512334</a></li>
-     <li><a  href="/blog/unpublished/hello" >hello</a></li>
-     <li><a  href="/blog/unpublished/foobar3" >foobar3</a></li>
-     <li><a  href="/blog/unpublished/foobar2" >foobar2</a></li>
-     <li><a  href="/blog/unpublished/foo4" >foo4</a></li>
-     <li><a  href="/blog/unpublished/the-title-of-the-post" >The title of the post</a></li>
-    </ul>
-   </li>
-  </ul>
- </li>
+  <div  id="widget--"><ul id="most-recent-partial">
+  <li><a href="/blog/unpublished/latest">latest</a></li>
+  <li><a href="/blog/unpublished/foobarold2changedagain">foobarold2changedagain</a></li>
+  <li><a href="/blog/unpublished/foobarold4">foobarold4</a></li>
+  <li><a href="/blog/unpublished/foobarold5">foobarold5</a></li>
+  <li><a href="/blog/unpublished/foobarold512334">foobarold512334</a></li>
+  <li><a href="/blog/unpublished/hello">hello</a></li>
+  <li><a href="/blog/unpublished/foobar2">foobar2</a></li>
+  <li><a href="/blog/unpublished/foo4">foo4</a></li>
+  <li><a href="/blog/unpublished/the-title-of-the-post">The title of the post</a></li>
 </ul></div>
 </div>
 
@@ -46,6 +28,8 @@
   <b>Recent posts</b>
   <div id="widget--"><ul id="most-recent-partial">
   <li><a href="/blog/post/mijn-post2">mijn post2</a></li>
+  <li><a href="/blog/post/foobarold">foobarold</a></li>
+  <li><a href="/blog/post/post-my-new-post-html">post/My new post.html</a></li>
 </ul></div>
 </div>
 </div>
@@ -59,21 +43,34 @@ title:latest
 comments: no
 tags: bla</pre><p><br></p>
 Write post here..</div>
+    <div  id="disqus-embed--"> </div>
+    <div  id="disqus-count--"> </div>
   </div>
   <div id="rightbar--" class="span2"><!--partial:html/tagWidgetWrapper.html--><div class="widget">
   <b>Tags</b>
   <div id="widget--"><ul id="by-tag-partial">
-
+  <li><a href="/blog/tag/one">one</a> (2)</li>
+  <li><a href="/blog/tag/two">two</a> (2)</li>
 </ul></div>
 </div>
 <!--partial:html/archiveWidgetWrapper.html--><div class="widget">
   <b>Archive</b>
   <div id="widget--"><ul class="css-treeview" id="archive-partial">
+ <li><a  href="/blog/archive/2000" >2000</a>
+  <ul>
+   <li><a  href="/blog/archive/2000/January" >January</a>
+    <ul>
+     <li><a  href="/blog/post/foobarold" >foobarold</a></li>
+    </ul>
+   </li>
+  </ul>
+ </li>
  <li><a  href="/blog/archive/2014" >2014</a>
   <ul>
    <li><a  href="/blog/archive/2014/September" >September</a>
     <ul>
      <li><a  href="/blog/post/mijn-post2" >mijn post2</a></li>
+     <li><a  href="/blog/post/post-my-new-post-html" >post/My new post.html</a></li>
     </ul>
    </li>
   </ul>

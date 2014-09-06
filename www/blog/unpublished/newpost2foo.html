@@ -1,0 +1,82 @@
+<!--partial:views/view_blog_post_partial.html--><!-- <div class="row">  -->
+<!--   <div class="span9 inline-image embed-container ratio-tabimage ">  -->
+<!--     <img class="" ng-src="{{getHeaderImage()}}"/>  -->
+<!--   </div>  -->
+
+<!--   <div id="REMOVEimage-sidebar--" class="span3"> </div>  -->
+<!-- </div>  -->
+
+<div class="row">
+  <div id="leftbar--" class="span2"><!--partial:html/unpublishedWidgetWrapper.html--><div class="widget" id="unpublishedWidget">
+  <b>Unpublished</b>
+  <div  id="widget--"><ul id="most-recent-partial">
+  <li><a href="/blog/unpublished/somepost">somepost</a></li>
+  <li><a href="/blog/unpublished/newpost2foo">newpost2foo</a></li>
+  <li><a href="/blog/unpublished/newpost">newpost</a></li>
+  <li><a href="/blog/unpublished/bla">bla</a></li>
+  <li><a href="/blog/unpublished/bla">bla</a></li>
+</ul></div>
+</div>
+
+
+
+<!--partial:html/recentWidgetWrapper.html--><div class="widget">
+  <b>Recent posts</b>
+  <div id="widget--"><ul id="most-recent-partial">
+  <li><a href="/blog/post/mijn-post2">mijn post2</a></li>
+  <li><a href="/blog/post/foobarold5">foobarold5</a></li>
+  <li><a href="/blog/post/hello">hello</a></li>
+</ul></div>
+</div>
+</div>
+  <div class="span8">
+    <div id="pageTitle--"><header >
+  <h1 class="title">  newpost2foo  </h1>
+  <time datetime="7th of September 2014">  7th of September 2014  </time>
+</header></div>
+    <div contenteditable="{{editable()}}"  id="main--"><!--partial:post/newpost2.html--><!--partial:post/newpost2.html-->
+<pre>
+published: no
+title:newpost2foo
+comments: no</pre>
+
+<p>fasdfasdfWrite post here..</p>
+</div>
+    <div  id="disqus-embed--"> </div>
+    <div  id="disqus-count--"> </div>
+  </div>
+  <div id="rightbar--" class="span2"><!--partial:html/tagWidgetWrapper.html--><div class="widget">
+  <b>Tags</b>
+  <div id="widget--"><ul id="by-tag-partial">
+  <li><a href="/blog/tag/one">one</a> (1)</li>
+  <li><a href="/blog/tag/two">two</a> (1)</li>
+</ul></div>
+</div>
+<!--partial:html/archiveWidgetWrapper.html--><div class="widget">
+  <b>Archive</b>
+  <div id="widget--"><ul class="css-treeview" id="archive-partial">
+ <li><a  href="/blog/archive/2000" >2000</a>
+  <ul>
+   <li><a  href="/blog/archive/2000/January" >January</a>
+    <ul>
+     <li><a  href="/blog/post/foobarold" >foobarold</a></li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li><a  href="/blog/archive/2014" >2014</a>
+  <ul>
+   <li><a  href="/blog/archive/2014/September" >September</a>
+    <ul>
+     <li><a  href="/blog/post/mijn-post2" >mijn post2</a></li>
+     <li><a  href="/blog/post/foobarold5" >foobarold5</a></li>
+     <li><a  href="/blog/post/hello" >hello</a></li>
+     <li><a  href="/blog/post/foobar2" >foobar2</a></li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul></div>
+</div>
+</div>
+</div>

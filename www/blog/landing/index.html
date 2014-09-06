@@ -7,36 +7,13 @@
 <!-- </div>  -->
 
 <div class="row">
-  <div id="leftbar--" class="span2"><!--partial:html/unpublishedWidgetWrapper.html--><div style="display:none" class="widget unpublished">
+  <div id="leftbar--" class="span2"><!--partial:html/unpublishedWidgetWrapper.html--><div class="widget" id="unpublishedWidget">
   <b>Unpublished</b>
-  <div  id="widget--"><ul class="css-treeview" id="archive-partial">
- <li><a  href="/blog/archive/2000" >2000</a>
-  <ul>
-   <li><a  href="/blog/archive/2000/January" >January</a>
-    <ul>
-     <li><a  href="/blog/unpublished/foobarold" >foobarold</a></li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li><a  href="/blog/archive/2014" >2014</a>
-  <ul>
-   <li><a  href="/blog/archive/2014/September" >September</a>
-    <ul>
-     <li><a  href="/blog/unpublished/latest" >latest</a></li>
-     <li><a  href="/blog/unpublished/foobarold2changedagain" >foobarold2changedagain</a></li>
-     <li><a  href="/blog/unpublished/foobarold4" >foobarold4</a></li>
-     <li><a  href="/blog/unpublished/foobarold5" >foobarold5</a></li>
-     <li><a  href="/blog/unpublished/foobarold512334" >foobarold512334</a></li>
-     <li><a  href="/blog/unpublished/hello" >hello</a></li>
-     <li><a  href="/blog/unpublished/foobar3" >foobar3</a></li>
-     <li><a  href="/blog/unpublished/foobar2" >foobar2</a></li>
-     <li><a  href="/blog/unpublished/foo4" >foo4</a></li>
-     <li><a  href="/blog/unpublished/the-title-of-the-post" >The title of the post</a></li>
-    </ul>
-   </li>
-  </ul>
- </li>
+  <div  id="widget--"><ul id="most-recent-partial">
+  <li><a href="/blog/unpublished/newtitle">newtitle</a></li>
+  <li><a href="/blog/unpublished/newpost">newpost</a></li>
+  <li><a href="/blog/unpublished/bla">bla</a></li>
+  <li><a href="/blog/unpublished/bla">bla</a></li>
 </ul></div>
 </div>
 
@@ -45,35 +22,74 @@
 <!--partial:html/recentWidgetWrapper.html--><div class="widget">
   <b>Recent posts</b>
   <div id="widget--"><ul id="most-recent-partial">
+  <li><a href="/blog/post/blog-manual">Blog Manual</a></li>
   <li><a href="/blog/post/mijn-post2">mijn post2</a></li>
+  <li><a href="/blog/post/foobarold5">foobarold5</a></li>
 </ul></div>
 </div>
 </div>
   <div class="span8">
-    <div id="pageTitle--">Latest</div>
+    <div id="pageTitle--">Latest posts</div>
     <div id="main--"><div class="box teaser">
+<h2>Blog Manual</h2>
+
+
+<p>I tried to keep the system as much as possible as what&#39;s already in place for editing the rest of the site, which means you can click on any blog post when you&#39;re logged in and you can edit them the way edit the rest of the site.</p>
+
+<p>The blog consists of blog pages and of overview pages. The overview pages list posts by tag, year/month or latest posts. On these overview pages posts are shown in abbreviated form, that is only a teaser is shown with a &#39;more&#39; link that takes you to the full posts when clicked. When viewing the full post you can edit/delete it.</p>
+
+
+<span class="more-blog"><a href="/blog/post/blog-manual">More</a></span>
+</div>
+<div class="box teaser">
 <h2>mijn post2</h2>
 
 
-<p>Write post here..</p>
+<p>Write post here..fdsfasdfdsfsd</p>
 
 <span class="more-blog"><a href="/blog/post/mijn-post2">More</a></span>
-</div></div>
+</div>
+<div class="box teaser">
+<h2>foobarold5</h2>
+
+
+<p>dasfdasdfWrite post hsdfdsere..fsdfasd</p>
+
+<span class="more-blog"><a href="/blog/post/foobarold5">More</a></span>
+</div><nav id="page-nav">
+  <span class="page-number current">  1  </span>
+  <a class="page-number" href="/blog/landing/page2">  2  </a>
+  <a class="extend next" href="/blog/landing/page2">  Next »  </a>
+</nav></div>
   </div>
   <div id="rightbar--" class="span2"><!--partial:html/tagWidgetWrapper.html--><div class="widget">
   <b>Tags</b>
   <div id="widget--"><ul id="by-tag-partial">
-
+  <li><a href="/blog/tag/one">one</a> (1)</li>
+  <li><a href="/blog/tag/two">two</a> (1)</li>
+  <li><a href="/blog/tag/manual">manual</a> (1)</li>
 </ul></div>
 </div>
 <!--partial:html/archiveWidgetWrapper.html--><div class="widget">
   <b>Archive</b>
   <div id="widget--"><ul class="css-treeview" id="archive-partial">
+ <li><a  href="/blog/archive/2000" >2000</a>
+  <ul>
+   <li><a  href="/blog/archive/2000/January" >January</a>
+    <ul>
+     <li><a  href="/blog/post/sometitle3" >sometitle3</a></li>
+    </ul>
+   </li>
+  </ul>
+ </li>
  <li><a  href="/blog/archive/2014" >2014</a>
   <ul>
    <li><a  href="/blog/archive/2014/September" >September</a>
     <ul>
+     <li><a  href="/blog/post/blog-manual" >Blog Manual</a></li>
      <li><a  href="/blog/post/mijn-post2" >mijn post2</a></li>
+     <li><a  href="/blog/post/foobarold5" >foobarold5</a></li>
+     <li><a  href="/blog/post/hello" >hello</a></li>
     </ul>
    </li>
   </ul>

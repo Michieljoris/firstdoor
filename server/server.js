@@ -28,11 +28,12 @@ console.log('develop mode', develop_mode);
 
 var blog = require('bb-blog');
 
+
 blog.init({
-    paths: { base: 'build', www: 'www' },
+    paths: { base: 'build', www: 'www', blog: 'blog' },
     writable: ['editable', 'post'],
     pagination: 3,
-    auth: false
+    auth: !develop_mode
     ,widgets: {
         recent: { max: 3, save: true } ,archive: { save: true } ,tag: { save: true, max: 3 }
     }
@@ -80,11 +81,14 @@ blog.init({
         }
     }
     ,recipe: 'blog-recipe.js'
-    // ,recipe: { editable: 'recipe.js', nojs: 'recipe.js' }
+    // ,recipe: { editable: 'recipe.js', nojs: 'recipe.js' e
     ,from: [ 'fromTemplate', 'mapping', 'main']
     ,to: [ 'fromTemplate', 'out']
     // ,to: [ 'toTemplate', 'out' ]
     ,renderMode: 'editable'
+    
+    ,enableCommentsPerPost: true
+    ,comments: true
 });
  
 // develop_mode = false;
@@ -228,16 +232,24 @@ var options = {
     
     //If method and path match the functin will be called with [req, res].
     ,postHandlers: {
-        // "/__api/save" : editor_save,
-        "/__api/save" : blog.save
-        // "/__api/blog-save" : blog.save
-        ,"/__api/new" : blog['new']
-        ,"/contactus_form" : sendMail
+        "^/?__api/save$" : blog.save
+        ,"^/?__api/new$" : blog['new']
+        ,"^/?contactus_form$" : sendMail
         // ,"/contactus_form" : testSendMail
-        }
+    }
     ,getHandlers: {
-        "/__api/remove" : blog.remove,
-        "/__api/render" : blog.render 
+        "^/?__api/remove$" : blog.remove,
+        "^/?__api/render$" : blog.render
+        ,"^/?blog/unpublished(/?.*)$" : function(req, res, fileHandler, send) {
+            req.session.get()
+                .when(function(session){
+                    console.log('session data is: ' , session);
+                    // if (!develop_mode && (!session.data || !session.data.verified))
+                    if (false && (!session.data || !session.data.verified))
+                        send.forbidden(req, res, 'blog/unpublished/*');
+                    else fileHandler(req, res);
+                });
+        }
         // "/sync": sync,
         // "/dropbox_authorize": dropbox_authorize,
         // "/dropbox_connect": dropbox_connect
@@ -253,7 +265,7 @@ var options = {
     //set to inject the reload script into index.html and the reload handler
     //added to wsHandlers with the result that the server will respond to
     //"reload" messages and send a message to connected browsers to reload
-    ,reload: develop_mode ? true : false
+    // ,reload: develop_mode ? true : false
     //host for the websocket to connect to from the client
     // ,host: 'localhost'
     

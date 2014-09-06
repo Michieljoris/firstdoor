@@ -331,16 +331,16 @@ completed by then. Please let me know if this works for you.
    
    
 * doing 
-- Create dialog asking for:
-publishedat, createdat, tags, title, comments, published
 - Sync all but blog to live on linode
-- Hide meta and unpublished widget in firstdoor on logged out status
   
-- delete post  
-
--bb-server should be set not to serve certain dir unless session is verified,
-like blog/unpublished
+- don't refresh when no meta data has changed
+-hide save/delete/render buttons on non-blog pages
 -clear post and unpublished dirs!!
 
+- style and normal button are not dropping down always??
 
 
+* Not needed:
+- Create dialog asking for:
+publishedat, createdat, tags, title, comments, published
+?
