@@ -8,28 +8,22 @@
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
         <div ng-repeat="link in page.links">
-          <li ng-class="isSelected(link.route)" >
-            <div ng-switch on="link.download">
+          <li ng-class="isSelected(link.route)">
+            <div ng-switch="" on="link.download">
               <div ng-switch-when="true">
-		<a  ng-href="{{link.route}}"
-                    target="{{link.file && '_blank' || ''}}"
-                    download>{{link.label}} </a>
+		<a ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}" download="">{{link.label}} </a>
 		<br>
 		<span>{{link.line2}}</span>
               </div>
-              <div ng-switch-default >
-		<a  ng-href="{{link.route}}"
-                    target="{{link.file && '_blank' || ''}}"
-                    >{{link.label}} </a>
+              <div ng-switch-default="">
+		<a ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}">{{link.label}} </a>
 		<br>
-		<a  ng-href="{{link.route}}"
-                    target="{{link.file && '_blank' || ''}}"
-                    >{{link.line2}} </a>
+		<a ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}">{{link.line2}} </a>
 		<br>
               </div>
             </div>
             <ul>
-              <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
+              <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
 
                 <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
               </li>
@@ -99,23 +93,22 @@
     <label class="form-label ">Name<span class="form-required">*</span></label>
     <div class="controls controls-row control-group {{namemissing}}">
 
-      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
-      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required>
     </div>
 
     <label class="form-label">Email<span class="form-required">*</span></label>
 
     <div class="control-group {{emailmissing}}">
-      <input class="span2" type="email" id="email" name="email" required/><br/>
+      <input class="span2" type="email" id="email" name="email" required><br>
     </div>
 
     <label class="form-label">Message<span class="form-required">*</span></label>
 
     <div class="control-group {{msgmissing}}">
-      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
     </div>
-    <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
-           value="Send" />
+    <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
     <div id="captchadiv"></div>
   </div>
   <div ng-show="sent" class="well">

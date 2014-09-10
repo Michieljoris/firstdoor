@@ -33,6 +33,7 @@ blog.init({
     paths: { base: 'build', www: 'www', blog: 'blog' },
     writable: ['editable', 'post'],
     pagination: 3,
+    // auth: !develop_mode
     auth: !develop_mode
     ,widgets: {
         recent: { max: 3, save: true } ,archive: { save: true } ,tag: { save: true, max: 3 }
@@ -289,7 +290,8 @@ var options = {
     ,persona: {
         authorized: ['mail@axion5.net', 'andrea@firstdoor.com.au']
         ,verbose: true 
-        ,audience: develop_mode ? "firstdoor.local" : "www.firstdoor.com.au" 
+        ,audience: develop_mode ? "firstdoor.local" : "firstdoor.com.au" 
+        // ,audience: true ? "firstdoor.local" : "firstdoor.com.au" 
     } 
     
     //server api path:

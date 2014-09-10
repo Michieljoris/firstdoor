@@ -8,12 +8,7 @@
     padding-left:20px;
 }
 
-#unpublishedWidget {
-    display: none;
-}
-
-[contenteditable] pre {
-    
+#unpublishedWidget, [contenteditable] pre {
     display:none;
 }
 

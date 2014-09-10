@@ -21,7 +21,6 @@ angular.module('ngView', [],
 ,["contactus", cachify("/built/view-contactus.html"), contactusCntl]
 ,["enrol", cachify("/built/view-enroll.html")]
 ,["apprenticeship", cachify("/built/view-apprenticeship.html")]
-,["blog", cachify("/blog/landing/index.html")]
 ,["sitemap", cachify("/sitemap.html")]
 
                             // ['home', '/built/view-home.html', HomeCntl],
@@ -46,6 +45,21 @@ angular.module('ngView', [],
                             console.log('----------------------', arguments);
                             return '//' + document.location.host + '/' +
                                 cachify("/blog/unpublished/" + route.post  + '.html');
+                        },
+                        controller: DefaultCntl });
+                    
+                    $routeProvider.when('/blog/landing', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/landing/" + 'index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/landing/" + 'index.html');
                         },
                         controller: DefaultCntl });
                     

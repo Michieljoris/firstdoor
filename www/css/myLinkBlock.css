@@ -6841,6 +6841,20 @@ list-style: none;
 
 ;
 //*main.css*//
+#pageTitle-- {
+    font-size:35px;
+    padding-bottom:20px;
+    padding-top:10px;
+}
+
+#leftbar-- .widget {
+    padding-left:20px;
+}
+
+#unpublishedWidget, [contenteditable] pre {
+    display:none;
+}
+
 /* @font-face { */
 /*   font-family: 'Droid Serif'; */
 /*   src: url('../font/DroidSerif-Regular.ttf') format('truetype'); */
@@ -8232,6 +8246,7 @@ ul {
     -webkit-box-shadow: 1px 2px 3px #ddd;
     box-shadow: 1px 2px 3px #ddd;
     background: #fff;
+    padding-left:5px;
 }
 
 #pageTitle-- time {
@@ -8283,6 +8298,7 @@ ul {
 #page-nav a, #page-nav span {
     padding: 10px 20px;
 }
+
 
 
 ;

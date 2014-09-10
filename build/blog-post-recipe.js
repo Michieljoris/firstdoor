@@ -1,4 +1,8 @@
-var develop_mode = process.env.DEVELOP; 
+var fs = require('fs-extra');
+try {
+    var develop_mode = fs.readFileSync('develop-mode').toString();
+} catch (e) {}
+
 // module.exports = {
 
 var fromTemplate = { //id: 'body'
@@ -124,24 +128,24 @@ var exports = {
       by a prefix. Only risk is to loose the manifest.
     */ 
     // ,cachify: !develop_mode 
-    // ,cachify: true
+    ,cachify: false
     //hash or mtime, query or modified filename
     
-    ,cachify : develop_mode ? false : {
-        // ,cachify : {
-        exclude: ['doc', 'docx'] //for instance ['pdf', 'doc']
-        ,method: 'sha1' //mtime or any of the hashes returned from crypto.getHashes()
-        // (var crypto = require('crypto');
-        // var hashes = crypto.getHashes(); )
-        ,length: 10 //ignored and set to 13 when method === mtime
-        ,prefix: '__' //for instance 'stamp-'
-        //make sure to add a 'cachify' id in the head, or before any javascript
-        //that might want to use the cachify function:
-        ,list: [
-            'images/slides/tab_about_us.jpg',
-            'documents/Diploma_Early_Childhood_Course_Guide.pdf'
-        ]
-    } 
+    // ,cachify : develop_mode ? false : {
+    //     // ,cachify : {
+    //     exclude: ['doc', 'docx'] //for instance ['pdf', 'doc']
+    //     ,method: 'sha1' //mtime or any of the hashes returned from crypto.getHashes()
+    //     // (var crypto = require('crypto');
+    //     // var hashes = crypto.getHashes(); )
+    //     ,length: 10 //ignored and set to 13 when method === mtime
+    //     ,prefix: '__' //for instance 'stamp-'
+    //     //make sure to add a 'cachify' id in the head, or before any javascript
+    //     //that might want to use the cachify function:
+    //     ,list: [
+    //         'images/slides/tab_about_us.jpg',
+    //         'documents/Diploma_Early_Childhood_Course_Guide.pdf'
+    //     ]
+    // } 
     //group the script and link blocks and concatenate all files listed in a block
     ,concatenate: !develop_mode 
     //make sure to load the resources for custom components, the files get added

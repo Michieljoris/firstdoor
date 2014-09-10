@@ -2,15 +2,20 @@ function getCSSRule(ruleName, deleteFlag) {               // Return requested st
     ruleName=ruleName.toLowerCase();                       // Convert test string to lower case.
     if (document.styleSheets) {                            // If browser can play with stylesheets
         for (var i=0; i<document.styleSheets.length; i++) { // For each stylesheet
-                var styleSheet=document.styleSheets[i];          // Get the current Stylesheet
+            var styleSheet=document.styleSheets[i];          // Get the current Stylesheet
             var ii=0;                                        // Initialize subCounter.
             var cssRule=false;                               // Initialize cssRule.
+            // console.log(styleSheet);
             do {                                             // For each rule in stylesheet
+                // try {
+                cssRule=false;                               // Initialize cssRule.
                 if (styleSheet.cssRules) {                    // Browser uses cssRules?
                     cssRule = styleSheet.cssRules[ii];         // Yes --Mozilla Style
-                } else {                                      // Browser usses rules?
+                } if (styleSheet.rules)  {                                      // Browser usses rules?
                     cssRule = styleSheet.rules[ii];            // Yes IE style.
                 }                                             // End IE check.
+                    
+                // } catch(e) { console.log('my error', e); }
                 if (cssRule)  {                               // If we found a rule...
                     // console.log(cssRule.selectorText);
                     if (cssRule.selectorText &&
@@ -142,10 +147,13 @@ myAppModule.factory('editor', function() {
         editable = !editable;
         console.log('(***************************************ok then', editable);
         // var meta = getCSSRule('[contenteditable] pre:first-of-type');
-        var meta = getCSSRule('[contenteditable] pre');
-        meta.style.display = editable ? "block" : "none";
-        var unpublishedWidget = getCSSRule('#unpublishedWidget');
-        unpublishedWidget.style.display = editable ? "block" : "none";
+        // var meta = getCSSRule('[contenteditable] pre');
+        // if (!meta) meta = getCSSRule('#unpublishedWidget, [contenteditable] pre');
+        // meta.style.display = editable ? "block" : "none";
+        // var unpublishedWidget = getCSSRule('#unpublishedWidget');
+        // if (unpublishedWidget) unpublishedWidget.style.display = editable ? "block" : "none";
+        var rule = getCSSRule('#unpublishedWidget, [contenteditable] pre');
+        if (rule) rule.style.display = editable ? "block" : "none";
 
         // var metas = document.querySelectorAll('[contenteditable] pre:first-of-type');
         // metas = Array.prototype.slice.apply(metas);

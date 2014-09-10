@@ -1,17 +1,16 @@
 <!--partial:views/view_courses_partial.html--><div class="row">
   <div class="span9 inline-image embed-container ratio-tabimage ">
-    <img class="" ng-src="{{getHeaderImage()}}"/>
+    <img class="" ng-src="{{getHeaderImage()}}">
   </div>
 
   <div id="image-sidebar--" class="span3"><!--partial:html/image-sidebar.html--><div style="padding-left:10px">
-  <div fb-like="http://www.facebook.com/firstdoortraining" fb-width="300"
-       fb-height="330" fb-header="true" fb-stream="true" fb-faces="false">
+  <div fb-like="http://www.facebook.com/firstdoortraining" fb-width="300" fb-height="330" fb-header="true" fb-stream="true" fb-faces="false">
     Loading facebook feed..
 </div>
 </div>
 </div>
 </div>
-<div id="editbar--", class="row">
+<div id="editbar--" ,="" class="row">
 </div>
 <div class="row">
   <div id="sidebar--" class="span3"><!--partial:html/sidebar.html--><fixscroll data-ng-transclude="">
@@ -23,28 +22,22 @@
       <div class="heading" ng-bind-html-unsafe="page.heading"></div>
       <ul>
         <div ng-repeat="link in page.links">
-          <li ng-class="isSelected(link.route)" >
-            <div ng-switch on="link.download">
+          <li ng-class="isSelected(link.route)">
+            <div ng-switch="" on="link.download">
               <div ng-switch-when="true">
-		<a  ng-href="{{link.route}}"
-                    target="{{link.file && '_blank' || ''}}"
-                    download>{{link.label}} </a>
+		<a ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}" download="">{{link.label}} </a>
 		<br>
 		<span>{{link.line2}}</span>
               </div>
-              <div ng-switch-default >
-		<a  ng-href="{{link.route}}"
-                    target="{{link.file && '_blank' || ''}}"
-                    >{{link.label}} </a>
+              <div ng-switch-default="">
+		<a ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}">{{link.label}} </a>
 		<br>
-		<a  ng-href="{{link.route}}"
-                    target="{{link.file && '_blank' || ''}}"
-                    >{{link.line2}} </a>
+		<a ng-href="{{link.route}}" target="{{link.file &amp;&amp; '_blank' || ''}}">{{link.line2}} </a>
 		<br>
               </div>
             </div>
             <ul>
-              <li ng-class="isSelected(sublink.route)"ng-repeat="sublink in link.sub">
+              <li ng-class="isSelected(sublink.route)" ng-repeat="sublink in link.sub">
 
                 <a ng-href="/{{sublink.route}}">{{sublink.label}}</a>
               </li>
@@ -58,15 +51,15 @@
 
 </fixscroll>
 </div>
-  <div id="contents--" class="span7"><!--partial:html/courses_stitch.html--><div scroll id="intro"></div>
-<div ng-show="isShow('intro')" >
+  <div id="contents--" class="span7"><!--partial:html/courses_stitch.html--><div scroll="" id="intro"></div>
+<div ng-show="isShow('intro')">
   <div contenteditable="{{editable()}}" id="intro--"><!--partial:editable/courses/intro.html--><h2>Nationally Recognised Training</h2>
-<p>First Door is registered with the <a href="http://www.asqa.gov.au/">Australian Skills Quality Authority</a> as a Registered Training Organisation (RTO) to provide competency based and Nationally Recognised Training.&nbsp;<br /><br />We are currently enrolling students to commence training in the new <strong><em>CHC50113 <a href="courses/children_ecec">Diploma of Early Childhood Education and Care</a>. </em></strong>&nbsp;During the enrolment process each student will commence either a Structured or Flexi learning plan to best support their success. <br /><br />The Diploma of Early Childhood Education and Care superseded the Diploma of Children's Services in July 2013 to ensure relevance to the <a href="http://acecqa.gov.au/national-quality-framework">National Quality Framework</a> that was introduced throughout Australian Early Childhood licensed centres in 2012. Full information relating to this new Diploma is able to be viewed at <a href="http://www.myskills.gov.au/QualificationSearch/QualificationSearchResults/QualificationDetail/UnitsofCompetency.aspx?type=course&amp;keys=CHC50113">My Skills</a> website.</p>
+<p>First Door is registered with the <a href="http://www.asqa.gov.au/">Australian Skills Quality Authority</a> as a Registered Training Organisation (RTO) to provide competency based and Nationally Recognised Training.&nbsp;<br><br>We are currently enrolling students to commence training in the new <strong><em>CHC50113 <a href="courses/children_ecec">Diploma of Early Childhood Education and Care</a>. </em></strong>&nbsp;During the enrolment process each student will commence either a Structured or Flexi learning plan to best support their success. <br><br>The Diploma of Early Childhood Education and Care superseded the Diploma of Children's Services in July 2013 to ensure relevance to the <a href="http://acecqa.gov.au/national-quality-framework">National Quality Framework</a> that was introduced throughout Australian Early Childhood licensed centres in 2012. Full information relating to this new Diploma is able to be viewed at <a href="http://www.myskills.gov.au/QualificationSearch/QualificationSearchResults/QualificationDetail/UnitsofCompetency.aspx?type=course&amp;keys=CHC50113">My Skills</a> website.</p>
 <p>&nbsp;</p>
-<h4><strong>Have you already completed an Early Childhood qualification? </strong><br /><strong>Continue developing your professional skills and update your knowledge with First Door&nbsp;</strong></h4>
+<h4><strong>Have you already completed an Early Childhood qualification? </strong><br><strong>Continue developing your professional skills and update your knowledge with First Door&nbsp;</strong></h4>
 <h2>Enrol in a competency based workshop for your professional development</h2>
 <p>Become inspired, and develop your capability by enrolling in one or more of our interactive, competency based workshops.</p>
-<p>Workshops engage educators and leaders in active learning, based on the knowledge and skills required in each unit. Each workshop relates to the Early Childhood National Quality Framework and introduces strategies relevant to your workplace. Morning tea is supplied and all participants receive a certificate of attendance.&nbsp;<br /><br /></p>
+<p>Workshops engage educators and leaders in active learning, based on the knowledge and skills required in each unit. Each workshop relates to the Early Childhood National Quality Framework and introduces strategies relevant to your workplace. Morning tea is supplied and all participants receive a certificate of attendance.&nbsp;<br><br></p>
 <h3><strong>Competency based workshop timetable&nbsp;</strong></h3>
 <p>Workshops are held on the first and third Monday of each month, from 8.30am to 1.30pm.</p>
 <p>Our workshop venue is located at:&nbsp;<em><a href="http://www.ko-work.com.au/contact/">Ko-work</a>,&nbsp;</em>6<em>&nbsp;</em>Endeavour Blvd, North Lakes, Q 4509.</p>
@@ -75,17 +68,17 @@
 <p><strong>May 19:</strong>&nbsp;Establish and implement plans for <a href="https://db.tt/Eu7PgZKL">developing cooperative behaviour</a></p>
 <p><strong>June 2:</strong> Ensure the health and safety of children</p>
 <p><strong>June 16:</strong>&nbsp;<strong>Plan and monitor continuous improvement</strong>&nbsp;&nbsp;(unit from&nbsp;<a href="courses/diploma_management">Diploma of Management</a>)</p>
-<p><strong>July 7:</strong>&nbsp;Promote and provide healthy food and drinks<strong><br /></strong></p>
+<p><strong>July 7:</strong>&nbsp;Promote and provide healthy food and drinks<strong><br></strong></p>
 <p><strong>July 21:</strong>&nbsp;&nbsp;<strong>Develop a workplace learning environment</strong>&nbsp;(unit from&nbsp;<a href="courses/diploma_management">Diploma of Management</a>)</p>
 <p><strong>August 4:</strong>&nbsp;Provide care for babies and toddlers</p>
 <p><strong>August 18:</strong>&nbsp;<strong>Mentor in the workplace</strong> -&nbsp;(unit from&nbsp;<a href="courses/diploma_management">Diploma of Management</a>&nbsp;and&nbsp;<a href="courses/certivtraining">Certificate IV in Training and Assessment</a>)</p>
 <p><strong>September 1:</strong> Provide care for children</p>
 <p><strong>Please note:</strong> this timetable is subject to change as it is based on demand. A minimum of five participants are required, and enrolled Diploma students take place priority. Tea and coffee is available from 8.15am for participants to settle in for an 8.30am start.&nbsp;</p>
-<p><strong><br />Bookings and fees for a competency based workshop</strong></p>
+<p><strong><br>Bookings and fees for a competency based workshop</strong></p>
 <p>Bookings are required by emailing <a href="mailto:admin@firstdoor.com.au">admin@firstdoor.com.au</a>&nbsp;or phoning 3103 2336. Payment is to be made prior to the workshop to confirm your place, as places are limited. Your workshop investment is $75 per person, or $55 per person for bookings of two or more people.</p>
 <p>&nbsp;</p>
 <h2>Take on a unit of competency&nbsp;&nbsp;</h2>
-<p>You can attend a workshop and then choose to complete an assessment workbook to complete a unit of competency. On successful completion students receive a Statement of Attainment of a Nationally Recognised unit of competency. A First Door enrolment form is to be completed to undertake one or more units of competency.<br /><br /><strong>Enrolment and fees for a unit of competency</strong><br /><a href="enrol">Download an enrolment form</a> here, or request by email or phone. Your first unit fee is $235 to include a one-off $40 enrolment fee. Second and further units are charged at $195 each. The investment for each unit of competency includes:</p>
+<p>You can attend a workshop and then choose to complete an assessment workbook to complete a unit of competency. On successful completion students receive a Statement of Attainment of a Nationally Recognised unit of competency. A First Door enrolment form is to be completed to undertake one or more units of competency.<br><br><strong>Enrolment and fees for a unit of competency</strong><br><a href="enrol">Download an enrolment form</a> here, or request by email or phone. Your first unit fee is $235 to include a one-off $40 enrolment fee. Second and further units are charged at $195 each. The investment for each unit of competency includes:</p>
 <ul>
 <li>the workshop fee</li>
 <li>a printed theory book</li>
@@ -96,18 +89,18 @@
 <p>Further&nbsp;options of study are available to extend leadership and management capability by completing units provided from:</p>
 <ul>
 <li><strong>TAE40110 <a href="courses/certivtraining">Certificate IV in Training and Assessment</a></strong></li>
-<li><strong>BSB51107 </strong><strong><a href="courses/diploma_management">Diploma of Management</a></strong><em><strong><br /><br /></strong></em></li>
+<li><strong>BSB51107 </strong><strong><a href="courses/diploma_management">Diploma of Management</a></strong><em><strong><br><br></strong></em></li>
 </ul>
 <h3><strong>Invest in your professional growth and opportunity, and <a href="enrol">enrol now</a>.</strong></h3>
 </div>
 </div>
 
-<div scroll id="children_ecec"></div>
-<div ng-show="isShow('children_ecec')" >
-  <div contenteditable="{{editable()}}" id="childrenservices--"><!--partial:editable/courses/CHC50908_childrens_services.html--><h2>CHC50113 Diploma of Early Childhood Education <br />and Care</h2>
+<div scroll="" id="children_ecec"></div>
+<div ng-show="isShow('children_ecec')">
+  <div contenteditable="{{editable()}}" id="childrenservices--"><!--partial:editable/courses/CHC50908_childrens_services.html--><h2>CHC50113 Diploma of Early Childhood Education <br>and Care</h2>
 <p>The Diploma of Early Childhood Education and Care is Australia&rsquo;s fully revised, nationally recognised and accredited qualification for educators and leaders working in Early Childhood and Outside School Hours Education and Care services. The Diploma of Early Childhood Education and Care, CHC50113 was released in July 2013 and has superseded the Diploma of Children&rsquo;s Services.&nbsp;</p>
 <p>The content of new course units and performance criteria reflects the skills and knowledge required within the Early Childhood sector to meet National regulations and the National Quality Framework, implemented in 2012. Certificate lll in Children's Services is no longer a requirement to enrol in the new Diploma of Early Childhood Education and Care course.</p>
-<p>For full course information download a pdf copy of our <a href="https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf" target="_blank">Course Guide</a>.<br /><br /></p>
+<p>For full course information download a pdf copy of our <a href="https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf" target="_blank">Course Guide</a>.<br><br></p>
 <h3><strong>2014 Scholarship opportunity</strong></h3>
 <p>We are happy to have awarded our first two scholarship placements in February.</p>
 <p>First Door is offering up to ten scholarship places during 2014<strong>&nbsp;</strong>for students undertaking the new&nbsp;<em>CHC50113 Diploma of Early Childhood Education and Care (ECEC).&nbsp;</em>Please note that scholarship applicants are NOT required to be certificate lll qualified, however applicants must be employed in a licensed Early Childhood centre, demonstrate motivation and commitment to their role according to the NQF and show potential as leaders in Early Childhood.</p>
@@ -119,7 +112,7 @@
 <li>Lead or Senior Educator in an Early Childhood Centre</li>
 <li>Educational Leader in an Early Childhood Centre or OSHC service</li>
 <li>Early Childhood Centre Director/Manager</li>
-<li>Outside School Hours Care Coordinator<br /><br /></li>
+<li>Outside School Hours Care Coordinator<br><br></li>
 </ul>
 <h3>What will you learn?</h3>
 <p>The Early Childhood National Quality Framework (NQF) is at the heart of our course content, and therefore student&rsquo;s learning encompasses the NQF.</p>
@@ -130,7 +123,7 @@
 <li>be empowered to work effectively and positively with children, families and colleagues in an Early Childhood Education and Care setting.</li>
 <li>be equipped to follow legislation, service policies and meet the National Quality Standards.</li>
 <li>establish an understanding of inclusive practices including diversity and cultural competence.&nbsp;</li>
-<li>inspire you towards continuous improvement and the ability to deliver quality and professional practice.<br /><br /></li>
+<li>inspire you towards continuous improvement and the ability to deliver quality and professional practice.<br><br></li>
 </ul>
 <h3>Entry requirements</h3>
 <p><strong>To enrol in this course, you will need to:</strong></p>
@@ -158,12 +151,12 @@
 </ul>
 <h3>Practical experience: four days in four centres</h3>
 <p>During the close of each part of the course, First Door arranges for each student to experience a day at another Early Childhood centre that is able to showcase operation relevant to the part of the course. By course completion, each student will have experienced four days in four different Early Childhood Centres.</p>
-<p><br /><img src="/images/course_structure_children_services.jpg" alt="" /><br /><br /></p>
+<p><br><img src="/images/course_structure_children_services.jpg" alt=""><br><br></p>
 </div>
 </div>
 
-<div scroll id="diploma_management"></div>
-<div ng-show="isShow('diploma_management')" >
+<div scroll="" id="diploma_management"></div>
+<div ng-show="isShow('diploma_management')">
   <div contenteditable="{{editable()}}" id="diploma_management--"><!--partial:editable/courses/BSB51107_management.html--><h2>BSB51107 Diploma of Management</h2>
 <p>The Diploma of Management qualification will benefit the role of individuals who aspire to lead and develop people, review processes and add value to their organisation. Completing the units offered from the Diploma of Management will develop knowledge, skills and capability in those that work in senior or management roles in the Early Childhood sector. These units of study are also suitable for those that are experienced in their job role and are preparing their career for management roles.</p>
 <p>&nbsp;</p>
@@ -174,7 +167,7 @@
 <li>be equipped with skills to effectively recruit, select and induct staff.</li>
 <li>gain skills and knowledge to develop your workplace into a learning environment.</li>
 <li>be inspired to plan and monitor continuous improvement.</li>
-<li>gain competence in mentoring, leading and developing teams and individuals. &nbsp;<br /><br /></li>
+<li>gain competence in mentoring, leading and developing teams and individuals. &nbsp;<br><br></li>
 </ul>
 <h3>Entry requirements</h3>
 <p><strong>To enrol in these units, you will need to:</strong>.</p>
@@ -188,7 +181,7 @@
 <li>a computer (PC or Mac) with Internet access</li>
 <li>a printer and scanner</li>
 <li>Adobe Flash Player 7 and Adobe Acrobat Reader</li>
-<li>Microsoft Word 97 or later (for PC)<br /><br /></li>
+<li>Microsoft Word 97 or later (for PC)<br><br></li>
 </ul>
 <h2>Course curriculum</h2>
 <p>The&nbsp;Diploma of Management is comprised of eight units and First Door currently offers five units relevant to the National Quality Framework.</p>
@@ -220,11 +213,11 @@
 <p>&nbsp;</p></div>
 </div>
 
-<div scroll id="certivtraining"></div>
-<div ng-show="isShow('certivtraining')" >
+<div scroll="" id="certivtraining"></div>
+<div ng-show="isShow('certivtraining')">
   <div contenteditable="{{editable()}}" id="certivtraining--"><!--partial:editable/courses/certiv.html--><h2>TAE40110 Certificate IV in Training and Assessment</h2>
 <p>The Certificate IV in Training and Assessment qualification reflects the skill set suitable for creating a learning organisation. Completing the First Door elected units from a Certificate IV in Training and Assessment will assist those working in the Early Childhood sector who are Directors, Coordinators, Lead Educators or Educational Leaders.</p>
-<p>Typically, those undertaking these units with First Door are working in Early Childhood and want to increase their skills in management and educational leadership. However, the skills and knowledge related to these selected units are relevant for all leaders.<br /><br /></p>
+<p>Typically, those undertaking these units with First Door are working in Early Childhood and want to increase their skills in management and educational leadership. However, the skills and knowledge related to these selected units are relevant for all leaders.<br><br></p>
 <h3>What will you learn?</h3>
 <p><strong>Students studying the three </strong><strong>Certificate IV in Training and Assessment un</strong><strong>its with First Door will:</strong></p>
 <ul>
@@ -233,7 +226,7 @@
 <li>be enabled to role-model for inclusiveness.</li>
 <li>demonstrate professionalism in leadership.</li>
 <li>manage work relationships effectively.</li>
-<li>seek feedback from and provide feedback to colleagues and clients.<br /><br /></li>
+<li>seek feedback from and provide feedback to colleagues and clients.<br><br></li>
 </ul>
 <h3>Entry requirements</h3>
 <p><strong>To enrol in these unis, you will need to have:</strong></p>
@@ -247,7 +240,7 @@
 <li>a computer (PC or Mac) with Internet access</li>
 <li>a printer and scanner</li>
 <li>Adobe Flash Player 7 and Adobe Acrobat Reader</li>
-<li>Microsoft Word 97 or later (for PC)<br /><br /></li>
+<li>Microsoft Word 97 or later (for PC)<br><br></li>
 </ul>
 <h2>Course curriculum</h2>
 <p>The&nbsp;Certificate IV in Training and Assessment is comprised of seven core units and three elective units. First Door currently offers three electives relevant to the National Quality Framework.</p>
@@ -265,24 +258,24 @@
 </li>
 </ul>
 <div id="mcePasteBin" style="position: absolute; top: 0px; left: 0; background: red; width: 1px; height: 1px; overflow: hidden;" contenteditable="false">
-<div contenteditable="true"><br />The Certificate IV in Training and Assessment qualification reflects the skill set suitable for creating a learning organisation. Completing the First Door elected units from a Certificate IV in Training and Assessment will assist those working in the Early Childhood sector who are Directors, Coordinators, Lead Educators or Educational Leaders. <br /><br />Typically, those undertaking these units with First Door are working in Early Childhood and want to increase their skills in management and educational leadership. For full course information download a pdf copy of our Course Guide.<br /><br />What will you learn?<br /><br />The Early Childhood National Quality Framework (NQF) is at the heart of our course content, and therefore student&rsquo;s learning encompasses the NQF. <br /><br />Students studying the Certificate IV in Training and Assessment with First Door will: <br /><br />be equipped to follow legislation, service policies and meet the National Quality Standards.<br />assist you in developing your workplace into a learning environment.<br />assist you in promoting a culture of learning in the workplace.<br />enable you to role-model for inclusiveness and demonstrate professionalism.<br />manage work relationships and seek feedback from colleagues and clients.<br />Entry requirements<br /><br />To enrol in this course, you will need to:<br /><br />be currently employed in the registered Early Childhood centre. <br />have a sound understanding of the written and spoken English language.<br />have vocational experience. <br /><br />Students need to have access to:<br />a computer (PC or Mac) with Internet and print<br />Adobe Flash Player 7 and Adobe Acrobat Reader <br />Microsoft Word 97 or later (for PC)<br /><br />Course curriculum <br /><br />The&nbsp;Certificate IV in Training and Assessment is comprised of seven core units and three elective units. First Door currently offers three electives relevant to the National Quality Framework. <br /><br />Course structure<br /><br />At First Door, the three units which form part of the Certificate IV of Training and Assessment&nbsp;course are as follows: <br /><br />TAEDEL301A &nbsp;&nbsp; &nbsp;Provide work skill instruction<br />TAEDEL404A &nbsp;&nbsp; &nbsp;Mentor in the workplace<br />BSBLED401A &nbsp;&nbsp; &nbsp;Develop teams and individuals<br /><br /></div>
+<div contenteditable="true"><br>The Certificate IV in Training and Assessment qualification reflects the skill set suitable for creating a learning organisation. Completing the First Door elected units from a Certificate IV in Training and Assessment will assist those working in the Early Childhood sector who are Directors, Coordinators, Lead Educators or Educational Leaders. <br><br>Typically, those undertaking these units with First Door are working in Early Childhood and want to increase their skills in management and educational leadership. For full course information download a pdf copy of our Course Guide.<br><br>What will you learn?<br><br>The Early Childhood National Quality Framework (NQF) is at the heart of our course content, and therefore student&rsquo;s learning encompasses the NQF. <br><br>Students studying the Certificate IV in Training and Assessment with First Door will: <br><br>be equipped to follow legislation, service policies and meet the National Quality Standards.<br>assist you in developing your workplace into a learning environment.<br>assist you in promoting a culture of learning in the workplace.<br>enable you to role-model for inclusiveness and demonstrate professionalism.<br>manage work relationships and seek feedback from colleagues and clients.<br>Entry requirements<br><br>To enrol in this course, you will need to:<br><br>be currently employed in the registered Early Childhood centre. <br>have a sound understanding of the written and spoken English language.<br>have vocational experience. <br><br>Students need to have access to:<br>a computer (PC or Mac) with Internet and print<br>Adobe Flash Player 7 and Adobe Acrobat Reader <br>Microsoft Word 97 or later (for PC)<br><br>Course curriculum <br><br>The&nbsp;Certificate IV in Training and Assessment is comprised of seven core units and three elective units. First Door currently offers three electives relevant to the National Quality Framework. <br><br>Course structure<br><br>At First Door, the three units which form part of the Certificate IV of Training and Assessment&nbsp;course are as follows: <br><br>TAEDEL301A &nbsp;&nbsp; &nbsp;Provide work skill instruction<br>TAEDEL404A &nbsp;&nbsp; &nbsp;Mentor in the workplace<br>BSBLED401A &nbsp;&nbsp; &nbsp;Develop teams and individuals<br><br></div>
 </div>
 <div id="mcePasteBin" style="position: absolute; top: 0px; left: 0; background: red; width: 1px; height: 1px; overflow: hidden;" contenteditable="false">
-<div contenteditable="true">Certificate IV in Training and Assessment <br /><br />The Certificate IV in Training and Assessment qualification reflects the skill set suitable for creating a learning organisation. Completing the First Door elected units from a Certificate IV in Training and Assessment will assist those working in the Early Childhood sector who are Directors, Coordinators, Lead Educators or Educational Leaders. <br /><br />Typically, those undertaking these units with First Door are working in Early Childhood and want to increase their skills in management and educational leadership. For full course information download a pdf copy of our Course Guide.<br /><br />What will you learn?<br /><br />The Early Childhood National Quality Framework (NQF) is at the heart of our course content, and therefore student&rsquo;s learning encompasses the NQF. <br /><br />Students studying the Certificate IV in Training and Assessment with First Door will: <br /><br />be equipped to follow legislation, service policies and meet the National Quality Standards.<br />assist you in developing your workplace into a learning environment.<br />assist you in promoting a culture of learning in the workplace.<br />enable you to role-model for inclusiveness and demonstrate professionalism.<br />manage work relationships and seek feedback from colleagues and clients.<br />Entry requirements<br /><br />To enrol in this course, you will need to:<br /><br />be currently employed in the registered Early Childhood centre. <br />have a sound understanding of the written and spoken English language.<br />have vocational experience. <br /><br />Students need to have access to:<br />a computer (PC or Mac) with Internet and print<br />Adobe Flash Player 7 and Adobe Acrobat Reader <br />Microsoft Word 97 or later (for PC)<br /><br />Course curriculum <br /><br />The&nbsp;Certificate IV in Training and Assessment is comprised of seven core units and three elective units. First Door currently offers three electives relevant to the National Quality Framework. <br /><br />Course structure<br /><br />At First Door, the three units which form part of the Certificate IV of Training and Assessment&nbsp;course are as follows: <br /><br />TAEDEL301A &nbsp;&nbsp; &nbsp;Provide work skill instruction<br />TAEDEL404A &nbsp;&nbsp; &nbsp;Mentor in the workplace<br />BSBLED401A &nbsp;&nbsp; &nbsp;Develop teams and individuals<br /><br /></div>
+<div contenteditable="true">Certificate IV in Training and Assessment <br><br>The Certificate IV in Training and Assessment qualification reflects the skill set suitable for creating a learning organisation. Completing the First Door elected units from a Certificate IV in Training and Assessment will assist those working in the Early Childhood sector who are Directors, Coordinators, Lead Educators or Educational Leaders. <br><br>Typically, those undertaking these units with First Door are working in Early Childhood and want to increase their skills in management and educational leadership. For full course information download a pdf copy of our Course Guide.<br><br>What will you learn?<br><br>The Early Childhood National Quality Framework (NQF) is at the heart of our course content, and therefore student&rsquo;s learning encompasses the NQF. <br><br>Students studying the Certificate IV in Training and Assessment with First Door will: <br><br>be equipped to follow legislation, service policies and meet the National Quality Standards.<br>assist you in developing your workplace into a learning environment.<br>assist you in promoting a culture of learning in the workplace.<br>enable you to role-model for inclusiveness and demonstrate professionalism.<br>manage work relationships and seek feedback from colleagues and clients.<br>Entry requirements<br><br>To enrol in this course, you will need to:<br><br>be currently employed in the registered Early Childhood centre. <br>have a sound understanding of the written and spoken English language.<br>have vocational experience. <br><br>Students need to have access to:<br>a computer (PC or Mac) with Internet and print<br>Adobe Flash Player 7 and Adobe Acrobat Reader <br>Microsoft Word 97 or later (for PC)<br><br>Course curriculum <br><br>The&nbsp;Certificate IV in Training and Assessment is comprised of seven core units and three elective units. First Door currently offers three electives relevant to the National Quality Framework. <br><br>Course structure<br><br>At First Door, the three units which form part of the Certificate IV of Training and Assessment&nbsp;course are as follows: <br><br>TAEDEL301A &nbsp;&nbsp; &nbsp;Provide work skill instruction<br>TAEDEL404A &nbsp;&nbsp; &nbsp;Mentor in the workplace<br>BSBLED401A &nbsp;&nbsp; &nbsp;Develop teams and individuals<br><br></div>
 </div></div>
 </div>
 
-<div scroll id="priorlearning"></div>
-<div ng-show="isShow('priorlearning')" >
+<div scroll="" id="priorlearning"></div>
+<div ng-show="isShow('priorlearning')">
   <div contenteditable="{{editable()}}" id="priorlearning--"><!--partial:editable/courses/priorlearning.html--><h2>Recognition of Prior Learning</h2>
 <p>Recognition of Prior Learning (RPL) is a process where a student may be granted credit towards a qualification in recognition of skills and knowledge gained through formal or informal training, work and/or life experience. RPL is offered to any student who can provide evidence of competency for the units offered within the Diploma of Early Childhood Education and Care qualification.</p>
 <p>During the enrolment process a potential Learner may complete a checklist and discuss any prior evidence before commencing training to determine if they are eligible for RPL. To receive a RPL for a unit requires thorough assessment processes. To display RPL competency, students may need to: collect and provide evidence, complete a workbook and/or be observed in the workplace.</p>
 <p>For additional information relating to RPL for this course, please contact:</p>
-<p style="padding-left: 30px;">First Door RPL Coordinator<br />email: <a href="mailto:admin@firstdoor.com.au">admin@firstdoor.com.au<br /></a><span style="color: #000000;">ph</span>one: 3103 2336</p></div>
+<p style="padding-left: 30px;">First Door RPL Coordinator<br>email: <a href="mailto:admin@firstdoor.com.au">admin@firstdoor.com.au<br></a><span style="color: #000000;">ph</span>one: 3103 2336</p></div>
 </div>
 
-<div scroll id="trainingplans"></div>
-<div ng-show="isShow('trainingplans')" >
+<div scroll="" id="trainingplans"></div>
+<div ng-show="isShow('trainingplans')">
   <div contenteditable="{{editable()}}" id="trainingplans--"><!--partial:editable/courses/trainingplans.html--><h2>Training Plans</h2>
 <p>You will have three years to complete your Diploma of Early Childhood Education and Care course from your enrolment date.&nbsp; We have a continual intake of students on this basis throughout the year. For more information on choosing your best suited training plans please refer to your First Door course guide.</p>
 <p>Please note: <em>Unit HLTAID004 Provide an emergency first aid response in an education and care setting</em> is to be completed through an accredited first aid training provider. You will need to provide your First Door assessor with your certificate of attainment for this unit to complete the Diploma course. First Door therefore provides training and assessment for 27 of the 28 units required for the Diploma of Early Childhood Education and Care.</p>
@@ -290,20 +283,20 @@
 <p>The Flexi plan suits students that are eligible to RPL several course unit/s, are highly self-motivated and need flexibility to set their own assessment due dates. Flexi students set their own timetable providing they are able to complete the course within three years. The flexi course follows the four part course structure excluding any RPL units.</p>
 <p>The monthly meeting with the student&rsquo;s personal mentor enables goal setting and assessment due dates to be established. Where possible, Flexi students choose units that are in sync with the structured plan so that they can attend relevant workshops. Flexi student are encouraged to attend at least 18 of the 27 workshops provided for this course.</p>
 <h3>Structured training plan</h3>
-<p><strong>Monthly timetable</strong><br />The structured plan provides students with a monthly timetable to work through a course unit each month from February to November. Our structured plan allows for the 27 units to be completed within three years combining part time study and work experience. Studying using this plan assists students to stay focused and motivated.</p>
+<p><strong>Monthly timetable</strong><br>The structured plan provides students with a monthly timetable to work through a course unit each month from February to November. Our structured plan allows for the 27 units to be completed within three years combining part time study and work experience. Studying using this plan assists students to stay focused and motivated.</p>
 <p>One unit is completed each month, excluding the months of December and January each year. At the beginning of each month, students receive their new unit resources and attend an interactive workshop. A workplace mentoring meeting occurs mid-month and assessments and workbooks are due at the end of each month.</p>
-<p><strong>Rolling enrolment</strong><br />Students start the relevant theory book for the unit that commences the month following their enrolment. An example being: if a student enrols in October they commence the unit <em>&lsquo;Design and implement the curriculum to foster children's learning and development&rsquo;</em>&nbsp;and attend the workshop on 1 November.</p></div>
+<p><strong>Rolling enrolment</strong><br>Students start the relevant theory book for the unit that commences the month following their enrolment. An example being: if a student enrols in October they commence the unit <em>&lsquo;Design and implement the curriculum to foster children's learning and development&rsquo;</em>&nbsp;and attend the workshop on 1 November.</p></div>
 </div>
 
-<div scroll id="studentfees"></div>
-<div ng-show="isShow('studentfees')" >
+<div scroll="" id="studentfees"></div>
+<div ng-show="isShow('studentfees')">
   <div contenteditable="{{editable()}}" id="studentfees--"><!--partial:editable/courses/studentfees.html--><h2>Student fees</h2>
-<p><strong>Fee payment<br /></strong>Students studying with the flexi plan are more likely to pay by nominated regular instalments and students studying with the structured plan usually pay per unit on the 28th of the month. Fee payments to First Door Training and Development Pty. Ltd. can be made in two ways.<strong><br /></strong></p>
+<p><strong>Fee payment<br></strong>Students studying with the flexi plan are more likely to pay by nominated regular instalments and students studying with the structured plan usually pay per unit on the 28th of the month. Fee payments to First Door Training and Development Pty. Ltd. can be made in two ways.<strong><br></strong></p>
 <ol>
 <li>Regular instalments of a nominated amount in advance across the scheduled course time. OR&nbsp;</li>
 <li>Payment per&nbsp;unit prior to the commencement of each unit and within the agreed course timeframe, over a maximum of three years.</li>
 </ol>
-<p><strong>Unit and course investment<br /></strong>The investment for each unit of the course includes the cost of: First Door resources, a workshop, personal mentoring, study support and assessment. Upon successful completion of the course students receive a certificate for their nationally accredited qualification and are invited to attend a graduation ceremony.<strong><br /></strong></p>
+<p><strong>Unit and course investment<br></strong>The investment for each unit of the course includes the cost of: First Door resources, a workshop, personal mentoring, study support and assessment. Upon successful completion of the course students receive a certificate for their nationally accredited qualification and are invited to attend a graduation ceremony.<strong><br></strong></p>
 <table>
 <tbody>
 <tr>
@@ -315,7 +308,7 @@
 <tr>
 <td><strong>Diploma of Children&rsquo;s Services</strong></td>
 <td><strong>$65</strong></td>
-<td><strong>$5,265 total cost&nbsp;</strong><br />for 27 units in total</td>
+<td><strong>$5,265 total cost&nbsp;</strong><br>for 27 units in total</td>
 <td><strong>$195.00 per unit</strong></td>
 </tr>
 <tr>
@@ -334,14 +327,14 @@
 </table>
 <p><strong>Enrolment Fee</strong> <strong>$65</strong> non-refundable fee</p>
 <p>First Door invests in a thorough enrolment process to understand each student&rsquo;s individual learning needs and to establish the appropriate training program for each student. This fee is non-refundable and includes a First Door water bottle and lanyard.</p>
-<p><strong>Recognition of Prior Learning (RPL) $145</strong> per unit<br />Please be advised that a RPL unit requires thorough assessment processes, and may require a combination of: completion of a workbook, evidence collection and workplace observation.</p>
-<p><strong>Issuing Replacement Certificates $10</strong> per certificate <br />First Door will issue replacement certificates subject to receipt of a Statutory Declaration, stating previous enrolled name and address and current name and address and the reason for the replacement. The replacement certificate fee covers the cost of postage and handling.</p>
-<p><strong>Fee Protection and Refunds</strong><br />All fees paid in advance are protected. We guarantee the company&rsquo;s sound financial position and safeguard all payments made in advance until the student&rsquo;s successful conclusion of units to the value of the advanced payment. If First Door has to cancel the course a full refund will be given, including all administration fees.</p>
+<p><strong>Recognition of Prior Learning (RPL) $145</strong> per unit<br>Please be advised that a RPL unit requires thorough assessment processes, and may require a combination of: completion of a workbook, evidence collection and workplace observation.</p>
+<p><strong>Issuing Replacement Certificates $10</strong> per certificate <br>First Door will issue replacement certificates subject to receipt of a Statutory Declaration, stating previous enrolled name and address and current name and address and the reason for the replacement. The replacement certificate fee covers the cost of postage and handling.</p>
+<p><strong>Fee Protection and Refunds</strong><br>All fees paid in advance are protected. We guarantee the company&rsquo;s sound financial position and safeguard all payments made in advance until the student&rsquo;s successful conclusion of units to the value of the advanced payment. If First Door has to cancel the course a full refund will be given, including all administration fees.</p>
 <p>If a student provides one week notice to cancel prior to the course starting date, they will receive a full refund less the non-refundable enrolment fee. Cancellations after the course has begun will be dealt with on a case by case basis to ensure that First Door has done everything within its ability to assist the student in completing the course.</p></div>
 </div>
 
-<div scroll id="apprenticeship"></div>
-<div ng-show="isShow('apprenticeship')" >
+<div scroll="" id="apprenticeship"></div>
+<div ng-show="isShow('apprenticeship')">
   <div contenteditable="{{editable()}}" id="apprenticeship--"><!--partial:editable/apprenticeship.html--><h2>Apprenticeship Training</h2>
 <p>The Australian Government recognises Early Childhood as a critical priority to align the workforce with the skills required by the industry. The User Choice program <strong>funds the cost of Apprenticeship training</strong> for the Diploma of <a href="courses/children_ecec">Early Childhood Education and Care (ECEC)</a>.&nbsp;</p>
 <h3>Employment criteria</h3>
@@ -353,7 +346,7 @@
 <li>hold permanent residency status; or</li>
 <li>be a New Zealand passport holder that has resided in Australia for the last six months.</li>
 </ul>
-<p><strong>For more information on Apprenticeship training with First Door please download and read our Frequently Asked Questions FAQ information.<br /><br /> </strong></p>
+<p><strong>For more information on Apprenticeship training with First Door please download and read our Frequently Asked Questions FAQ information.<br><br> </strong></p>
 <h2>Who is involved in an apprenticeship training program?</h2>
 <p>An apprenticeship is a three way partnership between the student, their employer and the Registered Training Organisation (First Door).</p>
 <p>There are other people that will be involved in ensuring that you are progressing through your apprenticeship training. These parties are:</p>
@@ -380,8 +373,8 @@
 </div>
 </div>
 
-<div scroll ></div>
-<div ng-show="is404()" >This page does not exist..</div>
+<div scroll=""></div>
+<div ng-show="is404()">This page does not exist..</div>
 </div>
   <div id="rightBar--" class="span2"><!--partial:html/rightbar.html--><!-- <fixscrollright data-ng-transclude="">  -->
 <!-- AddToAny BEGIN -->
@@ -427,23 +420,22 @@
     <label class="form-label ">Name<span class="form-required">*</span></label>
     <div class="controls controls-row control-group {{namemissing}}">
 
-      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required/>
-      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required/>
+      <input class="span1" placeholder="First" type="text" id="username_first" name="username_first" required>
+      <input class=" span1" style=" margin-left: 5px; width: 80px;" placeholder="Last" type="text" id="username_last" name="username_last" required>
     </div>
 
     <label class="form-label">Email<span class="form-required">*</span></label>
 
     <div class="control-group {{emailmissing}}">
-      <input class="span2" type="email" id="email" name="email" required/><br/>
+      <input class="span2" type="email" id="email" name="email" required><br>
     </div>
 
     <label class="form-label">Message<span class="form-required">*</span></label>
 
     <div class="control-group {{msgmissing}}">
-      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea></br>
+      <textarea class="span2 required" id="textmessage" rows="3" cols="60"></textarea><br>
     </div>
-    <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
-           value="Send" />
+    <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
     <div id="captchadiv"></div>
   </div>
   <div ng-show="sent" class="well">

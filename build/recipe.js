@@ -483,7 +483,7 @@ var exports = {
         ['contactus', '/built/view-contactus.html', 'contactusCntl'],
         ['enrol', '/built/view-enroll.html'],
         ['apprenticeship', '/built/view-apprenticeship.html'],
-        ['blog', '/blog/landing/index.html'],
+        // ['blog', '/blog/landing/index.html'],
         ['sitemap', '/sitemap.html']
         
         // ,['ytcarousel', '/build/html/ytcarousel.html']

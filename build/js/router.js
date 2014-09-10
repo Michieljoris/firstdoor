@@ -35,6 +35,21 @@ angular.module('ngView', [],
                         },
                         controller: DefaultCntl });
                     
+                    $routeProvider.when('/blog/landing', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/landing/" + 'index.html');
+                        },
+                        controller: DefaultCntl });
+                    $routeProvider.when('/blog', {
+                        templateUrl: function(route) {
+                            console.log('----------------------', arguments);
+                            return '//' + document.location.host + '/' +
+                                cachify("/blog/landing/" + 'index.html');
+                        },
+                        controller: DefaultCntl });
+                    
                     $routeProvider.when('/blog/landing/:page', {
                         templateUrl: function(route) {
                             console.log('----------------------', arguments);
