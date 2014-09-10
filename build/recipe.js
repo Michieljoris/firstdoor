@@ -275,8 +275,8 @@ var mainMenuTree = [
        //     } 
        // ]
      } 
-    ,{ label: 'Blog', route: '/blog', scroll: true
-     } 
+    // ,{ label: 'Blog', route: '/blog', scroll: true
+     // } 
     ,{ label: 'Contact us', route: '/contactus', scroll: true
        // ,sub: [
        //     { label: '(Tryouts)', icon: '', route: '/blog'

@@ -5,8 +5,7 @@ rsync --verbose  --progress --stats --compress --rsh=/usr/bin/ssh --recursive --
 --exclude "develop-mode" \
 --exclude "PORT" \
 --exclude "node_modules" \
-
-ever/www/sites/firstdoor/ ~/www/firstdoor-live/
+~/www/sites/firstdoor/ ~/www/firstdoor-live/
 
 
 
