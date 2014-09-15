@@ -4,6 +4,8 @@ rsync --verbose  --progress --stats --compress --rsh=/usr/bin/ssh --recursive --
 --exclude ".git" \
 --exclude "node_modules" \
 --exclude "develop-mode" \
+--exclude "build/post" \
+--exclude "build/editable" \
 --exclude "PORT" \
 ~/www/sites/firstdoor/ michieljoris@linode:~/www/firstdoor.axion5.net/
 
