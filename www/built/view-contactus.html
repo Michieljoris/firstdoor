@@ -3,7 +3,7 @@
   <div id="contents--" class=""><!--partial:html/contactForm.html--><div class="span1"></div>
 <div id="contactForm" class="span4">
 
-  <div contenteditable="{{editable()}}" id="header--"><!--partial:editable/contactUsHeader.html--><h3>Call us now to arrange a free training consultation</h3>
+  <div  contenteditable="{{editable()}}" id="header--"><!--partial:editable/contactUsHeader.html--><h3>Call us now to arrange a free training consultation</h3>
 <div style="padding-bottom:10px;">
   Please fill out the contact form provided and a First Door
   representative will reply to you as quickly as possible with the
@@ -15,22 +15,23 @@
       <label class="form-label ">Name<span class="form-required">*</span></label>
       <div class="controls controls-row control-group {{namemissing}}">
 
-        <input class="span2" placeholder="First" type="text" id="username_first" name="username_first" required>
-        <input class=" span2" placeholder="Last" type="text" id="username_last" name="username_last" required>
+        <input class="span2" placeholder="First" type="text" id="username_first" name="username_first" required/>
+        <input class=" span2" placeholder="Last" type="text" id="username_last" name="username_last" required/>
       </div>
 
       <label class="form-label">Email<span class="form-required">*</span></label>
 
       <div class="control-group {{emailmissing}}">
-        <input class="span4" type="email" id="email" name="email" required><br>
+        <input class="span4" type="email" id="email" name="email" required/><br/>
       </div>
 
       <label class="form-label">Message<span class="form-required">*</span></label>
 
       <div class="control-group {{msgmissing}}">
-        <textarea class="span4" required id="textmessage" rows="10" cols="60"></textarea><br>
+        <textarea class="span4" required id="textmessage" rows="10" cols="60"></textarea></br>
       </div>
-      <input ng-click="clicksend($event)" class="btn btn-primary" style="" type="submit" id="send" value="Send">
+      <input ng-click="clicksend($event)" class="btn btn-primary"style="" type="submit" id="send"
+             value="Send" />
       <div id="captchadiv"></div>
     </div>
     <div ng-show="sent" class="well">
@@ -46,7 +47,7 @@
 
   <div style="padding-bottom:5px;">
 
-    <div contenteditable="{{editable()}}" id="leftColumn--"><!--partial:editable/contactUsLeftColumn.html--><strong>Phone</strong>
+    <div  contenteditable="{{editable()}}" id="leftColumn--"><!--partial:editable/contactUsLeftColumn.html--><strong>Phone</strong>
 <div class="contactblock">
   Mobile: 0433 114 153 <em>Cindy</em><br>
   Mobile: 0437 870 932 <em>Andrea</em><br>
@@ -63,15 +64,15 @@
 <strong>Skype or facetime: </strong>
 <div class="contactblock">details are available to students on request
 </div>
-<br><br>
-<br><br>
+<br></br>
+<br></br>
 </div>
     <div style="height: 10px; overflow: hidden; width: 100%;">
     </div>
 
 
 
-    <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.au/maps?q=4+Sybley+Street,+North+Lakes&amp;ie=UTF8&amp;hq=&amp;hnear=4+Sybley+Street,+North+Lakes+Queensland+4509&amp;gl=au&amp;t=m&amp;ll=-27.237537,153.023071&amp;spn=0.183152,0.205994&amp;z=11&amp;output=embed"></iframe><br><small><a href="https://maps.google.com.au/maps?q=4+Sybley+Street,+North+Lakes&amp;ie=UTF8&amp;hq=&amp;hnear=4+Sybley+Street,+North+Lakes+Queensland+4509&amp;gl=au&amp;t=m&amp;ll=-27.237537,153.023071&amp;spn=0.183152,0.205994&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+    <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.au/maps?q=4+Sybley+Street,+North+Lakes&amp;ie=UTF8&amp;hq=&amp;hnear=4+Sybley+Street,+North+Lakes+Queensland+4509&amp;gl=au&amp;t=m&amp;ll=-27.237537,153.023071&amp;spn=0.183152,0.205994&amp;z=11&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com.au/maps?q=4+Sybley+Street,+North+Lakes&amp;ie=UTF8&amp;hq=&amp;hnear=4+Sybley+Street,+North+Lakes+Queensland+4509&amp;gl=au&amp;t=m&amp;ll=-27.237537,153.023071&amp;spn=0.183152,0.205994&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
 
     <div style="height: 30px; overflow: hidden; width: 100%;"></div>
   </div>
@@ -82,7 +83,7 @@
   <div style="padding-bottom:5px;">
   </div>
 
-  <div contenteditable="{{editable()}}" id="rightColumn--"><!--partial:editable/contactUsRightColumn.html--><strong>Post:</strong>
+  <div  contenteditable="{{editable()}}" id="rightColumn--"><!--partial:editable/contactUsRightColumn.html--><strong>Post:</strong>
 <div class="contactblock">
   14 Page Street, North Lakes, Queensland 4509, AUSTRALIA
 </div>
