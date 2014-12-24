@@ -29,7 +29,7 @@ var nrtlogo_allowed = [
     "/courses/intro",
     "/courses/children_ecec",
     "/courses/diploma_management",
-    "/courses/certivtraining",
+    "/courses/cert3ecec",
     "/courses/apprenticeship"
     ];
 
@@ -151,7 +151,7 @@ var exists = {
     home : ['welcome', 'specialists', 'mentor', 'constructive', 'asqa','engaging'],
     aboutus : ['vision', 'mission', 'approach', 'values', 'namelogo', 'people', 'policies'],
     pd: ['intro', 'inspired', 'observing', 'environment', 'coop', 'evaluation', 'children', 'risk', 'pdfees', 'customised'],
-    courses: ['intro', 'children_ecec', 'diploma_management', 'certivtraining', 'priorlearning', 'trainingplans', 'studentfees', 'apprenticeship']
+    courses: ['intro', 'children_ecec', 'diploma_management', 'cert3ecec', 'priorlearning', 'trainingplans', 'studentfees', 'apprenticeship']
     
         
 };
@@ -244,7 +244,8 @@ var greendoor = {
             ,{ label: 'Diploma of Management ', route: '/courses/diploma_management', scroll: true}
             // ,{ label: 'Leadership Units', route: '/courses/diploma_management', scroll: true}
             // ,{ label: 'Certificate IV in Training and Assessment', route: '/courses/certivtraining', scroll: true}
-            ,{ label: 'Leadership Units', route: '/courses/certivtraining', scroll: true}
+            // ,{ label: 'Leadership Units', route: '/courses/certivtraining', scroll: true}
+            ,{ label: 'Certificate III in Early Childhood Education and Care', route: '/courses/cert3ecec', scroll: true}
             ,{ label: 'Recognised Prior Learning', route: '/courses/priorlearning', scroll: true}
             ,{ label: 'Flexi or structured training plans', route: '/courses/trainingplans', scroll: true}
             ,{ label: 'Student fees', route: '/courses/studentfees', scroll: true}
@@ -259,12 +260,19 @@ var greendoor = {
         default_ie8sucks: ''
         // ,subtext: "Further information on Accredited Training with First Door will become available following registration as a Registered Training Organisation"
         ,links: [
-            { label: 'STUDENT HANDBOOK', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/FirstDoor_StudentHandbook.pdf", scroll: true}
-            ,{ label: 'DIPLOMA ECEC COURSE GUIDE', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2: "(paper version)", download:true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2:  '(computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
-            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(paper version)', download: true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
-            ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
+            { label: 'STUDENT HANDBOOK', line2: '(pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/FirstDoor_StudentHandbook.pdf", scroll: true}
+            ,{ label: 'DIPLOMA ECEC COURSE GUIDE', line2: '(pdf)', file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Diploma_Early_Childhood_Course_Guide.pdf", scroll: true}
+
+            ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2: '(pdf)', download:true, file: true, route: "/documents/Dip ECEC enrolment electronic version 3.pdf", scroll: true}
+            // ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2:  '(computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
+            ,{ label: 'ENROLMENT:  CERTIFICATE III IN ECEC', line2: '(pdf)', download: true, file: true, route: "/documents/Cert 3 ECEC enrolment electronic version 1.pdf", scroll: true}
+            ,{ label: 'ENROLMENT:  DIPLOMA OF MANAGEMENT', line2: '(pdf)', download: true, file: true, route: "/documents/Dip Management enrolment electronic version 2.pdf", scroll: true}
+            // ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
+
+            // ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2: "(paper version)", download:true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
+            // ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2:  '(computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
+            // ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(paper version)', download: true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20print%20version.pdf", scroll: true}
+            // ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
         ]
 
         
@@ -347,7 +355,7 @@ var headerImages = {
         "*": "/images/slides/tab_accredited_training.jpg"
         ,children_ecec: "/images/slides/courses_Diploma_Childrens_services.jpg"
         ,diploma_management: "/images/slides/courses_Diploma_Management.jpg"
-        ,certivtraining: "/images/slides/tab_professional_development.jpg"
+        ,cert3ecec: "/images/cert3.jpg"
         // ,certivtraining: "/images/slides/courses_certiv.jpg"
     }
     ,"blog": {

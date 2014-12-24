@@ -222,7 +222,8 @@ var mainMenuTree = [
            ,{ label: 'Diploma of Management ', route: '/courses/diploma_management', scroll: true}
            // ,{ label: 'Leadership Units', route: '/courses/diploma_management', scroll: true}
            // ,{ label: 'Certificate IV in Training and Assessment', route: '/courses/certivtraining', scroll: true}
-           ,{ label: 'Leadership Units', route: '/courses/certivtraining', scroll: true}
+           // ,{ label: 'Leadership Units', route: '/courses/certivtraining', scroll: true}
+           ,{ label: 'Certificate III in Early Childhood Education and Care', route: '/courses/cert3ecec', scroll: true}
            ,{ label: 'Government funded Apprenticeship training', route: '/courses/apprenticeship', scroll: true}
            // ,{ label: 'Aged care', route: '/courses/agedcare'}
        ]
@@ -454,6 +455,7 @@ var exports = {
             '/images/slides/tab_about_us.jpg',
             '/images/slides/tab_accredited_training.jpg',
             '/images/slides/tab_professional_development.jpg',
+            '/images/cert3.jpg',
             '/images/slides/tab_resources.jpg',
             '/images/course_structure_children_services.jpg',
             '/images/homepage_image.jpg',
@@ -722,7 +724,7 @@ var exports = {
                    intro: 'editable/courses/intro'
                    ,childrenservices:   'editable/courses/CHC50908_childrens_services'
                    ,diploma_management: 'editable/courses/BSB51107_management'
-                   ,certivtraining: 'editable/courses/certiv'
+                   ,cert3ecec: 'editable/courses/certiv'
                    ,priorlearning: 'editable/courses/priorlearning'
                    ,trainingplans: 'editable/courses/trainingplans'
                    ,studentfees: 'editable/courses/studentfees'

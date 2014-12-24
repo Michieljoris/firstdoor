@@ -290,7 +290,7 @@ var options = {
     ,persona: {
         authorized: ['mail@axion5.net', 'andrea@firstdoor.com.au']
         ,verbose: true 
-        ,audience: develop_mode ? "localhost:9001" : "firstdoor.com.au" 
+        ,audience: develop_mode ? "localhost:9001" : "www.firstdoor.com.au" 
         // ,audience: true ? "firstdoor.local" : "firstdoor.com.au" 
     } 
     
