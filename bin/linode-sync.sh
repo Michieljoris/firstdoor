@@ -7,7 +7,7 @@ rsync --verbose  --progress --stats --compress --rsh=/usr/bin/ssh --recursive --
 --exclude "PORT" \
 --exclude "build/editable" \
 --exclude "build/post" \
-~/www/sites/firstdoor/ michieljoris@linode:~/www/test_firstdoor/
+~/src/firstdoor/ michieljoris@linode:~/www/test_firstdoor/
 
 
 

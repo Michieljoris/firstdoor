@@ -1,0 +1,42 @@
+bin/serve-forever
+serves on port 9001
+forever start proxy8080js
+And redirect 80 to port 8080:
+
+* How to bind to port 80,	     :reverse:proxy:iptables:port80:redirect:
+or rather how to redirect it
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+iptables -t nat -I OUTPUT -p tcp -
+
+Short answer: you can't. Ports below 1024 can be opened only by root.
+
+port 443 gets forwarded to 4443
+
+The long answer: you can redirect connections on port 80 to some other port you can open as normal user.
+
+Run as root:
+
+# iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+NOTE: The above solution is not well suited for multi-user systems, as any user can open port 8080 (or any other high port you decide to use), thus intercepting the traffic. (Credits to CesarB).
+
+EDIT: as per comment question - to delete the above rule:
+]] iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+ [[
+iptables -t nat --line-numbers -n -L
+This will output something like:
+
+Chain PREROUTING (policy ACCEPT)
+num  target     prot opt source               destination         
+1    REDIRECT   tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:8080 redir ports 8088
+2    REDIRECT   tcp  --  0.0.0.0/0            0.0.0.0/0           tcp dpt:80 redir ports 8080
+The rule you are interested in is nr. 2, so to delete it:
+
+# iptables -t nat -D PREROUTING 2
+See:
+
+http://serverfault.com/questions/112795/how-can-i-run-a-server-on-linux-on-port-80-as-a-normal-user
+For instance: 
+sudo redir --lport=80 --laddr=192.168.0.101 --cport 9990
+--caddr=127.0.0.1 
+(Not tested)
+
