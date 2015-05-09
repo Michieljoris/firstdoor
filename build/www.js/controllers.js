@@ -241,7 +241,7 @@ var greendoor = {
               scroll: true}
             ,{ label: 'Diploma of Early Childhood', line2:'EDUCATION AND CARE', route: '/courses/children_ecec',
                scroll: true}
-            ,{ label: 'Diploma of Management ', route: '/courses/diploma_management', scroll: true}
+            ,{ label: 'Diploma of Leadership and Management ', route: '/courses/diploma_management', scroll: true}
             // ,{ label: 'Leadership Units', route: '/courses/diploma_management', scroll: true}
             // ,{ label: 'Certificate IV in Training and Assessment', route: '/courses/certivtraining', scroll: true}
             // ,{ label: 'Leadership Units', route: '/courses/certivtraining', scroll: true}
@@ -266,7 +266,7 @@ var greendoor = {
             ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2: '(pdf)', download:true, file: true, route: "/documents/Dip ECEC enrolment electronic version 3.pdf", scroll: true}
             // ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2:  '(computer version)', download: "true", file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20electronic%20version.docx" , scroll: true}
             ,{ label: 'ENROLMENT:  CERTIFICATE III IN ECEC', line2: '(pdf)', download: true, file: true, route: "/documents/Cert 3 ECEC enrolment electronic version 1.pdf", scroll: true}
-            ,{ label: 'ENROLMENT:  DIPLOMA OF MANAGEMENT', line2: '(pdf)', download: true, file: true, route: "/documents/Dip Management enrolment electronic version 2.pdf", scroll: true}
+            ,{ label: 'ENROLMENT:  DIPLOMA OF LEADERSHIP AND MANAGEMENT', line2: '(pdf)', download: true, file: true, route: "/documents/Dip Ldr Mgt enrolment electronic version.pdf", scroll: true}
             // ,{ label: 'ENROLMENT: LEADERSHIP UNIT/S', line2: '(computer version)', download: "true", file: true, route:"https://dl.dropboxusercontent.com/u/121993962/Individual%20Units%20enrolment%20electronic%20version.docx" , scroll: true}
 
             // ,{ label: 'ENROLMENT: DIPLOMA ECEC', line2: "(paper version)", download:true, file: true, route: "https://dl.dropboxusercontent.com/u/121993962/Dip%20ECEC%20enrolment%20print%20version.pdf", scroll: true}
